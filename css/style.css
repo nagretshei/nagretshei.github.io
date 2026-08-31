@@ -252,6 +252,13 @@ nav.site-nav a.active { color: var(--accent-2); }
   font-style: italic;
   margin-bottom: 16px;
 }
+.hero .tagline {
+  color: var(--accent-2);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: .01em;
+  margin: -6px 0 20px;
+}
 .tags {
   display: flex;
   flex-wrap: wrap;
