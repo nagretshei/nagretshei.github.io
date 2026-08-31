@@ -12,6 +12,7 @@
   --radius: 14px;
   --max-width: 760px;
   --header-h: 60px;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -156,9 +157,62 @@ nav.site-nav a.active { color: var(--accent-2); }
   }
 }
 
+/* ---------- Page tabs (mobile section indicator) ---------- */
+.page-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 20px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--surface-border);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.page-tabs::-webkit-scrollbar { display: none; }
+.page-tabs a {
+  flex: 0 0 auto;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--surface-border);
+  color: var(--text-dim);
+  font-size: .82rem;
+  white-space: nowrap;
+}
+.page-tabs a:hover { text-decoration: none; border-color: var(--accent-2); color: var(--accent-2); }
+.page-tabs a.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+@media (min-width: 720px) {
+  .page-tabs { display: none; }
+}
+
+/* ---------- Banner ---------- */
+.site-banner {
+  position: relative;
+  width: 100%;
+  height: clamp(140px, 26vw, 280px);
+  overflow: hidden;
+}
+.site-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 68%;
+  display: block;
+}
+.site-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 55%, var(--bg) 100%);
+}
+
 /* ---------- Hero ---------- */
 .hero {
-  padding: 56px 0 40px;
+  padding: 40px 0 40px;
   text-align: center;
 }
 .hero-wave {
@@ -170,13 +224,21 @@ nav.site-nav a.active { color: var(--accent-2); }
 }
 
 .avatar {
-  width: 140px;
-  height: 140px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   margin: 0 auto 20px;
-  box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--surface-border), 0 10px 24px rgba(10, 42, 67, 0.15);
+  opacity: .92;
+  filter: saturate(.85) contrast(.96);
+  -webkit-mask-image: radial-gradient(circle, #000 58%, transparent 76%);
+  mask-image: radial-gradient(circle, #000 58%, transparent 76%);
+  transition: opacity .3s ease, filter .3s ease;
+}
+.avatar:hover {
+  opacity: 1;
+  filter: saturate(1) contrast(1);
 }
 .hero h1 {
   font-size: clamp(1.9rem, 6vw, 2.8rem);

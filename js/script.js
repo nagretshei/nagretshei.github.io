@@ -16,10 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   var here = window.location.pathname.split("/").pop() || "index.html";
-  nav.querySelectorAll("a").forEach(function (link) {
+  document.querySelectorAll(".site-nav a, .page-tabs a").forEach(function (link) {
     var href = link.getAttribute("href");
     if (href === here || (here === "" && href === "index.html")) {
       link.classList.add("active");
     }
   });
+
+  var activeTab = document.querySelector(".page-tabs a.active");
+  if (activeTab) {
+    activeTab.scrollIntoView({ inline: "center", block: "nearest" });
+  }
 });
