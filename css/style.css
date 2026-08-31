@@ -1,13 +1,13 @@
 /* ---------- Design tokens ---------- */
 :root {
-  --bg: #0b0d13;
-  --bg-alt: #12151d;
-  --surface: #171b25;
-  --surface-border: #262c3a;
-  --text: #e8eaf0;
-  --text-dim: #9aa1b2;
-  --accent: #7f5af0;
-  --accent-2: #2cb1bc;
+  --bg: #ffffff;
+  --bg-alt: #f4f9fd;
+  --surface: #eaf3fb;
+  --surface-border: #d3e6f5;
+  --text: #0a2a43;
+  --text-dim: #4a6178;
+  --accent: #0a2a43;
+  --accent-2: #2f6fad;
   --gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
   --radius: 14px;
   --max-width: 760px;
@@ -66,7 +66,7 @@ header.site-header::before {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(11, 13, 19, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
 }
 
@@ -219,7 +219,7 @@ nav.site-nav a.active { color: var(--accent-2); }
 }
 .btn-primary {
   background: var(--gradient);
-  color: #06070a;
+  color: #ffffff;
 }
 .btn-primary:hover { text-decoration: none; opacity: .92; }
 .btn-ghost {
