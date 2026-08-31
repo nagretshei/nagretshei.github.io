@@ -247,12 +247,12 @@ nav.site-nav a.active { color: var(--accent-2); }
   background-clip: text;
   color: transparent;
 }
-.hero .alias {
+.alias {
   color: var(--text-dim);
   font-style: italic;
   margin-bottom: 16px;
 }
-.hero .tagline {
+.tagline {
   color: var(--accent-2);
   font-weight: 600;
   font-size: 1.05rem;
