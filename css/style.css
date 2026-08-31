@@ -402,6 +402,28 @@ main { padding-bottom: 60px; }
 }
 .contact-card a.big-link:hover { color: var(--accent-2); }
 
+/* ---------- Work detail pages ---------- */
+.work-detail .page-header { padding-top: 32px; }
+.work-detail .page-header .meta {
+  font-size: .8rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  display: block;
+  margin-bottom: 6px;
+}
+.work-body { max-width: 66ch; }
+.work-body hr {
+  border: none;
+  border-top: 1px solid var(--surface-border);
+  margin: 36px 0;
+}
+.zh-section h2 {
+  font-family: Georgia, "Noto Serif TC", serif;
+  font-size: 1.3rem;
+}
+.back-link { font-size: .9rem; }
+
 /* ---------- Footer ---------- */
 footer.site-footer {
   border-top: 1px solid var(--surface-border);
