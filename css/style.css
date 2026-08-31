@@ -48,6 +48,10 @@ p { margin: 0 0 1em; color: var(--text-dim); }
 }
 
 /* ---------- Header / Nav ---------- */
+/* The blurred background lives on ::before (not on header itself) because a
+   `backdrop-filter`/`filter` on an ancestor creates a containing block for
+   `position: fixed` descendants — it would trap the fixed mobile nav panel
+   inside the header's own 60px-tall box instead of the viewport. */
 header.site-header {
   position: sticky;
   top: 0;
@@ -55,9 +59,15 @@ header.site-header {
   height: var(--header-h);
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--surface-border);
+}
+header.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(11, 13, 19, 0.85);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--surface-border);
 }
 
 .nav-wrap {
