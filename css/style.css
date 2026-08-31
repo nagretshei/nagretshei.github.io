@@ -257,7 +257,8 @@ main { padding-bottom: 60px; }
   margin-bottom: 8px;
   display: block;
 }
-.card p { margin-bottom: 0; font-size: .93rem; }
+.card p { margin: 0 0 10px; font-size: .93rem; }
+.card p:last-child { margin-bottom: 0; }
 
 .year-group {
   margin-bottom: 8px;
