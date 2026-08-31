@@ -426,6 +426,14 @@ main { padding-bottom: 60px; }
 .poem { margin: 20px 0; }
 .poem p { font-style: italic; }
 
+.zh-section blockquote {
+  margin: 16px 0;
+  padding: 4px 18px;
+  border-left: 3px solid var(--surface-border);
+  color: var(--text-dim);
+}
+.zh-section blockquote p { margin-bottom: 0; }
+
 /* ---------- Footer ---------- */
 footer.site-footer {
   border-top: 1px solid var(--surface-border);
