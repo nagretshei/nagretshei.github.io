@@ -423,6 +423,8 @@ main { padding-bottom: 60px; }
   font-size: 1.3rem;
 }
 .back-link { font-size: .9rem; }
+.poem { margin: 20px 0; }
+.poem p { font-style: italic; }
 
 /* ---------- Footer ---------- */
 footer.site-footer {
