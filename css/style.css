@@ -322,7 +322,7 @@ nav.site-nav a.active { color: var(--accent-2); }
   margin: 24px 0;
 }
 .album-spotlight-info { flex: 1 1 280px; }
-.album-spotlight-info h2 { font-size: 1.3rem; margin: 4px 0 10px; }
+.album-spotlight-info h2, .album-spotlight-info h3 { font-size: 1.3rem; margin: 4px 0 10px; }
 .album-tracklist {
   flex: 1 1 220px;
   list-style: decimal;
