@@ -314,6 +314,24 @@ nav.site-nav a.active { color: var(--accent-2); }
 .page-header h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
 .page-header p { max-width: 60ch; }
 
+/* ---------- Works index (jump links) ---------- */
+.works-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.works-index a {
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  color: var(--text-dim);
+  font-size: .85rem;
+  white-space: nowrap;
+}
+.works-index a:hover { text-decoration: none; border-color: var(--accent-2); color: var(--accent-2); }
+
 /* ---------- Sections & cards ---------- */
 main { padding-bottom: 60px; }
 
@@ -324,6 +342,7 @@ main { padding-bottom: 60px; }
   font-size: 1.3rem;
   color: var(--text);
   margin-bottom: 16px;
+  scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
 .card {
