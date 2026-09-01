@@ -362,6 +362,27 @@ nav.site-nav a.active { color: var(--accent-2); }
   }
 }
 
+/* ---------- Featured logos ---------- */
+.featured-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 20px 0 28px;
+}
+.logo-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+}
+.logo-chip.dark { background: var(--text); border-color: var(--text); }
+.logo-chip img { height: 26px; width: auto; display: block; }
+
 /* ---------- Sections & cards ---------- */
 main { padding-bottom: 60px; }
 
