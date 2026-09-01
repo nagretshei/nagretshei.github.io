@@ -314,6 +314,26 @@ nav.site-nav a.active { color: var(--accent-2); }
 .page-header h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
 .page-header p { max-width: 60ch; }
 
+/* ---------- Album spotlight ---------- */
+.album-spotlight {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 24px 0;
+}
+.album-spotlight-info { flex: 1 1 280px; }
+.album-spotlight-info h2 { font-size: 1.3rem; margin: 4px 0 10px; }
+.album-tracklist {
+  flex: 1 1 220px;
+  list-style: decimal;
+  padding-left: 1.2em;
+  margin: 0;
+  color: var(--text-dim);
+  font-size: .9rem;
+  align-self: center;
+}
+.album-tracklist li { margin-bottom: 6px; }
+
 /* ---------- Works index (jump links) ---------- */
 .works-index {
   display: flex;
