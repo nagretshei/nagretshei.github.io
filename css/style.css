@@ -483,6 +483,19 @@ main { padding-bottom: 60px; }
   margin-bottom: 6px;
 }
 .work-body { max-width: 66ch; }
+.work-body figure { margin: 20px 0; }
+.work-body figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--surface-border);
+}
+.work-body figcaption {
+  font-size: .85rem;
+  color: var(--text-dim);
+  margin-top: 6px;
+}
 .work-body hr {
   border: none;
   border-top: 1px solid var(--surface-border);
