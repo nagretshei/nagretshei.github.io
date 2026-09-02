@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -23,37 +24,42 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="info.html">Info</a>
-      <a href="musical-works.html">Musical Works</a>
-      <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="musings.html">Musings</a>
-      <a href="events.html">Events</a>
-      <a href="releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="index.html">Home</a>
-  <a href="info.html">Info</a>
-  <a href="musical-works.html">Musical Works</a>
-  <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="musings.html">Musings</a>
-  <a href="events.html">Events</a>
-  <a href="releases.html">Releases</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container">
     <div class="page-header">
-      <h1>Events</h1>
-      <p>Selected festival appearances and performances.</p>
+      <h1><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></h1>
+      <p class="lang-en">Selected festival appearances and performances.</p>
+      <p class="lang-zh">精選音樂節展演與演出紀錄。</p>
     </div>
 
-    <p class="meta">Selected presentations at:</p>
+    <p class="meta lang-en">Selected presentations at:</p>
+    <p class="meta lang-zh">精選展演機構：</p>
     <div class="featured-logos" aria-label="Featured at">
       <a class="logo-chip" href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener"><img src="images/logos/ircam-forum.png" alt="IRCAM Forum profile"></a>
       <span class="logo-chip"><img src="images/logos/ars-electronica.svg" alt="Ars Electronica"></span>
@@ -68,27 +74,35 @@
       <h2>2026</h2>
 
       <div class="card">
-        <span class="meta">Jun 19–25, 2026 · New York, USA</span>
+        <span class="meta lang-en">Jun 19–25, 2026 · New York, USA</span>
+        <span class="meta lang-zh">2026年6月19–25日 · 美國紐約</span>
         <h3>NYCEMF 2026</h3>
-        <p>New York City Electroacoustic Music Festival.</p>
+        <p class="lang-en">New York City Electroacoustic Music Festival.</p>
+        <p class="lang-zh">紐約市電聲音樂節。</p>
       </div>
 
       <div class="card">
-        <span class="meta">May 10–16, 2026 · Hamburg, Germany</span>
+        <span class="meta lang-en">May 10–16, 2026 · Hamburg, Germany</span>
+        <span class="meta lang-zh">2026年5月10–16日 · 德國漢堡</span>
         <h3>ICMC 2026</h3>
-        <p>International Computer Music Conference, hosted by the ligeti center. Fixed media piece.</p>
+        <p class="lang-en">International Computer Music Conference, hosted by the ligeti center. Fixed media piece.</p>
+        <p class="lang-zh">國際電腦音樂研討會，由 ligeti center 主辦，展演固定媒體作品。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Mar 20 – May 10, 2026 · Centro de Cultura Digital, Mexico City, Mexico</span>
-        <h3>Planeta Complejo Exhibition 2026</h3>
-        <p><em>Aurora</em>, re-invited to MUSLAB's Planeta Complejo Exhibition.</p>
+        <span class="meta lang-en">Mar 20 – May 10, 2026 · Centro de Cultura Digital, Mexico City, Mexico</span>
+        <span class="meta lang-zh">2026年3月20日–5月10日 · 墨西哥墨西哥市 Centro de Cultura Digital</span>
+        <h3><span class="lang-en">Planeta Complejo Exhibition 2026</span><span class="lang-zh">Planeta Complejo 展覽 2026</span></h3>
+        <p class="lang-en"><em>Aurora</em>, re-invited to MUSLAB's Planeta Complejo Exhibition.</p>
+        <p class="lang-zh">《Aurora》，再度受邀於 MUSLAB Planeta Complejo Exhibition 展出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jan 28–30, 2026, 7:00–9:00 PM (UTC+1) · Phaune Radio</span>
-        <h3>La Semaine du Son — Radio Broadcast</h3>
-        <p><em>Breath of the Forest</em>, selected for Paysages Composés 2025, invited for a radio broadcast on Phaune Radio as part of La Semaine du Son, a major international event dedicated to sound culture, listening practices, sound art, and ecological concerns, operating within a framework linked to UNESCO initiatives.</p>
+        <span class="meta lang-en">Jan 28–30, 2026, 7:00–9:00 PM (UTC+1) · Phaune Radio</span>
+        <span class="meta lang-zh">2026年1月28–30日，晚間7:00–9:00（UTC+1） · Phaune Radio</span>
+        <h3><span class="lang-en">La Semaine du Son — Radio Broadcast</span><span class="lang-zh">La Semaine du Son 廣播播出</span></h3>
+        <p class="lang-en"><em>Breath of the Forest</em>, selected for Paysages Composés 2025, invited for a radio broadcast on Phaune Radio as part of La Semaine du Son, a major international event dedicated to sound culture, listening practices, sound art, and ecological concerns, operating within a framework linked to UNESCO initiatives.</p>
+        <p class="lang-zh">《Breath of the Forest》入選 Paysages Composés 2025，受邀於 La Semaine du Son 期間在 Phaune Radio 進行廣播播出。La Semaine du Son 為關注聲音文化、聆聽實踐、聲音藝術與生態議題的重要國際盛事，運作架構與聯合國教科文組織（UNESCO）相關倡議有所連結。</p>
       </div>
     </section>
 
@@ -96,39 +110,51 @@
       <h2>2025</h2>
 
       <div class="card">
-        <span class="meta">Sep 14, 2025 · Grenoble, France</span>
+        <span class="meta lang-en">Sep 14, 2025 · Grenoble, France</span>
+        <span class="meta lang-zh">2025年9月14日 · 法國格勒諾勃</span>
         <h3>Paysages Composés 2025</h3>
-        <p><em>The Breath of the Forest</em> (originally 2018, featuring solo flute).</p>
+        <p class="lang-en"><em>The Breath of the Forest</em> (originally 2018, featuring solo flute).</p>
+        <p class="lang-zh">《The Breath of the Forest》（原作於 2018 年，由長笛獨奏演出）。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Sep 7, 2025, 4:00 PM · CKL Stage, Seoul, South Korea</span>
+        <span class="meta lang-en">Sep 7, 2025, 4:00 PM · CKL Stage, Seoul, South Korea</span>
+        <span class="meta lang-zh">2025年9月7日，下午4:00 · 韓國首爾 CKL Stage</span>
         <h3>SICMF 2025</h3>
-        <p><em>Lava's Roaring Dance</em> (8-channel version). Asia's longest-running computer music festival.</p>
+        <p class="lang-en"><em>Lava's Roaring Dance</em> (8-channel version). Asia's longest-running computer music festival.</p>
+        <p class="lang-zh">《Lava's Roaring Dance》（8 聲道版本）。亞洲歷史最悠久的電腦音樂節。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jun 22–28, 2025 · New York, USA</span>
+        <span class="meta lang-en">Jun 22–28, 2025 · New York, USA</span>
+        <span class="meta lang-zh">2025年6月22–28日 · 美國紐約</span>
         <h3>NYCEMF 2025</h3>
-        <p><em>Lava's Roaring Dance</em>.</p>
+        <p class="lang-en"><em>Lava's Roaring Dance</em>.</p>
+        <p class="lang-zh">《Lava's Roaring Dance》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jun 8–14, 2025 (perf. Jun 10, 11 AM–6 PM) · Ryder Theatre, Lab 334 RY, Northeastern University, Boston, USA</span>
+        <span class="meta lang-en">Jun 8–14, 2025 (perf. Jun 10, 11 AM–6 PM) · Ryder Theatre, Lab 334 RY, Northeastern University, Boston, USA</span>
+        <span class="meta lang-zh">2025年6月8–14日（演出：6月10日上午11:00–下午6:00） · 美國波士頓東北大學 Ryder Theatre（Lab 334 RY）</span>
         <h3>ICMC 2025</h3>
-        <p><em>Lava's Roaring Dance</em>.</p>
+        <p class="lang-en"><em>Lava's Roaring Dance</em>.</p>
+        <p class="lang-zh">《Lava's Roaring Dance》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jun 20–28, 2025 · Lyon, France</span>
+        <span class="meta lang-en">Jun 20–28, 2025 · Lyon, France</span>
+        <span class="meta lang-zh">2025年6月20–28日 · 法國里昂</span>
         <h3>JINLAC 2025</h3>
-        <p><em>Lava's Roaring Dance</em>. Hosted by Inria, GRAME-CNCM, and others — an international conference on free/open-source software for music.</p>
+        <p class="lang-en"><em>Lava's Roaring Dance</em>. Hosted by Inria, GRAME-CNCM, and others — an international conference on free/open-source software for music.</p>
+        <p class="lang-zh">《Lava's Roaring Dance》。由 Inria、GRAME-CNCM 等機構主辦，聚焦音樂自由／開源軟體之國際研討會。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Mar 21–24, 2025 · Purdue University, USA</span>
-        <h3>SEAMUS National Conference</h3>
-        <p><em>Lava's Roaring Dance</em>, an 8-channel immersive soundscape work.</p>
+        <span class="meta lang-en">Mar 21–24, 2025 · Purdue University, USA</span>
+        <span class="meta lang-zh">2025年3月21–24日 · 美國普渡大學</span>
+        <h3><span class="lang-en">SEAMUS National Conference</span><span class="lang-zh">SEAMUS 全國研討會</span></h3>
+        <p class="lang-en"><em>Lava's Roaring Dance</em>, an 8-channel immersive soundscape work.</p>
+        <p class="lang-zh">《Lava's Roaring Dance》，一首 8 聲道沉浸式電聲音景作品。</p>
       </div>
     </section>
 
@@ -136,71 +162,95 @@
       <h2>2024</h2>
 
       <div class="card">
-        <span class="meta">Dec 2–6, 2024 · Teatro Prometeo, Quito, Ecuador</span>
+        <span class="meta lang-en">Dec 2–6, 2024 · Teatro Prometeo, Quito, Ecuador</span>
+        <span class="meta lang-zh">2024年12月2–6日 · 厄瓜多基多 Teatro Prometeo</span>
         <h3>MUSLAB 2024</h3>
-        <p><em>Glacier</em>. An international electroacoustic exhibition spanning sound art, video, and photography.</p>
+        <p class="lang-en"><em>Glacier</em>. An international electroacoustic exhibition spanning sound art, video, and photography.</p>
+        <p class="lang-zh">《Glacier》。一場橫跨聲音藝術、錄像與攝影的國際電聲展覽。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Oct 2024 · Sydney &amp; Melbourne, Australia</span>
+        <span class="meta lang-en">Oct 2024 · Sydney &amp; Melbourne, Australia</span>
+        <span class="meta lang-zh">2024年10月 · 澳洲雪梨與墨爾本</span>
         <h3>ACMC 2024</h3>
-        <p><em>Glacier</em>.</p>
+        <p class="lang-en"><em>Glacier</em>.</p>
+        <p class="lang-zh">《Glacier》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Dec 5–15, 2024 · Foggia, Italy</span>
+        <span class="meta lang-en">Dec 5–15, 2024 · Foggia, Italy</span>
+        <span class="meta lang-zh">2024年12月5–15日 · 義大利福賈</span>
         <h3>REF Resilience Festival 2024</h3>
-        <p><em>Glacier</em>. Selected by EMPIRICA RECORD, in partnership with MID SIDE APS, championing experimental classical, contemporary, and electronic music.</p>
+        <p class="lang-en"><em>Glacier</em>. Selected by EMPIRICA RECORD, in partnership with MID SIDE APS, championing experimental classical, contemporary, and electronic music.</p>
+        <p class="lang-zh">《Glacier》。由 EMPIRICA RECORD 與 MID SIDE APS 合作評選，致力推廣實驗古典、當代與電子音樂。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 7–13, 2024 · Seoul, South Korea</span>
+        <span class="meta lang-en">Jul 7–13, 2024 · Seoul, South Korea</span>
+        <span class="meta lang-zh">2024年7月7–13日 · 韓國首爾</span>
         <h3>ICMC 2024</h3>
-        <p><em>Glacier</em>.</p>
+        <p class="lang-en"><em>Glacier</em>.</p>
+        <p class="lang-zh">《Glacier》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jun 16–22, 2024 · New York, USA</span>
+        <span class="meta lang-en">Jun 16–22, 2024 · New York, USA</span>
+        <span class="meta lang-zh">2024年6月16–22日 · 美國紐約</span>
         <h3>NYCEMF 2024</h3>
-        <p><em>Glacier</em>.</p>
+        <p class="lang-en"><em>Glacier</em>.</p>
+        <p class="lang-zh">《Glacier》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">2024 · Linz, Austria</span>
+        <span class="meta lang-en">2024 · Linz, Austria</span>
+        <span class="meta lang-zh">2024年 · 奧地利林茲</span>
         <h3>Ars Electronica 2024</h3>
-        <p><em>Glacier</em>.</p>
+        <p class="lang-en"><em>Glacier</em>.</p>
+        <p class="lang-zh">《Glacier》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Apr 26, 2024 · Limassol, Cyprus</span>
-        <h3>MediSouP 2024 Festival</h3>
-        <p><em>Glacier</em>.</p>
+        <span class="meta lang-en">Apr 26, 2024 · Limassol, Cyprus</span>
+        <span class="meta lang-zh">2024年4月26日 · 賽普勒斯利馬索</span>
+        <h3><span class="lang-en">MediSouP 2024 Festival</span><span class="lang-zh">MediSouP 2024 音樂節</span></h3>
+        <p class="lang-en"><em>Glacier</em>.</p>
+        <p class="lang-zh">《Glacier》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Apr 19, 2024 · Illinois, USA</span>
+        <span class="meta lang-en">Apr 19, 2024 · Illinois, USA</span>
+        <span class="meta lang-zh">2024年4月19日 · 美國伊利諾州</span>
         <h3>Outside The Box 2024</h3>
-        <p><em>A Humpback Whale's Popsong</em>, chamber music for Chinese dizi, clarinet, saxophone, sheng, trombone, erhu, liuqin, pipa, yangqin, guzheng, double bass, percussion, and piano. Commissioned by Southern Illinois University, featuring the Little Giant Chinese Chamber Orchestra.</p>
+        <p class="lang-en"><em>A Humpback Whale's Popsong</em>, chamber music for Chinese dizi, clarinet, saxophone, sheng, trombone, erhu, liuqin, pipa, yangqin, guzheng, double bass, percussion, and piano. Commissioned by Southern Illinois University, featuring the Little Giant Chinese Chamber Orchestra.</p>
+        <p class="lang-zh">《A Humpback Whale's Popsong》，為笛、單簧管、薩克管、笙、長號、二胡、柳琴、琵琶、揚琴、古箏、低音提琴、打擊與鋼琴之室內樂。受南伊利諾大學委託，由小巨人絲竹樂團演出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">2024 · Cologne, Germany</span>
-        <h3>Anthropocene Project Exhibition</h3>
-        <p><em>Glacier</em>. Curated by Wilfried Agricola de Cologne and realized by The New Museum of Networked Art.</p>
-        <p><a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener">🔗 Exhibition page</a></p>
+        <span class="meta lang-en">2024 · Cologne, Germany</span>
+        <span class="meta lang-zh">2024年 · 德國科隆</span>
+        <h3><span class="lang-en">Anthropocene Project Exhibition</span><span class="lang-zh">人類世計畫展覽</span></h3>
+        <p class="lang-en"><em>Glacier</em>. Curated by Wilfried Agricola de Cologne and realized by The New Museum of Networked Art.</p>
+        <p class="lang-zh">《Glacier》。由 Wilfried Agricola de Cologne 策展，新聯網藝術博物館製作。</p>
+        <p class="lang-en"><a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener">🔗 Exhibition page</a></p>
+        <p class="lang-zh"><a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener">🔗 展覽頁面</a></p>
       </div>
 
       <div class="card">
-        <span class="meta">Mar 19–22, 2024 (perf. Mar 20, 11 AM–1 PM) · IRCAM Studio 1, Paris, France</span>
-        <h3>Performance and Lecture at the 30th Anniversary IRCAM Forum 2024</h3>
-        <p>In March 2024, my work "Glacier" was honored to be selected through an international call, enabling a presentation at IRCAM (Institut de Recherche et Coordination Acoustique/Musique) in Paris, France. Although originally reported as a 16-channel performance, the piece was ultimately presented using a 24-channel ambisonic system in IRCAM Studio 1 from 11:00 AM to 1:00 PM on March 20, 2024. Post-event coverage was published by the Central News Agency (CNA) and the Air-Force Culture &amp; Art Center: <a href="https://www.cna.com.tw/postwrite/chi/366061" target="_blank" rel="noopener">CNA</a>, <a href="https://clab.org.tw/news/ircam-forum-workshops-30/" target="_blank" rel="noopener">C-LAB</a>.</p>
-        <p><a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">🔗 IRCAM Forum profile</a></p>
+        <span class="meta lang-en">Mar 19–22, 2024 (perf. Mar 20, 11 AM–1 PM) · IRCAM Studio 1, Paris, France</span>
+        <span class="meta lang-zh">2024年3月19–22日（演出：3月20日上午11:00–下午1:00） · 法國巴黎 IRCAM Studio 1</span>
+        <h3><span class="lang-en">Performance and Lecture at the 30th Anniversary IRCAM Forum 2024</span><span class="lang-zh">IRCAM Forum 30 週年演出暨講座</span></h3>
+        <p class="lang-en">In March 2024, my work "Glacier" was honored to be selected through an international call, enabling a presentation at IRCAM (Institut de Recherche et Coordination Acoustique/Musique) in Paris, France. Although originally reported as a 16-channel performance, the piece was ultimately presented using a 24-channel ambisonic system in IRCAM Studio 1 from 11:00 AM to 1:00 PM on March 20, 2024. Post-event coverage was published by the Central News Agency (CNA) and the Air-Force Culture &amp; Art Center: <a href="https://www.cna.com.tw/postwrite/chi/366061" target="_blank" rel="noopener">CNA</a>, <a href="https://clab.org.tw/news/ircam-forum-workshops-30/" target="_blank" rel="noopener">C-LAB</a>.</p>
+        <p class="lang-zh">2024 年 3 月，拙作《Glacier》有幸經國際公開徵件入選，得以於法國巴黎 IRCAM（Institut de Recherche et Coordination Acoustique/Musique）展演。雖然原先預告為 16 聲道演出，最終於 2024 年 3 月 20 日上午 11 時至下午 1 時，在 IRCAM Studio 1 以 24 聲道 Ambisonic 系統呈現。活動後續報導見於中央社（CNA）及空軍文化藝術中心：<a href="https://www.cna.com.tw/postwrite/chi/366061" target="_blank" rel="noopener">中央社</a>、<a href="https://clab.org.tw/news/ircam-forum-workshops-30/" target="_blank" rel="noopener">C-LAB</a>。</p>
+        <p class="lang-en"><a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">🔗 IRCAM Forum profile</a></p>
+        <p class="lang-zh"><a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">🔗 IRCAM Forum 個人頁面</a></p>
       </div>
 
       <div class="card">
-        <span class="meta">2024 · Taiwan</span>
+        <span class="meta lang-en">2024 · Taiwan</span>
+        <span class="meta lang-zh">2024年 · 台灣</span>
         <h3>WOCMAT 2024</h3>
-        <p><em>Lava's Roaring Dance</em>.</p>
+        <p class="lang-en"><em>Lava's Roaring Dance</em>.</p>
+        <p class="lang-zh">《Lava's Roaring Dance》。</p>
       </div>
     </section>
 
@@ -208,63 +258,83 @@
       <h2>2023</h2>
 
       <div class="card">
-        <span class="meta">Nov 7–10, 2023 · Brazil</span>
+        <span class="meta lang-en">Nov 7–10, 2023 · Brazil</span>
+        <span class="meta lang-zh">2023年11月7–10日 · 巴西</span>
         <h3>SiMN 2023</h3>
-        <p><em>Music from the Metaverse: The Spirit of the Giant Tree</em>. Núcleo Música Nova CD production.</p>
+        <p class="lang-en"><em>Music from the Metaverse: The Spirit of the Giant Tree</em>. Núcleo Música Nova CD production.</p>
+        <p class="lang-zh">《Music from the Metaverse: The Spirit of the Giant Tree》。Núcleo Música Nova 唱片製作。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Oct 5–8, 2023 · South Korea</span>
+        <span class="meta lang-en">Oct 5–8, 2023 · South Korea</span>
+        <span class="meta lang-zh">2023年10月5–8日 · 韓國</span>
         <h3>SICMF 2023</h3>
-        <p><em>Aurora</em>.</p>
+        <p class="lang-en"><em>Aurora</em>.</p>
+        <p class="lang-zh">《Aurora》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Oct 3–7, 2023 · MAAC (The Anthropological Museum of Contemporary Art), Ecuador</span>
-        <h3>MUSLAB Planeta Complejo Exhibition</h3>
-        <p><em>Aurora</em>, featured in the MUSLAB / Cero Records "Planeta Complejo" phonographic production.</p>
+        <span class="meta lang-en">Oct 3–7, 2023 · MAAC (The Anthropological Museum of Contemporary Art), Ecuador</span>
+        <span class="meta lang-zh">2023年10月3–7日 · 厄瓜多當代藝術人類學博物館（MAAC）</span>
+        <h3><span class="lang-en">MUSLAB Planeta Complejo Exhibition</span><span class="lang-zh">MUSLAB Planeta Complejo 展覽</span></h3>
+        <p class="lang-en"><em>Aurora</em>, featured in the MUSLAB / Cero Records "Planeta Complejo" phonographic production.</p>
+        <p class="lang-zh">《Aurora》，收錄於 MUSLAB／Cero Records「Planeta Complejo」唱片製作。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 17 – Nov 2, 2023 · Venice, Italy</span>
+        <span class="meta lang-en">Jul 17 – Nov 2, 2023 · Venice, Italy</span>
+        <span class="meta lang-zh">2023年7月17日–11月2日 · 義大利威尼斯</span>
         <h3>Viral Human — Arte Pubblica e Metaverso</h3>
-        <p><em>Music from the Metaverse: 3D Illusory Immersive Soundscape</em> and <em>Aurora</em>, presented via the MiRNArte app's international virtual exhibition.</p>
+        <p class="lang-en"><em>Music from the Metaverse: 3D Illusory Immersive Soundscape</em> and <em>Aurora</em>, presented via the MiRNArte app's international virtual exhibition.</p>
+        <p class="lang-zh">《Music from the Metaverse: 3D Illusory Immersive Soundscape》與《Aurora》，透過 MiRNArte App 之國際虛擬展覽展出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jun 19–25, 2023 · New York, USA</span>
+        <span class="meta lang-en">Jun 19–25, 2023 · New York, USA</span>
+        <span class="meta lang-zh">2023年6月19–25日 · 美國紐約</span>
         <h3>NYCEMF 2023</h3>
-        <p><em>Aurora</em>, with a live performance by Enzo Filippetti.</p>
+        <p class="lang-en"><em>Aurora</em>, with a live performance by Enzo Filippetti.</p>
+        <p class="lang-zh">《Aurora》，由 Enzo Filippetti 現場演出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jun 15–16, 2023 · United Kingdom</span>
+        <span class="meta lang-en">Jun 15–16, 2023 · United Kingdom</span>
+        <span class="meta lang-zh">2023年6月15–16日 · 英國</span>
         <h3>Spatial Audio Conference 2023</h3>
-        <p><em>Aurora</em>.</p>
+        <p class="lang-en"><em>Aurora</em>.</p>
+        <p class="lang-zh">《Aurora》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">May 29, 2023 · Mexico City, Mexico</span>
-        <h3>NIME 2023 — Mixed Realities Workshop</h3>
-        <p><em>Breath of the Forest</em>, WebXR music installation, showcased at the NIME International Conference.</p>
+        <span class="meta lang-en">May 29, 2023 · Mexico City, Mexico</span>
+        <span class="meta lang-zh">2023年5月29日 · 墨西哥墨西哥市</span>
+        <h3><span class="lang-en">NIME 2023 — Mixed Realities Workshop</span><span class="lang-zh">NIME 2023 混合實境工作坊</span></h3>
+        <p class="lang-en"><em>Breath of the Forest</em>, WebXR music installation, showcased at the NIME International Conference.</p>
+        <p class="lang-zh">《Breath of the Forest》，WebXR 音樂裝置，於 NIME 國際研討會展出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">May 11, 2023 · United Kingdom</span>
+        <span class="meta lang-en">May 11, 2023 · United Kingdom</span>
+        <span class="meta lang-zh">2023年5月11日 · 英國</span>
         <h3>NoiseFloor 2023</h3>
-        <p><em>Aurora</em>.</p>
+        <p class="lang-en"><em>Aurora</em>.</p>
+        <p class="lang-zh">《Aurora》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Apr 22, 2023 · USA</span>
+        <span class="meta lang-en">Apr 22, 2023 · USA</span>
+        <span class="meta lang-zh">2023年4月22日 · 美國</span>
         <h3>Earth Day Art Model 2023</h3>
-        <p>Hosted by Indiana University. <em>Aurora</em> and <em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-en">Hosted by Indiana University. <em>Aurora</em> and <em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-zh">由印第安納大學主辦。展演《Aurora》與《Music from the Metaverse: The Spirit of the Giant Tree》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">2023 · Taiwan</span>
+        <span class="meta lang-en">2023 · Taiwan</span>
+        <span class="meta lang-zh">2023年 · 台灣</span>
         <h3>WOCMAT 2023</h3>
-        <p><em>Aurora</em> and <em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-en"><em>Aurora</em> and <em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-zh">《Aurora》與《Music from the Metaverse: The Spirit of the Giant Tree》。</p>
       </div>
     </section>
 
@@ -272,40 +342,53 @@
       <h2>2022</h2>
 
       <div class="card">
-        <span class="meta">Oct 14–16, 2022 · South Korea</span>
+        <span class="meta lang-en">Oct 14–16, 2022 · South Korea</span>
+        <span class="meta lang-zh">2022年10月14–16日 · 韓國</span>
         <h3>SICMF 2022</h3>
-        <p><em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-en"><em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-zh">《Music from the Metaverse: The Spirit of the Giant Tree》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Sep 30–Oct 3, 2022 · New York, USA</span>
-        <h3>IRCAM Forum New York 2022</h3>
-        <p><em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <span class="meta lang-en">Sep 30–Oct 3, 2022 · New York, USA</span>
+        <span class="meta lang-zh">2022年9月30日–10月3日 · 美國紐約</span>
+        <h3><span class="lang-en">IRCAM Forum New York 2022</span><span class="lang-zh">IRCAM Forum 紐約 2022</span></h3>
+        <p class="lang-en"><em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-zh">《Music from the Metaverse: The Spirit of the Giant Tree》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Sep 19–24, 2022 · Argentina</span>
+        <span class="meta lang-en">Sep 19–24, 2022 · Argentina</span>
+        <span class="meta lang-zh">2022年9月19–24日 · 阿根廷</span>
         <h3>Atemporánea 2022</h3>
-        <p><em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-en"><em>Music from the Metaverse: The Spirit of the Giant Tree</em>.</p>
+        <p class="lang-zh">《Music from the Metaverse: The Spirit of the Giant Tree》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 3–7, 2022 · Ireland</span>
+        <span class="meta lang-en">Jul 3–7, 2022 · Ireland</span>
+        <span class="meta lang-zh">2022年7月3–7日 · 愛爾蘭</span>
         <h3>ICMC 2022</h3>
-        <p><em>Music from the Metaverse: The Spirit of the Giant Tree</em>, presented in quadraphonic format.</p>
+        <p class="lang-en"><em>Music from the Metaverse: The Spirit of the Giant Tree</em>, presented in quadraphonic format.</p>
+        <p class="lang-zh">《Music from the Metaverse: The Spirit of the Giant Tree》，以四聲道格式展演。</p>
       </div>
 
       <div class="card">
-        <span class="meta">2022 · Taipei, Taiwan</span>
+        <span class="meta lang-en">2022 · Taipei, Taiwan</span>
+        <span class="meta lang-zh">2022年 · 台灣台北</span>
         <h3>WOCMAT 2022</h3>
-        <p>Premiere of <em>Image of Watercolor Painting</em>.</p>
+        <p class="lang-en">Premiere of <em>Image of Watercolor Painting</em>.</p>
+        <p class="lang-zh">《Image of Watercolor Painting》首演。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Mar 6, 2022 · National Concert Hall Recital Hall, Taipei, Taiwan</span>
-        <h3>蔡佳璇大鍵琴獨奏會—異想天開的協和與不協和 (Chia-Hsuan Tsai Harpsichord Recital)</h3>
-        <p>World premieres of <em>Pray for Life</em> and <em>Dance of the Soul</em>, both for solo harpsichord and immersive electroacoustic music, performed by harpsichordist Chia-Hsuan Tsai (蔡佳璇).</p>
-        <p><a href="https://www.opentix.life/event/1475403132424384514" target="_blank" rel="noopener">🔗 Event page</a></p>
+        <span class="meta lang-en">Mar 6, 2022 · National Concert Hall Recital Hall, Taipei, Taiwan</span>
+        <span class="meta lang-zh">2022年3月6日 · 台灣台北國家兩廳院演奏廳</span>
+        <h3><span class="lang-en">Chia-Hsuan Tsai Harpsichord Recital — Whimsical Consonance and Dissonance</span><span class="lang-zh">蔡佳璇大鍵琴獨奏會—異想天開的協和與不協和</span></h3>
+        <p class="lang-en">World premieres of <em>Pray for Life</em> and <em>Dance of the Soul</em>, both for solo harpsichord and immersive electroacoustic music, performed by harpsichordist Chia-Hsuan Tsai (蔡佳璇).</p>
+        <p class="lang-zh">《Pray for Life》與《Dance of the Soul》世界首演，皆為大鍵琴獨奏與沉浸式電聲音樂創作，由大鍵琴家蔡佳璇演出。</p>
+        <p class="lang-en"><a href="https://www.opentix.life/event/1475403132424384514" target="_blank" rel="noopener">🔗 Event page</a></p>
+        <p class="lang-zh"><a href="https://www.opentix.life/event/1475403132424384514" target="_blank" rel="noopener">🔗 活動頁面</a></p>
       </div>
     </section>
 
@@ -313,27 +396,35 @@
       <h2>2021</h2>
 
       <div class="card">
-        <span class="meta">Aug 2021 · New York, USA</span>
-        <h3>ACM SIGGRAPH</h3>
-        <p><em>Diving into Siraya</em>, at the ACM SIGGRAPH International Film Festival.</p>
+        <span class="meta lang-en">Aug 2021 · New York, USA</span>
+        <span class="meta lang-zh">2021年8月 · 美國紐約</span>
+        <h3><span class="lang-en">ACM SIGGRAPH</span><span class="lang-zh">美國電腦繪圖暨多媒體國際研討會（ACM SIGGRAPH）</span></h3>
+        <p class="lang-en"><em>Diving into Siraya</em>, at the ACM SIGGRAPH International Film Festival.</p>
+        <p class="lang-zh">《Diving into Siraya》，於 ACM SIGGRAPH 國際影展展出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 2021 · South Korea</span>
-        <h3>BIFAN</h3>
-        <p><em>Diving into Siraya</em>, at the Bucheon International Fantastic Film Festival.</p>
+        <span class="meta lang-en">Jul 2021 · South Korea</span>
+        <span class="meta lang-zh">2021年7月 · 韓國</span>
+        <h3><span class="lang-en">BIFAN</span><span class="lang-zh">韓國富川奇幻影展（BIFAN）</span></h3>
+        <p class="lang-en"><em>Diving into Siraya</em>, at the Bucheon International Fantastic Film Festival.</p>
+        <p class="lang-zh">《Diving into Siraya》，於韓國富川奇幻影展展出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Apr 22, 2021 · University of Wisconsin–Madison, USA</span>
-        <h3>Master Class Presentation</h3>
-        <p>Invited by renowned composer Laura Schwendinger to present compositional works to students.</p>
+        <span class="meta lang-en">Apr 22, 2021 · University of Wisconsin–Madison, USA</span>
+        <span class="meta lang-zh">2021年4月22日 · 美國威斯康辛大學麥迪遜分校</span>
+        <h3><span class="lang-en">Master Class Presentation</span><span class="lang-zh">大師班發表</span></h3>
+        <p class="lang-en">Invited by renowned composer Laura Schwendinger to present compositional works to students.</p>
+        <p class="lang-zh">受知名作曲家 Laura Schwendinger 之邀，向學生發表創作作品。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jan 16, 2021 · Leuphana University, Germany</span>
-        <h3>Guest Online Lecture — "Aesthetic Practices of the Soundscape in Auditive Culture"</h3>
-        <p>Presented <em>The Breath of the Forest</em>.</p>
+        <span class="meta lang-en">Jan 16, 2021 · Leuphana University, Germany</span>
+        <span class="meta lang-zh">2021年1月16日 · 德國 Leuphana University</span>
+        <h3><span class="lang-en">Guest Online Lecture — "Aesthetic Practices of the Soundscape in Auditive Culture"</span><span class="lang-zh">線上客座講者：「聽覺文化中的聲景美學實踐」</span></h3>
+        <p class="lang-en">Presented <em>The Breath of the Forest</em>.</p>
+        <p class="lang-zh">發表作品《The Breath of the Forest》。</p>
       </div>
     </section>
 
@@ -341,15 +432,19 @@
       <h2>2020</h2>
 
       <div class="card">
-        <span class="meta">Oct 2020 · Taiwan</span>
-        <h3>Kaohsiung Film Festival</h3>
-        <p><em>Diving into Siraya</em>.</p>
+        <span class="meta lang-en">Oct 2020 · Taiwan</span>
+        <span class="meta lang-zh">2020年10月 · 台灣</span>
+        <h3><span class="lang-en">Kaohsiung Film Festival</span><span class="lang-zh">高雄電影節</span></h3>
+        <p class="lang-en"><em>Diving into Siraya</em>.</p>
+        <p class="lang-zh">《Diving into Siraya》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jan 16, 2020 · Sibelius Academy, Finland</span>
-        <h3>Sibelius-Akatemia Live Performance</h3>
-        <p><em>Journey into the World of Dimensions</em>, also performed at the I-Saxo International Conference Concert, Elite Performance Hall, Taiwan.</p>
+        <span class="meta lang-en">Jan 16, 2020 · Sibelius Academy, Finland</span>
+        <span class="meta lang-zh">2020年1月16日 · 芬蘭 Sibelius Academy</span>
+        <h3><span class="lang-en">Sibelius-Akatemia Live Performance</span><span class="lang-zh">Sibelius-Akatemia 現場演出</span></h3>
+        <p class="lang-en"><em>Journey into the World of Dimensions</em>, also performed at the I-Saxo International Conference Concert, Elite Performance Hall, Taiwan.</p>
+        <p class="lang-zh">《Journey into the World of Dimensions》，亦於台灣菁英演奏廳 I-Saxo 國際研討會音樂會演出。</p>
       </div>
     </section>
 
@@ -357,15 +452,19 @@
       <h2>2019</h2>
 
       <div class="card">
-        <span class="meta">Jun 2019 · IRCAM, Paris, France</span>
-        <h3>2019 CREATORS International Exchange Project</h3>
-        <p>IRCAM / Taiwan Contemporary Culture Lab (C-LAB). One of six individuals (out of 43 applicants) selected to participate in a two-week program at IRCAM.</p>
+        <span class="meta lang-en">Jun 2019 · IRCAM, Paris, France</span>
+        <span class="meta lang-zh">2019年6月 · 法國巴黎 IRCAM</span>
+        <h3><span class="lang-en">2019 CREATORS International Exchange Project</span><span class="lang-zh">2019 CREATORS 國際交流計畫</span></h3>
+        <p class="lang-en">IRCAM / Taiwan Contemporary Culture Lab (C-LAB). One of six individuals (out of 43 applicants) selected to participate in a two-week program at IRCAM.</p>
+        <p class="lang-zh">IRCAM／臺灣當代文化實驗場（C-LAB）。43 位申請者中獲選六位之一，參與法國巴黎 IRCAM 為期兩週的交流計畫。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Dec 14, 2019 · Taiwan</span>
+        <span class="meta lang-en">Dec 14, 2019 · Taiwan</span>
+        <span class="meta lang-zh">2019年12月14日 · 台灣</span>
         <h3>WOCMAT 2019</h3>
-        <p>Premiere of <em>Breath of the Forest</em>.</p>
+        <p class="lang-en">Premiere of <em>Breath of the Forest</em>.</p>
+        <p class="lang-zh">《Breath of the Forest》首演。</p>
       </div>
     </section>
 
@@ -373,21 +472,27 @@
       <h2>2018</h2>
 
       <div class="card">
-        <span class="meta">Sep 2018 · Taiwan</span>
-        <h3>International Music Workshop: Saxophon-Entwicklung</h3>
-        <p>Live performance of <em>Journey into the World of Dimensions</em>.</p>
+        <span class="meta lang-en">Sep 2018 · Taiwan</span>
+        <span class="meta lang-zh">2018年9月 · 台灣</span>
+        <h3><span class="lang-en">International Music Workshop: Saxophon-Entwicklung</span><span class="lang-zh">國際音樂工作坊「Saxophon-Entwicklung」</span></h3>
+        <p class="lang-en">Live performance of <em>Journey into the World of Dimensions</em>.</p>
+        <p class="lang-zh">《Journey into the World of Dimensions》現場演出。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 2018 · Croatia</span>
-        <h3>World Saxophone Congress</h3>
-        <p><em>Journey into the World of Dimensions</em>.</p>
+        <span class="meta lang-en">Jul 2018 · Croatia</span>
+        <span class="meta lang-zh">2018年7月 · 克羅埃西亞</span>
+        <h3><span class="lang-en">World Saxophone Congress</span><span class="lang-zh">世界薩克斯風年會</span></h3>
+        <p class="lang-en"><em>Journey into the World of Dimensions</em>.</p>
+        <p class="lang-zh">《Journey into the World of Dimensions》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 2018 · Hong Kong Academy for Performing Arts, Hong Kong</span>
-        <h3>Junior Composition Projects Concert</h3>
-        <p><em>Journey into the World of Dimensions</em>.</p>
+        <span class="meta lang-en">Jul 2018 · Hong Kong Academy for Performing Arts, Hong Kong</span>
+        <span class="meta lang-zh">2018年7月 · 香港演藝學院</span>
+        <h3><span class="lang-en">Junior Composition Projects Concert</span><span class="lang-zh">青年創意合作計畫音樂會</span></h3>
+        <p class="lang-en"><em>Journey into the World of Dimensions</em>.</p>
+        <p class="lang-zh">《Journey into the World of Dimensions》。</p>
       </div>
     </section>
 
@@ -395,21 +500,27 @@
       <h2>2017</h2>
 
       <div class="card">
-        <span class="meta">Aug 2017 · United Kingdom</span>
+        <span class="meta lang-en">Aug 2017 · United Kingdom</span>
+        <span class="meta lang-zh">2017年8月 · 英國</span>
         <h3>Audio Mostly Symposium</h3>
-        <p><em>Journey into the World of Dimensions</em>.</p>
+        <p class="lang-en"><em>Journey into the World of Dimensions</em>.</p>
+        <p class="lang-zh">《Journey into the World of Dimensions》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 2017 · Tokyo Denki University, Japan</span>
-        <h3>Visiting Scholar</h3>
-        <p>Demoed <em>Journey into the World of Dimensions</em>.</p>
+        <span class="meta lang-en">Jul 2017 · Tokyo Denki University, Japan</span>
+        <span class="meta lang-zh">2017年7月 · 日本東京電機大學</span>
+        <h3><span class="lang-en">Visiting Scholar</span><span class="lang-zh">訪問學者</span></h3>
+        <p class="lang-en">Demoed <em>Journey into the World of Dimensions</em>.</p>
+        <p class="lang-zh">展示作品《Journey into the World of Dimensions》。</p>
       </div>
 
       <div class="card">
-        <span class="meta">Jul 2017 · Germany</span>
+        <span class="meta lang-en">Jul 2017 · Germany</span>
+        <span class="meta lang-zh">2017年7月 · 德國</span>
         <h3>Klingt gut! Symposium on Sound</h3>
-        <p>Panelist, "Future Talk: Immersive Technologies."</p>
+        <p class="lang-en">Panelist, "Future Talk: Immersive Technologies."</p>
+        <p class="lang-zh">座談人，「沉浸式體驗未來討論會」。</p>
       </div>
     </section>
 
@@ -417,9 +528,11 @@
       <h2>2016</h2>
 
       <div class="card">
-        <span class="meta">Dec 2016 · Taiwan</span>
-        <h3>IRCAM Forum – WOCMAT Joint Conference</h3>
-        <p><em>Journey into the World of Dimensions</em>.</p>
+        <span class="meta lang-en">Dec 2016 · Taiwan</span>
+        <span class="meta lang-zh">2016年12月 · 台灣</span>
+        <h3><span class="lang-en">IRCAM Forum – WOCMAT Joint Conference</span><span class="lang-zh">IRCAM Forum–WOCMAT 聯合研討會</span></h3>
+        <p class="lang-en"><em>Journey into the World of Dimensions</em>.</p>
+        <p class="lang-zh">《Journey into the World of Dimensions》。</p>
       </div>
     </section>
   </div>
@@ -428,7 +541,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

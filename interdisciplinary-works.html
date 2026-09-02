@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -23,82 +24,100 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="info.html">Info</a>
-      <a href="musical-works.html">Musical Works</a>
-      <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="musings.html">Musings</a>
-      <a href="events.html">Events</a>
-      <a href="releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="index.html">Home</a>
-  <a href="info.html">Info</a>
-  <a href="musical-works.html">Musical Works</a>
-  <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="musings.html">Musings</a>
-  <a href="events.html">Events</a>
-  <a href="releases.html">Releases</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container">
     <div class="page-header">
-      <h1>Interdisciplinary Works</h1>
-      <p>Projects that cross the boundaries of music, VR/XR, installation art, and AI systems.</p>
+      <h1><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></h1>
+      <p class="lang-en">Projects that cross the boundaries of music, VR/XR, installation art, and AI systems.</p>
+      <p class="lang-zh">橫跨音樂、VR/XR、裝置藝術與 AI 系統的跨界創作。</p>
     </div>
 
     <section class="section">
       <div class="card">
         <span class="meta">2021 – 2022</span>
-        <h3>16th-Century Counterpoint AI Generator</h3>
-        <p>An AI system generating counter-melodies for a given cantus firmus, based on Palestrina's counterpoint style. Third version completed.</p>
-        <p><a href="https://youtu.be/ovutS0rOsx4" target="_blank" rel="noopener">▶ Demo Video (1st species)</a> · <a href="https://youtu.be/Gp3ZaGcy84s" target="_blank" rel="noopener">▶ Demo Video (2nd species)</a></p>
+        <h3><span class="lang-en">16th-Century Counterpoint AI Generator</span><span class="lang-zh">十六世紀對位法 AI 產生器</span></h3>
+        <p class="lang-en">An AI system generating counter-melodies for a given cantus firmus, based on Palestrina's counterpoint style. Third version completed.</p>
+        <p class="lang-zh">一套能依據給定固定調（Cantus Firmus），以帕勒斯提納對位法風格生成對位旋律的 AI 系統，目前已完成第三種對位法。</p>
+        <p class="lang-en"><a href="https://youtu.be/ovutS0rOsx4" target="_blank" rel="noopener">▶ Demo Video (1st species)</a> · <a href="https://youtu.be/Gp3ZaGcy84s" target="_blank" rel="noopener">▶ Demo Video (2nd species)</a></p>
+        <p class="lang-zh"><a href="https://youtu.be/ovutS0rOsx4" target="_blank" rel="noopener">▶ 示範影片（第一種對位法）</a> · <a href="https://youtu.be/Gp3ZaGcy84s" target="_blank" rel="noopener">▶ 示範影片（第二種對位法）</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2020 – 2021</span>
-        <h3>Diving into Siraya</h3>
-        <p>VR movie directed by Kuan-Yuan Lai. Accepted by ACM SIGGRAPH 2021, BIFAN 2021, and the Kaohsiung Film Festival 2020. Role: sound design, music composition, 3D immersive mixing.</p>
-        <p><a href="https://youtu.be/uKwIgKuEToI" target="_blank" rel="noopener">▶ Demo Video</a></p>
+        <h3><span class="lang-en">Diving into Siraya</span><span class="lang-zh">潛入西拉雅</span></h3>
+        <p class="lang-en">VR movie directed by Kuan-Yuan Lai. Accepted by ACM SIGGRAPH 2021, BIFAN 2021, and the Kaohsiung Film Festival 2020. Role: sound design, music composition, 3D immersive mixing.</p>
+        <p class="lang-zh">由賴冠源執導之 VR 電影，入選 2021 ACM SIGGRAPH、2021 BIFAN 及 2020 高雄電影節。負責音效設計、音樂創作與 3D 沉浸式混音。</p>
+        <p class="lang-en"><a href="https://youtu.be/uKwIgKuEToI" target="_blank" rel="noopener">▶ Demo Video</a></p>
+        <p class="lang-zh"><a href="https://youtu.be/uKwIgKuEToI" target="_blank" rel="noopener">▶ 示範影片</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2020</span>
-        <h3>Luminous Path</h3>
-        <p>Light-sound installation for the Taiwan Music Institute, commissioned by NoiseKitchen.tw — a permanent installation along the institute's outdoor corridor. Role: music design, Max/MSP &amp; JavaScript programming.</p>
-        <p><a href="https://youtu.be/u9sHqx25rHY" target="_blank" rel="noopener">▶ Demo Video</a> · <a href="https://youtu.be/2UclVemliJE" target="_blank" rel="noopener">▶ Opening Ceremony Video</a></p>
+        <h3><span class="lang-en">Luminous Path</span><span class="lang-zh">光譜印象</span></h3>
+        <p class="lang-en">Light-sound installation for the Taiwan Music Institute, commissioned by NoiseKitchen.tw — a permanent installation along the institute's outdoor corridor. Role: music design, Max/MSP &amp; JavaScript programming.</p>
+        <p class="lang-zh">受噪咖藝術（NoiseKitchen.tw）委託，為臺灣音樂館外一條永久性走廊打造的光聲裝置。負責音樂設計、Max/MSP 與 JavaScript 程式開發。</p>
+        <p class="lang-en"><a href="https://youtu.be/u9sHqx25rHY" target="_blank" rel="noopener">▶ Demo Video</a> · <a href="https://youtu.be/2UclVemliJE" target="_blank" rel="noopener">▶ Opening Ceremony Video</a></p>
+        <p class="lang-zh"><a href="https://youtu.be/u9sHqx25rHY" target="_blank" rel="noopener">▶ 示範影片</a> · <a href="https://youtu.be/2UclVemliJE" target="_blank" rel="noopener">▶ 開幕典禮影片</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2019 – 2020</span>
-        <h3>Four-Part Harmony Generator</h3>
-        <p>A system that generates four-part harmony from Roman numeral input, including secondary dominant chords and modal mixture.</p>
-        <p><a href="https://youtu.be/4tfit7m-dws" target="_blank" rel="noopener">▶ Demo Video</a></p>
+        <h3><span class="lang-en">Four-Part Harmony Generator</span><span class="lang-zh">四部和聲產生器</span></h3>
+        <p class="lang-en">A system that generates four-part harmony from Roman numeral input, including secondary dominant chords and modal mixture.</p>
+        <p class="lang-zh">一套能依羅馬數字級數輸入生成四部和聲的系統，可處理次屬和弦與調式混合。</p>
+        <p class="lang-en"><a href="https://youtu.be/4tfit7m-dws" target="_blank" rel="noopener">▶ Demo Video</a></p>
+        <p class="lang-zh"><a href="https://youtu.be/4tfit7m-dws" target="_blank" rel="noopener">▶ 示範影片</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2018 – 2022</span>
-        <h3>The Breath of the Forest</h3>
-        <p>A dialogue between nature and humans, existing in multiple forms including an electroacoustic version and a WebXR music installation. Eight electroacoustic parts and 22 flute passages, paired with eight 3D video scenes, offering 997,272 possible musical versions.</p>
-        <p><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">▶ WebXR Interactive Installation</a> · <a href="https://youtu.be/7uLC_JmBJ-4" target="_blank" rel="noopener">▶ Tutorial Video</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><span class="lang-en">The Breath of the Forest</span><span class="lang-zh">森之生</span></h3>
+        <p class="lang-en">A dialogue between nature and humans, existing in multiple forms including an electroacoustic version and a WebXR music installation. Eight electroacoustic parts and 22 flute passages, paired with eight 3D video scenes, offering 997,272 possible musical versions.</p>
+        <p class="lang-zh">探索自然與人類對話的作品，以電聲版本與 WebXR 音樂裝置等多種形式呈現，包含 8 段電聲樂段與 22 段長笛樂句，搭配 8 個 3D 場景，可組合出 997,272 種不同版本。</p>
+        <p class="lang-en"><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">▶ WebXR Interactive Installation</a> · <a href="https://youtu.be/7uLC_JmBJ-4" target="_blank" rel="noopener">▶ Tutorial Video</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">▶ WebXR 互動裝置</a> · <a href="https://youtu.be/7uLC_JmBJ-4" target="_blank" rel="noopener">▶ 教學影片</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2016</span>
-        <h3><a href="works/journey-into-the-world-of-dimensions.html">Journey into the World of Dimensions</a></h3>
-        <p>VR game developed with the Unity 3D engine, released as an iOS app titled <em>VArt Journey</em> (since discontinued). Music: a six-movement work for solo saxophone, piano, and electronic music.</p>
-        <p><a href="https://youtu.be/7U_ANKaHacQ" target="_blank" rel="noopener">▶ Concert Video</a> · <a href="https://soundcloud.com/yi-chenglin/journey-into-the-world-of-dimensions-for-solo-sax-piano-and-electronic-music" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/journey-into-the-world-of-dimensions.html"><span class="lang-en">Journey into the World of Dimensions</span><span class="lang-zh">次元穿梭</span></a></h3>
+        <p class="lang-en">VR game developed with the Unity 3D engine, released as an iOS app titled <em>VArt Journey</em> (since discontinued). Music: a six-movement work for solo saxophone, piano, and electronic music.</p>
+        <p class="lang-zh">以 Unity 3D 引擎開發之 VR 遊戲，並以 iOS App「VArt Journey」形式發表（現已下架）。音樂為六樂章之薩克管、鋼琴與電聲創作。</p>
+        <p class="lang-en"><a href="https://youtu.be/7U_ANKaHacQ" target="_blank" rel="noopener">▶ Concert Video</a> · <a href="https://soundcloud.com/yi-chenglin/journey-into-the-world-of-dimensions-for-solo-sax-piano-and-electronic-music" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://youtu.be/7U_ANKaHacQ" target="_blank" rel="noopener">▶ 音樂會影片</a> · <a href="https://soundcloud.com/yi-chenglin/journey-into-the-world-of-dimensions-for-solo-sax-piano-and-electronic-music" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <ul class="plain-list">
-        <li><strong>Searching (Time Sculpture)</strong> — Music for 3D video game scenes; a game version of <em>Snow Sculpture</em>, 2019.</li>
-        <li><strong>Snow Sculpture</strong> — Zheng solo with 3D video game scenes. Premiered at Taipei Theater Experimental Theatre, June 2018.</li>
+        <li class="lang-en"><strong>Searching (Time Sculpture)</strong> — Music for 3D video game scenes; a game version of <em>Snow Sculpture</em>, 2019.</li>
+        <li class="lang-zh"><strong>時空雕塑</strong> — 為 3D 遊戲場景所做的音樂；為《雪之雕塑》的遊戲版本，2019。</li>
+        <li class="lang-en"><strong>Snow Sculpture</strong> — Zheng solo with 3D video game scenes. Premiered at Taipei Theater Experimental Theatre, June 2018.</li>
+        <li class="lang-zh"><strong>雪之雕塑</strong> — 古箏獨奏搭配 3D 遊戲場景，首演於台北市立劇場實驗劇場，2018 年 6 月。</li>
       </ul>
     </section>
   </div>
@@ -107,7 +126,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

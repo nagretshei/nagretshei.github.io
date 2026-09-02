@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -43,62 +44,68 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">01/2026 · String quartet</span>
-      <h1>Between Ink and Air</h1>
-      <p>An abstract painting in sound, for string quartet. <em>Entre l'encre et l'air</em>.</p>
-      <p><a href="https://soundcloud.com/yi-chenglin/between-ink-and-air-an-abstract-painting-in-sound-for-string-quartet" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">01/2026 · String quartet</span>
+      <span class="meta lang-zh">01/2026 · 弦樂四重奏</span>
+      <h1><span class="lang-en">Between Ink and Air</span><span class="lang-zh">在墨與空氣之間</span></h1>
+      <p class="lang-en">An abstract painting in sound, for string quartet. <em>Entre l'encre et l'air</em>.</p>
+      <p class="lang-zh">為弦樂四重奏創作的聲音抽象畫。《Entre l'encre et l'air》。</p>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/between-ink-and-air-an-abstract-painting-in-sound-for-string-quartet" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/between-ink-and-air-an-abstract-painting-in-sound-for-string-quartet" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
-      <p>Between Ink and Air invites the listener to experience sound as one would move through an abstract painting.</p>
+      <div class="lang-en">
+<p>Between Ink and Air invites the listener to experience sound as one would move through an abstract painting.</p>
       <p>Rather than presenting a fixed perspective, the work unfolds through shifting points of attention, resembling the dispersed viewpoints found in East Asian painting. Listening becomes a form of quiet movement—an act of observation that changes with proximity, distance, and stillness.</p>
       <p>The music asks the listener to withdraw from a central position and enter a state of silence. From within this silence, sonic events are not followed as narrative gestures but perceived as visual traces in space. Sound is encountered as if seen rather than heard: appearing, receding, and dissolving between ink and air.</p>
+      </div>
 
-      <hr>
-
-      <div lang="zh-Hant" class="zh-section">
-        <h2>在墨與空氣之間</h2>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        
         <p>《在墨與空氣之間》邀請聆聽者以移動的方式進入聲音，如同在一幅抽象畫中行走與觀看。樂曲並未提供單一、固定的視角，而是透過不斷變化的注意焦點展開，類似東亞繪畫中所採用的散點透視。聆聽成為一種靜默中的移動，一種隨距離、位置與靜止狀態而改變的觀看行為。</p>
         <p>作品邀請聆聽者從中心位置中退隱，消失於寧靜之中。正是在這樣的寧靜視角裡，聲音事件不再作為敘事動機被追隨，而是如同視覺痕跡般被感知，在空間中浮現、遠離、消散，於墨與空氣之間顯現其存在。</p>
       </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

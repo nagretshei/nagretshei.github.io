@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -42,55 +43,59 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">02/2026 · Chamber ensemble</span>
-      <h1>Réflexions sur une peinture de nymphéas</h1>
-      <p>Flute, oboe, clarinet, bassoon, saxophone, and horn.</p>
-      <p><a href="https://soundcloud.com/yi-chenglin/reflexions-sur-une-peinture-de-nympheas" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">02/2026 · Chamber ensemble</span>
+      <span class="meta lang-zh">02/2026 · 室內樂</span>
+      <h1><span class="lang-en">Réflexions sur une peinture de nymphéas</span><span class="lang-zh">睡蓮畫作的沉思</span></h1>
+      <p class="lang-en">Flute, oboe, clarinet, bassoon, saxophone, and horn.</p>
+      <p class="lang-zh">為長笛、雙簧管、單簧管、低音管、薩克管與法國號創作。</p>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/reflexions-sur-une-peinture-de-nympheas" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/reflexions-sur-une-peinture-de-nympheas" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
-      <p>This work responds to a painting centered on water lilies, rather than directly depicting the natural flowers themselves. The music does not focus on the objects, but on the flow of brushstrokes within the painting, the layering of textures, and the gradual unfolding of temporal perception during the act of looking.</p>
+      <div class="lang-en">
+<p>This work responds to a painting centered on water lilies, rather than directly depicting the natural flowers themselves. The music does not focus on the objects, but on the flow of brushstrokes within the painting, the layering of textures, and the gradual unfolding of temporal perception during the act of looking.</p>
       <p>In the compositional process, sound is treated as a material analogous to paint, with its density, timbre, and duration forming the musical "strokes." These timbral relationships are not intended to create figurative imagery, but to establish layered sonic surfaces—like the brushstrokes of petals floating on water—bringing the listening experience closer to the perceptual state of observing the painting: the gaze moving among details, with spatial and temporal senses gradually blurring.</p>
       <p>The work invites listeners to temporarily set aside expectations of narrative and realism, turning instead toward a static and focused mode of listening, where the layering and dissipation of sound allows one to experience the time generated by "seeing" itself, or a form of "seeing" arising from listening.</p>
-
-      <hr>
 
       <p lang="fr">Cette œuvre répond à une peinture centrée sur les nénuphars, plutôt que de représenter directement les fleurs dans la nature. La musique ne se concentre pas sur les objets eux-mêmes, mais sur le flux des coups de pinceau à l'intérieur de la peinture, la superposition des textures et le déroulement progressif de la perception du temps lors de l'acte de regarder.</p>
       <p lang="fr">Dans le processus de composition, le son est traité comme un matériau analogue à la peinture, dont la densité, le timbre et la durée constituent les « coups » musicaux. Ces relations timbrales ne visent pas à créer une image figurative, mais à former des surfaces sonores en couches—à l'image des coups de pinceau des pétales flottant à la surface de l'eau—proche de l'expérience perceptive que l'on a en contemplant la peinture : le regard se déplace parmi les détails, tandis que la perception de l'espace et du temps s'estompe progressivement.</p>
       <p lang="fr">L'œuvre invite les auditeurs à mettre temporairement de côté les attentes narratives et réalistes, pour entrer dans un état d'écoute statique et concentré, où la superposition et la dissipation des sons permettent de ressentir le temps généré par l'« observation » elle-même, ou une forme d'« observation » émergeant de l'écoute.</p>
+      </div>
 
-      <hr>
-
-      <div lang="zh-Hant" class="zh-section">
-        <h2>睡蓮畫作的沉思</h2>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        
         <p>《睡蓮畫作的沉思》為長笛、雙簧管、單簧管、低音管、薩克管和法國號的室內樂。</p>
         <p>作品回應一幅以睡蓮為主題的繪畫，而非直接描繪自然中的睡蓮。音樂所關注的不是景物本身，而是畫面中筆觸的流動、層次的疊加，以及觀看過程中時間感的緩慢展開。</p>
         <p>在作曲過程中，聲音被視為如同顏料般的材料，其密度、音色與持續時間構成音樂中的「筆觸」。這些音色關係並非用以塑造具象形象，而是形成不同層次的聲響表面，如同繪畫中花瓣於水面浮動的筆觸，水面的漣漪，使聆聽經驗更接近於凝視畫面時的感知狀態：視線在細節之間游移，空間感與時間感逐漸模糊。（也因此作品改變傳統的結構段落操作，把段落「隱藏」起來，以呈現畫作的空間為主）</p>
@@ -98,14 +103,14 @@
       </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

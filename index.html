@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -49,27 +50,30 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="info.html">Info</a>
-      <a href="musical-works.html">Musical Works</a>
-      <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="musings.html">Musings</a>
-      <a href="events.html">Events</a>
-      <a href="releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="index.html">Home</a>
-  <a href="info.html">Info</a>
-  <a href="musical-works.html">Musical Works</a>
-  <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="musings.html">Musings</a>
-  <a href="events.html">Events</a>
-  <a href="releases.html">Releases</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <div class="site-banner">
@@ -80,26 +84,28 @@
   <section class="hero container">
     <img class="avatar" src="images/zoe-portrait.jpg" alt="Portrait of Zoe (Yi-Cheng) Lin">
 
-    <h1>Zoe Lin</h1>
-    <p class="alias">Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
-    <p class="tagline">Synesthetic Sound Painter &amp; Composer</p>
+    <h1><span class="lang-en">Zoe Lin</span><span class="lang-zh">林宜徵</span></h1>
+    <p class="alias"><span class="lang-en">Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</span><span class="lang-zh">Zoe (Yi-Cheng) Lin · 又名 Sebastian Nagretshei</span></p>
+    <p class="tagline"><span class="lang-en">Synesthetic Sound Painter &amp; Composer</span><span class="lang-zh">視聽聯覺聲音畫家與作曲家</span></p>
 
     <ul class="tags">
-      <li>Composer</li>
-      <li>Immersive Music</li>
-      <li>AI Music Developer</li>
-      <li>VR Music</li>
+      <li><span class="lang-en">Composer</span><span class="lang-zh">作曲家</span></li>
+      <li><span class="lang-en">Immersive Music</span><span class="lang-zh">沉浸式音樂</span></li>
+      <li><span class="lang-en">AI Music Developer</span><span class="lang-zh">AI 音樂開發者</span></li>
+      <li><span class="lang-en">VR Music</span><span class="lang-zh">VR 音樂</span></li>
     </ul>
 
-    <p>Her works, called <strong>"Synesthetic Compositions,"</strong> employ precise spatial and technological approaches to sound placement, creating immersive, multi-sensory musical experiences that expand the boundaries of human perception.</p>
+    <p class="lang-en">Her works, called <strong>"Synesthetic Compositions,"</strong> employ precise spatial and technological approaches to sound placement, creating immersive, multi-sensory musical experiences that expand the boundaries of human perception.</p>
+    <p class="lang-zh">她的作品被稱為<strong>「視聽聯覺創作」（Synesthetic Compositions）</strong>，運用精準的空間與科技手法安排聲音的位置，創造出沉浸式、多重感官交織的音樂體驗，拓展人類感知的邊界。</p>
 
-    <p>Zoe Lin's work explores immersive sound, spatial perception, technology, and ecological imagination. Her practice moves between acoustic instruments, electronics, spatial audio, and audiovisual media, with particular attention to how sound can shape the perception of space, presence, memory, and dream.</p>
+    <p class="lang-en">Zoe Lin's work explores immersive sound, spatial perception, technology, and ecological imagination. Her practice moves between acoustic instruments, electronics, spatial audio, and audiovisual media, with particular attention to how sound can shape the perception of space, presence, memory, and dream.</p>
+    <p class="lang-zh">林宜徵的創作探索沉浸式聲音、空間感知、科技與生態想像。她的創作實踐游走於原聲樂器、電子音樂、空間音訊與視聽媒體之間，特別關注聲音如何形塑空間、存在、記憶與夢境的感知經驗。</p>
 
 
     <div class="cta-row">
-      <a href="musical-works.html" class="btn btn-primary">View Musical Works</a>
-      <a href="mailto:yicheng.zoe@gmail.com" class="btn btn-ghost">Contact</a>
-      <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener" class="btn btn-light">IRCAM Forum Profile</a>
+      <a href="musical-works.html" class="btn btn-primary"><span class="lang-en">View Musical Works</span><span class="lang-zh">音樂作品</span></a>
+      <a href="mailto:yicheng.zoe@gmail.com" class="btn btn-ghost"><span class="lang-en">Contact</span><span class="lang-zh">聯絡</span></a>
+      <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener" class="btn btn-light"><span class="lang-en">IRCAM Forum Profile</span><span class="lang-zh">IRCAM Forum 個人頁面</span></a>
     </div>
   </section>
 </main>
@@ -107,7 +113,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

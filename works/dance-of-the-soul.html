@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -46,51 +47,57 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">06/2020 · Solo harpsichord & immersive electroacoustic music</span>
-      <h1>Dance of the Soul</h1>
-      <p>World premiered March 6, 2022, National Concert Hall Recital Hall, Taipei. Performed by Chia-Hsuan Tsai (蔡佳璇), renowned Taiwanese harpsichordist.</p>
-      <p><a href="https://soundcloud.com/yi-chenglin/sets/dance-of-the-soul-2" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">06/2020 · Solo harpsichord & immersive electroacoustic music</span>
+      <span class="meta lang-zh">06/2020 · 大鍵琴獨奏與沉浸式電聲音樂</span>
+      <h1><span class="lang-en">Dance of the Soul</span><span class="lang-zh">靈魂之舞</span></h1>
+      <p class="lang-en">World premiered March 6, 2022, National Concert Hall Recital Hall, Taipei. Performed by Chia-Hsuan Tsai (蔡佳璇), renowned Taiwanese harpsichordist.</p>
+      <p class="lang-zh">世界首演：2022 年 3 月 6 日，國家兩廳院演奏廳，台北。由台灣知名大鍵琴演奏家蔡佳璇演出。</p>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/dance-of-the-soul-2" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/dance-of-the-soul-2" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
-      <p>This composition is a commissioned piece for the renowned harpsichord virtuoso from Taiwan, Chia-Hsuan Tsai. It seamlessly merges the timeless beauty of J. S. Bach's "Chromatic Fantasia and Fugue" with the enchanting realm of electroacoustic music.</p>
+      <div class="lang-en">
+<p>This composition is a commissioned piece for the renowned harpsichord virtuoso from Taiwan, Chia-Hsuan Tsai. It seamlessly merges the timeless beauty of J. S. Bach's "Chromatic Fantasia and Fugue" with the enchanting realm of electroacoustic music.</p>
       <p>At its core, this composition delves deep into the intricate interplay between the vast expanse of cosmo-consciousness, symbolizing the universe, and the self-awareness of humanity. In this musical narrative, the harpsichord, faithfully interpreting Bach's masterpiece, embodies the essence of human existence and consciousness. In contrast, the electroacoustic component embodies the cosmic consciousness, painting a vivid portrait of a realm composed of ethereal light, radiating warmth and vibrancy, yet withholding the ultimate sensations of love and peace.</p>
       <p>The cosmo-consciousness perpetually lends its support to our individual self-consciousness, guiding us towards realizing our unique value and making meaningful contributions to the world. As I composed this intricate piece, employing immersive 3D sound techniques, I felt as though I were an artist, meticulously crafting a nocturnal scene illuminated by stars or distant celestial lights. Each note was akin to a brushstroke of rich, layered oil paints on canvas.</p>
       <p>In my creative vision, the particles of the cosmo-consciousness danced with unpredictability, reminiscent of the fleeting imagery in our dreams. Conversely, the human consciousness possessed a steadier, more focused presence. This contrast came to life through the music itself. The electroacoustic elements showcased moments of instability, weaving intricate dynamics and nuanced shifts. Meanwhile, the harpsichord provided a stable anchor, with broad, unwavering strokes and minimal dynamic variation.</p>
       <p>Within this harmonious interplay, the cosmo-consciousness, representing our emotions and insights, shapes the events of our daily lives. My aspiration is for this composition to serve as a conduit, bringing the illuminating warmth and love inherent in the cosmo-consciousness to your heart and soul through the medium of music.</p>
+      </div>
 
-      <hr>
-
-      <div lang="zh-Hant" class="zh-section">
-        <h2>靈魂之舞</h2>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        
 
         <h3>創作理念</h3>
         <p>受到佳璇老師的委託，為巴赫的 Chromatic Fantasia and Fugue 做電聲。但為巴赫寫樂曲是一件挑戰的事情，首先在不掩蓋著巴赫音樂的原曲下，要呈現自己的主觀意念的創作和聲音，讓自己的音樂有自己的署名而非巴赫樂曲的伴唱帶或編曲，是最挑戰的地方。而讓一首樂曲不成為另一首樂曲的編曲，充要條件除了在音樂創作和聲響的比例上多過原曲之外，理念上要能夠有獨特的傳達意圖，方能有自己的生命。音樂史上典型的例子就是，我們會稱許多史上著名的樂曲「引用 Dies Irae 的曲調」而非稱這些樂曲是 Dies Irae 的改編。</p>
@@ -118,14 +125,14 @@
       </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

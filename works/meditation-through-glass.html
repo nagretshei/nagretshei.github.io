@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -42,52 +43,63 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">09/2021 · Immersive electroacoustic music</span>
-      <h1>Meditation through Glass</h1>
-      <p><a href="https://soundcloud.com/yi-chenglin/sets/meditation-through-the-glass" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">09/2021 · Immersive electroacoustic music</span>
+      <span class="meta lang-zh">09/2021 · 沉浸式電聲音樂</span>
+      <h1><span class="lang-en">Meditation through Glass</span><span class="lang-zh">玻璃中的冥想</span></h1>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/meditation-through-the-glass" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/meditation-through-the-glass" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
+      <div class="lang-en">
       <p>This is the first of a series of auditory-visual synesthesia compositions. In this series, images are transformed into 3D and immersive electroacoustic music. This composition came together with in-depth research on the relationship between the audio and visual spectrums. Please use professional speakers or low-frequency headphones to see the images of this composition in your mind’s eye.</p>
       <p>“Meditation Through Glass” features colorful lights passing through the glass. The colors change with the different shapes of the glass. If we put ice water in the glass, the mist of water appears beautifully. When experiencing this work, I hope you feel calm and amazed by the material world.</p>
+      </div>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        <p>這是一系列視聽聯覺創作中的第一首。在這個系列裡，影像被轉化為 3D 沉浸式電聲音樂。這首作品源自於對聽覺與視覺頻譜之間關係的深入研究。建議使用專業喇叭或低頻耳機聆聽，讓心眼浮現這首作品的畫面。</p>
+        <p>《玻璃中的冥想》描繪彩色光線穿透玻璃的畫面。顏色隨著玻璃形狀的不同而變化；若在玻璃杯中放入冰水，水氣便會美麗地浮現。聆聽這首作品時，希望你能感受到平靜，並對這個物質世界感到驚嘆。</p>
+      </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

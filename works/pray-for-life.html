@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -46,63 +47,69 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">04/2020 · Solo harpsichord & immersive electroacoustic music</span>
-      <h1>Pray for Life</h1>
-      <p>World premiered March 6, 2022, National Concert Hall Recital Hall, Taipei. Performed by Chia-Hsuan Tsai (蔡佳璇), renowned Taiwanese harpsichordist.</p>
-      <p><a href="https://soundcloud.com/yi-chenglin/pray-for-life-ossia-live-real-harpsichord" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">04/2020 · Solo harpsichord & immersive electroacoustic music</span>
+      <span class="meta lang-zh">04/2020 · 大鍵琴獨奏與沉浸式電聲音樂</span>
+      <h1><span class="lang-en">Pray for Life</span><span class="lang-zh">為生命祈禱</span></h1>
+      <p class="lang-en">World premiered March 6, 2022, National Concert Hall Recital Hall, Taipei. Performed by Chia-Hsuan Tsai (蔡佳璇), renowned Taiwanese harpsichordist.</p>
+      <p class="lang-zh">世界首演：2022 年 3 月 6 日，國家兩廳院演奏廳，台北。由台灣知名大鍵琴演奏家蔡佳璇演出。</p>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/pray-for-life-ossia-live-real-harpsichord" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/pray-for-life-ossia-live-real-harpsichord" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
-      <p>Pray for life, pray for the world, and pray with J.S.Bach.</p>
+      <div class="lang-en">
+<p>Pray for life, pray for the world, and pray with J.S.Bach.</p>
       <p>This music includes four sections of J.S. Bach's music. Through each section, music gets darker, until the third section with the background of submarine sound which implied wars and suffers from life. In the last section, the music is joyful but still with underwater sounds around, which implies, through God, we found joy and go through all the mishaps in our lives and turned those mishaps into a deep blessing.</p>
       <p>This is the ossia version specifically for the well-known Taiwanese harpsichord player, Chia-Hsuan Tsai. In the third section of the harpsichord part, she purposely chose the temperament of 415/392 Hz Werckmeister to evoke the feeling of the suffering people from different corners of the earth. Even though people from different places with different experiences of life (as the diverse temperaments tuned at the same time in this section), the empathy of the suffering leads people to overcome the bad situation.</p>
+      </div>
 
-      <hr>
-
-      <div lang="zh-Hant" class="zh-section">
-        <h2>為生命祈禱</h2>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        
         <p>為生命祈禱，為世界祈禱，與巴赫一同祈禱。</p>
         <p>這首作品包含巴赫音樂的四個段落。隨著每個段落推進，音樂逐漸轉為黑暗，直到第三段以潛艇聲響為背景，暗喻著戰爭與生命中的苦難。到了最後一段，音樂轉為歡樂，卻仍環繞著水下的聲響——這暗示著，藉由神，我們得以在種種不幸中尋得喜悅，並將這些苦難轉化為深刻的祝福。</p>
         <p>這是特別為台灣知名大鍵琴演奏家蔡佳璇所寫的替代版本（ossia）。在大鍵琴聲部的第三段中，她特意選用了 415/392 Hz 的 Werckmeister 律制，藉此喚起世界各角落受苦之人的感受。儘管來自不同地方、有著不同人生經歷的人們（如同這段中同時調律的多種律制），彼此的同理心仍能引領人們跨越困境。</p>
       </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

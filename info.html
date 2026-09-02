@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -48,252 +49,398 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="info.html">Info</a>
-      <a href="musical-works.html">Musical Works</a>
-      <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="musings.html">Musings</a>
-      <a href="events.html">Events</a>
-      <a href="releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="index.html">Home</a>
-  <a href="info.html">Info</a>
-  <a href="musical-works.html">Musical Works</a>
-  <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="musings.html">Musings</a>
-  <a href="events.html">Events</a>
-  <a href="releases.html">Releases</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container">
     <div class="page-header">
-      <h1>Zoe Lin</h1>
-      <p class="alias">Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
-      <p class="tagline">Synesthetic Sound Painter &amp; Composer</p>
-      <p>Her works, called <strong>"Synesthetic Compositions,"</strong> employ precise spatial and technological approaches to sound placement, creating immersive, multi-sensory musical experiences that expand the boundaries of human perception.</p>
-      <p>Zoe Lin's work explores immersive sound, spatial perception, technology, and ecological imagination. Her practice moves between acoustic instruments, electronics, spatial audio, and audiovisual media, with particular attention to how sound can shape the perception of space, presence, memory, and dream.</p>
+      <h1><span class="lang-en">Zoe Lin</span><span class="lang-zh">林宜徵</span></h1>
+      <p class="alias"><span class="lang-en">Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</span><span class="lang-zh">Zoe (Yi-Cheng) Lin · 又名 Sebastian Nagretshei</span></p>
+      <p class="tagline"><span class="lang-en">Synesthetic Sound Painter &amp; Composer</span><span class="lang-zh">視聽聯覺聲音畫家與作曲家</span></p>
+      <p class="lang-en">Her works, called <strong>"Synesthetic Compositions,"</strong> employ precise spatial and technological approaches to sound placement, creating immersive, multi-sensory musical experiences that expand the boundaries of human perception.</p>
+      <p class="lang-zh">她的作品被稱為<strong>「視聽聯覺創作」（Synesthetic Compositions）</strong>，運用精準的空間與科技手法安排聲音的位置，創造出沉浸式、多重感官交織的音樂體驗，拓展人類感知的邊界。</p>
+      <p class="lang-en">Zoe Lin's work explores immersive sound, spatial perception, technology, and ecological imagination. Her practice moves between acoustic instruments, electronics, spatial audio, and audiovisual media, with particular attention to how sound can shape the perception of space, presence, memory, and dream.</p>
+      <p class="lang-zh">林宜徵的創作探索沉浸式聲音、空間感知、科技與生態想像。她的創作實踐游走於原聲樂器、電子音樂、空間音訊與視聽媒體之間，特別關注聲音如何形塑空間、存在、記憶與夢境的感知經驗。</p>
     </div>
 
     <section class="section">
-      <h2>About</h2>
-      <p>Zoe (Yi-Cheng) Lin is a composer and software engineer specializing in digital music and related composition. She holds a doctoral degree in composition from the University of Wisconsin–Madison and is currently a full-time composer and adjunct assistant professor at National Taiwan Normal University.</p>
-      <p>Her creative practice focuses on visual-auditory synesthetic electronic music, 3D immersive electronic music composition and mixing, and the practical use of Ambisonic multichannel sound projection. Her work explores sound as an active medium of spatial perception, using technology to expand musical possibilities and to investigate relationships between sound, image, space, memory, nature, and imagination.</p>
-      <p>Her electronic music has been exhibited in 21 countries across Europe, Asia, North and South America, and Australia, with presentations at 48 international music festivals and events. Recent and selected presentations include ICMC (2026–2024, 2022), La Semaine du Son, Paysages Composés Festival 2025 (Grenoble, France), SICMF 2025 (Seoul, Korea), NYCEMF 2025–2023, JINLAC 2025, SEAMUS 2025 (West Lafayette, Indiana, USA), REF Resilience Festival 2024 (Foggia, Italy), Ars Electronica 2024 (Linz, Austria), <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum 2024</a> (Paris, France), ACMC 2024 (Sydney and Melbourne, Australia), MediSouP 2024 (Cyprus), SiMN 2023 (Brazil), MUSLAB 2023 (Ecuador), MiRNArte 2023 (Venice, Italy), SICMF 2023 (Seoul, South Korea), NIME 2023 Mixed Realities Workshop (Mexico), Spatial Audio Conference 2023 (United Kingdom), NoiseFloor 2023 (United Kingdom), Earth Day Art Model 2023 (Indiana University, USA), MOXsonic Festival 2023, Atemporánea Festival 2022 (Argentina), and IRCAM Forum 2022 (New York), among others.</p>
-      <p>Her music has been featured on releases from EMPIRICA RECORD (Italy), SiMN 2023, and the MUSLAB 2023 phonographic production PLANETA COMPLEJO project through Cero Records. Her work was also selected for the <a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener">Anthropocene Project 2024</a>, curated by Wilfried Agricola de Cologne and produced by The New Museum of Networked Art. In 2024, she was selected for EMPIRICA RECORD, an initiative by EMPIRICA in partnership with MID SIDE APS dedicated to experimental classical, contemporary, and electronic music.</p>
+      <h2><span class="lang-en">About</span><span class="lang-zh">關於</span></h2>
+      <p class="lang-en">Zoe (Yi-Cheng) Lin is a composer and software engineer specializing in digital music and related composition. She holds a doctoral degree in composition from the University of Wisconsin–Madison and is currently a full-time composer and adjunct assistant professor at National Taiwan Normal University.</p>
+      <p class="lang-zh">林宜徵是一位作曲家與軟體工程師，專精於數位音樂與相關作曲領域。她於美國威斯康辛大學麥迪遜分校取得作曲博士學位，現為專職作曲家，並擔任國立臺灣師範大學兼任助理教授。</p>
+      <p class="lang-en">Her creative practice focuses on visual-auditory synesthetic electronic music, 3D immersive electronic music composition and mixing, and the practical use of Ambisonic multichannel sound projection. Her work explores sound as an active medium of spatial perception, using technology to expand musical possibilities and to investigate relationships between sound, image, space, memory, nature, and imagination.</p>
+      <p class="lang-zh">她的創作實踐聚焦於視聽聯覺電聲音樂、3D 沉浸式電聲創作與混音，以及 Ambisonic 多聲道投放技術的實務應用。她的作品探索聲音作為空間感知媒介的可能性，運用科技拓展音樂的邊界，並探討聲音、影像、空間、記憶、自然與想像之間的關係。</p>
+      <p class="lang-en">Her electronic music has been exhibited in 21 countries across Europe, Asia, North and South America, and Australia, with presentations at 48 international music festivals and events. Recent and selected presentations include ICMC (2026–2024, 2022), La Semaine du Son, Paysages Composés Festival 2025 (Grenoble, France), SICMF 2025 (Seoul, Korea), NYCEMF 2025–2023, JINLAC 2025, SEAMUS 2025 (West Lafayette, Indiana, USA), REF Resilience Festival 2024 (Foggia, Italy), Ars Electronica 2024 (Linz, Austria), <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum 2024</a> (Paris, France), ACMC 2024 (Sydney and Melbourne, Australia), MediSouP 2024 (Cyprus), SiMN 2023 (Brazil), MUSLAB 2023 (Ecuador), MiRNArte 2023 (Venice, Italy), SICMF 2023 (Seoul, South Korea), NIME 2023 Mixed Realities Workshop (Mexico), Spatial Audio Conference 2023 (United Kingdom), NoiseFloor 2023 (United Kingdom), Earth Day Art Model 2023 (Indiana University, USA), MOXsonic Festival 2023, Atemporánea Festival 2022 (Argentina), and IRCAM Forum 2022 (New York), among others.</p>
+      <p class="lang-zh">她的電聲作品已於歐洲、亞洲、南北美洲與澳洲共 21 個國家展演，發表於 48 個國際音樂節與活動。近年重要展演包括 ICMC（2026–2024、2022）、La Semaine du Son、Paysages Composés Festival 2025（法國格勒諾勃）、SICMF 2025（韓國首爾）、NYCEMF 2025–2023、JINLAC 2025、SEAMUS 2025（美國印第安納州西拉法葉）、REF Resilience Festival 2024（義大利福賈）、Ars Electronica 2024（奧地利林茲）、<a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum 2024</a>（法國巴黎）、ACMC 2024（澳洲雪梨與墨爾本）、MediSouP 2024（賽普勒斯）、SiMN 2023（巴西）、MUSLAB 2023（厄瓜多）、MiRNArte 2023（義大利威尼斯）、SICMF 2023（韓國首爾）、NIME 2023 Mixed Realities Workshop（墨西哥）、Spatial Audio Conference 2023（英國）、NoiseFloor 2023（英國）、Earth Day Art Model 2023（美國印第安納大學）、MOXsonic Festival 2023、Atemporánea Festival 2022（阿根廷），以及 IRCAM Forum 2022（紐約）等。</p>
+      <p class="lang-en">Her music has been featured on releases from EMPIRICA RECORD (Italy), SiMN 2023, and the MUSLAB 2023 phonographic production PLANETA COMPLEJO project through Cero Records. Her work was also selected for the <a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener">Anthropocene Project 2024</a>, curated by Wilfried Agricola de Cologne and produced by The New Museum of Networked Art. In 2024, she was selected for EMPIRICA RECORD, an initiative by EMPIRICA in partnership with MID SIDE APS dedicated to experimental classical, contemporary, and electronic music.</p>
+      <p class="lang-zh">她的作品曾收錄於義大利 EMPIRICA RECORD、SiMN 2023，以及厄瓜多 MUSLAB 2023 唱片製作計畫「PLANETA COMPLEJO」（由 Cero Records 發行）等專輯。作品亦入選由 Wilfried Agricola de Cologne 策展、新聯網藝術博物館製作的<a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener">2024 人類世計畫</a>（Anthropocene Project）。2024 年並入選 EMPIRICA RECORD——由 EMPIRICA 與 MID SIDE APS 合作推動，致力於實驗古典、當代與電子音樂的計畫。</p>
     </section>
 
     <section class="section">
-      <h2>Education</h2>
+      <h2><span class="lang-en">Education</span><span class="lang-zh">學歷</span></h2>
       <ul class="plain-list">
-        <li><strong>D.M.A. in Composition</strong> — University of Wisconsin–Madison</li>
-        <li><strong>Composition Studies</strong> — with Laura Schwendinger and Stephen Dembski, as well as Ladislav Kubík at the CASMI Music Camp</li>
+        <li class="lang-en"><strong>D.M.A. in Composition</strong> — University of Wisconsin–Madison</li>
+        <li class="lang-zh"><strong>作曲博士（D.M.A.）</strong> — 美國威斯康辛大學麥迪遜分校</li>
+        <li class="lang-en"><strong>Composition Studies</strong> — with Laura Schwendinger and Stephen Dembski, as well as Ladislav Kubík at the CASMI Music Camp</li>
+        <li class="lang-zh"><strong>作曲師承</strong> — Laura Schwendinger、Stephen Dembski；並於 CASMI 音樂營師事 Ladislav Kubík</li>
       </ul>
     </section>
 
     <section class="section">
-      <h2>Selected Works</h2>
-      <div class="card">
+      <h2><span class="lang-en">Selected Works</span><span class="lang-zh">精選作品</span></h2>
+      <div class="card lang-en">
         <span class="meta">2026</span>
         <h3>Taroko: A Lullaby of Coastal</h3>
         <p>A work inspired by Taroko and its coastal landscape, approaching place through the intimate perspective of a lullaby. The music reflects on landscape, memory, and listening, exploring how a sense of place can be transformed into musical sound and imagination.</p>
         <p><a href="https://soundcloud.com/yi-chenglin/sets/taroko-a-lullaby-of-coastal" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
       </div>
-      <div class="card">
+      <div class="card lang-zh">
+        <span class="meta">2026</span>
+        <h3>太魯閣：海風的搖籃曲</h3>
+        <p>一首以太魯閣及其海岸地景為靈感的作品，透過搖籃曲般親密的視角切入地方感。音樂映照著地景、記憶與聆聽的關係，探索地方感如何轉化為音樂聲響與想像。</p>
+        <p><a href="https://soundcloud.com/yi-chenglin/sets/taroko-a-lullaby-of-coastal" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
+      </div>
+      <div class="card lang-en">
         <span class="meta">2025</span>
         <h3>Dream Voyager: A Pilgrim of the Infinite</h3>
         <p>For solo flute and electronics. The work portrays a journey of consciousness through a lucid dream, moving between states of sleep, heightened awareness, and an imagined departure from the body. Sound and space become a canvas through which the listener travels, while the accompanying visual version extends the work into an audiovisual meditation on the blurred boundaries between reality, illusion, AI-generated imagery, and dreams.</p>
         <p><a href="https://soundcloud.com/yi-chenglin/sets/dream-voyager-a-pilgrim-of-the" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
       </div>
-      <p><a href="musical-works.html">See all musical works →</a></p>
+      <div class="card lang-zh">
+        <span class="meta">2025</span>
+        <h3>夢行者：無垠的朝聖</h3>
+        <p>為長笛獨奏與電聲創作。作品描繪意識在清醒夢中的旅程，游走於睡眠、高度清醒與想像中脫離身體的狀態之間。聲音與空間成為聽者穿越的畫布，搭配的視覺版本則將作品延伸為一場探討真實、幻覺、AI 生成影像與夢境之間模糊邊界的視聽冥想。</p>
+        <p><a href="https://soundcloud.com/yi-chenglin/sets/dream-voyager-a-pilgrim-of-the" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
+      </div>
+      <p class="lang-en"><a href="musical-works.html">See all musical works →</a></p>
+      <p class="lang-zh"><a href="musical-works.html">查看全部音樂作品 →</a></p>
     </section>
 
     <section class="section">
-      <h2>Bodies of Work</h2>
+      <h2><span class="lang-en">Bodies of Work</span><span class="lang-zh">作品類型</span></h2>
       <ul class="plain-list">
-        <li><strong>Spatial &amp; Immersive Works</strong> — A continuing body of work exploring Ambisonics, three-dimensional sound, spatial perception, and the use of space as a compositional parameter. These works investigate how listeners experience movement, distance, orientation, immersion, and presence through sound.</li>
-        <li><strong>Audiovisual &amp; Technology-based Works</strong> — Projects incorporating electronics, video, AI-generated imagery, and other technologies as compositional materials. Technology functions as part of the musical language, opening new possibilities for interaction between sound, image, and perception.</li>
+        <li class="lang-en"><strong>Spatial &amp; Immersive Works</strong> — A continuing body of work exploring Ambisonics, three-dimensional sound, spatial perception, and the use of space as a compositional parameter. These works investigate how listeners experience movement, distance, orientation, immersion, and presence through sound.</li>
+        <li class="lang-zh"><strong>空間與沉浸式作品</strong> — 持續進行中的創作系列，探索 Ambisonic、三維聲音、空間感知，以及將空間作為作曲參數的運用。這些作品探討聽者如何透過聲音體驗移動、距離、方位、沉浸感與臨場感。</li>
+        <li class="lang-en"><strong>Audiovisual &amp; Technology-based Works</strong> — Projects incorporating electronics, video, AI-generated imagery, and other technologies as compositional materials. Technology functions as part of the musical language, opening new possibilities for interaction between sound, image, and perception.</li>
+        <li class="lang-zh"><strong>視聽與科技作品</strong> — 結合電子音樂、影像、AI 生成影像及其他科技作為創作素材的計畫。科技在此成為音樂語言的一部分，為聲音、影像與感知之間的互動開啟新的可能性。</li>
       </ul>
     </section>
 
     <section class="section">
-      <h2>Artistic Practice</h2>
+      <h2><span class="lang-en">Artistic Practice</span><span class="lang-zh">創作實踐</span></h2>
       <ul class="plain-list">
-        <li><strong>Immersive Sound</strong> — Working with spatial audio and Ambisonics to compose musical experiences in which sound occupies and transforms three-dimensional space.</li>
-        <li><strong>Spatial Perception</strong> — Exploring how movement, distance, direction, resonance, and perspective influence musical perception and listening.</li>
-        <li><strong>Technology</strong> — Using electronic and emerging technologies as creative tools within composition, rather than as independent technological demonstrations.</li>
-        <li><strong>Ecological Imagination</strong> — Considering sound as a way of imagining relationships between human perception, natural environments, materiality, and more-than-human worlds.</li>
+        <li class="lang-en"><strong>Immersive Sound</strong> — Working with spatial audio and Ambisonics to compose musical experiences in which sound occupies and transforms three-dimensional space.</li>
+        <li class="lang-zh"><strong>沉浸式聲音</strong> — 運用空間音訊與 Ambisonic 技術，創作出聲音佔據並形塑三維空間的音樂體驗。</li>
+        <li class="lang-en"><strong>Spatial Perception</strong> — Exploring how movement, distance, direction, resonance, and perspective influence musical perception and listening.</li>
+        <li class="lang-zh"><strong>空間感知</strong> — 探索移動、距離、方向、共鳴與視角如何影響音樂的感知與聆聽。</li>
+        <li class="lang-en"><strong>Technology</strong> — Using electronic and emerging technologies as creative tools within composition, rather than as independent technological demonstrations.</li>
+        <li class="lang-zh"><strong>科技</strong> — 將電子與新興科技作為創作工具運用於作曲之中，而非作為獨立的科技展示。</li>
+        <li class="lang-en"><strong>Ecological Imagination</strong> — Considering sound as a way of imagining relationships between human perception, natural environments, materiality, and more-than-human worlds.</li>
+        <li class="lang-zh"><strong>生態想像</strong> — 將聲音視為想像人類感知、自然環境、物質性與非人世界之間關係的一種方式。</li>
       </ul>
     </section>
 
     <section class="section">
-      <h2>Research &amp; Teaching</h2>
-      <p>Alongside composition, Zoe (Yi-Cheng) Lin teaches and researches music, technology, and contemporary approaches to listening. Her interests include spatial audio, electronic music, immersive media, computer-assisted composition, and the relationship between artistic practice and technological development.</p>
+      <h2><span class="lang-en">Research &amp; Teaching</span><span class="lang-zh">研究與教學</span></h2>
+      <p class="lang-en">Alongside composition, Zoe (Yi-Cheng) Lin teaches and researches music, technology, and contemporary approaches to listening. Her interests include spatial audio, electronic music, immersive media, computer-assisted composition, and the relationship between artistic practice and technological development.</p>
+      <p class="lang-zh">除了作曲之外，林宜徵也從事音樂、科技與當代聆聽方式相關的教學與研究。她的興趣涵蓋空間音訊、電子音樂、沉浸式媒體、電腦輔助作曲，以及藝術實踐與科技發展之間的關係。</p>
     </section>
 
     <section class="section">
-      <h2>Academic Service &amp; Engagements</h2>
+      <h2><span class="lang-en">Academic Service &amp; Engagements</span><span class="lang-zh">學術服務與參與</span></h2>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Dec 15–18, 2024 · 2024 IEEE International Conference on Big Data (BigData), Washington, DC, USA</span>
         <h3>Co-Author, "EME33: A Dataset of Classical Piano Performances Guided by Expressive Markings with Application in Music Rendering"</h3>
         <p>Research collaboration with the Acoustics and Hearing Group, Department of Electrical Engineering, National Tsing Hua University, led by Professor Yi-Wen Liu. Co-authored with pianist Kit Armstrong, also a member of the lab.</p>
         <p><a href="https://ieeexplore.ieee.org/document/10826039" target="_blank" rel="noopener">📄 Read on IEEE Xplore</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2024年12月15–18日 · 2024 IEEE 國際大數據研討會（IEEE BigData），美國華盛頓特區</span>
+        <h3>共同作者，論文〈EME33: A Dataset of Classical Piano Performances Guided by Expressive Markings with Application in Music Rendering〉</h3>
+        <p>與國立清華大學電機系劉奕汶教授主持之聲學與聽覺研究室合作研究，並與同為實驗室成員的鋼琴家周善祥共同撰寫。</p>
+        <p><a href="https://ieeexplore.ieee.org/document/10826039" target="_blank" rel="noopener">📄 於 IEEE Xplore 閱讀全文</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Apr 2024 · Dream Way Culture Co., Ltd. (均悅文化)</span>
         <h3>Author, "AIM人工智慧音樂別冊（創作×音樂×人工智慧）" (AIM: AI Music Supplement — Creation × Music × Artificial Intelligence)</h3>
         <p>A specialized textbook supplement on artificial intelligence music for high school students, covering creation, music, and AI.</p>
         <p><a href="https://dreamway2019.com/product_d.php?lang=tw&amp;tb=1&amp;id=3663" target="_blank" rel="noopener">🔗 Product page</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2024年4月 · 均悅文化</span>
+        <h3>作者，《AIM人工智慧音樂別冊（創作×音樂×人工智慧）》</h3>
+        <p>受邀撰寫之高中生人工智慧音樂專題教科書，內容涵蓋創作、音樂與人工智慧。</p>
+        <p><a href="https://dreamway2019.com/product_d.php?lang=tw&amp;tb=1&amp;id=3663" target="_blank" rel="noopener">🔗 商品頁面</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Dec 2023 · National Center for Traditional Arts, Taiwan</span>
         <h3>Author, "生成式音樂AI的魅力" (The Charms of Generative Music AI)</h3>
         <p>Published in the 147th issue of <em>Cultural Heritage</em> Magazine. The National Center for Traditional Arts is a tertiary affiliate of the Ministry of Culture, Taiwan; <em>Cultural Heritage</em> is its quarterly promoting cultural and artistic information.</p>
         <p><a href="https://magazine.ncfta.gov.tw/News_Content2.aspx?n=1931&amp;s=202855" target="_blank" rel="noopener">📄 Read the article</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2023年12月 · 國立傳統藝術中心</span>
+        <h3>作者，〈生成式音樂AI的魅力〉</h3>
+        <p>刊登於《傳藝》季刊第 147 期。國立傳統藝術中心為文化部三級機構；《傳藝》季刊定期推廣文化藝術資訊。</p>
+        <p><a href="https://magazine.ncfta.gov.tw/News_Content2.aspx?n=1931&amp;s=202855" target="_blank" rel="noopener">📄 閱讀全文</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">2023 · Fulbright Scholar Program</span>
         <h3>Alternate, Fulbright Scholar Program</h3>
         <p>Named an alternate candidate in the national selection process.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2023年 · 傅爾布萊特學者計畫</span>
+        <h3>備取學人，傅爾布萊特學者計畫</h3>
+        <p>獲提名為國家級遴選之備取候選人。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Jan 2023 · Journal of Music Research, National Taiwan Normal University</span>
         <h3>Member, Journal Review Committee</h3>
         <p>Reviewed and provided suggestions for music technology–related articles.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2023年1月 · 國立臺灣師範大學《音樂研究》期刊</span>
+        <h3>審稿委員，期刊審查委員會</h3>
+        <p>審查並提供音樂科技相關文章之修改建議。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Aug 16 – Dec 17, 2022 · National Science and Technology Council</span>
         <h3>Participant, NSTC 2022 TechGiCS Women in STEM Second-Term Workshop</h3>
         <p>Nominated through the recommendation of Professor Yujie Lee, Deputy Executive Secretary of the National Science and Technology Council. Aligned with the "2022 Women in STEM" initiative, the workshop advances the technological competencies of women entering STEM careers and amplifies women's participation in Taiwan's STEM sector.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2022年8月16日–12月17日 · 國家科學及技術委員會</span>
+        <h3>參與者，國科會 2022 女婕思 TechGiCS 女性科技人才第二期工作坊</h3>
+        <p>經國科會副執行秘書李友專教授推薦提名參與。配合「2022 女婕思」計畫，旨在提升科技領域女性專業能力，並擴大女性於台灣科技產業之參與。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">2022 – present · Department of Electrical Engineering, National Tsing Hua University</span>
         <h3>Research Participant, Acoustics and Hearing Group</h3>
         <p>Participates in research activities led by Professor Yi-Wen Liu, alongside collaborators including pianist Kit Armstrong, resulting in the co-authored EME33 dataset paper (IEEE BigData 2024).</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2022年–至今 · 國立清華大學電機系</span>
+        <h3>研究參與者，聲學與聽覺研究室</h3>
+        <p>參與電機系劉奕汶教授主持之研究活動，並與鋼琴家周善祥等合作者共同完成 EME33 論文（IEEE BigData 2024）。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">May 2022 – present · Arts Education Promotion Resource Center Work Plan, National Taiwan Normal University</span>
         <h3>Member, Advisory Expert Committee</h3>
         <p>Provides suggestions on music education for Taiwan's music experimental education system.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2022年5月–至今 · 國立臺灣師範大學藝術教育推動資源中心工作計畫</span>
+        <h3>諮詢委員，藝術教育推動資源中心工作計畫</h3>
+        <p>為台灣音樂實驗教育體系之音樂教育政策提供諮詢建議。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Mar 2019 – May 2022 · National Taiwan Normal University</span>
         <h3>Instructor / Textbook Content Provider, /PLUS – Programming Learning for University Students</h3>
         <p>A national initiative designing programming education for university students. Designed and authored the music-related programming courses of the textbook, including sole authorship (2020) of Chapter 11, "玩聲音，數位音訊的無限可能：MIDI 訊號處理" (Playing with Sound: Endless Possibilities of Digital Audio — MIDI Signal Processing), in <em>Python 程式設計與資料分析應用</em> (Python Programming and Data Analysis Applications).</p>
         <p><a href="https://plusdscp.csie.ntnu.edu.tw/index.php/demonstration/material/" target="_blank" rel="noopener">🔗 Course materials</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2019年3月–2022年5月 · 國立臺灣師範大學</span>
+        <h3>講師／教材撰寫人，/PLUS 大學程式設計學習計畫</h3>
+        <p>政府推動之大學程式設計教育普及計畫，設計並撰寫教材中音樂相關程式設計課程內容，並獨力撰寫（2020）《Python 程式設計與資料分析應用》第 11 章〈玩聲音，數位音訊的無限可能：MIDI 訊號處理〉。</p>
+        <p><a href="https://plusdscp.csie.ntnu.edu.tw/index.php/demonstration/material/" target="_blank" rel="noopener">🔗 課程教材</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Oct 2019 · MUZIK Magazine</span>
         <h3>Author, "藝術始終不只來自人性——南卡洛與自動鋼琴" (Art Has Never Come Solely from Humanity — Conlon Nancarrow and the Player Piano)</h3>
         <p>On composer Conlon Nancarrow and his works for player piano.</p>
         <p><a href="https://read.muzikair.com/us/articles/8ecc8350-1bd3-4a6c-be06-9b44aa52010f" target="_blank" rel="noopener">📄 Read the article</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2019年10月 · MUZIK 雜誌</span>
+        <h3>作者，〈藝術始終不只來自人性——南卡洛與自動鋼琴〉</h3>
+        <p>介紹作曲家 Conlon Nancarrow 與其自動鋼琴作品。</p>
+        <p><a href="https://read.muzikair.com/us/articles/8ecc8350-1bd3-4a6c-be06-9b44aa52010f" target="_blank" rel="noopener">📄 閱讀全文</a></p>
+      </div>
 
-      <h3 style="margin-top:20px;">Invited Talks &amp; Lectures</h3>
+      <h3 style="margin-top:20px;"><span class="lang-en">Invited Talks &amp; Lectures</span><span class="lang-zh">受邀演講</span></h3>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">May 15, 2026 · Graduate Institute of Library and Information Studies, National Taiwan Normal University</span>
         <h3>Guest Lecturer, "學程式玩音樂！" (Programming Music!)</h3>
         <p>A lecture exploring music-making with AI and programming, understanding generative AI mechanics, and the collaboration between human creativity and AI generation.</p>
         <p><a href="https://www.glis.ntnu.edu.tw/index.php/2026/05/12/5-15/" target="_blank" rel="noopener">🔗 Event page</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2026年5月15日 · 國立臺灣師範大學圖書資訊學研究所</span>
+        <h3>客座講者，「學程式玩音樂！」</h3>
+        <p>探討如何運用 AI 與程式設計創作音樂、理解生成式 AI 運作原理，以及人類創意與 AI 生成之間的協作。</p>
+        <p><a href="https://www.glis.ntnu.edu.tw/index.php/2026/05/12/5-15/" target="_blank" rel="noopener">🔗 活動頁面</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Mar 4, 2026 · College of Music, National Taiwan Normal University</span>
         <h3>Guest Lecturer, "當音樂遇見科技：一段持續中的對話" (When Music Meets Technology: An Ongoing Dialogue)</h3>
         <p>114-2 Music Arts Special Topics Lecture Series, Room 308.</p>
         <p><a href="https://www.music.ntnu.edu.tw/index.php/2026/02/25/114seminar-in-music-arts-spring-2026/" target="_blank" rel="noopener">🔗 Event page</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2026年3月4日 · 國立臺灣師範大學音樂學院</span>
+        <h3>客座講者，「當音樂遇見科技：一段持續中的對話」</h3>
+        <p>114-2 音樂藝術專題講座系列，308 教室。</p>
+        <p><a href="https://www.music.ntnu.edu.tw/index.php/2026/02/25/114seminar-in-music-arts-spring-2026/" target="_blank" rel="noopener">🔗 活動頁面</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Nov 12, 2025 · College of Music, National Taiwan Normal University</span>
-        <h3>Guest Instructor, "Coffee Corner 特別活動｜用 AI 做音樂！" (Making Music with AI)</h3>
+        <h3>Guest Lecturer, "Coffee Corner 特別活動｜用 AI 做音樂！" (Making Music with AI)</h3>
         <p>A hands-on session exploring how technology and creativity blend to compose original music with AI. No musical background required.</p>
         <p><a href="https://www.instagram.com/p/DQlj_9ok56X/" target="_blank" rel="noopener">🔗 Event post</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2025年11月12日 · 國立臺灣師範大學音樂學院</span>
+        <h3>客座講者，「Coffee Corner 特別活動｜用 AI 做音樂！」</h3>
+        <p>一場實作工作坊，探索科技與創意如何結合，運用 AI 創作原創音樂，不需音樂背景亦可參與。</p>
+        <p><a href="https://www.instagram.com/p/DQlj_9ok56X/" target="_blank" rel="noopener">🔗 活動貼文</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Oct 31, 2024 · Taipei National University of the Arts (TNUA)</span>
         <h3>Guest Lecturer, "霧裡看花->知己知彼：音樂生成式 AI 原理初探" (Seeing Flowers Through Fog → Know Thyself, Know Thy Foe: A First Look at the Principles of Generative Music AI)</h3>
         <p>Invited talk on the principles of generative music AI, given to the composition department (mandatory attendance for TNUA composition majors) in Room M301, Music Building 1.</p>
         <p><a href="https://music.tnua.edu.tw/2024/11/15/%e3%80%90%e9%9c%a7%e8%a3%8f%e7%9c%8b%e8%8a%b1-%e7%9f%a5%e5%b7%b1%e7%9f%a5%e5%bd%bc%e9%9f%b3%e6%a8%82%e7%94%9f%e6%88%90%e5%bc%8f-ai-%e5%8e%9f%e7%90%86%e5%88%9d%e6%8e%a2%e3%80%91-2/" target="_blank" rel="noopener">🔗 Event page</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2024年10月31日 · 國立臺北藝術大學</span>
+        <h3>客座講者，「霧裡看花->知己知彼：音樂生成式 AI 原理初探」</h3>
+        <p>受邀向作曲系講授生成式音樂 AI 原理（北藝大作曲系必修出席），於音樂一館 M301 教室舉行。</p>
+        <p><a href="https://music.tnua.edu.tw/2024/11/15/%e3%80%90%e9%9c%a7%e8%a3%8f%e7%9c%8b%e8%8a%b1-%e7%9f%a5%e5%b7%b1%e7%9f%a5%e5%bd%bc%e9%9f%b3%e6%a8%82%e7%94%9f%e6%88%90%e5%bc%8f-ai-%e5%8e%9f%e7%90%86%e5%88%9d%e6%8e%a2%e3%80%91-2/" target="_blank" rel="noopener">🔗 活動頁面</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Oct 1, 2022 · National Tsing Hua University, Hsinchu, Taiwan</span>
         <h3>Speaker, "繆斯女神的新挑戰：AI音樂創作專題演講" (Muse's New Challenge: AI Music Creation Seminar Series)</h3>
         <p>Part of the TSMC Art Season (台積心築藝術季), a full-day seminar with eight speakers exploring AI's collaboration with music composition, hosted by the Center for the Arts, National Tsing Hua University.</p>
         <p><a href="https://cac.site.nthu.edu.tw/p/406-1549-235566,r9882.php?Lang=zh-tw" target="_blank" rel="noopener">🔗 Event page</a></p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2022年10月1日 · 國立清華大學，新竹</span>
+        <h3>講者，「繆斯女神的新挑戰：AI音樂創作專題演講」</h3>
+        <p>台積心築藝術季系列活動之一，由清華大學藝術中心主辦，一整天共八位講者，探討 AI 與音樂創作的協作可能。</p>
+        <p><a href="https://cac.site.nthu.edu.tw/p/406-1549-235566,r9882.php?Lang=zh-tw" target="_blank" rel="noopener">🔗 活動頁面</a></p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Aug 2020 · Ministry of Science and Technology, Taiwan</span>
         <h3>Presenter, 2020 Taiwan Automation Intelligence and Robot Show</h3>
         <p>Presented "Viewing the Relation of Music and Human in AI Industry."</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2020年8月 · 科技部</span>
+        <h3>主講人，2020 台灣自動化智慧與機器人展</h3>
+        <p>發表演講「從 AI 產業角度看音樂與人的關係」。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Nov 2019 · Fu Jen Catholic University, Department of Music</span>
         <h3>Lecturer, In-Depth Techniques of VR Music Game Project Production</h3>
         <p>Shared insights into the development of a personal VR music game project.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2019年11月 · 輔仁大學音樂系</span>
+        <h3>講師，「VR 音樂遊戲專案製作深度技術分享」</h3>
+        <p>分享個人 VR 音樂遊戲專案開發經驗。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Oct 2019 · National Tsing Hua University, Taiwan</span>
         <h3>Panelist, 2019 AI Music Forum</h3>
         <p>Invited as one of three panel speakers to share trends in AI music development.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2019年10月 · 國立清華大學</span>
+        <h3>座談人，2019 AI 音樂論壇</h3>
+        <p>受邀為三位座談講者之一，分享 AI 音樂發展趨勢。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">Sep – Nov 2018 · Department of Music, Fu Jen Catholic University</span>
         <h3>Instructor, Higher Education VR Practical and Applied Course for Musicians</h3>
         <p>A 4-week practical application course on VR.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">2018年9月–11月 · 輔仁大學音樂系</span>
+        <h3>講師，「音樂人的VR：高教深耕 VR 實務應用課程」</h3>
+        <p>為期四週之 VR 實務應用課程。</p>
+      </div>
     </section>
 
     <section class="section">
-      <h2>Other Experience</h2>
+      <h2><span class="lang-en">Other Experience</span><span class="lang-zh">其他經歷</span></h2>
       <ul class="plain-list">
-        <li>Former Chief Music Officer, AI music company</li>
-        <li>Peer reviewer for ICMC, SEAMUS, NIME, and other academic conferences</li>
+        <li class="lang-en">Former Chief Music Officer, AI music company</li>
+        <li class="lang-zh">曾任 AI 音樂公司音樂研發長</li>
+        <li class="lang-en">Peer reviewer for ICMC, SEAMUS, NIME, and other academic conferences</li>
+        <li class="lang-zh">ICMC、SEAMUS、NIME 等國際學術研討會論文評審</li>
       </ul>
-      <h3 style="margin-top:20px;">AI Development</h3>
+      <h3 style="margin-top:20px;"><span class="lang-en">AI Development</span><span class="lang-zh">AI 開發</span></h3>
       <ul class="plain-list">
-        <li>Four four-part harmony generators</li>
-        <li>Two 16th-century-style counterpoint generators (Palestrina style)</li>
-        <li>"Little Pi" — a contemporary classical music generation system</li>
+        <li class="lang-en">Four four-part harmony generators</li>
+        <li class="lang-zh">四套四部和聲產生器</li>
+        <li class="lang-en">Two 16th-century-style counterpoint generators (Palestrina style)</li>
+        <li class="lang-zh">兩套十六世紀對位法（帕勒斯提納風格）產生器</li>
+        <li class="lang-en">"Little Pi" — a contemporary classical music generation system</li>
+        <li class="lang-zh">「小皮」——當代古典音樂生成系統</li>
       </ul>
     </section>
 
     <section class="section">
-      <h2>Cross-Disciplinary Highlights</h2>
+      <h2><span class="lang-en">Cross-Disciplinary Highlights</span><span class="lang-zh">跨領域精選</span></h2>
       <ul class="plain-list">
-        <li>XR film <em>Diving into Siraya</em></li>
-        <li>VR app <em>Journey into the World of Dimensions</em></li>
-        <li>Light-sound installation <em>Luminous Path</em></li>
+        <li class="lang-en">XR film <em>Diving into Siraya</em></li>
+        <li class="lang-zh">XR 電影《潛入西拉雅》</li>
+        <li class="lang-en">VR app <em>Journey into the World of Dimensions</em></li>
+        <li class="lang-zh">VR App《次元穿梭》</li>
+        <li class="lang-en">Light-sound installation <em>Luminous Path</em></li>
+        <li class="lang-zh">光聲裝置《光譜印象》</li>
       </ul>
-      <p><a href="interdisciplinary-works.html">See all interdisciplinary works →</a></p>
+      <p class="lang-en"><a href="interdisciplinary-works.html">See all interdisciplinary works →</a></p>
+      <p class="lang-zh"><a href="interdisciplinary-works.html">查看全部跨領域作品 →</a></p>
     </section>
 
     <section class="section">
-      <h2>CV</h2>
-      <p>For a complete list of education, performances, commissions, festivals, presentations, and other professional activities, please <a href="mailto:yicheng.zoe@gmail.com">contact Zoe</a> for the current CV.</p>
+      <h2><span class="lang-en">CV</span><span class="lang-zh">履歷</span></h2>
+      <p class="lang-en">For a complete list of education, performances, commissions, festivals, presentations, and other professional activities, please <a href="mailto:yicheng.zoe@gmail.com">contact Zoe</a> for the current CV.</p>
+      <p class="lang-zh">如需完整的學經歷、演出、委託創作、音樂節與其他專業活動列表，請<a href="mailto:yicheng.zoe@gmail.com">聯繫 Zoe</a> 索取最新履歷。</p>
     </section>
   </div>
 </main>
@@ -301,7 +448,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

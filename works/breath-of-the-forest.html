@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -46,41 +47,48 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">11/2019 – 06/2022 · WebXR interactive installation & immersive electroacoustic music</span>
-      <h1>Breath of the Forest</h1>
-      <p><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">🕹️ Experience on itch.io</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
-      <p>An iOS VR app version, <em>ForestBreath</em>, was also released on the App Store (since discontinued).</p>
+      <span class="meta lang-en">11/2019 – 06/2022 · WebXR interactive installation & immersive electroacoustic music</span>
+      <span class="meta lang-zh">11/2019 – 06/2022 · WebXR 互動裝置與沉浸式電聲音樂</span>
+      <h1><span class="lang-en">Breath of the Forest</span><span class="lang-zh">森之生</span></h1>
+      <p class="lang-en"><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">🕹️ Experience on itch.io</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">🕹️ 於 itch.io 體驗</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
+      <p class="lang-en">An iOS VR app version, <em>ForestBreath</em>, was also released on the App Store (since discontinued).</p>
+      <p class="lang-zh">本作品亦曾以 iOS VR App「ForestBreath」形式上架 App Store（現已下架）。</p>
     </div>
 
     <section class="section work-body">
+      <div class="lang-en">
       <p>Pleased to announce that my work “Breath of the Forest” in WebXR 3D game is accepted by NIME2023 workshop “Mixed Realities as NIMEs.” Specially thanks for Cheng-Yu Wu’s flute performance and recordings!</p>
 
       <h2>Concept</h2>
@@ -91,16 +99,29 @@
       <p>In the music, the flute represents our emotional responses to these events in life. A single event can provoke many different responses, and each response can lead to a different subsequent event. The audience is invited to choose how the flute responds to each particular event. Through these choices, the audience gradually shapes the trajectory of the musical work.</p>
       <p>In this sense, the structure of the piece becomes a metaphor for the way we create our own lives: we cannot always choose what happens to us, but we can choose how we respond. Through these responses, we shape what comes next.</p>
       <p>We learn, create, and appreciate our lives—all at the same time. Although life is given to us, we are never merely passive recipients of it. We are always participants in its creation. And through this continuous process of interaction, choice, and creation, we become part of the One—the greater consciousness we call God.</p>
+      </div>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        <p>很開心宣布，我的作品《森之生》WebXR 3D 遊戲入選 NIME 2023 工作坊「Mixed Realities as NIMEs」。特別感謝 Cheng-Yu Wu 的長笛演奏與錄音！</p>
+
+        <h2>概念</h2>
+        <p>生命與自然之間是什麼關係？這是我們在 21 世紀可能愈來愈常問自己的問題。</p>
+        <p>自然是上帝的創造，人類亦然。因此，自然不應僅被視為我們居住、取用資源的「地方」或「空間」，而應被理解為一個與我們持續相連、充滿生機的整體。人類與自然共存、互動，並不斷形塑彼此的生命。從細菌、動物到生態系統與環境，人類的活動都與我們所屬的生命系統密不可分。</p>
+        <p>透過人與自然之間有意識與無意識的種種互動，我們或許能感知到，兩者其實都是某個更宏大意識——「太一」，或稱上帝——的展現。</p>
+        <p>這首作品試圖透過自然，描繪人類生命與這個更宏大意識之間的互動。樂句與取材自自然的聲響，依循一種演算法決定、看似隨機的過程，貫穿全曲浮現。如同我們生命中的種種事件，它們以我們無法完全預料的順序出現。這些事件或許可以理解為上帝賜予我們的禮物或境遇。有時它們似乎命中註定；有時又顯得可以改變——因為透過我們回應這些事件的方式，我們也參與了創造接下來發生的事件。</p>
+        <p>音樂中，長笛代表著我們對生命中這些事件的情感回應。同一個事件可能引發多種不同的回應，而每一種回應又可能導向不同的後續事件。觀眾受邀選擇長笛該如何回應每個特定事件。透過這些選擇，觀眾逐漸形塑了這首作品的發展軌跡。</p>
+        <p>在這個意義上，這首作品的結構成為我們創造自身生命方式的隱喻：我們無法總是選擇會發生什麼事，但我們可以選擇如何回應。透過這些回應，我們形塑了接下來會發生的事。</p>
+        <p>我們同時學習、創造，並感恩我們的生命。雖然生命是被賜予的，我們卻從不只是被動的接受者，而始終是創造生命的參與者。透過這個不斷互動、選擇與創造的過程，我們成為「太一」——我們稱之為上帝的那個更宏大意識——的一部分。</p>
+      </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

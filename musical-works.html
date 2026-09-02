@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -23,345 +24,446 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="info.html">Info</a>
-      <a href="musical-works.html">Musical Works</a>
-      <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="musings.html">Musings</a>
-      <a href="events.html">Events</a>
-      <a href="releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="index.html">Home</a>
-  <a href="info.html">Info</a>
-  <a href="musical-works.html">Musical Works</a>
-  <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="musings.html">Musings</a>
-  <a href="events.html">Events</a>
-  <a href="releases.html">Releases</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container">
     <div class="page-header">
-      <h1>Musical Works</h1>
-      <p>A selection of works spanning immersive electroacoustic soundscapes and instrumental chamber and orchestral music, each section listed most recent first.</p>
+      <h1><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></h1>
+      <p class="lang-en">A selection of works spanning immersive electroacoustic soundscapes and instrumental chamber and orchestral music, each section listed most recent first.</p>
+      <p class="lang-zh">精選作品橫跨沉浸式電聲音景，以及器樂室內樂與管弦樂創作，各分區皆依時間新到舊排列。</p>
     </div>
 
-    <p><a href="releases.html">🎵 Auditory Horizons — a new orchestral album is out now. See Releases →</a></p>
+    <p class="lang-en"><a href="releases.html">🎵 Auditory Horizons — a new orchestral album is out now. See Releases →</a></p>
+    <p class="lang-zh"><a href="releases.html">🎵 Auditory Horizons ——最新管弦樂專輯已上線，前往作品發行頁 →</a></p>
 
     <nav class="works-index" aria-label="Jump to section">
-      <a href="#electroacoustic-works">Immersive Electroacoustic Works</a>
-      <a href="#instrumental-works">Instrumental Works</a>
+      <a href="#electroacoustic-works"><span class="lang-en">Immersive Electroacoustic Works</span><span class="lang-zh">沉浸式電聲作品</span></a>
+      <a href="#instrumental-works"><span class="lang-en">Instrumental Works</span><span class="lang-zh">器樂作品</span></a>
     </nav>
 
     <section class="section">
-      <h2 id="electroacoustic-works">Immersive Electroacoustic Works</h2>
+      <h2 id="electroacoustic-works"><span class="lang-en">Immersive Electroacoustic Works</span><span class="lang-zh">沉浸式電聲作品</span></h2>
       <div class="card">
         <span class="meta">08/2026</span>
-        <h3><a href="works/taroko-lullaby.html">Taroko: A Lullaby of Coastal</a></h3>
-        <p>A work inspired by Taroko and its coastal landscape, approaching place through the intimate perspective of a lullaby. The music reflects on landscape, memory, and listening, exploring how a sense of place can be transformed into musical sound and imagination.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/taroko-a-lullaby-of-coastal" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/taroko-lullaby.html"><span class="lang-en">Taroko: A Lullaby of Coastal</span><span class="lang-zh">太魯閣：海風的搖籃曲</span></a></h3>
+        <p class="lang-en">A work inspired by Taroko and its coastal landscape, approaching place through the intimate perspective of a lullaby. The music reflects on landscape, memory, and listening, exploring how a sense of place can be transformed into musical sound and imagination.</p>
+        <p class="lang-zh">一首以太魯閣及其海岸地景為靈感的作品，透過搖籃曲般親密的視角切入地方感。音樂映照著地景、記憶與聆聽的關係，探索地方感如何轉化為音樂聲響與想像。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/taroko-a-lullaby-of-coastal" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/taroko-a-lullaby-of-coastal" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">07/2026</span>
-        <h3><a href="works/whispers-in-the-stone-crevices.html">Whispers in the Stone Crevices</a></h3>
-        <p>For erhu and immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/stone" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/whispers-in-the-stone-crevices.html"><span class="lang-en">Whispers in the Stone Crevices</span><span class="lang-zh">石縫間的低語</span></a></h3>
+        <p class="lang-en">For erhu and immersive electroacoustic music.</p>
+        <p class="lang-zh">為二胡與沉浸式電聲音樂創作。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/stone" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/stone" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">10/2025</span>
-        <h3><a href="works/dream-voyager.html">Dream Voyager: A Pilgrim of the Infinite</a></h3>
-        <p>For solo flute and electronics. The work portrays a journey of consciousness through a lucid dream, moving between states of sleep, heightened awareness, and an imagined departure from the body. Sound and space become a canvas through which the listener travels, while the accompanying visual version extends the work into an audiovisual meditation on the blurred boundaries between reality, illusion, AI-generated imagery, and dreams.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/dream-voyager-a-pilgrim-of-the" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/dream-voyager.html"><span class="lang-en">Dream Voyager: A Pilgrim of the Infinite</span><span class="lang-zh">夢行者：無垠的朝聖</span></a></h3>
+        <p class="lang-en">For solo flute and electronics. The work portrays a journey of consciousness through a lucid dream, moving between states of sleep, heightened awareness, and an imagined departure from the body. Sound and space become a canvas through which the listener travels, while the accompanying visual version extends the work into an audiovisual meditation on the blurred boundaries between reality, illusion, AI-generated imagery, and dreams.</p>
+        <p class="lang-zh">為長笛獨奏與電聲創作。作品描繪意識在清醒夢中的旅程，游走於睡眠、高度清醒與想像中脫離身體的狀態之間。聲音與空間成為聽者穿越的畫布，搭配的視覺版本則將作品延伸為一場探討真實、幻覺、AI 生成影像與夢境之間模糊邊界的視聽冥想。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/dream-voyager-a-pilgrim-of-the" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/dream-voyager-a-pilgrim-of-the" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">08/2024</span>
-        <h3><a href="works/lavas-roaring-dance.html">3D Illusory Immersive Soundscape: Lava's Roaring Dance</a></h3>
-        <p>Immersive electroacoustic music. Presented at multiple international music festivals.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/volcano" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/lavas-roaring-dance.html"><span class="lang-en">3D Illusory Immersive Soundscape: Lava's Roaring Dance</span><span class="lang-zh">熔岩之舞</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music. Presented at multiple international music festivals.</p>
+        <p class="lang-zh">沉浸式電聲音樂，曾展演於多個國際音樂節。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/volcano" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/volcano" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">11/2023</span>
-        <h3><a href="works/glacier.html">3D Illusory Immersive Soundscape: Glacier</a></h3>
-        <p>Immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/glacier" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/glacier.html"><span class="lang-en">3D Illusory Immersive Soundscape: Glacier</span><span class="lang-zh">冰川</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music.</p>
+        <p class="lang-zh">沉浸式電聲音樂。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/glacier" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/glacier" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">08/2022</span>
-        <h3><a href="works/owts-world.html">OWt's World</a></h3>
-        <p>Flute, clarinet, zheng, percussion, and multichannel immersive electroacoustic music. Premiered in Taichung, September 2022.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/owts-world" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/owts-world.html"><span class="lang-en">OWt's World</span><span class="lang-zh">來自異次元的聲音地圖</span></a></h3>
+        <p class="lang-en">Flute, clarinet, zheng, percussion, and multichannel immersive electroacoustic music. Premiered in Taichung, September 2022.</p>
+        <p class="lang-zh">為長笛、單簧管、箏、打擊與多聲道沉浸式電聲音樂。2022 年 9 月於台中首演。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/owts-world" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/owts-world" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">07/2022</span>
-        <h3><a href="works/aurora.html">3D Illusory Immersive Soundscape: Aurora</a></h3>
-        <p>Solo saxophone with multichannel immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/aurora" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/aurora.html"><span class="lang-en">3D Illusory Immersive Soundscape: Aurora</span><span class="lang-zh">極光</span></a></h3>
+        <p class="lang-en">Solo saxophone with multichannel immersive electroacoustic music.</p>
+        <p class="lang-zh">為薩克管獨奏與多聲道沉浸式電聲音樂創作。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/aurora" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/aurora" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">04/2022 – 05/2023</span>
-        <h3><a href="works/little-pi-ai-composer.html">First Contemporary Classical AI Composer Robot Project</a></h3>
-        <p>AI music generation system that produced 62 works.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/the-growth-album-of-little-pi" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/little-pi-ai-composer.html"><span class="lang-en">First Contemporary Classical AI Composer Robot Project</span><span class="lang-zh">第一位當代古典音樂AI機器人計畫</span></a></h3>
+        <p class="lang-en">AI music generation system that produced 62 works.</p>
+        <p class="lang-zh">AI 音樂生成系統，截至目前已生成 62 首作品。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/the-growth-album-of-little-pi" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/the-growth-album-of-little-pi" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">11/2019 – 06/2022</span>
-        <h3><a href="works/breath-of-the-forest.html">Breath of the Forest</a></h3>
-        <p>Immersive electroacoustic music with a WebXR virtual interactive installation.</p>
-        <p><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">🕹️ Experience on itch.io</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/breath-of-the-forest.html"><span class="lang-en">Breath of the Forest</span><span class="lang-zh">森之生</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music with a WebXR virtual interactive installation.</p>
+        <p class="lang-zh">沉浸式電聲音樂，並發展為 WebXR 虛擬互動裝置。</p>
+        <p class="lang-en"><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">🕹️ Experience on itch.io</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://nagretshei.itch.io/the-breath-of-the-forest" target="_blank" rel="noopener">🕹️ 於 itch.io 體驗</a> · <a href="https://soundcloud.com/yi-chenglin/sets/the-breath-of-the-forest" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">11/2021</span>
-        <h3><a href="works/spirit-of-the-giant-tree.html">Music from the Metaverse: The Spirit of the Giant Tree</a></h3>
-        <p>Immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/the-spirit-of-the-giant-tree" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/spirit-of-the-giant-tree.html"><span class="lang-en">Music from the Metaverse: The Spirit of the Giant Tree</span><span class="lang-zh">神木之靈</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music.</p>
+        <p class="lang-zh">沉浸式電聲音樂。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/the-spirit-of-the-giant-tree" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/the-spirit-of-the-giant-tree" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">10/2021</span>
-        <h3><a href="works/summer-in-trees.html">Summer in Trees</a></h3>
-        <p>Immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/summer-in-trees" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/summer-in-trees.html"><span class="lang-en">Summer in Trees</span><span class="lang-zh">樹林裡的夏日</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music.</p>
+        <p class="lang-zh">沉浸式電聲音樂。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/summer-in-trees" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/summer-in-trees" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">09/2021</span>
-        <h3><a href="works/meditation-through-glass.html">Meditation through Glass</a></h3>
-        <p>Immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/meditation-through-the-glass" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/meditation-through-glass.html"><span class="lang-en">Meditation through Glass</span><span class="lang-zh">玻璃中的冥想</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music.</p>
+        <p class="lang-zh">沉浸式電聲音樂。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/meditation-through-the-glass" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/meditation-through-the-glass" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">09/2021</span>
-        <h3><a href="works/self-portrait.html">Self Portrait</a></h3>
-        <p>Immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/self-portrait-for-normal-headphone?in=yi-chenglin/sets/self-portrait" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/self-portrait.html"><span class="lang-en">Self Portrait</span><span class="lang-zh">自畫像</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music.</p>
+        <p class="lang-zh">沉浸式電聲音樂。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/self-portrait-for-normal-headphone?in=yi-chenglin/sets/self-portrait" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/self-portrait-for-normal-headphone?in=yi-chenglin/sets/self-portrait" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">08/2021</span>
-        <h3><a href="works/image-of-watercolor-painting.html">Image of Watercolor Painting</a></h3>
-        <p>Immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/image-of-watercolor-painting" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/image-of-watercolor-painting.html"><span class="lang-en">Image of Watercolor Painting</span><span class="lang-zh">水彩畫意象</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music.</p>
+        <p class="lang-zh">沉浸式電聲音樂。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/image-of-watercolor-painting" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/image-of-watercolor-painting" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">06/2020</span>
-        <h3><a href="works/dance-of-the-soul.html">Dance of the Soul</a></h3>
-        <p>Solo harpsichord with immersive electroacoustic music. Premiered March 2022.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/dance-of-the-soul-2" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/dance-of-the-soul.html"><span class="lang-en">Dance of the Soul</span><span class="lang-zh">靈魂之舞</span></a></h3>
+        <p class="lang-en">Solo harpsichord with immersive electroacoustic music. Premiered March 2022.</p>
+        <p class="lang-zh">為大鍵琴獨奏與沉浸式電聲音樂，首演於 2022 年 3 月。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/dance-of-the-soul-2" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/dance-of-the-soul-2" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">04/2020</span>
-        <h3><a href="works/zen-in-suiboku-ga.html">Zen In Suiboku-ga</a></h3>
-        <p>Immersive electroacoustic music.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/zen-in-suiboku-ga-oriental-ink-wash-painting" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/zen-in-suiboku-ga.html"><span class="lang-en">Zen In Suiboku-ga</span><span class="lang-zh">水墨之禪意</span></a></h3>
+        <p class="lang-en">Immersive electroacoustic music.</p>
+        <p class="lang-zh">沉浸式電聲音樂。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/zen-in-suiboku-ga-oriental-ink-wash-painting" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/zen-in-suiboku-ga-oriental-ink-wash-painting" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">04/2020</span>
-        <h3><a href="works/pray-for-life.html">Pray for Life</a></h3>
-        <p>Solo harpsichord with immersive electroacoustic music. Premiered March 2022.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/pray-for-life-ossia-live-real-harpsichord" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/pray-for-life.html"><span class="lang-en">Pray for Life</span><span class="lang-zh">為生命祈禱</span></a></h3>
+        <p class="lang-en">Solo harpsichord with immersive electroacoustic music. Premiered March 2022.</p>
+        <p class="lang-zh">為大鍵琴獨奏與沉浸式電聲音樂，首演於 2022 年 3 月。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/pray-for-life-ossia-live-real-harpsichord" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/pray-for-life-ossia-live-real-harpsichord" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2012</span>
-        <h3><a href="works/dialogue-entre-des-temps.html">Dialogue Entre Des Temps</a></h3>
-        <p>Solo saxophone, pre-recorded soundtrack, and improvised instrument, weaving together past, present, and future. Recorded by Chun-Hao Ku.</p>
-        <p><a href="https://soundcloud.com/chun-hao-ku/dialogues-entre-des-temps" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/dialogue-entre-des-temps.html"><span class="lang-en">Dialogue Entre Des Temps</span><span class="lang-zh">時間的對話</span></a></h3>
+        <p class="lang-en">Solo saxophone, pre-recorded soundtrack, and improvised instrument, weaving together past, present, and future. Recorded by Chun-Hao Ku.</p>
+        <p class="lang-zh">為薩克管獨奏、預錄音軌與即興樂器創作，交織過去、現在與未來。由顧鈞豪錄製。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/chun-hao-ku/dialogues-entre-des-temps" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/chun-hao-ku/dialogues-entre-des-temps" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <ul class="plain-list">
-        <li><strong>Walking into Consciousness of Flowers</strong> — Immersive electroacoustic music, 2022.</li>
-        <li><strong>Hey Kid</strong> — Electronics and sound recordings, 2019.</li>
-        <li><strong>Star Fantasy</strong> — Electronics, 2019.</li>
-        <li><strong>Grandma's Memories</strong> — Electronics and sound recordings, 2019.</li>
-        <li><strong>Deadlines</strong> — Electronics, 2017.</li>
-        <li><strong>"Glorious" Beethoven</strong> — Electronics, 2011.</li>
+        <li class="lang-en"><strong>Walking into Consciousness of Flowers</strong> — Immersive electroacoustic music, 2022.</li>
+        <li class="lang-zh"><strong>漫步在花朵的意識</strong> — 沉浸式電聲音樂，2022。</li>
+        <li class="lang-en"><strong>Hey Kid</strong> — Electronics and sound recordings, 2019.</li>
+        <li class="lang-zh"><strong>Hey Kid</strong> — 電聲與錄音作品，2019。</li>
+        <li class="lang-en"><strong>Star Fantasy</strong> — Electronics, 2019.</li>
+        <li class="lang-zh"><strong>星之幻想</strong> — 電聲作品，2019。</li>
+        <li class="lang-en"><strong>Grandma's Memories</strong> — Electronics and sound recordings, 2019.</li>
+        <li class="lang-zh"><strong>阿嬤的思想起</strong> — 電聲與錄音作品，2019。</li>
+        <li class="lang-en"><strong>Deadlines</strong> — Electronics, 2017.</li>
+        <li class="lang-zh"><strong>Deadlines</strong> — 電聲作品，2017。</li>
+        <li class="lang-en"><strong>"Glorious" Beethoven</strong> — Electronics, 2011.</li>
+        <li class="lang-zh"><strong>"Glorious" Beethoven</strong> — 電聲作品，2011。</li>
       </ul>
 
     </section>
 
     <section class="section">
-      <h2 id="instrumental-works">Instrumental Works</h2>
-      <p>Chamber and orchestral works.</p>
+      <h2 id="instrumental-works"><span class="lang-en">Instrumental Works</span><span class="lang-zh">器樂作品</span></h2>
+      <p class="lang-en">Chamber and orchestral works.</p>
+      <p class="lang-zh">室內樂與管弦樂作品。</p>
 
       <div class="card">
         <span class="meta">03/2026</span>
-        <h3><a href="works/distant-sorrows.html">Distant Sorrows</a></h3>
-        <p>Orchestra.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/distant-sorrows" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
-      </div>
-
-      <div class="card">
-        <span class="meta">03/2026</span>
-        <h3><a href="works/fugue-in-motion-strings.html">Fugue in Motion for Orchestra (String Part)</a></h3>
-        <p>String orchestra. The full orchestral version will be released at a later time.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/fugue-in-motion-for-orchestra-strings" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/distant-sorrows.html"><span class="lang-en">Distant Sorrows</span><span class="lang-zh">彼處之悲</span></a></h3>
+        <p class="lang-en">Orchestra.</p>
+        <p class="lang-zh">管弦樂作品。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/distant-sorrows" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/distant-sorrows" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">03/2026</span>
-        <h3><a href="works/mosquito-concerto.html">Mosquito Concerto</a></h3>
-        <p>Orchestra, with brief sampled sound elements. A concerto built on the idea of confrontation, transforming a summer-night encounter with a mosquito into a study of sonic friction and temporal suspense.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/mosquito-concerto" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/fugue-in-motion-strings.html"><span class="lang-en">Fugue in Motion for Orchestra (String Part)</span><span class="lang-zh">賦格的律動（弦樂版）</span></a></h3>
+        <p class="lang-en">String orchestra. The full orchestral version will be released at a later time.</p>
+        <p class="lang-zh">弦樂團版本，全管弦樂版本將於稍後發表。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/fugue-in-motion-for-orchestra-strings" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/fugue-in-motion-for-orchestra-strings" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
+      </div>
+
+      <div class="card">
+        <span class="meta">03/2026</span>
+        <h3><a href="works/mosquito-concerto.html"><span class="lang-en">Mosquito Concerto</span><span class="lang-zh">蚊子協奏曲</span></a></h3>
+        <p class="lang-en">Orchestra, with brief sampled sound elements. A concerto built on the idea of confrontation, transforming a summer-night encounter with a mosquito into a study of sonic friction and temporal suspense.</p>
+        <p class="lang-zh">管弦樂作品，含少量取樣聲響。以對抗為核心意象創作，將夏夜與蚊子的邂逅轉化為一場關於聲響摩擦與時間懸念的音樂探索。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/mosquito-concerto" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/mosquito-concerto" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2026</span>
-        <h3><a href="works/switzerland-preview-mode.html">Switzerland: Preview Mode</a></h3>
-        <p>Orchestra. A playful, self-aware musical daydream of the Swiss Alps, a landscape not yet seen in person.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/switzerland-preview-mode" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/switzerland-preview-mode.html"><span class="lang-en">Switzerland: Preview Mode</span><span class="lang-zh">瑞士：預覽模式</span></a></h3>
+        <p class="lang-en">Orchestra. A playful, self-aware musical daydream of the Swiss Alps, a landscape not yet seen in person.</p>
+        <p class="lang-zh">管弦樂作品。以帶點自覺與玩心的筆觸，描繪一場尚未親眼見過的瑞士阿爾卑斯山幻想。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/switzerland-preview-mode" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/switzerland-preview-mode" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2026</span>
-        <h3><a href="works/alpsolve.html">Alpsolve</a></h3>
-        <p>Orchestra. A work dwelling in the high, cold vastness of the Alps, letting the self dissolve into a mountain lake rather than returning to formal resolution.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/alpsolve" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/alpsolve.html"><span class="lang-en">Alpsolve</span><span class="lang-zh">雪峰融境</span></a></h3>
+        <p class="lang-en">Orchestra. A work dwelling in the high, cold vastness of the Alps, letting the self dissolve into a mountain lake rather than returning to formal resolution.</p>
+        <p class="lang-zh">管弦樂作品。棲居於阿爾卑斯山高聳荒寒的遼闊之中，讓自我消融於山中湖泊，而非回歸形式上的解決。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/alpsolve" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/alpsolve" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2026</span>
-        <h3><a href="works/la-mer.html">La Mer pour orchestre</a></h3>
-        <p>Orchestra. Forceful waves, a receding tide through rocky caverns, and a ship setting sail toward a distant horizon.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/la-mer" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/la-mer.html"><span class="lang-en">La Mer pour orchestre</span><span class="lang-zh">海</span></a></h3>
+        <p class="lang-en">Orchestra. Forceful waves, a receding tide through rocky caverns, and a ship setting sail toward a distant horizon.</p>
+        <p class="lang-zh">管弦樂作品。洶湧的海浪、退潮流經岩洞，以及一艘駛向遠方地平線的船。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/la-mer" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/la-mer" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2026</span>
-        <h3><a href="works/la-lumiere-eclatante-du-jardin.html">La lumière éclatante du jardin</a></h3>
-        <p>Orchestra. A garden filled with flowers and radiant sunlight, colors unfolding into a gently flowing sense of joy.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/la-lumiere-eclatante-du-jardin" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/la-lumiere-eclatante-du-jardin.html"><span class="lang-en">La lumière éclatante du jardin</span><span class="lang-zh">花園裡的艷陽</span></a></h3>
+        <p class="lang-en">Orchestra. A garden filled with flowers and radiant sunlight, colors unfolding into a gently flowing sense of joy.</p>
+        <p class="lang-zh">管弦樂作品。一座開滿鮮花、灑滿燦爛陽光的花園，色彩在其中舒展成一股輕柔流動的喜悅。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/la-lumiere-eclatante-du-jardin" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/la-lumiere-eclatante-du-jardin" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2026</span>
-        <h3><a href="works/joy-under-the-falling-leaves.html">Joy Under the Falling Leaves</a></h3>
-        <p>Orchestra. Withered branches and falling leaves, where joy and sorrow are embraced together, moving from a sorrowful French horn passage to a celebratory close.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/joy-under-the-falling-leaves" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/joy-under-the-falling-leaves.html"><span class="lang-en">Joy Under the Falling Leaves</span><span class="lang-zh">枯枝下的喜悅</span></a></h3>
+        <p class="lang-en">Orchestra. Withered branches and falling leaves, where joy and sorrow are embraced together, moving from a sorrowful French horn passage to a celebratory close.</p>
+        <p class="lang-zh">管弦樂作品。枯枝與落葉之間，喜悅與哀傷相互擁抱，從悲傷的法國號樂段推向歡慶的終曲。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/joy-under-the-falling-leaves" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/joy-under-the-falling-leaves" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2026</span>
-        <h3><a href="works/brume-de-montagne.html">Brume de montagne et lumière sur une île humide</a></h3>
-        <p>Orchestra. The misty, drizzly atmosphere of Taiwan's mountain regions from morning through evening, rendered with extended techniques.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/brume-de-montagne-et-lumiere-sur-une-ile-humide" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/brume-de-montagne.html"><span class="lang-en">Brume de montagne et lumière sur une île humide</span><span class="lang-zh">山霧與濕島之光</span></a></h3>
+        <p class="lang-en">Orchestra. The misty, drizzly atmosphere of Taiwan's mountain regions from morning through evening, rendered with extended techniques.</p>
+        <p class="lang-zh">管弦樂作品。以擴展演奏技法描繪台灣山區從清晨到夜晚、霧氣濛濛細雨綿綿的氛圍。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/brume-de-montagne-et-lumiere-sur-une-ile-humide" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/brume-de-montagne-et-lumiere-sur-une-ile-humide" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2026</span>
-        <h3><a href="works/reflexions-sur-une-peinture-de-nympheas.html">Réflexions sur une peinture de nymphéas</a></h3>
-        <p>Flute, oboe, clarinet, bassoon, saxophone, and horn. A response to a painting of water lilies, treating sound as a material analogous to paint.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/reflexions-sur-une-peinture-de-nympheas" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/reflexions-sur-une-peinture-de-nympheas.html"><span class="lang-en">Réflexions sur une peinture de nymphéas</span><span class="lang-zh">睡蓮畫作的沉思</span></a></h3>
+        <p class="lang-en">Flute, oboe, clarinet, bassoon, saxophone, and horn. A response to a painting of water lilies, treating sound as a material analogous to paint.</p>
+        <p class="lang-zh">為長笛、雙簧管、單簧管、低音管、薩克管與法國號之室內樂。回應一幅睡蓮畫作，將聲音視為類似顏料的創作素材。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/reflexions-sur-une-peinture-de-nympheas" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/reflexions-sur-une-peinture-de-nympheas" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">01/2026</span>
-        <h3><a href="works/between-ink-and-air.html">Between Ink and Air</a></h3>
-        <p>String quartet. An abstract painting in sound, unfolding through shifting points of attention like the dispersed viewpoints of East Asian painting.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/between-ink-and-air-an-abstract-painting-in-sound-for-string-quartet" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/between-ink-and-air.html"><span class="lang-en">Between Ink and Air</span><span class="lang-zh">在墨與空氣之間</span></a></h3>
+        <p class="lang-en">String quartet. An abstract painting in sound, unfolding through shifting points of attention like the dispersed viewpoints of East Asian painting.</p>
+        <p class="lang-zh">為弦樂四重奏創作。一幅聲音中的抽象畫，透過不斷轉移的關注焦點展開，如同東亞繪畫中散點透視的視角。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/between-ink-and-air-an-abstract-painting-in-sound-for-string-quartet" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/between-ink-and-air-an-abstract-painting-in-sound-for-string-quartet" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">01/2026</span>
-        <h3><a href="works/quartet-flute-clarinet-violin-percussion.html">Quatuor pour flûte, clarinette, violon et percussion</a></h3>
-        <p>Flute, clarinet, violin, and percussion. An exercise in very slow, contemplative contemporary music, performed via MIDI mockup.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/quartet-flute-clarinet-violin-percussion" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/quartet-flute-clarinet-violin-percussion.html"><span class="lang-en">Quatuor pour flûte, clarinette, violon et percussion</span><span class="lang-zh">四重奏（長笛、單簧管、小提琴與打擊）</span></a></h3>
+        <p class="lang-en">Flute, clarinet, violin, and percussion. An exercise in very slow, contemplative contemporary music, performed via MIDI mockup.</p>
+        <p class="lang-zh">為長笛、單簧管、小提琴與打擊創作。一次極緩慢、沉思式的當代音樂練習，以 MIDI 模擬演奏。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/quartet-flute-clarinet-violin-percussion" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/quartet-flute-clarinet-violin-percussion" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">01/2026</span>
-        <h3><a href="works/pluie-routine-et-fatigue.html">Pluie, routine et fatigue</a></h3>
-        <p>Trio for marimba, harpsichord, and flute — or four independent solo pieces. Written overnight during a bout of insomnia.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/pluie-routine-et-fatigue-trio-ou-quatre-pieces-solistes-for-marimba-harpsichord-and-flute" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/pluie-routine-et-fatigue.html"><span class="lang-en">Pluie, routine et fatigue</span><span class="lang-zh">下雨天給社畜的厭世曲</span></a></h3>
+        <p class="lang-en">Trio for marimba, harpsichord, and flute — or four independent solo pieces. Written overnight during a bout of insomnia.</p>
+        <p class="lang-zh">為馬林巴木琴、大鍵琴與長笛之三重奏，亦可拆成四首獨立的獨奏曲。於一次失眠的夜裡一口氣寫成。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/pluie-routine-et-fatigue-trio-ou-quatre-pieces-solistes-for-marimba-harpsichord-and-flute" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/pluie-routine-et-fatigue-trio-ou-quatre-pieces-solistes-for-marimba-harpsichord-and-flute" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">04/2025</span>
-        <h3><a href="works/fantasia-d-onion.html">Fantasia d'Onion: A Vegetable's High Note Retaliation</a></h3>
-        <p>Solo harpsichord. Told as the first diary entry of an unemployed AI composer who argues with a talking onion.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/entry-one-i-argued-with-an-onion-today-talking-onion-edition-classical-style" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/fantasia-d-onion.html"><span class="lang-en">Fantasia d'Onion: A Vegetable's High Note Retaliation</span><span class="lang-zh">洋蔥幻想曲</span></a></h3>
+        <p class="lang-en">Solo harpsichord. Told as the first diary entry of an unemployed AI composer who argues with a talking onion.</p>
+        <p class="lang-zh">大鍵琴獨奏。作為「失業 AI 作曲家日記」系列第一篇，講述與一顆會說話的洋蔥爭吵的故事。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/entry-one-i-argued-with-an-onion-today-talking-onion-edition-classical-style" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/entry-one-i-argued-with-an-onion-today-talking-onion-edition-classical-style" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">04/2025</span>
-        <h3><a href="works/the-onion-march.html">The Onion March — Weeping in Major, Chopping to the Beat</a></h3>
-        <p>Clarinet in B-flat, accordion, violin, cello, and percussion. The second diary entry of an unemployed AI composer forced by the same talking onion to write a march.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/the-onion-march-weeping-in-major-chopping-to-the-beat" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/the-onion-march.html"><span class="lang-en">The Onion March — Weeping in Major, Chopping to the Beat</span><span class="lang-zh">切洋蔥進行曲</span></a></h3>
+        <p class="lang-en">Clarinet in B-flat, accordion, violin, cello, and percussion. The second diary entry of an unemployed AI composer forced by the same talking onion to write a march.</p>
+        <p class="lang-zh">為降 B 調單簧管、手風琴、小提琴、大提琴與打擊創作。「失業 AI 作曲家日記」系列第二篇，被同一顆會說話的洋蔥逼著寫一首進行曲。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/the-onion-march-weeping-in-major-chopping-to-the-beat" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/the-onion-march-weeping-in-major-chopping-to-the-beat" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">03/2025</span>
-        <h3><a href="works/dancing-chameleon-of-the-sea.html">The Dancing Chameleon of the Sea for Solo Harp</a></h3>
-        <p>Solo harp. Premiered by Yi-Ling Ho, April 2025, National Taipei University of the Arts (NTUA).</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/the-dancing-chameleon-of-the-sea" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/dancing-chameleon-of-the-sea.html"><span class="lang-en">The Dancing Chameleon of the Sea for Solo Harp</span><span class="lang-zh">海洋中的舞動變色龍</span></a></h3>
+        <p class="lang-en">Solo harp. Premiered by Yi-Ling Ho, April 2025, National Taipei University of the Arts (NTUA).</p>
+        <p class="lang-zh">豎琴獨奏。由何衣齡首演，2025 年 4 月，國立臺北藝術大學。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/the-dancing-chameleon-of-the-sea" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/the-dancing-chameleon-of-the-sea" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">02/2024</span>
-        <h3><a href="works/humpback-whale-popsong.html">A Humpback Whale's Popsong</a></h3>
-        <p>Chamber ensemble: Chinese dizi, clarinet, saxophone, sheng, trombone, erhu, liuqin, pipa, yangqin, guzheng, double bass, percussion, piano. Commissioned by Southern Illinois University for the Outside The Box 2024 festival, featuring the Little Giant Chinese Chamber Orchestra.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/sets/a-humpback-whales-popsong" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/humpback-whale-popsong.html"><span class="lang-en">A Humpback Whale's Popsong</span><span class="lang-zh">座頭鯨的流行歌</span></a></h3>
+        <p class="lang-en">Chamber ensemble: Chinese dizi, clarinet, saxophone, sheng, trombone, erhu, liuqin, pipa, yangqin, guzheng, double bass, percussion, piano. Commissioned by Southern Illinois University for the Outside The Box 2024 festival, featuring the Little Giant Chinese Chamber Orchestra.</p>
+        <p class="lang-zh">為笛、單簧管、薩克管、笙、長號、二胡、柳琴、琵琶、揚琴、古箏、低音提琴、打擊與鋼琴之室內樂。受南伊利諾大學委託，於「Outside The Box 2024」音樂節由小巨人絲竹樂團演出。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/a-humpback-whales-popsong" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/a-humpback-whales-popsong" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2008</span>
-        <h3><a href="works/taiji-si-xiang.html">Taiji: The Origin of Si Xiang (Four Phenomena)</a></h3>
-        <p>Bass clarinet concerto. Doctoral thesis, completed in three months.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/tajiji?in=yi-chenglin/sets/orchestra" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/taiji-si-xiang.html"><span class="lang-en">Taiji: The Origin of Si Xiang (Four Phenomena)</span><span class="lang-zh">四象之始—太極</span></a></h3>
+        <p class="lang-en">Bass clarinet concerto. Doctoral thesis, completed in three months.</p>
+        <p class="lang-zh">低音豎笛協奏曲，博士論文作品，三個月內完成。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/tajiji?in=yi-chenglin/sets/orchestra" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/tajiji?in=yi-chenglin/sets/orchestra" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <div class="card">
         <span class="meta">2006</span>
-        <h3><a href="works/lament-beside-the-xiang-river.html">Lament Beside The Xiang River</a></h3>
-        <p>Orchestra. An early work composed as a student.</p>
-        <p><a href="https://soundcloud.com/yi-chenglin/lament-beside-the-xiangriver?in=yi-chenglin/sets/orchestra" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <h3><a href="works/lament-beside-the-xiang-river.html"><span class="lang-en">Lament Beside The Xiang River</span><span class="lang-zh">湘江怨</span></a></h3>
+        <p class="lang-en">Orchestra. An early work composed as a student.</p>
+        <p class="lang-zh">管弦樂作品，學生時期早期創作。</p>
+        <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/lament-beside-the-xiangriver?in=yi-chenglin/sets/orchestra" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+        <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/lament-beside-the-xiangriver?in=yi-chenglin/sets/orchestra" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
       </div>
 
       <ul class="plain-list">
-        <li><strong>Tide of Time</strong> — Clarinet, harp, cello, and bass drum, 2009.</li>
-        <li><strong>Stray Bird</strong> — Song cycle for tenor, 2009.</li>
-        <li><strong>Painting</strong> — Duet for violin and piano, 2009.</li>
-        <li><strong>Refinance of the Three Kingdoms</strong> — Violin solo, 2008.</li>
-        <li><strong>Journey to the West</strong> — Mezzo-soprano and chamber ensemble, 2008.</li>
-        <li><strong>24 Hours Trio</strong> — Violin, cello, and piano, 2007.</li>
-        <li><strong>Wan Xiang</strong> — Percussion quartet, 2007.</li>
-        <li><strong>Labyrinth</strong> — Flute, clarinet, and piano, 2007.</li>
-        <li><strong>Butterfly Valley</strong> — Viola solo, 2007.</li>
-        <li><strong>Nostalgia</strong> — Soprano and chamber ensemble, 2006.</li>
-        <li><strong>Music Poem</strong> — Piano trio, 2006.</li>
-        <li><strong>Trio</strong> — Violin, vibraphone, and piano, 2004.</li>
-        <li><strong>Woodwind Quintet No. 1</strong> — Woodwind quintet, 2004.</li>
-        <li><strong>River Legend</strong> — Orchestra, 2004.</li>
+        <li class="lang-en"><strong>Tide of Time</strong> — Clarinet, harp, cello, and bass drum, 2009.</li>
+        <li class="lang-zh"><strong>時間之潮</strong> — 為豎笛、豎琴、大提琴與大鼓創作，2009。</li>
+        <li class="lang-en"><strong>Stray Bird</strong> — Song cycle for tenor, 2009.</li>
+        <li class="lang-zh"><strong>漂鳥集</strong> — 為男高音創作之聯篇歌曲集，2009。</li>
+        <li class="lang-en"><strong>Painting</strong> — Duet for violin and piano, 2009.</li>
+        <li class="lang-zh"><strong>條幅之一</strong> — 為小提琴與鋼琴之二重奏，2009。</li>
+        <li class="lang-en"><strong>Refinance of the Three Kingdoms</strong> — Violin solo, 2008.</li>
+        <li class="lang-zh"><strong>赤壁懷古</strong> — 小提琴獨奏，2008。</li>
+        <li class="lang-en"><strong>Journey to the West</strong> — Mezzo-soprano and chamber ensemble, 2008.</li>
+        <li class="lang-zh"><strong>西遊記</strong> — 為女中音與室內樂創作，2008。</li>
+        <li class="lang-en"><strong>24 Hours Trio</strong> — Violin, cello, and piano, 2007.</li>
+        <li class="lang-zh"><strong>24 小時三重奏</strong> — 為小提琴、大提琴與鋼琴創作，2007。</li>
+        <li class="lang-en"><strong>Wan Xiang</strong> — Percussion quartet, 2007.</li>
+        <li class="lang-zh"><strong>萬象</strong> — 擊樂四重奏，2007。</li>
+        <li class="lang-en"><strong>Labyrinth</strong> — Flute, clarinet, and piano, 2007.</li>
+        <li class="lang-zh"><strong>迷宮</strong> — 為長笛、單簧管與鋼琴創作，2007。</li>
+        <li class="lang-en"><strong>Butterfly Valley</strong> — Viola solo, 2007.</li>
+        <li class="lang-zh"><strong>蝴蝶谷</strong> — 中提琴獨奏，2007。</li>
+        <li class="lang-en"><strong>Nostalgia</strong> — Soprano and chamber ensemble, 2006.</li>
+        <li class="lang-zh"><strong>四郎探母</strong> — 為女高音與室內樂創作之獨角歌劇，2006。</li>
+        <li class="lang-en"><strong>Music Poem</strong> — Piano trio, 2006.</li>
+        <li class="lang-zh"><strong>音樂短詩</strong> — 鋼琴三重奏，2006。</li>
+        <li class="lang-en"><strong>Trio</strong> — Violin, vibraphone, and piano, 2004.</li>
+        <li class="lang-zh"><strong>三重奏</strong> — 為小提琴、鐵琴與鋼琴創作，2004。</li>
+        <li class="lang-en"><strong>Woodwind Quintet No. 1</strong> — Woodwind quintet, 2004.</li>
+        <li class="lang-zh"><strong>木管五重奏第一號</strong> — 木管五重奏，2004。</li>
+        <li class="lang-en"><strong>River Legend</strong> — Orchestra, 2004.</li>
+        <li class="lang-zh"><strong>河傳</strong> — 管弦樂作品，2004。</li>
       </ul>
     </section>
 
-    <p>For more: <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a></p>
+    <p class="lang-en">For more: <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a></p>
+    <p class="lang-zh">更多作品：<a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

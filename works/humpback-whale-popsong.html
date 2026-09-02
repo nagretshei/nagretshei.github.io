@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -42,53 +43,59 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">02/2024 · Chamber ensemble</span>
-      <h1>A Humpback Whale's Popsong</h1>
-      <p>Chinese dizi, clarinet, saxophone, sheng, trombone, erhu, liuqin, pipa, yangqin, guzheng, double bass, percussion, piano. Commissioned by Southern Illinois University for the Outside The Box 2024 festival, featuring the Little Giant Chinese Chamber Orchestra. Premiered April 19, 2024, Illinois, USA.</p>
-      <p><a href="https://soundcloud.com/yi-chenglin/sets/a-humpback-whales-popsong" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">02/2024 · Chamber ensemble</span>
+      <span class="meta lang-zh">02/2024 · 室內樂</span>
+      <h1><span class="lang-en">A Humpback Whale's Popsong</span><span class="lang-zh">座頭鯨的流行歌</span></h1>
+      <p class="lang-en">Chinese dizi, clarinet, saxophone, sheng, trombone, erhu, liuqin, pipa, yangqin, guzheng, double bass, percussion, piano. Commissioned by Southern Illinois University for the Outside The Box 2024 festival, featuring the Little Giant Chinese Chamber Orchestra. Premiered April 19, 2024, Illinois, USA.</p>
+      <p class="lang-zh">為笛、單簧管、薩克管、笙、長號、二胡、柳琴、琵琶、揚琴、古箏、低音提琴、打擊與鋼琴之室內樂。受南伊利諾大學委託，於「Outside The Box 2024」音樂節由小巨人絲竹樂團演出。首演：2024 年 4 月 19 日，美國伊利諾州。</p>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/a-humpback-whales-popsong" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/a-humpback-whales-popsong" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
-      <p>Many of us are aware of the remarkable intelligence displayed by whales. They exhibit family bonds and care for their offspring similar to humans. The mournful moans they emit when losing family members reflect a deep emotional capacity that resonates with our own experiences. Whales communicate through vocalizations, using a variety of sounds and frequencies, and they also demonstrate teamwork and sophisticated hunting strategies.</p>
+      <div class="lang-en">
+<p>Many of us are aware of the remarkable intelligence displayed by whales. They exhibit family bonds and care for their offspring similar to humans. The mournful moans they emit when losing family members reflect a deep emotional capacity that resonates with our own experiences. Whales communicate through vocalizations, using a variety of sounds and frequencies, and they also demonstrate teamwork and sophisticated hunting strategies.</p>
       <p>Perhaps less known is that different whale populations in various ocean regions have unique "cultures." Despite sharing the same physical structures, these groups adhere to specific dietary preferences due to cultural reasons. Similar to the culinary distinctions between Western and Eastern tastes in humans, whales exhibit unique dietary habits, forming part of their cultural identity.</p>
       <p>Humpback whales, in particular, possess a fascinating cultural phenomenon—their songs. Male whales from the same region learn and share specific songs, akin to their pop music. These compositions are learned in segments from a young age, featuring repetition and rhyme, similar to the structure of human songs. Once a song is learned, the entire group gradually improvises on it, continually evolving and collectively learning the variations over days, weeks, or even years, fostering a shared cultural experience.</p>
       <p>Humpback whales are renowned for their diverse vocalizations, with a song typically lasting between 5 to 30 minutes. Inspired by this captivating cultural feature, I began to transcribe an 8-minute humpback whale song and interpreted it using wind instruments and the erhu. The instrumentation is divided into two parts: the humpback whale's melodic singing and the rest of the orchestra creating the ocean atmosphere and depicting the storyline.</p>
       <p>The narrative begins with a joyous humpback whale swimming and singing in the deep sea, with the resonance of wind instruments mimicking the whale's majestic presence, accompanied by other instruments evoking the sound of ocean waves. The piece transitions to another scene, where the humpback whale dances happily beneath the waves, incorporating elements of traditional Eastern dance music to vividly portray the scene. The third section depicts the humpback whale meditating alone in the tranquil, deep, dark ocean. The final part shows the whale gradually being surrounded by other sea creatures, eventually reuniting with its family, forming a colorful underwater tableau. The whale's sounds gradually fade into the distance, depicting its departure.</p>
       <p>Several deliberate choices were made in creating this piece. First, using culturally traditional Eastern instruments was to pay tribute to the humpback whale's culture. Second, the transcription of the whale song closely mirrors the original version, maintaining its temporal and pitch characteristics to present a karaoke-like effect, making it a "pop song." Third, the piece ends with the whale's departure, emphasizing the whale as a sentient being with the right to exist independently, urging us to respect their lives and protect their habitats.</p>
       <p>In summary, the Earth is home to many highly intelligent creatures that should be regarded as another species similar to humans, showcasing their unique cultures and emotions. We urgently need to recognize and respect their coexistence needs, fostering a more harmonious relationship with these species.</p>
+      </div>
 
-      <hr>
-
-      <div lang="zh-Hant" class="zh-section">
-        <h2>座頭鯨的流行歌</h2>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        
         <p>非常感謝 Southern Illinois University School of Music 的 Walczak 教授的邀請，得以有機會為小巨人絲竹樂團和 SIU 的演奏家譜寫樂曲。這首樂曲名為 "A Humpback Whale's Popsong"《座頭鯨的流行歌》，是一首總譜長達 68 頁的樂曲，由 13 位演奏者演出，含中西樂的樂器。這首曲聲部之間節奏很不好對，器樂之間的音量還刻意要很精準的不可以相同音量（各聲部即使是同一組音樂素材，都有些微差異），在此真的非常感謝陳志昇老師，完成這項如此有挑戰的任務，讓這首樂曲得以於美國演出！</p>
         <p><em>以下為此曲樂曲解說</em></p>
         <hr>
@@ -102,14 +109,14 @@
       </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

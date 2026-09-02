@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -47,50 +48,56 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">07/2026 · For erhu and immersive electroacoustic music, ca. 10 minutes</span>
-      <h1>Whispers in the Stone Crevices</h1>
-      <p>Supported by the National Culture and Arts Foundation (Taiwan).</p>
-      <p><a href="https://soundcloud.com/yi-chenglin/stone" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">07/2026 · For erhu and immersive electroacoustic music, ca. 10 minutes</span>
+      <span class="meta lang-zh">07/2026 · 為二胡與沉浸式電聲音樂創作，約 10 分鐘</span>
+      <h1><span class="lang-en">Whispers in the Stone Crevices</span><span class="lang-zh">石縫間的低語</span></h1>
+      <p class="lang-en">Supported by the National Culture and Arts Foundation (Taiwan).</p>
+      <p class="lang-zh">獲國家文化藝術基金會補助。</p>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/stone" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/stone" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
-      <p>Whispers in the Stone Crevices is a work for erhu and electronics inspired by the nearly imperceptible whispers emerging from the crevices of rocks, evoking the Earth's deep memory and the passage of time. The piece seeks to establish a subtle dialogue between the natural and the artificial, intertwining the expressive voice of a traditional instrument with electronic sound to explore the poetic landscape shaped by soil, stone, and layers of geological history.</p>
+      <div class="lang-en">
+<p>Whispers in the Stone Crevices is a work for erhu and electronics inspired by the nearly imperceptible whispers emerging from the crevices of rocks, evoking the Earth's deep memory and the passage of time. The piece seeks to establish a subtle dialogue between the natural and the artificial, intertwining the expressive voice of a traditional instrument with electronic sound to explore the poetic landscape shaped by soil, stone, and layers of geological history.</p>
       <p>The warm, nuanced timbre of the erhu represents the breath of nature and the vitality of the Earth, while the electronic sounds evoke the murmur of the wind, the resonance of shifting rock strata, and the faint echoes left by time. Through dense, textured sonic materials, the electronics portray the immense physical presence of rock, revealing within its seemingly silent and immovable form the accumulated traces of geological memory. From the perspective of stone, human civilization is but a fleeting moment. Yet human activity is transforming landscapes, ecosystems, and the climate at an unprecedented pace, leaving lasting imprints upon the Earth's surface.</p>
       <p>The work unfolds in four sections: Whispers of Birth, Pulse of the Strata, Memories of Weathering, and Eternal Murmurs. The erhu incorporates vocal inflections inspired by East Asian theatrical traditions, including Noh and Beijing Opera, while its fluid gestures resemble the expressive brushstrokes of calligraphy. In contrast, the electronics construct vast sonic masses that suggest monumental rock formations, allowing them to emerge as silent narrators across geological time.</p>
       <p>Through this sonic landscape, Whispers in the Stone Crevices seeks to build a bridge between tradition and modernity, nature and technology, inviting listeners to experience the Earth's slow and enduring rhythms. Rather than presenting an explicit environmental narrative, the work reflects upon humanity's relationship with nature through the lens of geological time. By listening to these almost inaudible whispers, we may rediscover the intrinsic value of the land and the interconnectedness of all life, while contemplating a more humble and sustainable way of coexisting with the natural world.</p>
+      </div>
 
-      <hr>
-
-      <div lang="zh-Hant" class="zh-section">
-        <h2>石縫間的低語</h2>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        
         <p>《石縫間的低語》是一首為二胡與電聲音樂創作的作品，靈感來自岩石縫隙中幾近不可察覺的低語，象徵地球深層的記憶與時間的流動。作品試圖在自然與人造之間建立一種細緻的對話，透過傳統樂器與電子聲響的交織，探索土壤、岩石與歷史沉積所構成的詩意空間。</p>
         <p>二胡溫潤而細膩的音色，象徵自然的呼吸與大地的生命；電聲則描繪風的低鳴、岩層的震動，以及時間流逝中若隱若現的回聲。電聲部分以厚重而粗糙的音響質地勾勒岩石的形象，在其龐大而沉靜的形體之中，隱含著層層疊加的地質記憶與時間的痕跡。對岩石而言，人類文明只是短暫的一瞬；然而，人類活動卻正在以前所未有的速度改變地景、生態與氣候，甚至重新塑造地球表面的樣貌。</p>
         <p>樂曲結構分為四個段落：「初生的低語」、「地層的脈動」、「風化的記憶」與「永恆的呢喃」。二胡演奏融入能劇、京劇等吟唱性的表現手法，並展現近似書法筆勢般的靈動線條，使聲音在時間中流動、停頓與回返；電聲則以層疊的聲響構築岩石巨大的存在感，讓其彷彿成為跨越千萬年的敘事者。</p>
@@ -98,14 +105,14 @@
       </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

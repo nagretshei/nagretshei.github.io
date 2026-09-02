@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+  var langToggle = document.querySelector(".lang-switch");
+  if (langToggle) {
+    var applyLang = function (lang) {
+      document.documentElement.setAttribute("data-lang", lang);
+      document.documentElement.setAttribute("lang", lang === "zh" ? "zh-Hant" : "en");
+      try { localStorage.setItem("siteLang", lang); } catch (e) {}
+    };
+    applyLang(document.documentElement.getAttribute("data-lang") || "en");
+    langToggle.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-lang") || "en";
+      applyLang(current === "en" ? "zh" : "en");
+    });
+  }
+
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".site-nav");
   if (!toggle || !nav) return;

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -47,41 +48,48 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="../index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../info.html">Info</a>
-      <a href="../musical-works.html">Musical Works</a>
-      <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="../musings.html">Musings</a>
-      <a href="../events.html">Events</a>
-      <a href="../releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="../musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="../index.html">Home</a>
-  <a href="../info.html">Info</a>
-  <a href="../musical-works.html" class="active">Musical Works</a>
-  <a href="../interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="../musings.html">Musings</a>
-  <a href="../events.html">Events</a>
-  <a href="../releases.html">Releases</a>
+  <a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="../info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="../musical-works.html" class="active"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="../interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="../musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="../events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="../releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container work-detail">
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
 
     <div class="page-header">
-      <span class="meta">04/2022 – 05/2023 · AI music generation system</span>
-      <h1>First Contemporary Classical AI Composer Robot Project</h1>
-      <p>AI music generation system that produced 62 works, nicknamed “Little Pi.”</p>
-      <p><a href="https://soundcloud.com/yi-chenglin/sets/the-growth-album-of-little-pi" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <span class="meta lang-en">04/2022 – 05/2023 · AI music generation system</span>
+      <span class="meta lang-zh">04/2022 – 05/2023 · AI 音樂生成系統</span>
+      <h1><span class="lang-en">First Contemporary Classical AI Composer Robot Project</span><span class="lang-zh">第一位當代古典音樂AI機器人計畫</span></h1>
+      <p class="lang-en">AI music generation system that produced 62 works, nicknamed “Little Pi.”</p>
+      <p class="lang-zh">AI 音樂生成系統，暱稱「小皮」，已生成 62 首作品。</p>
+      <p class="lang-en"><a href="https://soundcloud.com/yi-chenglin/sets/the-growth-album-of-little-pi" target="_blank" rel="noopener">🎧 Listen on SoundCloud</a></p>
+      <p class="lang-zh"><a href="https://soundcloud.com/yi-chenglin/sets/the-growth-album-of-little-pi" target="_blank" rel="noopener">🎧 於 SoundCloud 收聽</a></p>
     </div>
 
     <section class="section work-body">
+      <div class="lang-en">
       <p>🤩😍 Are you ready to be amazed by the world's first AI music composition robot? Introducing Little Pi - developed by a talented team of musicians and developers, this innovative machine uses a transformer model to generate stunning compositions and accompanying visuals entirely on AI in this video. Follow the inspiring journey of Little Pi through its diary of performances, and see for yourself the boundless potential of AI in music.</p>
       <p>But that's not all - Little Pi's team has also infused their own understanding of contemporary classical music into the robot's compositions, resulting in a truly unique and captivating experience. Keep up with Little Pi's latest performances and advancements in AI music by following its official fan page: <a href="https://www.facebook.com/littlePiAI" target="_blank" rel="noopener">facebook.com/littlePiAI</a>. This story is not only captivating for adults, but also perfect for introducing kids to the exciting world of AI. Don't miss out on this groundbreaking innovation - check out the story of Little Pi now! <a href="https://youtu.be/7dyrJey1LBw" target="_blank" rel="noopener">youtu.be/7dyrJey1LBw</a></p>
 
@@ -96,16 +104,33 @@
         <li>Cheng-Yu Wu — flutist / project planner</li>
         <li>Chia-Hsuan Tsai — harpsichord / flute player / project planner</li>
       </ul>
+      </div>
+      <div lang="zh-Hant" class="zh-section lang-zh">
+        <p>🤩😍 準備好被全世界第一台 AI 音樂作曲機器人驚艷了嗎？隆重介紹「小皮」——由一群才華洋溢的音樂家與開發者共同打造，這台創新機器運用 Transformer 模型，在這支影片中完全以 AI 生成令人驚艷的作品與配套視覺畫面。跟著小皮的演出日記，一起見證 AI 在音樂領域無窮的可能性。</p>
+        <p>不僅如此——小皮的團隊也將自己對當代古典音樂的理解注入了機器人的創作之中，造就了一段真正獨特而引人入勝的體驗。想掌握小皮最新的演出與 AI 音樂進展，歡迎追蹤官方粉絲專頁：<a href="https://www.facebook.com/littlePiAI" target="_blank" rel="noopener">facebook.com/littlePiAI</a>。這個故事不僅吸引成人，也非常適合帶領孩子認識 AI 的精彩世界。千萬別錯過這項突破性的創新——現在就來看看小皮的故事！<a href="https://youtu.be/7dyrJey1LBw" target="_blank" rel="noopener">youtu.be/7dyrJey1LBw</a></p>
+
+        <hr>
+
+        <p>「小皮」的故事，是一則由 AI 驅動的音樂創作機器人的勵志故事。由 Cheng-Yu Wu、Chia-Hsuan Tsai（蔡佳璇）與林宜徵三人組成的團隊所開發，小皮是一套真實運作的 AI 系統，近來已有顯著進展，準備好向世界展示自己的能力。</p>
+        <p>影片中，觀眾可以看到小皮的演出日記，展示它在 AI 音樂生成方面的能力。透過 Transformer 模型，這台機器人能在沒有任何人為介入的情況下生成音樂（以及完全由 AI 模型生成的配套視覺畫面）。小皮背後的團隊也將自己對當代音樂的理解注入機器人的創作，造就了一段獨特而引人入勝的體驗。</p>
+
+        <p>這個系統／計畫由三人團隊共同開發：</p>
+        <ul>
+          <li>Zoe (Yi-Cheng) Lin — 作曲家暨主要開發者</li>
+          <li>Cheng-Yu Wu — 長笛演奏家／專案規劃</li>
+          <li>Chia-Hsuan Tsai（蔡佳璇） — 大鍵琴／長笛演奏家／專案規劃</li>
+        </ul>
+      </div>
     </section>
 
-    <p class="back-link"><a href="../musical-works.html">← Back to Musical Works</a></p>
+    <p class="back-link"><a href="../musical-works.html"><span class="lang-en">← Back to Musical Works</span><span class="lang-zh">← 返回音樂作品</span></a></p>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

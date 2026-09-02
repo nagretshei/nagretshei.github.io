@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -47,46 +48,51 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="info.html">Info</a>
-      <a href="musical-works.html">Musical Works</a>
-      <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="musings.html">Musings</a>
-      <a href="events.html">Events</a>
-      <a href="releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="index.html">Home</a>
-  <a href="info.html">Info</a>
-  <a href="musical-works.html">Musical Works</a>
-  <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="musings.html">Musings</a>
-  <a href="events.html">Events</a>
-  <a href="releases.html">Releases</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container">
     <div class="page-header">
-      <h1>Releases</h1>
-      <p>Albums, physical releases, and curated features of Zoe (Yi-Cheng) Lin's music.</p>
+      <h1><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></h1>
+      <p class="lang-en">Albums, physical releases, and curated features of Zoe (Yi-Cheng) Lin's music.</p>
+      <p class="lang-zh">林宜徵音樂作品的專輯、實體發行，以及策展／媒體收錄紀錄。</p>
     </div>
 
     <section class="section">
-      <h2>Albums</h2>
+      <h2><span class="lang-en">Albums</span><span class="lang-zh">專輯</span></h2>
 
       <section class="card album-spotlight">
         <div class="album-cover"><img src="images/album-auditory-horizons.jpg" alt="Auditory Horizons album cover"></div>
         <div class="album-spotlight-info">
           <span class="meta">Album · Bandcamp</span>
           <h3>Auditory Horizons</h3>
-          <p>An orchestral album traveling through sunlit gardens, autumn forests, misty mountains, serene seas, and alpine peaks—a hand-crafted, immersive soundscape across landscapes, light, and emotion.</p>
-          <p><a href="https://nagretshei.bandcamp.com/album/auditory-horizons" target="_blank" rel="noopener" class="btn btn-primary">Listen on Bandcamp</a></p>
+          <p class="lang-en">An orchestral album traveling through sunlit gardens, autumn forests, misty mountains, serene seas, and alpine peaks—a hand-crafted, immersive soundscape across landscapes, light, and emotion.</p>
+          <p class="lang-zh">一張管弦樂專輯，帶領聽者穿越陽光花園、秋日森林、雲霧山巒、寧靜海洋與高山峰頂——一幅手工打造、沉浸於地景、光線與情感之間的聲音風景。</p>
+          <p><a href="https://nagretshei.bandcamp.com/album/auditory-horizons" target="_blank" rel="noopener" class="btn btn-primary"><span class="lang-en">Listen on Bandcamp</span><span class="lang-zh">於 Bandcamp 收聽</span></a></p>
         </div>
         <ol class="album-tracklist">
           <li><a href="works/switzerland-preview-mode.html">Switzerland: Preview Mode</a></li>
@@ -100,17 +106,20 @@
     </section>
 
     <section class="section">
-      <h2>Curated &amp; Featured</h2>
-      <p>Works selected by curators for their own platforms, exhibitions, and productions.</p>
+      <h2><span class="lang-en">Curated &amp; Featured</span><span class="lang-zh">策展與媒體收錄</span></h2>
+      <p class="lang-en">Works selected by curators for their own platforms, exhibitions, and productions.</p>
+      <p class="lang-zh">作品經策展人選入其平台、展覽與製作計畫。</p>
 
       <div class="card curated-card">
         <div class="curated-logo"><img src="images/logos/nmona.png" alt="The New Museum of Networked Art"></div>
         <div class="curated-content">
           <span class="meta">2024 · The New Museum of Networked Art</span>
           <h3>The Sound of Anthropocene</h3>
-          <p class="subtitle">Featuring <a href="works/glacier.html">Glacier</a></p>
-          <p>Selected for the Anthropocene Project 2024, curated by Wilfried Agricola de Cologne.</p>
-          <p><a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener">🔗 Exhibition page</a></p>
+          <p class="subtitle lang-en">Featuring <a href="works/glacier.html">Glacier</a></p>
+          <p class="subtitle lang-zh">收錄：<a href="works/glacier.html">冰川</a></p>
+          <p class="lang-en">Selected for the Anthropocene Project 2024, curated by Wilfried Agricola de Cologne.</p>
+          <p class="lang-zh">入選 2024 年人類世計畫（Anthropocene Project），由 Wilfried Agricola de Cologne 策展。</p>
+          <p><a href="https://soundlab.nmartproject.net/the-sound-of-anthropocene/" target="_blank" rel="noopener"><span class="lang-en">🔗 Exhibition page</span><span class="lang-zh">🔗 展覽頁面</span></a></p>
         </div>
       </div>
 
@@ -119,9 +128,11 @@
         <div class="curated-content">
           <span class="meta">Dec 2024 · EMPIRICA / MID SIDE APS</span>
           <h3>EMPIRICA RECORD 2024</h3>
-          <p class="subtitle">Featuring <a href="works/glacier.html">Glacier</a></p>
-          <p>Selected by EMPIRICA, in partnership with MID SIDE APS, championing experimental classical, contemporary, and electronic music.</p>
-          <p><a href="https://midside.it/ref24_media/ref24programbook.pdf" target="_blank" rel="noopener">📄 REF 2024 Program Book (PDF)</a></p>
+          <p class="subtitle lang-en">Featuring <a href="works/glacier.html">Glacier</a></p>
+          <p class="subtitle lang-zh">收錄：<a href="works/glacier.html">冰川</a></p>
+          <p class="lang-en">Selected by EMPIRICA, in partnership with MID SIDE APS, championing experimental classical, contemporary, and electronic music.</p>
+          <p class="lang-zh">由 EMPIRICA 與 MID SIDE APS 合作評選，致力推廣實驗古典、當代與電子音樂。</p>
+          <p><a href="https://midside.it/ref24_media/ref24programbook.pdf" target="_blank" rel="noopener"><span class="lang-en">📄 REF 2024 Program Book (PDF)</span><span class="lang-zh">📄 REF 2024 節目冊（PDF）</span></a></p>
         </div>
       </div>
 
@@ -130,9 +141,11 @@
         <div class="curated-content">
           <span class="meta">2023 · MUSLAB / Cero Records</span>
           <h3>Planeta Complejo</h3>
-          <p class="subtitle">Featuring <a href="works/aurora.html">Aurora</a></p>
-          <p>The phonographic production of the MUSLAB Planeta Complejo exhibition (Vol. 1·2·3·4), released by Cero Records.</p>
-          <p><a href="https://www.cero-records.com/muslab-planeta-complejo-vol-1%C2%B72%C2%B73%C2%B74/" target="_blank" rel="noopener">🔗 Cero Records</a></p>
+          <p class="subtitle lang-en">Featuring <a href="works/aurora.html">Aurora</a></p>
+          <p class="subtitle lang-zh">收錄：<a href="works/aurora.html">極光</a></p>
+          <p class="lang-en">The phonographic production of the MUSLAB Planeta Complejo exhibition (Vol. 1·2·3·4), released by Cero Records.</p>
+          <p class="lang-zh">MUSLAB Planeta Complejo 展覽的唱片製作（第 1·2·3·4 輯），由 Cero Records 發行。</p>
+          <p><a href="https://www.cero-records.com/muslab-planeta-complejo-vol-1%C2%B72%C2%B73%C2%B74/" target="_blank" rel="noopener"><span class="lang-en">🔗 Cero Records</span><span class="lang-zh">🔗 前往 Cero Records</span></a></p>
         </div>
       </div>
 
@@ -141,9 +154,11 @@
         <div class="curated-content">
           <span class="meta">2023 · SiMN · Núcleo Música Nova</span>
           <h3>Sonic Alchemy</h3>
-          <p class="subtitle">Featuring <a href="works/spirit-of-the-giant-tree.html">The Spirit of the Giant Tree</a></p>
-          <p>Compilation album for SiMN 2023, presented by Núcleo Música Nova.</p>
-          <p><a href="https://nucleomusicanova.bandcamp.com/album/sonic-alchemy" target="_blank" rel="noopener">🎧 Listen on Bandcamp</a></p>
+          <p class="subtitle lang-en">Featuring <a href="works/spirit-of-the-giant-tree.html">The Spirit of the Giant Tree</a></p>
+          <p class="subtitle lang-zh">收錄：<a href="works/spirit-of-the-giant-tree.html">神木之靈</a></p>
+          <p class="lang-en">Compilation album for SiMN 2023, presented by Núcleo Música Nova.</p>
+          <p class="lang-zh">SiMN 2023 合輯專輯，由 Núcleo Música Nova 製作發行。</p>
+          <p><a href="https://nucleomusicanova.bandcamp.com/album/sonic-alchemy" target="_blank" rel="noopener"><span class="lang-en">🎧 Listen on Bandcamp</span><span class="lang-zh">🎧 於 Bandcamp 收聽</span></a></p>
         </div>
       </div>
 
@@ -151,30 +166,35 @@
         <div class="curated-logo"><img src="images/logos/newarts-platform.png" alt="New Arts Platform"></div>
         <div class="curated-content">
           <span class="meta">Oct 14, 2016 · New Arts Platform</span>
-          <h3>Sound, Image</h3>
-          <p class="subtitle">Featuring <a href="works/dialogue-entre-des-temps.html">Dialogue Entre Des Temps</a></p>
-          <p>For solo saxophone with improvised instrument and pre-recorded soundtrack (10'05"), with Zoe (Yi-Cheng) Lin also performing piano. Recorded by Chun-Hao Ku (顧鈞豪). Audio recording published on the CD album <em>Chun-Hao Ku / Sound, Image | Saxophone Commissioned Composition and Performance Album</em>.</p>
-          <p><a href="https://newartsplatform.com/product-content.php?classification=1&amp;id=67" target="_blank" rel="noopener">🔗 Product page</a></p>
+          <h3><span class="lang-en">Sound, Image</span><span class="lang-zh">聲音・意象</span></h3>
+          <p class="subtitle lang-en">Featuring <a href="works/dialogue-entre-des-temps.html">Dialogue Entre Des Temps</a></p>
+          <p class="subtitle lang-zh">收錄：<a href="works/dialogue-entre-des-temps.html">時間的對話</a></p>
+          <p class="lang-en">For solo saxophone with improvised instrument and pre-recorded soundtrack (10'05"), with Zoe (Yi-Cheng) Lin also performing piano. Recorded by Chun-Hao Ku (顧鈞豪). Audio recording published on the CD album <em>Chun-Hao Ku / Sound, Image | Saxophone Commissioned Composition and Performance Album</em>.</p>
+          <p class="lang-zh">為薩克管、即興樂器與預錄音軌創作（10'05"），林宜徵並演奏鋼琴。由顧鈞豪錄製，錄音收錄於專輯《顧鈞豪／聲音・意象｜薩克斯風委託創作演奏專輯》。</p>
+          <p><a href="https://newartsplatform.com/product-content.php?classification=1&amp;id=67" target="_blank" rel="noopener"><span class="lang-en">🔗 Product page</span><span class="lang-zh">🔗 商品頁面</span></a></p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Press &amp; Recognition</h2>
-      <p>Media coverage and archival documentation of Zoe (Yi-Cheng) Lin's work.</p>
+      <h2><span class="lang-en">Press &amp; Recognition</span><span class="lang-zh">媒體報導與收錄</span></h2>
+      <p class="lang-en">Media coverage and archival documentation of Zoe (Yi-Cheng) Lin's work.</p>
+      <p class="lang-zh">林宜徵作品的媒體報導與資料庫收錄紀錄。</p>
 
       <div class="card">
         <span class="meta">Mar 21, 2024 · Central News Agency (中央社)</span>
-        <h3>IRCAM Forum Workshops 30th Anniversary Coverage</h3>
-        <p>Press coverage of C-LAB and IRCAM's 30th anniversary Forum Workshops in Paris, featuring the premiere of <em>Glacier</em> in ambisonic surround sound.</p>
-        <p><a href="https://www.cna.com.tw/postwrite/chi/366061" target="_blank" rel="noopener">🔗 Read on CNA</a></p>
+        <h3><span class="lang-en">IRCAM Forum Workshops 30th Anniversary Coverage</span><span class="lang-zh">IRCAM Forum 30 週年活動報導</span></h3>
+        <p class="lang-en">Press coverage of C-LAB and IRCAM's 30th anniversary Forum Workshops in Paris, featuring the premiere of <em>Glacier</em> in ambisonic surround sound.</p>
+        <p class="lang-zh">C-LAB 與 IRCAM 於巴黎合辦之 30 週年 Forum Workshops 相關報導，內容提及《冰川》以 Ambisonic 環繞聲首演。</p>
+        <p><a href="https://www.cna.com.tw/postwrite/chi/366061" target="_blank" rel="noopener"><span class="lang-en">🔗 Read on CNA</span><span class="lang-zh">🔗 於中央社閱讀全文</span></a></p>
       </div>
 
       <div class="card">
         <span class="meta">2023 · EMDoku (Electronic Music Documentation, Germany)</span>
-        <h3>Artist Profile</h3>
-        <p>Documented as "Nagretshei, Sebastian" in EMDoku, a German electronic music documentation archive, with a biography sourced from her NYCEMF 2023 artist bio.</p>
-        <p><a href="https://www.emdoku.de/en/artist/nagretshei-sebastian?sort=author-asc&amp;style=basic&amp;sources=emdoku,authors" target="_blank" rel="noopener">🔗 View profile</a></p>
+        <h3><span class="lang-en">Artist Profile</span><span class="lang-zh">藝術家詞條</span></h3>
+        <p class="lang-en">Documented as "Nagretshei, Sebastian" in EMDoku, a German electronic music documentation archive, with a biography sourced from her NYCEMF 2023 artist bio.</p>
+        <p class="lang-zh">以「Nagretshei, Sebastian」之名收錄於德國電子音樂文獻資料庫 EMDoku，簡介取自 2023 年 NYCEMF 作者簡介。</p>
+        <p><a href="https://www.emdoku.de/en/artist/nagretshei-sebastian?sort=author-asc&amp;style=basic&amp;sources=emdoku,authors" target="_blank" rel="noopener"><span class="lang-en">🔗 View profile</span><span class="lang-zh">🔗 查看詞條</span></a></p>
       </div>
     </section>
   </div>
@@ -183,7 +203,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

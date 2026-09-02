@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('siteLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l==='zh'?'zh-Hant':'en');}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YBNZ8KLF"></script>
 <script>
@@ -23,38 +24,42 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Zoe <span>Lin</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="info.html">Info</a>
-      <a href="musical-works.html">Musical Works</a>
-      <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-      <a href="musings.html">Musings</a>
-      <a href="events.html">Events</a>
-      <a href="releases.html">Releases</a>
-    </nav>
+    <div class="nav-controls">
+      <button type="button" class="lang-switch" aria-label="Switch language / 切換語言"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+        <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+        <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+        <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+        <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+        <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+        <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <div class="page-tabs">
-  <a href="index.html">Home</a>
-  <a href="info.html">Info</a>
-  <a href="musical-works.html">Musical Works</a>
-  <a href="interdisciplinary-works.html">Interdisciplinary Works</a>
-  <a href="musings.html">Musings</a>
-  <a href="events.html">Events</a>
-  <a href="releases.html">Releases</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a>
+  <a href="info.html"><span class="lang-en">Info</span><span class="lang-zh">關於</span></a>
+  <a href="musical-works.html"><span class="lang-en">Musical Works</span><span class="lang-zh">音樂作品</span></a>
+  <a href="interdisciplinary-works.html"><span class="lang-en">Interdisciplinary Works</span><span class="lang-zh">跨領域作品</span></a>
+  <a href="musings.html"><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></a>
+  <a href="events.html"><span class="lang-en">Events</span><span class="lang-zh">演出活動</span></a>
+  <a href="releases.html"><span class="lang-en">Releases</span><span class="lang-zh">作品發行</span></a>
 </div>
 
 <main>
   <div class="container">
     <div class="page-header">
-      <h1>Musings</h1>
-      <p>Essays and reflections on music, technology, and creative practice.</p>
+      <h1><span class="lang-en">Musings</span><span class="lang-zh">隨筆</span></h1>
+      <p class="lang-en">Essays and reflections on music, technology, and creative practice.</p>
+      <p class="lang-zh">關於音樂、科技與創作實踐的隨筆與省思。</p>
     </div>
 
     <section class="section">
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">10/20/2025</span>
         <h3>From Outsider to Trend — I Stay Beyond the Current</h3>
         <p>I remember back in 2015–2016, for the IRCAM Forum held in Taiwan, I drew up a big plan and created my first VR game integrated with my own music. At the time, the environment was such that musicians had almost no interest in technology or programming beyond music. Electronic or tech-based music was usually understood as works created with Max/MSP, and other tools were seen as too far from the mainstream, so no one attempted them. My motivation for doing this, in fact, was to escape the closed and lifeless atmosphere of the academic environment.</p>
@@ -62,8 +67,16 @@
         <p>Later, after seeing myself more clearly, I realized that what I am truly suited for is creation—making my own works. Today, the environment has reversed: academia now loudly calls for cross-disciplinary work and AI talent. What was once considered "rebellious" has become mainstream—but I know that path is no longer for me.</p>
         <p>Fortunately, not liking the mainstream has always been my gift. What the mainstream lacks has become a capability granted to me by fate, giving me things to do in my creative work, allowing me to quietly develop my practice. Although there is inevitably some inner conflict—both hoping that my non-mainstream creations are appreciated, yet not wanting them to become too popular too quickly and turn into a mainstream model to imitate—I still hope to preserve my creative freedom in unnoticed corners. Perhaps, when I am older, my works will receive more attention or study, which may be just as well.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">10/20/2025</span>
+        <h3>從邊緣到潮流——我依然站在潮流之外</h3>
+        <p>記得 2015、2016 年間，因為 IRCAM Forum 在台灣舉辦，我訂了一個很大的計畫，做出了自己第一款結合自己音樂的 VR 遊戲。那時候的環境，音樂人幾乎對音樂以外的科技或程式設計毫無興趣。電子或科技類音樂通常被理解成用 Max/MSP 做出來的作品，其他工具則被視為離主流太遠，沒有人願意嘗試。我當時這麼做的動機，其實是想逃離學術環境那種封閉又缺乏生氣的氛圍。</p>
+        <p>2018 年，我進入一家 AI 公司擔任研究人員。老實說，我當時只是想賺錢，某種程度上也是暫時放棄了藝術生涯；同時，我對音樂學術圈狹窄的格局感到一半的沮喪——沮喪的是無論是我還是這個體制，似乎都無法滿足彼此的期待。</p>
+        <p>後來，看清自己之後，我明白了真正適合我的其實是創作——做自己的作品。如今這個環境已經反轉：學術界大聲疾呼跨領域與 AI 人才。曾經被視為「叛逆」的事，如今成了主流——但我知道，那條路已經不再屬於我。</p>
+        <p>幸運的是，不喜歡主流一直是我的天賦。主流所欠缺的，成了命運賦予我的能力，讓我在創作路上有事可做，也讓我能安靜地發展自己的實踐。雖然內心難免有些矛盾——既希望自己非主流的創作被看見，又不希望它太快變得太受歡迎，變成被模仿的主流模板——我仍希望在無人注意的角落，保有創作的自由。或許，等我年紀更大一些，我的作品會受到更多關注或研究，那樣也很好。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">03/20/2024</span>
         <h3>Beyond VR: Crafting Music That Speaks to the Mind's Eye</h3>
         <p>Thank you all for joining me in this demonstration showcasing my musical composition centered around environmental protection. The music will be played through 25 speakers in immersive ambisonic systems.</p>
@@ -82,8 +95,27 @@
         <p>By presenting music in this innovative manner, the marriage of music and visual effects is liberated from the confines of playback devices. This opens up a boundless realm of creative possibilities and flexibility for both composers and audiences.</p>
         <p>This text was first shared as part of a lecture at the <a href="events.html">30th Anniversary IRCAM Forum, Paris, March 2024</a>, introducing the piece <em>Glacier</em>.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">03/20/2024</span>
+        <h3>超越 VR：譜寫對應心眼的音樂</h3>
+        <p>謝謝大家來看這場展示，主題是我以環境保護為核心的音樂創作。這首音樂會透過 25 支喇叭組成的沉浸式 Ambisonic 系統播放。</p>
+        <p>在進入音樂本身之前，我想先分享為什麼選擇用 Ambisonic 系統來呈現這首作品，並說明我為何認為這是形塑我音樂創作的重要工具。</p>
+        <p>自從取得 DMA 學位以來，我一直以拉近當代音樂創作與更廣大聽眾之間的距離為目標，同時也想突破傳統音樂形式的界線。2015 年，我開始自學並嘗試電子音樂創作。到了 2016 年，我用 Google Cardboard 做出了第一個多媒體 VR 專案，內含一首長達 30 分鐘、共六個樂章的作品。那個年代，VR 技術仍處於商業化早期，3D 物件的品質也相對粗糙。</p>
+        <p>在 App Store 上架這個專案，並在多場國際研討會展示後，我收到的回饋是：這些音樂出乎意料地「容易親近」、容易理解，即使是沒有音樂背景的人，包括小孩，也能感受得到。這段經歷讓我看見音樂科技——尤其是以多媒體形式呈現時——在拉近學術當代音樂與大眾之間，具有多麼強大的轉化潛力。</p>
+        <p>然而，這些年探索電子音樂的過程中，我也發現將新科技融入當代音樂創作，會遇到以下幾項挑戰：</p>
+        <p>一、VR 原本的美好承諾，受限於裝置成本高昂、程式撰寫複雜，以及觀眾取得管道有限。</p>
+        <p>二、關於消費級電腦的限制。舉例來說，2021 年元宇宙帶動 WebXR 話題，但多數消費級電腦缺乏足夠的運算能力與網路頻寬來進行有效的 3D 演算，導致 WebXR 體驗大打折扣。</p>
+        <p>三、音響設備的門檻：沉浸式音樂需要具備不同頻率響應的專業耳機，而以手機播放音樂放大，往往會犧牲音質。</p>
+        <p>四、休閒習慣的限制：沉浸式音樂通常需要安靜的環境才能完整體驗，然而忙碌的生活步調讓人難以撥出時間，即使能遠端聆聽也一樣。換句話說，如果作品不容易被接觸到，它就有可能在日常生活的種種要求中被遺忘。</p>
+        <p>為了回應上述挑戰，我發展出一套解法：不倚賴事先建構好的視覺元素，而是透過 Ambisonic 技術，譜寫取材自「心眼」意象的沉浸式音樂。</p>
+        <p>我從小培養的繪畫興趣，在這個方法中扮演了關鍵角色，讓我能在作曲時建構出鮮明的心像。過去三年，隨著我在電聲創作、聲音合成與沉浸式 Ambisonic 技術上的鑽研日益深入，我也發現自己具備一種能力：能因應聽覺刺激而「看見」特定的顏色。此外，我也能創作出與腦中意象的色彩與空間維度精準對應的音樂。</p>
+        <p>將這些作品呈現給不同的聽眾後，我發現自己所設想的意象，能引起各年齡層聽眾的共鳴，即使他們沒有受過正式音樂訓練。這樣的印證，讓我從多媒體音樂作品轉向了一種新的音樂維度——為聽眾喚起鮮明心像的音樂。</p>
+        <p>過去，我的 VR 創作賦予了我內在世界視覺風景以生命。如今，這些心像改以聽覺的方式傳遞，目的是在聽者心中喚起相似的意象。</p>
+        <p>透過這種創新的呈現方式，音樂與視覺效果的結合，得以擺脫播放裝置的侷限。這為作曲家與聽眾雙方，都開啟了一片無邊無際的創作可能與彈性空間。</p>
+        <p>這篇文字最初是在<a href="events.html">2024 年 3 月巴黎 IRCAM Forum 30 週年</a>的講座中發表，作為《冰川》這首作品的介紹。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <span class="meta">10/20/2025</span>
         <h3>Reflections on Words and Beauty</h3>
         <p><em>A quiet reflection on words, action, and the beauty we carry within.</em></p>
@@ -98,8 +130,23 @@
         <p>My eyes have changed too.<br>I used to see what was missing;<br>now I see what is already whole.</p>
         <p>There's little left to complain about.<br>Life reveals itself simply—<br>when you look for beauty,<br>it becomes beauty.</p>
       </div>
+      <div class="card lang-zh">
+        <span class="meta">10/20/2025</span>
+        <h3>文字與美的省思</h3>
+        <p><em>一則關於文字、行動，以及我們內心所懷抱之美的靜思。</em></p>
+        <p>有時，我心裡湧起一股想說些什麼的衝動——<br>一閃而過的念頭，還沒抓住就已消散。</p>
+        <p>年輕的時候，我喜歡說話。<br>喜歡提問、批評，指出世界粗糙的稜角——<br>甚至還有人喜歡讀那些文字。</p>
+        <p>但時間有它自己的節奏。<br>我漸漸覺得，說話是屬於年輕人的事；<br>年紀漸長之後，太多話語聽起來都像抱怨。</p>
+        <p>於是我開始沉默。<br>這個人生階段要的是行動，而不是解釋。<br>當有什麼感覺不對，我試著去修補。<br>當我看見一個缺口，就靜靜地把它填上。</p>
+        <p>經驗告訴我，等待別人往往無濟於事——<br>不如溫柔地，自己先開始。</p>
+        <p>我的許多朋友也是如此；<br>各自用自己的方式，用耐心雕琢出美好的事物。</p>
+        <p>我的力量很微小。<br>每當我覺得自己做得還不錯時，<br>我知道那其實不是我，<br>而是神透過我在做工。</p>
+        <p>剩下的一切，我交託在祂手中。</p>
+        <p>我看事情的眼光也變了。<br>過去我總看見缺少了什麼；<br>如今我看見的，是早已完整的一切。</p>
+        <p>已經沒有什麼好抱怨的了。<br>生命如此單純地展現自己——<br>當你去尋找美，<br>它就成了美。</p>
+      </div>
 
-      <div class="card">
+      <div class="card lang-en">
         <h3>Beyond the Sound</h3>
         <p>Music, to me, is not merely heard—it blooms within.</p>
         <p>When melody arises, it opens a space where light and sound become one, dissolving the boundary between self and creation.</p>
@@ -108,6 +155,15 @@
         <p>And though silence always returns, its echo remains within, a quiet flame that waits for the next awakening.</p>
         <p>My work seeks to capture that threshold between the infinite and the human—to let listeners feel, if only for a moment, what it means to become one with sound.</p>
       </div>
+      <div class="card lang-zh">
+        <h3>聲音之外</h3>
+        <p>對我而言，音樂不僅僅是被聽見的——它在內心綻放。</p>
+        <p>當旋律浮現，它開啟了一個光與聲合而為一的空間，消融了自我與創作之間的界線。</p>
+        <p>在那個當下，我不再是作曲家；我就是音樂，音樂就是我。<br>透過聲音，孤獨轉化為透明。</p>
+        <p>每個音符都承載著宇宙的脈動——星辰、河流，以及呼吸本身的節奏。</p>
+        <p>儘管寂靜終將回歸，它的迴響仍留在心底，如一簇靜靜等待下一次甦醒的火焰。</p>
+        <p>我的作品試圖捕捉無限與人性之間的那道門檻——讓聽眾哪怕只有片刻，也能感受到與聲音合而為一是什麼樣的體驗。</p>
+      </div>
     </section>
   </div>
 </main>
@@ -115,7 +171,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="social"><a href="mailto:yicheng.zoe@gmail.com">yicheng.zoe@gmail.com</a> · <a href="https://soundcloud.com/yi-chenglin" target="_blank" rel="noopener">SoundCloud</a> · <a href="https://forum.ircam.fr/profile/ZoeLin/" target="_blank" rel="noopener">IRCAM Forum</a></div>
-    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · a.k.a. Sebastian Nagretshei</p>
+    <p>&copy; 2026 Zoe (Yi-Cheng) Lin · <span class="lang-en">a.k.a. Sebastian Nagretshei</span><span class="lang-zh">又名 Sebastian Nagretshei</span></p>
   </div>
 </footer>
 

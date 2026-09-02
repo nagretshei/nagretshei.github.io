@@ -19,6 +19,10 @@
 
 html { scroll-behavior: smooth; }
 
+/* ---------- Language toggle ---------- */
+html[data-lang="en"] .lang-zh { display: none !important; }
+html[data-lang="zh"] .lang-en { display: none !important; }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -86,6 +90,23 @@ header.site-header::before {
   letter-spacing: .02em;
 }
 .logo span { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lang-switch {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: .85rem;
+  color: var(--text-dim);
+  font-family: inherit;
+}
+.lang-switch:hover { color: var(--accent-2); text-decoration: underline; }
 
 .nav-toggle {
   display: inline-flex;
