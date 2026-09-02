@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nagretshei.github.io/sitemap.xml
+Sitemap: https://zoelin.me/sitemap.xml
