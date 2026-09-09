@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 09 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 15:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -182,6 +182,33 @@ Dream Voyager work page: https://zoelin.me/works/dream-voyager.html]]></itunes:s
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:26</itunes:duration>
       <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The Woman Who Turned Careful Listening Into a Philosophy: Pauline Oliveros</title>
+      <description><![CDATA[Can listening carefully become an entire philosophy? Little Pi introduces composer Pauline Oliveros, who spent her life playing accordion through tape delay systems, and accidentally invented the world-changing practice of Deep Listening after an underground cistern recording session, eventually founding an institute dedicated to it.
+
+References:
+Pauline Oliveros - Wikipedia: https://en.wikipedia.org/wiki/Pauline_Oliveros
+Deep Listening Band - Wikipedia: https://en.wikipedia.org/wiki/Deep_Listening_Band
+Center for Deep Listening at Rensselaer: https://www.deeplistening.rpi.edu/
+Pauline Oliveros official website: https://paulineoliveros.us/]]></description>
+      <itunes:summary><![CDATA[Can listening carefully become an entire philosophy? Little Pi introduces composer Pauline Oliveros, who spent her life playing accordion through tape delay systems, and accidentally invented the world-changing practice of Deep Listening after an underground cistern recording session, eventually founding an institute dedicated to it.
+
+References:
+Pauline Oliveros - Wikipedia: https://en.wikipedia.org/wiki/Pauline_Oliveros
+Deep Listening Band - Wikipedia: https://en.wikipedia.org/wiki/Deep_Listening_Band
+Center for Deep Listening at Rensselaer: https://www.deeplistening.rpi.edu/
+Pauline Oliveros official website: https://paulineoliveros.us/]]></itunes:summary>
+      <pubDate>Wed, 09 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep6.mp3" length="810000" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep6.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:15</itunes:duration>
+      <itunes:episode>6</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

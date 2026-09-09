@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 09 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 15:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -182,6 +182,33 @@ Dream Voyager 作品頁面：https://zoelin.me/works/dream-voyager.html]]></itun
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:29</itunes:duration>
       <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>只是很認真聽？她發明了一整套哲學！深度聆聽發明者 Pauline Oliveros</title>
+      <description><![CDATA[認真聽也能聽出一套哲學？這集小皮介紹作曲家Pauline Oliveros——她用手風琴加磁帶延遲系統玩了一輩子，還在一次爬進地底蓄水池錄音的經驗中，意外發明了影響全世界的「深度聆聽」練習，後來還成立了專門的學院。
+
+參考資料：
+Pauline Oliveros － Wikipedia：https://en.wikipedia.org/wiki/Pauline_Oliveros
+Deep Listening Band － Wikipedia：https://en.wikipedia.org/wiki/Deep_Listening_Band
+Center for Deep Listening at Rensselaer（官方網站）：https://www.deeplistening.rpi.edu/
+Pauline Oliveros 官方網站：https://paulineoliveros.us/]]></description>
+      <itunes:summary><![CDATA[認真聽也能聽出一套哲學？這集小皮介紹作曲家Pauline Oliveros——她用手風琴加磁帶延遲系統玩了一輩子，還在一次爬進地底蓄水池錄音的經驗中，意外發明了影響全世界的「深度聆聽」練習，後來還成立了專門的學院。
+
+參考資料：
+Pauline Oliveros － Wikipedia：https://en.wikipedia.org/wiki/Pauline_Oliveros
+Deep Listening Band － Wikipedia：https://en.wikipedia.org/wiki/Deep_Listening_Band
+Center for Deep Listening at Rensselaer（官方網站）：https://www.deeplistening.rpi.edu/
+Pauline Oliveros 官方網站：https://paulineoliveros.us/]]></itunes:summary>
+      <pubDate>Wed, 09 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep6.mp3" length="2233301" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep6.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:20</itunes:duration>
+      <itunes:episode>6</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
