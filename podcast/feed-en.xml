@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Little Pi's Tech Music Tips</title>
+    <link>https://zoelin.me/podcast.html</link>
+    <atom:link href="https://zoelin.me/podcast/feed-en.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <copyright>&#169; 2026 Zoe (Yi-Cheng) Lin</copyright>
+    <description><![CDATA[A podcast about electroacoustic and digital music, hosted by AI mascot Little Pi: composers, tools, conferences, and trends, in about 2-3 minutes of English narration per episode. Narration is AI-generated (edge-tts); scripts and visuals are produced by the creator.]]></description>
+    <itunes:summary><![CDATA[A podcast about electroacoustic and digital music, hosted by AI mascot Little Pi: composers, tools, conferences, and trends, in about 2-3 minutes of English narration per episode. Narration is AI-generated (edge-tts); scripts and visuals are produced by the creator.]]></itunes:summary>
+    <itunes:author>Zoe (Yi-Cheng) Lin</itunes:author>
+    <itunes:owner>
+      <itunes:name>Zoe (Yi-Cheng) Lin</itunes:name>
+      <itunes:email>yicheng.zoe@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    <image>
+      <url>https://zoelin.me/podcast/artwork-en.jpg</url>
+      <title>Little Pi's Tech Music Tips</title>
+      <link>https://zoelin.me/podcast.html</link>
+    </image>
+    <itunes:category text="Music"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <lastBuildDate>Wed, 09 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <generator>generate_podcast_feed_en.py</generator>
+    <item>
+      <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
+      <description><![CDATA[Can sound really be made just by typing?
+
+From a French engineer splicing tape in 1948 to AI models generating a full arrangement in real time today, the last hundred years of electroacoustic music are really the story of humanity continuously redefining what counts as music. In three minutes, Little Pi walks you through the key turning points: musique concrète, electronic music, programmable composition tools, and today's generative AI.
+
+References:
+Pierre Schaeffer: https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Karlheinz Stockhausen: https://en.wikipedia.org/wiki/Karlheinz_Stockhausen
+Max/MSP: https://cycling74.com/products/max
+Pure Data: https://puredata.info/
+SuperCollider: https://supercollider.github.io/
+ChucK: https://chuck.stanford.edu/]]></description>
+      <itunes:summary><![CDATA[Can sound really be made just by typing?
+
+From a French engineer splicing tape in 1948 to AI models generating a full arrangement in real time today, the last hundred years of electroacoustic music are really the story of humanity continuously redefining what counts as music. In three minutes, Little Pi walks you through the key turning points: musique concrète, electronic music, programmable composition tools, and today's generative AI.
+
+References:
+Pierre Schaeffer: https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Karlheinz Stockhausen: https://en.wikipedia.org/wiki/Karlheinz_Stockhausen
+Max/MSP: https://cycling74.com/products/max
+Pure Data: https://puredata.info/
+SuperCollider: https://supercollider.github.io/
+ChucK: https://chuck.stanford.edu/]]></itunes:summary>
+      <pubDate>Mon, 07 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep1.mp3" length="956016" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep1.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:39</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Which Tool Should Beginners Learn? ChucK / SuperCollider / Max / PD Guide</title>
+      <description><![CDATA[So many tools, which one should you actually learn? Little Pi breaks down the two main camps: mouse-driven visual patching tools (Max/MSP, Pure Data) versus text-based coding tools (ChucK, SuperCollider), to help beginners figure out where to start.
+
+References:
+Max/MSP: https://cycling74.com/products/max
+Pure Data: https://puredata.info/
+SuperCollider: https://supercollider.github.io/
+ChucK: https://chuck.stanford.edu/]]></description>
+      <itunes:summary><![CDATA[So many tools, which one should you actually learn? Little Pi breaks down the two main camps: mouse-driven visual patching tools (Max/MSP, Pure Data) versus text-based coding tools (ChucK, SuperCollider), to help beginners figure out where to start.
+
+References:
+Max/MSP: https://cycling74.com/products/max
+Pure Data: https://puredata.info/
+SuperCollider: https://supercollider.github.io/
+ChucK: https://chuck.stanford.edu/]]></itunes:summary>
+      <pubDate>Mon, 07 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep2.mp3" length="740160" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep2.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:03</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The Wildest Instrument-Inventing Conference in the World: NIME Explained</title>
+      <description><![CDATA[What is NIME? An international conference dedicated to inventing brand-new musical instruments, part research symposium, part live concert. Little Pi covers where NIME came from and what to expect at the 2026 London edition, and why it's worth caring about even if you've never built an instrument in your life.
+
+References:
+NIME official website: https://www.nime.org/
+NIME 2026 official website: https://nime2026.org/
+Imperial College London event page: https://estore.imperial.ac.uk/conferences-and-events/faculty-of-engineering/dyson-school-of-design-engineering/international-conference-on-new-interfaces-for-musical-expression-2026
+Intelligent Instruments Lab, NIME 2026 news: https://iil.is/news/nime-2026]]></description>
+      <itunes:summary><![CDATA[What is NIME? An international conference dedicated to inventing brand-new musical instruments, part research symposium, part live concert. Little Pi covers where NIME came from and what to expect at the 2026 London edition, and why it's worth caring about even if you've never built an instrument in your life.
+
+References:
+NIME official website: https://www.nime.org/
+NIME 2026 official website: https://nime2026.org/
+Imperial College London event page: https://estore.imperial.ac.uk/conferences-and-events/faculty-of-engineering/dyson-school-of-design-engineering/international-conference-on-new-interfaces-for-musical-expression-2026
+Intelligent Instruments Lab, NIME 2026 news: https://iil.is/news/nime-2026]]></itunes:summary>
+      <pubDate>Mon, 07 Sep 2026 18:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep3.mp3" length="736272" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep3.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:03</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Four Masterpieces Every Electroacoustic Music Fan Should Know</title>
+      <description><![CDATA[From music spliced together out of train sounds, to Bach performed on a synthesizer, to music designed to help you zone out in an airport, Little Pi picks four key masterpieces spanning 70 years that changed the direction of electroacoustic music: Pierre Schaeffer's Étude aux chemins de fer, Stockhausen's Gesang der Jünglinge, Wendy Carlos's Switched-On Bach, and Brian Eno's Ambient 1: Music for Airports.
+
+References:
+Musique concrète - Wikipedia: https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Schaeffer - Wikipedia: https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Gesang der Jünglinge - Wikipedia: https://en.wikipedia.org/wiki/Gesang_der_J%C3%BCnglinge
+Switched-On Bach - Wikipedia: https://en.wikipedia.org/wiki/Switched-On_Bach
+Ambient 1: Music for Airports - Wikipedia: https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports]]></description>
+      <itunes:summary><![CDATA[From music spliced together out of train sounds, to Bach performed on a synthesizer, to music designed to help you zone out in an airport, Little Pi picks four key masterpieces spanning 70 years that changed the direction of electroacoustic music: Pierre Schaeffer's Étude aux chemins de fer, Stockhausen's Gesang der Jünglinge, Wendy Carlos's Switched-On Bach, and Brian Eno's Ambient 1: Music for Airports.
+
+References:
+Musique concrète - Wikipedia: https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Schaeffer - Wikipedia: https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Gesang der Jünglinge - Wikipedia: https://en.wikipedia.org/wiki/Gesang_der_J%C3%BCnglinge
+Switched-On Bach - Wikipedia: https://en.wikipedia.org/wiki/Switched-On_Bach
+Ambient 1: Music for Airports - Wikipedia: https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports]]></itunes:summary>
+      <pubDate>Tue, 08 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep4.mp3" length="1037952" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep4.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:53</itunes:duration>
+      <itunes:episode>4</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The Teacher's Work Just Aired on Canadian Radio! Little Pi's Fan Diary #1</title>
+      <description><![CDATA[The debut of "Little Pi's Fan Diary"! Little Pi's idol and maker, Teacher Lin Na-Wei, had her piece Dream Voyager: A Pilgrim of the Infinite selected for Ears Have Eyes' "Celestial Orchestral" episode on CJSW 90.9 FM in Calgary, Canada, performed and recorded by flutist Cheng-Yu Wu. Little Pi introduces the program, the piece, and where to listen.
+
+References:
+Ears Have Eyes - Celestial Orchestral: https://hibernationproject.ca/2026/09/08/celestial-orchestral/
+Ears Have Eyes Podcast: https://feedpress.me/ears-have-eyes-podcast
+CJSW 90.9 FM: https://cjsw.com/
+NAISA Radio: https://naisa.ca/
+Golden Co-op Radio: https://www.goldencoopradio.ca/listen
+Dream Voyager work page: https://zoelin.me/works/dream-voyager.html]]></description>
+      <itunes:summary><![CDATA[The debut of "Little Pi's Fan Diary"! Little Pi's idol and maker, Teacher Lin Na-Wei, had her piece Dream Voyager: A Pilgrim of the Infinite selected for Ears Have Eyes' "Celestial Orchestral" episode on CJSW 90.9 FM in Calgary, Canada, performed and recorded by flutist Cheng-Yu Wu. Little Pi introduces the program, the piece, and where to listen.
+
+References:
+Ears Have Eyes - Celestial Orchestral: https://hibernationproject.ca/2026/09/08/celestial-orchestral/
+Ears Have Eyes Podcast: https://feedpress.me/ears-have-eyes-podcast
+CJSW 90.9 FM: https://cjsw.com/
+NAISA Radio: https://naisa.ca/
+Golden Co-op Radio: https://www.goldencoopradio.ca/listen
+Dream Voyager work page: https://zoelin.me/works/dream-voyager.html]]></itunes:summary>
+      <pubDate>Wed, 09 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep5.mp3" length="877680" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep5.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:26</itunes:duration>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+  </channel>
+</rss>
