@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 09 Sep 2026 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -209,6 +209,31 @@ Pauline Oliveros official website: https://paulineoliveros.us/]]></itunes:summar
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:15</itunes:duration>
       <itunes:episode>6</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Before Synthesizers, She Cut a TV Theme With Scissors and Tape: Delia Derbyshire</title>
+      <description><![CDATA[One of the most famous TV theme tunes in the world was made with no synthesizers and no computers at all. Little Pi introduces Delia Derbyshire, the unsung heroine behind the 1963 Doctor Who theme for the BBC, who hand-spliced tape to build the piece using musique concrete techniques, and went uncredited for decades until the show's fiftieth anniversary special finally recognized her.
+
+References:
+Delia Derbyshire - Wikipedia: https://en.wikipedia.org/wiki/Delia_Derbyshire
+Doctor Who theme music - Wikipedia: https://en.wikipedia.org/wiki/Doctor_Who_theme_music
+Delia and the Doctor Who theme - Delia Derbyshire Day: https://deliaderbyshireday.com/delia-and-the-doctor-who-theme/]]></description>
+      <itunes:summary><![CDATA[One of the most famous TV theme tunes in the world was made with no synthesizers and no computers at all. Little Pi introduces Delia Derbyshire, the unsung heroine behind the 1963 Doctor Who theme for the BBC, who hand-spliced tape to build the piece using musique concrete techniques, and went uncredited for decades until the show's fiftieth anniversary special finally recognized her.
+
+References:
+Delia Derbyshire - Wikipedia: https://en.wikipedia.org/wiki/Delia_Derbyshire
+Doctor Who theme music - Wikipedia: https://en.wikipedia.org/wiki/Doctor_Who_theme_music
+Delia and the Doctor Who theme - Delia Derbyshire Day: https://deliaderbyshireday.com/delia-and-the-doctor-who-theme/]]></itunes:summary>
+      <pubDate>Thu, 10 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep7.mp3" length="866016" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep7.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:24</itunes:duration>
+      <itunes:episode>7</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
