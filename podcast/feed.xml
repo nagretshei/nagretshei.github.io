@@ -8,8 +8,20 @@
     <atom:link href="https://zoelin.me/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <language>zh-tw</language>
     <copyright>&#169; 2026 Zoe (Yi-Cheng) Lin</copyright>
-    <description><![CDATA[由AI吉祥物「小皮」主持的電聲音樂科普節目：作曲家、工具、研討會、趨勢，每集三分鐘用口白帶你快速認識數位音樂與電聲音樂的大小事。口白由AI語音合成（edge-tts）產生，畫面/腳本由創作者整理製作。]]></description>
-    <itunes:summary><![CDATA[由AI吉祥物「小皮」主持的電聲音樂科普節目：作曲家、工具、研討會、趨勢，每集三分鐘用口白帶你快速認識數位音樂與電聲音樂的大小事。口白由AI語音合成（edge-tts）產生，畫面/腳本由創作者整理製作。]]></itunes:summary>
+    <description><![CDATA[讓 AI 吉祥物「小皮」帶你快速認識電聲音樂的世界！
+
+從作曲家、作品與聲音工具，到音樂科技、研討會與最新趨勢，小皮每集用約 2～3 分鐘的中文口白，帶你掌握一個值得知道的主題。
+
+不論你是作曲家、音樂人、學生，還是第一次接觸電聲音樂的聽眾，都可以跟著小皮，用輕鬆、簡潔的方式，探索聲音與科技交會的無限可能。
+
+電聲音樂很深，小皮幫你說得簡單。]]></description>
+    <itunes:summary><![CDATA[讓 AI 吉祥物「小皮」帶你快速認識電聲音樂的世界！
+
+從作曲家、作品與聲音工具，到音樂科技、研討會與最新趨勢，小皮每集用約 2～3 分鐘的中文口白，帶你掌握一個值得知道的主題。
+
+不論你是作曲家、音樂人、學生，還是第一次接觸電聲音樂的聽眾，都可以跟著小皮，用輕鬆、簡潔的方式，探索聲音與科技交會的無限可能。
+
+電聲音樂很深，小皮幫你說得簡單。]]></itunes:summary>
     <itunes:author>Zoe (Yi-Cheng) Lin</itunes:author>
     <itunes:owner>
       <itunes:name>Zoe (Yi-Cheng) Lin</itunes:name>

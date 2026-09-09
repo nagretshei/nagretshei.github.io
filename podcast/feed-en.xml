@@ -8,8 +8,20 @@
     <atom:link href="https://zoelin.me/podcast/feed-en.xml" rel="self" type="application/rss+xml"/>
     <language>en-us</language>
     <copyright>&#169; 2026 Zoe (Yi-Cheng) Lin</copyright>
-    <description><![CDATA[A podcast about electroacoustic and digital music, hosted by AI mascot Little Pi: composers, tools, conferences, and trends, in about 2-3 minutes of English narration per episode. Narration is AI-generated (edge-tts); scripts and visuals are produced by the creator.]]></description>
-    <itunes:summary><![CDATA[A podcast about electroacoustic and digital music, hosted by AI mascot Little Pi: composers, tools, conferences, and trends, in about 2-3 minutes of English narration per episode. Narration is AI-generated (edge-tts); scripts and visuals are produced by the creator.]]></itunes:summary>
+    <description><![CDATA[Let AI mascot Little Pi give you a fast introduction to the world of electroacoustic music!
+
+From composers, works, and sound tools to music technology, conferences, and the latest trends, Little Pi delivers one topic worth knowing in about 2-3 minutes of English narration per episode.
+
+Whether you're a composer, musician, student, or a first-time listener to electroacoustic music, join Little Pi for a relaxed, concise journey through the endless possibilities where sound meets technology.
+
+Electroacoustic music runs deep, Little Pi makes it simple.]]></description>
+    <itunes:summary><![CDATA[Let AI mascot Little Pi give you a fast introduction to the world of electroacoustic music!
+
+From composers, works, and sound tools to music technology, conferences, and the latest trends, Little Pi delivers one topic worth knowing in about 2-3 minutes of English narration per episode.
+
+Whether you're a composer, musician, student, or a first-time listener to electroacoustic music, join Little Pi for a relaxed, concise journey through the endless possibilities where sound meets technology.
+
+Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:author>Zoe (Yi-Cheng) Lin</itunes:author>
     <itunes:owner>
       <itunes:name>Zoe (Yi-Cheng) Lin</itunes:name>
