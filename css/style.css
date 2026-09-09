@@ -327,6 +327,12 @@ nav.site-nav a.active { color: var(--accent-2); }
   color: var(--text);
 }
 .btn-ghost:hover { text-decoration: none; border-color: var(--accent-2); color: var(--accent-2); }
+
+/* ---------- Podcast page ---------- */
+.card audio {
+  width: 100%;
+  margin-top: 14px;
+}
 .btn-light {
   background: linear-gradient(135deg, #b0d4f1, #6fa8d8);
   color: var(--text);

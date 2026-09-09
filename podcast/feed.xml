@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Little Pi's Tech Music Tips ｜ 小皮的聲波速記</title>
+    <link>https://zoelin.me/podcast.html</link>
+    <atom:link href="https://zoelin.me/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>zh-tw</language>
+    <copyright>&#169; 2026 Zoe (Yi-Cheng) Lin</copyright>
+    <description><![CDATA[由AI吉祥物「小皮」主持的電聲音樂科普節目：作曲家、工具、研討會、趨勢，每集三分鐘用口白帶你快速認識數位音樂與電聲音樂的大小事。口白由AI語音合成（edge-tts）產生，畫面/腳本由創作者整理製作。]]></description>
+    <itunes:summary><![CDATA[由AI吉祥物「小皮」主持的電聲音樂科普節目：作曲家、工具、研討會、趨勢，每集三分鐘用口白帶你快速認識數位音樂與電聲音樂的大小事。口白由AI語音合成（edge-tts）產生，畫面/腳本由創作者整理製作。]]></itunes:summary>
+    <itunes:author>Zoe (Yi-Cheng) Lin</itunes:author>
+    <itunes:owner>
+      <itunes:name>Zoe (Yi-Cheng) Lin</itunes:name>
+      <itunes:email>yicheng.zoe@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    <image>
+      <url>https://zoelin.me/podcast/artwork.jpg</url>
+      <title>Little Pi's Tech Music Tips ｜ 小皮的聲波速記</title>
+      <link>https://zoelin.me/podcast.html</link>
+    </image>
+    <itunes:category text="Music"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <lastBuildDate>Wed, 09 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <generator>generate_podcast_feed.py</generator>
+    <item>
+      <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
+      <description><![CDATA[聲音，真的可以用「打字」做出來？！
+
+從1948年法國工程師剪接錄音帶開始，到現在人人都能用AI模型即時生成一整段編曲——電聲音樂這一百年，其實就是人類不斷重新定義「什麼算是音樂」的過程。這集小皮帶你三分鐘認識電聲音樂的關鍵轉折點：具象音樂、電子音樂、程式化作曲工具，一路聊到AI生成式作曲的現在進行式。
+
+參考資料：
+Pierre Schaeffer（皮耶．薛佛）：https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Karlheinz Stockhausen（史托克豪森）：https://en.wikipedia.org/wiki/Karlheinz_Stockhausen
+Max/MSP 官網：https://cycling74.com/products/max
+Pure Data 官網：https://puredata.info/
+SuperCollider 官網：https://supercollider.github.io/
+ChucK 官網：https://chuck.stanford.edu/]]></description>
+      <itunes:summary><![CDATA[聲音，真的可以用「打字」做出來？！
+
+從1948年法國工程師剪接錄音帶開始，到現在人人都能用AI模型即時生成一整段編曲——電聲音樂這一百年，其實就是人類不斷重新定義「什麼算是音樂」的過程。這集小皮帶你三分鐘認識電聲音樂的關鍵轉折點：具象音樂、電子音樂、程式化作曲工具，一路聊到AI生成式作曲的現在進行式。
+
+參考資料：
+Pierre Schaeffer（皮耶．薛佛）：https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Karlheinz Stockhausen（史托克豪森）：https://en.wikipedia.org/wiki/Karlheinz_Stockhausen
+Max/MSP 官網：https://cycling74.com/products/max
+Pure Data 官網：https://puredata.info/
+SuperCollider 官網：https://supercollider.github.io/
+ChucK 官網：https://chuck.stanford.edu/]]></itunes:summary>
+      <pubDate>Mon, 07 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep1.mp3" length="2505393" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep1.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:37</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>電聲音樂新手該學哪套工具？ChucK/SuperCollider/Max/PD 選擇指南</title>
+      <description><![CDATA[工具那麼多，到底該學哪個？這集小皮整理兩大派別——用滑鼠拉線的視覺化工具（Max/MSP、Pure Data），跟用打字寫程式的文字型工具（ChucK、SuperCollider），幫新手抓出挑選方向。
+
+參考資料：
+Max/MSP 官網：https://cycling74.com/products/max
+Pure Data 官網：https://puredata.info/
+SuperCollider 官網：https://supercollider.github.io/
+ChucK 官網：https://chuck.stanford.edu/]]></description>
+      <itunes:summary><![CDATA[工具那麼多，到底該學哪個？這集小皮整理兩大派別——用滑鼠拉線的視覺化工具（Max/MSP、Pure Data），跟用打字寫程式的文字型工具（ChucK、SuperCollider），幫新手抓出挑選方向。
+
+參考資料：
+Max/MSP 官網：https://cycling74.com/products/max
+Pure Data 官網：https://puredata.info/
+SuperCollider 官網：https://supercollider.github.io/
+ChucK 官網：https://chuck.stanford.edu/]]></itunes:summary>
+      <pubDate>Mon, 07 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep2.mp3" length="2017635" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep2.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:06</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>全世界最狂的樂器發明大會，你聽過嗎？！NIME研討會完全解密</title>
+      <description><![CDATA[NIME是什麼？這是一場「不只發論文，還像演唱會」的國際新樂器發明大會。這集小皮介紹NIME研討會的由來，以及2026倫敦場次的重點，帶你了解為什麼連非樂器發明者也該關心這個社群。
+
+參考資料：
+NIME 官方網站：https://www.nime.org/
+NIME 2026 官方網站：https://nime2026.org/
+Imperial College London 官方活動頁：https://estore.imperial.ac.uk/conferences-and-events/faculty-of-engineering/dyson-school-of-design-engineering/international-conference-on-new-interfaces-for-musical-expression-2026
+Intelligent Instruments Lab：NIME 2026 消息：https://iil.is/news/nime-2026]]></description>
+      <itunes:summary><![CDATA[NIME是什麼？這是一場「不只發論文，還像演唱會」的國際新樂器發明大會。這集小皮介紹NIME研討會的由來，以及2026倫敦場次的重點，帶你了解為什麼連非樂器發明者也該關心這個社群。
+
+參考資料：
+NIME 官方網站：https://www.nime.org/
+NIME 2026 官方網站：https://nime2026.org/
+Imperial College London 官方活動頁：https://estore.imperial.ac.uk/conferences-and-events/faculty-of-engineering/dyson-school-of-design-engineering/international-conference-on-new-interfaces-for-musical-expression-2026
+Intelligent Instruments Lab：NIME 2026 消息：https://iil.is/news/nime-2026]]></itunes:summary>
+      <pubDate>Mon, 07 Sep 2026 18:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep3.mp3" length="2158487" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep3.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:15</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>電聲音樂新手必聽！4首改變音樂史的神作大公開</title>
+      <description><![CDATA[從火車聲音剪成的音樂，到用合成器演奏巴哈，再到專門讓你放空的機場音樂——這集小皮精選4首橫跨70年、改變電聲音樂走向的關鍵神作：Pierre Schaeffer《鐵道練習曲》、Stockhausen《青年之歌》、Wendy Carlos《電氣化的巴哈》、Brian Eno《機場音樂》。
+
+參考資料：
+Musique concrète（具體音樂）－ Wikipedia：https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Schaeffer － Wikipedia：https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Gesang der Jünglinge － Wikipedia：https://en.wikipedia.org/wiki/Gesang_der_J%C3%BCnglinge
+Switched-On Bach － Wikipedia：https://en.wikipedia.org/wiki/Switched-On_Bach
+Ambient 1: Music for Airports － Wikipedia：https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports]]></description>
+      <itunes:summary><![CDATA[從火車聲音剪成的音樂，到用合成器演奏巴哈，再到專門讓你放空的機場音樂——這集小皮精選4首橫跨70年、改變電聲音樂走向的關鍵神作：Pierre Schaeffer《鐵道練習曲》、Stockhausen《青年之歌》、Wendy Carlos《電氣化的巴哈》、Brian Eno《機場音樂》。
+
+參考資料：
+Musique concrète（具體音樂）－ Wikipedia：https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Schaeffer － Wikipedia：https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Gesang der Jünglinge － Wikipedia：https://en.wikipedia.org/wiki/Gesang_der_J%C3%BCnglinge
+Switched-On Bach － Wikipedia：https://en.wikipedia.org/wiki/Switched-On_Bach
+Ambient 1: Music for Airports － Wikipedia：https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports]]></itunes:summary>
+      <pubDate>Tue, 08 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep4.mp3" length="2827221" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep4.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:57</itunes:duration>
+      <itunes:episode>4</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>老師的作品登上加拿大電台了！小皮追星日記 #1</title>
+      <description><![CDATA[「小皮追星日記」首發！小皮的偶像兼主人林哪位老師，她的作品《夢行者：無垠的朝聖》入選加拿大卡加利CJSW 90.9 FM廣播節目Ears Have Eyes的「Celestial Orchestral」單元，由長笛演奏家吳正宇演奏並錄音。這集小皮帶你認識這個節目、這首曲子，以及完整的收聽管道。
+
+參考資料：
+Ears Have Eyes — Celestial Orchestral 節目介紹：https://hibernationproject.ca/2026/09/08/celestial-orchestral/
+Ears Have Eyes Podcast：https://feedpress.me/ears-have-eyes-podcast
+CJSW 90.9 FM：https://cjsw.com/
+NAISA Radio：https://naisa.ca/
+Golden Co-op Radio：https://www.goldencoopradio.ca/listen
+Dream Voyager 作品頁面：https://zoelin.me/works/dream-voyager.html]]></description>
+      <itunes:summary><![CDATA[「小皮追星日記」首發！小皮的偶像兼主人林哪位老師，她的作品《夢行者：無垠的朝聖》入選加拿大卡加利CJSW 90.9 FM廣播節目Ears Have Eyes的「Celestial Orchestral」單元，由長笛演奏家吳正宇演奏並錄音。這集小皮帶你認識這個節目、這首曲子，以及完整的收聽管道。
+
+參考資料：
+Ears Have Eyes — Celestial Orchestral 節目介紹：https://hibernationproject.ca/2026/09/08/celestial-orchestral/
+Ears Have Eyes Podcast：https://feedpress.me/ears-have-eyes-podcast
+CJSW 90.9 FM：https://cjsw.com/
+NAISA Radio：https://naisa.ca/
+Golden Co-op Radio：https://www.goldencoopradio.ca/listen
+Dream Voyager 作品頁面：https://zoelin.me/works/dream-voyager.html]]></itunes:summary>
+      <pubDate>Wed, 09 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep5.mp3" length="2388364" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep5.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:29</itunes:duration>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+  </channel>
+</rss>
