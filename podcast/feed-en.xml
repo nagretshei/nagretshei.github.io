@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 10 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 15:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -234,6 +234,33 @@ Delia and the Doctor Who theme - Delia Derbyshire Day: https://deliaderbyshireda
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:24</itunes:duration>
       <itunes:episode>7</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>She Drew Sound Onto Film: Oramics Inventor Daphne Oram</title>
+      <description><![CDATA[Someone figured out how to draw sound long before graphic design software even existed. Little Pi introduces British electronic music pioneer Daphne Oram, who co-founded the BBC's Radiophonic Workshop, then resigned less than a year later to build Oramics: a machine that turned hand-drawn waveforms on strips of film into sound, an idea that conceptually foreshadowed the automation curves in today's music production software.
+
+References:
+Daphne Oram - Wikipedia: https://en.wikipedia.org/wiki/Daphne_Oram
+Daphne Oram official website: https://www.daphneoram.org/
+BBC Radiophonic Workshop - Wikipedia: https://en.wikipedia.org/wiki/BBC_Radiophonic_Workshop
+Science Museum: Oramics Machine: https://www.sciencemuseum.org.uk/objects-and-stories/oramics-machine]]></description>
+      <itunes:summary><![CDATA[Someone figured out how to draw sound long before graphic design software even existed. Little Pi introduces British electronic music pioneer Daphne Oram, who co-founded the BBC's Radiophonic Workshop, then resigned less than a year later to build Oramics: a machine that turned hand-drawn waveforms on strips of film into sound, an idea that conceptually foreshadowed the automation curves in today's music production software.
+
+References:
+Daphne Oram - Wikipedia: https://en.wikipedia.org/wiki/Daphne_Oram
+Daphne Oram official website: https://www.daphneoram.org/
+BBC Radiophonic Workshop - Wikipedia: https://en.wikipedia.org/wiki/BBC_Radiophonic_Workshop
+Science Museum: Oramics Machine: https://www.sciencemuseum.org.uk/objects-and-stories/oramics-machine]]></itunes:summary>
+      <pubDate>Thu, 10 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep8.mp3" length="830448" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep8.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:18</itunes:duration>
+      <itunes:episode>8</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

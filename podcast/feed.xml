@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 10 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 15:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -234,6 +234,33 @@ Delia and the Doctor Who theme － Delia Derbyshire Day：https://deliaderbyshir
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:33</itunes:duration>
       <itunes:episode>7</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>用畫的畫出一首歌？！Oramics發明人戴芬·奧蘭姆</title>
+      <description><![CDATA[有人在還沒有電腦繪圖軟體的年代，就想到「乾脆用畫的畫出聲音」！這集小皮介紹英國電子音樂先驅戴芬·奧蘭姆——她共同創辦了BBC的Radiophonic Workshop電子音效部門，卻在成立不到一年後就自己辭職，全心投入研發Oramics：一台能把手繪波形轉換成聲音的機器，概念上早就預告了今天音樂軟體裡的自動化曲線。
+
+參考資料：
+Daphne Oram － Wikipedia：https://en.wikipedia.org/wiki/Daphne_Oram
+Daphne Oram 官方網站：https://www.daphneoram.org/
+BBC Radiophonic Workshop － Wikipedia：https://en.wikipedia.org/wiki/BBC_Radiophonic_Workshop
+Science Museum：Oramics Machine：https://www.sciencemuseum.org.uk/objects-and-stories/oramics-machine]]></description>
+      <itunes:summary><![CDATA[有人在還沒有電腦繪圖軟體的年代，就想到「乾脆用畫的畫出聲音」！這集小皮介紹英國電子音樂先驅戴芬·奧蘭姆——她共同創辦了BBC的Radiophonic Workshop電子音效部門，卻在成立不到一年後就自己辭職，全心投入研發Oramics：一台能把手繪波形轉換成聲音的機器，概念上早就預告了今天音樂軟體裡的自動化曲線。
+
+參考資料：
+Daphne Oram － Wikipedia：https://en.wikipedia.org/wiki/Daphne_Oram
+Daphne Oram 官方網站：https://www.daphneoram.org/
+BBC Radiophonic Workshop － Wikipedia：https://en.wikipedia.org/wiki/BBC_Radiophonic_Workshop
+Science Museum：Oramics Machine：https://www.sciencemuseum.org.uk/objects-and-stories/oramics-machine]]></itunes:summary>
+      <pubDate>Thu, 10 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep8.mp3" length="2337373" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep8.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:26</itunes:duration>
+      <itunes:episode>8</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
