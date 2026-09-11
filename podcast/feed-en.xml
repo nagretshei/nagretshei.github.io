@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 10 Sep 2026 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 18:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -261,6 +261,58 @@ Science Museum: Oramics Machine: https://www.sciencemuseum.org.uk/objects-and-st
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:18</itunes:duration>
       <itunes:episode>8</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>What Is Sample Rate? The Strange Number Behind CD Audio Quality</title>
+      <description><![CDATA[First episode of a new mini-series on everyday audio-tech trivia. CD audio quality is always labeled 44100, an oddly specific number. Little Pi explains what sample rate actually means, the Nyquist sampling theorem, and how that leftover 100 traces back to a compromise with 1980s videotape technology when the CD standard was being defined.
+
+References:
+Nyquist-Shannon sampling theorem: https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem
+Compact Disc Digital Audio: https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio
+Why do CDs use a sampling rate of 44.1kHz (Cardinal Peak): https://www.cardinalpeak.com/blog/why-do-cds-use-a-sampling-rate-of-44-1-khz]]></description>
+      <itunes:summary><![CDATA[First episode of a new mini-series on everyday audio-tech trivia. CD audio quality is always labeled 44100, an oddly specific number. Little Pi explains what sample rate actually means, the Nyquist sampling theorem, and how that leftover 100 traces back to a compromise with 1980s videotape technology when the CD standard was being defined.
+
+References:
+Nyquist-Shannon sampling theorem: https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem
+Compact Disc Digital Audio: https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio
+Why do CDs use a sampling rate of 44.1kHz (Cardinal Peak): https://www.cardinalpeak.com/blog/why-do-cds-use-a-sampling-rate-of-44-1-khz]]></itunes:summary>
+      <pubDate>Fri, 11 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep9.mp3" length="1044000" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep9.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:54</itunes:duration>
+      <itunes:episode>9</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>He Cranked a Vibrato Too Far and Invented the Sound of the 80s: John Chowning and FM Synthesis</title>
+      <description><![CDATA[Stanford professor John Chowning was experimenting with vibrato in 1967 and pushed the wobble speed far past any normal range, accidentally discovering FM synthesis. Yamaha later licensed the technology to build the DX7, which defined the sound of 1980s pop music. In February 2026, Chowning finally received a Technical Grammy Award for the discovery.
+
+References:
+John Chowning - Wikipedia: https://en.wikipedia.org/wiki/John_Chowning
+FM synthesis - Wikipedia: https://en.wikipedia.org/wiki/Frequency_modulation_synthesis
+Yamaha DX7 - Wikipedia: https://en.wikipedia.org/wiki/Yamaha_DX7
+CCRMA (Stanford Center for Computer Research in Music and Acoustics): https://ccrma.stanford.edu/]]></description>
+      <itunes:summary><![CDATA[Stanford professor John Chowning was experimenting with vibrato in 1967 and pushed the wobble speed far past any normal range, accidentally discovering FM synthesis. Yamaha later licensed the technology to build the DX7, which defined the sound of 1980s pop music. In February 2026, Chowning finally received a Technical Grammy Award for the discovery.
+
+References:
+John Chowning - Wikipedia: https://en.wikipedia.org/wiki/John_Chowning
+FM synthesis - Wikipedia: https://en.wikipedia.org/wiki/Frequency_modulation_synthesis
+Yamaha DX7 - Wikipedia: https://en.wikipedia.org/wiki/Yamaha_DX7
+CCRMA (Stanford Center for Computer Research in Music and Acoustics): https://ccrma.stanford.edu/]]></itunes:summary>
+      <pubDate>Fri, 11 Sep 2026 18:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep10.mp3" length="882720" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep10.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:27</itunes:duration>
+      <itunes:episode>10</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

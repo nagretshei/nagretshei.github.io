@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 10 Sep 2026 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 18:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -261,6 +261,58 @@ Science Museum：Oramics Machine：https://www.sciencemuseum.org.uk/objects-and-
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:26</itunes:duration>
       <itunes:episode>8</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>取樣率是什麼？CD音質背後那個怪數字44.1kHz是怎麼來的</title>
+      <description><![CDATA[「電聲小知識」系列首發！CD音質常寫著44100這個怪數字，這集小皮解釋取樣率是什麼、奈奎斯特取樣定理，還有44100這個零頭其實是1980年代CD規格制定時，向錄影帶技術妥協留下的歷史遺跡。
+
+參考資料：
+Nyquist–Shannon sampling theorem － Wikipedia：https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem
+Compact disc digital audio － Wikipedia：https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio
+Why do CDs use a sampling rate of 44.1kHz？（Cardinal Peak）：https://www.cardinalpeak.com/blog/why-do-cds-use-a-sampling-rate-of-44-1-khz]]></description>
+      <itunes:summary><![CDATA[「電聲小知識」系列首發！CD音質常寫著44100這個怪數字，這集小皮解釋取樣率是什麼、奈奎斯特取樣定理，還有44100這個零頭其實是1980年代CD規格制定時，向錄影帶技術妥協留下的歷史遺跡。
+
+參考資料：
+Nyquist–Shannon sampling theorem － Wikipedia：https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem
+Compact disc digital audio － Wikipedia：https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio
+Why do CDs use a sampling rate of 44.1kHz？（Cardinal Peak）：https://www.cardinalpeak.com/blog/why-do-cds-use-a-sampling-rate-of-44-1-khz]]></itunes:summary>
+      <pubDate>Fri, 11 Sep 2026 15:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep9.mp3" length="2632870" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep9.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:45</itunes:duration>
+      <itunes:episode>9</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>顫音轉太快，意外發明整個80年代的聲音！FM合成之父約翰·喬寧</title>
+      <description><![CDATA[史丹佛教授John Chowning在1967年做顫音實驗，把「搖晃速度」開到遠超正常範圍，意外發現FM合成技術，後來授權給Yamaha做出DX7合成器，定義了整個80年代流行樂音色，2026年2月終於拿到葛萊美技術獎。
+
+參考資料：
+John Chowning － Wikipedia：https://en.wikipedia.org/wiki/John_Chowning
+FM synthesis － Wikipedia：https://en.wikipedia.org/wiki/Frequency_modulation_synthesis
+Yamaha DX7 － Wikipedia：https://en.wikipedia.org/wiki/Yamaha_DX7
+CCRMA官方網站（史丹佛電腦音樂與聲學研究中心）：https://ccrma.stanford.edu/]]></description>
+      <itunes:summary><![CDATA[史丹佛教授John Chowning在1967年做顫音實驗，把「搖晃速度」開到遠超正常範圍，意外發現FM合成技術，後來授權給Yamaha做出DX7合成器，定義了整個80年代流行樂音色，2026年2月終於拿到葛萊美技術獎。
+
+參考資料：
+John Chowning － Wikipedia：https://en.wikipedia.org/wiki/John_Chowning
+FM synthesis － Wikipedia：https://en.wikipedia.org/wiki/Frequency_modulation_synthesis
+Yamaha DX7 － Wikipedia：https://en.wikipedia.org/wiki/Yamaha_DX7
+CCRMA官方網站（史丹佛電腦音樂與聲學研究中心）：https://ccrma.stanford.edu/]]></itunes:summary>
+      <pubDate>Fri, 11 Sep 2026 18:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep10.mp3" length="2281785" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep10.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:23</itunes:duration>
+      <itunes:episode>10</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
