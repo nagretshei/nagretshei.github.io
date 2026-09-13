@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 11 Sep 2026 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -313,6 +313,33 @@ CCRMA (Stanford Center for Computer Research in Music and Acoustics): https://cc
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:27</itunes:duration>
       <itunes:episode>10</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>MP3 vs AAC vs FLAC vs WAV: What's the Real Difference?</title>
+      <description><![CDATA[Same song, wildly different file sizes: MP3 is a few MB, WAV is dozens of MB. Little Pi explains lossy vs lossless compression and breaks down MP3, AAC, FLAC, and WAV, plus which one to pick for casual listening, quality-focused listening, or studio production.
+
+References:
+MP3 - Wikipedia: https://en.wikipedia.org/wiki/MP3
+Advanced Audio Coding (AAC) - Wikipedia: https://en.wikipedia.org/wiki/Advanced_Audio_Coding
+FLAC - Xiph.org: https://xiph.org/flac/
+WAV - Wikipedia: https://en.wikipedia.org/wiki/WAV]]></description>
+      <itunes:summary><![CDATA[Same song, wildly different file sizes: MP3 is a few MB, WAV is dozens of MB. Little Pi explains lossy vs lossless compression and breaks down MP3, AAC, FLAC, and WAV, plus which one to pick for casual listening, quality-focused listening, or studio production.
+
+References:
+MP3 - Wikipedia: https://en.wikipedia.org/wiki/MP3
+Advanced Audio Coding (AAC) - Wikipedia: https://en.wikipedia.org/wiki/Advanced_Audio_Coding
+FLAC - Xiph.org: https://xiph.org/flac/
+WAV - Wikipedia: https://en.wikipedia.org/wiki/WAV]]></itunes:summary>
+      <pubDate>Mon, 14 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep11.mp3" length="1406163" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep11.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:35</itunes:duration>
+      <itunes:episode>11</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
