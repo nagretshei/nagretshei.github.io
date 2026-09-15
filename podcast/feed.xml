@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 14 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -340,6 +340,29 @@ WAV － Wikipedia：https://en.wikipedia.org/wiki/WAV]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:44</itunes:duration>
       <itunes:episode>11</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>MIDI到底是什麼？不是錄音檔，是一張演奏指令表</title>
+      <description><![CDATA[MIDI檔案裡其實完全沒有錄到聲音？這集小皮解釋MIDI跟MP3、WAV的根本差別——它記錄的不是聲波，而是一張精細的演奏指令表。從1983年讓不同品牌合成器互相溝通的標準誕生，講到為什麼MIDI檔案這麼小、還能隨時換樂器演奏，以及它四十幾年來一直被遊戲配樂、電影配樂、AI作曲工具使用的原因。
+
+參考資料：
+MIDI － Wikipedia：https://en.wikipedia.org/wiki/MIDI
+The MIDI Association：https://midi.org/]]></description>
+      <itunes:summary><![CDATA[MIDI檔案裡其實完全沒有錄到聲音？這集小皮解釋MIDI跟MP3、WAV的根本差別——它記錄的不是聲波，而是一張精細的演奏指令表。從1983年讓不同品牌合成器互相溝通的標準誕生，講到為什麼MIDI檔案這麼小、還能隨時換樂器演奏，以及它四十幾年來一直被遊戲配樂、電影配樂、AI作曲工具使用的原因。
+
+參考資料：
+MIDI － Wikipedia：https://en.wikipedia.org/wiki/MIDI
+The MIDI Association：https://midi.org/]]></itunes:summary>
+      <pubDate>Tue, 15 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep12.mp3" length="2036025" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep12.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:07</itunes:duration>
+      <itunes:episode>12</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

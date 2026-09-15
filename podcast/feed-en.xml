@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 14 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -340,6 +340,29 @@ WAV - Wikipedia: https://en.wikipedia.org/wiki/WAV]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:35</itunes:duration>
       <itunes:episode>11</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>What Is MIDI, Really? Not a Recording, an Instruction Sheet</title>
+      <description><![CDATA[A MIDI file doesn't actually contain any recorded sound? Little Pi explains the core difference between MIDI and MP3 or WAV: it doesn't store a waveform, it stores a detailed performance instruction sheet. From the 1983 standard that let synthesizers from different brands talk to each other, to why MIDI files are so tiny and can switch instruments instantly, to why it's still used everywhere from game scores to AI music tools over forty years later.
+
+References:
+MIDI - Wikipedia: https://en.wikipedia.org/wiki/MIDI
+The MIDI Association: https://midi.org/]]></description>
+      <itunes:summary><![CDATA[A MIDI file doesn't actually contain any recorded sound? Little Pi explains the core difference between MIDI and MP3 or WAV: it doesn't store a waveform, it stores a detailed performance instruction sheet. From the 1983 standard that let synthesizers from different brands talk to each other, to why MIDI files are so tiny and can switch instruments instantly, to why it's still used everywhere from game scores to AI music tools over forty years later.
+
+References:
+MIDI - Wikipedia: https://en.wikipedia.org/wiki/MIDI
+The MIDI Association: https://midi.org/]]></itunes:summary>
+      <pubDate>Tue, 15 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep12.mp3" length="755136" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep12.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:06</itunes:duration>
+      <itunes:episode>12</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
