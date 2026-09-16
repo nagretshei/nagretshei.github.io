@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 15 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -363,6 +363,29 @@ The MIDI Association: https://midi.org/]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:06</itunes:duration>
       <itunes:episode>12</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Does a Synth Actually &quot;Sculpt&quot; Sound? Subtractive Synthesis and the ADSR Envelope</title>
+      <description><![CDATA[Following up on MIDI, Little Pi explains how a synthesizer actually makes a sound: an oscillator generates a raw, overtone-rich, harsh waveform, a filter carves away the unwanted frequencies, and the ADSR envelope (attack, decay, sustain, release) gives the sound its personality. Tweak the envelope on the exact same waveform and you can go from a drum hit to a lush string-like pad - a logic that applies to nearly every synthesizer out there.
+
+References:
+Subtractive synthesis - Wikipedia: https://en.wikipedia.org/wiki/Subtractive_synthesis
+Envelope (music) - Wikipedia: https://en.wikipedia.org/wiki/Envelope_(music)]]></description>
+      <itunes:summary><![CDATA[Following up on MIDI, Little Pi explains how a synthesizer actually makes a sound: an oscillator generates a raw, overtone-rich, harsh waveform, a filter carves away the unwanted frequencies, and the ADSR envelope (attack, decay, sustain, release) gives the sound its personality. Tweak the envelope on the exact same waveform and you can go from a drum hit to a lush string-like pad - a logic that applies to nearly every synthesizer out there.
+
+References:
+Subtractive synthesis - Wikipedia: https://en.wikipedia.org/wiki/Subtractive_synthesis
+Envelope (music) - Wikipedia: https://en.wikipedia.org/wiki/Envelope_(music)]]></itunes:summary>
+      <pubDate>Wed, 16 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep13.mp3" length="840816" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep13.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:20</itunes:duration>
+      <itunes:episode>13</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

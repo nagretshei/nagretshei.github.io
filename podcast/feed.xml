@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 15 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -363,6 +363,29 @@ The MIDI Association：https://midi.org/]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:07</itunes:duration>
       <itunes:episode>12</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>合成器怎麼「捏」出聲音？減法合成與ADSR包絡</title>
+      <description><![CDATA[接續上一集的MIDI，這集小皮講合成器怎麼真正「發出聲音」——先用振盪器做出一個泛音超豐富、又吵又刺耳的原始波形，再用濾波器把不要的頻率削掉，最後靠ADSR包絡線（起音、衰減、延持、釋音）決定聲音的個性。同一個波形調一調包絡，就能從打擊樂變成拉弦樂器那種鋪底音色，這套邏輯幾乎所有合成器都通用。
+
+參考資料：
+Subtractive synthesis － Wikipedia：https://en.wikipedia.org/wiki/Subtractive_synthesis
+Envelope (music) － Wikipedia：https://en.wikipedia.org/wiki/Envelope_(music)]]></description>
+      <itunes:summary><![CDATA[接續上一集的MIDI，這集小皮講合成器怎麼真正「發出聲音」——先用振盪器做出一個泛音超豐富、又吵又刺耳的原始波形，再用濾波器把不要的頻率削掉，最後靠ADSR包絡線（起音、衰減、延持、釋音）決定聲音的個性。同一個波形調一調包絡，就能從打擊樂變成拉弦樂器那種鋪底音色，這套邏輯幾乎所有合成器都通用。
+
+參考資料：
+Subtractive synthesis － Wikipedia：https://en.wikipedia.org/wiki/Subtractive_synthesis
+Envelope (music) － Wikipedia：https://en.wikipedia.org/wiki/Envelope_(music)]]></itunes:summary>
+      <pubDate>Wed, 16 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep13.mp3" length="2317311" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep13.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:25</itunes:duration>
+      <itunes:episode>13</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
