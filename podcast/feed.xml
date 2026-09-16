@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -386,6 +386,31 @@ Envelope (music) － Wikipedia：https://en.wikipedia.org/wiki/Envelope_(music)]
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:25</itunes:duration>
       <itunes:episode>13</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>耳機百百款到底怎麼選？監聽耳機、降噪耳機一次搞懂</title>
+      <description><![CDATA[入耳式、耳罩式、開放式、封閉式……耳機種類多到讓人頭昏眼花？這集小皮用最簡單的方式，一次搞懂耳機的四大分類、監聽耳機跟一般消費耳機的差別，還有主動降噪（ANC）背後的原理，最後依通勤、混音創作、運動健身三種使用情境，教你怎麼挑一副真正適合自己的耳機。
+
+參考資料：
+Headphones － Wikipedia：https://en.wikipedia.org/wiki/Headphones
+Active noise control － Wikipedia：https://en.wikipedia.org/wiki/Active_noise_control
+Studio monitor － Wikipedia：https://en.wikipedia.org/wiki/Studio_monitor]]></description>
+      <itunes:summary><![CDATA[入耳式、耳罩式、開放式、封閉式……耳機種類多到讓人頭昏眼花？這集小皮用最簡單的方式，一次搞懂耳機的四大分類、監聽耳機跟一般消費耳機的差別，還有主動降噪（ANC）背後的原理，最後依通勤、混音創作、運動健身三種使用情境，教你怎麼挑一副真正適合自己的耳機。
+
+參考資料：
+Headphones － Wikipedia：https://en.wikipedia.org/wiki/Headphones
+Active noise control － Wikipedia：https://en.wikipedia.org/wiki/Active_noise_control
+Studio monitor － Wikipedia：https://en.wikipedia.org/wiki/Studio_monitor]]></itunes:summary>
+      <pubDate>Thu, 17 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep14.mp3" length="3038291" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep14.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:10</itunes:duration>
+      <itunes:episode>14</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

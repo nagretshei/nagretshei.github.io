@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -386,6 +386,31 @@ Envelope (music) - Wikipedia: https://en.wikipedia.org/wiki/Envelope_(music)]]><
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:20</itunes:duration>
       <itunes:episode>13</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How to Choose Headphones: Studio Monitors, Noise Cancelling, and More</title>
+      <description><![CDATA[Earbuds, over-ear, open-back, closed-back... headphone types can be overwhelming. In this episode, Little Pi breaks down the four main headphone categories, explains the difference between studio monitor headphones and regular consumer headphones, and shows how active noise cancelling (ANC) actually works. Then, based on three real-life scenarios - commuting, mixing and music production, and working out - Little Pi helps you find the headphones that are actually right for you.
+
+References:
+Headphones - Wikipedia: https://en.wikipedia.org/wiki/Headphones
+Active noise control - Wikipedia: https://en.wikipedia.org/wiki/Active_noise_control
+Studio monitor - Wikipedia: https://en.wikipedia.org/wiki/Studio_monitor]]></description>
+      <itunes:summary><![CDATA[Earbuds, over-ear, open-back, closed-back... headphone types can be overwhelming. In this episode, Little Pi breaks down the four main headphone categories, explains the difference between studio monitor headphones and regular consumer headphones, and shows how active noise cancelling (ANC) actually works. Then, based on three real-life scenarios - commuting, mixing and music production, and working out - Little Pi helps you find the headphones that are actually right for you.
+
+References:
+Headphones - Wikipedia: https://en.wikipedia.org/wiki/Headphones
+Active noise control - Wikipedia: https://en.wikipedia.org/wiki/Active_noise_control
+Studio monitor - Wikipedia: https://en.wikipedia.org/wiki/Studio_monitor]]></itunes:summary>
+      <pubDate>Thu, 17 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep14.mp3" length="977184" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep14.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:43</itunes:duration>
+      <itunes:episode>14</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
