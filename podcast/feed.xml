@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 17 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -411,6 +411,33 @@ Studio monitor － Wikipedia：https://en.wikipedia.org/wiki/Studio_monitor]]></
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:10</itunes:duration>
       <itunes:episode>14</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>可口可樂那聲「啵」是她做的？被葛萊美提名五次的合成器先驅蘇珊妮·奇亞尼</title>
+      <description><![CDATA[廣告裡可口可樂經典的開瓶＋氣泡聲，其實是一位作曲家用合成器精心設計出來的作品！這集小皮介紹電聲音樂界傳奇人物蘇珊妮·奇亞尼（Suzanne Ciani）——她是Buchla模組合成器的頂尖高手，靠商業配樂闖出名號，又以專輯《Seven Waves》開創「新世紀音樂」類型，五度入圍葛萊美獎，沉寂多年後又被新一代重新發現，重返舞台舉辦現場模組合成器演出。
+
+參考資料：
+Suzanne Ciani － Wikipedia：https://en.wikipedia.org/wiki/Suzanne_Ciani
+Buchla synthesizer － Wikipedia：https://en.wikipedia.org/wiki/Buchla_synthesizer
+Suzanne Ciani 官方網站：https://sevwave.com/
+A Life in Waves（紀錄片）－ IMDb：https://www.imdb.com/title/tt6068022/]]></description>
+      <itunes:summary><![CDATA[廣告裡可口可樂經典的開瓶＋氣泡聲，其實是一位作曲家用合成器精心設計出來的作品！這集小皮介紹電聲音樂界傳奇人物蘇珊妮·奇亞尼（Suzanne Ciani）——她是Buchla模組合成器的頂尖高手，靠商業配樂闖出名號，又以專輯《Seven Waves》開創「新世紀音樂」類型，五度入圍葛萊美獎，沉寂多年後又被新一代重新發現，重返舞台舉辦現場模組合成器演出。
+
+參考資料：
+Suzanne Ciani － Wikipedia：https://en.wikipedia.org/wiki/Suzanne_Ciani
+Buchla synthesizer － Wikipedia：https://en.wikipedia.org/wiki/Buchla_synthesizer
+Suzanne Ciani 官方網站：https://sevwave.com/
+A Life in Waves（紀錄片）－ IMDb：https://www.imdb.com/title/tt6068022/]]></itunes:summary>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep15.mp3" length="3150304" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep15.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:17</itunes:duration>
+      <itunes:episode>15</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 17 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -411,6 +411,33 @@ Studio monitor - Wikipedia: https://en.wikipedia.org/wiki/Studio_monitor]]></itu
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:43</itunes:duration>
       <itunes:episode>14</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Who Designed That Coca-Cola &quot;Pop&quot;? Synthesizer Pioneer Suzanne Ciani</title>
+      <description><![CDATA[That iconic pop-and-fizz sound in Coca-Cola commercials was actually designed by a composer using a synthesizer. In this episode, Little Pi introduces a legend of electronic music - Suzanne Ciani. A top expert on the Buchla modular synthesizer, she built her name through commercial sound design, pioneered the New Age music genre with her album "Seven Waves," earned five Grammy nominations, and was rediscovered by a new generation after years out of the spotlight, returning to the stage for live modular synthesizer performances.
+
+References:
+Suzanne Ciani - Wikipedia: https://en.wikipedia.org/wiki/Suzanne_Ciani
+Buchla synthesizer - Wikipedia: https://en.wikipedia.org/wiki/Buchla_synthesizer
+Suzanne Ciani official website: https://sevwave.com/
+A Life in Waves (documentary) - IMDb: https://www.imdb.com/title/tt6068022/]]></description>
+      <itunes:summary><![CDATA[That iconic pop-and-fizz sound in Coca-Cola commercials was actually designed by a composer using a synthesizer. In this episode, Little Pi introduces a legend of electronic music - Suzanne Ciani. A top expert on the Buchla modular synthesizer, she built her name through commercial sound design, pioneered the New Age music genre with her album "Seven Waves," earned five Grammy nominations, and was rediscovered by a new generation after years out of the spotlight, returning to the stage for live modular synthesizer performances.
+
+References:
+Suzanne Ciani - Wikipedia: https://en.wikipedia.org/wiki/Suzanne_Ciani
+Buchla synthesizer - Wikipedia: https://en.wikipedia.org/wiki/Buchla_synthesizer
+Suzanne Ciani official website: https://sevwave.com/
+A Life in Waves (documentary) - IMDb: https://www.imdb.com/title/tt6068022/]]></itunes:summary>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep15.mp3" length="1084896" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep15.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:01</itunes:duration>
+      <itunes:episode>15</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
