@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -438,6 +438,58 @@ A Life in Waves（紀錄片）－ IMDb：https://www.imdb.com/title/tt6068022/]]
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:17</itunes:duration>
       <itunes:episode>15</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>用電腦寫出第一段音樂！電腦音樂之父馬克斯·馬修斯 Max Mathews</title>
+      <description><![CDATA[這集小皮介紹被尊稱為「電腦音樂之父」的馬克斯·馬修斯（Max Mathews）。他原本是貝爾實驗室的電機工程師，1957年在IBM 704大型電腦上寫出第一個電腦音樂程式MUSIC，1961年團隊讓電腦合成人聲演唱《黛西貝爾》，這段示範後來還成為《2001太空漫遊》中哈爾九千唱歌橋段的靈感來源。他提出的「單元產生器」積木式設計概念，影響了Csound、SuperCollider、ChucK等後來所有的音樂程式語言。
+
+參考資料：
+Max Mathews － Wikipedia：https://en.wikipedia.org/wiki/Max_Mathews
+MUSIC-N － Wikipedia：https://en.wikipedia.org/wiki/MUSIC-N
+Daisy Bell － Wikipedia：https://en.wikipedia.org/wiki/Daisy_Bell
+Csound 官方網站：https://csound.com/]]></description>
+      <itunes:summary><![CDATA[這集小皮介紹被尊稱為「電腦音樂之父」的馬克斯·馬修斯（Max Mathews）。他原本是貝爾實驗室的電機工程師，1957年在IBM 704大型電腦上寫出第一個電腦音樂程式MUSIC，1961年團隊讓電腦合成人聲演唱《黛西貝爾》，這段示範後來還成為《2001太空漫遊》中哈爾九千唱歌橋段的靈感來源。他提出的「單元產生器」積木式設計概念，影響了Csound、SuperCollider、ChucK等後來所有的音樂程式語言。
+
+參考資料：
+Max Mathews － Wikipedia：https://en.wikipedia.org/wiki/Max_Mathews
+MUSIC-N － Wikipedia：https://en.wikipedia.org/wiki/MUSIC-N
+Daisy Bell － Wikipedia：https://en.wikipedia.org/wiki/Daisy_Bell
+Csound 官方網站：https://csound.com/]]></itunes:summary>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep16.mp3" length="2715626" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep16.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:50</itunes:duration>
+      <itunes:episode>16</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>麥克風怎麼選？動圈、電容、指向性一次搞懂</title>
+      <description><![CDATA[想開始錄音、做Podcast，卻被動圈、電容、指向性這些麥克風名詞搞得頭昏眼花？這集小皮用最簡單的方式帶你搞懂：動圈麥克風為什麼耐用又適合現場、電容麥克風為什麼靈敏卻需要48伏特幻象電源、心形／全指向／8字形指向性怎麼看，還有USB與XLR接頭的差別，最後依使用情境教你怎麼選。
+
+參考資料：
+Microphone － Wikipedia：https://en.wikipedia.org/wiki/Microphone
+Phantom power － Wikipedia：https://en.wikipedia.org/wiki/Phantom_power
+Shure 麥克風入門指南（官方）：https://www.shure.com/en-US/performance-production/louder/microphone-basics]]></description>
+      <itunes:summary><![CDATA[想開始錄音、做Podcast，卻被動圈、電容、指向性這些麥克風名詞搞得頭昏眼花？這集小皮用最簡單的方式帶你搞懂：動圈麥克風為什麼耐用又適合現場、電容麥克風為什麼靈敏卻需要48伏特幻象電源、心形／全指向／8字形指向性怎麼看，還有USB與XLR接頭的差別，最後依使用情境教你怎麼選。
+
+參考資料：
+Microphone － Wikipedia：https://en.wikipedia.org/wiki/Microphone
+Phantom power － Wikipedia：https://en.wikipedia.org/wiki/Phantom_power
+Shure 麥克風入門指南（官方）：https://www.shure.com/en-US/performance-production/louder/microphone-basics]]></itunes:summary>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep17.mp3" length="2901200" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep17.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:01</itunes:duration>
+      <itunes:episode>17</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

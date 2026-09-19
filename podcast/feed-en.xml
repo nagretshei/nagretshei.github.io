@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -438,6 +438,58 @@ A Life in Waves (documentary) - IMDb: https://www.imdb.com/title/tt6068022/]]></
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:01</itunes:duration>
       <itunes:episode>15</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Writing Music with a Computer for the First Time! Max Mathews, Father of Computer Music</title>
+      <description><![CDATA[In this episode, Little Pi introduces Max Mathews, honored as the "father of computer music." An electrical engineer at Bell Labs, he wrote MUSIC, the first computer music program, on an IBM 704 mainframe in 1957. In 1961 his colleagues had a computer sing "Daisy Bell" with a synthesized voice, a demo that later inspired the scene where HAL 9000 sings in "2001: A Space Odyssey." His "unit generator" building-block design shaped Csound, SuperCollider, ChucK, and nearly every music programming language since.
+
+References:
+Max Mathews - Wikipedia: https://en.wikipedia.org/wiki/Max_Mathews
+MUSIC-N - Wikipedia: https://en.wikipedia.org/wiki/MUSIC-N
+Daisy Bell - Wikipedia: https://en.wikipedia.org/wiki/Daisy_Bell
+Csound official website: https://csound.com/]]></description>
+      <itunes:summary><![CDATA[In this episode, Little Pi introduces Max Mathews, honored as the "father of computer music." An electrical engineer at Bell Labs, he wrote MUSIC, the first computer music program, on an IBM 704 mainframe in 1957. In 1961 his colleagues had a computer sing "Daisy Bell" with a synthesized voice, a demo that later inspired the scene where HAL 9000 sings in "2001: A Space Odyssey." His "unit generator" building-block design shaped Csound, SuperCollider, ChucK, and nearly every music programming language since.
+
+References:
+Max Mathews - Wikipedia: https://en.wikipedia.org/wiki/Max_Mathews
+MUSIC-N - Wikipedia: https://en.wikipedia.org/wiki/MUSIC-N
+Daisy Bell - Wikipedia: https://en.wikipedia.org/wiki/Daisy_Bell
+Csound official website: https://csound.com/]]></itunes:summary>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep16.mp3" length="963216" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep16.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:41</itunes:duration>
+      <itunes:episode>16</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How to Choose a Microphone: Dynamic, Condenser, and Polar Patterns</title>
+      <description><![CDATA[Want to start recording or make a podcast, but dynamic, condenser, and polar patterns have your head spinning? In this episode, Little Pi explains it simply: why dynamic microphones are tough and great for live use, why condenser microphones are sensitive but need 48-volt phantom power, how to read cardioid, omnidirectional, and figure-eight patterns, and the difference between USB and XLR connections, then how to choose based on your situation.
+
+References:
+Microphone - Wikipedia: https://en.wikipedia.org/wiki/Microphone
+Phantom power - Wikipedia: https://en.wikipedia.org/wiki/Phantom_power
+Shure microphone basics (official): https://www.shure.com/en-US/performance-production/louder/microphone-basics]]></description>
+      <itunes:summary><![CDATA[Want to start recording or make a podcast, but dynamic, condenser, and polar patterns have your head spinning? In this episode, Little Pi explains it simply: why dynamic microphones are tough and great for live use, why condenser microphones are sensitive but need 48-volt phantom power, how to read cardioid, omnidirectional, and figure-eight patterns, and the difference between USB and XLR connections, then how to choose based on your situation.
+
+References:
+Microphone - Wikipedia: https://en.wikipedia.org/wiki/Microphone
+Phantom power - Wikipedia: https://en.wikipedia.org/wiki/Phantom_power
+Shure microphone basics (official): https://www.shure.com/en-US/performance-production/louder/microphone-basics]]></itunes:summary>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep17.mp3" length="1009296" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep17.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:48</itunes:duration>
+      <itunes:episode>17</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
