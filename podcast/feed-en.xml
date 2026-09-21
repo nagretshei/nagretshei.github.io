@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -490,6 +490,31 @@ Shure microphone basics (official): https://www.shure.com/en-US/performance-prod
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:48</itunes:duration>
       <itunes:episode>17</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Her Music Flew Into Space: Computer Composer Laurie Spiegel</title>
+      <description><![CDATA[In 1977 the Voyager spacecraft carried a golden record out of the solar system, and one of the pieces opening its "Sounds of Earth" section was by computer composer Laurie Spiegel. In this episode, Little Pi introduces her: from self-taught folk guitar to making music on early computer systems at Bell Labs and helping develop computer graphics systems, her 1980 album "The Expanding Universe" hailed as a landmark of ambient music, and "Music Mouse" (1986), software that let anyone play with algorithmic composition.
+
+References:
+Laurie Spiegel - Wikipedia: https://en.wikipedia.org/wiki/Laurie_Spiegel
+Music Mouse - Wikipedia: https://en.wikipedia.org/wiki/Music_Mouse
+Voyager Golden Record - Wikipedia: https://en.wikipedia.org/wiki/Voyager_Golden_Record]]></description>
+      <itunes:summary><![CDATA[In 1977 the Voyager spacecraft carried a golden record out of the solar system, and one of the pieces opening its "Sounds of Earth" section was by computer composer Laurie Spiegel. In this episode, Little Pi introduces her: from self-taught folk guitar to making music on early computer systems at Bell Labs and helping develop computer graphics systems, her 1980 album "The Expanding Universe" hailed as a landmark of ambient music, and "Music Mouse" (1986), software that let anyone play with algorithmic composition.
+
+References:
+Laurie Spiegel - Wikipedia: https://en.wikipedia.org/wiki/Laurie_Spiegel
+Music Mouse - Wikipedia: https://en.wikipedia.org/wiki/Music_Mouse
+Voyager Golden Record - Wikipedia: https://en.wikipedia.org/wiki/Voyager_Golden_Record]]></itunes:summary>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep18.mp3" length="813744" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep18.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:16</itunes:duration>
+      <itunes:episode>18</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

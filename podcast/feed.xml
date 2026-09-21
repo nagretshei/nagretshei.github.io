@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -490,6 +490,31 @@ Shure 麥克風入門指南（官方）：https://www.shure.com/en-US/performanc
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:01</itunes:duration>
       <itunes:episode>17</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>被送上太空的電腦作曲家蘿莉·史匹格 Laurie Spiegel</title>
+      <description><![CDATA[1977年旅行者號太空船帶著一張金唱片飛出太陽系，開場的其中一首曲子，是電腦作曲家蘿莉·史匹格的作品。這集小皮介紹她：從自學民謠吉他，到在貝爾實驗室用早期電腦系統創作、參與開發電腦繪圖系統，1980年專輯《The Expanding Universe》被公認是環境音樂的重要作品，1986年推出讓一般人也能玩演算法作曲的軟體《Music Mouse》。
+
+參考資料：
+Laurie Spiegel － Wikipedia：https://en.wikipedia.org/wiki/Laurie_Spiegel
+Music Mouse － Wikipedia：https://en.wikipedia.org/wiki/Music_Mouse
+Voyager Golden Record － Wikipedia：https://en.wikipedia.org/wiki/Voyager_Golden_Record]]></description>
+      <itunes:summary><![CDATA[1977年旅行者號太空船帶著一張金唱片飛出太陽系，開場的其中一首曲子，是電腦作曲家蘿莉·史匹格的作品。這集小皮介紹她：從自學民謠吉他，到在貝爾實驗室用早期電腦系統創作、參與開發電腦繪圖系統，1980年專輯《The Expanding Universe》被公認是環境音樂的重要作品，1986年推出讓一般人也能玩演算法作曲的軟體《Music Mouse》。
+
+參考資料：
+Laurie Spiegel － Wikipedia：https://en.wikipedia.org/wiki/Laurie_Spiegel
+Music Mouse － Wikipedia：https://en.wikipedia.org/wiki/Music_Mouse
+Voyager Golden Record － Wikipedia：https://en.wikipedia.org/wiki/Voyager_Golden_Record]]></itunes:summary>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep18.mp3" length="2436430" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep18.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:32</itunes:duration>
+      <itunes:episode>18</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
