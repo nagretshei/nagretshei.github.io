@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 22 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -515,6 +515,33 @@ Voyager Golden Record － Wikipedia：https://en.wikipedia.org/wiki/Voyager_Gold
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:32</itunes:duration>
       <itunes:episode>18</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>同一首歌換藍牙耳機音質差這麼多？SBC/AAC/aptX/LDAC是什麼</title>
+      <description><![CDATA[同一首歌換一副藍牙耳機聽起來差這麼多，關鍵其實藏在音訊編碼裡。這集小皮帶你搞懂SBC、AAC、aptX、LDAC這幾個常見編碼的差異：SBC是藍牙規範裡人人都要支援的基本款，AAC是蘋果生態系愛用的編碼，aptX主打低延遲、LDAC主打高解析度，最後也整理挑選重點，教你怎麼從iPhone或Android裝置判斷該注意哪個編碼。
+
+參考資料：
+Bluetooth audio codec compatibility table － Wikipedia：https://en.wikipedia.org/wiki/Bluetooth_stack
+Advanced Audio Coding (AAC) － Wikipedia：https://en.wikipedia.org/wiki/Advanced_Audio_Coding
+aptX － Wikipedia：https://en.wikipedia.org/wiki/AptX
+LDAC － Wikipedia：https://en.wikipedia.org/wiki/LDAC_(codec)]]></description>
+      <itunes:summary><![CDATA[同一首歌換一副藍牙耳機聽起來差這麼多，關鍵其實藏在音訊編碼裡。這集小皮帶你搞懂SBC、AAC、aptX、LDAC這幾個常見編碼的差異：SBC是藍牙規範裡人人都要支援的基本款，AAC是蘋果生態系愛用的編碼，aptX主打低延遲、LDAC主打高解析度，最後也整理挑選重點，教你怎麼從iPhone或Android裝置判斷該注意哪個編碼。
+
+參考資料：
+Bluetooth audio codec compatibility table － Wikipedia：https://en.wikipedia.org/wiki/Bluetooth_stack
+Advanced Audio Coding (AAC) － Wikipedia：https://en.wikipedia.org/wiki/Advanced_Audio_Coding
+aptX － Wikipedia：https://en.wikipedia.org/wiki/AptX
+LDAC － Wikipedia：https://en.wikipedia.org/wiki/LDAC_(codec)]]></itunes:summary>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep19.mp3" length="3291156" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep19.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:26</itunes:duration>
+      <itunes:episode>19</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

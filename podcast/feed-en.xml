@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 22 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -515,6 +515,33 @@ Voyager Golden Record - Wikipedia: https://en.wikipedia.org/wiki/Voyager_Golden_
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:16</itunes:duration>
       <itunes:episode>18</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Same Song, Different Sound: What Are SBC/AAC/aptX/LDAC Bluetooth Codecs?</title>
+      <description><![CDATA[The same song can sound noticeably different depending on which Bluetooth headphones you use, and the reason is hiding in the audio codec. In this episode, Little Pi breaks down SBC, AAC, aptX, and LDAC: SBC is the baseline every Bluetooth device must support, AAC is the codec favored by the Apple ecosystem, aptX focuses on low latency, LDAC focuses on high resolution, and finally, how to tell which codec to look for depending on whether you use an iPhone or an Android device.
+
+References:
+Bluetooth audio codec compatibility table - Wikipedia: https://en.wikipedia.org/wiki/Bluetooth_stack
+Advanced Audio Coding (AAC) - Wikipedia: https://en.wikipedia.org/wiki/Advanced_Audio_Coding
+aptX - Wikipedia: https://en.wikipedia.org/wiki/AptX
+LDAC - Wikipedia: https://en.wikipedia.org/wiki/LDAC_(codec)]]></description>
+      <itunes:summary><![CDATA[The same song can sound noticeably different depending on which Bluetooth headphones you use, and the reason is hiding in the audio codec. In this episode, Little Pi breaks down SBC, AAC, aptX, and LDAC: SBC is the baseline every Bluetooth device must support, AAC is the codec favored by the Apple ecosystem, aptX focuses on low latency, LDAC focuses on high resolution, and finally, how to tell which codec to look for depending on whether you use an iPhone or an Android device.
+
+References:
+Bluetooth audio codec compatibility table - Wikipedia: https://en.wikipedia.org/wiki/Bluetooth_stack
+Advanced Audio Coding (AAC) - Wikipedia: https://en.wikipedia.org/wiki/Advanced_Audio_Coding
+aptX - Wikipedia: https://en.wikipedia.org/wiki/AptX
+LDAC - Wikipedia: https://en.wikipedia.org/wiki/LDAC_(codec)]]></itunes:summary>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep19.mp3" length="1215936" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep19.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:23</itunes:duration>
+      <itunes:episode>19</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
