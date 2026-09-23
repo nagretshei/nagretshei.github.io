@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 23 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -542,6 +542,31 @@ LDAC - Wikipedia: https://en.wikipedia.org/wiki/LDAC_(codec)]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:23</itunes:duration>
       <itunes:episode>19</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Twist a Knob, Press a Pedal: What Is MIDI CC?</title>
+      <description><![CDATA[Turn a knob, push a fader, or press a pedal on a MIDI keyboard, and the sound in your computer changes. The hero behind it is MIDI CC (Control Change). In this episode, Little Pi explains what's inside a CC message: a controller number plus a value, both ranging from 0 to 127. Meet the most common numbers: 1 for the modulation wheel, 7 for volume, 10 for pan, 11 for expression, and 64 for the sustain pedal. Finally, learn how drawing CC curves in your music software creates automation.
+
+References:
+MIDI Association - Expanded MIDI 1.0 Messages List: https://midi.org/expanded-midi-1-0-messages-list
+MIDI - Wikipedia: https://en.wikipedia.org/wiki/MIDI
+Sustain pedal - Wikipedia: https://en.wikipedia.org/wiki/Sustain_pedal]]></description>
+      <itunes:summary><![CDATA[Turn a knob, push a fader, or press a pedal on a MIDI keyboard, and the sound in your computer changes. The hero behind it is MIDI CC (Control Change). In this episode, Little Pi explains what's inside a CC message: a controller number plus a value, both ranging from 0 to 127. Meet the most common numbers: 1 for the modulation wheel, 7 for volume, 10 for pan, 11 for expression, and 64 for the sustain pedal. Finally, learn how drawing CC curves in your music software creates automation.
+
+References:
+MIDI Association - Expanded MIDI 1.0 Messages List: https://midi.org/expanded-midi-1-0-messages-list
+MIDI - Wikipedia: https://en.wikipedia.org/wiki/MIDI
+Sustain pedal - Wikipedia: https://en.wikipedia.org/wiki/Sustain_pedal]]></itunes:summary>
+      <pubDate>Thu, 24 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep20.mp3" length="938448" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep20.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:36</itunes:duration>
+      <itunes:episode>20</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
