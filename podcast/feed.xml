@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 24 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -567,6 +567,108 @@ Sustain pedal － Wikipedia：https://en.wikipedia.org/wiki/Sustain_pedal]]></it
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:59</itunes:duration>
       <itunes:episode>20</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼每首歌上串流平台都一樣大聲？響度LUFS是什麼</title>
+      <description><![CDATA[為什麼在串流平台上一首接一首聽，音量卻都差不多？這集小皮從「響度戰爭」講起，介紹依照ITU-R BS.1770標準、模擬人耳聽感的響度單位LUFS：數字通常是負的、越接近0越大聲，歐洲廣播標準EBU R128建議負23 LUFS，Spotify預設播放在負14 LUFS左右；再聊平台的響度正規化，為什麼硬壓得很大聲的歌反而吃虧，以及自己做音樂時該怎麼留峰值空間。
+
+參考資料：
+LUFS － Wikipedia：https://en.wikipedia.org/wiki/LUFS
+EBU R 128 － Wikipedia：https://en.wikipedia.org/wiki/EBU_R_128
+Spotify for Artists － Loudness normalization：https://support.spotify.com/us/artists/article/loudness-normalization/
+Loudness war － Wikipedia：https://en.wikipedia.org/wiki/Loudness_war]]></description>
+      <itunes:summary><![CDATA[為什麼在串流平台上一首接一首聽，音量卻都差不多？這集小皮從「響度戰爭」講起，介紹依照ITU-R BS.1770標準、模擬人耳聽感的響度單位LUFS：數字通常是負的、越接近0越大聲，歐洲廣播標準EBU R128建議負23 LUFS，Spotify預設播放在負14 LUFS左右；再聊平台的響度正規化，為什麼硬壓得很大聲的歌反而吃虧，以及自己做音樂時該怎麼留峰值空間。
+
+參考資料：
+LUFS － Wikipedia：https://en.wikipedia.org/wiki/LUFS
+EBU R 128 － Wikipedia：https://en.wikipedia.org/wiki/EBU_R_128
+Spotify for Artists － Loudness normalization：https://support.spotify.com/us/artists/article/loudness-normalization/
+Loudness war － Wikipedia：https://en.wikipedia.org/wiki/Loudness_war]]></itunes:summary>
+      <pubDate>Fri, 25 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep21.mp3" length="2611555" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep21.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:43</itunes:duration>
+      <itunes:episode>21</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>不用碰就能演奏！特雷門琴女王克拉拉·羅克摩爾Clara Rockmore</title>
+      <description><![CDATA[有一種電子樂器手完全不用碰就能演奏，它就是特雷門琴。這集小皮介紹特雷門琴女王克拉拉·羅克摩爾（Clara Rockmore）：四歲考進聖彼得堡音樂院的小提琴神童，青少年時因手臂肌腱發炎放下琴弓，在美國結識發明家萊昂·特雷門後成為特雷門琴最知名的演奏家，發展出獨特的空中指法；1977年專輯《The Art of the Theremin》由羅伯特·穆格夫婦製作、姊姊娜迪亞·萊森伯格鋼琴伴奏。
+
+參考資料：
+Clara Rockmore － Wikipedia：https://en.wikipedia.org/wiki/Clara_Rockmore
+Theremin － Wikipedia：https://en.wikipedia.org/wiki/Theremin
+Leon Theremin － Wikipedia：https://en.wikipedia.org/wiki/Leon_Theremin]]></description>
+      <itunes:summary><![CDATA[有一種電子樂器手完全不用碰就能演奏，它就是特雷門琴。這集小皮介紹特雷門琴女王克拉拉·羅克摩爾（Clara Rockmore）：四歲考進聖彼得堡音樂院的小提琴神童，青少年時因手臂肌腱發炎放下琴弓，在美國結識發明家萊昂·特雷門後成為特雷門琴最知名的演奏家，發展出獨特的空中指法；1977年專輯《The Art of the Theremin》由羅伯特·穆格夫婦製作、姊姊娜迪亞·萊森伯格鋼琴伴奏。
+
+參考資料：
+Clara Rockmore － Wikipedia：https://en.wikipedia.org/wiki/Clara_Rockmore
+Theremin － Wikipedia：https://en.wikipedia.org/wiki/Theremin
+Leon Theremin － Wikipedia：https://en.wikipedia.org/wiki/Leon_Theremin]]></itunes:summary>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep22.mp3" length="2613644" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep22.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:43</itunes:duration>
+      <itunes:episode>22</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼混音要用監聽喇叭？監聽喇叭怎麼選、怎麼擺</title>
+      <description><![CDATA[家裡的音響讓音樂更好聽，監聽喇叭卻要讓你聽見聲音本來的樣子。這集小皮介紹監聽喇叭為什麼追求平直的頻率響應、主動式和被動式的差別、低音單體尺寸要跟著房間大小挑，以及比價錢更要緊的擺位：等邊三角形、高音單體對準耳朵、離後牆遠一點；最後聊聊以「不討好」出名的經典Yamaha NS-10，和混完音多換幾種設備聽的好習慣。
+
+參考資料：
+Studio monitor － Wikipedia：https://en.wikipedia.org/wiki/Studio_monitor
+Yamaha NS-10 － Wikipedia：https://en.wikipedia.org/wiki/Yamaha_NS-10]]></description>
+      <itunes:summary><![CDATA[家裡的音響讓音樂更好聽，監聽喇叭卻要讓你聽見聲音本來的樣子。這集小皮介紹監聽喇叭為什麼追求平直的頻率響應、主動式和被動式的差別、低音單體尺寸要跟著房間大小挑，以及比價錢更要緊的擺位：等邊三角形、高音單體對準耳朵、離後牆遠一點；最後聊聊以「不討好」出名的經典Yamaha NS-10，和混完音多換幾種設備聽的好習慣。
+
+參考資料：
+Studio monitor － Wikipedia：https://en.wikipedia.org/wiki/Studio_monitor
+Yamaha NS-10 － Wikipedia：https://en.wikipedia.org/wiki/Yamaha_NS-10]]></itunes:summary>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep23.mp3" length="2598598" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep23.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:42</itunes:duration>
+      <itunes:episode>23</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>第一部全電子配樂電影！《禁忌星球》背後的巴倫夫婦Bebe &amp; Louis Barron</title>
+      <description><![CDATA[1956年科幻電影《禁忌星球》（Forbidden Planet）的配樂沒有任何傳統樂團，全部是電子聲音，幕後功臣是巴倫夫婦（Bebe & Louis Barron）。這集小皮介紹他們：結婚禮物是一台磁帶錄音機，在紐約格林威治村開了可能是美國第一間電子音樂工作室，幫約翰·凱吉剪接《Williams Mix》；受維納《控制論》啟發，故意讓自製電路過載來產生聲音；片頭字幕因工會問題只能寫「Electronic Tonalities」。
+
+參考資料：
+Louis and Bebe Barron － Wikipedia：https://en.wikipedia.org/wiki/Louis_and_Bebe_Barron
+Forbidden Planet － Wikipedia：https://en.wikipedia.org/wiki/Forbidden_Planet
+Williams Mix － Wikipedia：https://en.wikipedia.org/wiki/Williams_Mix
+SEAMUS － Society for Electro-Acoustic Music in the United States：https://seamusonline.org/]]></description>
+      <itunes:summary><![CDATA[1956年科幻電影《禁忌星球》（Forbidden Planet）的配樂沒有任何傳統樂團，全部是電子聲音，幕後功臣是巴倫夫婦（Bebe & Louis Barron）。這集小皮介紹他們：結婚禮物是一台磁帶錄音機，在紐約格林威治村開了可能是美國第一間電子音樂工作室，幫約翰·凱吉剪接《Williams Mix》；受維納《控制論》啟發，故意讓自製電路過載來產生聲音；片頭字幕因工會問題只能寫「Electronic Tonalities」。
+
+參考資料：
+Louis and Bebe Barron － Wikipedia：https://en.wikipedia.org/wiki/Louis_and_Bebe_Barron
+Forbidden Planet － Wikipedia：https://en.wikipedia.org/wiki/Forbidden_Planet
+Williams Mix － Wikipedia：https://en.wikipedia.org/wiki/Williams_Mix
+SEAMUS － Society for Electro-Acoustic Music in the United States：https://seamusonline.org/]]></itunes:summary>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep24.mp3" length="2667561" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep24.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:47</itunes:duration>
+      <itunes:episode>24</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

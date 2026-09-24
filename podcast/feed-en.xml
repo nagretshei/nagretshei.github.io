@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 24 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -567,6 +567,108 @@ Sustain pedal - Wikipedia: https://en.wikipedia.org/wiki/Sustain_pedal]]></itune
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:36</itunes:duration>
       <itunes:episode>20</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Do All Songs Sound Equally Loud on Streaming? What Is LUFS?</title>
+      <description><![CDATA[Why do songs on streaming platforms all sound about equally loud, one after another? Little Pi starts with the loudness war, then introduces LUFS, the loudness unit defined by the ITU-R BS.1770 standard that imitates how human ears hear. LUFS numbers are usually negative, and closer to zero means louder: the EBU R128 broadcast recommendation targets minus 23 LUFS, while Spotify plays back at around minus 14 LUFS by default. Finally, learn how loudness normalization works, why over-squashed masters lose out, and why you should leave headroom for peaks in your own music.
+
+References:
+LUFS - Wikipedia: https://en.wikipedia.org/wiki/LUFS
+EBU R 128 - Wikipedia: https://en.wikipedia.org/wiki/EBU_R_128
+Spotify for Artists - Loudness normalization: https://support.spotify.com/us/artists/article/loudness-normalization/
+Loudness war - Wikipedia: https://en.wikipedia.org/wiki/Loudness_war]]></description>
+      <itunes:summary><![CDATA[Why do songs on streaming platforms all sound about equally loud, one after another? Little Pi starts with the loudness war, then introduces LUFS, the loudness unit defined by the ITU-R BS.1770 standard that imitates how human ears hear. LUFS numbers are usually negative, and closer to zero means louder: the EBU R128 broadcast recommendation targets minus 23 LUFS, while Spotify plays back at around minus 14 LUFS by default. Finally, learn how loudness normalization works, why over-squashed masters lose out, and why you should leave headroom for peaks in your own music.
+
+References:
+LUFS - Wikipedia: https://en.wikipedia.org/wiki/LUFS
+EBU R 128 - Wikipedia: https://en.wikipedia.org/wiki/EBU_R_128
+Spotify for Artists - Loudness normalization: https://support.spotify.com/us/artists/article/loudness-normalization/
+Loudness war - Wikipedia: https://en.wikipedia.org/wiki/Loudness_war]]></itunes:summary>
+      <pubDate>Fri, 25 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep21.mp3" length="932256" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep21.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:35</itunes:duration>
+      <itunes:episode>21</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Playing Without Touching: Clara Rockmore, Queen of the Theremin</title>
+      <description><![CDATA[There's an electronic instrument you can play without touching it at all: the theremin. In this episode, Little Pi introduces Clara Rockmore, queen of the theremin. A violin prodigy admitted to the Saint Petersburg Conservatory at age four, she gave up the violin after developing tendinitis as a teenager. After meeting inventor Leon Theremin in America, she became the instrument's best known player and developed her own aerial fingering technique. Her 1977 album The Art of the Theremin was produced by Robert and Shirleigh Moog, with her sister Nadia Reisenberg on piano.
+
+References:
+Clara Rockmore - Wikipedia: https://en.wikipedia.org/wiki/Clara_Rockmore
+Theremin - Wikipedia: https://en.wikipedia.org/wiki/Theremin
+Leon Theremin - Wikipedia: https://en.wikipedia.org/wiki/Leon_Theremin]]></description>
+      <itunes:summary><![CDATA[There's an electronic instrument you can play without touching it at all: the theremin. In this episode, Little Pi introduces Clara Rockmore, queen of the theremin. A violin prodigy admitted to the Saint Petersburg Conservatory at age four, she gave up the violin after developing tendinitis as a teenager. After meeting inventor Leon Theremin in America, she became the instrument's best known player and developed her own aerial fingering technique. Her 1977 album The Art of the Theremin was produced by Robert and Shirleigh Moog, with her sister Nadia Reisenberg on piano.
+
+References:
+Clara Rockmore - Wikipedia: https://en.wikipedia.org/wiki/Clara_Rockmore
+Theremin - Wikipedia: https://en.wikipedia.org/wiki/Theremin
+Leon Theremin - Wikipedia: https://en.wikipedia.org/wiki/Leon_Theremin]]></itunes:summary>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep22.mp3" length="879696" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep22.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:27</itunes:duration>
+      <itunes:episode>22</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Mix on Studio Monitors? How to Choose and Place Them</title>
+      <description><![CDATA[Home stereos make music sound nicer, but studio monitors let you hear the sound as it really is. In this episode, Little Pi explains why monitors aim for a flat frequency response, the difference between active and passive monitors, why woofer size should match your room, and why placement matters more than price: an equilateral triangle, tweeters at ear height, and some distance from the back wall. Finally, meet the famously unflattering Yamaha NS-10 and learn the habit of checking your mix on several different devices.
+
+References:
+Studio monitor - Wikipedia: https://en.wikipedia.org/wiki/Studio_monitor
+Yamaha NS-10 - Wikipedia: https://en.wikipedia.org/wiki/Yamaha_NS-10]]></description>
+      <itunes:summary><![CDATA[Home stereos make music sound nicer, but studio monitors let you hear the sound as it really is. In this episode, Little Pi explains why monitors aim for a flat frequency response, the difference between active and passive monitors, why woofer size should match your room, and why placement matters more than price: an equilateral triangle, tweeters at ear height, and some distance from the back wall. Finally, meet the famously unflattering Yamaha NS-10 and learn the habit of checking your mix on several different devices.
+
+References:
+Studio monitor - Wikipedia: https://en.wikipedia.org/wiki/Studio_monitor
+Yamaha NS-10 - Wikipedia: https://en.wikipedia.org/wiki/Yamaha_NS-10]]></itunes:summary>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep23.mp3" length="858240" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep23.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:23</itunes:duration>
+      <itunes:episode>23</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The First All-Electronic Film Score: Bebe and Louis Barron and Forbidden Planet</title>
+      <description><![CDATA[The 1956 sci-fi film Forbidden Planet has a score with no traditional orchestra at all, only electronic sounds, created by the married couple Bebe and Louis Barron. In this episode, Little Pi tells their story: a tape recorder received as a wedding gift, a studio in Greenwich Village that may have been the first electronic music studio in the United States, engineering John Cage's Williams Mix, and building circuits inspired by Norbert Wiener's Cybernetics that they deliberately overloaded to make sound. Because of a union issue, the film credits could only say Electronic Tonalities.
+
+References:
+Louis and Bebe Barron - Wikipedia: https://en.wikipedia.org/wiki/Louis_and_Bebe_Barron
+Forbidden Planet - Wikipedia: https://en.wikipedia.org/wiki/Forbidden_Planet
+Williams Mix - Wikipedia: https://en.wikipedia.org/wiki/Williams_Mix
+SEAMUS - Society for Electro-Acoustic Music in the United States: https://seamusonline.org/]]></description>
+      <itunes:summary><![CDATA[The 1956 sci-fi film Forbidden Planet has a score with no traditional orchestra at all, only electronic sounds, created by the married couple Bebe and Louis Barron. In this episode, Little Pi tells their story: a tape recorder received as a wedding gift, a studio in Greenwich Village that may have been the first electronic music studio in the United States, engineering John Cage's Williams Mix, and building circuits inspired by Norbert Wiener's Cybernetics that they deliberately overloaded to make sound. Because of a union issue, the film credits could only say Electronic Tonalities.
+
+References:
+Louis and Bebe Barron - Wikipedia: https://en.wikipedia.org/wiki/Louis_and_Bebe_Barron
+Forbidden Planet - Wikipedia: https://en.wikipedia.org/wiki/Forbidden_Planet
+Williams Mix - Wikipedia: https://en.wikipedia.org/wiki/Williams_Mix
+SEAMUS - Society for Electro-Acoustic Music in the United States: https://seamusonline.org/]]></itunes:summary>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep24.mp3" length="931968" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep24.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:35</itunes:duration>
+      <itunes:episode>24</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
