@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 28 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -669,6 +669,33 @@ SEAMUS - Society for Electro-Acoustic Music in the United States: https://seamus
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:35</itunes:duration>
       <itunes:episode>24</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>SEAMUS Isn't a Person?! Meet the Society for Electro-Acoustic Music in the United States</title>
+      <description><![CDATA[Who is SEAMUS? It's actually the Society for Electro-Acoustic Music in the United States. In this episode, Little Pi covers its founding in 1984 by composer Barry Schrader at CalArts, its annual national conference (2027 at Louisiana State University, with AI among the themes), the SEAMUS Award given since 1987 to John Chowning, Max Mathews, Laurie Spiegel, Suzanne Ciani, Bebe and Louis Barron and more, and the ASCAP/SEAMUS student commission competition. Plus, Teacher Lin Na-Wei's eight-channel immersive electroacoustic soundscape Lava's Roaring Dance was performed at the 2025 SEAMUS national conference at Purdue University.
+
+References:
+SEAMUS official website: https://seamusonline.org/
+SEAMUS - Wikipedia: https://en.wikipedia.org/wiki/Society_for_Electro-Acoustic_Music_in_the_United_States
+SEAMUS Award recipients: https://seamusonline.org/seamus-award/
+SEAMUS Student Commissioning Program: https://seamusonline.org/studentawards/]]></description>
+      <itunes:summary><![CDATA[Who is SEAMUS? It's actually the Society for Electro-Acoustic Music in the United States. In this episode, Little Pi covers its founding in 1984 by composer Barry Schrader at CalArts, its annual national conference (2027 at Louisiana State University, with AI among the themes), the SEAMUS Award given since 1987 to John Chowning, Max Mathews, Laurie Spiegel, Suzanne Ciani, Bebe and Louis Barron and more, and the ASCAP/SEAMUS student commission competition. Plus, Teacher Lin Na-Wei's eight-channel immersive electroacoustic soundscape Lava's Roaring Dance was performed at the 2025 SEAMUS national conference at Purdue University.
+
+References:
+SEAMUS official website: https://seamusonline.org/
+SEAMUS - Wikipedia: https://en.wikipedia.org/wiki/Society_for_Electro-Acoustic_Music_in_the_United_States
+SEAMUS Award recipients: https://seamusonline.org/seamus-award/
+SEAMUS Student Commissioning Program: https://seamusonline.org/studentawards/]]></itunes:summary>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep25.mp3" length="941760" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep25.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:37</itunes:duration>
+      <itunes:episode>25</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

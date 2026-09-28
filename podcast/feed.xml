@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 28 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -669,6 +669,33 @@ SEAMUS － Society for Electro-Acoustic Music in the United States：https://sea
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:47</itunes:duration>
       <itunes:episode>24</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>SEAMUS不是一個人？！美國電聲音樂學會大解密</title>
+      <description><![CDATA[SEAMUS是誰？其實它是美國電聲音樂學會（Society for Electro-Acoustic Music in the United States）的縮寫。這集小皮介紹：1984年由作曲家Barry Schrader發起、在CalArts召開首次會議；每年的全國大會（2027年在路易斯安那州立大學，主題包含AI）；從1987年開始頒發的SEAMUS Award，得主包括John Chowning、Max Mathews、Laurie Spiegel、Suzanne Ciani與巴倫夫婦；以及給學生的ASCAP/SEAMUS委託創作比賽。另外，林哪位老師的8聲道沉浸式電聲音景作品《Lava's Roaring Dance》也曾在2025年普渡大學的SEAMUS全國大會演出。
+
+參考資料：
+SEAMUS 官方網站：https://seamusonline.org/
+SEAMUS － Wikipedia：https://en.wikipedia.org/wiki/Society_for_Electro-Acoustic_Music_in_the_United_States
+SEAMUS Award 歷屆得主：https://seamusonline.org/seamus-award/
+SEAMUS 學生委託創作計畫：https://seamusonline.org/studentawards/]]></description>
+      <itunes:summary><![CDATA[SEAMUS是誰？其實它是美國電聲音樂學會（Society for Electro-Acoustic Music in the United States）的縮寫。這集小皮介紹：1984年由作曲家Barry Schrader發起、在CalArts召開首次會議；每年的全國大會（2027年在路易斯安那州立大學，主題包含AI）；從1987年開始頒發的SEAMUS Award，得主包括John Chowning、Max Mathews、Laurie Spiegel、Suzanne Ciani與巴倫夫婦；以及給學生的ASCAP/SEAMUS委託創作比賽。另外，林哪位老師的8聲道沉浸式電聲音景作品《Lava's Roaring Dance》也曾在2025年普渡大學的SEAMUS全國大會演出。
+
+參考資料：
+SEAMUS 官方網站：https://seamusonline.org/
+SEAMUS － Wikipedia：https://en.wikipedia.org/wiki/Society_for_Electro-Acoustic_Music_in_the_United_States
+SEAMUS Award 歷屆得主：https://seamusonline.org/seamus-award/
+SEAMUS 學生委託創作計畫：https://seamusonline.org/studentawards/]]></itunes:summary>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep25.mp3" length="2575610" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep25.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:41</itunes:duration>
+      <itunes:episode>25</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
