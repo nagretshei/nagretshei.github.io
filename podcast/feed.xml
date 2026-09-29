@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -696,6 +696,35 @@ SEAMUS 學生委託創作計畫：https://seamusonline.org/studentawards/]]></it
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:41</itunes:duration>
       <itunes:episode>25</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼在浴室唱歌特別好聽？殘響Reverb大解密</title>
+      <description><![CDATA[為什麼在浴室唱歌特別好聽？答案是殘響（Reverb）。這集電聲小知識，小皮介紹：殘響和回音的差別；1895年哈佛物理學家賽賓（Wallace Sabine）拯救餘音長達5.5秒的演講廳，提出殘響時間RT60，並參與設計1900年落成的波士頓交響樂廳；1947年比爾·普特南把女廁變成迴響室；1957年重約270公斤的EMT 140鋼板殘響；1976年第一台商用數位殘響EMT 250；以及用脈衝響應「複製」真實空間的卷積殘響。最後附上加殘響的小撇步：不是越多越好！
+
+參考資料：
+Reverberation － Wikipedia：https://en.wikipedia.org/wiki/Reverberation
+Wallace Clement Sabine － Wikipedia：https://en.wikipedia.org/wiki/Wallace_Clement_Sabine
+Bill Putnam － Wikipedia：https://en.wikipedia.org/wiki/Bill_Putnam
+The Origins of EMT Reverb（Universal Audio）：https://www.uaudio.com/blogs/ua/emt-reverb-history
+Convolution reverb － Wikipedia：https://en.wikipedia.org/wiki/Convolution_reverb]]></description>
+      <itunes:summary><![CDATA[為什麼在浴室唱歌特別好聽？答案是殘響（Reverb）。這集電聲小知識，小皮介紹：殘響和回音的差別；1895年哈佛物理學家賽賓（Wallace Sabine）拯救餘音長達5.5秒的演講廳，提出殘響時間RT60，並參與設計1900年落成的波士頓交響樂廳；1947年比爾·普特南把女廁變成迴響室；1957年重約270公斤的EMT 140鋼板殘響；1976年第一台商用數位殘響EMT 250；以及用脈衝響應「複製」真實空間的卷積殘響。最後附上加殘響的小撇步：不是越多越好！
+
+參考資料：
+Reverberation － Wikipedia：https://en.wikipedia.org/wiki/Reverberation
+Wallace Clement Sabine － Wikipedia：https://en.wikipedia.org/wiki/Wallace_Clement_Sabine
+Bill Putnam － Wikipedia：https://en.wikipedia.org/wiki/Bill_Putnam
+The Origins of EMT Reverb（Universal Audio）：https://www.uaudio.com/blogs/ua/emt-reverb-history
+Convolution reverb － Wikipedia：https://en.wikipedia.org/wiki/Convolution_reverb]]></itunes:summary>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep26.mp3" length="2511244" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep26.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:37</itunes:duration>
+      <itunes:episode>26</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

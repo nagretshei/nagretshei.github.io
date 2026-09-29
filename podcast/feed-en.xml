@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -696,6 +696,35 @@ SEAMUS Student Commissioning Program: https://seamusonline.org/studentawards/]]>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:37</itunes:duration>
       <itunes:episode>25</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Do You Sound Better in the Shower? Reverb Explained</title>
+      <description><![CDATA[Why do you sound like a star when you sing in the shower? The answer is reverb. In this audio tip, Little Pi explains the difference between reverb and echo; how Harvard physicist Wallace Sabine rescued a lecture hall where words lingered for 5.5 seconds in 1895, defined reverberation time (RT60), and helped design Boston Symphony Hall, which opened in 1900; Bill Putnam turning a women's restroom into an echo chamber in 1947; the roughly 270-kilogram EMT 140 plate reverb of 1957; the EMT 250, the first commercial digital reverb, in 1976; and convolution reverb, which captures a real space with an impulse response. Plus a mixing tip: more reverb isn't always better!
+
+References:
+Reverberation - Wikipedia: https://en.wikipedia.org/wiki/Reverberation
+Wallace Clement Sabine - Wikipedia: https://en.wikipedia.org/wiki/Wallace_Clement_Sabine
+Bill Putnam - Wikipedia: https://en.wikipedia.org/wiki/Bill_Putnam
+The Origins of EMT Reverb (Universal Audio): https://www.uaudio.com/blogs/ua/emt-reverb-history
+Convolution reverb - Wikipedia: https://en.wikipedia.org/wiki/Convolution_reverb]]></description>
+      <itunes:summary><![CDATA[Why do you sound like a star when you sing in the shower? The answer is reverb. In this audio tip, Little Pi explains the difference between reverb and echo; how Harvard physicist Wallace Sabine rescued a lecture hall where words lingered for 5.5 seconds in 1895, defined reverberation time (RT60), and helped design Boston Symphony Hall, which opened in 1900; Bill Putnam turning a women's restroom into an echo chamber in 1947; the roughly 270-kilogram EMT 140 plate reverb of 1957; the EMT 250, the first commercial digital reverb, in 1976; and convolution reverb, which captures a real space with an impulse response. Plus a mixing tip: more reverb isn't always better!
+
+References:
+Reverberation - Wikipedia: https://en.wikipedia.org/wiki/Reverberation
+Wallace Clement Sabine - Wikipedia: https://en.wikipedia.org/wiki/Wallace_Clement_Sabine
+Bill Putnam - Wikipedia: https://en.wikipedia.org/wiki/Bill_Putnam
+The Origins of EMT Reverb (Universal Audio): https://www.uaudio.com/blogs/ua/emt-reverb-history
+Convolution reverb - Wikipedia: https://en.wikipedia.org/wiki/Convolution_reverb]]></itunes:summary>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep26.mp3" length="968544" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep26.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:41</itunes:duration>
+      <itunes:episode>26</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
