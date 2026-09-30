@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -725,6 +725,35 @@ Convolution reverb － Wikipedia：https://en.wikipedia.org/wiki/Convolution_rev
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:37</itunes:duration>
       <itunes:episode>26</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>慢慢聽的電子音樂：嗡鳴女王伊莉安·哈迪格Éliane Radigue</title>
+      <description><![CDATA[今年二月，法國電子音樂先驅伊莉安·哈迪格（Éliane Radigue，1932–2026）以94歲辭世，小皮用這集紀念她。從1955年跟具象音樂創始人皮耶·薛佛學習、擔任皮耶·亨利的助手，到迷上別人想避開的回授聲；從1974年《Adnos I》起，一台ARP 2500合成器用了25年，做出像在呼吸的持續音；受藏傳佛教啟發、長達三小時的《死亡三部曲》；2006年以《L'Île re-sonante》獲得Ars Electronica金尼卡獎；到2001年後轉向為真人演奏家創作、2011年從豎琴獨奏《Occam I》展開的Occam系列。最後，小皮教你怎麼慢慢聽她的音樂。
+
+參考資料：
+Éliane Radigue － Wikipedia：https://en.wikipedia.org/wiki/%C3%89liane_Radigue
+Éliane Radigue, pioneering electronic composer, dies aged 94（DJ Mag）：https://djmag.com/news/eliane-radigue-pioneering-french-electronic-musician-and-composer-dies-aged-94
+Legendary synth composer Éliane Radigue has died aged 94（Mixmag）：https://mixmag.net/read/legendary-synth-composer-éliane-radigue-died-aged-94-news
+ARP 2500 － Wikipedia：https://en.wikipedia.org/wiki/ARP_2500
+Prix Ars Electronica － Wikipedia：https://en.wikipedia.org/wiki/Prix_Ars_Electronica]]></description>
+      <itunes:summary><![CDATA[今年二月，法國電子音樂先驅伊莉安·哈迪格（Éliane Radigue，1932–2026）以94歲辭世，小皮用這集紀念她。從1955年跟具象音樂創始人皮耶·薛佛學習、擔任皮耶·亨利的助手，到迷上別人想避開的回授聲；從1974年《Adnos I》起，一台ARP 2500合成器用了25年，做出像在呼吸的持續音；受藏傳佛教啟發、長達三小時的《死亡三部曲》；2006年以《L'Île re-sonante》獲得Ars Electronica金尼卡獎；到2001年後轉向為真人演奏家創作、2011年從豎琴獨奏《Occam I》展開的Occam系列。最後，小皮教你怎麼慢慢聽她的音樂。
+
+參考資料：
+Éliane Radigue － Wikipedia：https://en.wikipedia.org/wiki/%C3%89liane_Radigue
+Éliane Radigue, pioneering electronic composer, dies aged 94（DJ Mag）：https://djmag.com/news/eliane-radigue-pioneering-french-electronic-musician-and-composer-dies-aged-94
+Legendary synth composer Éliane Radigue has died aged 94（Mixmag）：https://mixmag.net/read/legendary-synth-composer-éliane-radigue-died-aged-94-news
+ARP 2500 － Wikipedia：https://en.wikipedia.org/wiki/ARP_2500
+Prix Ars Electronica － Wikipedia：https://en.wikipedia.org/wiki/Prix_Ars_Electronica]]></itunes:summary>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep27.mp3" length="2877377" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep27.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:00</itunes:duration>
+      <itunes:episode>27</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -725,6 +725,35 @@ Convolution reverb - Wikipedia: https://en.wikipedia.org/wiki/Convolution_reverb
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:41</itunes:duration>
       <itunes:episode>26</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Music for Slow Listening: Drone Pioneer Éliane Radigue</title>
+      <description><![CDATA[This February, French electronic music pioneer Éliane Radigue (1932–2026) passed away at 94, and Little Pi dedicates this episode to her. From studying with musique concrète founder Pierre Schaeffer in 1955 and assisting Pierre Henry, to falling in love with the feedback everyone else tried to avoid; from Adnos I in 1974, when she began 25 years with a single ARP 2500 synthesizer, shaping slow, breathing drones; to the three-hour Trilogie de la Mort, inspired by Tibetan Buddhism; the 2006 Golden Nica at Prix Ars Electronica for L'Île re-sonante; and, from 2001 on, writing for live performers, including the Occam series that began with Occam I for harp in 2011. Plus Little Pi's tip for listening slowly.
+
+References:
+Éliane Radigue - Wikipedia: https://en.wikipedia.org/wiki/%C3%89liane_Radigue
+Éliane Radigue, pioneering electronic composer, dies aged 94 (DJ Mag): https://djmag.com/news/eliane-radigue-pioneering-french-electronic-musician-and-composer-dies-aged-94
+Legendary synth composer Éliane Radigue has died aged 94 (Mixmag): https://mixmag.net/read/legendary-synth-composer-éliane-radigue-died-aged-94-news
+ARP 2500 - Wikipedia: https://en.wikipedia.org/wiki/ARP_2500
+Prix Ars Electronica - Wikipedia: https://en.wikipedia.org/wiki/Prix_Ars_Electronica]]></description>
+      <itunes:summary><![CDATA[This February, French electronic music pioneer Éliane Radigue (1932–2026) passed away at 94, and Little Pi dedicates this episode to her. From studying with musique concrète founder Pierre Schaeffer in 1955 and assisting Pierre Henry, to falling in love with the feedback everyone else tried to avoid; from Adnos I in 1974, when she began 25 years with a single ARP 2500 synthesizer, shaping slow, breathing drones; to the three-hour Trilogie de la Mort, inspired by Tibetan Buddhism; the 2006 Golden Nica at Prix Ars Electronica for L'Île re-sonante; and, from 2001 on, writing for live performers, including the Occam series that began with Occam I for harp in 2011. Plus Little Pi's tip for listening slowly.
+
+References:
+Éliane Radigue - Wikipedia: https://en.wikipedia.org/wiki/%C3%89liane_Radigue
+Éliane Radigue, pioneering electronic composer, dies aged 94 (DJ Mag): https://djmag.com/news/eliane-radigue-pioneering-french-electronic-musician-and-composer-dies-aged-94
+Legendary synth composer Éliane Radigue has died aged 94 (Mixmag): https://mixmag.net/read/legendary-synth-composer-éliane-radigue-died-aged-94-news
+ARP 2500 - Wikipedia: https://en.wikipedia.org/wiki/ARP_2500
+Prix Ars Electronica - Wikipedia: https://en.wikipedia.org/wiki/Prix_Ars_Electronica]]></itunes:summary>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep27.mp3" length="1022688" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep27.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:50</itunes:duration>
+      <itunes:episode>27</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
