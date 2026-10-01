@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -754,6 +754,33 @@ Prix Ars Electronica - Wikipedia: https://en.wikipedia.org/wiki/Prix_Ars_Electro
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:50</itunes:duration>
       <itunes:episode>27</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Can You Retouch Sound? The Equalizer (EQ) Explained</title>
+      <description><![CDATA[You can add a filter to a photo, and you can retouch sound, too! In this audio tip, Little Pi introduces the equalizer (EQ): the roughly 20 Hz to 20 kHz range of human hearing and what the lows, mids and highs each do; how the name "equalize" comes from restoring the high frequencies lost on telephone lines; RCA engineer John Volkman using equalization in a movie theater sound system in the 1920s; high-pass and low-pass filters, shelf and bell filters, and graphic versus parametric EQ, with Daniel Flickinger introducing the first parametric equalizer in 1971 and George Massenburg naming parametric equalization at the AES convention in 1972; plus Pultec, founded in 1953, and the famous "Pultec trick" on its classic 1961 EQP-1A tube equalizer. And a mixing tip: cut before you boost!
+
+References:
+Equalization (audio) - Wikipedia: https://en.wikipedia.org/wiki/Equalization_(audio)
+Pultec - Wikipedia: https://en.wikipedia.org/wiki/Pultec
+George Massenburg - Wikipedia: https://en.wikipedia.org/wiki/George_Massenburg
+Audio frequency - Wikipedia: https://en.wikipedia.org/wiki/Audio_frequency]]></description>
+      <itunes:summary><![CDATA[You can add a filter to a photo, and you can retouch sound, too! In this audio tip, Little Pi introduces the equalizer (EQ): the roughly 20 Hz to 20 kHz range of human hearing and what the lows, mids and highs each do; how the name "equalize" comes from restoring the high frequencies lost on telephone lines; RCA engineer John Volkman using equalization in a movie theater sound system in the 1920s; high-pass and low-pass filters, shelf and bell filters, and graphic versus parametric EQ, with Daniel Flickinger introducing the first parametric equalizer in 1971 and George Massenburg naming parametric equalization at the AES convention in 1972; plus Pultec, founded in 1953, and the famous "Pultec trick" on its classic 1961 EQP-1A tube equalizer. And a mixing tip: cut before you boost!
+
+References:
+Equalization (audio) - Wikipedia: https://en.wikipedia.org/wiki/Equalization_(audio)
+Pultec - Wikipedia: https://en.wikipedia.org/wiki/Pultec
+George Massenburg - Wikipedia: https://en.wikipedia.org/wiki/George_Massenburg
+Audio frequency - Wikipedia: https://en.wikipedia.org/wiki/Audio_frequency]]></itunes:summary>
+      <pubDate>Fri, 02 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep28.mp3" length="1143504" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep28.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:11</itunes:duration>
+      <itunes:episode>28</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

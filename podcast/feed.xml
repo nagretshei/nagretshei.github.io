@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -754,6 +754,33 @@ Prix Ars Electronica － Wikipedia：https://en.wikipedia.org/wiki/Prix_Ars_Elec
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:00</itunes:duration>
       <itunes:episode>27</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>聲音也能修圖？等化器EQ大解密</title>
+      <description><![CDATA[拍照可以加濾鏡，聲音也可以「修圖」！這集電聲小知識，小皮介紹等化器（Equalizer，EQ）：人耳約20Hz～20kHz的聽覺範圍，低頻、中頻、高頻各管什麼；「Equalize」這個名字來自把電話線損失的高頻補回來、拉平；1920年代RCA工程師約翰·沃爾克曼（John Volkman）把等化器用在電影院放音系統；高通／低通、架式（Shelf）、鐘形（Bell）、圖形式與參數式EQ——1971年丹尼爾·弗利金傑（Daniel Flickinger）推出第一台參數式等化器，1972年喬治·馬森伯格（George Massenburg）在AES大會正式命名；還有1953年成立的Pultec與1961年經典真空管等化器EQP-1A的「Pultec招式」。最後附上EQ小撇步：先切掉不要的，再推大想要的！
+
+參考資料：
+Equalization (audio) － Wikipedia：https://en.wikipedia.org/wiki/Equalization_(audio)
+Pultec － Wikipedia：https://en.wikipedia.org/wiki/Pultec
+George Massenburg － Wikipedia：https://en.wikipedia.org/wiki/George_Massenburg
+Audio frequency － Wikipedia：https://en.wikipedia.org/wiki/Audio_frequency]]></description>
+      <itunes:summary><![CDATA[拍照可以加濾鏡，聲音也可以「修圖」！這集電聲小知識，小皮介紹等化器（Equalizer，EQ）：人耳約20Hz～20kHz的聽覺範圍，低頻、中頻、高頻各管什麼；「Equalize」這個名字來自把電話線損失的高頻補回來、拉平；1920年代RCA工程師約翰·沃爾克曼（John Volkman）把等化器用在電影院放音系統；高通／低通、架式（Shelf）、鐘形（Bell）、圖形式與參數式EQ——1971年丹尼爾·弗利金傑（Daniel Flickinger）推出第一台參數式等化器，1972年喬治·馬森伯格（George Massenburg）在AES大會正式命名；還有1953年成立的Pultec與1961年經典真空管等化器EQP-1A的「Pultec招式」。最後附上EQ小撇步：先切掉不要的，再推大想要的！
+
+參考資料：
+Equalization (audio) － Wikipedia：https://en.wikipedia.org/wiki/Equalization_(audio)
+Pultec － Wikipedia：https://en.wikipedia.org/wiki/Pultec
+George Massenburg － Wikipedia：https://en.wikipedia.org/wiki/George_Massenburg
+Audio frequency － Wikipedia：https://en.wikipedia.org/wiki/Audio_frequency]]></itunes:summary>
+      <pubDate>Fri, 02 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep28.mp3" length="3143617" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep28.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:16</itunes:duration>
+      <itunes:episode>28</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
