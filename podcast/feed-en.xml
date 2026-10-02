@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -781,6 +781,35 @@ Audio frequency - Wikipedia: https://en.wikipedia.org/wiki/Audio_frequency]]></i
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:11</itunes:duration>
       <itunes:episode>28</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The Singing Building: The 1958 Philips Pavilion and Varèse's Poème électronique</title>
+      <description><![CDATA[At the 1958 Brussels World's Fair, there was a building with hundreds of loudspeakers hidden in its walls, and it sang when you walked in! In this episode, Little Pi introduces the Philips Pavilion: commissioned by the electronics company Philips from architect Le Corbusier, who wanted not a showroom but an "electronic poem"; designed by Iannis Xenakis, also a composer, from nine hyperbolic paraboloids; and filled with Edgard Varèse's Poème électronique. Varèse, who championed "organized sound" and wrote the all-percussion Ionisation in 1931, created the roughly eight-minute piece from September 1957 to April 1958. Played from three tape tracks, it was routed with telephone dials through three to four hundred wall-mounted speakers, moving around the audience: one of the earliest immersive sound systems. The pavilion was demolished on January 30, 1959, and was later rebuilt virtually in an EU-funded project.
+
+References:
+Philips Pavilion - Wikipedia: https://en.wikipedia.org/wiki/Philips_Pavilion
+Poème électronique - Wikipedia: https://en.wikipedia.org/wiki/Po%C3%A8me_%C3%A9lectronique
+Edgard Varèse - Wikipedia: https://en.wikipedia.org/wiki/Edgard_Var%C3%A8se
+Iannis Xenakis - Wikipedia: https://en.wikipedia.org/wiki/Iannis_Xenakis
+Expo 58 - Wikipedia: https://en.wikipedia.org/wiki/Expo_58]]></description>
+      <itunes:summary><![CDATA[At the 1958 Brussels World's Fair, there was a building with hundreds of loudspeakers hidden in its walls, and it sang when you walked in! In this episode, Little Pi introduces the Philips Pavilion: commissioned by the electronics company Philips from architect Le Corbusier, who wanted not a showroom but an "electronic poem"; designed by Iannis Xenakis, also a composer, from nine hyperbolic paraboloids; and filled with Edgard Varèse's Poème électronique. Varèse, who championed "organized sound" and wrote the all-percussion Ionisation in 1931, created the roughly eight-minute piece from September 1957 to April 1958. Played from three tape tracks, it was routed with telephone dials through three to four hundred wall-mounted speakers, moving around the audience: one of the earliest immersive sound systems. The pavilion was demolished on January 30, 1959, and was later rebuilt virtually in an EU-funded project.
+
+References:
+Philips Pavilion - Wikipedia: https://en.wikipedia.org/wiki/Philips_Pavilion
+Poème électronique - Wikipedia: https://en.wikipedia.org/wiki/Po%C3%A8me_%C3%A9lectronique
+Edgard Varèse - Wikipedia: https://en.wikipedia.org/wiki/Edgard_Var%C3%A8se
+Iannis Xenakis - Wikipedia: https://en.wikipedia.org/wiki/Iannis_Xenakis
+Expo 58 - Wikipedia: https://en.wikipedia.org/wiki/Expo_58]]></itunes:summary>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep29.mp3" length="1107648" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep29.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:05</itunes:duration>
+      <itunes:episode>29</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

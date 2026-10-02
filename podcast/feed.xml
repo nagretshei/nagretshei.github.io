@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -781,6 +781,35 @@ Audio frequency － Wikipedia：https://en.wikipedia.org/wiki/Audio_frequency]]>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:16</itunes:duration>
       <itunes:episode>28</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>一棟會唱歌的建築：1958世博飛利浦館與瓦雷茲《電子詩篇》</title>
+      <description><![CDATA[1958年布魯塞爾世界博覽會上，有一棟牆裡藏了好幾百顆喇叭、走進去就會唱歌的建築！這集小皮介紹飛利浦館：電子公司飛利浦委託建築大師柯比意，他想做的不是展示館而是一首「電子詩」；實際操刀的澤納基斯（Iannis Xenakis）同時也是作曲家，用九片雙曲拋物面蓋出尖尖的帳篷造型；作曲家瓦雷茲（Edgard Varèse）主張「組織過的聲音」，1931年就寫出只用敲擊聲的《Ionisation》；他在1957年9月到1958年4月做出約8分鐘的《電子詩篇》（Poème électronique），用三軌錄音帶播放，再由工作人員用電話撥盤把聲音送到牆上三、四百顆喇叭裡，在觀眾身邊移動——最早的沉浸式音響之一。展館在1959年1月30日拆除，後來歐盟資助了虛擬重建計畫。
+
+參考資料：
+Philips Pavilion － Wikipedia：https://en.wikipedia.org/wiki/Philips_Pavilion
+Poème électronique － Wikipedia：https://en.wikipedia.org/wiki/Po%C3%A8me_%C3%A9lectronique
+Edgard Varèse － Wikipedia：https://en.wikipedia.org/wiki/Edgard_Var%C3%A8se
+Iannis Xenakis － Wikipedia：https://en.wikipedia.org/wiki/Iannis_Xenakis
+Expo 58 － Wikipedia：https://en.wikipedia.org/wiki/Expo_58]]></description>
+      <itunes:summary><![CDATA[1958年布魯塞爾世界博覽會上，有一棟牆裡藏了好幾百顆喇叭、走進去就會唱歌的建築！這集小皮介紹飛利浦館：電子公司飛利浦委託建築大師柯比意，他想做的不是展示館而是一首「電子詩」；實際操刀的澤納基斯（Iannis Xenakis）同時也是作曲家，用九片雙曲拋物面蓋出尖尖的帳篷造型；作曲家瓦雷茲（Edgard Varèse）主張「組織過的聲音」，1931年就寫出只用敲擊聲的《Ionisation》；他在1957年9月到1958年4月做出約8分鐘的《電子詩篇》（Poème électronique），用三軌錄音帶播放，再由工作人員用電話撥盤把聲音送到牆上三、四百顆喇叭裡，在觀眾身邊移動——最早的沉浸式音響之一。展館在1959年1月30日拆除，後來歐盟資助了虛擬重建計畫。
+
+參考資料：
+Philips Pavilion － Wikipedia：https://en.wikipedia.org/wiki/Philips_Pavilion
+Poème électronique － Wikipedia：https://en.wikipedia.org/wiki/Po%C3%A8me_%C3%A9lectronique
+Edgard Varèse － Wikipedia：https://en.wikipedia.org/wiki/Edgard_Var%C3%A8se
+Iannis Xenakis － Wikipedia：https://en.wikipedia.org/wiki/Iannis_Xenakis
+Expo 58 － Wikipedia：https://en.wikipedia.org/wiki/Expo_58]]></itunes:summary>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep29.mp3" length="2965984" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep29.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:05</itunes:duration>
+      <itunes:episode>29</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
