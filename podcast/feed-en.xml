@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -810,6 +810,60 @@ Expo 58 - Wikipedia: https://en.wikipedia.org/wiki/Expo_58]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:05</itunes:duration>
       <itunes:episode>29</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The Box That Keeps Sound Steady: What Is a Compressor?</title>
+      <description><![CDATA[There's a magical box in the recording studio that pulls the volume down whenever a sound gets too loud! In this audio tip, Little Pi introduces the compressor: it squeezes dynamic range, which is completely different from MP3 file compression. Learn about threshold and ratio (like 4:1), attack and release, and makeup gain, and how a ratio of 10:1 or more turns it into a limiter. Find out how sidechain and ducking make background music drop the moment a host starts talking, and meet some legendary machines: the 1959 Fairchild 660 tube compressor designed by Rein Narma, twelve of which were bought by Abbey Road Studios and shaped the drum sound of the Beatles' Revolver and Sgt. Pepper, plus the 1176 and LA-2A from Bill Putnam's company.
+
+References:
+Dynamic range compression - Wikipedia: https://en.wikipedia.org/wiki/Dynamic_range_compression
+Fairchild 660 - Wikipedia: https://en.wikipedia.org/wiki/Fairchild_660
+Universal Audio (company) - Wikipedia: https://en.wikipedia.org/wiki/Universal_Audio_(company)
+Loudness war - Wikipedia: https://en.wikipedia.org/wiki/Loudness_war]]></description>
+      <itunes:summary><![CDATA[There's a magical box in the recording studio that pulls the volume down whenever a sound gets too loud! In this audio tip, Little Pi introduces the compressor: it squeezes dynamic range, which is completely different from MP3 file compression. Learn about threshold and ratio (like 4:1), attack and release, and makeup gain, and how a ratio of 10:1 or more turns it into a limiter. Find out how sidechain and ducking make background music drop the moment a host starts talking, and meet some legendary machines: the 1959 Fairchild 660 tube compressor designed by Rein Narma, twelve of which were bought by Abbey Road Studios and shaped the drum sound of the Beatles' Revolver and Sgt. Pepper, plus the 1176 and LA-2A from Bill Putnam's company.
+
+References:
+Dynamic range compression - Wikipedia: https://en.wikipedia.org/wiki/Dynamic_range_compression
+Fairchild 660 - Wikipedia: https://en.wikipedia.org/wiki/Fairchild_660
+Universal Audio (company) - Wikipedia: https://en.wikipedia.org/wiki/Universal_Audio_(company)
+Loudness war - Wikipedia: https://en.wikipedia.org/wiki/Loudness_war]]></itunes:summary>
+      <pubDate>Sun, 04 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep30.mp3" length="944064" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep30.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:37</itunes:duration>
+      <itunes:episode>30</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Bach on a Synthesizer! Wendy Carlos and Switched-On Bach</title>
+      <description><![CDATA[In 1968, an album of Bach played on a synthesizer won three Grammy Awards! Little Pi introduces Wendy Carlos, who studied physics and music at Brown University and earned a master's in composition from Columbia in 1965. She met Robert Moog in 1964 and convinced him to add a touch-sensitive keyboard. Because the synthesizer could only play one note at a time, Switched-On Bach was built up layer by layer on an eight-track recorder over about 1,100 hours, and it topped the classical albums chart for three years. She went on to score A Clockwork Orange, The Shining and Tron, divided the octave into 35 notes on Beauty in the Beast in 1986, and received the SEAMUS Lifetime Achievement Award in 2005.
+
+References:
+Wendy Carlos - Wikipedia: https://en.wikipedia.org/wiki/Wendy_Carlos
+Switched-On Bach - Wikipedia: https://en.wikipedia.org/wiki/Switched-On_Bach
+Moog synthesizer - Wikipedia: https://en.wikipedia.org/wiki/Moog_synthesizer
+Beauty in the Beast (album) - Wikipedia: https://en.wikipedia.org/wiki/Beauty_in_the_Beast_(album)]]></description>
+      <itunes:summary><![CDATA[In 1968, an album of Bach played on a synthesizer won three Grammy Awards! Little Pi introduces Wendy Carlos, who studied physics and music at Brown University and earned a master's in composition from Columbia in 1965. She met Robert Moog in 1964 and convinced him to add a touch-sensitive keyboard. Because the synthesizer could only play one note at a time, Switched-On Bach was built up layer by layer on an eight-track recorder over about 1,100 hours, and it topped the classical albums chart for three years. She went on to score A Clockwork Orange, The Shining and Tron, divided the octave into 35 notes on Beauty in the Beast in 1986, and received the SEAMUS Lifetime Achievement Award in 2005.
+
+References:
+Wendy Carlos - Wikipedia: https://en.wikipedia.org/wiki/Wendy_Carlos
+Switched-On Bach - Wikipedia: https://en.wikipedia.org/wiki/Switched-On_Bach
+Moog synthesizer - Wikipedia: https://en.wikipedia.org/wiki/Moog_synthesizer
+Beauty in the Beast (album) - Wikipedia: https://en.wikipedia.org/wiki/Beauty_in_the_Beast_(album)]]></itunes:summary>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep31.mp3" length="957600" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep31.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:40</itunes:duration>
+      <itunes:episode>31</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
