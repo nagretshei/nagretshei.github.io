@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 05 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -864,6 +864,35 @@ Beauty in the Beast (album) － Wikipedia：https://en.wikipedia.org/wiki/Beauty
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:45</itunes:duration>
       <itunes:episode>31</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>讓合成器開口說話：聲碼器Vocoder是什麼？</title>
+      <description><![CDATA[電子歌裡的機器人唱歌，其實是人聲控制合成器！這集小皮介紹聲碼器（Vocoder）：貝爾實驗室的荷馬·杜德利（Homer Dudley）1938年取得專利，原本是為了壓縮講話、節省長途電話頻寬；原理是把人聲切成多個頻帶，用每個頻帶的音量起伏控制合成器；二戰時成為盟軍加密電話SIGSALY的核心（1943年啟用，重達50多公噸）；1970年溫蒂·卡洛斯與羅伯特·穆格打造十頻帶聲碼器，用在1971年電影《發條橘子》配樂；之後Kraftwerk《Autobahn》（1974）一路影響到電子舞曲與嘻哈。最後分辨聲碼器、Talk Box與Auto-Tune的差別。想自己玩：Logic Pro內建的EVOC 20 PolySynth就是聲碼器。
+
+參考資料：
+Vocoder － Wikipedia：https://en.wikipedia.org/wiki/Vocoder
+Homer Dudley － Wikipedia：https://en.wikipedia.org/wiki/Homer_Dudley
+SIGSALY － Wikipedia：https://en.wikipedia.org/wiki/SIGSALY
+Wendy Carlos － Wikipedia：https://en.wikipedia.org/wiki/Wendy_Carlos
+Robotic voice effects － Wikipedia：https://en.wikipedia.org/wiki/Robotic_voice_effects]]></description>
+      <itunes:summary><![CDATA[電子歌裡的機器人唱歌，其實是人聲控制合成器！這集小皮介紹聲碼器（Vocoder）：貝爾實驗室的荷馬·杜德利（Homer Dudley）1938年取得專利，原本是為了壓縮講話、節省長途電話頻寬；原理是把人聲切成多個頻帶，用每個頻帶的音量起伏控制合成器；二戰時成為盟軍加密電話SIGSALY的核心（1943年啟用，重達50多公噸）；1970年溫蒂·卡洛斯與羅伯特·穆格打造十頻帶聲碼器，用在1971年電影《發條橘子》配樂；之後Kraftwerk《Autobahn》（1974）一路影響到電子舞曲與嘻哈。最後分辨聲碼器、Talk Box與Auto-Tune的差別。想自己玩：Logic Pro內建的EVOC 20 PolySynth就是聲碼器。
+
+參考資料：
+Vocoder － Wikipedia：https://en.wikipedia.org/wiki/Vocoder
+Homer Dudley － Wikipedia：https://en.wikipedia.org/wiki/Homer_Dudley
+SIGSALY － Wikipedia：https://en.wikipedia.org/wiki/SIGSALY
+Wendy Carlos － Wikipedia：https://en.wikipedia.org/wiki/Wendy_Carlos
+Robotic voice effects － Wikipedia：https://en.wikipedia.org/wiki/Robotic_voice_effects]]></itunes:summary>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep32.mp3" length="2691385" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep32.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:48</itunes:duration>
+      <itunes:episode>32</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 05 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -864,6 +864,35 @@ Beauty in the Beast (album) - Wikipedia: https://en.wikipedia.org/wiki/Beauty_in
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:40</itunes:duration>
       <itunes:episode>31</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Make a Synthesizer Talk! What Is a Vocoder?</title>
+      <description><![CDATA[That robot singing in electronic songs is really a human voice controlling a synthesizer! Little Pi introduces the vocoder: Homer Dudley at Bell Labs patented it in 1938 to compress speech and save telephone bandwidth. It splits the voice into frequency bands and uses each band's loudness to control a synthesizer. In World War Two it became the heart of SIGSALY, the Allies' encrypted phone system (in use from 1943, weighing over 50 tonnes). In 1970 Wendy Carlos and Robert Moog built a ten-band vocoder for the 1971 film A Clockwork Orange, and Kraftwerk's Autobahn (1974) carried it into pop, dance music and hip-hop. Plus: how a vocoder differs from a talk box and Auto-Tune. Try it yourself with EVOC 20 PolySynth in Logic Pro.
+
+References:
+Vocoder - Wikipedia: https://en.wikipedia.org/wiki/Vocoder
+Homer Dudley - Wikipedia: https://en.wikipedia.org/wiki/Homer_Dudley
+SIGSALY - Wikipedia: https://en.wikipedia.org/wiki/SIGSALY
+Wendy Carlos - Wikipedia: https://en.wikipedia.org/wiki/Wendy_Carlos
+Robotic voice effects - Wikipedia: https://en.wikipedia.org/wiki/Robotic_voice_effects]]></description>
+      <itunes:summary><![CDATA[That robot singing in electronic songs is really a human voice controlling a synthesizer! Little Pi introduces the vocoder: Homer Dudley at Bell Labs patented it in 1938 to compress speech and save telephone bandwidth. It splits the voice into frequency bands and uses each band's loudness to control a synthesizer. In World War Two it became the heart of SIGSALY, the Allies' encrypted phone system (in use from 1943, weighing over 50 tonnes). In 1970 Wendy Carlos and Robert Moog built a ten-band vocoder for the 1971 film A Clockwork Orange, and Kraftwerk's Autobahn (1974) carried it into pop, dance music and hip-hop. Plus: how a vocoder differs from a talk box and Auto-Tune. Try it yourself with EVOC 20 PolySynth in Logic Pro.
+
+References:
+Vocoder - Wikipedia: https://en.wikipedia.org/wiki/Vocoder
+Homer Dudley - Wikipedia: https://en.wikipedia.org/wiki/Homer_Dudley
+SIGSALY - Wikipedia: https://en.wikipedia.org/wiki/SIGSALY
+Wendy Carlos - Wikipedia: https://en.wikipedia.org/wiki/Wendy_Carlos
+Robotic voice effects - Wikipedia: https://en.wikipedia.org/wiki/Robotic_voice_effects]]></itunes:summary>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep32.mp3" length="918720" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep32.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:33</itunes:duration>
+      <itunes:episode>32</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
