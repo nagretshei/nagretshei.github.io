@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 07 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -922,6 +922,35 @@ Acousmatic sound － Wikipedia：https://en.wikipedia.org/wiki/Acousmatic_sound]
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:01</itunes:duration>
       <itunes:episode>33</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>和弦為什麼聽起來刺刺的？感官不協和曲線 Sensory Dissonance Curve</title>
+      <description><![CDATA[音程順不順耳，其實可以算出來！這集小皮介紹聲音工程的「感官不協和曲線」（Sensory Dissonance Curve）：兩個頻率很接近會產生拍頻，起伏變快就成了粗糙感（Roughness），亥姆霍茲1863年就提出這是不協和的主要來源；1965年普倫普與勒維特（Plomp & Levelt）的聽力實驗發現，兩個純音大約在臨界頻帶的四分之一最刺耳；把兩個音所有泛音的粗糙感加總，曲線的谷底剛好落在八度、五度、四度、大三度。塞塔瑞斯（William Sethares）1993年論文與1998年專書《Tuning, Timbre, Spectrum, Scale》進一步指出：木琴、鐘聲、甘美朗等泛音不整齊的聲音，谷底會搬家——音色和音階是一對搭檔，可以先設計音色再設計音階。
+
+參考資料：
+William Sethares － Relating Tuning and Timbre：https://sethares.engr.wisc.edu/consemi.html
+Consonance and dissonance － Wikipedia：https://en.wikipedia.org/wiki/Consonance_and_dissonance
+Beat (acoustics) － Wikipedia：https://en.wikipedia.org/wiki/Beat_(acoustics)
+Critical band － Wikipedia：https://en.wikipedia.org/wiki/Critical_band
+Hermann von Helmholtz － Wikipedia：https://en.wikipedia.org/wiki/Hermann_von_Helmholtz]]></description>
+      <itunes:summary><![CDATA[音程順不順耳，其實可以算出來！這集小皮介紹聲音工程的「感官不協和曲線」（Sensory Dissonance Curve）：兩個頻率很接近會產生拍頻，起伏變快就成了粗糙感（Roughness），亥姆霍茲1863年就提出這是不協和的主要來源；1965年普倫普與勒維特（Plomp & Levelt）的聽力實驗發現，兩個純音大約在臨界頻帶的四分之一最刺耳；把兩個音所有泛音的粗糙感加總，曲線的谷底剛好落在八度、五度、四度、大三度。塞塔瑞斯（William Sethares）1993年論文與1998年專書《Tuning, Timbre, Spectrum, Scale》進一步指出：木琴、鐘聲、甘美朗等泛音不整齊的聲音，谷底會搬家——音色和音階是一對搭檔，可以先設計音色再設計音階。
+
+參考資料：
+William Sethares － Relating Tuning and Timbre：https://sethares.engr.wisc.edu/consemi.html
+Consonance and dissonance － Wikipedia：https://en.wikipedia.org/wiki/Consonance_and_dissonance
+Beat (acoustics) － Wikipedia：https://en.wikipedia.org/wiki/Beat_(acoustics)
+Critical band － Wikipedia：https://en.wikipedia.org/wiki/Critical_band
+Hermann von Helmholtz － Wikipedia：https://en.wikipedia.org/wiki/Hermann_von_Helmholtz]]></itunes:summary>
+      <pubDate>Thu, 08 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep34.mp3" length="2839760" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep34.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:57</itunes:duration>
+      <itunes:episode>34</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
