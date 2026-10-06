@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -893,6 +893,35 @@ Robotic voice effects － Wikipedia：https://en.wikipedia.org/wiki/Robotic_voic
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:48</itunes:duration>
       <itunes:episode>32</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>把噪音變成音樂的人：具象音樂之父皮耶·薛佛 Pierre Schaeffer</title>
+      <description><![CDATA[火車聲、鍋子聲也能變成音樂？這集小皮介紹具象音樂（musique concrète）之父皮耶·薛佛（Pierre Schaeffer）：1910年生於法國南錫，工程師出身，1942年在法國廣播電台成立實驗工作室Studio d'Essai；1948年10月5日電台播出「噪音音樂會」，發表《五首噪音練習曲》（Cinq études de bruits），包含《鐵道練習曲》；用蟲膠唱片的封閉溝紋讓聲音無限循環，是Loop的老祖宗；1950年與皮耶·亨利（Pierre Henry）合作《一個人的交響曲》（Symphonie pour un homme seul）；1951年成立具象音樂研究團體、1958年改組為GRM；提出「聲音物件」與Acousmatic（只聽聲音、看不到來源）的概念；1966年出版《音樂物件論》（Traité des objets musicaux）。學生包括伊莉安·哈迪格、尚-米歇·賈爾。
+
+參考資料：
+Pierre Schaeffer － Wikipedia：https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Musique concrète － Wikipedia：https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Henry － Wikipedia：https://en.wikipedia.org/wiki/Pierre_Henry
+Groupe de Recherches Musicales (GRM) － Wikipedia：https://en.wikipedia.org/wiki/Groupe_de_Recherches_Musicales
+Acousmatic sound － Wikipedia：https://en.wikipedia.org/wiki/Acousmatic_sound]]></description>
+      <itunes:summary><![CDATA[火車聲、鍋子聲也能變成音樂？這集小皮介紹具象音樂（musique concrète）之父皮耶·薛佛（Pierre Schaeffer）：1910年生於法國南錫，工程師出身，1942年在法國廣播電台成立實驗工作室Studio d'Essai；1948年10月5日電台播出「噪音音樂會」，發表《五首噪音練習曲》（Cinq études de bruits），包含《鐵道練習曲》；用蟲膠唱片的封閉溝紋讓聲音無限循環，是Loop的老祖宗；1950年與皮耶·亨利（Pierre Henry）合作《一個人的交響曲》（Symphonie pour un homme seul）；1951年成立具象音樂研究團體、1958年改組為GRM；提出「聲音物件」與Acousmatic（只聽聲音、看不到來源）的概念；1966年出版《音樂物件論》（Traité des objets musicaux）。學生包括伊莉安·哈迪格、尚-米歇·賈爾。
+
+參考資料：
+Pierre Schaeffer － Wikipedia：https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Musique concrète － Wikipedia：https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Henry － Wikipedia：https://en.wikipedia.org/wiki/Pierre_Henry
+Groupe de Recherches Musicales (GRM) － Wikipedia：https://en.wikipedia.org/wiki/Groupe_de_Recherches_Musicales
+Acousmatic sound － Wikipedia：https://en.wikipedia.org/wiki/Acousmatic_sound]]></itunes:summary>
+      <pubDate>Wed, 07 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep33.mp3" length="2888661" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep33.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:01</itunes:duration>
+      <itunes:episode>33</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

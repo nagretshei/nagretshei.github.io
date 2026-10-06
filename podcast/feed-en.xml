@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -893,6 +893,35 @@ Robotic voice effects - Wikipedia: https://en.wikipedia.org/wiki/Robotic_voice_e
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:33</itunes:duration>
       <itunes:episode>32</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The Man Who Turned Noise into Music: Pierre Schaeffer, Father of Musique Concrète</title>
+      <description><![CDATA[Can trains and pots and pans become music? Little Pi introduces Pierre Schaeffer, the father of musique concrète: born in Nancy, France in 1910 and trained as an engineer, he founded the Studio d'Essai at French radio in 1942. On October 5, 1948, the radio broadcast a "concert of noises" premiering his Cinq études de bruits, including the Railway Study. He cut closed grooves into shellac records to loop sounds forever, the ancestor of today's loop. In 1950 he and Pierre Henry created Symphonie pour un homme seul. He founded a musique concrète research group in 1951, reorganized as the GRM in 1958, and introduced the ideas of the sound object and acousmatic listening (hearing a sound without seeing its source). His 1966 Traité des objets musicaux summed up twenty years of research. His students included Éliane Radigue and Jean-Michel Jarre.
+
+References:
+Pierre Schaeffer - Wikipedia: https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Musique concrète - Wikipedia: https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Henry - Wikipedia: https://en.wikipedia.org/wiki/Pierre_Henry
+Groupe de Recherches Musicales (GRM) - Wikipedia: https://en.wikipedia.org/wiki/Groupe_de_Recherches_Musicales
+Acousmatic sound - Wikipedia: https://en.wikipedia.org/wiki/Acousmatic_sound]]></description>
+      <itunes:summary><![CDATA[Can trains and pots and pans become music? Little Pi introduces Pierre Schaeffer, the father of musique concrète: born in Nancy, France in 1910 and trained as an engineer, he founded the Studio d'Essai at French radio in 1942. On October 5, 1948, the radio broadcast a "concert of noises" premiering his Cinq études de bruits, including the Railway Study. He cut closed grooves into shellac records to loop sounds forever, the ancestor of today's loop. In 1950 he and Pierre Henry created Symphonie pour un homme seul. He founded a musique concrète research group in 1951, reorganized as the GRM in 1958, and introduced the ideas of the sound object and acousmatic listening (hearing a sound without seeing its source). His 1966 Traité des objets musicaux summed up twenty years of research. His students included Éliane Radigue and Jean-Michel Jarre.
+
+References:
+Pierre Schaeffer - Wikipedia: https://en.wikipedia.org/wiki/Pierre_Schaeffer
+Musique concrète - Wikipedia: https://en.wikipedia.org/wiki/Musique_concr%C3%A8te
+Pierre Henry - Wikipedia: https://en.wikipedia.org/wiki/Pierre_Henry
+Groupe de Recherches Musicales (GRM) - Wikipedia: https://en.wikipedia.org/wiki/Groupe_de_Recherches_Musicales
+Acousmatic sound - Wikipedia: https://en.wikipedia.org/wiki/Acousmatic_sound]]></itunes:summary>
+      <pubDate>Wed, 07 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep33.mp3" length="1022400" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep33.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:50</itunes:duration>
+      <itunes:episode>33</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
