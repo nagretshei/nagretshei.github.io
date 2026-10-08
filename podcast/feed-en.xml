@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 09 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -982,6 +982,95 @@ Now and Then (Beatles song) - Wikipedia: https://en.wikipedia.org/wiki/Now_and_T
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:42</itunes:duration>
       <itunes:episode>35</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Does AI &quot;Read&quot; Sound? Neural Audio Codecs EnCodec and X-Codec</title>
+      <description><![CDATA[Before AI can write a song, it has to learn to read sound! Little Pi introduces neural audio codecs: one second of audio has 24,000 numbers, far too many and too fine, so an encoder squeezes sound into codes and a decoder turns them back into sound. Examples include Google's SoundStream (2021) and Meta's EnCodec (2022, as low as 1.5 kbps). Where do the codes come from? RVQ (residual vector quantization) stacks several codebooks: the first captures the outline, the next fills in the error, layer by layer. X-Codec (2024) adds HuBERT semantic features before the codebooks so the tokens are easier for AI to understand, and the open-source song model YuE uses a compact version of it. These audio tokens are the foundation of music generation models like MusicGen and YuE.
+
+References:
+EnCodec (Meta AI) - GitHub: https://github.com/facebookresearch/encodec
+High Fidelity Neural Audio Compression (EnCodec) - arXiv: https://arxiv.org/abs/2210.13438
+SoundStream: An End-to-End Neural Audio Codec - arXiv: https://arxiv.org/abs/2107.03312
+Codec Does Matter (X-Codec) - arXiv: https://arxiv.org/abs/2408.17175
+X-Codec - GitHub: https://github.com/zhenye234/xcodec
+YuE - GitHub: https://github.com/multimodal-art-projection/YuE]]></description>
+      <itunes:summary><![CDATA[Before AI can write a song, it has to learn to read sound! Little Pi introduces neural audio codecs: one second of audio has 24,000 numbers, far too many and too fine, so an encoder squeezes sound into codes and a decoder turns them back into sound. Examples include Google's SoundStream (2021) and Meta's EnCodec (2022, as low as 1.5 kbps). Where do the codes come from? RVQ (residual vector quantization) stacks several codebooks: the first captures the outline, the next fills in the error, layer by layer. X-Codec (2024) adds HuBERT semantic features before the codebooks so the tokens are easier for AI to understand, and the open-source song model YuE uses a compact version of it. These audio tokens are the foundation of music generation models like MusicGen and YuE.
+
+References:
+EnCodec (Meta AI) - GitHub: https://github.com/facebookresearch/encodec
+High Fidelity Neural Audio Compression (EnCodec) - arXiv: https://arxiv.org/abs/2210.13438
+SoundStream: An End-to-End Neural Audio Codec - arXiv: https://arxiv.org/abs/2107.03312
+Codec Does Matter (X-Codec) - arXiv: https://arxiv.org/abs/2408.17175
+X-Codec - GitHub: https://github.com/zhenye234/xcodec
+YuE - GitHub: https://github.com/multimodal-art-projection/YuE]]></itunes:summary>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep36.mp3" length="1026576" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep36.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:51</itunes:duration>
+      <itunes:episode>36</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Is AI Composing Just a Word Chain Game? Autoregressive Generation and MusicGen</title>
+      <description><![CDATA[Is AI composing just a word chain game? Little Pi introduces autoregressive generation: like a phone keyboard guessing your next word, the model looks at all previous audio tokens, guesses the next one, adds it, and guesses again. The Transformer doing the guessing uses attention to look back at earlier rhythms and themes; OpenAI's Jukebox (2020) took this path. Meta's MusicGen, open-sourced in 2023, uses a 32 kHz EnCodec with four codebooks at 50 frames per second, and its delay pattern offsets the codebooks by one step so they can be predicted together, so each second of music takes only 50 steps. It reads text with T5, the melody version can follow a tune you hum, and it was trained on 20,000 hours of licensed music in 300M, 1.5B and 3.3B parameter sizes.
+
+References:
+Simple and Controllable Music Generation (MusicGen) - arXiv: https://arxiv.org/abs/2306.05284
+AudioCraft MusicGen docs - GitHub: https://github.com/facebookresearch/audiocraft/blob/main/docs/MUSICGEN.md
+Jukebox (OpenAI): https://openai.com/index/jukebox/
+Autoregressive model - Wikipedia: https://en.wikipedia.org/wiki/Autoregressive_model
+Transformer (deep learning architecture) - Wikipedia: https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)]]></description>
+      <itunes:summary><![CDATA[Is AI composing just a word chain game? Little Pi introduces autoregressive generation: like a phone keyboard guessing your next word, the model looks at all previous audio tokens, guesses the next one, adds it, and guesses again. The Transformer doing the guessing uses attention to look back at earlier rhythms and themes; OpenAI's Jukebox (2020) took this path. Meta's MusicGen, open-sourced in 2023, uses a 32 kHz EnCodec with four codebooks at 50 frames per second, and its delay pattern offsets the codebooks by one step so they can be predicted together, so each second of music takes only 50 steps. It reads text with T5, the melody version can follow a tune you hum, and it was trained on 20,000 hours of licensed music in 300M, 1.5B and 3.3B parameter sizes.
+
+References:
+Simple and Controllable Music Generation (MusicGen) - arXiv: https://arxiv.org/abs/2306.05284
+AudioCraft MusicGen docs - GitHub: https://github.com/facebookresearch/audiocraft/blob/main/docs/MUSICGEN.md
+Jukebox (OpenAI): https://openai.com/index/jukebox/
+Autoregressive model - Wikipedia: https://en.wikipedia.org/wiki/Autoregressive_model
+Transformer (deep learning architecture) - Wikipedia: https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)]]></itunes:summary>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep37.mp3" length="885168" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep37.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:28</itunes:duration>
+      <itunes:episode>37</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Carving Music Out of Noise: Diffusion Models and Stable Audio Open</title>
+      <description><![CDATA[Music can be carved out of noise! Little Pi introduces diffusion models: during training, music gets a little more noise at each step, like ink spreading in water, and the AI learns to guess the noise added at each step. To generate, it runs in reverse, starting from pure noise and subtracting noise step by step, guided by a text description. The 2020 DDPM paper made this method a big hit. Riffusion (late 2022) used the image model Stable Diffusion to draw spectrograms, showing that sound can be drawn. Stable Audio Open (2024) denoises in a compressed latent space, using T5 for text and a Transformer for denoising, generating up to 47 seconds of 44.1 kHz stereo audio, trained on about 480,000 Creative Commons licensed recordings from Freesound and the Free Music Archive.
+
+References:
+Denoising Diffusion Probabilistic Models (DDPM) - arXiv: https://arxiv.org/abs/2006.11239
+Diffusion model - Wikipedia: https://en.wikipedia.org/wiki/Diffusion_model
+Riffusion - Wikipedia: https://en.wikipedia.org/wiki/Riffusion
+Stable Audio Open 1.0 - Hugging Face: https://huggingface.co/stabilityai/stable-audio-open-1.0
+Stable Audio Open paper - arXiv: https://arxiv.org/abs/2407.14358]]></description>
+      <itunes:summary><![CDATA[Music can be carved out of noise! Little Pi introduces diffusion models: during training, music gets a little more noise at each step, like ink spreading in water, and the AI learns to guess the noise added at each step. To generate, it runs in reverse, starting from pure noise and subtracting noise step by step, guided by a text description. The 2020 DDPM paper made this method a big hit. Riffusion (late 2022) used the image model Stable Diffusion to draw spectrograms, showing that sound can be drawn. Stable Audio Open (2024) denoises in a compressed latent space, using T5 for text and a Transformer for denoising, generating up to 47 seconds of 44.1 kHz stereo audio, trained on about 480,000 Creative Commons licensed recordings from Freesound and the Free Music Archive.
+
+References:
+Denoising Diffusion Probabilistic Models (DDPM) - arXiv: https://arxiv.org/abs/2006.11239
+Diffusion model - Wikipedia: https://en.wikipedia.org/wiki/Diffusion_model
+Riffusion - Wikipedia: https://en.wikipedia.org/wiki/Riffusion
+Stable Audio Open 1.0 - Hugging Face: https://huggingface.co/stabilityai/stable-audio-open-1.0
+Stable Audio Open paper - arXiv: https://arxiv.org/abs/2407.14358]]></itunes:summary>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep38.mp3" length="926064" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep38.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:34</itunes:duration>
+      <itunes:episode>38</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -95,6 +95,48 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep38 · 2026/10/12</span>
+        <div class="lang-zh">
+          <h3>從一團雜訊雕出音樂！擴散模型 Diffusion 與 Stable Audio Open</h3>
+          <p>音樂可以從一團雜訊裡雕出來！這集小皮介紹擴散模型（Diffusion Model）：訓練時把音樂一步步加雜訊，像墨水在水裡擴散，AI學的是猜出每一步加了哪些雜訊；生成時倒過來，從純雜訊出發、一步步減掉雜訊，再用文字描述指路。2020年的DDPM論文讓這個方法大紅；2022年底的Riffusion拿畫圖用的Stable Diffusion來畫頻譜圖，證明聲音也能用畫的；2024年開源的Stable Audio Open在壓縮過的潛空間裡去噪（Latent Diffusion），用T5讀文字、Transformer去噪，最多生成47秒、44.1 kHz立體聲，訓練素材約48萬筆創用CC授權錄音，來自Freesound與Free Music Archive。</p>
+          <audio controls preload="none" src="podcast/audio/ep38.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Carving Music Out of Noise: Diffusion Models and Stable Audio Open</h3>
+          <p>Music can be carved out of noise! Little Pi introduces diffusion models: during training, music gets a little more noise at each step, like ink spreading in water, and the AI learns to guess the noise added at each step. To generate, it runs in reverse, starting from pure noise and subtracting noise step by step, guided by a text description. The 2020 DDPM paper made this method a big hit. Riffusion (late 2022) used the image model Stable Diffusion to draw spectrograms, showing that sound can be drawn. Stable Audio Open (2024) denoises in a compressed latent space, using T5 for text and a Transformer for denoising, generating up to 47 seconds of 44.1 kHz stereo audio, trained on about 480,000 Creative Commons licensed recordings from Freesound and the Free Music Archive.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep38.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="meta">Ep37 · 2026/10/11</span>
+        <div class="lang-zh">
+          <h3>AI 作曲就像玩接龍？自回歸生成與 MusicGen</h3>
+          <p>AI作曲其實是在玩接龍？這集小皮介紹自回歸生成（Autoregressive）：就像手機輸入法猜下一個字，模型看著前面所有的音訊token，猜出下一個、接上去、再猜下一個。負責猜的Transformer用注意力機制回頭看前面的節奏與主題，OpenAI 2020年的Jukebox就走這條路。Meta 2023年開源的MusicGen用32 kHz EnCodec、4本密碼本、每秒50格，靠「延遲排列」讓4本密碼本錯開一格一起猜，每秒音樂只要接50步；它用T5讀懂文字描述，melody版還能照你哼的旋律生成，以兩萬小時授權音樂訓練，有3億、15億、33億參數三種大小。</p>
+          <audio controls preload="none" src="podcast/audio/ep37.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Is AI Composing Just a Word Chain Game? Autoregressive Generation and MusicGen</h3>
+          <p>Is AI composing just a word chain game? Little Pi introduces autoregressive generation: like a phone keyboard guessing your next word, the model looks at all previous audio tokens, guesses the next one, adds it, and guesses again. The Transformer doing the guessing uses attention to look back at earlier rhythms and themes; OpenAI&#x27;s Jukebox (2020) took this path. Meta&#x27;s MusicGen, open-sourced in 2023, uses a 32 kHz EnCodec with four codebooks at 50 frames per second, and its delay pattern offsets the codebooks by one step so they can be predicted together, so each second of music takes only 50 steps. It reads text with T5, the melody version can follow a tune you hum, and it was trained on 20,000 hours of licensed music in 300M, 1.5B and 3.3B parameter sizes.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep37.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="meta">Ep36 · 2026/10/10</span>
+        <div class="lang-zh">
+          <h3>AI 怎麼「讀懂」聲音？神經音訊編碼器 EnCodec 與 X-Codec</h3>
+          <p>AI寫歌之前，得先學會「讀」聲音！這集小皮介紹神經音訊編碼器（Neural Audio Codec）：一秒聲音有兩萬四千個數字，太多太細，所以要用編碼器壓成密碼、再用解碼器還原——代表作有Google 2021年的SoundStream和Meta 2022年的EnCodec（最低1.5 kbps）。密碼怎麼來？RVQ（殘差向量量化）用好幾本密碼本，第一本抓輪廓、下一本補誤差，一層一層補細節；2024年的X-Codec在進密碼本前先加入HuBERT的語意特徵，讓token更好懂，開源歌曲生成模型YuE就用它的精簡版。這些音訊token，就是MusicGen、YuE等音樂生成AI的基礎。</p>
+          <audio controls preload="none" src="podcast/audio/ep36.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>How Does AI &quot;Read&quot; Sound? Neural Audio Codecs EnCodec and X-Codec</h3>
+          <p>Before AI can write a song, it has to learn to read sound! Little Pi introduces neural audio codecs: one second of audio has 24,000 numbers, far too many and too fine, so an encoder squeezes sound into codes and a decoder turns them back into sound. Examples include Google&#x27;s SoundStream (2021) and Meta&#x27;s EnCodec (2022, as low as 1.5 kbps). Where do the codes come from? RVQ (residual vector quantization) stacks several codebooks: the first captures the outline, the next fills in the error, layer by layer. X-Codec (2024) adds HuBERT semantic features before the codebooks so the tokens are easier for AI to understand, and the open-source song model YuE uses a compact version of it. These audio tokens are the foundation of music generation models like MusicGen and YuE.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep36.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep35 · 2026/10/09</span>
         <div class="lang-zh">
           <h3>把人聲從歌裡抽出來！AI 聲源分離 Source Separation 是怎麼做到的？</h3>

@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 09 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -982,6 +982,95 @@ Now and Then (Beatles song) － Wikipedia：https://en.wikipedia.org/wiki/Now_an
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:52</itunes:duration>
       <itunes:episode>35</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 怎麼「讀懂」聲音？神經音訊編碼器 EnCodec 與 X-Codec</title>
+      <description><![CDATA[AI寫歌之前，得先學會「讀」聲音！這集小皮介紹神經音訊編碼器（Neural Audio Codec）：一秒聲音有兩萬四千個數字，太多太細，所以要用編碼器壓成密碼、再用解碼器還原——代表作有Google 2021年的SoundStream和Meta 2022年的EnCodec（最低1.5 kbps）。密碼怎麼來？RVQ（殘差向量量化）用好幾本密碼本，第一本抓輪廓、下一本補誤差，一層一層補細節；2024年的X-Codec在進密碼本前先加入HuBERT的語意特徵，讓token更好懂，開源歌曲生成模型YuE就用它的精簡版。這些音訊token，就是MusicGen、YuE等音樂生成AI的基礎。
+
+參考資料：
+EnCodec (Meta AI) － GitHub：https://github.com/facebookresearch/encodec
+High Fidelity Neural Audio Compression (EnCodec) － arXiv：https://arxiv.org/abs/2210.13438
+SoundStream: An End-to-End Neural Audio Codec － arXiv：https://arxiv.org/abs/2107.03312
+Codec Does Matter (X-Codec) － arXiv：https://arxiv.org/abs/2408.17175
+X-Codec － GitHub：https://github.com/zhenye234/xcodec
+YuE － GitHub：https://github.com/multimodal-art-projection/YuE]]></description>
+      <itunes:summary><![CDATA[AI寫歌之前，得先學會「讀」聲音！這集小皮介紹神經音訊編碼器（Neural Audio Codec）：一秒聲音有兩萬四千個數字，太多太細，所以要用編碼器壓成密碼、再用解碼器還原——代表作有Google 2021年的SoundStream和Meta 2022年的EnCodec（最低1.5 kbps）。密碼怎麼來？RVQ（殘差向量量化）用好幾本密碼本，第一本抓輪廓、下一本補誤差，一層一層補細節；2024年的X-Codec在進密碼本前先加入HuBERT的語意特徵，讓token更好懂，開源歌曲生成模型YuE就用它的精簡版。這些音訊token，就是MusicGen、YuE等音樂生成AI的基礎。
+
+參考資料：
+EnCodec (Meta AI) － GitHub：https://github.com/facebookresearch/encodec
+High Fidelity Neural Audio Compression (EnCodec) － arXiv：https://arxiv.org/abs/2210.13438
+SoundStream: An End-to-End Neural Audio Codec － arXiv：https://arxiv.org/abs/2107.03312
+Codec Does Matter (X-Codec) － arXiv：https://arxiv.org/abs/2408.17175
+X-Codec － GitHub：https://github.com/zhenye234/xcodec
+YuE － GitHub：https://github.com/multimodal-art-projection/YuE]]></itunes:summary>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep36.mp3" length="2752825" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep36.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:52</itunes:duration>
+      <itunes:episode>36</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 作曲就像玩接龍？自回歸生成與 MusicGen</title>
+      <description><![CDATA[AI作曲其實是在玩接龍？這集小皮介紹自回歸生成（Autoregressive）：就像手機輸入法猜下一個字，模型看著前面所有的音訊token，猜出下一個、接上去、再猜下一個。負責猜的Transformer用注意力機制回頭看前面的節奏與主題，OpenAI 2020年的Jukebox就走這條路。Meta 2023年開源的MusicGen用32 kHz EnCodec、4本密碼本、每秒50格，靠「延遲排列」讓4本密碼本錯開一格一起猜，每秒音樂只要接50步；它用T5讀懂文字描述，melody版還能照你哼的旋律生成，以兩萬小時授權音樂訓練，有3億、15億、33億參數三種大小。
+
+參考資料：
+Simple and Controllable Music Generation (MusicGen) － arXiv：https://arxiv.org/abs/2306.05284
+AudioCraft MusicGen docs － GitHub：https://github.com/facebookresearch/audiocraft/blob/main/docs/MUSICGEN.md
+Jukebox (OpenAI)：https://openai.com/index/jukebox/
+Autoregressive model － Wikipedia：https://en.wikipedia.org/wiki/Autoregressive_model
+Transformer (deep learning architecture) － Wikipedia：https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)]]></description>
+      <itunes:summary><![CDATA[AI作曲其實是在玩接龍？這集小皮介紹自回歸生成（Autoregressive）：就像手機輸入法猜下一個字，模型看著前面所有的音訊token，猜出下一個、接上去、再猜下一個。負責猜的Transformer用注意力機制回頭看前面的節奏與主題，OpenAI 2020年的Jukebox就走這條路。Meta 2023年開源的MusicGen用32 kHz EnCodec、4本密碼本、每秒50格，靠「延遲排列」讓4本密碼本錯開一格一起猜，每秒音樂只要接50步；它用T5讀懂文字描述，melody版還能照你哼的旋律生成，以兩萬小時授權音樂訓練，有3億、15億、33億參數三種大小。
+
+參考資料：
+Simple and Controllable Music Generation (MusicGen) － arXiv：https://arxiv.org/abs/2306.05284
+AudioCraft MusicGen docs － GitHub：https://github.com/facebookresearch/audiocraft/blob/main/docs/MUSICGEN.md
+Jukebox (OpenAI)：https://openai.com/index/jukebox/
+Autoregressive model － Wikipedia：https://en.wikipedia.org/wiki/Autoregressive_model
+Transformer (deep learning architecture) － Wikipedia：https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)]]></itunes:summary>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep37.mp3" length="2442281" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep37.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:33</itunes:duration>
+      <itunes:episode>37</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>從一團雜訊雕出音樂！擴散模型 Diffusion 與 Stable Audio Open</title>
+      <description><![CDATA[音樂可以從一團雜訊裡雕出來！這集小皮介紹擴散模型（Diffusion Model）：訓練時把音樂一步步加雜訊，像墨水在水裡擴散，AI學的是猜出每一步加了哪些雜訊；生成時倒過來，從純雜訊出發、一步步減掉雜訊，再用文字描述指路。2020年的DDPM論文讓這個方法大紅；2022年底的Riffusion拿畫圖用的Stable Diffusion來畫頻譜圖，證明聲音也能用畫的；2024年開源的Stable Audio Open在壓縮過的潛空間裡去噪（Latent Diffusion），用T5讀文字、Transformer去噪，最多生成47秒、44.1 kHz立體聲，訓練素材約48萬筆創用CC授權錄音，來自Freesound與Free Music Archive。
+
+參考資料：
+Denoising Diffusion Probabilistic Models (DDPM) － arXiv：https://arxiv.org/abs/2006.11239
+Diffusion model － Wikipedia：https://en.wikipedia.org/wiki/Diffusion_model
+Riffusion － Wikipedia：https://en.wikipedia.org/wiki/Riffusion
+Stable Audio Open 1.0 － Hugging Face：https://huggingface.co/stabilityai/stable-audio-open-1.0
+Stable Audio Open paper － arXiv：https://arxiv.org/abs/2407.14358]]></description>
+      <itunes:summary><![CDATA[音樂可以從一團雜訊裡雕出來！這集小皮介紹擴散模型（Diffusion Model）：訓練時把音樂一步步加雜訊，像墨水在水裡擴散，AI學的是猜出每一步加了哪些雜訊；生成時倒過來，從純雜訊出發、一步步減掉雜訊，再用文字描述指路。2020年的DDPM論文讓這個方法大紅；2022年底的Riffusion拿畫圖用的Stable Diffusion來畫頻譜圖，證明聲音也能用畫的；2024年開源的Stable Audio Open在壓縮過的潛空間裡去噪（Latent Diffusion），用T5讀文字、Transformer去噪，最多生成47秒、44.1 kHz立體聲，訓練素材約48萬筆創用CC授權錄音，來自Freesound與Free Music Archive。
+
+參考資料：
+Denoising Diffusion Probabilistic Models (DDPM) － arXiv：https://arxiv.org/abs/2006.11239
+Diffusion model － Wikipedia：https://en.wikipedia.org/wiki/Diffusion_model
+Riffusion － Wikipedia：https://en.wikipedia.org/wiki/Riffusion
+Stable Audio Open 1.0 － Hugging Face：https://huggingface.co/stabilityai/stable-audio-open-1.0
+Stable Audio Open paper － arXiv：https://arxiv.org/abs/2407.14358]]></itunes:summary>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep38.mp3" length="2576864" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep38.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:41</itunes:duration>
+      <itunes:episode>38</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
