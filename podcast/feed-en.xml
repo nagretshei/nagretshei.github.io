@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 08 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -951,6 +951,37 @@ Hermann von Helmholtz - Wikipedia: https://en.wikipedia.org/wiki/Hermann_von_Hel
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:52</itunes:duration>
       <itunes:episode>34</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Pulling Vocals Out of a Song: How AI Source Separation Works</title>
+      <description><![CDATA[Can a finished mix be taken apart? Little Pi explains source separation, starting from the cocktail party problem described by Colin Cherry in 1953. The most common approach turns sound into a spectrogram, lets AI decide which source each time-frequency square belongs to, and applies a mask to keep only the vocals. The AI learns from datasets like MUSDB18 (150 songs split into vocals, drums, bass and other). Two famous tools: Spleeter, open-sourced by Deezer in 2019, and Meta's Demucs, whose fourth version in 2022 added a Transformer. The most touching use: the Beatles' 2023 song Now and Then, where AI separated John Lennon's voice from a late-1970s cassette demo.
+
+References:
+Music Source Separation - Wikipedia: https://en.wikipedia.org/wiki/Music_Source_Separation
+Cocktail party effect - Wikipedia: https://en.wikipedia.org/wiki/Cocktail_party_effect
+Demucs (Meta AI) - GitHub: https://github.com/facebookresearch/demucs
+Spleeter (Deezer) - GitHub: https://github.com/deezer/spleeter
+MUSDB18 dataset - SigSep: https://sigsep.github.io/datasets/musdb.html
+Now and Then (Beatles song) - Wikipedia: https://en.wikipedia.org/wiki/Now_and_Then_(Beatles_song)]]></description>
+      <itunes:summary><![CDATA[Can a finished mix be taken apart? Little Pi explains source separation, starting from the cocktail party problem described by Colin Cherry in 1953. The most common approach turns sound into a spectrogram, lets AI decide which source each time-frequency square belongs to, and applies a mask to keep only the vocals. The AI learns from datasets like MUSDB18 (150 songs split into vocals, drums, bass and other). Two famous tools: Spleeter, open-sourced by Deezer in 2019, and Meta's Demucs, whose fourth version in 2022 added a Transformer. The most touching use: the Beatles' 2023 song Now and Then, where AI separated John Lennon's voice from a late-1970s cassette demo.
+
+References:
+Music Source Separation - Wikipedia: https://en.wikipedia.org/wiki/Music_Source_Separation
+Cocktail party effect - Wikipedia: https://en.wikipedia.org/wiki/Cocktail_party_effect
+Demucs (Meta AI) - GitHub: https://github.com/facebookresearch/demucs
+Spleeter (Deezer) - GitHub: https://github.com/deezer/spleeter
+MUSDB18 dataset - SigSep: https://sigsep.github.io/datasets/musdb.html
+Now and Then (Beatles song) - Wikipedia: https://en.wikipedia.org/wiki/Now_and_Then_(Beatles_song)]]></itunes:summary>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep35.mp3" length="971712" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep35.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:42</itunes:duration>
+      <itunes:episode>35</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 08 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -951,6 +951,37 @@ Hermann von Helmholtz － Wikipedia：https://en.wikipedia.org/wiki/Hermann_von_
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:57</itunes:duration>
       <itunes:episode>34</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>把人聲從歌裡抽出來！AI 聲源分離 Source Separation 是怎麼做到的？</title>
+      <description><![CDATA[混好的歌還能拆開？這集小皮介紹聲音工程的「聲源分離」（Source Separation）：從1953年柯林·徹瑞（Colin Cherry）提出的「雞尾酒會問題」說起，解釋最常見的做法——把聲音轉成頻譜圖（Spectrogram），讓AI判斷每個時間頻率格子屬於誰，再用遮罩（Mask）把人聲留下；AI則是在MUSDB18（150首歌、人聲／鼓／貝斯／其他四軌）這類資料集上反覆練習學會的。代表工具有Deezer 2019年開源的Spleeter，以及Meta開發、2022年第4版加入Transformer的Demucs。最感人的應用：披頭四2023年〈Now and Then〉，用AI從約翰·藍儂1970年代末的卡帶demo裡分離出乾淨歌聲。
+
+參考資料：
+Music Source Separation － Wikipedia：https://en.wikipedia.org/wiki/Music_Source_Separation
+Cocktail party effect － Wikipedia：https://en.wikipedia.org/wiki/Cocktail_party_effect
+Demucs (Meta AI) － GitHub：https://github.com/facebookresearch/demucs
+Spleeter (Deezer) － GitHub：https://github.com/deezer/spleeter
+MUSDB18 dataset － SigSep：https://sigsep.github.io/datasets/musdb.html
+Now and Then (Beatles song) － Wikipedia：https://en.wikipedia.org/wiki/Now_and_Then_(Beatles_song)]]></description>
+      <itunes:summary><![CDATA[混好的歌還能拆開？這集小皮介紹聲音工程的「聲源分離」（Source Separation）：從1953年柯林·徹瑞（Colin Cherry）提出的「雞尾酒會問題」說起，解釋最常見的做法——把聲音轉成頻譜圖（Spectrogram），讓AI判斷每個時間頻率格子屬於誰，再用遮罩（Mask）把人聲留下；AI則是在MUSDB18（150首歌、人聲／鼓／貝斯／其他四軌）這類資料集上反覆練習學會的。代表工具有Deezer 2019年開源的Spleeter，以及Meta開發、2022年第4版加入Transformer的Demucs。最感人的應用：披頭四2023年〈Now and Then〉，用AI從約翰·藍儂1970年代末的卡帶demo裡分離出乾淨歌聲。
+
+參考資料：
+Music Source Separation － Wikipedia：https://en.wikipedia.org/wiki/Music_Source_Separation
+Cocktail party effect － Wikipedia：https://en.wikipedia.org/wiki/Cocktail_party_effect
+Demucs (Meta AI) － GitHub：https://github.com/facebookresearch/demucs
+Spleeter (Deezer) － GitHub：https://github.com/deezer/spleeter
+MUSDB18 dataset － SigSep：https://sigsep.github.io/datasets/musdb.html
+Now and Then (Beatles song) － Wikipedia：https://en.wikipedia.org/wiki/Now_and_Then_(Beatles_song)]]></itunes:summary>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep35.mp3" length="2751571" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep35.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:52</itunes:duration>
+      <itunes:episode>35</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
