@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>山椒魚五重奏</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0b0f14; color: #d8dee6; overflow: hidden;
+    font-family: "PingFang TC", "Noto Sans TC", sans-serif; }
+  canvas { display: block; }
+  #title { position: absolute; top: 22px; left: 26px; pointer-events: none; max-width: calc(50% - 240px); }
+  #title h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: 0.08em; }
+  #title p { margin: 6px 0 0; font-size: 13px; color: #8a96a3; }
+  #phase { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none; }
+  #phase .temp { font-size: 34px; font-weight: 300; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+  #phase .label { font-size: 12.5px; color: #8a96a3; margin-top: 2px; }
+  #phase .track { width: 220px; height: 3px; background: #1d2630; border-radius: 2px; margin: 8px auto 0; }
+  #phase .track { position: relative; }
+  #phase .track b { position: absolute; top: -4px; width: 2px; height: 11px; background: #e6edf3; }
+  #phase .tick { position: relative; font-size: 10.5px; color: #6f7b88; margin-top: 3px; white-space: nowrap; }
+  #phase .track i { display: block; height: 100%; width: 0; border-radius: 2px; background: linear-gradient(90deg, #f2b84b, #ff5a3c); }
+  .sp.dead { opacity: 0.35 !important; }
+  #legend { transition: opacity 1s; }
+  body.intro #legend { opacity: 0; pointer-events: none; }        /* 介紹期間讓位給照片圖說 */
+  #subs { position: absolute; left: 50%; bottom: 44px; transform: translateX(-50%); max-width: 620px; text-align: center;
+    pointer-events: none; z-index: 6; opacity: 0; transition: opacity 0.5s; }
+  #subs.show { opacity: 1; }
+  #subs span { display: inline-block; background: rgba(0,0,0,0.5); color: #f1f4f7; font-size: 19px; line-height: 1.6;
+    padding: 6px 16px; border-radius: 6px; letter-spacing: 0.02em; }
+  #endCard { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: rgba(8,11,15,0.78); z-index: 9; opacity: 0; transition: opacity 3s; }
+  #endCard.show { opacity: 1; }
+  #endCard[hidden] { display: none; }       /* display:flex 會蓋過 hidden，必須明確隱藏，否則透明層會擋住所有點擊 */
+  #endCard .et { font-size: 30px; letter-spacing: 0.2em; color: #e6edf3; }
+  #endCard .es { font-size: 15px; color: #8a96a3; margin: 10px 0 26px; }
+  #endCard button { font: inherit; font-size: 15px; padding: 8px 26px; border-radius: 20px; border: 1px solid #5d6874;
+    background: #141b23; color: #e6edf3; cursor: pointer; }
+  #skipIntro { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); font: inherit; font-size: 12px;
+    color: #aab4bf; background: rgba(20,27,35,0.8); border: 1px solid #2c3743; border-radius: 12px; padding: 2px 12px; cursor: pointer; z-index: 6; }
+  #calloutSvg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+  #calloutSvg line { stroke: #d8dee6; stroke-width: 1.3; opacity: 0; transition: opacity 0.8s; }
+  #calloutSvg circle { fill: none; stroke-width: 2; opacity: 0; transition: opacity 0.8s; }
+  #calloutSvg .on { opacity: 0.85; }
+  .callout { position: absolute; width: 170px; background: rgba(14,19,26,0.92); border: 1px solid #2c3743; border-radius: 6px;
+    overflow: hidden; opacity: 0; transform: scale(0.96); transition: opacity 0.8s, transform 0.8s; pointer-events: none; z-index: 2; }
+  .callout.on { opacity: 1; transform: none; }
+  .callout img { display: block; width: 100%; height: 106px; object-fit: cover; }
+  .callout div { padding: 5px 9px; font-size: 13px; font-weight: 600; border-top: 3px solid var(--c); }
+  .callout small { display: block; font-size: 10.5px; font-weight: 400; color: #8a96a3; font-style: italic; }
+  #card { position: absolute; left: 372px; top: 100px; width: 300px; background: rgba(14,19,26,0.94);
+    border: 1px solid #2c3743; border-radius: 10px; overflow: hidden; opacity: 0; transform: translateY(6px);
+    transition: opacity 0.35s, transform 0.35s; pointer-events: none; z-index: 4; }
+  #card.show { opacity: 1; transform: none; }
+  #card img { display: block; width: 100%; height: 170px; object-fit: cover; }
+  #card .cbody { padding: 10px 14px 12px; border-top: 3px solid var(--c, #888); }
+  #card .cname { font-size: 16px; font-weight: 600; }
+  #card .csci { font-size: 12px; font-style: italic; color: #8a96a3; margin-top: 1px; }
+  #card .ctag { display: inline-block; font-size: 11px; color: #c5cdd6; background: #1d2630; border-radius: 10px; padding: 1px 8px; margin: 6px 0 4px; }
+  #card .ctext { font-size: 12.5px; line-height: 1.65; color: #c5cdd6; }
+  #card .ccredit { font-size: 10.5px; color: #5d6874; margin-top: 6px; }
+  #info { position: absolute; right: 22px; bottom: 150px; width: 460px; max-height: 70vh; overflow: auto;
+    background: rgba(14,19,26,0.96); border: 1px solid #2c3743; border-radius: 10px; padding: 14px 18px;
+    font-size: 12.5px; line-height: 1.65; color: #c5cdd6; z-index: 5; }
+  #info h3 { margin: 0 0 8px; font-size: 15px; }
+  body.en .lang-zh, body:not(.en) .lang-en { display: none !important; }
+  #langBtn { position: absolute; top: 18px; right: 22px; font: inherit; font-size: 13px; color: #c5cdd6; background: #141b23;
+    border: 1px solid #2c3743; border-radius: 14px; padding: 4px 14px; cursor: pointer; z-index: 11; }
+  #sources { position: absolute; right: 22px; bottom: 150px; width: 500px; max-height: 70vh; overflow: auto;
+    background: rgba(14,19,26,0.97); border: 1px solid #2c3743; border-radius: 10px; padding: 14px 18px;
+    font-size: 12.5px; line-height: 1.6; color: #c5cdd6; z-index: 7; }
+  #sources h3 { margin: 0 0 6px; font-size: 15px; }
+  #sources h4 { margin: 12px 0 4px; font-size: 13px; color: #e6edf3; }
+  #sources ul { margin: 0; padding-left: 18px; }
+  #sources a { color: #8cc4f0; text-decoration: none; }
+  #sources a:hover { text-decoration: underline; }
+  #sources .snote { color: #6f7b88; font-size: 11.5px; margin-top: 10px; }
+  #info table { border-collapse: collapse; margin: 8px 0; font-size: 12px; width: 100%; }
+  #info td, #info th { border-bottom: 1px solid #222c37; padding: 3px 6px; text-align: left; }
+  .sp.dead .name { text-decoration: line-through; }
+  #legend { position: absolute; left: 22px; bottom: 22px; width: 330px; }
+  .sp { display: grid; grid-template-columns: 16px 1fr; gap: 2px 10px; padding: 8px 10px;
+    border-radius: 8px; cursor: default; transition: background 0.3s, opacity 0.3s; }
+  .sp .dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; }
+  .sp .name { font-size: 14px; font-weight: 600; }
+  .sp .meta { grid-column: 2; font-size: 11.5px; color: #8a96a3; line-height: 1.5; }
+  .sp .bar { grid-column: 2; height: 3px; background: #1d2630; border-radius: 2px; margin-top: 3px; }
+  .sp .bar i { display: block; height: 100%; border-radius: 2px; transition: width 0.4s; }
+  .sp.on { background: rgba(255,255,255,0.06); }
+  #rightCol { position: absolute; right: 22px; bottom: 14px; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; max-width: 360px; z-index: 5; }
+  #btnRow { display: flex; gap: 8px; }
+  #btnRow button { font: inherit; font-size: 12px; color: #aab4bf; background: #141b23; border: 1px solid #2c3743;
+    border-radius: 14px; padding: 4px 12px; cursor: pointer; white-space: nowrap; }
+  #note { font-size: 11px; color: #5d6874; text-align: right; pointer-events: none; line-height: 1.6; }
+  .peak { position: absolute; font-size: 11px; color: #6f7b88; pointer-events: none;
+    transform: translate(-50%, -100%); white-space: nowrap; }
+  .peak::after { content: "▲"; display: block; text-align: center; font-size: 7px; color: #55606c; }
+  #start { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; background: rgba(8,11,15,0.82); z-index: 10; }
+  #start button { font: inherit; font-size: 18px; padding: 12px 34px; border-radius: 30px;
+    border: 1px solid #5d6874; background: #141b23; color: #e6edf3; cursor: pointer; }
+  #start button:disabled { opacity: 0.4; cursor: wait; }
+  #status { margin-top: 14px; font-size: 13px; color: #8a96a3; }
+</style>
+</head>
+<body>
+<div id="title">
+  <h1>山椒魚五重奏｜前言</h1>
+  <p></p>
+</div>
+<div id="phase"><div class="temp">+0.0 °C</div><div class="label">前言（未暖化）</div><div class="track"><i></i><b id="ipccMark" title="IPCC AR6 SSP5-8.5：2081–2100 年比工業化前 +4.4 °C；現在已約 +1.1 °C，故相對現在約 +3.3 °C"></b></div><div class="tick" data-i18n="tick">▲ 2100 年：比現在再升溫約 3.3 °C（最高排放情境），之後假設停住</div></div>
+<svg id="calloutSvg"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+  <path d="M0,0 L10,5 L0,10 z" fill="#d8dee6"/></marker></defs></svg>
+<div id="callouts"></div>
+<div id="subs"><span></span></div>
+<div id="endCard" hidden><div class="et" data-i18n="endThanks">謝謝聆聽</div><div class="es" data-i18n="endTitle">《山椒魚五重奏》</div><button id="replay" data-i18n="replay">↻ 重新播放</button></div>
+<button id="skipIntro" hidden data-i18n="skip">跳過介紹 ⏭</button>
+<div id="card"><img><div class="cbody"><div class="cname"></div><div class="csci"></div>
+  <div class="ctag" data-i18n="tag">台灣特有種・冰河孑遺</div><div class="ctext"></div><div class="ccredit"></div></div></div>
+<div id="legend"></div>
+<button id="langBtn">EN</button>
+<div id="rightCol"><div id="btnRow"><button id="srcBtn" data-i18n="srcBtn">📚 資料來源</button>
+<button id="infoBtn" data-i18n="infoBtn">ⓘ 計算根據</button></div>
+<div id="note" data-i18n="note">分布點：GBIF 觀察紀錄（保育類座標已模糊化，僅示意大致區域）<br>海岸線：Natural Earth<br>鳥鳴：xeno-canto 錄音者（CC BY-NC-SA，見 CREDITS.txt）</div></div>
+<div id="sources" hidden><div class="lang-zh">
+  <h3>資料來源</h3>
+  <h4>前言介紹與族群介紹</h4>
+  <ul>
+    <li><a href="https://www.twreporter.org/a/human-interference-on-wildlife-impact" target="_blank" rel="noopener">報導者：台灣是全世界山椒魚分布的最南界、亞熱帶唯一；1919 年楚南仁博發現</a></li>
+    <li><a href="https://news.pts.org.tw/article/735346" target="_blank" rel="noopener">公視：台灣山椒魚與楚南氏山椒魚中文名更正（2025）、趾數</a></li>
+    <li><a href="https://news.pts.org.tw/article/498280" target="_blank" rel="noopener">公視：冰河孑遺生物山椒魚 正面臨生存威脅</a></li>
+    <li><a href="https://cna.com.tw/postwrite/chi/404727" target="_blank" rel="noopener">中央社：小鯢科祖先與恐龍同期</a></li>
+    <li><a href="https://www.nownews.com/news/6676953" target="_blank" rel="noopener">NOWnews：冰河期陸橋與南遷的說法</a></li>
+    <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3125272/" target="_blank" rel="noopener">Li, Fu &amp; Lei (2011) PLoS ONE：山椒魚屬自日本西南部擴散至台灣的時間推估</a></li>
+    <li><a href="https://bioone.org/journals/herpetologica/volume-64/issue-1/06-065.1/TWO-NEW-HYNOBIUS-CAUDATA-HYNOBIIDAE-SALAMANDERS-FROM-TAIWAN/10.1655/06-065.1.full" target="_blank" rel="noopener">Lai &amp; Lue (2008) Herpetologica：觀霧、南湖山椒魚新種發表</a></li>
+  </ul>
+  <h4>升溫推估</h4>
+  <ul>
+    <li><a href="https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/" target="_blank" rel="noopener">IPCC AR6 第一工作組決策者摘要：最高排放情境（SSP5-8.5）2081–2100 年全球平均升溫最佳估計約 +4.4 °C</a></li>
+  </ul>
+  <h4>分布海拔（暖化模型使用）</h4>
+  <ul>
+    <li><a href="https://amphibiansoftheworld.amnh.org/Amphibia/Caudata/Hynobiidae/Hynobiinae/Hynobius/Hynobius-fucus" target="_blank" rel="noopener">Amphibian Species of the World：觀霧山椒魚 Hynobius fucus</a></li>
+    <li><a href="https://amphibiansoftheworld.amnh.org/Amphibia/Caudata/Hynobiidae/Hynobiinae/Hynobius/Hynobius-sonani" target="_blank" rel="noopener">Amphibian Species of the World：楚南氏山椒魚 Hynobius sonani</a></li>
+    <li><a href="https://amphibiansoftheworld.amnh.org/Amphibia/Caudata/Hynobiidae/Hynobiinae/Hynobius/Hynobius-glacialis" target="_blank" rel="noopener">Amphibian Species of the World：南湖山椒魚 Hynobius glacialis</a></li>
+    <li><a href="https://amphibiaweb.org/species/7105" target="_blank" rel="noopener">AmphibiaWeb：南湖山椒魚 Hynobius glacialis</a></li>
+    <li><a href="https://salamandersofchina.myspecies.info/taxonomy/term/41/descriptions" target="_blank" rel="noopener">Salamanders of China：台灣山椒魚 Hynobius formosanus</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Hynobius_arisanensis" target="_blank" rel="noopener">Wikipedia：阿里山山椒魚 Hynobius arisanensis</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Hynobius_sonani" target="_blank" rel="noopener">Wikipedia：楚南氏山椒魚 Hynobius sonani</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Hynobius_glacialis" target="_blank" rel="noopener">Wikipedia：南湖山椒魚 Hynobius glacialis</a></li>
+  </ul>
+  <h4>地圖</h4>
+  <ul>
+    <li><a href="https://www.gbif.org/species/2431143" target="_blank" rel="noopener">GBIF：觀霧山椒魚觀察紀錄</a></li>
+    <li><a href="https://www.gbif.org/species/2431141" target="_blank" rel="noopener">GBIF：台灣山椒魚觀察紀錄</a></li>
+    <li><a href="https://www.gbif.org/species/2431161" target="_blank" rel="noopener">GBIF：阿里山山椒魚觀察紀錄</a></li>
+    <li><a href="https://www.gbif.org/species/2431147" target="_blank" rel="noopener">GBIF：楚南氏山椒魚觀察紀錄</a></li>
+    <li><a href="https://www.gbif.org/species/2431155" target="_blank" rel="noopener">GBIF：南湖山椒魚觀察紀錄</a></li>
+    <li><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth：台灣海岸線</a></li>
+  </ul>
+  <h4>山椒魚照片</h4>
+  <ul>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Hynobius_fuca.jpg" target="_blank" rel="noopener">觀霧山椒魚：Evan Pickett，CC BY-SA 4.0</a></li>
+    <li><a href="https://www.inaturalist.org/observations/227475631" target="_blank" rel="noopener">台灣山椒魚：Cynthia Su（iNaturalist），CC BY 4.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Alishan_Salamander_imported_from_iNaturalist_photo_40624720_on_20_April_2022.jpg" target="_blank" rel="noopener">阿里山山椒魚：Cheng-Tao Lin（iNaturalist），CC BY 4.0</a></li>
+    <li><a href="https://www.inaturalist.org/observations/14542549" target="_blank" rel="noopener">楚南氏山椒魚：Allen Lyu（iNaturalist），CC BY 4.0，裁切</a></li>
+    <li><a href="https://www.inaturalist.org/observations/343665145" target="_blank" rel="noopener">南湖山椒魚：小翰（iNaturalist），CC BY-NC 4.0</a></li>
+  </ul>
+  <h4>鳥鳴（xeno-canto，台灣高山鳥，CC BY-NC-SA）</h4>
+  <ul>
+    <li><a href="https://xeno-canto.org/1040474" target="_blank" rel="noopener">鷦鷯（Troglodytes troglodytes）XC1040474，Lars Lachmann，2700 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1038810" target="_blank" rel="noopener">金翼白眉（Trochalopteron morrisonianum）XC1038810，Lars Lachmann，2600 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/914943" target="_blank" rel="noopener">台灣朱雀（Carpodacus formosanus）XC914943，蔡明剛，3200 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1038808" target="_blank" rel="noopener">金翼白眉（Trochalopteron morrisonianum）XC1038808，Lars Lachmann，2600 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/772778" target="_blank" rel="noopener">小翼鶇（Brachypteryx goodfellowi）XC772778，Jelle Scharringa，2300 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039787" target="_blank" rel="noopener">栗背林鴝（Tarsiger johnstoniae）XC1039787，Lars Lachmann，2700 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/278138" target="_blank" rel="noopener">褐頭花翼（Fulvetta formosana）XC278138，Ko Chie-Jen (Jerome)，2700 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039631" target="_blank" rel="noopener">火冠戴菊鳥（Regulus goodfellowi）XC1039631，Lars Lachmann，2700 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039788" target="_blank" rel="noopener">栗背林鴝（Tarsiger johnstoniae）XC1039788，Lars Lachmann，2700 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039618" target="_blank" rel="noopener">火冠戴菊鳥（Regulus goodfellowi）XC1039618，Lars Lachmann，2700 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/594729" target="_blank" rel="noopener">灰鷽（Pyrrhula owstoni）XC594729，Jerome Chie-Jen Ko，3500 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1038474" target="_blank" rel="noopener">小翼鶇（Brachypteryx goodfellowi）XC1038474，Lars Lachmann，2600 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/572876" target="_blank" rel="noopener">台灣朱雀（Carpodacus formosanus）XC572876，Sunny Tseng，3200 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/732201" target="_blank" rel="noopener">紋翼畫眉（Actinodura morrisoniana）XC732201，蔡明剛，2400 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/789826" target="_blank" rel="noopener">紋翼畫眉（Actinodura morrisoniana）XC789826，蔡明剛，2300 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/562980" target="_blank" rel="noopener">煤山雀（Periparus ater）XC562980，Sunny Tseng，3200 m，CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1153276" target="_blank" rel="noopener">岩鷚（Prunella collaris）XC1153276，Sheng-wun Jheng，3200 m，CC BY-NC-SA 4.0</a></li>
+  </ul>
+  <h4>聲音與工具</h4>
+  <ul>
+    <li><a href="https://github.com/gleitz/midi-js-soundfonts" target="_blank" rel="noopener">豎琴、鐵琴取樣：FluidR3 GM（MIDI.js soundfonts）</a></li>
+    <li><a href="https://github.com/rany2/edge-tts" target="_blank" rel="noopener">旁白：edge-tts（台灣女聲 zh-TW-HsiaoChenNeural）</a></li>
+    <li><a href="https://threejs.org/" target="_blank" rel="noopener">three.js（地圖繪製）</a></li>
+  </ul>
+  <p class="snote">完整授權說明見 CREDITS.txt。地圖分布點的座標經資料提供者模糊化，僅示意大致區域。</p>
+</div><div class="lang-en">
+  <h3>Sources</h3>
+  <h4>Introduction and species texts</h4>
+  <ul>
+    <li><a href="https://www.twreporter.org/a/human-interference-on-wildlife-impact" target="_blank" rel="noopener">The Reporter: Taiwan is the southernmost limit of salamanders and the only subtropical home; Sonan's discovery in 1919</a></li>
+    <li><a href="https://news.pts.org.tw/article/735346" target="_blank" rel="noopener">PTS: 2025 correction of the Chinese common names of the Taiwan and Sonan's salamanders; toe counts</a></li>
+    <li><a href="https://news.pts.org.tw/article/498280" target="_blank" rel="noopener">PTS: Salamanders, ice-age relicts, face threats to survival</a></li>
+    <li><a href="https://cna.com.tw/postwrite/chi/404727" target="_blank" rel="noopener">CNA: Hynobiid ancestors date to the age of dinosaurs</a></li>
+    <li><a href="https://www.nownews.com/news/6676953" target="_blank" rel="noopener">NOWnews: the ice-age land bridge and southward migration hypothesis</a></li>
+    <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3125272/" target="_blank" rel="noopener">Li, Fu &amp; Lei (2011) PLoS ONE: timing of Hynobius dispersal from southwestern Japan to Taiwan</a></li>
+    <li><a href="https://bioone.org/journals/herpetologica/volume-64/issue-1/06-065.1/TWO-NEW-HYNOBIUS-CAUDATA-HYNOBIIDAE-SALAMANDERS-FROM-TAIWAN/10.1655/06-065.1.full" target="_blank" rel="noopener">Lai &amp; Lue (2008) Herpetologica: description of the Guanwu and Nanhu salamanders</a></li>
+  </ul>
+  <h4>Warming projections</h4>
+  <ul>
+    <li><a href="https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/" target="_blank" rel="noopener">IPCC AR6 WGI Summary for Policymakers: highest-emission scenario (SSP5-8.5), best estimate about +4.4 °C global warming in 2081–2100</a></li>
+  </ul>
+  <h4>Elevation ranges (used by the warming model)</h4>
+  <ul>
+    <li><a href="https://amphibiansoftheworld.amnh.org/Amphibia/Caudata/Hynobiidae/Hynobiinae/Hynobius/Hynobius-fucus" target="_blank" rel="noopener">Amphibian Species of the World: Guanwu salamander Hynobius fucus</a></li>
+    <li><a href="https://amphibiansoftheworld.amnh.org/Amphibia/Caudata/Hynobiidae/Hynobiinae/Hynobius/Hynobius-sonani" target="_blank" rel="noopener">Amphibian Species of the World: Sonan's salamander Hynobius sonani</a></li>
+    <li><a href="https://amphibiansoftheworld.amnh.org/Amphibia/Caudata/Hynobiidae/Hynobiinae/Hynobius/Hynobius-glacialis" target="_blank" rel="noopener">Amphibian Species of the World: Nanhu salamander Hynobius glacialis</a></li>
+    <li><a href="https://amphibiaweb.org/species/7105" target="_blank" rel="noopener">AmphibiaWeb: Nanhu salamander Hynobius glacialis</a></li>
+    <li><a href="https://salamandersofchina.myspecies.info/taxonomy/term/41/descriptions" target="_blank" rel="noopener">Salamanders of China: Taiwan salamander Hynobius formosanus</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Hynobius_arisanensis" target="_blank" rel="noopener">Wikipedia: Alishan salamander Hynobius arisanensis</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Hynobius_sonani" target="_blank" rel="noopener">Wikipedia: Sonan's salamander Hynobius sonani</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Hynobius_glacialis" target="_blank" rel="noopener">Wikipedia: Nanhu salamander Hynobius glacialis</a></li>
+  </ul>
+  <h4>Map</h4>
+  <ul>
+    <li><a href="https://www.gbif.org/species/2431143" target="_blank" rel="noopener">GBIF: Guanwu salamander occurrence records</a></li>
+    <li><a href="https://www.gbif.org/species/2431141" target="_blank" rel="noopener">GBIF: Taiwan salamander occurrence records</a></li>
+    <li><a href="https://www.gbif.org/species/2431161" target="_blank" rel="noopener">GBIF: Alishan salamander occurrence records</a></li>
+    <li><a href="https://www.gbif.org/species/2431147" target="_blank" rel="noopener">GBIF: Sonan's salamander occurrence records</a></li>
+    <li><a href="https://www.gbif.org/species/2431155" target="_blank" rel="noopener">GBIF: Nanhu salamander occurrence records</a></li>
+    <li><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth: Taiwan coastline</a></li>
+  </ul>
+  <h4>Salamander photos</h4>
+  <ul>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Hynobius_fuca.jpg" target="_blank" rel="noopener">Guanwu salamander: Evan Pickett, CC BY-SA 4.0</a></li>
+    <li><a href="https://www.inaturalist.org/observations/227475631" target="_blank" rel="noopener">Taiwan salamander: Cynthia Su (iNaturalist), CC BY 4.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Alishan_Salamander_imported_from_iNaturalist_photo_40624720_on_20_April_2022.jpg" target="_blank" rel="noopener">Alishan salamander: Cheng-Tao Lin (iNaturalist), CC BY 4.0</a></li>
+    <li><a href="https://www.inaturalist.org/observations/14542549" target="_blank" rel="noopener">Sonan's salamander: Allen Lyu (iNaturalist), CC BY 4.0, cropped</a></li>
+    <li><a href="https://www.inaturalist.org/observations/343665145" target="_blank" rel="noopener">Nanhu salamander: 小翰 (iNaturalist), CC BY-NC 4.0</a></li>
+  </ul>
+  <h4>Birdsong (xeno-canto, Taiwan high-mountain birds, CC BY-NC-SA)</h4>
+  <ul>
+    <li><a href="https://xeno-canto.org/1040474" target="_blank" rel="noopener">Eurasian Wren (Troglodytes troglodytes)XC1040474, Lars Lachmann, 2700 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1038810" target="_blank" rel="noopener">White-whiskered Laughingthrush (Trochalopteron morrisonianum)XC1038810, Lars Lachmann, 2600 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/914943" target="_blank" rel="noopener">Taiwan Rosefinch (Carpodacus formosanus)XC914943, Ming-Kang Tsai, 3200 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1038808" target="_blank" rel="noopener">White-whiskered Laughingthrush (Trochalopteron morrisonianum)XC1038808, Lars Lachmann, 2600 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/772778" target="_blank" rel="noopener">Taiwan Shortwing (Brachypteryx goodfellowi)XC772778, Jelle Scharringa, 2300 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039787" target="_blank" rel="noopener">Collared Bush Robin (Tarsiger johnstoniae)XC1039787, Lars Lachmann, 2700 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/278138" target="_blank" rel="noopener">Taiwan Fulvetta (Fulvetta formosana)XC278138, Ko Chie-Jen (Jerome), 2700 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039631" target="_blank" rel="noopener">Flamecrest (Regulus goodfellowi)XC1039631, Lars Lachmann, 2700 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039788" target="_blank" rel="noopener">Collared Bush Robin (Tarsiger johnstoniae)XC1039788, Lars Lachmann, 2700 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1039618" target="_blank" rel="noopener">Flamecrest (Regulus goodfellowi)XC1039618, Lars Lachmann, 2700 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/594729" target="_blank" rel="noopener">Taiwan Bullfinch (Pyrrhula owstoni)XC594729, Jerome Chie-Jen Ko, 3500 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1038474" target="_blank" rel="noopener">Taiwan Shortwing (Brachypteryx goodfellowi)XC1038474, Lars Lachmann, 2600 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/572876" target="_blank" rel="noopener">Taiwan Rosefinch (Carpodacus formosanus)XC572876, Sunny Tseng, 3200 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/732201" target="_blank" rel="noopener">Taiwan Barwing (Actinodura morrisoniana)XC732201, Ming-Kang Tsai, 2400 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/789826" target="_blank" rel="noopener">Taiwan Barwing (Actinodura morrisoniana)XC789826, Ming-Kang Tsai, 2300 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/562980" target="_blank" rel="noopener">Coal Tit (Periparus ater)XC562980, Sunny Tseng, 3200 m, CC BY-NC-SA 4.0</a></li>
+    <li><a href="https://xeno-canto.org/1153276" target="_blank" rel="noopener">Alpine Accentor (Prunella collaris)XC1153276, Sheng-wun Jheng, 3200 m, CC BY-NC-SA 4.0</a></li>
+  </ul>
+  <h4>Sound and tools</h4>
+  <ul>
+    <li><a href="https://github.com/gleitz/midi-js-soundfonts" target="_blank" rel="noopener">Harp and glockenspiel samples: FluidR3 GM (MIDI.js soundfonts)</a></li>
+    <li><a href="https://github.com/rany2/edge-tts" target="_blank" rel="noopener">Narration: edge-tts (zh-TW-HsiaoChenNeural, en-US-AvaNeural)</a></li>
+    <li><a href="https://threejs.org/" target="_blank" rel="noopener">three.js (map rendering)</a></li>
+  </ul>
+  <p class="snote">Full license details are in CREDITS.txt. Distribution coordinates were generalized by the data providers and show approximate areas only.</p>
+</div></div>
+<div id="info" hidden><div class="lang-zh">
+  <h3>暖化與族群變化怎麼算</h3>
+  <p><b>「依海拔資料」模式</b>：每種山椒魚目前住在海拔帶 [L, U]，所在山系最高峰為 P。
+  氣溫約每升高 100 m 下降 0.6 °C（氣溫垂直遞減率），所以升溫 ΔT，適合的海拔帶往上移 s = ΔT ÷ 0.6 × 100 m。
+  棲地剩下 [L+s, min(U+s, P)]，族群大小與剩下的海拔帶寬度成正比；整個帶被推過山頂即消失。</p>
+  <table class="infoTable"></table>
+  <p>升溫情境：IPCC AR6 最高排放情境（SSP5-8.5）2081–2100 年全球平均比工業化前高約 4.4 °C；
+  現在已高約 1.1 °C，所以從 2025 年起到 2100 年「再升溫約 3.3 °C」，之後假設停住、時間繼續。（未考慮高山升溫可能比全球平均快。）
+  結語提到的低排放情境（SSP1-2.6）：本世紀末約比工業化前 +1.8 °C，相對現在約再升 0.7 °C。</p>
+  <p>長期機制（<b>方向有文獻支持，數值為示意</b>）：①遷移落後——下緣隨升溫失去，往上的新棲地每年最多擴散 2 m；
+  ②長期壓力——高溫持續造成微棲地變乾、食物（小型無脊椎動物）減少、植被改變，族群逐年下降，棲地被壓縮得越多的族群下降越快（基準每年 2.5 %）；
+  ③小族群風險——族群很小時，每代有 2 % 機率因隨機事件消失（滅絕漩渦）。所以消失的年份與順序每次播放都會略有不同。</p>
+  <p>音高：海拔每 100 m 對應 1 個半音，旋律往上爬的幅度與碰到山頂的位置都由海拔換算。</p>
+  <p><b>限制</b>：這是極簡化的示意模型，不是科學預測。沒有考慮山頂面積越高越小、石縫與溪邊微棲地的避難效果、
+  生理耐熱極限、遷移能力、棲地破碎與其他壓力；分布海拔來源彼此不一致，楚南氏的山頂取值尤其不確定。</p>
+  <p>海拔來源：Amphibian Species of the World（ASW）、AmphibiaWeb、Salamanders of China、Wikipedia；分布點：GBIF。</p>
+  <p>前言介紹來源：報導者（台灣為山椒魚分布最南界、1919 年楚南仁博發現）、中央社（小鯢科祖先與恐龍同期）、
+  公視（2025 年中文名更正、趾數）、Li, Fu &amp; Lei 2011, PLoS ONE（山椒魚屬自日本西南部擴散至台灣的時間推估）。</p>
+  <p><b>「示意」模式</b>：為了音樂結構讓五族依序消失，數值是設定的，不代表實際脆弱程度（只有排序參考海拔）。</p>
+</div><div class="lang-en">
+  <h3>How warming and population change are calculated</h3>
+  <p><b>Elevation-data mode</b>: each species currently lives in an elevation band [L, U]; the highest peak in its range is P.
+  Air temperature drops about 0.6 °C per 100 m of elevation (the lapse rate), so warming of ΔT moves the suitable band up by s = ΔT ÷ 0.6 × 100 m.
+  The remaining habitat is [L+s, min(U+s, P)]; population size is proportional to the width of the remaining band, and a species disappears when the whole band is pushed past the summit.</p>
+  <table class="infoTable"></table>
+  <p>Warming scenario: under the IPCC AR6 highest-emission scenario (SSP5-8.5), global mean temperature in 2081–2100 is about 4.4 °C above pre-industrial.
+  It is already about 1.1 °C warmer today, so from 2025 to 2100 we add about 3.3 °C, then assume warming stops while time goes on. (Mountains may warm faster than the global average; this is not included.)
+  The low-emission scenario mentioned at the end (SSP1-2.6): about +1.8 °C above pre-industrial by the end of the century, roughly +0.7 °C above today.</p>
+  <p>Long-term mechanisms (<b>the direction is supported by the literature; the numbers are illustrative</b>): ① Lagging dispersal — the lower edge is lost as it warms, while new habitat higher up is colonized by at most 2 m per year;
+  ② Chronic stress — prolonged heat dries out microhabitats, reduces food (small invertebrates) and changes vegetation, so populations decline year by year, faster for species whose habitat is more squeezed (baseline 2.5% per year);
+  ③ Small-population risk — very small populations have a 2% chance per generation of disappearing through chance events (the extinction vortex). Extinction years and order therefore vary from one performance to the next.</p>
+  <p>Pitch: every 100 m of elevation corresponds to one semitone, so how far a melody climbs and where it hits the summit both come from elevation.</p>
+  <p><b>Limitations</b>: this is a highly simplified, illustrative model, not a scientific prediction. It ignores the shrinking area near summits, refuges in rock crevices and along streams,
+  physiological heat tolerance, dispersal ability, habitat fragmentation and other pressures. Elevation sources disagree with one another; the summit value for Sonan's salamander is especially uncertain.</p>
+  <p>Elevation sources: Amphibian Species of the World (ASW), AmphibiaWeb, Salamanders of China, Wikipedia; distribution points: GBIF.</p>
+  <p>Introduction sources: The Reporter (Taiwan as the southernmost limit; Sonan's discovery in 1919), CNA (hynobiid ancestors date to the age of dinosaurs),
+  PTS (2025 correction of Chinese common names; toe counts), Li, Fu &amp; Lei 2011, PLoS ONE (timing of Hynobius dispersal from southwestern Japan to Taiwan).</p>
+  <p><b>Illustrative mode</b>: the five species disappear one after another for the sake of musical structure; the numbers are set by hand and do not reflect actual vulnerability (only the order follows elevation).</p>
+</div>
+</div>
+
+<div id="start"><button id="go" disabled data-i18n="loading">載入音色中…</button><div id="status"></div></div>
+
+<script src="lib/three.min.js"></script>
+<script src="lib/lil-gui.min.js"></script>
+<script src="map_data.js"></script>
+<script src="ambience.js"></script>
+<script src="narration.js"></script>
+<script src="narration_en.js"></script>
+<script>
+// 樂器音色（FluidR3 GM，MIDI.js 格式，用 script 載入才能雙擊 html 直接開）
+const INSTRUMENTS = ["orchestral_harp", "glockenspiel"];
+for (const i of INSTRUMENTS) document.write(`<script src="soundfonts/${i}-mp3.js"><\/script>`);
+</script>
+<script>
+"use strict";
+// ================================================================ 語言（與 zoelin.me 共用 localStorage「siteLang」：zh / en）
+let LANG = (() => { try { return localStorage.getItem("siteLang") === "en" ? "en" : "zh"; } catch (e) { return "zh"; } })();
+const I18N = {
+  zh: { docTitle: "山椒魚五重奏", title: "山椒魚五重奏", srcBtn: "📚 資料來源", infoBtn: "ⓘ 計算根據", skip: "跳過介紹 ⏭",
+    tag: "台灣特有種・冰河孑遺", endThanks: "謝謝聆聽", endTitle: "《山椒魚五重奏》", replay: "↻ 重新播放",
+    tick: "▲ 2100 年：比現在再升溫約 3.3 °C（最高排放情境），之後假設停住",
+    note: "分布點：GBIF 觀察紀錄（保育類座標已模糊化，僅示意大致區域）<br>海岸線：Natural Earth<br>鳥鳴：xeno-canto 錄音者（CC BY-NC-SA，見 CREDITS.txt）",
+    ipcc: "IPCC AR6 SSP5-8.5：2081–2100 年比工業化前 +4.4 °C；現在已約 +1.1 °C，故相對現在約 +3.3 °C",
+    start: "▶ 開始聆聽", loading: "載入音色中…", preparing: "準備音色中…", decoding: p => `解碼樂器音色 ${p}%`, loadAmb: "載入山區錄音…", loadNarr: "載入旁白…",
+    phase: { prelude: "前言", rich: "繁盛", warm: "暖化", silence: "寂靜" },
+    subPre: "五座山、五個族群，各自演化中（未暖化）。把滑鼠移到地圖上的點，聆聽該族群。",
+    subWarm: "氣溫上升，每一族的旋律被迫往高音爬；碰到山頂後族群縮小、旋律越來越單調。",
+    subEnd: "暖化讓牠們一路往山頂爬，直到再也沒有地方可去。",
+    labEnd: "五個族群都消失了，只剩鳥叫聲",
+    labWarm: (hold, n) => `${hold ? "升溫停住，高溫持續" : "暖化中"} · 存活 ${n} / 5 族`,
+    labPre: (rich, g, G) => `${rich ? "繁盛" : "前言"}（未暖化）· 第 ${g} / ${G} 代後開始暖化`, labPreManual: "前言（未暖化）",
+    temp: (y, d) => y !== null ? `${y} 年 · +${d} °C` : `+${d} °C`,
+    meta: (sp) => `海拔 ${sp.elev.L}–${sp.elev.U} m（山頂 ${sp.elev.peak} ${sp.elev.P} m） · ${sp.toes} 趾（${sp.toes === 5 ? "五連音 ×2" : "四連音 ×2"}）<br>${sp.scaleName} · ${sp.instZh}`,
+    gen: (sp, K0, hab, orn) => `第 ${sp.gen} 代 · 族群 ${sp.size}/${K0}${hab !== null ? ` · 棲地剩 ${hab}%` : ""} · 裝飾 ${orn}% · 多樣性 ${(sp.div * 100).toFixed(0)}%`,
+    answer: n => `回應 ${n} · `, gone: (y, d) => y ? `已消失（${y} 年，+${d} °C）` : `已消失（升溫 +${d} °C 時）`,
+    cardGone: "（已從這首曲子裡消失）",
+    infoHead: "<tr><th>族群</th><th>L–U (m)</th><th>山頂 P</th><th>開始壓縮</th><th>消失</th></tr>",
+  },
+  en: { docTitle: "Salamander Quintet", title: "Salamander Quintet", srcBtn: "📚 Sources", infoBtn: "ⓘ How it's calculated", skip: "Skip intro ⏭",
+    tag: "Endemic to Taiwan · Ice-age relict", endThanks: "Thank you for listening", endTitle: "Salamander Quintet", replay: "↻ Play again",
+    tick: "▲ 2100: about +3.3 °C above today (highest-emission scenario), then assumed to stop",
+    note: "Distribution: GBIF records (coordinates of protected species are generalized; approximate areas only)<br>Coastline: Natural Earth<br>Birdsong: xeno-canto recordists (CC BY-NC-SA, see CREDITS.txt)",
+    ipcc: "IPCC AR6 SSP5-8.5: +4.4 °C above pre-industrial in 2081–2100; already about +1.1 °C today, so about +3.3 °C above today",
+    start: "▶ Start listening", loading: "Loading instruments…", preparing: "Preparing sounds…", decoding: p => `Decoding instruments ${p}%`, loadAmb: "Loading mountain recordings…", loadNarr: "Loading narration…",
+    phase: { prelude: "Prelude", rich: "Flourishing", warm: "Warming", silence: "Silence" },
+    subPre: "Five mountains, five populations, each evolving (no warming yet). Move your mouse over the dots on the map to listen.",
+    subWarm: "As temperatures rise, each population's melody is forced to climb; once it hits the summit, the population shrinks and the melody grows monotonous.",
+    subEnd: "Warming pushed them up toward the summits, until there was nowhere left to go.",
+    labEnd: "All five populations are gone; only birdsong remains",
+    labWarm: (hold, n) => `${hold ? "Warming stopped, heat persists" : "Warming"} · ${n} / 5 surviving`,
+    labPre: (rich, g, G) => `${rich ? "Flourishing" : "Prelude"} · warming begins at gen. ${G} (now ${g})`, labPreManual: "Prelude (no warming)",
+    temp: (y, d) => y !== null ? `${y} · +${d} °C` : `+${d} °C`,
+    meta: (sp) => `Elev. ${sp.elev.L}–${sp.elev.U} m (summit: ${sp.en.peak}, ${sp.elev.P} m) · ${sp.toes} toes (${sp.toes === 5 ? "quintuplets ×2" : "quadruplets ×2"})<br>${sp.en.scale} · ${sp.en.inst}`,
+    gen: (sp, K0, hab, orn) => `Gen ${sp.gen} · pop. ${sp.size}/${K0}${hab !== null ? ` · habitat ${hab}%` : ""} · ornaments ${orn}% · diversity ${(sp.div * 100).toFixed(0)}%`,
+    answer: n => `Answering ${n} · `, gone: (y, d) => y ? `Gone (${y}, +${d} °C)` : `Gone (at +${d} °C)`,
+    cardGone: " (gone from this piece)",
+    infoHead: "<tr><th>Species</th><th>L–U (m)</th><th>Summit P</th><th>Squeeze begins</th><th>Gone</th></tr>",
+  },
+};
+const tr = k => I18N[LANG][k];
+const SP_EN = {
+ "fucus": "Formally described only in 2008. Found on the northwest side of the Xueshan Range (Guanwu, the Hsinchu forest district, Mt. Beichatian) at about 1,300–2,300 m — the lowest-living of Taiwan's salamanders. Its body is speckled with small blue-white dots, and it has only four toes on both front and hind feet.",
+ "formosanus": "Described in 1922. Found from the northern Central Mountain Range to the Xueshan Range at about 2,300–2,900 m, just below the Nanhu salamander. In 2025 its Chinese common name was corrected to match its scientific name: the population formerly called “Sonan's salamander” in Chinese is now called the Taiwan salamander.",
+ "arisanensis": "The most widespread of Taiwan's salamanders: from the Alishan and Yushan ranges to the southern Central Mountain Range, at about 1,800–3,600 m. Blackish-brown to reddish-brown above; lives in forests beside streams, hiding under rocks and moss.",
+ "sonani": "Found in the Central Mountain Range (around Taroko), in fragmented habitat; listed as Endangered on the IUCN Red List. In 2025 its Chinese common name was corrected: the population formerly called “Taiwan salamander” in Chinese is now called Sonan's salamander.",
+ "glacialis": "Described in 2008 from Nanhu Mountain. Lives above 3,000 m in streams and seeps beside the alpine tundra; the largest of Taiwan's salamanders, with the fewest known individuals and the smallest range. Listed as Critically Endangered by the IUCN."
+};
+const PEAKS_EN = { "雪山": "Xueshan", "南湖大山": "Nanhu Mtn.", "合歡山": "Hehuan Mtn.", "玉山": "Yushan", "阿里山": "Alishan", "觀霧": "Guanwu", "北插天山": "Mt. Beichatian" };
+const spName = sp => (LANG === "en" ? sp.en.name : sp.name);
+
+// ================================================================ 族群介紹（hover 顯示）
+const SP_INFO = {
+ "fucus": {
+  "sci": "Hynobius fucus",
+  "text": "2008 年才正式發表。分布在雪山山脈西北側（觀霧、新竹林區、北插天山），海拔約 1300–2300 公尺，是海拔最低的台灣山椒魚。身上有藍白色小點，前後腳都只有 4 趾。",
+  "photo": "img/fucus.jpg",
+  "credit": "照片：Evan Pickett，CC BY-SA 4.0"
+ },
+ "formosanus": {
+  "sci": "Hynobius formosanus",
+  "text": "1922 年發表。分布在中央山脈北段到雪山山脈，海拔約 2300–2900 公尺，與住在更高處的南湖山椒魚上下相鄰。2025 年起中文名與學名對齊更正：過去叫「楚南氏山椒魚」的族群，現在稱為台灣山椒魚。",
+  "photo": "img/formosanus.jpg",
+  "credit": "照片：Cynthia Su（iNaturalist），CC BY 4.0"
+ },
+ "arisanensis": {
+  "sci": "Hynobius arisanensis",
+  "text": "分布最廣的台灣山椒魚：阿里山山脈、玉山山脈到中央山脈南段，海拔約 1800–3600 公尺。背部黑褐到紅褐色，住在溪流旁的森林，躲在石塊與苔蘚下。",
+  "photo": "img/arisanensis.jpg",
+  "credit": "照片：Cheng-Tao Lin（iNaturalist），CC BY 4.0"
+ },
+ "sonani": {
+  "sci": "Hynobius sonani",
+  "text": "分布在中央山脈（太魯閣一帶），棲地破碎，IUCN 紅皮書列為「瀕危」。2025 年起中文名與學名對齊更正：過去叫「台灣山椒魚」的族群，現在稱為楚南氏山椒魚。",
+  "photo": "img/sonani.jpg",
+  "credit": "照片：Allen Lyu（iNaturalist），CC BY 4.0（裁切）"
+ },
+ "glacialis": {
+  "sci": "Hynobius glacialis",
+  "text": "2008 年發表，模式產地在南湖大山。住在海拔 3000 公尺以上、緊鄰高山凍原的溪流與滲水處，是台灣山椒魚中體型最大的一種；已知數量最少、棲地最小，IUCN 列為「極度瀕危」。",
+  "photo": "img/glacialis.jpg",
+  "credit": "照片：小翰（iNaturalist），CC BY-NC 4.0"
+ }
+};
+
+// ================================================================ 族群設定
+// 海拔 → 音高：依海拔高低排序，中心音等距相隔約 9 個半音（home），越高的山用越高音域的樂器
+// sd = 中心音域的寬容度（半音）；分布最廣的阿里山最寬
+// ceiling = 山頂離中心音還有幾個半音（暖化後旋律不能超過）；示意值，排序依棲地上緣離所屬山系最高峰的距離
+//   南湖幾乎住在山頂（最少）→ 楚南氏 → 阿里山 → 台灣 → 觀霧（海拔最低，往上空間最多）
+// 趾數 → 樂句格數：4 趾 = 8 格，5 趾 = 10 格（五連音，總長同 8 格）
+// 10/11 依公視 2025 報導對調：台灣山椒魚（H. formosanus）後肢 5 趾；楚南氏（H. sonani）前後皆 4 趾
+// 主音：觀霧、台灣 D；阿里山 A；楚南氏 B；南湖 E
+const SPECIES = [
+  { key: "fucus", en: { name: "Guanwu salamander", scale: "D Dorian", inst: "Synth", peak: "Xueshan" }, name: "觀霧山椒魚", elev: { L: 1300, U: 2300, P: 3886, peak: "雪山", src: "ASW：1310–2290 m" }, ceiling: 15, color: "#5fb8ff", alt: [1300, 2300], toes: 4,
+    tonic: 2, scaleName: "D 多利亞", steps: [0, 2, 3, 5, 7, 9, 10], contour: "rise", home: 46, sd: 3,
+    lead: "synth", second: null, instZh: "合成器" },
+  { key: "formosanus", en: { name: "Taiwan salamander", scale: "D major pentatonic", inst: "Synth (FM electric piano)", peak: "Xueshan" }, name: "台灣山椒魚", elev: { L: 2300, U: 2900, P: 3886, peak: "雪山", src: "Salamanders of China：2300–2900 m" }, ceiling: 12, color: "#f2b84b", alt: [2300, 2900], toes: 5,
+    tonic: 2, scaleName: "D 大調五聲", steps: [0, 2, 4, 7, 9], contour: "fall", home: 55, sd: 3,
+    lead: "synth_fm", second: null, instZh: "合成器（FM 電鋼琴）" },
+  { key: "arisanensis", en: { name: "Alishan salamander", scale: "A Mixolydian", inst: "Harp", peak: "Yushan" }, name: "阿里山山椒魚", elev: { L: 1800, U: 3600, P: 3952, peak: "玉山", src: "Wikipedia：1800–3600 m" }, ceiling: 10, color: "#ff7a5c", alt: [1800, 3600], toes: 5,
+    tonic: 9, scaleName: "A 混合利地亞", steps: [0, 2, 4, 5, 7, 9, 10], contour: "arch", home: 64, sd: 5,
+    lead: "orchestral_harp", second: null, instZh: "豎琴" },
+  { key: "sonani", en: { name: "Sonan's salamander", scale: "B whole-tone", inst: "Synth (airy)", peak: "Qilai North Peak" }, name: "楚南氏山椒魚", elev: { L: 2100, U: 3200, P: 3607, peak: "奇萊北峰", src: "ASW：2100–2900 m；GBIF 最高紀錄 3200 m（山頂取值較不確定）" }, ceiling: 8, color: "#7ddc8c", alt: [2750, 3500], toes: 4,
+    tonic: 11, scaleName: "B 全音音階", steps: [0, 2, 4, 6, 8, 10], contour: "valley", home: 72, sd: 3,
+    lead: "synth_air", second: null, instZh: "合成器（空氣感）" },
+  { key: "glacialis", en: { name: "Nanhu salamander", scale: "E minor pentatonic", inst: "Glockenspiel", peak: "Nanhu Mtn." }, name: "南湖山椒魚", elev: { L: 3000, U: 3742, P: 3742, peak: "南湖大山", src: "ASW／AmphibiaWeb：3000 m 以上，模式產地 3536 m；分布到山頂" }, ceiling: 6, color: "#d6c0ff", alt: [3000, 3700], toes: 5,
+    tonic: 4, scaleName: "E 小調五聲", steps: [0, 3, 5, 7, 10], contour: "zigzag", home: 88, sd: 3,
+    lead: "glockenspiel", second: null, instZh: "鐵琴" },
+];
+// 各樂器可用音域（MIDI，實際發聲音高）與音量平衡
+const RANGE = { synth: [24, 108], synth_air: [24, 108], synth_fm: [24, 108], contrabass: [28, 67], bassoon: [34, 75], cello: [36, 76], viola: [48, 88], french_horn: [41, 77],
+  clarinet: [50, 91], orchestral_harp: [24, 103], oboe: [58, 91], flute: [60, 96],
+  piccolo: [74, 108], celesta: [60, 108], glockenspiel: [79, 108] };
+const INST_GAIN = { synth: 0.035, synth_air: 0.05, synth_fm: 0.06, contrabass: 0.55, bassoon: 0.5, cello: 0.8, viola: 0.35, french_horn: 0.45, clarinet: 0.7,
+  orchestral_harp: 0.9, oboe: 0.6, flute: 0.35, piccolo: 0.45, celesta: 0.45, glockenspiel: 0.7 };
+
+const params = {
+  主音量: 0.8, 音符連貫度: 0.85, 其他族群音量: 0.12, 淡入淡出秒數: 0.8, 聆聽範圍: 30, 區分度: 6,
+  起始每格秒數: 0.35, 最終每格秒數: 0.7, 放慢所需小節: 24, 呼吸最多幾拍: 2, 突變率: 0.06, 族群大小: 24, 鳥鳴: 0.5, 旁白音量: 0.8, 旁白時音樂: 0.45, 伴奏音量: 0.6, 殘響: 0.3,
+  重新開始() { restartAll(); },
+  繁盛起始代數: 20, 繁盛所需代數: 20, 裝飾目標比例: 0.4, 對話機率: 0.2, 引用加入族群: true,
+  暖化模型: "依海拔資料", 遞減率: 0.6, 每百公尺半音: 1, 最高升溫: 16,
+  情境升溫: 3.3, 起始年: 2025, 情境終年: 2100, 每小節年數: 3, 之後每小節年數: 8,
+  往上擴散: 2, 長期壓力: 2.5, 壓力加權: 0.8, 小族群門檻: 6, 小族群風險: 0.02,
+  暖化後每格秒數: 0.45, 加速所需年數: 15,    // 10/11 她希望暖化之後的樂曲變短：暖化開始後逐漸加快
+  自動暖化: true, 暖化起始代數: 40, 暖化速度: 0.4, 目前暖化: 0, 每度上移半音: 3,
+  立即開始暖化() { params.暖化起始代數 = Math.floor(meanGen()); },
+  爵士感: true, 搖擺比例: 0.62, 半音趨近機率: 0.35, 滑音機率: 0.15, 鬼音機率: 0.15, 鼓刷音量: 0.5,
+};
+
+const REST = -1;
+// 節奏也隨演化：一開始短音符，隨小節數平滑放慢到最終長度（全體共用，拍點才對得齊）
+// 一拍 = 四連音的 2 格；一句 = 4 拍 = 一小節
+function baseStepAt(beat) {
+  const p = Math.min(1, Math.max(0, beat - grid.startBeat) / 4 / Math.max(1, params.放慢所需小節));
+  const e = p * p * (3 - 2 * p);
+  let step = params.起始每格秒數 + (params.最終每格秒數 - params.起始每格秒數) * e;
+  if (simYear !== null) {                             // 暖化開始後逐漸加快（迭代更快、音樂更緊迫）
+    const w = Math.min(1, (simYear - params.起始年) / Math.max(1, params.加速所需年數)), ew = w * w * (3 - 2 * w);
+    step += (params.暖化後每格秒數 - step) * ew;
+  }
+  return step;
+}
+// 五趾 = 五連音：5 個音佔 4 格的時間，所以每格縮成 4/5，樂句總長和四趾族群一樣
+const tupletOf = sp => (sp.toes === 5 ? 4 / 5 : 1);
+function stepOf(sp) { return baseStepAt(grid.beat) * tupletOf(sp); }
+const rand = Math.random;
+const randInt = (a, b) => a + Math.floor(rand() * (b - a + 1));
+
+function contourTemplate(type, n) {
+  return Array.from({ length: n }, (_, i) => {
+    const x = n === 1 ? 0 : (i / (n - 1)) * 2 - 1;
+    return { rise: x, fall: -x, arch: 1 - 2 * Math.abs(x), valley: 2 * Math.abs(x) - 1,
+      zigzag: i % 2 ? -1 : 1 }[type];
+  });
+}
+
+for (const sp of SPECIES) {
+  sp.len = sp.toes * 2;
+  const [lo, hi] = RANGE[sp.lead];
+  sp.notes = [];
+  for (let m = lo; m <= hi; m++) if (sp.steps.includes(((m - sp.tonic) % 12 + 12) % 12)) sp.notes.push(m);
+  sp.homeMidi = sp.home;
+  // 第一代的音在中心音上下各一個八度內隨機（受樂器音域限制）
+  sp.initIdx = sp.notes.map((m, i) => i).filter(i => Math.abs(sp.notes[i] - sp.home) <= 12);
+  sp.homeIdx = sp.notes.reduce((b, m, i) => Math.abs(m - sp.homeMidi) < Math.abs(sp.notes[b] - sp.homeMidi) ? i : b, 0);
+  sp.tmpl = contourTemplate(sp.contour, sp.len);
+  sp.gen = 0; sp.div = 1; sp.nextTime = 0;
+}
+
+// ================================================================ 基因演算法
+// 個體 = { n: 每格的音（音階索引或休止）, o: 每格的裝飾 }
+// 裝飾：0 無、1 倚音、2 經過音、3 迴音；前言一開始全部是 0，第 20 代起才開始長出來
+const ORN_NONE = 0, ORN_GRACE = 1, ORN_PASS = 2, ORN_TURN = 3;
+const copyInd = m => ({ n: m.n.slice(), o: m.o.slice() });
+// 繁盛程度 0～1：第 20 代起逐漸上升；暖化時族群越小越低
+function vitality(sp) {
+  const v = Math.min(1, Math.max(0, (sp.gen - params.繁盛起始代數) / Math.max(1, params.繁盛所需代數)));
+  return v * (sp.K / params.族群大小);
+}
+function initPopulation(sp) {
+  sp.pop = Array.from({ length: params.族群大小 }, () => ({
+    n: Array.from({ length: sp.len }, () => sp.initIdx[randInt(0, sp.initIdx.length - 1)]),
+    o: new Array(sp.len).fill(ORN_NONE) }));
+  sp.lastPlayed = null; sp.quoteFrom = null; sp.quoteTime = -99;
+  sp.gen = 0; sp.extinct = false; sp.extinctAt = null; sp.size = sp.pop.length; sp.K = params.族群大小;
+  sp.maxIdx = sp.notes.length - 1; sp.optimum = sp.home;
+}
+const clampIdx = (sp, i) => Math.max(0, Math.min(sp.maxIdx ?? sp.notes.length - 1, i));
+
+function fitness(sp, ind) {
+  const mel = ind.n;
+  const idx = mel.filter(g => g !== REST);
+  if (idx.length < 3) return 0.05;
+  const midis = idx.map(i => sp.notes[i]);
+  const mean = midis.reduce((a, b) => a + b, 0) / midis.length;
+  const reg = Math.exp(-((mean - sp.optimum) ** 2) / (2 * sp.sd ** 2));
+  let leap = 0;
+  for (let i = 1; i < idx.length; i++) leap += Math.abs(idx[i] - idx[i - 1]);
+  leap /= idx.length - 1;
+  const smooth = Math.exp(-Math.max(0, leap - 1.5) / 1.2);           // 級進為主才像一條旋律
+  const span = Math.max(...midis) - Math.min(...midis);
+  const compact = Math.exp(-Math.max(0, span - 9) / 5);               // 整句音域不要撐太開
+  const mIdx = idx.reduce((a, b) => a + b, 0) / idx.length;
+  const filled = mel.map(g => (g === REST ? mIdx : g));
+  const fm = filled.reduce((a, b) => a + b, 0) / filled.length;
+  const tm = sp.tmpl.reduce((a, b) => a + b, 0) / sp.len;
+  let num = 0, d1 = 0, d2 = 0;
+  for (let i = 0; i < sp.len; i++) {
+    const a = filled[i] - fm, b = sp.tmpl[i] - tm;
+    num += a * b; d1 += a * a; d2 += b * b;
+  }
+  const corr = d1 < 1e-9 ? 0 : num / Math.sqrt(d1 * d2);
+  const base = reg * (0.25 + 0.75 * smooth) * (0.4 + 0.6 * compact) * (0.7 + 0.3 * (0.5 + 0.5 * corr));
+  // 繁盛：獎勵適量裝飾（目標約四成）；暖化壓力下反過來扣分，旋律變回樸素
+  const frac = ind.o.filter((x, i) => x && mel[i] !== REST).length / sp.len, tgt = params.裝飾目標比例;
+  const ornScore = Math.max(0, 1 - Math.abs(frac - tgt) / tgt);
+  const stress = 1 - sp.K / params.族群大小;
+  return base * (1 + 0.6 * vitality(sp) * ornScore) * (1 - 0.4 * stress * frac);
+}
+
+function mutate(sp, ind) {
+  let mel = ind.n.slice();
+  const o = ind.o.slice();
+  const ornOn = sp.gen >= params.繁盛起始代數;                 // 第 20 代起裝飾基因才會突變
+  for (let i = 0; i < sp.len; i++) {
+    if (ornOn && rand() < params.突變率) o[i] = rand() < 0.4 ? ORN_NONE : randInt(1, 3);
+    if (rand() < params.突變率) {
+      if (mel[i] === REST) mel[i] = i > 0 && mel[i - 1] !== REST ? mel[i - 1] : sp.homeIdx;
+      else if (rand() < 0.1) mel[i] = REST;
+      else mel[i] = clampIdx(sp, mel[i] + [-2, -1, 1, 2][randInt(0, 3)]);
+    }
+  }
+  if (rand() < 0.08) {                             // 音樂化突變：整段移調一階
+    const s = rand() < 0.5 ? -1 : 1;
+    mel = mel.map(g => (g === REST ? REST : clampIdx(sp, g + s)));
+  }
+  return { n: mel, o };
+}
+
+function diversity(pop) {
+  let d = 0, n = 0;
+  for (let i = 0; i < pop.length; i++)
+    for (let j = i + 1; j < pop.length; j++) {
+      let h = 0;
+      const L = pop[i].n.length;
+      for (let k = 0; k < L; k++) { if (pop[i].n[k] !== pop[j].n[k]) h++; if (pop[i].o[k] !== pop[j].o[k]) h += 0.5; }
+      d += Math.min(1, h / L); n++;
+    }
+  return n ? d / n : 0;
+}
+
+function quotePhrase(sp, src) {
+  const L = src.n.length, srcIdx = src.n.filter(g => g !== REST);
+  if (srcIdx.length < 2) return null;
+  const sMid = srcIdx.map(i => src.sp.notes[i]), sMean = sMid.reduce((a, b) => a + b, 0) / sMid.length;
+  const center = Math.min(sp.optimum, sp.notes[sp.maxIdx ?? sp.notes.length - 1] - 4);
+  const n = [], o = [];
+  for (let k = 0; k < sp.len; k++) {                          // 四連音 ↔ 五連音：依位置比例換算
+    const j = Math.min(L - 1, Math.floor(k * L / sp.len));
+    o.push(src.o[j]);
+    if (src.n[j] === REST) { n.push(REST); continue; }
+    const target = center + (src.sp.notes[src.n[j]] - sMean);   // 保留輪廓，換到自己的音域
+    let bi = 0; sp.notes.forEach((m, i) => { if (Math.abs(m - target) < Math.abs(sp.notes[bi] - target)) bi = i; });
+    n.push(clampIdx(sp, bi));
+  }
+  return { n, o };
+}
+function maybeTrade(sp, t, played) {
+  const v = Math.min(1, Math.max(0, (sp.gen - params.繁盛起始代數) / Math.max(1, params.繁盛所需代數)));
+  if (v <= 0 || rand() > params.對話機率 * v) return played;
+  const myGroup = GROUPS.find(g => g.members.includes(SPECIES.indexOf(sp)));
+  const cands = SPECIES.filter(o =>                             // 別組、還活著、最近 12 秒內唱過的族群，隨機挑一個
+    o !== sp && !o.extinct && o.lastPlayed && !myGroup.members.includes(SPECIES.indexOf(o))
+    && o.lastPlayed.t <= t && o.lastPlayed.t > t - 12);
+  if (!cands.length) return played;
+  const src = cands[randInt(0, cands.length - 1)];
+  const q = quotePhrase(sp, { ...src.lastPlayed.ind, sp: src });
+  if (!q) return played;
+  if (params.引用加入族群) {                                    // 基因交流：取代族群裡最差的一條
+    const fits = sp.pop.map(m => fitness(sp, m));
+    let worst = 0; fits.forEach((f, i) => { if (f < fits[worst]) worst = i; });
+    sp.pop[worst] = copyInd(q);
+  }
+  sp.quoteFrom = src; sp.quoteTime = t;
+  trades.push([t, SPECIES.indexOf(src), SPECIES.indexOf(sp)]);
+  return q;
+}
+const trades = [];
+
+function stepGeneration(sp) {
+  if (sp.extinct) return null;
+  const dT = params.目前暖化;
+  sp.K = params.族群大小;
+  if (dT > 0 && params.暖化模型 === "依海拔資料") {
+    // 依海拔資料：升溫 ΔT → 適合的海拔帶往上移 s = ΔT ÷ 遞減率（°C/100 m）
+    // 棲地剩下 [L+s, min(U+s, P)]；族群大小 ∝ 剩下的海拔帶寬度
+    const { L, U, P } = sp.elev, shift = dT / params.遞減率 * 100;
+    // 遷移落後：下緣隨升溫立刻失去；上緣（新棲地）每年最多往上擴散「往上擴散」公尺
+    const yrs = Math.max(0, simYear - (sp.lastYear ?? simYear)); sp.lastYear = simYear;
+    sp.upper = Math.min(Math.min(U + shift, P), (sp.upper ?? U) + params.往上擴散 * yrs);
+    sp.habitat = Math.max(0, Math.min(1, (sp.upper - (L + shift)) / (U - L)));
+    // 長期壓力：高溫持續越久，乾燥、食物減少、植被改變，族群逐年下降（每年 長期壓力 %，依升溫比例）
+    // 棲地被壓縮得越多，長期壓力越大（壓力加權 = 這部分的比重）
+    const squeeze = (1 - params.壓力加權) + params.壓力加權 * 2 * (1 - sp.habitat);
+    sp.stress = (sp.stress ?? 1) * Math.exp(-params.長期壓力 / 100 * (dT / params.情境升溫) * squeeze * yrs);
+    sp.optimum = sp.home + shift / 100 * params.每百公尺半音;           // 音高跟著海拔往上
+    const summit = sp.home + (P - (L + U) / 2) / 100 * params.每百公尺半音;   // 山頂 = 旋律上限
+    sp.maxIdx = Math.max(0, sp.notes.reduce((b, m, i) => (m <= summit ? i : b), 0));
+    sp.pop = sp.pop.map(m => ({ n: m.n.map(g => (g === REST ? REST : Math.min(g, sp.maxIdx))), o: m.o }));
+    sp.K = Math.round(params.族群大小 * sp.habitat * sp.stress);
+    // 小族群容易因隨機事件消失（滅絕漩渦）
+    if (sp.K < 2 || (sp.K < params.小族群門檻 && rand() < params.小族群風險)) {
+      sp.extinct = true; sp.size = 0; sp.extinctAt = dT; sp.extinctYear = Math.round(simYear); sp.div = 0; return null; }
+  } else if (dT > 0) {
+    sp.optimum = sp.home + dT * params.每度上移半音;           // 示意模型：最適音高往上移
+    const summit = sp.home + sp.ceiling;                      // 山頂 = 旋律不能超過的音
+    sp.maxIdx = sp.notes.reduce((b, m, i) => (m <= summit ? i : b), 0);
+    sp.pop = sp.pop.map(m => ({ n: m.n.map(g => (g === REST ? REST : Math.min(g, sp.maxIdx))), o: m.o }));
+    const excess = Math.max(0, sp.optimum - (summit - 3));    // 最適音高逼近山頂 → 棲地縮小
+    sp.K = Math.round(params.族群大小 * Math.exp(-(excess * excess) / (2 * 1.5 * 1.5)));
+    if (sp.K < 2) { sp.extinct = true; sp.size = 0; sp.extinctAt = dT; sp.div = 0; return null; }
+  } else { sp.optimum = sp.home; sp.habitat = 1; }
+  const pop = sp.pop, fits = pop.map(m => fitness(sp, m));
+  const played = pop[randInt(0, pop.length - 1)];   // 隨機抽一條演奏，不挑最好的
+  sp.div = diversity(pop);
+  const tour = () => { let b = randInt(0, pop.length - 1);
+    const c = randInt(0, pop.length - 1); return fits[c] > fits[b] ? c : b; };   // 2 選 1，收斂慢一點
+  let best = 0; fits.forEach((f, i) => { if (f > fits[best]) best = i; });
+  const next = [copyInd(pop[best])];               // 菁英保留
+  while (next.length < sp.K) {
+    const a = pop[tour()], b = pop[tour()];
+    const child = copyInd(a);
+    if (rand() < 0.7) { const cut = randInt(1, sp.len - 1);
+      for (let k = cut; k < sp.len; k++) { child.n[k] = b.n[k]; child.o[k] = b.o[k]; } }
+    next.push(mutate(sp, child));
+  }
+  sp.pop = next; sp.gen++; sp.size = next.length;
+  return played;
+}
+
+// ================================================================ 聲音
+let ctx, master, reverb, wetGain;
+const buffers = {};
+
+function noteName(m) {
+  return ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"][m % 12] + (Math.floor(m / 12) - 1);
+}
+
+async function decodeAll(onProgress) {
+  const jobs = [];
+  for (const sp of SPECIES) {
+    const [lo, hi] = RANGE[sp.lead];
+    for (let m = Math.max(lo, sp.notes[0] - 1); m <= Math.min(hi, sp.notes[sp.notes.length - 1] + 1); m++)
+      if (!sp.notes.includes(m)) jobs.push([sp.lead, m]);              // 半音趨近用的音階外音
+    for (const m of sp.notes) {
+      jobs.push([sp.lead, m]);
+      if (!sp.second) continue;
+      const m2 = m + 12 * sp.second.oct, r = RANGE[sp.second.inst];
+      if (m2 >= r[0] && m2 <= r[1]) jobs.push([sp.second.inst, m2]);
+    }
+  }
+  let done = 0;
+  for (let i = 0; i < jobs.length; i += 24) {
+    await Promise.all(jobs.slice(i, i + 24).map(async ([inst, m]) => {
+      if (inst.startsWith("synth")) return;
+      buffers[inst] = buffers[inst] || {};
+      if (buffers[inst][m]) return;
+      const data = MIDI.Soundfont[inst][noteName(m)];
+      if (!data) return;
+      const bin = atob(data.split(",")[1]);
+      const arr = new Uint8Array(bin.length);
+      for (let k = 0; k < bin.length; k++) arr[k] = bin.charCodeAt(k);
+      buffers[inst][m] = await ctx.decodeAudioData(arr.buffer);
+    }));
+    done = Math.min(jobs.length, i + 24);
+    onProgress(done / jobs.length);
+  }
+}
+
+function makeImpulse(sec) {
+  const n = Math.floor(ctx.sampleRate * sec), b = ctx.createBuffer(2, n, ctx.sampleRate);
+  for (let c = 0; c < 2; c++) {
+    const d = b.getChannelData(c);
+    for (let i = 0; i < n; i++) d[i] = (rand() * 2 - 1) * Math.pow(1 - i / n, 3);
+  }
+  return b;
+}
+
+function setupAudio() {
+  ctx = new AudioContext();
+  master = ctx.createGain(); master.gain.value = params.主音量;
+  const hp = ctx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 60;
+  master.connect(hp); hp.connect(ctx.destination);
+  reverb = ctx.createConvolver(); reverb.buffer = makeImpulse(3.2);
+  wetGain = ctx.createGain(); wetGain.gain.value = params.殘響;
+  reverb.connect(wetGain); wetGain.connect(master);
+  for (const sp of SPECIES) {
+    sp.bus = ctx.createGain(); sp.bus.gain.value = 0.5;
+    sp.popGain = ctx.createGain(); sp.popGain.gain.value = 1;   // 族群越小越小聲
+    const pan = ctx.createStereoPanner();
+    pan.pan.value = (SPECIES.indexOf(sp) - 2) * 0.25;
+    sp.bus.connect(sp.popGain); sp.popGain.connect(pan); pan.connect(master); pan.connect(reverb);
+    sp.analyser = ctx.createAnalyser(); sp.analyser.fftSize = 512; sp.bus.connect(sp.analyser);
+  }
+  drumBus = ctx.createGain(); drumBus.gain.value = params.鼓刷音量 * 0.25;
+  drumBus.connect(master); drumBus.connect(reverb);
+  noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 3, ctx.sampleRate);
+  { const nd = noiseBuf.getChannelData(0); for (let i = 0; i < nd.length; i++) nd[i] = rand() * 2 - 1; }
+  birdsGain = ctx.createGain(); birdsGain.gain.value = params.鳥鳴 * BIRDS_K;
+  birdsGain.connect(master);
+  ambAnalyser = ctx.createAnalyser(); ambAnalyser.fftSize = 2048;
+  birdsGain.connect(ambAnalyser);
+  accBus = ctx.createGain(); accBus.gain.value = 0;
+  accBus.connect(master); accBus.connect(reverb);
+}
+
+// 鳥鳴：台灣高山鳥種的乾淨錄音（見 CREDITS.txt），隨機挑一段 8～15 秒的片段播放，片段之間交叉淡化
+const BIRDS_K = 0.9;
+let birdsGain, ambAnalyser, birdBufs = [], birdNext = 0;
+async function loadAmbience() {
+  const list = Array.isArray(AMBIENCE.birds) ? AMBIENCE.birds : [{ name: "", data: AMBIENCE.birds }];
+  for (const c of list) {
+    const bin = atob(c.data.split(",")[1]), arr = new Uint8Array(bin.length);
+    for (let k = 0; k < bin.length; k++) arr[k] = bin.charCodeAt(k);
+    birdBufs.push({ name: c.name, buf: await ctx.decodeAudioData(arr.buffer) });
+  }
+}
+function scheduleBirds(now) {
+  if (!birdBufs.length) return;
+  if (birdNext < now) birdNext = now + 0.1;
+  while (birdNext < now + 1) {
+    const c = birdBufs[randInt(0, birdBufs.length - 1)], d = c.buf.duration;
+    const L = Math.min(d, 8 + rand() * 7), off = rand() * Math.max(0, d - L), F = Math.min(1.5, L / 4);
+    const src = ctx.createBufferSource(); src.buffer = c.buf;
+    const g = ctx.createGain(), pan = ctx.createStereoPanner();
+    pan.pan.value = (rand() - 0.5) * 1.0;
+    g.gain.setValueAtTime(0, birdNext); g.gain.linearRampToValueAtTime(1, birdNext + F);
+    g.gain.setValueAtTime(1, birdNext + L - F); g.gain.linearRampToValueAtTime(0, birdNext + L);
+    src.connect(g); g.connect(pan); pan.connect(birdsGain);
+    src.start(birdNext, off, L);
+    birdNext += L - F + (rand() < 0.3 ? rand() * 3 : 0);      // 交叉淡化，偶爾留一點空白
+  }
+}
+
+// 觀霧的合成器：三角波＋高八度正弦，濾波器音頭稍亮後漸暗，輕一點
+// 滑音（scoop）：從低半音滑上來
+function scoopOsc(oscs, t) {
+  for (const o of oscs) { const b = o.detune.value; o.detune.setValueAtTime(b - 100, t); o.detune.linearRampToValueAtTime(b, t + 0.09); }
+}
+
+function playSynth(sp, midi, t, dur, vel, scoop) {
+  const f = 440 * Math.pow(2, (midi - 69) / 12), v = vel * INST_GAIN.synth;
+  const o1 = ctx.createOscillator(), o2 = ctx.createOscillator(), o3 = ctx.createOscillator();
+  o1.type = "triangle"; o1.frequency.value = f;
+  o2.type = "triangle"; o2.frequency.value = f; o2.detune.value = 7;
+  o3.type = "sine"; o3.frequency.value = f * 2;
+  const g3 = ctx.createGain(); g3.gain.value = 0.25;
+  const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.Q.value = 0.7;
+  lp.frequency.setValueAtTime(Math.min(8000, f * 8), t);
+  lp.frequency.exponentialRampToValueAtTime(Math.min(4000, f * 3), t + 0.35);
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(v, t + 0.03);
+  g.gain.setTargetAtTime(v * 0.55, t + 0.03, 0.15);
+  g.gain.setValueAtTime(v * 0.55, t + dur);
+  g.gain.setTargetAtTime(0, t + dur, 0.15);
+  o1.connect(lp); o2.connect(lp); o3.connect(g3); g3.connect(lp); lp.connect(g); g.connect(sp.bus);
+  if (scoop) scoopOsc([o1, o2, o3], t);
+  for (const o of [o1, o2, o3]) { o.start(t); o.stop(t + dur + 1); }
+}
+
+// 楚南氏的合成器：正弦為主＋微弱三次泛音＋輕微顫音，柔和音頭
+function playAirSynth(sp, midi, t, dur, vel, scoop) {
+  const f = 440 * Math.pow(2, (midi - 69) / 12), v = vel * INST_GAIN.synth_air;
+  const o1 = ctx.createOscillator(), o3 = ctx.createOscillator();
+  o1.type = "sine"; o1.frequency.value = f;
+  o3.type = "sine"; o3.frequency.value = f * 3;
+  const g3 = ctx.createGain(); g3.gain.value = 0.08;
+  const lfo = ctx.createOscillator(), lg = ctx.createGain();
+  lfo.frequency.value = 5; lg.gain.value = 6;                 // 顫音 ±6 cents
+  lfo.connect(lg); lg.connect(o1.detune); lg.connect(o3.detune);
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(v, t + 0.08);
+  g.gain.setTargetAtTime(v * 0.7, t + 0.08, 0.3);
+  g.gain.setValueAtTime(v * 0.7, t + dur);
+  g.gain.setTargetAtTime(0, t + dur, 0.18);
+  o1.connect(g); o3.connect(g3); g3.connect(g); g.connect(sp.bus);
+  if (scoop) scoopOsc([o1, o3], t);
+  for (const o of [o1, o3, lfo]) { o.start(t); o.stop(t + dur + 1.2); }
+}
+
+// 台灣山椒魚的合成器：FM 電鋼琴，音頭帶一點金屬亮度後很快變柔
+function playFMSynth(sp, midi, t, dur, vel, scoop) {
+  const f = 440 * Math.pow(2, (midi - 69) / 12), v = vel * INST_GAIN.synth_fm;
+  const car = ctx.createOscillator(), mod = ctx.createOscillator(), idx = ctx.createGain();
+  car.type = "sine"; car.frequency.value = f;
+  mod.type = "sine"; mod.frequency.value = f * 1.0;
+  idx.gain.setValueAtTime(f * 2.2, t);                      // 調變深度：亮 → 柔
+  idx.gain.setTargetAtTime(f * 0.25, t, 0.12);
+  mod.connect(idx); idx.connect(car.frequency);
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(v, t + 0.006);
+  g.gain.setTargetAtTime(v * 0.35, t + 0.006, 0.35);          // 敲擊後自然衰減
+  g.gain.setTargetAtTime(0, t + dur, 0.2);
+  car.connect(g); g.connect(sp.bus);
+  if (scoop) scoopOsc([car, mod], t);
+  for (const o of [car, mod]) { o.start(t); o.stop(t + dur + 1.2); }
+}
+
+function playNote(sp, inst, midi, t, dur, vel, scoop = false) {
+  if (inst === "synth_fm") return playFMSynth(sp, midi, t, dur, vel, scoop);
+  if (inst === "synth") return playSynth(sp, midi, t, dur, vel, scoop);
+  if (inst === "synth_air") return playAirSynth(sp, midi, t, dur, vel, scoop);
+  const buf = buffers[inst] && buffers[inst][midi];
+  if (!buf) return;
+  dur = Math.min(dur, buf.duration - 0.15);
+  const src = ctx.createBufferSource(); src.buffer = buf;
+  const g = ctx.createGain(), v = vel * INST_GAIN[inst];
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(v, t + 0.025);
+  g.gain.setValueAtTime(v, t + dur);
+  g.gain.setTargetAtTime(0, t + dur, 0.12);
+  if (scoop) { src.playbackRate.setValueAtTime(Math.pow(2, -1 / 12), t); src.playbackRate.linearRampToValueAtTime(1, t + 0.09); }
+  src.connect(g); g.connect(sp.bus);
+  src.start(t); src.stop(t + dur + 0.9);
+}
+
+const pulses = [];   // 視覺：音符發聲時讓該族群的點亮一下
+// 爵士演奏只改「怎麼演奏」，不改演化的基因
+// 四連音：兩個八分音符一組搖擺（長–短）；五連音：3+2 分組（Take Five 式），後面的 2 搖擺
+function stepOffset(sp, i) {
+  const r = params.爵士感 ? params.搖擺比例 : 0.5, p = i % sp.toes, g = Math.floor(i / sp.toes) * sp.toes;
+  const off = sp.toes === 4 ? [0, 2 * r, 2, 2 + 2 * r] : [0, 1, 2, 3, 3 + 2 * r];
+  return g + off[p];
+}
+// 重音：四連音反拍稍強；五連音 3+2 的兩個起點最強
+const ACCENT = { 4: [0.85, 0.78, 0.72, 0.8], 5: [0.9, 0.66, 0.7, 0.86, 0.72] };
+const WEAK = { 4: [1, 3], 5: [1, 2, 4] };
+
+function jazzPitches(sp, ind) {
+  // 以演化出來的旋律為底，加上半音趨近：跳進到每組第一個音之前，前一個音換成目標的半音鄰音
+  const pit = ind.n.map(g => (g === REST ? null : sp.notes[g]));
+  if (!params.爵士感) return pit;
+  for (let j = sp.toes; j < sp.len; j += sp.toes) {
+    const i = j - 1, tgt = pit[j];
+    if (tgt === null || pit[i] === null) continue;
+    const leap = i > 0 && pit[i - 1] !== null ? Math.abs(tgt - pit[i - 1]) : 0;
+    if ((leap >= 3 || pit[i] === tgt) && rand() < params.半音趨近機率) {
+      const cand = tgt + (rand() < 0.7 ? -1 : 1), [lo, hi] = RANGE[sp.lead];
+      if (cand >= lo && cand <= hi) pit[i] = cand;
+    }
+  }
+  return pit;
+}
+
+function schedulePhrase(sp, ind, t0, step) {
+  const { inst, mode, oct } = sp.second || {};
+  const pit = jazzPitches(sp, ind), jazz = params.爵士感, mel = ind.n;
+  sp.lastPlayed = { ind, t: t0 };
+  let first = null;
+  for (let i = 0; i < sp.len; ) {
+    if (pit[i] === null) { i++; continue; }
+    let j = i + 1;
+    while (j < sp.len && pit[j] === pit[i]) j++;          // 同音連續 → 延長
+    const m = pit[i], t = t0 + stepOffset(sp, i) * step;
+    const tEnd = t0 + (j < sp.len ? stepOffset(sp, j) : sp.len) * step;
+    const dur = (tEnd - t) * params.音符連貫度;
+    const p = i % sp.toes;
+    let vel = jazz ? ACCENT[sp.toes][p] : (i % sp.toes === 0 ? 0.9 : 0.68);
+    if (i === 0) vel = 1.0;
+    if (jazz && WEAK[sp.toes].includes(p) && rand() < params.鬼音機率) vel = 0.3;   // 鬼音
+    vel += rand() * 0.08;
+    const scoop = jazz && p === 0 && rand() < params.滑音機率;
+    const orn = ind.o[i], idx = mel[i], up = sp.notes[clampIdx(sp, idx + 1)];
+    if (orn === ORN_GRACE) {                                    // 倚音：主音前快速帶出上方鄰音
+      const g = Math.min(0.09, step * 0.3);
+      playNote(sp, sp.lead, up, Math.max(t0, t - g), g, vel * 0.55);
+      playNote(sp, sp.lead, m, t, dur, vel, scoop);
+    } else if (orn === ORN_PASS && j < sp.len && mel[j] !== REST) {   // 經過音：後半滑向下一個音
+      const dir = Math.sign(mel[j] - idx) || 1, half = (tEnd - t) / 2;
+      playNote(sp, sp.lead, m, t, half * params.音符連貫度, vel, scoop);
+      playNote(sp, sp.lead, sp.notes[clampIdx(sp, idx + dir)], t + half, half * params.音符連貫度, vel * 0.6);
+    } else if (orn === ORN_TURN) {                              // 迴音：主音–上鄰音–主音
+      const q = Math.min(0.1, (tEnd - t) * 0.22);
+      playNote(sp, sp.lead, m, t, q, vel, scoop);
+      playNote(sp, sp.lead, up, t + q, q, vel * 0.6);
+      playNote(sp, sp.lead, m, t + 2 * q, Math.max(q, dur - 2 * q), vel * 0.8);
+    } else playNote(sp, sp.lead, m, t, dur, vel, scoop);
+    if (mode === "double") playNote(sp, inst, m + 12 * oct, t, dur, vel * 0.8);
+    if (mode === "alt" && i % 2 === 0) playNote(sp, inst, m + 12 * oct, t, dur, vel * 0.7);
+    if (first === null) first = m;
+    pulses.push([t, SPECIES.indexOf(sp)]);
+    i = j;
+  }
+  if (mode === "pedal" && first !== null) playNote(sp, inst, first + 12 * oct, t0, sp.len * step, 0.6);
+}
+
+let drumBus, noiseBuf;
+function hit(t, hpFreq, tau, v) {
+  const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+  const f = ctx.createBiquadFilter(); f.type = "highpass"; f.frequency.value = hpFreq;
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + 0.003); g.gain.setTargetAtTime(0, t + 0.003, tau);
+  src.connect(f); f.connect(g); g.connect(drumBus);
+  src.start(t, rand() * 2); src.stop(t + tau * 6);
+}
+const aliveFrac = () => SPECIES.reduce((a, sp) => a + sp.size, 0) / (SPECIES.length * params.族群大小);
+function drumBeat(t, beatDur, beat) {
+  if (!params.爵士感 || params.鼓刷音量 <= 0) return;
+  const a = Math.sqrt(aliveFrac());                                  // 鼓刷隨存活族群減弱
+  if (a < 0.02) return;
+  const r = params.搖擺比例, back = beat % 2 === 1, d = richness();
+  const lvl = (from, to) => Math.min(1, Math.max(0, (d - from) / (to - from)));   // 各層依繁盛程度依序加入
+  hit(t, 6500, 0.22, (back ? 0.5 : 0.38) * a);                     // ride（一開始就有）
+  if (back && lvl(0, 0.2) > 0) hit(t + beatDur * r, 6500, 0.12, 0.26 * a * lvl(0, 0.2));   // 搖擺的「嗒」
+  if (back && lvl(0.15, 0.4) > 0) hit(t, 2500, 0.025, 0.3 * a * lvl(0.15, 0.4));          // 腳踩鈸 chick
+  if (lvl(0.3, 0.6) > 0) sweep(t, beatDur, 0.22 * a * lvl(0.3, 0.6));                       // 小鼓鼓刷刷掃
+  if (lvl(0.5, 0.8) > 0) kick(t, 0.35 * a * lvl(0.5, 0.8));                                 // 輕輕的大鼓（feathering）
+  if (lvl(0.7, 1) > 0 && rand() < 0.3) hit(t + beatDur * r, 1800, 0.04, 0.22 * a * lvl(0.7, 1));   // 小鼓鬼音
+}
+function sweep(t, beatDur, v) {                    // 鼓刷在鼓皮上畫圈：帶通雜訊緩慢起伏
+  const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+  const f = ctx.createBiquadFilter(); f.type = "bandpass"; f.frequency.value = 3200; f.Q.value = 0.7;
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + beatDur * 0.6); g.gain.linearRampToValueAtTime(0, t + beatDur);
+  src.connect(f); f.connect(g); g.connect(drumBus);
+  src.start(t, rand() * 2); src.stop(t + beatDur + 0.05);
+}
+function kick(t, v) {
+  const o = ctx.createOscillator(), g = ctx.createGain();
+  o.frequency.setValueAtTime(90, t); o.frequency.exponentialRampToValueAtTime(48, t + 0.12);
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + 0.005); g.gain.setTargetAtTime(0, t + 0.005, 0.09);
+  o.connect(g); g.connect(drumBus); o.start(t); o.stop(t + 0.6);
+}
+const barNow = () => (grid.beat - grid.startBeat) / 4;
+let simYear = null;                                    // 現實情境的年份（暖化開始後才有）
+function meanGen() {
+  const a = SPECIES.filter(sp => !sp.extinct);
+  return a.length ? a.reduce((x, sp) => x + sp.gen, 0) / a.length : 0;
+}
+const richness = () => Math.min(1, Math.max(0, (meanGen() - params.繁盛起始代數) / Math.max(1, params.繁盛所需代數)));
+
+// ---------- 伴奏層：從族群裡最常出現的音算出和弦，pad 持續鋪底＋爵士和弦點奏（Charleston）
+let accBus;
+function currentChord() {
+  const hist = new Array(12).fill(0);
+  for (const sp of SPECIES) {
+    if (sp.extinct || !sp.pop.length) continue;
+    for (const m of sp.pop) for (const g of m.n) if (g !== REST) hist[sp.notes[g] % 12] += 1 / sp.pop.length;
+  }
+  const order = hist.map((v, i) => [v, i]).filter(x => x[0] > 0).sort((a, b) => b[0] - a[0]);
+  const pcs = [];
+  for (const [, pc] of order) {                       // 最常出現的音，避開彼此相差半音（太混濁）
+    if (pcs.every(q => { const d = Math.abs(q - pc) % 12; return d !== 1 && d !== 11; })) pcs.push(pc);
+    if (pcs.length === 4) break;
+  }
+  if (pcs.length < 2) return null;
+  const root = pcs[0];
+  const voicing = pcs.map(pc => 50 + ((pc - 50) % 12 + 12) % 12).sort((a, b) => a - b);   // 放在 D3～C#4 一帶
+  return { root: 38 + ((root - 38) % 12 + 12) % 12, voicing };
+}
+function accVoice(midi, t, dur, v, attack, release, bright) {
+  const f = 440 * Math.pow(2, (midi - 69) / 12);
+  const o1 = ctx.createOscillator(), o2 = ctx.createOscillator();
+  o1.type = "triangle"; o2.type = "sine"; o1.frequency.value = f; o2.frequency.value = f; o2.detune.value = 8;
+  const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = bright; lp.Q.value = 0.5;
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + attack);
+  g.gain.setValueAtTime(v, t + dur); g.gain.setTargetAtTime(0, t + dur, release);
+  o1.connect(lp); o2.connect(lp); lp.connect(g); g.connect(accBus);
+  for (const o of [o1, o2]) { o.start(t); o.stop(t + dur + release * 6); }
+}
+const COMP = [[0, "1+"], ["1+", "3+"], [0, 2], ["1+"], [0, "2+"]];   // Charleston 與幾種變化（拍；+ = 搖擺的後半拍）
+function scheduleAccomp(t, beatDur) {
+  const r = richness(), level = params.伴奏音量 * r * Math.sqrt(aliveFrac());
+  accBus.gain.setTargetAtTime(level, t, 1.5);                     // 第 20 代起慢慢淡入
+  if (level < 0.01) return;
+  const ch = currentChord(); if (!ch) return;
+  const bar = beatDur * 4, sw = params.爵士感 ? params.搖擺比例 : 0.5;
+  for (const m of ch.voicing) accVoice(m, t, bar * 0.95, 0.010, bar * 0.3, 0.6, 900);        // pad
+  if (r > 0.3) {                                                    // 點奏：繁盛到一定程度才出現
+    const pat = COMP[randInt(0, COMP.length - 1)];
+    for (const b of pat) {
+      const tb = t + (typeof b === "string" ? (parseInt(b) + sw) : b) * beatDur;
+      for (const m of ch.voicing) accVoice(m + 12, tb, beatDur * 0.35, 0.012, 0.01, 0.12, 2400);
+    }
+    accVoice(ch.root, t, beatDur * 1.6, 0.02, 0.02, 0.25, 600);    // 第一拍輕輕帶出根音
+  }
+}
+const allExtinct = () => SPECIES.every(sp => sp.extinct);
+function restartAll() {
+  params.目前暖化 = 0; simYear = null;
+  SPECIES.forEach(sp => { sp.upper = null; sp.stress = 1; sp.lastYear = null; });
+  captionsShown.clear();
+  SPECIES.forEach(initPopulation);
+  if (ctx) SPECIES.forEach(sp => sp.popGain.gain.setTargetAtTime(1, ctx.currentTime, 0.3));
+  resetClock();
+}
+
+// 共用拍子網格：grid 依序排出每一拍的時間；各族群在不同拍點進場，句與句之間隨機休息 0～N 拍
+// 分三組（依海拔）：同組同時開始、一起休息；三組依序進場（拍）
+const GROUPS = [{ name: "低海拔", members: [0], entry: 0 },
+                { name: "中海拔", members: [1, 2], entry: 2 },
+                { name: "高海拔", members: [3, 4], entry: 5 }];
+const grid = { beat: 0, startBeat: 0, times: [], nextTime: 0 };
+function resetClock() {
+  const b = grid.times.length ? grid.beat : 0;
+  grid.startBeat = b;
+  GROUPS.forEach(g => { g.nextBeat = b + g.entry; });
+}
+GROUPS.forEach(g => { g.nextBeat = g.entry; });
+
+function scheduler() {
+  const now = ctx.currentTime;
+  scheduleBirds(now);
+  if (grid.nextTime < now) grid.nextTime = now + 0.05;
+  while (grid.nextTime < now + 0.6) {                              // 先把拍子排好
+    const beatDur = baseStepAt(grid.beat) * 2;
+    grid.times[grid.beat] = [grid.nextTime, beatDur];
+    drumBeat(grid.nextTime, beatDur, grid.beat - grid.startBeat);
+    if ((grid.beat - grid.startBeat) % 4 === 0) scheduleAccomp(grid.nextTime, beatDur);   // 每小節一組和弦
+    if (params.自動暖化 && !allExtinct() && meanGen() >= params.暖化起始代數) {   // 第 40 代起開始暖化
+      if (params.暖化模型 === "依海拔資料") {
+        // 現實情境：2025→2100 線性升溫到 情境升溫（相對現在），之後停住、時間繼續（2100 後走得較快）
+        if (simYear === null) simYear = params.起始年;
+        simYear += (simYear < params.情境終年 ? params.每小節年數 : params.之後每小節年數) / 4;
+        params.目前暖化 = +(params.情境升溫 * Math.min(1, (simYear - params.起始年) / (params.情境終年 - params.起始年))).toFixed(3);
+      } else params.目前暖化 = Math.min(params.最高升溫, +(params.目前暖化 + params.暖化速度 / 4).toFixed(4));
+    }
+    grid.nextTime += beatDur; grid.beat++;
+  }
+  for (const g of GROUPS) {
+    while (g.nextBeat < grid.beat) {
+      const [t, beatDur] = grid.times[g.nextBeat];
+      if (t < now - 0.05) { g.nextBeat++; continue; }                 // 落後就跳到下一拍
+      for (const s of g.members) {
+        const sp = SPECIES[s];
+        let mel = stepGeneration(sp);
+        if (!mel) { sp.popGain.gain.setTargetAtTime(0, t, 1.0); continue; }   // 滅絕：淡出
+        mel = maybeTrade(sp, t, mel);
+        sp.popGain.gain.setTargetAtTime(Math.sqrt(sp.size / params.族群大小), t, 0.5);
+        schedulePhrase(sp, mel, t, beatDur / 2 * tupletOf(sp));
+      }
+      g.nextBeat += 4 + randInt(0, params.呼吸最多幾拍);
+    }
+  }
+}
+
+// ================================================================ 地圖
+const LAT0 = 23.7, COSLAT = Math.cos(LAT0 * Math.PI / 180);
+const proj = (lon, lat) => [(lon - 121.0) * COSLAT, lat - LAT0];
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(window.devicePixelRatio);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -10, 10);
+
+const shape = new THREE.Shape(COAST.map(([lo, la]) => new THREE.Vector2(...proj(lo, la))));
+scene.add(new THREE.Mesh(new THREE.ShapeGeometry(shape), new THREE.MeshBasicMaterial({ color: 0x151d27 })));
+const outline = new THREE.BufferGeometry().setFromPoints(COAST.map(([lo, la]) => new THREE.Vector3(...proj(lo, la), 0.01)));
+scene.add(new THREE.LineLoop(outline, new THREE.LineBasicMaterial({ color: 0x3a4757 })));
+
+const pos = [], col = [], spi = [], phase = [], rank = [];
+SPECIES.forEach((sp, s) => {
+  const c = new THREE.Color(sp.color);
+  sp.screen = [];
+  for (const [lo, la] of DOTS[sp.key]) {
+    pos.push(...proj(lo, la), 0.02 + s * 0.001); col.push(c.r, c.g, c.b); spi.push(s); phase.push(rand() * 6.28); rank.push(rand() * 0.98 + 0.01);
+  }
+});
+const dotGeo = new THREE.BufferGeometry();
+dotGeo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+dotGeo.setAttribute("color", new THREE.Float32BufferAttribute(col, 3));
+dotGeo.setAttribute("sp", new THREE.Float32BufferAttribute(spi, 1));
+dotGeo.setAttribute("phase", new THREE.Float32BufferAttribute(phase, 1));
+dotGeo.setAttribute("rank", new THREE.Float32BufferAttribute(rank, 1));
+const uniforms = { uGain: { value: [0.5, 0.5, 0.5, 0.5, 0.5] }, uPulse: { value: [0, 0, 0, 0, 0] },
+  uTime: { value: 0 }, uPx: { value: window.devicePixelRatio }, uAlive: { value: [1, 1, 1, 1, 1] } };
+const dotMat = new THREE.ShaderMaterial({
+  uniforms, transparent: true, depthWrite: false,
+  vertexShader: `
+    attribute vec3 color; attribute float sp; attribute float phase; attribute float rank;
+    uniform float uGain[5]; uniform float uPulse[5]; uniform float uAlive[5]; uniform float uTime; uniform float uPx;
+    varying vec3 vColor; varying float vA;
+    void main() {
+      int i = int(sp + 0.5);
+      float g = uGain[i], p = uPulse[i];
+      float alive = smoothstep(rank - 0.02, rank + 0.02, uAlive[i]);   // 族群縮小：依比例熄滅
+      vColor = mix(vec3(0.32, 0.35, 0.39), color, alive);
+      vA = mix(0.14, 0.18 + 0.82 * g, alive);
+      float breathe = 1.0 + 0.12 * sin(uTime * 1.3 + phase) * alive;
+      gl_PointSize = uPx * mix(2.5, 4.0 + 5.0 * g + 4.0 * p, alive) * breathe;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }`,
+  fragmentShader: `
+    varying vec3 vColor; varying float vA;
+    void main() {
+      float d = length(gl_PointCoord - 0.5);
+      float a = smoothstep(0.5, 0.15, d) * vA;
+      if (a < 0.01) discard;
+      gl_FragColor = vec4(vColor, a);
+    }`,
+});
+scene.add(new THREE.Points(dotGeo, dotMat));
+
+// 對話連線：兩個分布區中心之間亮起一條線，慢慢淡去
+const centroid = sp => { const d = DOTS[sp.key]; let x = 0, y = 0;
+  for (const [lo, la] of d) { const q = proj(lo, la); x += q[0]; y += q[1]; } return [x / d.length, y / d.length]; };
+const tradeLines = [];
+function addTradeLine(a, b) {
+  const [x1, y1] = centroid(SPECIES[a]), [x2, y2] = centroid(SPECIES[b]);
+  const mx = (x1 + x2) / 2 - (y2 - y1) * 0.25, my = (y1 + y2) / 2 + (x2 - x1) * 0.25;   // 弧線
+  const curve = new THREE.QuadraticBezierCurve3(new THREE.Vector3(x1, y1, 0.05), new THREE.Vector3(mx, my, 0.05), new THREE.Vector3(x2, y2, 0.05));
+  const geo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(40));
+  const col = new THREE.Color(SPECIES[a].color).lerp(new THREE.Color(SPECIES[b].color), 0.5);
+  const line = new THREE.Line(geo, new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: 0.9 }));
+  scene.add(line); tradeLines.push({ line, life: 1 });
+}
+
+const peakEls = PEAKS.map(([name]) => {
+  const el = document.createElement("div"); el.className = "peak"; el.textContent = name;
+  document.body.appendChild(el); return el;
+});
+
+function toScreen(x, y) {
+  const v = new THREE.Vector3(x, y, 0).project(camera);
+  return [(v.x + 1) / 2 * innerWidth, (1 - v.y) / 2 * innerHeight];
+}
+
+function resize() {
+  renderer.setSize(innerWidth, innerHeight);
+  const xs = COAST.map(c => proj(...c)[0]), ys = COAST.map(c => proj(...c)[1]);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const h = (y1 - y0) * 1.12, aspect = innerWidth / innerHeight;
+  const cx = (x0 + x1) / 2 - h * aspect * 0.06, cy = (y0 + y1) / 2;   // 地圖略往右，左下留給圖例
+  camera.left = cx - h * aspect / 2; camera.right = cx + h * aspect / 2;
+  camera.top = cy + h / 2; camera.bottom = cy - h / 2;
+  camera.updateProjectionMatrix();
+  SPECIES.forEach(sp => { sp.screen = DOTS[sp.key].map(([lo, la]) => toScreen(...proj(lo, la))); });
+  PEAKS.forEach(([, lo, la], i) => {
+    const [sx, sy] = toScreen(...proj(lo, la));
+    peakEls[i].style.left = sx + "px"; peakEls[i].style.top = sy + "px";
+  });
+}
+addEventListener("resize", resize);
+resize();
+
+// ================================================================ 滑鼠 → 混音
+let mouse = null, legendFocus = -1;
+renderer.domElement.addEventListener("mousemove", e => { mouse = [e.clientX, e.clientY]; });
+renderer.domElement.addEventListener("mouseleave", () => { mouse = null; });
+
+function focusWeights() {
+  if (legendFocus >= 0) return SPECIES.map((_, s) => (s === legendFocus ? 1 : 0));
+  if (!mouse) return null;
+  // 每族最近一點的距離；最近的那族為主，其他族依「比最近的遠多少」快速衰減
+  const R = params.聆聽範圍;
+  const dist = SPECIES.map(sp => {
+    let best = Infinity;
+    for (const [x, y] of sp.screen) { const d = (x - mouse[0]) ** 2 + (y - mouse[1]) ** 2; if (d < best) best = d; }
+    return Math.sqrt(best);
+  });
+  const dmin = Math.min(...dist), prox = Math.exp(-(dmin * dmin) / (2 * R * R));
+  return dist.map(d => prox * Math.exp(-(d - dmin) / params.區分度));
+}
+
+const shownGain = [0.5, 0.5, 0.5, 0.5, 0.5];
+const cardEl = document.getElementById("card");
+let cardSp = -1;
+function updateCard(w) {
+  let s = -1;
+  if (w && Math.max(...w) > 0.5) s = w.indexOf(Math.max(...w));
+  if (s === cardSp) return;
+  cardSp = s;
+  if (s < 0) { cardEl.classList.remove("show"); return; }
+  const sp = SPECIES[s], info = SP_INFO[sp.key];
+  cardEl.style.setProperty("--c", sp.color);
+  cardEl.querySelector("img").src = info.photo;
+  cardEl.querySelector(".cname").textContent = spName(sp) + (sp.extinct ? tr("cardGone") : "");
+  cardEl.querySelector(".csci").textContent = info.sci;
+  cardEl.querySelector(".ctext").textContent = LANG === "en" ? SP_EN[sp.key] : info.text;
+  cardEl.querySelector(".ccredit").textContent = LANG === "en"
+    ? info.credit.replace("照片：", "Photo: ").replace(/，/g, ", ").replace("（iNaturalist）", " (iNaturalist)").replace("（裁切）", " (cropped)")
+    : info.credit;
+  cardEl.classList.add("show");
+}
+function updateMix() {
+  let w = focusWeights();
+  if (w && Math.max(...w) < 0.05) w = null;
+  updateCard(w);
+  const targets = w ? w.map(x => params.其他族群音量 + (1 - params.其他族群音量) * x) : SPECIES.map(() => 0.5);
+  SPECIES.forEach((sp, s) => {
+    if (ctx) sp.bus.gain.setTargetAtTime(targets[s], ctx.currentTime, params.淡入淡出秒數 / 3);
+    const k = 1 - Math.exp(-1 / 60 / Math.max(0.05, params.淡入淡出秒數 / 3));
+    shownGain[s] += (targets[s] - shownGain[s]) * k;
+    uniforms.uGain.value[s] = shownGain[s];
+    legendEls[s].classList.toggle("on", targets[s] > 0.6);
+    legendEls[s].style.opacity = 0.45 + 0.55 * Math.min(1, shownGain[s] / 0.5);
+  });
+}
+
+// ================================================================ 圖例
+const legend = document.getElementById("legend");
+const legendEls = SPECIES.map((sp, s) => {
+  const el = document.createElement("div"); el.className = "sp";
+  el.innerHTML = `<div class="dot" style="background:${sp.color}"></div>
+    <div class="name"></div>
+    <div class="meta"><span class="mstatic"></span><br><span class="gen"></span></div>
+    <div class="bar"><i style="background:${sp.color};width:100%"></i></div>`;
+  el.addEventListener("mouseenter", () => { legendFocus = s; });
+  el.addEventListener("mouseleave", () => { legendFocus = -1; });
+  legend.appendChild(el); return el;
+});
+
+const ornPct = sp => { let a = 0, n = 0; for (const m of sp.pop) for (let i = 0; i < sp.len; i++) if (m.n[i] !== REST) { n++; if (m.o[i]) a++; }
+  return n ? Math.round(a / n * 100) : 0; };
+document.getElementById("infoBtn").addEventListener("click", () => {
+  const el = document.getElementById("info"); el.hidden = !el.hidden; document.getElementById("sources").hidden = true; });
+document.getElementById("srcBtn").addEventListener("click", () => {
+  const el = document.getElementById("sources"); el.hidden = !el.hidden; document.getElementById("info").hidden = true; });
+function renderInfoTables() {
+  document.querySelectorAll(".infoTable").forEach((tbl, li) => {
+    const L_ = li === 0 ? "zh" : "en";
+    tbl.innerHTML = I18N[L_].infoHead + SPECIES.map(sp => { const { L, U, P, peak, src } = sp.elev, k = 0.006;
+      return `<tr title="${src}"><td>${L_ === "en" ? sp.en.name : sp.name}</td><td>${L}–${U}</td><td>${L_ === "en" ? sp.en.peak : peak} ${P}</td><td>+${((P - U) * k).toFixed(1)} °C</td><td>+${((P - L) * k).toFixed(1)} °C</td></tr>`; }).join("");
+  });
+}
+renderInfoTables();
+// ================================================================ 旁白＋字幕＋博物館式圖說
+// 旁白：edge-tts 台灣女聲（見 build_narration.py）；說話時音樂自動降低；介紹到某族時，照片在地圖外圍淡入並以箭頭指向分布區
+const subsEl = document.getElementById("subs"), skipBtn = document.getElementById("skipIntro");
+let narrGain, narrQueue = [], narrBusy = false, narrSrc = null, narrTimer = null, introOn = false, lastCueGroup = null;
+const narrBufs = { zh: {}, en: {} }, captionsShown = new Set();
+const NARR = { zh: NARRATION, en: NARRATION_EN };
+async function decodeNarration() {
+  for (const L of ["zh", "en"])
+    for (const [g, cues] of Object.entries(NARR[L])) {
+      narrBufs[L][g] = [];
+      for (const c of cues) {
+        const bin = atob(c.data.split(",")[1]), arr = new Uint8Array(bin.length);
+        for (let k = 0; k < bin.length; k++) arr[k] = bin.charCodeAt(k);
+        narrBufs[L][g].push(await ctx.decodeAudioData(arr.buffer));
+      }
+    }
+}
+const cueOf = (group, idx) => ({ ...NARR[LANG][group][idx], group, idx, buf: narrBufs[LANG][group][idx] });
+function duck(on) {
+  master.gain.setTargetAtTime(params.主音量 * (on ? params.旁白時音樂 : 1), ctx.currentTime, 0.4);
+}
+function queueNarration(group) {
+  NARR[LANG][group].forEach((c, i) => narrQueue.push(cueOf(group, i)));
+  if (!narrBusy) playNextCue();
+}
+function playNextCue() {
+  clearTimeout(narrTimer);
+  if (!narrQueue.length) {
+    narrBusy = false; subsEl.classList.remove("show"); duck(false);
+    if (introOn) endIntro();
+    if (lastCueGroup === "outro") finale();
+    return;
+  }
+  narrBusy = true;
+  const c = narrQueue.shift();
+  lastCueGroup = c.group;
+  duck(true);
+  subsEl.querySelector("span").textContent = c.text; subsEl.classList.add("show");
+  if (c.callout) showCallout(c.callout);
+  narrSrc = ctx.createBufferSource(); narrSrc.buffer = c.buf; narrSrc.connect(narrGain);
+  narrSrc.onended = () => { narrTimer = setTimeout(playNextCue, 650); };
+  narrSrc.start();
+}
+// 結語說完：鳥叫與所有聲音約 10 秒淡出到安靜，再淡入結束畫面
+const endCard = document.getElementById("endCard");
+function finale() {
+  const t = ctx.currentTime;
+  birdsGain.gain.cancelScheduledValues(t); birdsGain.gain.setValueAtTime(birdsGain.gain.value, t);
+  birdsGain.gain.linearRampToValueAtTime(0, t + 10);
+  master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value, t);
+  master.gain.linearRampToValueAtTime(0, t + 10);
+  setTimeout(() => { endCard.hidden = false; requestAnimationFrame(() => endCard.classList.add("show")); }, 9000);
+}
+document.getElementById("replay").addEventListener("click", () => {
+  endCard.classList.remove("show"); endCard.hidden = true;
+  restartAll();
+  const t = ctx.currentTime;
+  master.gain.cancelScheduledValues(t); master.gain.setTargetAtTime(params.主音量, t, 0.5);
+  birdsGain.gain.cancelScheduledValues(t); birdsGain.gain.setTargetAtTime(params.鳥鳴 * BIRDS_K, t, 1);
+  startIntro();
+});
+
+function startIntro() {
+  introOn = true; skipBtn.hidden = false; document.body.classList.add("intro");
+  queueNarration("intro");
+}
+function endIntro() {
+  introOn = false; skipBtn.hidden = true;
+  setTimeout(() => { hideCallouts(); document.body.classList.remove("intro"); }, 2500);
+}
+skipBtn.addEventListener("click", () => {
+  narrQueue = narrQueue.filter(c => c.group !== "intro");
+  if (narrSrc) { narrSrc.onended = null; try { narrSrc.stop(); } catch (e) {} }
+  hideCallouts(); document.body.classList.remove("intro"); playNextCue();
+});
+function checkCaptions() {
+  const say = k => { if (captionsShown.has(k)) return; captionsShown.add(k); queueNarration(k); };
+  if (meanGen() >= params.繁盛起始代數 && params.目前暖化 === 0) say("rich");
+  if (params.目前暖化 > 0) say("warm");
+  if (SPECIES.some(sp => sp.extinct)) say("first");
+  if (simYear !== null && simYear >= params.情境終年) say("hold");
+  if (allExtinct()) { say("end"); say("outro"); }
+}
+
+function applyLang() {
+  document.body.classList.toggle("en", LANG === "en");
+  document.documentElement.lang = LANG === "en" ? "en" : "zh-Hant";
+  document.title = tr("docTitle");
+  document.getElementById("langBtn").textContent = LANG === "en" ? "中文" : "EN";
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = tr(el.dataset.i18n);
+    if (typeof v !== "string") return;
+    if (el.id === "go" && !el.disabled) el.textContent = tr("start"); else el.innerHTML = v;
+  });
+  document.getElementById("ipccMark").title = tr("ipcc");
+  SPECIES.forEach((sp, s) => {
+    legendEls[s].querySelector(".name").textContent = spName(sp);
+    legendEls[s].querySelector(".mstatic").innerHTML = tr("meta")(sp);
+    callouts[sp.key].el.querySelector("div").innerHTML = `${spName(sp)}<small>${SP_INFO[sp.key].sci}</small>`;
+  });
+  PEAKS.forEach(([name], i) => { peakEls[i].textContent = LANG === "en" ? PEAKS_EN[name] || name : name; });
+  if (cardSp >= 0) { const s = cardSp; cardSp = -1; updateCard(SPECIES.map((_, i) => (i === s ? 1 : 0))); }
+  narrQueue = narrQueue.map(c => cueOf(c.group, c.idx));          // 還沒播的旁白換成新語言
+}
+document.getElementById("langBtn").addEventListener("click", () => {
+  LANG = LANG === "en" ? "zh" : "en";
+  try { localStorage.setItem("siteLang", LANG); } catch (e) {}
+  applyLang();
+});
+
+// 圖說：照片框排在台灣兩側，箭頭指向該族分布區中心
+const calloutSvg = document.getElementById("calloutSvg"), calloutBox = document.getElementById("callouts");
+const SIDE = { fucus: "left", arisanensis: "left", formosanus: "right", sonani: "right", glacialis: "right" };
+const callouts = {};
+SPECIES.forEach(sp => {
+  const el = document.createElement("div"); el.className = "callout"; el.style.setProperty("--c", sp.color);
+  el.innerHTML = `<img src="${SP_INFO[sp.key].photo}"><div>${sp.name}<small>${SP_INFO[sp.key].sci}</small></div>`;
+  calloutBox.appendChild(el);
+  const ns = "http://www.w3.org/2000/svg";
+  const line = document.createElementNS(ns, "line"); line.setAttribute("marker-end", "url(#arrow)");
+  const ring = document.createElementNS(ns, "circle"); ring.setAttribute("r", 14); ring.setAttribute("stroke", sp.color);
+  calloutSvg.appendChild(line); calloutSvg.appendChild(ring);
+  callouts[sp.key] = { el, line, ring };
+});
+function layoutCallouts() {
+  const xs = COAST.map(c => toScreen(...proj(...c))[0]);
+  const mapL = Math.min(...xs), mapR = Math.max(...xs);
+  for (const side of ["left", "right"]) {
+    const list = SPECIES.filter(sp => SIDE[sp.key] === side)
+      .map(sp => ({ sp, c: toScreen(...centroid(sp)) })).sort((a, b) => a.c[1] - b.c[1]);
+    let minY = 130;                                  // 避開上方的年份刻度說明
+    for (const { sp, c } of list) {
+      const { el, line, ring } = callouts[sp.key];
+      const h = 150, y = Math.max(minY, c[1] - h / 2); minY = y + h + 14;
+      const x = side === "left" ? mapL - 170 - 60 : mapR + 50;
+      el.style.left = x + "px"; el.style.top = y + "px";
+      const ax = side === "left" ? x + 170 : x, ay = y + 60;
+      const dx = c[0] - ax, dy = c[1] - ay, d = Math.hypot(dx, dy) || 1;
+      line.setAttribute("x1", ax); line.setAttribute("y1", ay);
+      line.setAttribute("x2", c[0] - dx / d * 16); line.setAttribute("y2", c[1] - dy / d * 16);
+      ring.setAttribute("cx", c[0]); ring.setAttribute("cy", c[1]);
+    }
+  }
+}
+function showCallout(key) { const c = callouts[key]; layoutCallouts(); c.el.classList.add("on"); c.line.classList.add("on"); c.ring.classList.add("on"); }
+function hideCallouts() { for (const c of Object.values(callouts)) { c.el.classList.remove("on"); c.line.classList.remove("on"); c.ring.classList.remove("on"); } }
+addEventListener("resize", layoutCallouts);
+applyLang();
+
+const ipccMark = document.getElementById("ipccMark"), phaseTick = document.querySelector("#phase .tick");
+const phaseTemp = document.querySelector("#phase .temp"), phaseLabel = document.querySelector("#phase .label");
+const phaseTrack = document.querySelector("#phase .track i"), titleH1 = document.querySelector("#title h1");
+const titleP = document.querySelector("#title p");
+
+// ================================================================ 控制面板
+const gui = new lil.GUI({ title: "參數" });
+gui.close();
+gui.hide();                                                    // 觀眾看不到參數面板；按 P 叫出／收起（調整用）
+addEventListener("keydown", e => { if (e.key === "p" || e.key === "P") gui._hidden ? gui.show() : gui.hide(); });
+gui.add(params, "主音量", 0, 1, 0.01).onChange(v => master && master.gain.setTargetAtTime(v, ctx.currentTime, 0.05));
+gui.add(params, "音符連貫度", 0.3, 1.3, 0.01).name("音符連貫度（1=剛好接上）");
+gui.add(params, "其他族群音量", 0, 0.5, 0.01);
+gui.add(params, "淡入淡出秒數", 0.1, 3, 0.05);
+gui.add(params, "聆聽範圍", 10, 80, 1).name("聆聽範圍（px）");
+gui.add(params, "區分度", 1, 30, 0.5).name("重疊區混合（px，小=分得清）");
+gui.add(params, "鳥鳴", 0, 1, 0.01).name("鳥鳴（台灣高山鳥）").onChange(v => birdsGain && birdsGain.gain.setTargetAtTime(v * BIRDS_K, ctx.currentTime, 0.2));
+gui.add(params, "伴奏音量", 0, 1.5, 0.01).name("伴奏音量（第 20 代起）");
+gui.add(params, "旁白音量", 0, 1.5, 0.01).onChange(v => narrGain && narrGain.gain.setTargetAtTime(v, ctx.currentTime, 0.1));
+gui.add(params, "旁白時音樂", 0, 1, 0.01).name("旁白時音樂降到（比例）");
+gui.add(params, "殘響", 0, 1, 0.01).onChange(v => wetGain && wetGain.gain.setTargetAtTime(v, ctx.currentTime, 0.1));
+const ga = gui.addFolder("演化");
+ga.add(params, "起始每格秒數", 0.15, 1.5, 0.01);
+ga.add(params, "最終每格秒數", 0.15, 1.5, 0.01);
+ga.add(params, "放慢所需小節", 1, 80, 1);
+ga.add(params, "呼吸最多幾拍", 0, 6, 1).name("句間休息（最多幾拍）");
+ga.add(params, "突變率", 0, 0.3, 0.005);
+ga.add(params, "族群大小", 4, 60, 1);
+ga.add(params, "重新開始").name("重新開始（回到前言）");
+const vf = gui.addFolder("繁盛（第 20 代起）");
+vf.add(params, "繁盛起始代數", 0, 60, 1);
+vf.add(params, "繁盛所需代數", 1, 60, 1);
+vf.add(params, "裝飾目標比例", 0.05, 1, 0.05);
+vf.add(params, "對話機率", 0, 1, 0.01);
+vf.add(params, "引用加入族群").name("引用加入族群（基因交流）");
+vf.close();
+const wm = gui.addFolder("暖化");
+wm.add(params, "自動暖化").name("自動暖化（前言後開始）");
+wm.add(params, "暖化起始代數", 1, 120, 1);
+wm.add(params, "暖化速度", 0.02, 0.6, 0.01).name("暖化速度（°C／小節）");
+wm.add(params, "目前暖化", 0, 8, 0.05).name("目前升溫（°C，可拖）").listen();
+wm.add(params, "暖化模型", ["依海拔資料", "示意"]).name("暖化模型");
+wm.add(params, "情境升溫", 0.5, 6, 0.1).name("2100 年比現在再升溫（°C）");
+wm.add(params, "每小節年數", 0.5, 10, 0.5).name("2100 前每小節幾年");
+wm.add(params, "之後每小節年數", 1, 20, 1).name("2100 後每小節幾年");
+wm.add(params, "往上擴散", 0, 10, 0.5).name("往上擴散速度（m／年）");
+wm.add(params, "長期壓力", 0, 5, 0.1).name("長期壓力（%／年）");
+wm.add(params, "壓力加權", 0, 1, 0.05).name("壓力依棲地壓縮加權");
+wm.add(params, "小族群風險", 0, 0.3, 0.01).name("小族群每代消失機率");
+wm.add(params, "暖化後每格秒數", 0.15, 1, 0.01).name("暖化後每格秒數（加快）");
+wm.add(params, "最高升溫", 1, 16, 0.5).name("示意模式：升溫停在（°C）");
+wm.add(params, "遞減率", 0.4, 0.8, 0.01).name("氣溫遞減率（°C/100 m）");
+wm.add(params, "每百公尺半音", 0.5, 3, 0.1).name("每 100 m 幾個半音（依資料模式）");
+wm.add(params, "每度上移半音", 1, 6, 0.5).name("每升 1°C 上移幾個半音（示意模式）");
+wm.add(params, "立即開始暖化");
+const jz = gui.addFolder("爵士");
+jz.add(params, "爵士感").name("爵士感（開／關比較）");
+jz.add(params, "搖擺比例", 0.5, 0.75, 0.01).name("搖擺比例（0.5=不搖擺）");
+jz.add(params, "半音趨近機率", 0, 1, 0.01);
+jz.add(params, "滑音機率", 0, 1, 0.01);
+jz.add(params, "鬼音機率", 0, 0.6, 0.01);
+jz.close();
+jz.add(params, "鼓刷音量", 0, 1, 0.01).onChange(v => drumBus && drumBus.gain.setTargetAtTime(v * 0.25, ctx.currentTime, 0.05));
+
+// ================================================================ 主迴圈
+const clock = new THREE.Clock();
+function frame() {
+  requestAnimationFrame(frame);
+  const dt = clock.getDelta();
+  uniforms.uTime.value += dt;
+  for (let s = 0; s < 5; s++) uniforms.uPulse.value[s] *= Math.exp(-dt * 4);
+  if (ctx) {
+    while (pulses.length && pulses[0][0] <= ctx.currentTime) uniforms.uPulse.value[pulses.shift()[1]] = 1;
+    pulses.sort((a, b) => a[0] - b[0]);
+  }
+  updateMix();
+  if (ctx) while (trades.length && trades[0][0] <= ctx.currentTime) { const [, a, b] = trades.shift(); addTradeLine(a, b); }
+  for (let k = tradeLines.length - 1; k >= 0; k--) {
+    const L = tradeLines[k]; L.life -= dt / 3; L.line.material.opacity = Math.max(0, L.life) * 0.9;
+    if (L.life <= 0) { scene.remove(L.line); L.line.geometry.dispose(); tradeLines.splice(k, 1); }
+  }
+  SPECIES.forEach((sp, s) => {
+    const a = sp.size / params.族群大小;
+    uniforms.uAlive.value[s] += (a - uniforms.uAlive.value[s]) * Math.min(1, dt * 1.5);
+    legendEls[s].classList.toggle("dead", sp.extinct);
+    legendEls[s].querySelector(".gen").textContent = sp.extinct
+      ? tr("gone")(sp.extinctYear, sp.extinctAt.toFixed(1))
+      : (ctx && ctx.currentTime - sp.quoteTime < 4 && sp.quoteFrom ? tr("answer")(spName(sp.quoteFrom)) : "")
+        + tr("gen")(sp, params.族群大小, params.目前暖化 > 0 && params.暖化模型 === "依海拔資料" ? Math.round((sp.habitat ?? 1) * 100) : null, ornPct(sp));
+    legendEls[s].querySelector(".bar i").style.width = (sp.div * 100).toFixed(0) + "%";
+  });
+  const dT = params.目前暖化, bar = Math.floor(barNow());
+  phaseTemp.textContent = tr("temp")(simYear !== null && params.暖化模型 === "依海拔資料" ? Math.floor(simYear) : null, dT.toFixed(1));
+  // 進度條：2025 → 2300；刻度 = 2100（升溫停住）
+  const Y0 = params.起始年, Y1 = 2300, yr = simYear ?? Y0;
+  phaseTrack.style.width = Math.min(100, (yr - Y0) / (Y1 - Y0) * 100) + "%";
+  const markPct = (params.情境終年 - Y0) / (Y1 - Y0) * 100;
+  ipccMark.style.left = markPct + "%";
+  phaseTick.style.left = (markPct - 50) + "%";
+  const PH = tr("phase");
+  const phaseName = allExtinct() ? PH.silence : dT > 0 ? PH.warm : meanGen() >= params.繁盛起始代數 ? PH.rich : PH.prelude;
+  phaseLabel.textContent = allExtinct() ? tr("labEnd")
+    : dT > 0 ? tr("labWarm")(simYear !== null && simYear >= params.情境終年, SPECIES.filter(sp => !sp.extinct).length)
+    : params.自動暖化 ? tr("labPre")(meanGen() >= params.繁盛起始代數, Math.floor(meanGen()), params.暖化起始代數) : tr("labPreManual");
+  titleH1.textContent = `${tr("title")}${LANG === "en" ? " | " : "｜"}${phaseName}`;
+  if (ctx) checkCaptions();
+  titleP.textContent = allExtinct() ? tr("subEnd") : dT > 0 ? tr("subWarm") : tr("subPre");
+  renderer.render(scene, camera);
+}
+SPECIES.forEach(initPopulation);
+frame();
+
+// ================================================================ 開始
+const go = document.getElementById("go"), status = document.getElementById("status");
+go.disabled = false; go.textContent = tr("start");
+go.addEventListener("click", async () => {
+  go.disabled = true; go.textContent = tr("preparing");
+  setupAudio();
+  await decodeAll(p => { status.textContent = tr("decoding")((p * 100).toFixed(0)); });
+  status.textContent = tr("loadAmb");
+  await loadAmbience();
+  status.textContent = tr("loadNarr");
+  narrGain = ctx.createGain(); narrGain.gain.value = params.旁白音量; narrGain.connect(ctx.destination);
+  await decodeNarration();
+  document.getElementById("start").remove();
+  startIntro();
+  setInterval(scheduler, 50);
+  scheduler();
+});
+window.__state = () => ({ dT: params.目前暖化, bar: barNow(), sizes: SPECIES.map(sp => sp.size), extinct: SPECIES.map(sp => sp.extinctAt), gains: SPECIES.map(sp => sp.bus && +sp.bus.gain.value.toFixed(3)),
+  gens: SPECIES.map(sp => sp.gen), div: SPECIES.map(sp => +sp.div.toFixed(2)),
+  amb: (() => { if (!ambAnalyser) return 0; const a = new Float32Array(2048); ambAnalyser.getFloatTimeDomainData(a);
+    return +Math.sqrt(a.reduce((x, y) => x + y * y, 0) / 2048).toFixed(4); })(),
+  rms: SPECIES.map(sp => { if (!sp.analyser) return 0; const a = new Float32Array(512);
+    sp.analyser.getFloatTimeDomainData(a); return +Math.sqrt(a.reduce((x, y) => x + y * y, 0) / 512).toFixed(4); }),
+  screen: SPECIES.map(sp => sp.screen[Math.floor(sp.screen.length / 2)]) });
+</script>
+</body>
+</html>

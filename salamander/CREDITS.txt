@@ -1,0 +1,37 @@
+山椒魚五重奏 — 素材來源
+
+環境音（鳥鳴）— xeno-canto 台灣高山鳥錄音，皆錄於海拔 2000 m 以上
+  授權：CC BY-NC-SA（https://creativecommons.org/licenses/by-nc-sa/4.0/）— 須標示錄音者、非商業使用、改作須同授權
+  處理：200 Hz 高通、統一音量、最長 60 秒；網頁隨機擷取片段交叉淡化播放
+- 鷦鷯（Troglodytes troglodytes）XC1040474 by Lars Lachmann，2700 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1040474
+- 金翼白眉（Trochalopteron morrisonianum）XC1038810 by Lars Lachmann，2600 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1038810
+- 台灣朱雀（Carpodacus formosanus）XC914943 by 蔡明剛，3200 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/914943
+- 金翼白眉（Trochalopteron morrisonianum）XC1038808 by Lars Lachmann，2600 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1038808
+- 小翼鶇（Brachypteryx goodfellowi）XC772778 by Jelle Scharringa，2300 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/772778
+- 栗背林鴝（Tarsiger johnstoniae）XC1039787 by Lars Lachmann，2700 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1039787
+- 褐頭花翼（Fulvetta formosana）XC278138 by Ko Chie-Jen (Jerome)，2700 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/278138
+- 火冠戴菊鳥（Regulus goodfellowi）XC1039631 by Lars Lachmann，2700 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1039631
+- 栗背林鴝（Tarsiger johnstoniae）XC1039788 by Lars Lachmann，2700 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1039788
+- 火冠戴菊鳥（Regulus goodfellowi）XC1039618 by Lars Lachmann，2700 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1039618
+- 灰鷽（Pyrrhula owstoni）XC594729 by Jerome Chie-Jen Ko，3500 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/594729
+- 小翼鶇（Brachypteryx goodfellowi）XC1038474 by Lars Lachmann，2600 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1038474
+- 台灣朱雀（Carpodacus formosanus）XC572876 by Sunny Tseng，3200 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/572876
+- 紋翼畫眉（Actinodura morrisoniana）XC732201 by 蔡明剛，2400 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/732201
+- 紋翼畫眉（Actinodura morrisoniana）XC789826 by 蔡明剛，2300 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/789826
+- 煤山雀（Periparus ater）XC562980 by Sunny Tseng，3200 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/562980
+- 岩鷚（Prunella collaris）XC1153276 by Sheng-wun Jheng，3200 m，CC BY-NC-SA 4.0 — https://xeno-canto.org/1153276
+
+樂器取樣
+- 豎琴、鐵琴：FluidR3 GM（MIDI.js soundfonts, gleitz/midi-js-soundfonts）— 授權條款公開前請再確認
+
+照片（hover 族群時顯示）
+- 觀霧山椒魚：Evan Pickett，CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Hynobius_fuca.jpg
+- 台灣山椒魚：Cynthia Su（iNaturalist），CC BY 4.0 — https://www.inaturalist.org/observations/227475631
+- 阿里山山椒魚：Cheng-Tao Lin（iNaturalist），CC BY 4.0 — https://commons.wikimedia.org/wiki/File:Alishan_Salamander_imported_from_iNaturalist_photo_40624720_on_20_April_2022.jpg
+- 楚南氏山椒魚：Allen Lyu（iNaturalist），CC BY 4.0，裁切 — https://www.inaturalist.org/observations/14542549
+- 南湖山椒魚：小翰（iNaturalist），CC BY-NC 4.0 — https://www.inaturalist.org/observations/343665145
+
+分布資料
+- GBIF occurrence records（Hynobius fucus / formosanus / arisanensis / sonani / glacialis），2026-10-11 下載
+  保育類座標經資料提供者模糊化，地圖僅示意大致區域
+- 海岸線：Natural Earth（public domain）
