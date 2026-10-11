@@ -32,6 +32,7 @@
 - 南湖山椒魚：小翰（iNaturalist），CC BY-NC 4.0 — https://www.inaturalist.org/observations/343665145
 
 分布資料
+- 主要來源：《國家地理雜誌》中文版 2026 年 9 月號〈臺灣的山椒魚〉——分布、棲地海拔、趾數、國家紅皮書等級（分布圖提供：朱有田教授）
 - GBIF occurrence records（Hynobius fucus / formosanus / arisanensis / sonani / glacialis），2026-10-11 下載
   保育類座標經資料提供者模糊化，地圖僅示意大致區域
 - 海岸線：Natural Earth（public domain）
