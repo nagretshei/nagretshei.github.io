@@ -110,7 +110,8 @@
   /* ---- 手機版（放在最後，才能覆蓋前面的電腦版樣式） */
   @media (max-width: 760px) {
     /* 手機版精簡圖例：標題下一排 5 格（族名、族群數 · 多樣性、多樣性長條） */
-    #legend { left: 8px; right: 8px; top: 74px; bottom: auto; width: auto; display: flex; gap: 4px; }
+    #legend { left: 8px; right: 8px; top: auto; bottom: 50px; width: auto; display: flex; gap: 4px; transition: opacity 0.6s; }
+    body.narrating #legend { opacity: 0; pointer-events: none; }     /* 旁白字幕出現時先讓位 */
     .sp { flex: 1; min-width: 0; display: block; padding: 5px 6px; background: rgba(20,27,35,0.75); border-radius: 6px; }
     .sp .dot { display: inline-block; width: 8px; height: 8px; margin: 0 4px 0 0; vertical-align: middle; }
     .sp .name { display: inline; font-size: 11px; white-space: nowrap; }
@@ -120,10 +121,10 @@
     #langBtn { font-size: 16px; padding: 8px 18px; top: 12px; right: 12px; }
     #title { max-width: calc(100% - 120px); left: 14px; top: 14px; }
     #title h1 { font-size: 18px; } #title p { font-size: 12px; }
-    #phase { top: auto; bottom: 200px; }
+    #phase { top: auto; bottom: 120px; }
     #phase .temp { font-size: 24px; } #phase .tick { display: none; }
     .callout { width: 112px; } .callout img { height: 70px; } .callout div { font-size: 11.5px; }
-    #card { left: 12px; right: 12px; width: auto; top: 130px; } #card img { height: 130px; }
+    #card { left: 12px; right: 12px; width: auto; top: 80px; } #card img { height: 130px; }
     #subs { left: 12px; right: 12px; max-width: none; transform: none; bottom: 56px; } #subs span { font-size: 15px; }
     #skipIntro { left: 12px; transform: none; bottom: 12px; font-size: 13px; padding: 5px 14px; }
     #rightCol { right: 10px; bottom: 8px; max-width: 60%; } #note { display: none; }
@@ -489,7 +490,7 @@ const INST_GAIN = { synth: 0.035, synth_air: 0.05, synth_fm: 0.06, contrabass: 0
 
 const params = {
   主音量: 0.8, 音符連貫度: 0.85, 其他族群音量: 0.12, 淡入淡出秒數: 0.8, 聆聽範圍: 30, 區分度: 6,
-  起始每格秒數: 0.35, 最終每格秒數: 0.7, 放慢所需小節: 24, 呼吸最多幾拍: 2, 突變率: 0.06, 族群大小: 24, 鳥鳴: 0.5, 旁白音量: 0.8, 旁白時音樂: 0.45, 伴奏音量: 0.6, 殘響: 0.3,
+  起始每格秒數: 0.35, 最終每格秒數: 0.7, 放慢所需小節: 24, 呼吸最多幾拍: 2, 突變率: 0.06, 族群大小: 24, 鳥鳴: 0.5, 卡片停留秒數: 15, 輪流獨奏: true, 閒置幾秒開始獨奏: 4, 獨奏秒數最短: 8, 獨奏秒數最長: 12, 獨奏時其他音量: 0.3, 旁白音量: 0.8, 旁白時音樂: 0.45, 伴奏音量: 0.6, 殘響: 0.3,
   重新開始() { restartAll(); },
   繁盛起始代數: 20, 繁盛所需代數: 20, 裝飾目標比例: 0.4, 對話機率: 0.2, 引用加入族群: true,
   暖化模型: "依海拔資料", 遞減率: 0.6, 每百公尺半音: 1, 最高升溫: 16,
@@ -1227,12 +1228,15 @@ resize();
 
 // ================================================================ 滑鼠 → 混音
 let mouse = null, legendFocus = -1;
-renderer.domElement.addEventListener("mousemove", e => { mouse = [e.clientX, e.clientY]; });
+let lastUserTime = 0;                                           // 觀眾最後一次操作（閒置太久才自動輪流獨奏）
+const touchUser = () => { lastUserTime = performance.now(); };
+renderer.domElement.addEventListener("mousemove", e => { mouse = [e.clientX, e.clientY]; touchUser(); });
 let touchTimer = null;
-const onTouch = e => { const t = e.touches[0]; if (!t) return; mouse = [t.clientX, t.clientY]; clearTimeout(touchTimer); };
+const onTouch = e => { const t = e.touches[0]; if (!t) return; mouse = [t.clientX, t.clientY]; clearTimeout(touchTimer); touchUser(); };
 renderer.domElement.addEventListener("touchstart", onTouch, { passive: true });
 renderer.domElement.addEventListener("touchmove", onTouch, { passive: true });
-renderer.domElement.addEventListener("touchend", () => { touchTimer = setTimeout(() => { mouse = null; }, 4000); });   // 放開後停留 4 秒再回到全體
+renderer.domElement.addEventListener("touchend", () => {   // 放開後卡片停留「卡片停留秒數」再回到全體
+  touchUser(); touchTimer = setTimeout(() => { mouse = null; }, params.卡片停留秒數 * 1000); });
 renderer.domElement.addEventListener("mouseleave", () => { mouse = null; });
 
 function focusWeights() {
@@ -1269,11 +1273,28 @@ function updateCard(w) {
     : info.credit;
   cardEl.classList.add("show");
 }
+// 自動輪流獨奏：觀眾閒置時，每 8～12 秒隨機挑一個還活著的族群把音量拉大（像爵士樂手輪流 solo）
+const autoSolo = { s: -1, until: 0, prev: -1 };
+function autoSoloWeights() {
+  const now = performance.now();
+  if (!params.輪流獨奏 || !ctx || now - lastUserTime < params.閒置幾秒開始獨奏 * 1000) { autoSolo.s = -1; return null; }
+  const alive = SPECIES.map((sp, i) => i).filter(i => !SPECIES[i].extinct);
+  if (alive.length < 2) { autoSolo.s = -1; return null; }
+  if (autoSolo.s < 0 || now > autoSolo.until || SPECIES[autoSolo.s].extinct) {
+    const pool = alive.filter(i => i !== autoSolo.prev);
+    autoSolo.s = pool[randInt(0, pool.length - 1)]; autoSolo.prev = autoSolo.s;
+    autoSolo.until = now + (params.獨奏秒數最短 + rand() * (params.獨奏秒數最長 - params.獨奏秒數最短)) * 1000;
+  }
+  return autoSolo.s;
+}
 function updateMix() {
   let w = focusWeights();
   if (w && Math.max(...w) < 0.05) w = null;
-  updateCard(w);
-  const targets = w ? w.map(x => params.其他族群音量 + (1 - params.其他族群音量) * x) : SPECIES.map(() => 0.5);
+  updateCard(w);                                                  // 照片卡片只跟著觀眾的選擇
+  const solo = w ? null : autoSoloWeights();
+  const targets = w ? w.map(x => params.其他族群音量 + (1 - params.其他族群音量) * x)
+    : solo !== null ? SPECIES.map((_, i) => (i === solo ? 1 : params.獨奏時其他音量))
+    : SPECIES.map(() => 0.5);
   SPECIES.forEach((sp, s) => {
     if (ctx) sp.bus.gain.setTargetAtTime(targets[s], ctx.currentTime, params.淡入淡出秒數 / 3);
     const k = 1 - Math.exp(-1 / 60 / Math.max(0.05, params.淡入淡出秒數 / 3));
@@ -1292,9 +1313,10 @@ const legendEls = SPECIES.map((sp, s) => {
     <div class="name"></div><div class="mini"></div>
     <div class="meta"><span class="mstatic"></span><br><span class="gen"></span></div>
     <div class="bar"><i style="background:${sp.color};width:100%"></i></div>`;
-  el.addEventListener("mouseenter", () => { legendFocus = s; });
+  el.addEventListener("mouseenter", () => { legendFocus = s; touchUser(); });
   let tapTimer = null;                                           // 手機：點一下圖例格子 → 單獨聆聽 4 秒
-  el.addEventListener("touchstart", () => { legendFocus = s; clearTimeout(tapTimer); tapTimer = setTimeout(() => { legendFocus = -1; }, 4000); }, { passive: true });
+  el.addEventListener("touchstart", () => { legendFocus = s; touchUser(); clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => { legendFocus = -1; touchUser(); }, params.卡片停留秒數 * 1000); }, { passive: true });
   el.addEventListener("mouseleave", () => { legendFocus = -1; });
   legend.appendChild(el); return el;
 });
@@ -1341,12 +1363,12 @@ function queueNarration(group) {
 function playNextCue() {
   clearTimeout(narrTimer);
   if (!narrQueue.length) {
-    narrBusy = false; subsEl.classList.remove("show"); duck(false);
+    narrBusy = false; subsEl.classList.remove("show"); duck(false); document.body.classList.remove("narrating");
     if (introOn) endIntro();
     if (lastCueGroup === "outro") finale();
     return;
   }
-  narrBusy = true;
+  narrBusy = true; document.body.classList.add("narrating");
   const c = narrQueue.shift();
   lastCueGroup = c.group;
   duck(true);
@@ -1448,7 +1470,7 @@ function layoutCallouts() {
     const list = SPECIES.filter(sp => SIDE[sp.key] === side)
       .map(sp => ({ sp, c: toScreen(...centroid(sp)) })).sort((a, b) => a.c[1] - b.c[1]);
     const narrow = innerWidth <= 760, cw = narrow ? 112 : 170, ch = narrow ? 104 : 150;   // 手機版圖說較小、貼齊螢幕邊緣
-    let minY = narrow ? 130 : 130;                   // 避開上方的標題／圖例／年份刻度說明
+    let minY = narrow ? 80 : 130;                    // 避開上方的標題／年份刻度說明
     for (const { sp, c } of list) {
       const { el, line, ring } = callouts[sp.key];
       const y = Math.max(minY, c[1] - ch / 2); minY = y + ch + (narrow ? 8 : 14);
@@ -1486,6 +1508,14 @@ gui.add(params, "聆聽範圍", 10, 80, 1).name("聆聽範圍（px）");
 gui.add(params, "區分度", 1, 30, 0.5).name("重疊區混合（px，小=分得清）");
 gui.add(params, "鳥鳴", 0, 1, 0.01).name("鳥鳴（台灣高山鳥）").onChange(v => birdsGain && birdsGain.gain.setTargetAtTime(v * BIRDS_K, ctx.currentTime, 0.2));
 gui.add(params, "伴奏音量", 0, 1.5, 0.01).name("伴奏音量（第 20 代起）");
+const so = gui.addFolder("輪流獨奏與卡片");
+so.add(params, "輪流獨奏");
+so.add(params, "閒置幾秒開始獨奏", 1, 30, 1);
+so.add(params, "獨奏秒數最短", 3, 30, 1);
+so.add(params, "獨奏秒數最長", 3, 40, 1);
+so.add(params, "獨奏時其他音量", 0, 0.6, 0.01);
+so.add(params, "卡片停留秒數", 3, 60, 1).name("點選後卡片停留（秒）");
+so.close();
 gui.add(params, "旁白音量", 0, 1.5, 0.01).onChange(v => narrGain && narrGain.gain.setTargetAtTime(v, ctx.currentTime, 0.1));
 gui.add(params, "旁白時音樂", 0, 1, 0.01).name("旁白時音樂降到（比例）");
 gui.add(params, "殘響", 0, 1, 0.01).onChange(v => wetGain && wetGain.gain.setTargetAtTime(v, ctx.currentTime, 0.1));
