@@ -2,6 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>山椒魚五重奏</title>
 <style>
   html, body { margin: 0; height: 100%; background: #0b0f14; color: #d8dee6; overflow: hidden;
@@ -81,6 +82,7 @@
     border-radius: 8px; cursor: default; transition: background 0.3s, opacity 0.3s; }
   .sp .dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; }
   .sp .name { font-size: 14px; font-weight: 600; }
+  .sp .mini { display: none; }
   .sp .meta { grid-column: 2; font-size: 11.5px; color: #8a96a3; line-height: 1.5; }
   .sp .bar { grid-column: 2; height: 3px; background: #1d2630; border-radius: 2px; margin-top: 3px; }
   .sp .bar i { display: block; height: 100%; border-radius: 2px; transition: width 0.4s; }
@@ -94,11 +96,38 @@
     transform: translate(-50%, -100%); white-space: nowrap; }
   .peak::after { content: "▲"; display: block; text-align: center; font-size: 7px; color: #55606c; }
   #start { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
-    justify-content: center; background: rgba(8,11,15,0.82); z-index: 10; }
-  #start button { font: inherit; font-size: 18px; padding: 12px 34px; border-radius: 30px;
+    justify-content: center; background: rgba(8,11,15,0.96); z-index: 10; }
+  #start .stitle { font-size: clamp(30px, 6vw, 52px); font-weight: 600; letter-spacing: 0.12em; color: #e6edf3; margin-bottom: 28px; text-align: center; }
+  #start .ssound { text-align: center; font-size: clamp(22px, 4.5vw, 34px); color: #f2d27a; margin-bottom: 32px; line-height: 1.4; }
+  #start .ssound .sicon { font-size: clamp(44px, 9vw, 72px); margin-bottom: 6px; }
+  #start .ssound small { display: block; font-size: clamp(14px, 3.4vw, 17px); color: #aab4bf; margin-top: 10px; }
+  #start .slang { margin-top: 26px; font-size: clamp(16px, 4vw, 19px); padding: 10px 26px; background: transparent; }
+  #start button { font: inherit; font-size: clamp(20px, 5vw, 26px); padding: 16px 44px; border-radius: 40px;
     border: 1px solid #5d6874; background: #141b23; color: #e6edf3; cursor: pointer; }
   #start button:disabled { opacity: 0.4; cursor: wait; }
   #status { margin-top: 14px; font-size: 13px; color: #8a96a3; }
+  /* ---- 手機版（放在最後，才能覆蓋前面的電腦版樣式） */
+  @media (max-width: 760px) {
+    /* 手機版精簡圖例：標題下一排 5 格（族名、族群數 · 多樣性、多樣性長條） */
+    #legend { left: 8px; right: 8px; top: 74px; bottom: auto; width: auto; display: flex; gap: 4px; }
+    .sp { flex: 1; min-width: 0; display: block; padding: 5px 6px; background: rgba(20,27,35,0.75); border-radius: 6px; }
+    .sp .dot { display: inline-block; width: 8px; height: 8px; margin: 0 4px 0 0; vertical-align: middle; }
+    .sp .name { display: inline; font-size: 11px; white-space: nowrap; }
+    .sp .meta { display: none; }
+    .sp .mini { display: block; font-size: 10.5px; color: #aab4bf; margin-top: 2px; white-space: nowrap; }
+    .sp .bar { margin-top: 3px; }
+    #langBtn { font-size: 16px; padding: 8px 18px; top: 12px; right: 12px; }
+    #title { max-width: calc(100% - 120px); left: 14px; top: 14px; }
+    #title h1 { font-size: 18px; } #title p { font-size: 12px; }
+    #phase { top: auto; bottom: 200px; }
+    #phase .temp { font-size: 24px; } #phase .tick { display: none; }
+    .callout { width: 112px; } .callout img { height: 70px; } .callout div { font-size: 11.5px; }
+    #card { left: 12px; right: 12px; width: auto; top: 130px; } #card img { height: 130px; }
+    #subs { left: 12px; right: 12px; max-width: none; transform: none; bottom: 56px; } #subs span { font-size: 15px; }
+    #skipIntro { left: 12px; transform: none; bottom: 12px; font-size: 13px; padding: 5px 14px; }
+    #rightCol { right: 10px; bottom: 8px; max-width: 60%; } #note { display: none; }
+    #info, #sources { left: 10px; right: 10px; width: auto; bottom: 60px; }
+  }
 </style>
 </head>
 <body>
@@ -310,7 +339,13 @@
 </div>
 </div>
 
-<div id="start"><button id="go" disabled data-i18n="loading">載入音色中…</button><div id="status"></div></div>
+<div id="start">
+  <div class="stitle"><span data-i18n="title">山椒魚五重奏</span></div>
+  <div class="ssound"><div class="sicon">🔊</div><div data-i18n="soundOn">請開啟聲音</div>
+    <small data-i18n="soundHint">建議戴耳機・iPhone 請關閉側邊的靜音開關</small></div>
+  <button id="go" disabled data-i18n="loading">載入音色中…</button><div id="status"></div>
+  <button id="langBtn2" class="slang">English</button>
+</div>
 
 <script src="lib/three.min.js"></script>
 <script src="lib/lil-gui.min.js"></script>
@@ -328,14 +363,14 @@ for (const i of INSTRUMENTS) document.write(`<script src="soundfonts/${i}-mp3.js
 // ================================================================ 語言（與 zoelin.me 共用 localStorage「siteLang」：zh / en）
 let LANG = (() => { try { return localStorage.getItem("siteLang") === "en" ? "en" : "zh"; } catch (e) { return "zh"; } })();
 const I18N = {
-  zh: { docTitle: "山椒魚五重奏", title: "山椒魚五重奏", srcBtn: "📚 資料來源", infoBtn: "ⓘ 計算根據", skip: "跳過介紹 ⏭",
+  zh: { docTitle: "山椒魚五重奏", title: "山椒魚五重奏", soundOn: "請開啟聲音", soundHint: "建議戴耳機・iPhone 請關閉側邊的靜音開關", langOther: "English", srcBtn: "📚 資料來源", infoBtn: "ⓘ 計算根據", skip: "跳過介紹 ⏭",
     tag: "台灣特有種・冰河孑遺", endThanks: "謝謝聆聽", endTitle: "《山椒魚五重奏》", replay: "↻ 重新播放",
     tick: "▲ 2100 年：比現在再升溫約 3.3 °C（最高排放情境），之後假設停住",
     note: "分布點：GBIF 觀察紀錄（保育類座標已模糊化，僅示意大致區域）<br>海岸線：Natural Earth<br>鳥鳴：xeno-canto 錄音者（CC BY-NC-SA，見 CREDITS.txt）",
     ipcc: "IPCC AR6 SSP5-8.5：2081–2100 年比工業化前 +4.4 °C；現在已約 +1.1 °C，故相對現在約 +3.3 °C",
     start: "▶ 開始聆聽", loading: "載入音色中…", preparing: "準備音色中…", decoding: p => `解碼樂器音色 ${p}%`, loadAmb: "載入山區錄音…", loadNarr: "載入旁白…",
     phase: { prelude: "前言", rich: "繁盛", warm: "暖化", silence: "寂靜" },
-    subPre: "五座山、五個族群，各自演化中（未暖化）。把滑鼠移到地圖上的點，聆聽該族群。",
+    subPre: "五座山、五個族群，各自演化中（未暖化）。把滑鼠移到或點選地圖上的點，聆聽該族群。",
     subWarm: "氣溫上升，每一族的旋律被迫往高音爬；碰到山頂後族群縮小、旋律越來越單調。",
     subEnd: "暖化讓牠們一路往山頂爬，直到再也沒有地方可去。",
     labEnd: "五個族群都消失了，只剩鳥叫聲",
@@ -348,14 +383,14 @@ const I18N = {
     cardGone: "（已從這首曲子裡消失）",
     infoHead: "<tr><th>族群</th><th>L–U (m)</th><th>山頂 P</th><th>開始壓縮</th><th>消失</th></tr>",
   },
-  en: { docTitle: "Salamander Quintet", title: "Salamander Quintet", srcBtn: "📚 Sources", infoBtn: "ⓘ How it's calculated", skip: "Skip intro ⏭",
+  en: { docTitle: "Salamander Quintet", title: "Salamander Quintet", soundOn: "Please turn your sound on", soundHint: "Headphones recommended · On iPhone, turn off the silent switch", langOther: "中文", srcBtn: "📚 Sources", infoBtn: "ⓘ How it's calculated", skip: "Skip intro ⏭",
     tag: "Endemic to Taiwan · Ice-age relict", endThanks: "Thank you for listening", endTitle: "Salamander Quintet", replay: "↻ Play again",
     tick: "▲ 2100: about +3.3 °C above today (highest-emission scenario), then assumed to stop",
     note: "Distribution: GBIF records (coordinates of protected species are generalized; approximate areas only)<br>Coastline: Natural Earth<br>Birdsong: xeno-canto recordists (CC BY-NC-SA, see CREDITS.txt)",
     ipcc: "IPCC AR6 SSP5-8.5: +4.4 °C above pre-industrial in 2081–2100; already about +1.1 °C today, so about +3.3 °C above today",
     start: "▶ Start listening", loading: "Loading instruments…", preparing: "Preparing sounds…", decoding: p => `Decoding instruments ${p}%`, loadAmb: "Loading mountain recordings…", loadNarr: "Loading narration…",
     phase: { prelude: "Prelude", rich: "Flourishing", warm: "Warming", silence: "Silence" },
-    subPre: "Five mountains, five populations, each evolving (no warming yet). Move your mouse over the dots on the map to listen.",
+    subPre: "Five mountains, five populations, each evolving (no warming yet). Hover over or tap the dots on the map to listen.",
     subWarm: "As temperatures rise, each population's melody is forced to climb; once it hits the summit, the population shrinks and the melody grows monotonous.",
     subEnd: "Warming pushed them up toward the summits, until there was nowhere left to go.",
     labEnd: "All five populations are gone; only birdsong remains",
@@ -379,6 +414,8 @@ const SP_EN = {
 };
 const PEAKS_EN = { "雪山": "Xueshan", "南湖大山": "Nanhu Mtn.", "合歡山": "Hehuan Mtn.", "玉山": "Yushan", "阿里山": "Alishan", "觀霧": "Guanwu", "北插天山": "Mt. Beichatian" };
 const spName = sp => (LANG === "en" ? sp.en.name : sp.name);
+const SHORT = { fucus: ["觀霧", "Guanwu"], formosanus: ["台灣", "Taiwan"], arisanensis: ["阿里山", "Alishan"], sonani: ["楚南氏", "Sonan's"], glacialis: ["南湖", "Nanhu"] };
+const shortName = sp => SHORT[sp.key][LANG === "en" ? 1 : 0];
 
 // ================================================================ 族群介紹（hover 顯示）
 const SP_INFO = {
@@ -1169,8 +1206,9 @@ function resize() {
   renderer.setSize(innerWidth, innerHeight);
   const xs = COAST.map(c => proj(...c)[0]), ys = COAST.map(c => proj(...c)[1]);
   const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
-  const h = (y1 - y0) * 1.12, aspect = innerWidth / innerHeight;
-  const cx = (x0 + x1) / 2 - h * aspect * 0.06, cy = (y0 + y1) / 2;   // 地圖略往右，左下留給圖例
+  const aspect = innerWidth / innerHeight, narrow = innerWidth <= 760;
+  const h = Math.max((y1 - y0) * (narrow ? 1.04 : 1.12), (x1 - x0) * (narrow ? 1.25 : 1.15) / aspect);   // 寬高都放得下
+  const cx = (x0 + x1) / 2 - (narrow ? 0 : h * aspect * 0.06), cy = (y0 + y1) / 2;   // 寬螢幕地圖略往右，左下留給圖例
   camera.left = cx - h * aspect / 2; camera.right = cx + h * aspect / 2;
   camera.top = cy + h / 2; camera.bottom = cy - h / 2;
   camera.updateProjectionMatrix();
@@ -1186,6 +1224,11 @@ resize();
 // ================================================================ 滑鼠 → 混音
 let mouse = null, legendFocus = -1;
 renderer.domElement.addEventListener("mousemove", e => { mouse = [e.clientX, e.clientY]; });
+let touchTimer = null;
+const onTouch = e => { const t = e.touches[0]; if (!t) return; mouse = [t.clientX, t.clientY]; clearTimeout(touchTimer); };
+renderer.domElement.addEventListener("touchstart", onTouch, { passive: true });
+renderer.domElement.addEventListener("touchmove", onTouch, { passive: true });
+renderer.domElement.addEventListener("touchend", () => { touchTimer = setTimeout(() => { mouse = null; }, 4000); });   // 放開後停留 4 秒再回到全體
 renderer.domElement.addEventListener("mouseleave", () => { mouse = null; });
 
 function focusWeights() {
@@ -1242,10 +1285,12 @@ const legend = document.getElementById("legend");
 const legendEls = SPECIES.map((sp, s) => {
   const el = document.createElement("div"); el.className = "sp";
   el.innerHTML = `<div class="dot" style="background:${sp.color}"></div>
-    <div class="name"></div>
+    <div class="name"></div><div class="mini"></div>
     <div class="meta"><span class="mstatic"></span><br><span class="gen"></span></div>
     <div class="bar"><i style="background:${sp.color};width:100%"></i></div>`;
   el.addEventListener("mouseenter", () => { legendFocus = s; });
+  let tapTimer = null;                                           // 手機：點一下圖例格子 → 單獨聆聽 4 秒
+  el.addEventListener("touchstart", () => { legendFocus = s; clearTimeout(tapTimer); tapTimer = setTimeout(() => { legendFocus = -1; }, 4000); }, { passive: true });
   el.addEventListener("mouseleave", () => { legendFocus = -1; });
   legend.appendChild(el); return el;
 });
@@ -1348,11 +1393,13 @@ function checkCaptions() {
   if (allExtinct()) { say("end"); say("outro"); }
 }
 
+function applyLangNames() { SPECIES.forEach((sp, s) => { legendEls[s].querySelector(".name").textContent = innerWidth <= 760 ? shortName(sp) : spName(sp); }); }
 function applyLang() {
   document.body.classList.toggle("en", LANG === "en");
   document.documentElement.lang = LANG === "en" ? "en" : "zh-Hant";
   document.title = tr("docTitle");
   document.getElementById("langBtn").textContent = LANG === "en" ? "中文" : "EN";
+  const lb2 = document.getElementById("langBtn2"); if (lb2) lb2.textContent = tr("langOther");
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const v = tr(el.dataset.i18n);
     if (typeof v !== "string") return;
@@ -1360,7 +1407,7 @@ function applyLang() {
   });
   document.getElementById("ipccMark").title = tr("ipcc");
   SPECIES.forEach((sp, s) => {
-    legendEls[s].querySelector(".name").textContent = spName(sp);
+    legendEls[s].querySelector(".name").textContent = innerWidth <= 760 ? shortName(sp) : spName(sp);
     legendEls[s].querySelector(".mstatic").innerHTML = tr("meta")(sp);
     callouts[sp.key].el.querySelector("div").innerHTML = `${spName(sp)}<small>${SP_INFO[sp.key].sci}</small>`;
   });
@@ -1368,11 +1415,13 @@ function applyLang() {
   if (cardSp >= 0) { const s = cardSp; cardSp = -1; updateCard(SPECIES.map((_, i) => (i === s ? 1 : 0))); }
   narrQueue = narrQueue.map(c => cueOf(c.group, c.idx));          // 還沒播的旁白換成新語言
 }
-document.getElementById("langBtn").addEventListener("click", () => {
+function toggleLang() {
   LANG = LANG === "en" ? "zh" : "en";
   try { localStorage.setItem("siteLang", LANG); } catch (e) {}
   applyLang();
-});
+}
+document.getElementById("langBtn").addEventListener("click", toggleLang);
+document.getElementById("langBtn2").addEventListener("click", toggleLang);
 
 // 圖說：照片框排在台灣兩側，箭頭指向該族分布區中心
 const calloutSvg = document.getElementById("calloutSvg"), calloutBox = document.getElementById("callouts");
@@ -1394,13 +1443,15 @@ function layoutCallouts() {
   for (const side of ["left", "right"]) {
     const list = SPECIES.filter(sp => SIDE[sp.key] === side)
       .map(sp => ({ sp, c: toScreen(...centroid(sp)) })).sort((a, b) => a.c[1] - b.c[1]);
-    let minY = 130;                                  // 避開上方的年份刻度說明
+    const narrow = innerWidth <= 760, cw = narrow ? 112 : 170, ch = narrow ? 104 : 150;   // 手機版圖說較小、貼齊螢幕邊緣
+    let minY = narrow ? 130 : 130;                   // 避開上方的標題／圖例／年份刻度說明
     for (const { sp, c } of list) {
       const { el, line, ring } = callouts[sp.key];
-      const h = 150, y = Math.max(minY, c[1] - h / 2); minY = y + h + 14;
-      const x = side === "left" ? mapL - 170 - 60 : mapR + 50;
+      const y = Math.max(minY, c[1] - ch / 2); minY = y + ch + (narrow ? 8 : 14);
+      let x = side === "left" ? mapL - cw - 60 : mapR + 50;
+      x = Math.max(6, Math.min(innerWidth - cw - 6, x));
       el.style.left = x + "px"; el.style.top = y + "px";
-      const ax = side === "left" ? x + 170 : x, ay = y + 60;
+      const ax = side === "left" ? x + cw : x, ay = y + ch * 0.4;
       const dx = c[0] - ax, dy = c[1] - ay, d = Math.hypot(dx, dy) || 1;
       line.setAttribute("x1", ax); line.setAttribute("y1", ay);
       line.setAttribute("x2", c[0] - dx / d * 16); line.setAttribute("y2", c[1] - dy / d * 16);
@@ -1410,7 +1461,7 @@ function layoutCallouts() {
 }
 function showCallout(key) { const c = callouts[key]; layoutCallouts(); c.el.classList.add("on"); c.line.classList.add("on"); c.ring.classList.add("on"); }
 function hideCallouts() { for (const c of Object.values(callouts)) { c.el.classList.remove("on"); c.line.classList.remove("on"); c.ring.classList.remove("on"); } }
-addEventListener("resize", layoutCallouts);
+addEventListener("resize", () => { layoutCallouts(); applyLangNames(); });
 applyLang();
 
 const ipccMark = document.getElementById("ipccMark"), phaseTick = document.querySelector("#phase .tick");
@@ -1504,6 +1555,7 @@ function frame() {
       : (ctx && ctx.currentTime - sp.quoteTime < 4 && sp.quoteFrom ? tr("answer")(spName(sp.quoteFrom)) : "")
         + tr("gen")(sp, params.族群大小, params.目前暖化 > 0 && params.暖化模型 === "依海拔資料" ? Math.round((sp.habitat ?? 1) * 100) : null, ornPct(sp));
     legendEls[s].querySelector(".bar i").style.width = (sp.div * 100).toFixed(0) + "%";
+    legendEls[s].querySelector(".mini").textContent = sp.extinct ? "✕" : `${sp.size} · ${(sp.div * 100).toFixed(0)}%`;
   });
   const dT = params.目前暖化, bar = Math.floor(barNow());
   phaseTemp.textContent = tr("temp")(simYear !== null && params.暖化模型 === "依海拔資料" ? Math.floor(simYear) : null, dT.toFixed(1));
