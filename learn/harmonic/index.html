@@ -191,8 +191,27 @@
       我們把它們叫做 r₁ 和 r₂（r 是根的英文 root）。
     </div>
     <div class="proof">
-      📐 <b>用公式驗證：</b>二次式 a x² + b x + c 有兩個根的條件是 b² − 4ac &gt; 0。<br>
-      這裡 a = k、b = −4、c = −3：(−4)² − 4 × k × (−3) = 16 + 12k，k 是正數，所以一定大於 0。
+      📐 <b>不用看圖，怎麼知道有兩個根？用「配方法」推出來。</b><br><br>
+      <b>先看一個例子：k = 1，x² − 4x − 3 = 0</b><br>
+      ① 想辦法湊出「某個東西的平方」。因為 (x − 2)² = x² − 4x + 4，<br>
+      　所以 x² − 4x = (x − 2)² − 4<br>
+      ② 代回去：(x − 2)² − 4 − 3 = 0，也就是 <b>(x − 2)² = 7</b><br>
+      ③ 什麼數的平方是 7？有<b>兩個</b>：√7 和 −√7。<br>
+      　x − 2 = √7 → x = 2 + √7 ≈ 4.6458<br>
+      　x − 2 = −√7 → x = 2 − √7 ≈ −0.6458　（跟圖上的 r₁、r₂ 一樣！）<br>
+      重點：<b>等號右邊是正數，就有兩個根</b>。如果右邊是 0，只有一個根；如果右邊是負數，就沒有根，因為平方不可能是負的。<br><br>
+      <b>一般的二次式：a x² + b x + c = 0（a 是正數）</b><br>
+      ① 兩邊除以 a：x² + <span class="fr"><span>b</span><span>a</span></span> x + <span class="fr"><span>c</span><span>a</span></span> = 0<br>
+      ② 配方：因為 (x + <span class="fr"><span>b</span><span>2a</span></span>)² = x² + <span class="fr"><span>b</span><span>a</span></span> x + <span class="fr"><span>b²</span><span>4a²</span></span>，<br>
+      　所以 x² + <span class="fr"><span>b</span><span>a</span></span> x = (x + <span class="fr"><span>b</span><span>2a</span></span>)² − <span class="fr"><span>b²</span><span>4a²</span></span><br>
+      ③ 代回去、把其他的搬到右邊：<br>
+      　(x + <span class="fr"><span>b</span><span>2a</span></span>)² = <span class="fr"><span>b²</span><span>4a²</span></span> − <span class="fr"><span>c</span><span>a</span></span> = <span class="fr"><span>b² − 4ac</span><span>4a²</span></span><br>
+      ④ 分母 4a² 一定是正數，所以右邊是正是負，<b>只看分子 b² − 4ac</b>：<br>
+      　b² − 4ac &gt; 0 → 兩個根　　b² − 4ac = 0 → 一個根　　b² − 4ac &lt; 0 → 沒有根<br>
+      　（兩個根就是 x = <span class="fr"><span>−b ± √(b² − 4ac)</span><span>2a</span></span>，這就是「公式解」。）<br><br>
+      <b>套回我們的題目：</b>a = k、b = −4、c = −3<br>
+      　b² − 4ac = (−4)² − 4 × k × (−3) = 16 + 12k<br>
+      　k 是正數，16 + 12k 一定大於 0，所以<b>每一個 k 都有兩個根</b>。
     </div>
     <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
   </div>
@@ -546,10 +565,10 @@ function readable(el) {
 function toSpeech(t) {
   return t.replace(/[🔄🔑🎉✅❌🤔🏆📐⭐]/gu, "")
     .replace(/(\d+(?:\.\d+)?|[a-z]|r[₁₂])\/(\d+|[a-z]|r[₁₂])/g, " $2 分之 $1 ")
-    .replace(/r₁/g, "r 一").replace(/r₂/g, "r 二").replace(/x²/g, "x 平方").replace(/b²/g, "b 平方")
-    .replace(/(^|[=(（：，、×÷]\s*)[−-](?=\d)/g, "$1負").replace(/分之\s*[−-]/g, "分之負")
+    .replace(/r₁/g, "r 一").replace(/r₂/g, "r 二").replace(/([a-z])²/g, " $1 平方").replace(/\)²/g, ") 的平方")
+    .replace(/(^|[=(（：，、×÷和]\s*)[−-](?=[\d√])/g, "$1負").replace(/分之\s*[−-]/g, "分之負")
     .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ")
-    .replace(/≈/g, " 大約是 ").replace(/>/g, " 大於 ").replace(/≠/g, " 不等於 ").replace(/→/g, "，").replace(/…/g, "，一直到，")
+    .replace(/≈/g, " 大約是 ").replace(/√/g, " 根號 ").replace(/±/g, " 正負 ").replace(/</g, " 小於 ").replace(/>/g, " 大於 ").replace(/≠/g, " 不等於 ").replace(/→/g, "，").replace(/…/g, "，一直到，")
     .replace(/\s+/g, " ").trim();
 }
 function speak(t, interrupt = true) {
