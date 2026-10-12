@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1071,6 +1071,31 @@ Stable Audio Open paper － arXiv：https://arxiv.org/abs/2407.14358]]></itunes:
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:41</itunes:duration>
       <itunes:episode>38</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 作曲也要排隊？MusicGen 的延遲排列 Delay Pattern</title>
+      <description><![CDATA[四本密碼本要怎麼排隊？這集小皮深入拆解MusicGen的延遲排列（Delay Pattern）。EnCodec每秒50格、每格用RVQ翻四本密碼本，一秒就有200個token要猜。排法一「攤平」一個一個猜，最準但最慢，10秒要2000步；排法二「平行」同一格四本一起猜，10秒只要500步，但各層彼此不知道，像草稿還沒畫好就先上色；排法三「延遲排列」讓每一本晚一步出發，像輪唱卡農，後面的密碼本可以照著前面的草稿補細節，10秒只要503步。2023年MusicGen論文比較這幾種排法，延遲排列品質接近攤平、速度快將近四倍，所以MusicGen選了它。
+
+參考資料：
+Simple and Controllable Music Generation (MusicGen) － arXiv：https://arxiv.org/abs/2306.05284
+AudioCraft / MusicGen － GitHub：https://github.com/facebookresearch/audiocraft
+High Fidelity Neural Audio Compression (EnCodec) － arXiv：https://arxiv.org/abs/2210.13438]]></description>
+      <itunes:summary><![CDATA[四本密碼本要怎麼排隊？這集小皮深入拆解MusicGen的延遲排列（Delay Pattern）。EnCodec每秒50格、每格用RVQ翻四本密碼本，一秒就有200個token要猜。排法一「攤平」一個一個猜，最準但最慢，10秒要2000步；排法二「平行」同一格四本一起猜，10秒只要500步，但各層彼此不知道，像草稿還沒畫好就先上色；排法三「延遲排列」讓每一本晚一步出發，像輪唱卡農，後面的密碼本可以照著前面的草稿補細節，10秒只要503步。2023年MusicGen論文比較這幾種排法，延遲排列品質接近攤平、速度快將近四倍，所以MusicGen選了它。
+
+參考資料：
+Simple and Controllable Music Generation (MusicGen) － arXiv：https://arxiv.org/abs/2306.05284
+AudioCraft / MusicGen － GitHub：https://github.com/facebookresearch/audiocraft
+High Fidelity Neural Audio Compression (EnCodec) － arXiv：https://arxiv.org/abs/2210.13438]]></itunes:summary>
+      <pubDate>Tue, 13 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep39.mp3" length="2430160" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep39.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:32</itunes:duration>
+      <itunes:episode>39</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1071,6 +1071,31 @@ Stable Audio Open paper - arXiv: https://arxiv.org/abs/2407.14358]]></itunes:sum
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:34</itunes:duration>
       <itunes:episode>38</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Does AI Composing Need a Queue? MusicGen's Delay Pattern</title>
+      <description><![CDATA[How should four codebooks take turns? Little Pi takes a deep dive into MusicGen's delay pattern. EnCodec produces 50 frames per second, and with RVQ each frame has four codebooks, so every second has 200 tokens to guess. Pattern one, flattening, guesses one code at a time: most accurate but slowest, 2,000 steps for 10 seconds. Pattern two, parallel, guesses all four codes of a frame at once: only 500 steps, but the layers can't see each other, like coloring before the sketch is done. Pattern three, the delay pattern, starts each codebook one step later, like singing a canon, so finer codebooks can follow the coarse sketch, and 10 seconds takes only 503 steps. The 2023 MusicGen paper compared these patterns: the delay pattern came close to flattening in quality while running almost four times faster, so MusicGen chose it.
+
+References:
+Simple and Controllable Music Generation (MusicGen) - arXiv: https://arxiv.org/abs/2306.05284
+AudioCraft / MusicGen - GitHub: https://github.com/facebookresearch/audiocraft
+High Fidelity Neural Audio Compression (EnCodec) - arXiv: https://arxiv.org/abs/2210.13438]]></description>
+      <itunes:summary><![CDATA[How should four codebooks take turns? Little Pi takes a deep dive into MusicGen's delay pattern. EnCodec produces 50 frames per second, and with RVQ each frame has four codebooks, so every second has 200 tokens to guess. Pattern one, flattening, guesses one code at a time: most accurate but slowest, 2,000 steps for 10 seconds. Pattern two, parallel, guesses all four codes of a frame at once: only 500 steps, but the layers can't see each other, like coloring before the sketch is done. Pattern three, the delay pattern, starts each codebook one step later, like singing a canon, so finer codebooks can follow the coarse sketch, and 10 seconds takes only 503 steps. The 2023 MusicGen paper compared these patterns: the delay pattern came close to flattening in quality while running almost four times faster, so MusicGen chose it.
+
+References:
+Simple and Controllable Music Generation (MusicGen) - arXiv: https://arxiv.org/abs/2306.05284
+AudioCraft / MusicGen - GitHub: https://github.com/facebookresearch/audiocraft
+High Fidelity Neural Audio Compression (EnCodec) - arXiv: https://arxiv.org/abs/2210.13438]]></itunes:summary>
+      <pubDate>Tue, 13 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep39.mp3" length="940464" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep39.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:37</itunes:duration>
+      <itunes:episode>39</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

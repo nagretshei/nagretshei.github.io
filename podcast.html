@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep39 · 2026/10/13</span>
+        <div class="lang-zh">
+          <h3>AI 作曲也要排隊？MusicGen 的延遲排列 Delay Pattern</h3>
+          <p>四本密碼本要怎麼排隊？這集小皮深入拆解MusicGen的延遲排列（Delay Pattern）。EnCodec每秒50格、每格用RVQ翻四本密碼本，一秒就有200個token要猜。排法一「攤平」一個一個猜，最準但最慢，10秒要2000步；排法二「平行」同一格四本一起猜，10秒只要500步，但各層彼此不知道，像草稿還沒畫好就先上色；排法三「延遲排列」讓每一本晚一步出發，像輪唱卡農，後面的密碼本可以照著前面的草稿補細節，10秒只要503步。2023年MusicGen論文比較這幾種排法，延遲排列品質接近攤平、速度快將近四倍，所以MusicGen選了它。</p>
+          <audio controls preload="none" src="podcast/audio/ep39.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Does AI Composing Need a Queue? MusicGen's Delay Pattern</h3>
+          <p>How should four codebooks take turns? Little Pi takes a deep dive into MusicGen's delay pattern. EnCodec produces 50 frames per second, and with RVQ each frame has four codebooks, so every second has 200 tokens to guess. Pattern one, flattening, guesses one code at a time: most accurate but slowest, 2,000 steps for 10 seconds. Pattern two, parallel, guesses all four codes of a frame at once: only 500 steps, but the layers can't see each other, like coloring before the sketch is done. Pattern three, the delay pattern, starts each codebook one step later, like singing a canon, so finer codebooks can follow the coarse sketch, and 10 seconds takes only 503 steps. The 2023 MusicGen paper compared these patterns: the delay pattern came close to flattening in quality while running almost four times faster, so MusicGen chose it.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep39.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep38 · 2026/10/12</span>
         <div class="lang-zh">
           <h3>從一團雜訊雕出音樂！擴散模型 Diffusion 與 Stable Audio Open</h3>
