@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>倒數大冒險｜調和平均與根的倒數</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --go:#ff8a3d; --back:#118ab2; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  input[type=range] { width:100%; }
+  input.n { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid #f2b705; padding:10px 16px; border-radius:8px; margin:12px 0; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  .step { display:none; } .step.on { display:block; margin-bottom:14px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button, .choices button { font-size:17px; margin:4px; padding:5px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .fr { display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; line-height:1.25; margin:0 3px; }
+  .fr > span:first-child { border-bottom:1.5px solid currentColor; padding:0 4px; }
+  .bar { height:26px; border-radius:6px; color:#fff; font-size:14px; padding:0 8px; display:flex; align-items:center; white-space:nowrap; }
+  .math { font-size:20px; }
+  .tip { font-size:14px; color:#7a6f85; }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>🔄 倒數大冒險</h1>
+  <span class="part">平均篇</span>
+  <button class="tab on" data-go="0">1. 去程與回程</button>
+  <button class="tab" data-go="1">2. 倒過來三步驟</button>
+  <span class="part">根篇</span>
+  <button class="tab" data-go="2">3. 碰到 x 軸</button>
+  <button class="tab" data-go="3">4. 根的和與積</button>
+  <button class="tab" data-go="4">5. 倒數的魔法</button>
+  <button class="tab" data-go="5">6. 大魔王</button>
+  <button class="tab" data-go="6">7. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 1：去程與回程 ============ -->
+<section class="on" id="s0">
+  <div class="card story">
+    <h2>關卡 1：去程與回程</h2>
+    你騎腳踏車去 <b>12 公里</b>外的圖書館。去程上坡比較慢，回程下坡比較快。
+    來回一趟，你的<b>平均速度</b>是多少？是不是直接把兩個速度加起來除以 2 就好？拉動拉桿試試看。
+  </div>
+  <div class="card">
+    去程時速 <span class="big" id="v1n">4</span> 公里 <input type="range" id="v1" min="2" max="12" value="4">
+    回程時速 <span class="big" id="v2n">6</span> 公里 <input type="range" id="v2" min="2" max="12" value="6">
+    <div style="margin:10px 0">
+      花的時間：<div id="bars"></div>
+    </div>
+    <table class="steps" id="v1tab"></table>
+  </div>
+  <div class="card">
+    <b>任務：</b>去程時速 4、回程時速 6（把拉桿調回 4 和 6 看看）。<br>
+    來回一共 24 公里，一共花了幾小時？ <input class="n" id="c1t"> 小時<br>
+    所以真正的平均速度 = 24 ÷ 總時間 = <input class="n" id="c1v"> 公里
+    <button class="go" id="c1chk">確認</button>
+    <div class="fb" id="c1fb"></div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 直接平均 (4 + 6) ÷ 2 = 5，但真正的平均速度是 4.8，比較小！<br>
+      因為慢的那一段花的時間比較多，它「算比較多次」。<br>
+      這種「真正的平均速度」，數學家叫做<b>調和平均</b>（英文 harmonic mean）。下一關看它怎麼算。
+    </div>
+    <div class="nav"><button class="go" data-go="1">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：倒過來三步驟 ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 2：倒過來三步驟</h2>
+    題目說：「調和平均就是：先把每個數<b>倒過來</b>，求平均，再把答案<b>倒過來</b>。」<br>
+    「倒過來」就是<b>倒數</b>：4 的倒數是 <span class="fr"><span>1</span><span>4</span></span>，<span class="fr"><span>2</span><span>3</span></span> 的倒數是 <span class="fr"><span>3</span><span>2</span></span>。
+    先用剛剛的 4 和 6 驗證看看。
+  </div>
+  <div class="card" id="h2a">
+    <div class="tip">分數用斜線寫，例如 5/24；負數前面加減號，例如 -3/2。</div>
+    <div class="step on">
+      <b>步驟 ①：倒過來。</b>4 的倒數 = <input class="n" data-ans="1/4">，6 的倒數 = <input class="n" data-ans="1/6">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ②：求平均。</b>( <span class="fr"><span>1</span><span>4</span></span> + <span class="fr"><span>1</span><span>6</span></span> ) ÷ 2 = <input class="n" data-ans="5/24">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">通分：<span class="fr"><span>1</span><span>4</span></span> = <span class="fr"><span>3</span><span>12</span></span>，<span class="fr"><span>1</span><span>6</span></span> = <span class="fr"><span>2</span><span>12</span></span>，加起來是 <span class="fr"><span>5</span><span>12</span></span>，再除以 2。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ③：再倒過來。</b><span class="fr"><span>5</span><span>24</span></span> 的倒數 = <input class="n" data-ans="24/5">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      🎉 <span class="fr"><span>24</span><span>5</span></span> = 4.8，跟腳踏車算出來的一模一樣！<br>
+      <b>換題目裡的例子：4、4、5。</b><br>
+      ① 倒數加起來：<span class="fr"><span>1</span><span>4</span></span> + <span class="fr"><span>1</span><span>4</span></span> + <span class="fr"><span>1</span><span>5</span></span> = <input class="n" data-ans="7/10">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">通分成 20 分之幾：5/20 + 5/20 + 4/20。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      ② 有 3 個數，所以平均 = <span class="fr"><span>7</span><span>10</span></span> ÷ 3 = <input class="n" data-ans="7/30">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      ③ 再倒過來 = <input class="n" data-ans="30/7">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 <b>調和平均三步驟：</b><br>
+      ① 每個數倒過來，加起來<br>
+      ② 除以「有幾個數」，得到倒數的平均<br>
+      ③ 答案再倒過來<br>
+      題目那一大串分數，就是在說這三步。
+    </div>
+    <div class="nav"><button class="go" data-go="2">進入根篇 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：碰到 x 軸 ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 3：碰到 x 軸</h2>
+    大魔王要我們找「根」。一個式子的<b>根</b>，就是讓它<b>等於 0</b> 的 x。
+    畫成圖，就是曲線<b>碰到 x 軸</b>的地方。題目裡每一個小式子都長得像 <b>k x² − 4x − 3</b>，只有 k 不一樣。拉動拉桿換 k 看看。
+  </div>
+  <div class="card">
+    <div class="math">y = <span id="gk">1</span> x² − 4x − 3</div>
+    k = <span class="big" id="gkn">1</span> <input type="range" id="gkr" min="1" max="30" value="1">
+    <svg id="graph" width="100%" viewBox="0 0 520 320"></svg>
+    <div id="groots"></div>
+  </div>
+  <div class="card" id="g3">
+    <div class="step on">
+      不管 k 是多少，當 x = 0 時，y 等於多少？ <input class="n" data-ans="-3">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">把 x = 0 代進去：k × 0 − 4 × 0 − 3。看圖上曲線穿過中間那條直線的位置。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      k 是正數，所以曲線是開口<b>向上</b>的碗。碗的中間在 x 軸<b>下面</b>（y = −3），兩邊往上翻。
+      這樣它一定會碰到 x 軸幾次？ <input class="n" data-ans="2">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">從 x 軸下面往左邊爬上去要穿過一次，往右邊爬上去又穿過一次。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 每一個 k x² − 4x − 3 都剛好有 <b>2 個根</b>，一個是負的、一個是正的。<br>
+      我們把它們叫做 r₁ 和 r₂（r 是根的英文 root）。
+    </div>
+    <div class="proof">
+      📐 <b>用公式驗證：</b>二次式 a x² + b x + c 有兩個根的條件是 b² − 4ac &gt; 0。<br>
+      這裡 a = k、b = −4、c = −3：(−4)² − 4 × k × (−3) = 16 + 12k，k 是正數，所以一定大於 0。
+    </div>
+    <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：根的和與積 ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 4：根的和與積</h2>
+    根通常是很醜的小數。可是把兩個根<b>加起來</b>、<b>乘起來</b>，會發生神奇的事。拉動拉桿，觀察下面的表。
+  </div>
+  <div class="card">
+    k = <span class="big" id="vkn">1</span> <input type="range" id="vkr" min="1" max="12" value="1">
+    <table class="steps" id="vtab"></table>
+  </div>
+  <div class="card" id="v4">
+    <div class="step on">
+      找到規律了嗎？k = 8 的時候（先不要拉），猜猜看：<br>
+      r₁ + r₂ = <input class="n" data-ans="1/2">　r₁ × r₂ = <input class="n" data-ans="-3/8">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">k = 1 時和是 4、積是 −3；k = 2 時和是 2、積是 −1.5；k = 4 時和是 1、積是 −0.75。都是把 4 和 −3 除以 k。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c4key">
+    <div class="key">
+      🔑 k x² − 4x − 3 的兩個根：<br>
+      　<b>r₁ + r₂ = <span class="fr"><span>4</span><span>k</span></span></b>　　<b>r₁ × r₂ = <span class="fr"><span>−3</span><span>k</span></span></b><br>
+      不用真的把根算出來，就知道它們的和與積！這叫做<b>韋達定理</b>（Vieta）。
+    </div>
+    <div class="proof">
+      📐 <b>為什麼？</b>有兩個根 r₁、r₂ 的二次式，一定可以寫成 k (x − r₁)(x − r₂)。展開：<br>
+      　k (x − r₁)(x − r₂) = k x² − k (r₁ + r₂) x + k r₁ r₂<br>
+      跟 k x² − 4x − 3 一項一項比：<br>
+      　k (r₁ + r₂) = 4 → r₁ + r₂ = <span class="fr"><span>4</span><span>k</span></span><br>
+      　k r₁ r₂ = −3 → r₁ r₂ = <span class="fr"><span>−3</span><span>k</span></span>
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：倒數的魔法 ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 5：倒數的魔法</h2>
+    調和平均要用<b>倒數</b>。所以我們要算兩個根的倒數加起來：
+    <span class="fr"><span>1</span><span>r₁</span></span> + <span class="fr"><span>1</span><span>r₂</span></span>。
+  </div>
+  <div class="card" id="m5">
+    <div class="step on">
+      通分以後，<span class="fr"><span>1</span><span>r₁</span></span> + <span class="fr"><span>1</span><span>r₂</span></span> 等於哪一個？
+      <div class="choices" data-right="0">
+        <button><span class="fr"><span>r₁ + r₂</span><span>r₁ × r₂</span></span></button>
+        <button><span class="fr"><span>1</span><span>r₁ + r₂</span></span></button>
+        <button><span class="fr"><span>2</span><span>r₁ × r₂</span></span></button>
+      </div>
+      <div class="hint">試試看數字：<span class="fr"><span>1</span><span>2</span></span> + <span class="fr"><span>1</span><span>3</span></span> = <span class="fr"><span>3</span><span>6</span></span> + <span class="fr"><span>2</span><span>6</span></span> = <span class="fr"><span>5</span><span>6</span></span>，分子 5 = 2 + 3，分母 6 = 2 × 3。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      把上一關的結果代進去：<span class="fr"><span>4/k</span><span>−3/k</span></span> = <input class="n" data-ans="-4/3">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">分子分母都有「÷ k」，可以一起消掉，剩下 4 ÷ (−3)。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c5demo">
+    <b>用真的根檢查看看：</b>拉動拉桿，不管 k 是多少……<br>
+    k = <span class="big" id="mkn">1</span> <input type="range" id="mkr" min="1" max="2025" value="1">
+    <table class="steps" id="mtab"></table>
+  </div>
+  <div class="card hidden" id="c5key">
+    <div class="key">
+      🔑 <b>k 被消掉了！</b>每一個 k x² − 4x − 3，兩個根的倒數加起來<b>都是 <span class="fr"><span>−4</span><span>3</span></span></b>，跟 k 無關。<br>
+      這就是大魔王的破關秘密。
+    </div>
+    <div class="nav"><button class="go" data-go="5">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：大魔王 ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 6：大魔王（2025 AMC 10A 第 18 題）</h2>
+    求下面這個 4050 次多項式所有實數根的<b>調和平均</b>：<br>
+    <span class="math">(x² − 4x − 3)(2x² − 4x − 3)(3x² − 4x − 3) … (2025x² − 4x − 3)</span><br>
+    <span class="tip">一長串乘起來等於 0，只要其中一個括號等於 0 就行。所以它的根 = 每個括號的根全部放在一起。</span>
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 1：</b>一共有 2025 個括號，每個有 2 個根，一共有幾個根？ <input class="n" data-ans="4050">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 2：</b>小心！會不會兩個括號剛好有<b>同一個根</b>，被算了兩次？
+      <div class="yn" data-right="1"><button>會</button><button>不會</button></div>
+      <div class="hint">假設 x 同時是 a x² − 4x − 3 和 b x² − 4x − 3 的根（a 和 b 不一樣），兩個式子相減看看。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 兩式都等於 0，相減：(a − b) x² = 0。a ≠ b，所以 x = 0。<br>
+        但 x = 0 代進去得到 −3，不是 0，所以 0 不是根。矛盾！<b>沒有重複的根</b>，4050 個根都不一樣。
+      </div>
+    </div>
+    <div class="step">
+      <b>步驟 3：</b>每個括號的兩個根，倒數加起來都是 <span class="fr"><span>−4</span><span>3</span></span>。<br>
+      2025 個括號，全部的倒數加起來 = 2025 × <span class="fr"><span>−4</span><span>3</span></span> = <input class="n" data-ans="-2700">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">2025 ÷ 3 = 675，再乘 −4。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 4：</b>倒數的平均 = 倒數總和 ÷ 根的個數 = −2700 ÷ 4050 = <input class="n" data-ans="-2/3">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">2700 和 4050 都是 1350 的倍數：2700 = 1350 × 2，4050 = 1350 × 3。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>調和平均 = 再倒過來。答案是？
+      <div class="choices" id="bchoices">
+        <button data-v="A">(A) −5/3</button><button data-v="B">(B) −3/2</button><button data-v="C">(C) −6/5</button>
+        <button data-v="D">(D) −5/6</button><button data-v="E">(E) −2/3</button>
+      </div>
+      <div class="fb" id="bfb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="bsum">
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 調和平均 = 倒數的平均，再倒過來<br>
+      ② 二次式 a x² + b x + c 兩根的倒數和 = <span class="fr"><span>r₁ + r₂</span><span>r₁ r₂</span></span> = <span class="fr"><span>−b/a</span><span>c/a</span></span> = <span class="fr"><span>−b</span><span>c</span></span>（a 會消掉！）<br>
+      ③ 看到一大串長得很像的式子，先找「每一個都一樣」的東西
+    </div>
+    <div class="nav"><button class="go" data-go="6">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：無限練習 ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 7：無限練習</h2>
+    數字每次都不一樣。先練調和平均，熟了再挑戰 AMC 變化題！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">調和平均練習</button><button id="lvHard">AMC 變化題</button></div>
+    <div id="pq" class="story"></div>
+    答案 = <input class="n" id="pans"> <button class="go" id="pchk">確認</button>
+    <button class="ghost" id="pshow">看解法</button>
+    <button class="ghost" id="pnew">下一題</button>
+    <div class="tip">分數用斜線寫，例如 -3/2。</div>
+    <div class="fb" id="pfb"></div>
+    <div id="psol" class="proof hidden"></div>
+    <div>連續答對：<span class="big" id="pstreak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const gcd = (a, b) => b ? gcd(b, a % b) : Math.abs(a);
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+// 讀使用者輸入的數：可以是整數、小數、分數 a/b，減號用 - 或 −
+function val(s) {
+  s = String(s).trim().replace(/−|–/g, "-").replace(/\s/g, "");
+  if (!s) return NaN;
+  const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  return m ? +m[1] / +m[2] : Number(s);
+}
+const same = (a, b) => Math.abs(a - b) < 1e-9;
+// 分數約分成字串
+function frac(n, d) { if (d < 0) { n = -n; d = -d; } const g = gcd(n, d); n /= g; d /= g; return d === 1 ? `${n}` : `${n}/${d}`; }
+const fmt = x => (Math.round(x * 10000) / 10000).toString().replace("-", "−");
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "harmonic";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => $$(".tab[data-go]")[i]?.classList.add("done"));
+
+// 一步一步的關卡：輸入框 data-ans 比對、提示鈕、選擇題、是非題
+function chkStep(step) {
+  const ins = [...step.querySelectorAll("input")];
+  const ok = ins.every(i => same(val(i.value), val(i.dataset.ans)));
+  const decimal = ins.some(i => !same(val(i.value), val(i.dataset.ans)) && /\./.test(i.value));
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : decimal ? "❌ 試試用分數寫，例如 5/24" : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  if (!ok && step.querySelector(".hint") && step.dataset.miss) step.querySelector(".hint").classList.add("on");
+  step.dataset.miss = ok ? "" : "1";
+  return ok;
+}
+function wireSteps(box, onLast) {
+  const steps = [...box.querySelectorAll(".step")];
+  const next = step => { const n = steps[steps.indexOf(step) + 1]; n ? n.classList.add("on") : onLast && onLast(); };
+  steps.forEach(step => {
+    step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+    step.querySelector(".chk")?.addEventListener("click", () => { if (chkStep(step)) next(step); });
+    const pick = step.querySelector(".choices[data-right], .yn[data-right]");
+    if (pick) [...pick.querySelectorAll("button")].forEach((b, k) => b.onclick = () => {
+      const ok = k === +pick.dataset.right;
+      fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : "🤔 再想想看");
+      if (!ok) step.querySelector(".hint")?.classList.add("on");
+      if (ok) { const pf = step.querySelector(".proof"); if (pf) show(pf); next(step); }
+    });
+  });
+}
+
+// ---------- 關卡 1：去程與回程 ----------
+function c1() {
+  const a = +$("#v1").value, b = +$("#v2").value, t1 = 12 / a, t2 = 12 / b, T = t1 + t2;
+  $("#v1n").textContent = a; $("#v2n").textContent = b;
+  const w = t => Math.max(8, t / 12 * 100) + "%";
+  $("#bars").innerHTML = `<div class="bar" style="width:${w(t1)};background:var(--go);margin:4px 0">去程 ${fmt(t1)} 小時</div>
+    <div class="bar" style="width:${w(t2)};background:var(--back);margin:4px 0">回程 ${fmt(t2)} 小時</div>`;
+  $("#v1tab").innerHTML = `<tr><th>直接平均 (${a} + ${b}) ÷ 2</th><td>${fmt((a + b) / 2)}</td></tr>
+    <tr><th>真正的平均速度：24 公里 ÷ ${fmt(T)} 小時</th><td><b>${fmt(24 / T)}</b></td></tr>`;
+}
+$("#v1").oninput = $("#v2").oninput = c1; c1();
+$("#c1chk").onclick = () => {
+  const t = val($("#c1t").value), v = val($("#c1v").value);
+  if (!same(t, 5)) return fb($("#c1fb"), false, "❌ 去程 12 ÷ 4 = 3 小時，回程 12 ÷ 6 = 2 小時，加起來是？");
+  if (!same(v, 4.8)) return fb($("#c1fb"), false, "❌ 24 ÷ 5 = ?");
+  fb($("#c1fb"), true, "✅ 對！平均時速 4.8 公里，不是 5！");
+  show("#c1key"); done(0);
+};
+
+// ---------- 關卡 2 ----------
+wireSteps($("#h2a"), () => { show("#c2key"); done(1); });
+
+// ---------- 關卡 3：拋物線 ----------
+const roots = k => [(4 - Math.sqrt(16 + 12 * k)) / (2 * k), (4 + Math.sqrt(16 + 12 * k)) / (2 * k)];
+function graph() {
+  const k = +$("#gkr").value; $("#gkn").textContent = k; $("#gk").textContent = k === 1 ? "" : k;
+  const X0 = -2, X1 = 6, Y0 = -10, Y1 = 10, W = 520, H = 320;
+  const px = x => (x - X0) / (X1 - X0) * W, py = y => H - (y - Y0) / (Y1 - Y0) * H;
+  let pts = [];
+  for (let i = 0; i <= 400; i++) { const x = X0 + (X1 - X0) * i / 400, y = k * x * x - 4 * x - 3; if (y < Y1 + 5) pts.push(`${px(x).toFixed(1)},${py(Math.min(y, Y1 + 5)).toFixed(1)}`); }
+  let h = "";
+  for (let x = -2; x <= 6; x++) h += `<line x1="${px(x)}" y1="0" x2="${px(x)}" y2="${H}" stroke="#f0e8dc"/><text x="${px(x) + 3}" y="${py(0) + 16}" fill="#9a8fa5" font-size="12">${x}</text>`;
+  h += `<line x1="0" y1="${py(0)}" x2="${W}" y2="${py(0)}" stroke="#2b2233" stroke-width="2"/>`;
+  h += `<line x1="${px(0)}" y1="0" x2="${px(0)}" y2="${H}" stroke="#2b2233" stroke-width="1.5"/>`;
+  h += `<polyline points="${pts.join(" ")}" fill="none" stroke="#7b4dff" stroke-width="3"/>`;
+  h += `<circle cx="${px(0)}" cy="${py(-3)}" r="5" fill="#ff8a3d"/><text x="${px(0) + 8}" y="${py(-3) + 5}" fill="#ff8a3d">(0, −3)</text>`;
+  const [r1, r2] = roots(k);
+  [r1, r2].forEach((r, i) => h += `<circle cx="${px(r)}" cy="${py(0)}" r="7" fill="#1f9d55"/><text x="${px(r) - 10}" y="${py(0) - 12}" fill="#1f9d55">r${"₁₂"[i]}</text>`);
+  $("#graph").innerHTML = h;
+  $("#groots").innerHTML = `碰到 x 軸的兩個點（根）：r₁ ≈ <b>${fmt(r1)}</b>，r₂ ≈ <b>${fmt(r2)}</b>`;
+}
+$("#gkr").oninput = graph; graph();
+wireSteps($("#g3"), () => { show("#c3key"); done(2); });
+
+// ---------- 關卡 4：根的和與積 ----------
+function vieta() {
+  const k = +$("#vkr").value, [r1, r2] = roots(k); $("#vkn").textContent = k;
+  $("#vtab").innerHTML = `<tr><th>r₁</th><td>${fmt(r1)}</td></tr><tr><th>r₂</th><td>${fmt(r2)}</td></tr>
+    <tr><th>r₁ + r₂</th><td><b>${fmt(r1 + r2)}</b></td></tr><tr><th>r₁ × r₂</th><td><b>${fmt(r1 * r2)}</b></td></tr>`;
+}
+$("#vkr").oninput = vieta; vieta();
+wireSteps($("#v4"), () => { show("#c4key"); done(3); });
+
+// ---------- 關卡 5：倒數的魔法 ----------
+function magic() {
+  const k = +$("#mkr").value, [r1, r2] = roots(k); $("#mkn").textContent = k;
+  $("#mtab").innerHTML = `<tr><th>r₁, r₂</th><td>${fmt(r1)}，${fmt(r2)}</td></tr>
+    <tr><th>1/r₁ + 1/r₂</th><td><b>${fmt(1 / r1 + 1 / r2)}</b>　（−4/3 ≈ −1.3333）</td></tr>`;
+}
+$("#mkr").oninput = magic; magic();
+wireSteps($("#m5"), () => { show("#c5demo"); show("#c5key"); done(4); });
+
+// ---------- 關卡 6：大魔王 ----------
+wireSteps($("#boss"));
+$$("#bchoices button").forEach(b => b.onclick = () => {
+  const ok = b.dataset.v === "B";
+  fb($("#bfb"), ok, ok ? "🏆 答對了！−2/3 倒過來是 −3/2，答案 B。" :
+    b.dataset.v === "E" ? "−2/3 是倒數的平均，還要再倒過來一次！" : "−2/3 倒過來是多少？");
+  if (ok) { show("#bsum"); done(5); }
+});
+
+// ---------- 關卡 7：無限練習 ----------
+let P = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+function newProblem() {
+  if (mode === "easy") {
+    const n = rnd(2, 3), xs = Array.from({ length: n }, () => rnd(2, 12));
+    // 倒數和 = sum(L/x)/L，調和平均 = n·L / sum(L/x)
+    const L = xs.reduce((a, b) => a * b / gcd(a, b)), S = xs.reduce((s, x) => s + L / x, 0);
+    P = { easy: true, xs, L, S, ans: frac(n * L, S) };
+    $("#pq").innerHTML = `求 <b>${xs.join("、")}</b> 的調和平均。`;
+  } else {
+    const n = rnd(3, 2030), b = rnd(1, 9) * (Math.random() < .5 ? -1 : 1), c = -rnd(1, 9);
+    const bx = Math.abs(b) === 1 ? "x" : `${Math.abs(b)}x`, sb = `${b < 0 ? "−" : "+"} ${bx}`, sc = `− ${-c}`;
+    P = { n, b, c, ans: frac(-2 * c, b) };
+    $("#pq").innerHTML = `求下面這個多項式所有實數根的調和平均：<br><span class="math">(x² ${sb} ${sc})(2x² ${sb} ${sc}) … (${n}x² ${sb} ${sc})</span>`;
+  }
+  $("#pans").value = ""; fb($("#pfb"), null, ""); $("#psol").classList.add("hidden");
+}
+function solution() {
+  if (P.easy) {
+    const n = P.xs.length;
+    return `① 倒數加起來：${P.xs.map(x => `1/${x}`).join(" + ")} = ${frac(P.S, P.L)}<br>
+      ② 除以 ${n}：${frac(P.S, P.L * n)}<br>
+      ③ 倒過來：<b>${P.ans}</b>`;
+  }
+  const { n, b, c } = P, per = frac(-b, c);
+  return `① 每個 k x² ${b < 0 ? "−" : "+"} ${Math.abs(b)}x − ${-c} 都有 2 個根（開口向上、x = 0 時是 ${c}，在 x 軸下面），一共 ${2 * n} 個，而且不會重複。<br>
+    ② 每個括號兩根的倒數和 = (r₁ + r₂) ÷ (r₁ r₂) = (${-b}/k) ÷ (${c}/k) = ${per}（k 消掉了）<br>
+    ③ 倒數總和 = ${n} × ${per}，倒數的平均 = ${n} × ${per} ÷ ${2 * n} = ${frac(-b, 2 * c)}<br>
+    ④ 倒過來：<b>${P.ans}</b>　（${n} 是多少根本不重要！）`;
+}
+$("#pchk").onclick = () => {
+  const ok = same(val($("#pans").value), val(P.ans));
+  streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
+  fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再算一次，或看解法");
+  if (streak >= 3 && !P.easy) done(6);
+};
+$("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
+$("#pnew").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+// 把畫面上的數學唸成中文：分數「b 分之 a」、x² 唸「x 平方」、負號唸「負」
+function readable(el) {
+  if (typeof el === "string") return el;
+  const c = el.cloneNode(true);
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on)").forEach(b => b.remove());
+  c.querySelectorAll(".fr").forEach(f => f.replaceWith(` ${f.children[1].textContent} 分之 ${f.children[0].textContent} `));
+  c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  return c.textContent;
+}
+function toSpeech(t) {
+  return t.replace(/[🔄🔑🎉✅❌🤔🏆📐⭐]/gu, "")
+    .replace(/(\d+(?:\.\d+)?|[a-z]|r[₁₂])\/(\d+|[a-z]|r[₁₂])/g, " $2 分之 $1 ")
+    .replace(/r₁/g, "r 一").replace(/r₂/g, "r 二").replace(/x²/g, "x 平方").replace(/b²/g, "b 平方")
+    .replace(/(^|[=(（：，、×÷]\s*)[−-](?=\d)/g, "$1負").replace(/分之\s*[−-]/g, "分之負")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ")
+    .replace(/≈/g, " 大約是 ").replace(/>/g, " 大於 ").replace(/≠/g, " 不等於 ").replace(/→/g, "，").replace(/…/g, "，一直到，")
+    .replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(readable(t)));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+const HELLO = "你好，我們一起來玩倒數大冒險！4 的倒數是 1/4。";
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak(HELLO); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak(HELLO); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak(HELLO); };
+$("#vTest").onclick = () => speak(HELLO);
+$$(".story, .key, .proof").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story"));
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+const watchOnce = (el, isOn, target) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(target(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st));
+new MutationObserver(() => speak($("#pq"))).observe($("#pq"), { childList: true });
+</script>
+</body>
+</html>
