@@ -34,6 +34,6 @@
 分布資料
 - 主要來源：《國家地理雜誌》中文版 2026 年 9 月號（第 298 期）〈冰河留給臺灣的瓶中信：山椒魚〉及資訊圖〈臺灣的山椒魚〉——分布、棲地海拔、趾數、國家紅皮書等級（分布圖提供：朱有田教授）
   https://www.natgeomedia.com/e-mag/environment/content-19343.html
-- GBIF occurrence records（Hynobius fucus / formosanus / arisanensis / sonani / glacialis），2026-10-11 下載
-  保育類座標經資料提供者模糊化，地圖僅示意大致區域
+- 地圖色塊：2026-10-12 起依上述國家地理分布圖描繪（build_map_data_natgeo.py；照片對齊真實海岸線後取色）
+  舊版曾用 GBIF occurrence records，但 2025 年中文名對調前後的紀錄混雜，台灣山椒魚／楚南氏位置錯誤（朱有田教授 2026-10-12 指正），已停用
 - 海岸線：Natural Earth（public domain）
