@@ -345,13 +345,18 @@
       <button class="go chk">確認</button> <button class="ghost hb">提示</button>
       <div class="hint">
         💡 第 5 關的魔法：每個括號的兩個根，倒數加起來都是 <span class="fr"><span>−4</span><span>3</span></span>，跟 k 無關。<br>
-        💡 一共有 2025 個括號，所以是 2025 個 <span class="fr"><span>−4</span><span>3</span></span> 加起來。2025 ÷ 3 = 675。
+        💡 一共有 2025 個括號，每個括號都貢獻一個 <span class="fr"><span>−4</span><span>3</span></span>，所以要把 <b>2025 個 <span class="fr"><span>−4</span><span>3</span></span> 加起來</b>。<br>
+        💡 怎麼加最快？先看 <b>3 個</b>：<span class="fr"><span>−4</span><span>3</span></span> + <span class="fr"><span>−4</span><span>3</span></span> + <span class="fr"><span>−4</span><span>3</span></span> = <span class="fr"><span>−12</span><span>3</span></span> = <b>−4</b>，剛好是整數！<br>
+        　所以把它們<b>每 3 個綁成一組</b>，每組是 −4。<br>
+        　2025 個可以綁成幾組？2025 ÷ 3 = 675 組。<br>
+        　675 組，每組 −4，加起來就是 675 × (−4) = ?
       </div>
       <div class="fb"></div>
       <div class="proof explain hidden">
         📐 <b>講解：</b>把 4050 個根按括號分組，每組 2 個：<br>
         　每組的倒數和 = <span class="fr"><span>1</span><span>r₁</span></span> + <span class="fr"><span>1</span><span>r₂</span></span> = <span class="fr"><span>r₁ + r₂</span><span>r₁ r₂</span></span> = <span class="fr"><span>4/k</span><span>−3/k</span></span> = <span class="fr"><span>−4</span><span>3</span></span>（k 被消掉了）<br>
-        2025 組全部加起來：2025 × <span class="fr"><span>−4</span><span>3</span></span> = −<span class="fr"><span>2025 × 4</span><span>3</span></span> = −675 × 4 = <b>−2700</b><br>
+        2025 組全部加起來：2025 個 <span class="fr"><span>−4</span><span>3</span></span>，每 3 個綁成一組剛好是 −4，一共 2025 ÷ 3 = 675 組，所以總和 = 675 × (−4) = <b>−2700</b><br>
+        　（用乘法寫就是 2025 × <span class="fr"><span>−4</span><span>3</span></span>：乘一個分數，可以先除以分母 3，再乘分子 −4。）<br>
         我們從頭到尾都<b>不用把任何一個根算出來</b>，這就是這題的巧妙之處。
       </div>
     </div>
