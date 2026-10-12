@@ -34,7 +34,10 @@
   <p class="sub">挑一個關卡開始玩吧！星星越多越難，進度會自動記在這台裝置上。</p>
 </header>
 <main id="list"></main>
-<script src="games.js"></script>
+<script>
+// games.js 加時間戳，避免瀏覽器用暫存的舊清單（GitHub Pages 會暫存 10 分鐘）
+document.write(`<script src="games.js?t=${Date.now()}"><\/script>`);
+</script>
 <script>
 const progress = JSON.parse(localStorage.getItem("learn-progress") || "{}");
 const topics = [...new Set(GAMES.map(g => g.topic))];
