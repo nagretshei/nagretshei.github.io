@@ -400,7 +400,11 @@ function done(i) {
   const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
   mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
 }
-(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => $$(".tab[data-go]")[i]?.classList.add("done"));
+// 已經過關的關卡：打勾、把重點和推導直接打開，回來複習不用重新作答
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => {
+  $$(".tab[data-go]")[i]?.classList.add("done");
+  $$(`#s${i} .card.hidden`).forEach(c => c.classList.remove("hidden"));
+});
 
 // 一步一步的關卡：輸入框 data-ans 比對、提示鈕、選擇題、是非題
 function chkStep(step) {
