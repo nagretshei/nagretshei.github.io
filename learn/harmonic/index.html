@@ -42,6 +42,11 @@
   .bar { height:26px; border-radius:6px; color:#fff; font-size:14px; padding:0 8px; display:flex; align-items:center; white-space:nowrap; }
   .math { font-size:20px; }
   .tip { font-size:14px; color:#7a6f85; }
+  table.derive td { vertical-align:middle; padding:8px 10px; }
+  table.derive td:first-child { width:34%; font-size:15px; }
+  table.derive td:last-child { color:#8a5a00; }
+  table.derive td:nth-child(2) { white-space:nowrap; }
+  table.derive td:first-child { min-width:200px; }
 </style>
 </head>
 <body>
@@ -201,14 +206,20 @@
       　x − 2 = −√7 → x = 2 − √7 ≈ −0.6458　（跟圖上的 r₁、r₂ 一樣！）<br>
       重點：<b>等號右邊是正數，就有兩個根</b>。如果右邊是 0，只有一個根；如果右邊是負數，就沒有根，因為平方不可能是負的。<br><br>
       <b>一般的二次式：a x² + b x + c = 0（a 是正數）</b><br>
-      ① 兩邊除以 a：x² + <span class="fr"><span>b</span><span>a</span></span> x + <span class="fr"><span>c</span><span>a</span></span> = 0<br>
-      ② 配方：因為 (x + <span class="fr"><span>b</span><span>2a</span></span>)² = x² + <span class="fr"><span>b</span><span>a</span></span> x + <span class="fr"><span>b²</span><span>4a²</span></span>，<br>
-      　所以 x² + <span class="fr"><span>b</span><span>a</span></span> x = (x + <span class="fr"><span>b</span><span>2a</span></span>)² − <span class="fr"><span>b²</span><span>4a²</span></span><br>
-      ③ 代回去、把其他的搬到右邊：<br>
-      　(x + <span class="fr"><span>b</span><span>2a</span></span>)² = <span class="fr"><span>b²</span><span>4a²</span></span> − <span class="fr"><span>c</span><span>a</span></span> = <span class="fr"><span>b² − 4ac</span><span>4a²</span></span><br>
-      ④ 分母 4a² 一定是正數，所以右邊是正是負，<b>只看分子 b² − 4ac</b>：<br>
-      　b² − 4ac &gt; 0 → 兩個根　　b² − 4ac = 0 → 一個根　　b² − 4ac &lt; 0 → 沒有根<br>
-      　（兩個根就是 x = <span class="fr"><span>−b ± √(b² − 4ac)</span><span>2a</span></span>，這就是「公式解」。）<br><br>
+      左邊是一般的推導，右邊是同一步用 x² − 4x − 3 = 0（a = 1、b = −4、c = −3）算一次，對照著看。
+      <div style="overflow-x:auto"><table class="steps derive">
+        <tr><th>步驟</th><th>一般的 a、b、c</th><th>例子 x² − 4x − 3</th></tr>
+        <tr><td>① 兩邊除以 a，讓 x² 前面變成 1</td><td>x² + <span class="fr"><span>b</span><span>a</span></span>x + <span class="fr"><span>c</span><span>a</span></span> = 0</td><td>x² − 4x − 3 = 0<br>（a = 1，除了不變）</td></tr>
+        <tr><td>② 配方要湊 (x + m)²。展開是 x² + <b>2m</b>x + m²，所以 x 前面的數要等於 2m</td><td>2m = <span class="fr"><span>b</span><span>a</span></span> → m = <span class="fr"><span>b</span><span>2a</span></span><br>(x + <span class="fr"><span>b</span><span>2a</span></span>)² = x² + <span class="fr"><span>b</span><span>a</span></span>x + <span class="fr"><span>b²</span><span>4a²</span></span></td><td>2m = −4 → m = −2<br>(x − 2)² = x² − 4x + 4</td></tr>
+        <tr><td>③ 所以前兩項可以寫成「平方減掉多出來的 m²」</td><td>x² + <span class="fr"><span>b</span><span>a</span></span>x = (x + <span class="fr"><span>b</span><span>2a</span></span>)² − <span class="fr"><span>b²</span><span>4a²</span></span></td><td>x² − 4x = (x − 2)² − 4</td></tr>
+        <tr><td>④ 代回 ① 的式子</td><td>(x + <span class="fr"><span>b</span><span>2a</span></span>)² − <span class="fr"><span>b²</span><span>4a²</span></span> + <span class="fr"><span>c</span><span>a</span></span> = 0</td><td>(x − 2)² − 4 − 3 = 0</td></tr>
+        <tr><td>⑤ 把平方以外的都搬到右邊（換邊要變號）</td><td>(x + <span class="fr"><span>b</span><span>2a</span></span>)² = <span class="fr"><span>b²</span><span>4a²</span></span> − <span class="fr"><span>c</span><span>a</span></span></td><td>(x − 2)² = 4 + 3</td></tr>
+        <tr><td>⑥ 右邊通分：<span class="fr"><span>c</span><span>a</span></span> 上下都乘 4a，變成 <span class="fr"><span>4ac</span><span>4a²</span></span></td><td>(x + <span class="fr"><span>b</span><span>2a</span></span>)² = <span class="fr"><span>b² − 4ac</span><span>4a²</span></span></td><td>(x − 2)² = 7<br>（b² − 4ac = 16 + 12 = 28，28 ÷ 4 = 7）</td></tr>
+        <tr><td>⑦ <b>判斷有幾個根</b>：左邊是平方，不可能是負的；分母 4a² 一定是正的。所以只看分子 b² − 4ac</td><td>b² − 4ac &gt; 0 → 兩個根<br>b² − 4ac = 0 → 一個根<br>b² − 4ac &lt; 0 → 沒有根</td><td>7 是正數 → 兩個根</td></tr>
+        <tr><td>⑧ 兩邊開根號。平方等於正數 N 的數有兩個：√N 和 −√N，用 ± 一起寫。分母 √(4a²) = 2a</td><td>x + <span class="fr"><span>b</span><span>2a</span></span> = ± <span class="fr"><span>√<span style="text-decoration:overline">b² − 4ac</span></span><span>2a</span></span></td><td>x − 2 = ± √7</td></tr>
+        <tr><td>⑨ 把 <span class="fr"><span>b</span><span>2a</span></span> 搬到右邊，通分合併，就是<b>公式解</b></td><td>x = <span class="fr"><span>−b ± √<span style="text-decoration:overline">b² − 4ac</span></span><span>2a</span></span></td><td>x = 2 ± √7<br>≈ 4.6458 或 −0.6458</td></tr>
+      </table></div>
+      <span class="tip">a 是負數的話，先把整個式子乘 −1，就變成 a 是正數的情況。</span><br><br>
       <b>套回我們的題目：</b>a = k、b = −4、c = −3<br>
       　b² − 4ac = (−4)² − 4 × k × (−3) = 16 + 12k<br>
       　k 是正數，16 + 12k 一定大於 0，所以<b>每一個 k 都有兩個根</b>。
@@ -564,6 +575,8 @@ function readable(el) {
   c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on)").forEach(b => b.remove());
   c.querySelectorAll(".fr").forEach(f => f.replaceWith(` ${f.children[1].textContent} 分之 ${f.children[0].textContent} `));
   c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  c.querySelectorAll("table.derive tr:first-child").forEach(r => r.remove());
+  c.querySelectorAll("td, th, br").forEach(td => td.append("，"));
   return c.textContent;
 }
 function toSpeech(t) {
