@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>公因數大冒險｜從糖果到輾轉相除法</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --cookie:#c98a3d; --candy:#e85d9a; --left:#ff8a3d; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  .boxes { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 14px; min-height:30px; }
+  .box { border:2px solid var(--cookie); border-radius:8px; padding:3px; display:flex; flex-wrap:wrap; gap:2px; max-width:110px; }
+  .candy .box { border-color:var(--candy); }
+  .dot { width:12px; height:12px; border-radius:50%; background:var(--cookie); }
+  .candy .dot { background:var(--candy); }
+  .dot.left, .candy .dot.left { background:var(--left); }
+  .leftover { border:2px dashed var(--left); border-radius:8px; padding:3px; display:flex; flex-wrap:wrap; gap:2px; max-width:110px; }
+  input[type=range] { width:100%; }
+  input[type=number] { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.go:disabled { opacity:.4; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .found span { display:inline-block; background:#efe8ff; border-radius:8px; padding:0 10px; margin:2px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid #f2b705; padding:10px 16px; border-radius:8px; margin:12px 0; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  .step { display:none; } .step.on { display:block; margin-bottom:12px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button { font-size:16px; margin:2px 6px 2px 0; padding:4px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .choices button { font-size:18px; margin:4px; padding:6px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .pair { font-size:30px; font-weight:700; letter-spacing:.05em; }
+  svg text { font:bold 14px sans-serif; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>🍬 公因數大冒險</h1>
+  <span class="part">公因數篇</span>
+  <button class="tab on" data-go="0">1. 糖果分組</button>
+  <button class="tab" data-go="1">2. 相減的秘密</button>
+  <button class="tab" data-go="2">3. 一直減下去</button>
+  <span class="part">餘數篇</span>
+  <button class="tab" data-go="3">4. 餅乾裝盒</button>
+  <button class="tab" data-go="4">5. 兩袋餅乾</button>
+  <button class="tab" data-go="5">6. 大魔王</button>
+  <button class="tab" data-go="6">7. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 1：公因數 ============ -->
+<section class="on" id="s0">
+  <div class="card story">
+    <h2>關卡 1：糖果分組</h2>
+    你有兩堆糖果：<b>12 顆</b>和 <b>8 顆</b>。要把兩堆都分成一樣大的小組，而且<b>兩堆都不能剩</b>。拉動拉桿，試試每組幾顆可以成功。
+  </div>
+  <div class="card candy">
+    每組 <span class="big" id="c1n">3</span> 顆
+    <input type="range" id="c1r" min="1" max="12" value="3">
+    <div>12 顆：<span id="c1a"></span></div><div id="c1visA" class="boxes"></div>
+    <div>8 顆：<span id="c1b"></span></div><div id="c1visB" class="boxes"></div>
+    <div class="found" id="c1found"></div>
+    <div class="fb" id="c1fb"></div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 12 的因數：1、2、3、4、6、12<br>
+      🔑 8 的因數：1、2、4、8<br>
+      兩邊都有的 1、2、4 叫做<b>公因數</b>，也就是兩個數共同擁有的因數。
+    </div>
+    其中最大的是幾？ <input type="number" id="c1ans"> <button class="go" id="c1chk">確認</button>
+    <div class="fb" id="c1fb2"></div>
+    <div class="nav hidden" id="c1next"><button class="go" data-go="1">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：相減的秘密 ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 2：相減的秘密</h2>
+    12 顆和 8 顆都可以每 4 顆分成一組。現在，我們從 12 顆裡面<b>拿走 8 顆</b>，看看會發生什麼事。
+  </div>
+  <div class="card candy">
+    <div id="c2visA" class="boxes"></div>
+    <button class="go" id="c2take">拿走 8 顆</button>
+    <div class="step" id="c2q1">
+      剩下幾顆？ <input type="number" data-ans="4"> <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step" id="c2q2">
+      剩下的這些，還能每 4 顆<b>剛好</b>分組嗎？
+      <div class="yn"><button data-yes="1">能</button><button>不能</button></div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" id="c2q3">
+      假如我們<b>不知道</b>答案是 4，只知道某個數能同時整除 12 和 8。它能不能整除 12 − 8 = 4？
+      <div class="yn"><button data-yes="1">能</button><button>不能</button></div>
+      <div class="hint">想想看：12 和 8 都是一組一組的，拿走整組整組的，剩下的也是整組。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>用代數寫出來：</b>設 d 能整除 12 和 8，也就是存在整數 a、b，使得<br>
+        　12 = d × a，　8 = d × b<br>
+        兩式相減：<br>
+        　12 − 8 = d × a − d × b = d × (a − b)<br>
+        a − b 是整數，所以 12 − 8 = 4 也是 d 的倍數，也就是 <b>d 整除 4</b>。
+      </div>
+    </div>
+    <div class="step" id="c2q4">
+      <b>反過來呢？</b>如果一個數能整除 8 和 4，它能不能整除 12？
+      <div class="yn"><button data-yes="1">能</button><button>不能</button></div>
+      <div class="hint">提示：12 = 8 + 4。把兩堆合起來，也都是整組。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>用代數寫出來：</b>設 d 能整除 8 和 4，也就是存在整數 m、n，使得<br>
+        　8 = d × m，　4 = d × n<br>
+        兩式相加：<br>
+        　12 = 8 + 4 = d × m + d × n = d × (m + n)<br>
+        m + n 是整數，所以 <b>d 整除 12</b>。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 12 和 8 的公因數，一定也是 8 和 4 的公因數。<br>
+      🔑 8 和 4 的公因數，也一定是 12 和 8 的公因數。<br>
+      所以兩組數的公因數<b>完全一樣</b>，最大公因數當然也一樣：<br>
+      <b>12 和 8 的最大公因數 = 8 和 4 的最大公因數</b>
+    </div>
+    <div class="proof">
+      📐 <b>換成任何數都成立：</b>設 x &gt; y 都是正整數。<br>
+      ① 若 d 整除 x 和 y：x = d × a，y = d × b → x − y = d × (a − b)，所以 d 整除 x − y。<br>
+      ② 若 d 整除 y 和 x − y：y = d × b，x − y = d × c → x = y + (x − y) = d × (b + c)，所以 d 整除 x。<br>
+      所以「x 和 y」與「y 和 x − y」的公因數完全相同，<br>
+      　<b>gcd(x, y) = gcd(y, x − y)</b>　（gcd 是最大公因數的英文縮寫）
+    </div>
+    <b>自己做實驗：</b>任選兩個數，看看「大數、小數」和「小數、兩數的差」的公因數是不是一樣。<br>
+    大數 <input type="number" id="c2x" value="30"> 小數 <input type="number" id="c2y" value="18">
+    <button class="go" id="c2run">比一比</button>
+    <div id="c2table"></div>
+    <div class="nav hidden" id="c2next"><button class="go" data-go="2">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：一直減下去 ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 3：一直減下去</h2>
+    既然「大數減掉小數」最大公因數不會變，那就一直減，讓數字越變越小！
+    來找 <b>21 和 15</b> 的最大公因數。
+  </div>
+  <div class="card">
+    現在這兩個數：<div class="pair" id="c3pair"></div>
+    <div id="c3ask">
+      大數 − 小數 = <input type="number" id="c3in"> <button class="go" id="c3chk">確認</button>
+    </div>
+    <table class="steps" id="c3log"></table>
+    <div class="fb" id="c3fb"></div>
+    <div id="c3final" class="hidden">
+      兩個數一樣大了！所以 21 和 15 的最大公因數是？ <input type="number" id="c3ans"> <button class="go" id="c3ok">確認</button>
+      <div class="fb" id="c3fb2"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3choc">
+    <div class="story">
+      <b>看圖版：切正方形</b>　<b id="l3w">48</b> × <b id="l3h">36</b> 的巧克力，每次切下最大的正方形（就是「減掉小的那邊」），直到剛好切完。最後的正方形邊長就是最大公因數。
+    </div>
+    <svg id="l3svg" width="100%" viewBox="0 0 500 380"></svg>
+    <button class="go" id="l3cut">✂️ 切一刀</button>
+    <button class="ghost" id="l3reset">重來</button>
+    <button class="ghost" id="l3try">換一塊：84 × 60</button>
+    <table class="steps" id="l3log"></table>
+    <div class="fb" id="l3fb"></div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 <b>偷懶的方法：</b>如果數字差很多，例如 273420 和 675，要減 405 次才減得完！<br>
+      其實「一直減同一個數，減到不夠減」，就是<b>除法取餘數</b>：273420 ÷ 675 = 405 餘 45。<br>
+      所以可以直接跳到「675 和 45」。<br>
+      數學家把它寫成：<b>大數 = 小數 × 商 + 餘數</b>，而且「大數和小數」的最大公因數 =「小數和餘數」的最大公因數。<br>
+      這個方法有個名字，叫做<b>輾轉相除法</b>。
+    </div>
+    <div class="proof">
+      📐 <b>為什麼可以直接取餘數？</b>設 x ÷ y = q 餘 r，也就是 x = y × q + r，所以 r = x − y × q。<br>
+      若 d 整除 x 和 y：x = d × a，y = d × b → r = d × a − d × b × q = d × (a − b × q)，所以 d 整除 r。<br>
+      反過來，若 d 整除 y 和 r：x = y × q + r = d × b × q + d × c = d × (b × q + c)，所以 d 整除 x。<br>
+      　<b>gcd(x, y) = gcd(y, r)</b>：減掉 y 的整數倍，最大公因數不變。
+    </div>
+    <b>換你：</b>用偷懶的方法，一步一步找 84 和 60 的最大公因數。
+    <div id="g3"></div>
+    <div id="g3final" class="hidden">
+      除盡了！所以 84 和 60 的最大公因數是？ <input type="number" id="l3ans"> <button class="go" id="l3chk">確認</button>
+    </div>
+    <div class="fb" id="l3fb2"></div>
+    <div id="l3explain" class="proof hidden"></div>
+    <div class="nav hidden" id="l3next"><button class="go" data-go="3">進入餘數篇 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：餅乾裝盒（餘數） ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 4：餅乾裝盒</h2>
+    學會找公因數了！現在來看「有剩下」的情況。你有 <b>38</b> 塊餅乾，每盒裝一樣多。拉動拉桿，看看會剩下幾塊。
+  </div>
+  <div class="card">
+    每盒裝 <span class="big" id="l1n">5</span> 塊
+    <input type="range" id="l1r" min="2" max="20" value="5">
+    <div id="l1vis" class="boxes"></div>
+    <div id="l1txt"></div>
+  </div>
+  <div class="card">
+    <b>任務：</b>找出所有會讓剩下的剛好是 <b>2</b> 塊的裝法！
+    <div class="found" id="l1found"></div>
+    <div class="fb" id="l1fb"></div>
+  </div>
+  <div class="card hidden" id="l1key">
+    <div class="key">
+      🔑 <b>發現 1：</b>剩 2 塊，就表示<b>把那 2 塊拿走</b>，剩下的 38 − 2 = <b>36</b> 塊剛好裝完。
+      所以「每盒裝幾塊」一定是 <b>36 的因數</b>。<br><br>
+      🔑 <b>發現 2：</b>每盒裝 2 塊的話，剩下的 2 塊還能再裝一盒，所以不會「剩 2」。
+      <b>餘數一定比除數小！</b>
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：兩袋餅乾 ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 5：兩袋餅乾</h2>
+    兩袋餅乾：<b>紅袋 38 塊</b>、<b>藍袋 51 塊</b>。用<b>同一種</b>盒子裝，紅袋要剩 <b>2</b> 塊，藍袋要剩 <b>3</b> 塊。每盒要裝幾塊？
+  </div>
+  <div class="card">
+    每盒裝 <span class="big" id="l2n">5</span> 塊
+    <input type="range" id="l2r" min="2" max="30" value="5">
+    <div>🔴 紅袋 38：<span id="l2a"></span></div><div id="l2visA" class="boxes"></div>
+    <div>🔵 藍袋 51：<span id="l2b"></span></div><div id="l2visB" class="boxes"></div>
+    <div class="found" id="l2found"></div>
+    <div class="fb" id="l2fb"></div>
+  </div>
+  <div class="card hidden" id="l2key">
+    <div class="key">
+      🔑 紅袋拿走 2 塊 → 38 − 2 = <b>36</b>；藍袋拿走 3 塊 → 51 − 3 = <b>48</b>。<br>
+      盒子大小要同時是 36 和 48 的因數，也就是<b>公因數</b>！<br>
+      用公因數篇學的方法：48 − 36 = 12，36 剛好是 3 個 12，所以最大公因數是 12。<br>
+      12 的因數是 1、2、3、4、6、12，再挑「比餘數 3 大」的 → <b>4、6、12</b>。
+    </div>
+    <div class="nav"><button class="go" data-go="5">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：大魔王 ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 6：大魔王（AMC 10 原題）</h2>
+    N 是唯一的正整數，使得 <b>273436 ÷ N 餘 16</b>，而且 <b>272760 ÷ N 餘 15</b>。N 的十位數是多少？
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 1：</b>像餅乾裝盒一樣，先把剩下的拿走。<br>
+      273436 − 16 = <input type="number" data-ans="273420"><br>
+      272760 − 15 = <input type="number" data-ans="272745">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 2：</b>N 是 273420 和 272745 的公因數。用「大數減小數」：<br>
+      273420 − 272745 = <input type="number" data-ans="675">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">直式減法慢慢算就好。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 3：</b>現在換成 273420 和 675。差很多，用關卡 3 的偷懶方法：<br>
+      273420 ÷ 675 的餘數 = <input type="number" data-ans="45">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">675 × 400 = 270000，273420 − 270000 = 3420；675 × 5 = 3375，3420 − 3375 = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 4：</b>再換成 675 和 45：675 ÷ 45 的餘數 = <input type="number" data-ans="0">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">45 × 15 = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      🎉 剛好除盡！所以最大公因數是 <b>45</b>，N 一定是 45 的因數。<br>
+      <b>步驟 5：</b>45 的因數有：1、3、5、9、15、45。還記得「餘數一定比除數小」嗎？N 要比 16 大。<br>
+      N = <input type="number" data-ans="45">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>N 的十位數是？
+      <div class="choices" id="l4choices">
+        <button data-v="0">(A) 0</button><button data-v="1">(B) 1</button><button data-v="2">(C) 2</button>
+        <button data-v="3">(D) 3</button><button data-v="4">(E) 4</button>
+      </div>
+      <div class="fb" id="l4fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="l4sum">
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 被除數減掉餘數 → 變成整除<br>
+      ② 求兩個數的最大公因數（大減小，差很多就取餘數）<br>
+      ③ 從最大公因數的因數裡，挑比餘數大的
+    </div>
+    <div class="nav"><button class="go" data-go="6">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：無限練習 ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 7：無限練習</h2>
+    數字每次都不一樣。先練公因數，熟了再挑戰 AMC 餘數題！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">公因數練習</button><button id="lvHard">AMC 餘數題</button></div>
+    <div id="l5q" class="story"></div>
+    <span id="l5label">N</span> = <input type="number" id="l5ans"> <button class="go" id="l5chk">確認</button>
+    <button class="ghost" id="l5show">看解法</button>
+    <button class="ghost" id="l5new">下一題</button>
+    <div class="fb" id="l5fb"></div>
+    <div id="l5sol" class="hidden"></div>
+    <div>連續答對：<span class="big" id="l5streak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const gcd = (a, b) => b ? gcd(b, a % b) : a;
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+const factors = n => { const f = []; for (let d = 1; d <= n; d++) if (n % d === 0) f.push(d); return f; };
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "gcd";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => $$(".tab[data-go]")[i]?.classList.add("done"));
+
+function drawGroups(el, total, n) {
+  const full = Math.floor(total / n), rem = total % n;
+  let h = "";
+  for (let i = 0; i < full; i++) h += `<div class="box">${'<div class="dot"></div>'.repeat(n)}</div>`;
+  if (rem) h += `<div class="leftover">${'<div class="dot left"></div>'.repeat(rem)}</div>`;
+  el.innerHTML = h;
+  return { full, rem };
+}
+
+// ---------- 關卡 1：糖果分組 ----------
+const c1Got = new Set();
+function c1() {
+  const n = +$("#c1r").value; $("#c1n").textContent = n;
+  const a = drawGroups($("#c1visA"), 12, n), b = drawGroups($("#c1visB"), 8, n);
+  $("#c1a").innerHTML = a.rem ? `剩 <b>${a.rem}</b> 顆 ❌` : `剛好分完 ✅`;
+  $("#c1b").innerHTML = b.rem ? `剩 <b>${b.rem}</b> 顆 ❌` : `剛好分完 ✅`;
+  const ok = !a.rem && !b.rem;
+  if (ok && !c1Got.has(n)) { c1Got.add(n); fb($("#c1fb"), true, `每組 ${n} 顆，兩堆都剛好分完！`); }
+  else if (!ok) fb($("#c1fb"), null, "");
+  $("#c1found").innerHTML = "兩堆都成功的分法：" + [...c1Got].sort((x, y) => x - y).map(x => `<span>${x}</span>`).join("") + ` （${c1Got.size}/3）`;
+  if (c1Got.size === 3) show("#c1key");
+}
+$("#c1r").oninput = c1; c1();
+$("#c1chk").onclick = () => {
+  const ok = +$("#c1ans").value === 4;
+  fb($("#c1fb2"), ok, ok ? "✅ 對！4 就是 12 和 8 的最大公因數。" : "1、2、4 裡面最大的是哪一個？");
+  if (ok) { show("#c1next"); done(0); }
+};
+
+// ---------- 關卡 2：相減的秘密 ----------
+drawGroups($("#c2visA"), 12, 4);
+$("#c2take").onclick = () => {
+  drawGroups($("#c2visA"), 4, 4);
+  $("#c2take").disabled = true; $("#c2q1").classList.add("on");
+};
+function chkStep(step) {
+  const ok = [...step.querySelectorAll("input")].every(i => i.value !== "" && +i.value === +i.dataset.ans);
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  return ok;
+}
+$("#c2q1 .chk").onclick = () => { if (chkStep($("#c2q1"))) $("#c2q2").classList.add("on"); };
+const c2Next = { c2q2: "#c2q3", c2q3: "#c2q4", c2q4: null };
+$$("#s1 .yn").forEach(yn => yn.querySelectorAll("button").forEach(b => b.onclick = () => {
+  const step = yn.closest(".step"), ok = !!b.dataset.yes;
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : "🤔 再想想看");
+  if (!ok) step.querySelector(".hint")?.classList.add("on");
+  if (ok) {
+    const pf = step.querySelector(".proof");
+    if (pf && pf.classList.contains("hidden")) { show(pf); setTimeout(() => speak(pf.innerText, false), 50); }
+    const nx = c2Next[step.id]; nx ? $(nx).classList.add("on") : show("#c2key");
+  }
+}));
+$("#c2run").onclick = () => {
+  let x = +$("#c2x").value, y = +$("#c2y").value;
+  if (!(x > 0 && y > 0) || x > 500 || y > 500) { $("#c2table").textContent = "請輸入 1 到 500 之間的數"; return; }
+  if (x < y) [x, y] = [y, x];
+  if (x === y) { $("#c2table").textContent = "兩個數一樣就不用減囉，換兩個不一樣的數吧"; return; }
+  const d = x - y, A = factors(x).filter(f => y % f === 0), B = factors(y).filter(f => d % f === 0);
+  const same = A.join() === B.join();
+  $("#c2table").innerHTML = `<table class="steps">
+    <tr><th>${x} 和 ${y} 的公因數</th><td>${A.join("、")}</td></tr>
+    <tr><th>${y} 和 ${d}（${x} − ${y}）的公因數</th><td>${B.join("、")}</td></tr></table>
+    <div class="fb ${same ? "ok" : ""}">${same ? `✅ 完全一樣！最大公因數都是 ${A.at(-1)}。再換別的數字試試看？` : ""}</div>`;
+  show("#c2next"); done(1);
+};
+
+// ---------- 關卡 3：一直減下去 ----------
+let c3 = [21, 15];
+function c3draw() { $("#c3pair").textContent = `${c3[0]} 和 ${c3[1]}`; }
+$("#c3chk").onclick = () => {
+  const [a, b] = c3, v = +$("#c3in").value;
+  if (v !== a - b) { fb($("#c3fb"), false, `❌ ${a} − ${b} 是多少？再算一次`); return; }
+  $("#c3log").innerHTML += `<tr><td>${a} − ${b} = ${v}</td><td>→ 換成 ${Math.max(b, v)} 和 ${Math.min(b, v)}</td></tr>`;
+  c3 = [Math.max(b, v), Math.min(b, v)]; $("#c3in").value = "";
+  fb($("#c3fb"), true, `✅ 對！現在換成 ${c3[0]} 和 ${c3[1]}`);
+  c3draw();
+  if (c3[0] === c3[1]) { $("#c3ask").classList.add("hidden"); show("#c3final"); }
+};
+$("#c3ok").onclick = () => {
+  const ok = +$("#c3ans").value === 3;
+  fb($("#c3fb2"), ok, ok ? "🎉 對！21 和 15 的最大公因數是 3。下面有看圖的版本。" : "最後剩下的兩個數是多少？");
+  if (ok) { show("#c3choc"); show("#c3key"); }
+};
+c3draw();
+
+const COLORS = ["#ffd166", "#06d6a0", "#118ab2", "#ef476f", "#8f6bff", "#f78c6b"];
+let l3 = {};
+function l3init(W, H) {
+  l3 = { W, H, x: 0, y: 0, w: W, h: H, rects: [], color: 0, done: false };
+  $("#l3w").textContent = W; $("#l3h").textContent = H;
+  $("#l3log").innerHTML = ""; fb($("#l3fb"), null, ""); $("#l3cut").disabled = false;
+  l3draw();
+}
+function l3draw() {
+  const s = Math.min(480 / l3.W, 360 / l3.H);
+  let h = `<rect x="10" y="10" width="${l3.W * s}" height="${l3.H * s}" fill="#7a4a2a" rx="4"/>`;
+  for (const r of l3.rects)
+    h += `<rect x="${10 + r.x * s}" y="${10 + r.y * s}" width="${r.s * s}" height="${r.s * s}" fill="${r.c}" stroke="#fff" stroke-width="2"/>` +
+      `<text x="${10 + (r.x + r.s / 2) * s}" y="${15 + (r.y + r.s / 2) * s}" text-anchor="middle" fill="#2b2233">${r.s}</text>`;
+  if (!l3.done)
+    h += `<text x="${10 + (l3.x + l3.w / 2) * s}" y="${15 + (l3.y + l3.h / 2) * s}" text-anchor="middle" fill="#fff">${l3.w}×${l3.h}</text>`;
+  $("#l3svg").innerHTML = h;
+}
+$("#l3cut").onclick = () => {
+  if (l3.done) return;
+  const { w, h } = l3, sq = Math.min(w, h), c = COLORS[l3.color++ % COLORS.length];
+  const k = Math.floor(Math.max(w, h) / sq), big = Math.max(w, h), rem = big % sq;
+  for (let i = 0; i < k; i++)
+    l3.rects.push(w >= h ? { x: l3.x + i * sq, y: l3.y, s: sq, c } : { x: l3.x, y: l3.y + i * sq, s: sq, c });
+  $("#l3log").innerHTML += `<tr><td>${big} 切掉 ${k} 個 ${sq}</td><td>剩 ${rem}</td></tr>`;
+  if (w >= h) { l3.x += k * sq; l3.w = rem; } else { l3.y += k * sq; l3.h = rem; }
+  if (rem === 0) {
+    l3.done = true; $("#l3cut").disabled = true;
+    $("#l3fb").className = "fb ok";
+    $("#l3fb").innerHTML = `🎉 剛好切完！最後的正方形邊長是 <b>${sq}</b>，所以 ${l3.W} 和 ${l3.H} 的最大公因數 = ${sq}`;
+  }
+  l3draw();
+};
+$("#l3reset").onclick = () => l3init(l3.W, l3.H);
+$("#l3try").onclick = () => l3init(84, 60);
+// 換你：84 和 60 用取餘數一步一步算
+const G3 = [[84, 60], [60, 24], [24, 12]];
+let g3i = 0, g3miss = 0, l3miss = 0;
+function g3row(i) {
+  const [x, y] = G3[i], div = document.createElement("div");
+  div.className = "g3row";
+  div.innerHTML = `<b>第 ${i + 1} 步：</b>${x} ÷ ${y} = 商 <input type="number" class="q" style="width:70px"> 餘 <input type="number" class="r" style="width:70px">
+    <button class="go">確認</button>`;
+  div.querySelector("button").onclick = () => g3check(div, i);
+  $("#g3").append(div);
+}
+function g3check(div, i) {
+  const [x, y] = G3[i], q = Math.floor(x / y), r = x % y;
+  const uq = div.querySelector(".q").value, ur = div.querySelector(".r").value;
+  let msg = "";
+  if (uq === "" || ur === "") msg = "商和餘數都要填喔。";
+  else if (+uq === q && +ur === r) {
+    div.querySelectorAll("input, button").forEach(e => e.disabled = true);
+    g3miss = 0;
+    if (r === 0) {
+      fb($("#l3fb2"), true, `✅ ${x} ÷ ${y} 剛好除盡，餘數是 0，就停下來！`);
+      show("#g3final");
+    } else {
+      fb($("#l3fb2"), true, `✅ 對！${x} 裡面有 ${q} 個 ${y}，剩 ${r}。所以 ${x} 和 ${y} 的最大公因數，等於 ${y} 和 ${r} 的最大公因數。接下來算 ${y} 除以 ${r}。`);
+      g3row(++g3i);
+    }
+    return;
+  } else if (+ur === q && +uq === r) msg = `商和餘數好像填反了：商是「${x} 裡面有幾個 ${y}」，餘數是「拿完之後剩下多少」。`;
+  else if (+uq !== q) {
+    msg = `${x} 裡面有幾個 ${y}？試試看：${y} × ${q} = ${y * q}，${y} × ${q + 1} = ${y * (q + 1)}。哪一個沒有超過 ${x}？`;
+  } else if (+ur >= y) msg = `餘數 ${ur} 比除數 ${y} 還大，表示還可以再拿一個 ${y}！餘數一定要比除數小。`;
+  else msg = `商是 ${q} 沒錯，那剩下多少？${x} − ${y} × ${q} = ${x} − ${y * q} = ?`;
+  g3miss++;
+  if (g3miss >= 3) msg += `　答案是：商 ${q}，餘 ${r}，因為 ${y} × ${q} + ${r} = ${x}。`;
+  fb($("#l3fb2"), false, "❌ " + msg);
+}
+g3row(0);
+$("#l3chk").onclick = () => {
+  const v = +$("#l3ans").value;
+  if (v === 12) {
+    fb($("#l3fb2"), true, "🎉 正確！84 和 60 的最大公因數是 12。");
+    $("#l3explain").innerHTML = `📐 <b>整理一下：</b><br>
+      84 ÷ 60 = 1 餘 24 → 換成 60 和 24<br>
+      60 ÷ 24 = 2 餘 12 → 換成 24 和 12<br>
+      24 ÷ 12 = 2 餘 0 → 除盡了，最後的除數 <b>12</b> 就是答案<br>
+      驗算：84 = 12 × 7，60 = 12 × 5，7 和 5 除了 1 以外沒有公因數，所以 12 是最大的。`;
+    show("#l3explain"); show("#l3next"); done(2);
+    return;
+  }
+  l3miss++;
+  let msg;
+  if (v === 0) msg = "0 是最後一步的餘數，代表「除盡了」。答案是最後一步的「除數」，就是你拿去除的那個數。";
+  else if (v === 24) msg = "24 是上一步的除數。看最後一步：24 ÷ 12 剛好除盡，所以是誰把 24 除盡的？";
+  else if (v === 2 || v === 1) msg = `${v} 是商，不是答案。答案是最後一步的「除數」。`;
+  else if ([1, 2, 3, 4, 6].includes(v)) msg = `${v} 確實是 84 和 60 的公因數，但不是「最大」的。最後一步把數字除盡的那個除數是多少？`;
+  else msg = "看最後一步：24 ÷ 12 = 2 餘 0。剛好除盡時，那個除數就是最大公因數。";
+  if (l3miss >= 2) msg += "　答案是 12。";
+  fb($("#l3fb2"), false, "❌ " + msg);
+};
+l3init(48, 36);
+
+// ---------- 關卡 4：餅乾裝盒 ----------
+const l1Got = new Set();
+function l1() {
+  const n = +$("#l1r").value; $("#l1n").textContent = n;
+  const { full, rem } = drawGroups($("#l1vis"), 38, n);
+  $("#l1txt").innerHTML = `裝了 <b>${full}</b> 盒，剩下 <b style="color:var(--left)">${rem}</b> 塊`;
+  if (rem === 2 && !l1Got.has(n)) { l1Got.add(n); fb($("#l1fb"), true, `✅ 每盒 ${n} 塊，剩 2 塊！`); }
+  else if (n === 2) fb($("#l1fb"), false, "🤔 每盒 2 塊……剩下 2 塊的話不是還能再裝一盒嗎？");
+  $("#l1found").innerHTML = "已找到：" + [...l1Got].sort((a, b) => a - b).map(x => `<span>${x}</span>`).join("") + ` （${l1Got.size}/6，拉桿最多到 20）`;
+  if (l1Got.size === 6) { show("#l1key"); done(3); }
+}
+$("#l1r").oninput = l1; l1();
+
+// ---------- 關卡 5：兩袋餅乾 ----------
+const l2Got = new Set();
+function l2() {
+  const n = +$("#l2r").value; $("#l2n").textContent = n;
+  const a = drawGroups($("#l2visA"), 38, n), b = drawGroups($("#l2visB"), 51, n);
+  const okA = a.rem === 2, okB = b.rem === 3;
+  $("#l2a").innerHTML = `剩 <b>${a.rem}</b> ${okA ? "✅" : "❌"}`;
+  $("#l2b").innerHTML = `剩 <b>${b.rem}</b> ${okB ? "✅" : "❌"}`;
+  if (okA && okB) l2Got.add(n);
+  $("#l2found").innerHTML = "兩袋都成功的盒子：" + [...l2Got].sort((x, y) => x - y).map(x => `<span>${x}</span>`).join("") + ` （${l2Got.size}/3）`;
+  fb($("#l2fb"), okA && okB ? true : null, okA && okB ? `🎉 每盒 ${n} 塊，兩袋都成功！` : "");
+  if (l2Got.size === 3) { show("#l2key"); done(4); }
+}
+$("#l2r").oninput = l2; l2();
+
+// ---------- 關卡 6：大魔王 ----------
+$$("#boss .step").forEach(step => {
+  step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+  step.querySelector(".chk")?.addEventListener("click", () => {
+    if (chkStep(step)) step.nextElementSibling?.classList.add("on");
+  });
+});
+$$("#l4choices button").forEach(b => b.onclick = () => {
+  const ok = b.dataset.v === "4";
+  fb($("#l4fb"), ok, ok ? "🏆 答對了！N = 45，十位數是 4，答案 E。驗算：45 × 6076 + 16 = 273436，45 × 6061 + 15 = 272760。" : "N 是多少？它的十位數字是哪一個？");
+  if (ok) { show("#l4sum"); done(5); }
+});
+
+// ---------- 關卡 7：無限練習 ----------
+let P = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+function newProblem() {
+  if (mode === "easy") {
+    for (;;) {
+      const g = rnd(3, 25), a = g * rnd(2, 15), b = g * rnd(2, 15);
+      if (a !== b && gcd(a, b) === g) { P = { easy: true, a: Math.max(a, b), b: Math.min(a, b), g }; break; }
+    }
+    $("#l5q").innerHTML = `<b>${P.a}</b> 和 <b>${P.b}</b> 的最大公因數是多少？`;
+    $("#l5label").textContent = "最大公因數";
+  } else {
+    for (;;) {
+      const N = rnd(20, 99), r1 = rnd(5, N - 1), r2 = rnd(5, N - 1), q1 = rnd(200, 3000), q2 = rnd(200, 3000);
+      if (q1 === q2) continue;
+      const a = N * q1 + r1, b = N * q2 + r2, g = gcd(a - r1, b - r2);
+      const valid = factors(g).filter(d => d > Math.max(r1, r2));
+      if (valid.length === 1 && valid[0] === N) { P = { N, r1, r2, a, b, g }; break; }
+    }
+    $("#l5q").innerHTML = `N 是唯一的正整數，使得 <b>${P.a} ÷ N 餘 ${P.r1}</b>，而且 <b>${P.b} ÷ N 餘 ${P.r2}</b>。N = ?`;
+    $("#l5label").textContent = "N";
+  }
+  $("#l5ans").value = ""; fb($("#l5fb"), null, ""); $("#l5sol").classList.add("hidden");
+}
+function chain(A, B) {
+  let x = Math.max(A, B), y = Math.min(A, B), rows = "";
+  while (y) { rows += `<tr><td>${x} ÷ ${y}</td><td>餘 ${x % y}</td></tr>`; [x, y] = [y, x % y]; }
+  return `<table class="steps">${rows}</table>`;
+}
+function solution() {
+  if (P.easy) return `輾轉相除：${chain(P.a, P.b)}最大公因數 = <b>${P.g}</b>`;
+  const A = P.a - P.r1, B = P.b - P.r2;
+  return `① ${P.a} − ${P.r1} = ${A}，${P.b} − ${P.r2} = ${B}<br>
+    ② 輾轉相除：${chain(A, B)}最大公因數 = <b>${P.g}</b><br>
+    ③ ${P.g} 的因數：${factors(P.g).join("、")}；比 ${Math.max(P.r1, P.r2)} 大的只有 <b>${P.N}</b>`;
+}
+$("#l5chk").onclick = () => {
+  const ok = +$("#l5ans").value === (P.easy ? P.g : P.N);
+  streak = ok ? streak + 1 : 0; $("#l5streak").textContent = streak;
+  fb($("#l5fb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再算一次，或看解法");
+  if (streak >= 3 && !P.easy) done(6);
+};
+$("#l5show").onclick = () => { $("#l5sol").innerHTML = solution(); show("#l5sol"); };
+$("#l5new").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#l5streak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#l5streak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+// 聲音設定存在瀏覽器裡，下次打開還在
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+function toSpeech(t) {
+  return t.replace(/[🍬🍪🔑🎉✅❌🤔🏆🔴🔵✂️⭐🔈📐]/gu, "").replace(/gcd/g, "最大公因數").replace(/（最大公因數 是最大公因數的英文縮寫）/g, "")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/−/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ").replace(/>/g, " 大於 ")
+    .replace(/→/g, "，").replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(t));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak("你好，我們一起來玩公因數大冒險！"); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak("你好，我們一起來玩公因數大冒險！"); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak("你好，我們一起來玩公因數大冒險！"); };
+$("#vTest").onclick = () => speak("你好，我們一起來玩公因數大冒險！每組 4 顆，兩堆都剛好分完！");
+$$(".story, .key").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el.innerText); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story").innerText);
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+// 重點卡、新步驟出現時接著讀
+const watchOnce = (el, isOn, text) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(text(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k.innerText); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st.innerText.replace(/確認|提示/g, "")));
+new MutationObserver(() => speak($("#l5q").innerText)).observe($("#l5q"), { childList: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>數學練習場</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --muted:#7a6f85; --card:#fff; --line:#eadfce; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { max-width:900px; margin:0 auto; padding:48px 24px 8px; }
+  h1 { font-size:36px; margin:0; }
+  .sub { color:var(--muted); margin:4px 0 0; }
+  main { max-width:900px; margin:0 auto; padding:8px 24px 48px; }
+  h2 { font-size:20px; margin:28px 0 10px; color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; }
+  a.card { display:block; background:var(--card); border:2px solid var(--line); border-radius:18px; padding:20px; color:inherit; text-decoration:none; transition:transform .15s, box-shadow .15s; }
+  a.card:hover { transform:translateY(-3px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:var(--accent); }
+  .emoji { font-size:40px; line-height:1; }
+  .card h3 { margin:10px 0 2px; font-size:22px; }
+  .stars { color:#f2b705; letter-spacing:2px; }
+  .card p { margin:8px 0; font-size:15px; }
+  .tags span { display:inline-block; font-size:12px; color:var(--muted); border:1px solid var(--line); border-radius:6px; padding:0 6px; margin:2px 4px 2px 0; }
+  .bar { height:10px; background:#efe8ff; border-radius:999px; overflow:hidden; margin-top:10px; }
+  .bar div { height:100%; background:var(--accent); }
+  .prog { font-size:13px; color:var(--muted); }
+  .soon { border-style:dashed; color:var(--muted); display:grid; place-items:center; min-height:180px; background:transparent; border:2px dashed var(--line); border-radius:18px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🧮 數學練習場</h1>
+  <p class="sub">挑一個關卡開始玩吧！星星越多越難，進度會自動記在這台裝置上。</p>
+</header>
+<main id="list"></main>
+<script src="games.js"></script>
+<script>
+const progress = JSON.parse(localStorage.getItem("learn-progress") || "{}");
+const topics = [...new Set(GAMES.map(g => g.topic))];
+document.getElementById("list").innerHTML = topics.map(t => `
+  <h2>${t}</h2>
+  <div class="grid">
+    ${GAMES.filter(g => g.topic === t).map(g => {
+      const done = (progress[g.id] || []).length, pct = Math.round(done / g.levels * 100);
+      return `<a class="card" href="${g.id}/">
+        <div class="emoji">${g.emoji}</div>
+        <h3>${g.title}</h3>
+        <div class="stars">${"★".repeat(g.level)}${"☆".repeat(3 - g.level)}</div>
+        <p>${g.desc}</p>
+        <div class="tags">${g.tags.map(x => `<span>${x}</span>`).join("")}</div>
+        <div class="bar"><div style="width:${pct}%"></div></div>
+        <div class="prog">${done ? `已完成 ${done} / ${g.levels} 關${done === g.levels ? " 🏆" : ""}` : `共 ${g.levels} 關，還沒開始`}</div>
+      </a>`;
+    }).join("")}
+    <div class="soon">更多題目準備中…</div>
+  </div>`).join("");
+</script>
+</body>
+</html>
