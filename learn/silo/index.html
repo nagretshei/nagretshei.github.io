@@ -179,7 +179,9 @@
   <div class="card story">
     <h2>關卡 3：中間點 P</h2>
     視線從麥唐納走到麥奎格，中途會穿過「穿過穀倉中心的南北線」。把這個交叉點叫做 <b>P</b>，它在中心南邊 <b>p</b> 公尺。<br>
-    ⚠️ 注意大小寫：<b>大寫 P 是一個「點」</b>（地圖上的橘色圓點）；<b>小寫 p 是一段「長度」</b>（從中心 O 到點 P 的線段有多長）。
+    ⚠️ 注意大小寫：<b>大寫 P 是一個「點」</b>（地圖上的橘色圓點）；<b>小寫 p 是一段「長度」</b>（從中心 O 到點 P 的線段有多長）。<br>
+    📍 <b>用座標寫：點 P = (0, −p)</b>。x 座標是 0，因為它在南北線上；y 座標是 −p，因為往南是負的。<br>
+    所以這一關其實是在算<b>點 P 的 y 座標</b>：算出 p，P 的 y 座標就是 −p。
   </div>
   <div class="card">
     <svg class="map" id="map2" width="100%" viewBox="0 0 520 400"></svg>
@@ -215,7 +217,7 @@
       <div class="fb"></div>
     </div>
     <div class="step">
-      點 A′ 在南 15、點 B′ 在南 g，點 P 在它們的正中間。<b>為什麼長度 p = (15 + g) ÷ 2？</b><br>
+      點 A′(0, −15) 在南 15、點 B′(0, −g) 在南 g，點 P(0, −p) 在它們的正中間。<b>為什麼長度 p = (15 + g) ÷ 2？</b><br>
       把南北線想成一把<b>尺</b>：從中心 O 往南量，每個點就是尺上的一個刻度。拉動拉桿換 g 看看：
       <svg id="ruler" width="100%" viewBox="0 0 520 150" style="background:#fff;border:1px solid var(--line);border-radius:10px;margin:6px 0"></svg>
       g = <span class="big" id="rgn">5</span> <input type="range" id="rg" min="0" max="20" step="1" value="5">
@@ -228,6 +230,10 @@
           <tr><td>③ 把 g 寫成「2g ÷ 2」，兩項才能合在同一個 ÷ 2 底下</td><td>p = (2g + 15 − g) ÷ 2</td><td>p = (10 + 15 − 5) ÷ 2</td></tr>
           <tr><td>④ 合併：2g − g = g</td><td><b>p = (15 + g) ÷ 2</b></td><td>p = (15 + 5) ÷ 2 = 10</td></tr>
         </table></div>
+        📍 <b>換成座標看也一樣：</b>A′ 的 y 座標是 −15，B′ 的 y 座標是 −g。P 在正中間，所以<br>
+        　P 的 y 座標 = 兩個 y 座標的平均 = (−15 + (−g)) ÷ 2 = −(15 + g) ÷ 2<br>
+        　P 的 y 座標又是 −p，所以 −p = −(15 + g) ÷ 2，兩邊去掉負號：<b>p = (15 + g) ÷ 2</b>。<br>
+        　（例子 g = 5：P 的 y 座標 = (−15 − 5) ÷ 2 = −10，p = 10。）<br>
         直覺：<b>加起來再分成兩半</b>，就是兩個數「公平地各讓一步」的中間點，這就是<b>平均</b>。<br>
         如果 g 比 15 大（B′ 在 A′ 南邊），把 ① 改成 g − 15、從 A′ 往南走一半，最後一樣得到 (15 + g) ÷ 2。拉桿拉過 15 驗證看看！
       </div>
@@ -704,7 +710,7 @@ function drawMap(svg, g, o = {}) {
   if (o.twin) {
     h += `<polygon points="${px(-20)},${py(-15)} ${px(0)},${py(-15)} ${px(0)},${py(P[1])}" fill="rgba(17,138,178,.25)" stroke="#118ab2" stroke-width="2"/>`;
     h += `<polygon points="${px(20)},${py(-g)} ${px(0)},${py(-g)} ${px(0)},${py(P[1])}" fill="rgba(242,183,5,.3)" stroke="#d19a00" stroke-width="2"/>`;
-    h += `<text x="${px(0) - 26}" y="${py(-15) + 5}" font-size="14" fill="#118ab2">A′</text><text x="${px(0) + 6}" y="${py(-g) + 5}" font-size="14" fill="#a07400">B′</text>`;
+    h += `<text x="${px(0) - 8}" y="${py(-15) + 18}" font-size="14" fill="#118ab2" text-anchor="end" style="paint-order:stroke;stroke:#fbfdf7;stroke-width:4px">A′(0, −15)</text><text x="${px(0) + 6}" y="${py(-g) - 6}" font-size="14" fill="#a07400" style="paint-order:stroke;stroke:#fbfdf7;stroke-width:4px">B′(0, −g)</text>`;
   }
   if (o.pyth) {
     const up = F.p < 15 ? 1 : -1, k = 1.4; // 直角記號：從 A′ 往西、往 P 的方向各走 1.4 公尺
@@ -725,7 +731,7 @@ function drawMap(svg, g, o = {}) {
     h += `<circle cx="${px(tx)}" cy="${py(ty)}" r="4" fill="#2b2233"/><text x="${px(tx) + 6}" y="${py(ty) + 16}" font-size="13">T</text>`;
   }
   if (o.P) {
-    h += `<circle cx="${px(0)}" cy="${py(P[1])}" r="6" fill="#ff8a3d"/><text x="${px(0) + 9}" y="${py(P[1]) + 18}" font-size="15" fill="#c25e12" font-weight="700">P</text>`;
+    h += `<circle cx="${px(0)}" cy="${py(P[1])}" r="6" fill="#ff8a3d"/><text x="${px(0) + 9}" y="${py(P[1]) + 18}" font-size="15" fill="#c25e12" font-weight="700" style="paint-order:stroke;stroke:#fbfdf7;stroke-width:4px">${o.twin ? "P(0, −p)" : "P"}</text>`;
     h += `<text x="${px(0) - 18}" y="${py(P[1] / 2) + 5}" font-size="15" fill="#c25e12">p</text>`;
   }
   h += `<circle cx="${px(0)}" cy="${py(0)}" r="4" fill="#2b2233"/><text x="${px(0) + 6}" y="${py(0) - 6}" font-size="14">O</text>`;
@@ -753,11 +759,11 @@ function ruler() {
   h += `<text x="${X(0)}" y="144" font-size="12" fill="#7a6f85">O（中心）　← 北</text><text x="${X(20)}" y="144" font-size="12" fill="#7a6f85" text-anchor="end">往南幾公尺　南 →</text>`;
   if (hi > lo) [[lo, p], [p, hi]].forEach(([a, b]) => h += `<path d="M${X(a)} 44 v-6 H${X(b)} v6" fill="none" stroke="#7b4dff" stroke-width="2"/><text x="${(X(a) + X(b)) / 2}" y="32" font-size="13" text-anchor="middle" fill="#7b4dff" font-weight="700">${fmt((hi - lo) / 2)}</text>`);
   const pt = (m, col, lab, dy) => `<circle cx="${X(m)}" cy="70" r="7" fill="${col}"/><text x="${X(m)}" y="${70 + dy}" font-size="13" text-anchor="middle" fill="${col}" font-weight="700">${lab}</text>`;
-  h += pt(15, "#118ab2", "A′", 34) + pt(g, "#d17a00", "B′", g === 15 ? 48 : 34) + pt(p, "#ff8a3d", `P（p = ${fmt(p)}）`, 52);
+  h += pt(15, "#118ab2", "A′", 34) + pt(g, "#d17a00", "B′", g === 15 ? 48 : 34) + pt(p, "#ff8a3d", `P：p = ${fmt(p)}，y 座標 = −${fmt(p)}`, 52);
   $("#ruler").innerHTML = h;
 }
 $("#rg").oninput = ruler; ruler();
-mapLevel(2, { P: true, twin: true }, (F, g) => `p = (15 + ${fmt(g)}) ÷ 2 = <b>${fmt(F.p)}</b>`);
+mapLevel(2, { P: true, twin: true }, (F, g) => `長度 p = (15 + ${fmt(g)}) ÷ 2 = <b>${fmt(F.p)}</b>　→　點 P 的座標 = <b>(0, −${fmt(F.p)})</b>`);
 // 關卡 6 講解圖：從 A 出發的兩條切線（世界座標 x −32～32、y −30～60，每公尺 6.25 像素）
 (() => {
   const S = 6.25, X = x => (x + 32) * S, Y = y => (60 - y) * S, r21 = Math.sqrt(21);
@@ -827,13 +833,13 @@ wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！
     { name: "相切 = 距離 10", say: "第二步，剛好擦過，就是中心到視線的垂直距離等於半徑 10。這是我們手上唯一的線索。",
       draw: t => base(GT) + seg(O, part(O, T, k(t, 0, .5)), "#2b2233", 2, 1, "6 4") + (t > .5 ? perp(k(t, .5, .7)) : "") + people(GT),
       math: [[0, "相切 ⇔ 圓心到切線的距離 = 半徑"], [.5, "O 到視線的距離 = <b>10</b>"]] },
-    { name: "P 是中點", say: "第三步，注意大小寫。視線穿過南北線的地方，叫大寫 P，它是一個點。小寫 p 是一段長度，就是從中心 O 到點 P 這條線段有多長，也就是點 P 在中心南邊幾公尺。兩個人離南北線都是 20，藍色和黃色兩個三角形全等，所以點 P 在點 A′ 和點 B′ 的正中間。A′ 在南邊 15，B′ 在南邊 g，所以點 P 在南邊 15 和 g 的平均，也就是長度 p 等於 15 加 g 除以 2。反過來，g 等於 2p 減 15。只要求出長度 p 就好！",
+    { name: "P 是中點", say: "第三步，注意大小寫。視線穿過南北線的地方，叫大寫 P，它是一個點。小寫 p 是一段長度，就是從中心 O 到點 P 這條線段有多長，也就是點 P 在中心南邊幾公尺。所以點 P 的座標是 0 和負 p，這一步其實是在算點 P 的 y 座標。兩個人離南北線都是 20，藍色和黃色兩個三角形全等，所以點 P 在點 A′ 和點 B′ 的正中間。A′ 在南邊 15，B′ 在南邊 g，所以點 P 在南邊 15 和 g 的平均，也就是長度 p 等於 15 加 g 除以 2。反過來，g 等於 2p 減 15。只要求出長度 p 就好！",
       draw: t => base(GT) + seg(O, part(O, P, k(t, .05, .25)), "#c25e12", 6) +
         txt([0, -PT / 2], "p", "#c25e12", k(t, .2, .3), 20, -22, 6) + txt([0, -PT / 2], "← 長度 p = 線段 OP 有多長", "#c25e12", k(t, .2, .3) * (1 - k(t, .5, .6)), 14, 10, 6) +
         poly([A, A1, P], "rgba(17,138,178,.3)", "#118ab2", k(t, .35, .5)) + poly([[20, -GT], [0, -GT], P], "rgba(242,183,5,.35)", "#d19a00", k(t, .45, .6)) +
-        txt(A1, "A′ 在南 15", "#118ab2", k(t, .6, .7), 14, -80, 18) + txt([0, -GT], "B′ 在南 g", "#a07400", k(t, .6, .7), 14, 8, -6) +
-        people(GT) + dot(P, 6, "#ff8a3d", k(t, 0, .1)) + txt(P, "點 P", "#c25e12", k(t, 0, .1), 15, 9, 18),
-      math: [[0, "大寫 <b>P</b> 是<b>點</b>：視線穿過南北線的地方"], [.2, "小寫 <b>p</b> 是<b>長度</b>：線段 OP 有多長（點 P 在中心南邊幾公尺）"], [.45, "藍、黃三角形全等 → 點 P 在點 A′ 和點 B′ 的正中間"], [.65, "A′ 在南 15、B′ 在南 g → 點 P 在正中間 = 從 B′ 往南走「相差的一半」：p = g + (15 − g) ÷ 2 = (15 + g) ÷ 2"], [.85, "<b>g = 2p − 15</b>　→　只要求出長度 p！"]] },
+        txt(A1, "A′(0, −15)", "#118ab2", k(t, .6, .7), 14, -8, 18, "end") + txt([0, -GT], "B′(0, −g)", "#a07400", k(t, .6, .7), 14, 8, -6) +
+        people(GT) + dot(P, 6, "#ff8a3d", k(t, 0, .1)) + txt(P, "點 P(0, −p)", "#c25e12", k(t, 0, .1), 15, 9, 18),
+      math: [[0, "大寫 <b>P</b> 是<b>點</b>：視線穿過南北線的地方，座標 <b>(0, −p)</b>"], [.2, "小寫 <b>p</b> 是<b>長度</b>：線段 OP 有多長（點 P 在中心南邊幾公尺，P 的 y 座標 = −p）"], [.45, "藍、黃三角形全等 → 點 P 在點 A′ 和點 B′ 的正中間"], [.65, "A′ 在南 15、B′ 在南 g → 點 P 在正中間 = 從 B′ 往南走「相差的一半」：p = g + (15 − g) ÷ 2 = (15 + g) ÷ 2"], [.85, "<b>g = 2p − 15</b>　→　只要求出長度 p！"]] },
     { name: "面積 → PA = 2p", say: "第四步，三角形 O P A 的面積算兩次。用 O P 當底，高是 20，面積是 10 p。用 P A 當底，高是剛剛的 10，面積是 5 乘 P A。兩個一樣大，所以 P A 等於 2 p。",
       draw: t => { const a = k(t, 0, .1), first = t < .5; let h = base(GT) + poly([O, P, A], "rgba(255,138,61,.25)", "#ff8a3d", a);
         if (first) h += seg(O, P, "#c25e12", 6, k(t, .05, .15)) + seg(A, A1, "#118ab2", 3, k(t, .15, .25), "6 4") + txt([-10, -15], "高 20", "#118ab2", k(t, .15, .25), 15, -20, 20) + txt([0, -PT / 2], "底 p", "#c25e12", k(t, .05, .15), 15, 8, 5);
