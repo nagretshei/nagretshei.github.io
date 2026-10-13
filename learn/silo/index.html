@@ -192,16 +192,35 @@
       <div class="fb"></div>
     </div>
     <div class="step">
-      兩個人離南北線一樣遠，所以 P 剛好在視線的<b>正中間</b>。<br>
+      兩個人離南北線一樣遠。為什麼這樣 P 就剛好在視線的<b>正中間</b>？看地圖上的<b>藍色</b>和<b>黃色</b>兩個小三角形：
+      <div class="proof">
+        📐 <b>先畫兩條橫線：</b>從麥唐納 A 往東畫橫線碰到南北線，交點叫 <b>A′</b>（在南 15）；從麥奎格 B 往西畫橫線碰到南北線，交點叫 <b>B′</b>（在南 g）。<br>
+        得到兩個直角三角形：藍色 △AA′P 和黃色 △BB′P。一樣一樣比：<br>
+        ① <b>橫的邊一樣長：</b>AA′ = BB′ = 20（兩個人離南北線都是 20）。<br>
+        ② <b>A′、B′ 的角一樣大：</b>都是 90°，因為橫線和南北線互相垂直。<br>
+        ③ <b>P 的兩個角一樣大：</b>視線和南北線在 P 交叉成一個「X」，X 上下相對的兩個角叫<b>對頂角</b>，一定一樣大。
+        為什麼？左右相鄰的兩個角拼起來是一條直線 = 180°，所以「上面的角」和「下面的角」都等於 180° 減掉同一個「旁邊的角」。<br>
+        ④ 三角形三個角加起來是 180°，前兩個角一樣，<b>第三個角（A 和 B 那兩個角）也一樣</b>。<br>
+        ⑤ 想像畫三角形：先畫一條 20 長的邊，兩端的角度都固定了，從兩端射出去的線方向也就固定了，只會交在<b>一個</b>點。
+        所以兩個三角形<b>一模一樣</b>（數學叫「全等」），可以剪下來疊在一起。<br>
+        ⑥ 疊在一起，對應的邊就一樣長：<b>PA = PB</b>（P 在視線的正中間），而且 <b>A′P = B′P</b>（P 也在 A′ 和 B′ 的正中間）。
+      </div>
+      所以 PA 和 PB 哪一個比較長？
+      <div class="choices" data-right="2">
+        <button data-why="看第 ⑥ 點：兩個三角形疊得起來，PA 和 PB 是對應的邊。">PA 比較長</button><button data-why="看第 ⑥ 點：兩個三角形疊得起來，PA 和 PB 是對應的邊。">PB 比較長</button><button>一樣長</button>
+      </div>
+      <div class="hint">💡 拉一下地圖上的拉桿：不管 g 是多少，藍色和黃色三角形都一樣大，只是一個轉了半圈。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      A′ 在南 15、B′ 在南 g，P 在它們的正中間。<br>
       如果 g = 5（麥唐納在南 15、麥奎格在南 5），p = ? <input class="n" data-ans="10" data-wrong='{"20":"15 + 5 = 20 是加起來，正中間要再除以 2。","5":"5 是麥奎格的位置，P 在兩個人的正中間。"}'>
       <button class="go chk">確認</button> <button class="ghost hb">提示</button>
-      <div class="hint">💡 正中間的位置 = 兩個人位置的平均 = (15 + 5) ÷ 2。</div>
+      <div class="hint">💡 A′P = B′P，所以 P 到南 15 和到南 5 一樣遠。15 和 5 差 10，各分一半是 5。</div>
       <div class="fb"></div>
       <div class="proof explain hidden">
-        📐 <b>講解：為什麼左右一樣遠，就是正中間？</b><br>
-        直線的傾斜是<b>均勻</b>的：往東走一樣遠，往南（或往北）就變一樣多。<br>
-        從麥唐納往東走 20 公尺到 P，再往東走 20 公尺到麥奎格，兩段一樣長，所以高度的變化也一樣多。<br>
-        麥唐納在南 15、麥奎格在南 5，一共差 10，每段變 5：15 − 5 = 10，P 在南 10。這就是 (15 + 5) ÷ 2。
+        📐 <b>講解：</b>15 和 5 差 10，P 在正中間，所以離兩邊各 5：從 15 往北 5 是 10，從 5 往南 5 也是 10。<br>
+        這跟「兩個數的平均」一樣：(15 + 5) ÷ 2 = 10。所以一般來說 <b>p = (15 + g) ÷ 2</b>。
       </div>
     </div>
     <div class="step">
@@ -625,6 +644,11 @@ function drawMap(svg, g, o = {}) {
   h += `<text x="478" y="26" font-size="15" fill="#2b2233">北 ↑</text>`;
   h += `<circle cx="${px(0)}" cy="${py(0)}" r="100" fill="#f6e2bd" stroke="#b8864b" stroke-width="2"/>`;
   h += `<text x="${px(0) - 14}" y="${py(0) - 60}" font-size="14" fill="#8a5a00">穀倉</text>`;
+  if (o.twin) {
+    h += `<polygon points="${px(-20)},${py(-15)} ${px(0)},${py(-15)} ${px(0)},${py(P[1])}" fill="rgba(17,138,178,.25)" stroke="#118ab2" stroke-width="2"/>`;
+    h += `<polygon points="${px(20)},${py(-g)} ${px(0)},${py(-g)} ${px(0)},${py(P[1])}" fill="rgba(242,183,5,.3)" stroke="#d19a00" stroke-width="2"/>`;
+    h += `<text x="${px(0) - 26}" y="${py(-15) + 5}" font-size="14" fill="#118ab2">A′</text><text x="${px(0) + 6}" y="${py(-g) + 5}" font-size="14" fill="#a07400">B′</text>`;
+  }
   if (o.tri) h += `<polygon points="${px(0)},${py(0)} ${px(0)},${py(P[1])} ${px(-20)},${py(-15)}" fill="rgba(255,138,61,.28)" stroke="#ff8a3d" stroke-width="2"/>`;
   h += `<line x1="${px(-20)}" y1="${py(-15)}" x2="${px(20)}" y2="${py(-g)}" stroke="${c}" stroke-width="3"/>`;
   if (o.perp) {
@@ -654,7 +678,7 @@ function mapLevel(i, o, info) {
 }
 mapLevel(0, {}, () => "");
 mapLevel(1, { perp: true }, F => `中心到視線的最短距離 d ≈ <b>${fmt(F.d)}</b> 公尺（穀倉半徑是 10）`);
-mapLevel(2, { P: true }, (F, g) => `p = (15 + ${fmt(g)}) ÷ 2 = <b>${fmt(F.p)}</b>`);
+mapLevel(2, { P: true, twin: true }, (F, g) => `p = (15 + ${fmt(g)}) ÷ 2 = <b>${fmt(F.p)}</b>`);
 mapLevel(3, { P: true, tri: true, perp: true }, F => `<table class="steps">
   <tr><th>用 OP 當底：面積 = p × 20 ÷ 2</th><td>${fmt(F.p)} × 20 ÷ 2 = <b>${fmt(10 * F.p)}</b></td></tr>
   <tr><th>用 PA 當底：面積 = PA × d ÷ 2</th><td>${fmt(F.PA)} × ${fmt(F.d)} ÷ 2 = <b>${fmt(F.PA * F.d / 2)}</b></td></tr>
