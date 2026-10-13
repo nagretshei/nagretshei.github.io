@@ -66,7 +66,8 @@
   <span class="part">解題篇</span>
   <button class="tab" data-go="5">6. 配方法</button>
   <button class="tab" data-go="6">7. 大魔王</button>
-  <button class="tab" data-go="7">8. 無限練習</button>
+  <button class="tab" data-go="7">8. 整合回顧</button>
+  <button class="tab" data-go="8">9. 無限練習</button>
   <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
   <button class="tab" id="voiceSet">🎀 聲音設定</button>
   <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
@@ -538,14 +539,41 @@
       ③ 「距離」很難算時，想想它是哪個三角形的「高」，用兩種方法算面積<br>
       ④ 對稱的位置（左右一樣遠）會送你一個中點
     </div>
-    <div class="nav"><button class="go" data-go="7">無限練習 →</button></div>
+    <div class="nav"><button class="go" data-go="7">整合回顧：一次看完整個解法 →</button></div>
   </div>
 </section>
 
-<!-- ============ 關卡 8：無限練習 ============ -->
+<!-- ============ 關卡 8：整合回顧 ============ -->
 <section id="s7">
   <div class="card story">
-    <h2>關卡 8：無限練習</h2>
+    <h2>關卡 8：整合回顧</h2>
+    步驟很多，很容易忘記「為什麼要做這一步」。這一關用動畫把整個解法從頭串一次。按「▶ 自動播放全部」，或點上面的小方塊跳到任一步。
+  </div>
+  <div class="card">
+    <div class="yn" id="rcChain"></div>
+    <svg class="map" id="rcMap" width="100%" viewBox="0 0 520 400"></svg>
+    <div style="margin:8px 0">
+      <button class="ghost" id="rcPrev">◀ 上一步</button>
+      <button class="go" id="rcAuto">▶ 自動播放全部</button>
+      <button class="ghost" id="rcAgain">↻ 重播這一步</button>
+      <button class="ghost" id="rcNext">下一步 ▶</button>
+    </div>
+    <div class="key" id="rcSay"></div>
+    <div class="proof" id="rcMath" style="min-height:60px"></div>
+  </div>
+  <div class="card hidden" id="c8key">
+    <div class="key">
+      🔑 <b>整個解法的骨架：</b>要找 g → 只要找 p（中點）→ 相切給我們「距離 10」→ 面積算兩次變成 PA = 2p → 畢氏定理變成方程式 → 配方解出 p → g = 2p − 15。<br>
+      每一步都是把「不知道怎麼算的東西」換成「會算的東西」。
+    </div>
+    <div class="nav"><button class="go" data-go="8">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 9：無限練習 ============ -->
+<section id="s8">
+  <div class="card story">
+    <h2>關卡 9：無限練習</h2>
     數字每次都不一樣。先練「兩種算面積」，熟了再挑戰穀倉變化題！
   </div>
   <div class="card">
@@ -742,7 +770,90 @@ wireSteps($("#m5"), () => { show("#c5key"); done(4); });
 wireSteps($("#m6"), () => { show("#c6key"); done(5); });
 wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！20 + 21 + 75 + 3 = 119，答案 A。"); show("#bsum"); done(6); });
 
-// ---------- 關卡 8：無限練習 ----------
+// ---------- 關卡 8：整合回顧（動畫） ----------
+(() => {
+  const R21 = Math.sqrt(21), PT = (10 * R21 - 15) / 3, GT = 2 * PT - 15, FT = farm(GT);
+  const cl = x => Math.max(0, Math.min(1, x)), k = (t, a, b) => cl((t - a) / (b - a));
+  const seg = (a, b, col, w = 3, op = 1, dash = "") => `<line x1="${px(a[0])}" y1="${py(a[1])}" x2="${px(b[0])}" y2="${py(b[1])}" stroke="${col}" stroke-width="${w}" opacity="${op}" ${dash ? `stroke-dasharray="${dash}"` : ""}/>`;
+  const part = (a, b, f) => [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+  const dot = (q, r, col, op = 1) => `<circle cx="${px(q[0])}" cy="${py(q[1])}" r="${r}" fill="${col}" opacity="${op}"/>`;
+  const txt = (q, str, col, op = 1, size = 15, dx = 0, dy = 0, anchor = "start") => `<text x="${px(q[0]) + dx}" y="${py(q[1]) + dy}" font-size="${size}" fill="${col}" opacity="${op}" font-weight="700" text-anchor="${anchor}" style="paint-order:stroke;stroke:#fbfdf7;stroke-width:4px">${str}</text>`;
+  const poly = (pts, fill, stroke, op = 1) => `<polygon points="${pts.map(q => px(q[0]) + "," + py(q[1])).join(" ")}" fill="${fill}" stroke="${stroke}" stroke-width="2" opacity="${op}"/>`;
+  const A = [-20, -15], O = [0, 0], P = [0, -PT], A1 = [0, -15], T = FT.T;
+  function base(g, lineOp = 1) {
+    const F = farm(g); let h = "";
+    for (let x = -25; x <= 25; x += 5) h += `<line x1="${px(x)}" y1="0" x2="${px(x)}" y2="400" stroke="#eef0e6"/>`;
+    for (let y = -25; y <= 10; y += 5) h += `<line x1="0" y1="${py(y)}" x2="520" y2="${py(y)}" stroke="#eef0e6"/>`;
+    h += `<line x1="${px(0)}" y1="0" x2="${px(0)}" y2="400" stroke="#9a8fa5" stroke-dasharray="5 5"/><line x1="0" y1="${py(0)}" x2="520" y2="${py(0)}" stroke="#9a8fa5" stroke-dasharray="5 5"/>`;
+    h += `<text x="478" y="26" font-size="15">北 ↑</text><circle cx="${px(0)}" cy="${py(0)}" r="100" fill="#f6e2bd" stroke="#b8864b" stroke-width="2"/>`;
+    h += seg(A, [20, -g], COL[F.st], 3, lineOp);
+    return h;
+  }
+  const people = g => dot(O, 4, "#2b2233") + txt(O, "O", "#2b2233", 1, 14, 6, -6) + dot(A, 7, "#118ab2") + txt(A, "A 麥唐納", "#118ab2", 1, 14, -30, 26) + dot([20, -g], 7, "#d17a00") + txt([20, -g], "B 麥奎格", "#d17a00", 1, 14, -30, 26);
+  const perp = op => seg(O, T, "#2b2233", 2, op, "6 4") + txt(part(O, T, .5), "10", "#2b2233", op, 15, 8, 0);
+  const SC = [
+    { name: "畫地圖", say: "第一步，畫地圖。穀倉中心當原點，半徑 10。麥唐納在負 20、負 15，麥奎格在 20、負 g。g 太小，視線撞進穀倉；g 太大，離穀倉太遠。我們要找剛好擦過的 g。",
+      draw: t => { const g = t < .85 ? 10 - 9 * Math.cos(t / .85 * 3 * Math.PI) * (1 - t / .85) + (GT - 10) * (t / .85) : GT; return base(g) + people(g); },
+      math: [[0, "A(−20, −15)、B(20, −g)、半徑 10"], [.85, "目標：找出讓視線<b>剛好擦過</b>的 g"]] },
+    { name: "相切 = 距離 10", say: "第二步，剛好擦過，就是中心到視線的垂直距離等於半徑 10。這是我們手上唯一的線索。",
+      draw: t => base(GT) + seg(O, part(O, T, k(t, 0, .5)), "#2b2233", 2, 1, "6 4") + (t > .5 ? perp(k(t, .5, .7)) : "") + people(GT),
+      math: [[0, "相切 ⇔ 圓心到切線的距離 = 半徑"], [.5, "O 到視線的距離 = <b>10</b>"]] },
+    { name: "P 是中點", say: "第三步，兩個人離南北線都是 20，藍色和黃色兩個三角形全等，所以 P 在正中間。g 等於 2p 減 15。只要求出 p 就好！",
+      draw: t => base(GT) + poly([A, A1, P], "rgba(17,138,178,.3)", "#118ab2", k(t, .1, .35)) + poly([[20, -GT], [0, -GT], P], "rgba(242,183,5,.35)", "#d19a00", k(t, .3, .55)) + people(GT) + dot(P, 6, "#ff8a3d", k(t, 0, .1)) + txt(P, "P", "#c25e12", k(t, 0, .1), 15, 9, 18) + txt([0, -PT / 2], "p", "#c25e12", k(t, .6, .75), 16, -16, 5),
+      math: [[.1, "藍、黃三角形全等 → P 是 AB 的中點"], [.6, "p = (15 + g) ÷ 2"], [.8, "<b>g = 2p − 15</b>　→　只要求 p！"]] },
+    { name: "面積 → PA = 2p", say: "第四步，三角形 O P A 的面積算兩次。用 O P 當底，高是 20，面積是 10 p。用 P A 當底，高是剛剛的 10，面積是 5 乘 P A。兩個一樣大，所以 P A 等於 2 p。",
+      draw: t => { const a = k(t, 0, .1), first = t < .5; let h = base(GT) + poly([O, P, A], "rgba(255,138,61,.25)", "#ff8a3d", a);
+        if (first) h += seg(O, P, "#c25e12", 6, k(t, .05, .15)) + seg(A, A1, "#118ab2", 3, k(t, .15, .25), "6 4") + txt([-10, -15], "高 20", "#118ab2", k(t, .15, .25), 15, -20, 20) + txt([0, -PT / 2], "底 p", "#c25e12", k(t, .05, .15), 15, 8, 5);
+        else h += seg(P, A, "#c25e12", 6, k(t, .5, .6)) + perp(k(t, .6, .7)) + txt(part(A, P, .5), "底 PA", "#c25e12", k(t, .5, .6), 15, -10, 26);
+        return h + people(GT) + dot(P, 6, "#ff8a3d") + txt(P, "P", "#c25e12", 1, 15, 9, 18); },
+      math: [[.1, "用 OP 當底：面積 = p × 20 ÷ 2 = <b>10p</b>"], [.55, "用 PA 當底：面積 = PA × 10 ÷ 2 = <b>5 × PA</b>"], [.8, "同一個三角形：5 × PA = 10p　→　<b>PA = 2p</b>"]] },
+    { name: "畢氏定理", say: "第五步，P A 是綠色直角三角形的斜邊。橫的是 20，直的是 15 減 p。畢氏定理：2p 的平方，等於 20 的平方，加 15 減 p 的平方。",
+      draw: t => base(GT) + poly([A, A1, P], "rgba(31,157,85,.25)", "#1f9d55", k(t, 0, .2)) + txt([-10, -15], "20", "#1f9d55", k(t, .2, .35), 16, 0, 20, "middle") + txt([0, (-15 - PT) / 2], "15 − p", "#1f9d55", k(t, .35, .5), 15, 8, 5) + txt(part(A, P, .5), "PA = 2p", "#c25e12", k(t, .5, .65), 15, -40, -10) + people(GT) + dot(P, 6, "#ff8a3d") + txt(P, "P", "#c25e12", 1, 15, 9, -6),
+      math: [[.2, "斜邊² = 橫² + 直²"], [.65, "<b>(2p)² = 20² + (15 − p)²</b>"]] },
+    { name: "配方解 p", say: "第六步，展開整理，得到 3 p 平方加 30 p 減 625 等於 0。配方得到 p 加 5 的平方等於 3 分之 700。負的那個答案是擦過穀倉北邊的另一條線，不要。所以 p 等於 3 分之 10 根號 21 減 15，大約 10.28。",
+      draw: t => { const B2 = [20, -(2 * (-10 * R21 - 15) / 3 - 15)], op = k(t, .45, .55) * (1 - .6 * k(t, .75, .85));
+        return base(GT) + seg(A, B2, "#8a8494", 3, op, "8 5") + txt([2, 11], "另一條擦過北邊", "#8a8494", op, 14) + txt([2, 8.6], "p ≈ −20.28 ✗", "#8a8494", op, 14) + people(GT) + dot(P, 6 + 3 * k(t, .85, 1), "#ff8a3d") + txt(P, "p ≈ 10.28", "#c25e12", k(t, .85, 1), 15, 10, 20); },
+      math: [[0, "4p² = 400 + 225 − 30p + p²"], [.15, "3p² + 30p − 625 = 0"], [.3, "(p + 5)² = 700/3　→　p + 5 = ±√(700/3)"], [.55, "負的那個是北邊那條線，不要"], [.85, "<b>p = (10√21 − 15)/3 ≈ 10.28</b>"]] },
+    { name: "g = 2p − 15", say: "最後，g 等於 2p 減 15，等於 3 分之 20 根號 21 減 75，大約 5.55，就是第一關用拉桿找到的位置！a 加 b 加 c 加 d 等於 119，答案 A。",
+      draw: t => base(GT) + people(GT) + dot([20, -GT], 7 + 6 * Math.abs(Math.sin(t * 6)) * (1 - k(t, .7, 1)), "rgba(209,122,0,.35)") + dot(P, 6, "#ff8a3d") + txt([20, -GT], "g ≈ 5.55", "#d17a00", k(t, .3, .45), 15, -40, -14),
+      math: [[0, "g = 2p − 15 = 2 × (10√21 − 15)/3 − 45/3"], [.3, "<b>g = (20√21 − 75)/3 ≈ 5.55</b>"], [.6, "a + b + c + d = 20 + 21 + 75 + 3 = <b>119</b>　→　答案 <b>(A)</b> 🏆"]] }
+  ];
+  let cur = 0, t0 = 0, auto = false, waitUntil = 0;
+  $("#rcChain").innerHTML = SC.map((s, i) => `<button data-rc="${i}">${i + 1}. ${s.name}</button>`).join(" → ");
+  function render(t) {
+    const s = SC[cur]; $("#rcMap").innerHTML = s.draw(cl(t));
+    const lines = s.math.filter(m => cl(t) >= m[0]);
+    $("#rcMath").innerHTML = lines.map((m, j) => `<div style="opacity:${j === lines.length - 1 ? 1 : .6}">${m[1]}</div>`).join("");
+  }
+  function enter(i) {
+    cur = Math.max(0, Math.min(SC.length - 1, i)); t0 = performance.now(); waitUntil = 0;
+    $$("#rcChain button").forEach((b, j) => { b.style.background = j === cur ? "#7b4dff" : j < cur ? "#efe8ff" : "#fff"; b.style.color = j === cur ? "#fff" : ""; });
+    $("#rcSay").textContent = SC[cur].say; speak(SC[cur].say);
+    if (cur === SC.length - 1) { show("#c8key"); done(7); }
+  }
+  const setAuto = on => { auto = on; $("#rcAuto").textContent = on ? "⏸ 暫停自動播放" : "▶ 自動播放全部"; };
+  $("#rcChain").onclick = e => { const i = e.target.dataset.rc; if (i !== undefined) { setAuto(false); enter(+i); } };
+  $("#rcPrev").onclick = () => { setAuto(false); enter(cur - 1); };
+  $("#rcNext").onclick = () => { setAuto(false); enter(cur + 1); };
+  $("#rcAgain").onclick = () => enter(cur);
+  $("#rcAuto").onclick = () => { if (auto) { setAuto(false); speechSynthesis.cancel(); } else { setAuto(true); enter(cur === SC.length - 1 ? 0 : cur); } };
+  const DUR = 6000;
+  (function loop(now) {
+    if ($("#s7").classList.contains("on")) {
+      const t = (now - t0) / DUR; render(t);
+      if (auto && t >= 1 && !speechSynthesis.speaking) {
+        if (!waitUntil) waitUntil = now + 800;
+        else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }
+      }
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+  $$("#rcChain button").forEach((b, j) => b.style.background = j === 0 ? "#7b4dff" : "#fff");
+  $("#rcChain button").style.color = "#fff";
+  $("#rcSay").textContent = SC[0].say;
+})();
+
+// ---------- 關卡 9：無限練習 ----------
 let P = {}, streak = 0, mode = "easy";
 const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
 const pick = a => a[rnd(0, a.length - 1)];
@@ -785,7 +896,7 @@ $("#pchk").onclick = () => {
   const ok = same(val($("#pans").value), P.easy ? val(P.ans) : P.ans, P.easy ? 0.006 : 0.011);
   streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
   fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再算一次，或看解法");
-  if (streak >= 3 && !P.easy) done(7);
+  if (streak >= 3 && !P.easy) done(8);
 };
 $("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
 $("#pnew").onclick = newProblem;
