@@ -826,7 +826,43 @@ wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！
   }
   const people = g => dot(O, 4, "#2b2233") + txt(O, "O", "#2b2233", 1, 14, 6, -6) + dot(A, 7, "#118ab2") + txt(A, "A 麥唐納", "#118ab2", 1, 14, -30, 26) + dot([20, -g], 7, "#d17a00") + txt([20, -g], "B 麥奎格", "#d17a00", 1, 14, -30, 26);
   const perp = op => seg(O, T, "#2b2233", 2, op, "6 4") + txt(part(O, T, .5), "10", "#2b2233", op, 15, 8, 0);
+  // 解題路線圖：nodes = {x, y, w, h, lines, col, at, glow}，edges = {a, b, at, label, lx, ly, col, pts}（像素座標）
+  function roadmap(t, nodes, edges) {
+    const kk = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    let h = `<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>`;
+    edges.forEach(e => {
+      const f = kk(e.at, e.at + .06), col = e.col || "#7a6f85";
+      if (e.pts) h += `<polyline points="${e.pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${col}" stroke-width="3" opacity="${f}" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      else if (f > 0) h += `<line x1="${e.a[0]}" y1="${e.a[1]}" x2="${e.a[0] + (e.b[0] - e.a[0]) * f}" y2="${e.a[1] + (e.b[1] - e.a[1]) * f}" stroke="${col}" stroke-width="2.5" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      if (e.label) h += `<text x="${e.lx}" y="${e.ly}" font-size="13" fill="${col}" font-weight="700" text-anchor="${e.anchor || "start"}" opacity="${kk(e.at + .04, e.at + .1)}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${e.label}</text>`;
+    });
+    nodes.forEach(n => {
+      const op = kk(n.at, n.at + .06), lines = typeof n.lines === "function" ? n.lines(t) : n.lines;
+      const sw = n.glow ? 2.5 + 2 * Math.abs(Math.sin(t * 14)) * (1 - kk(n.at + .15, n.at + .3)) : 2.5;
+      h += `<g opacity="${op}"><rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="10" fill="#fff" stroke="${n.col}" stroke-width="${sw}"/>` +
+        lines.map((l, i) => `<text x="${n.x}" y="${n.y + 5 + (i - (lines.length - 1) / 2) * 19}" font-size="${i ? 13 : 14}" fill="${n.col}" font-weight="700" text-anchor="middle">${l}</text>`).join("") + `</g>`;
+    });
+    return h;
+  }
   const SC = [
+    { name: "解題路線圖", dur: 11000, say: "先看解題路線圖。我們要求 g。第一步，用全等三角形把 g 換成 p，g 等於 2p 減 15，所以長度 p 是核心的未知數。接著用兩個方法描述同一條 PA：面積算兩次，得到 PA 等於 2p；畢氏定理，得到 PA 平方等於 20 平方加 15 減 p 的平方。PA 是一座橋，兩種寫法相等，就得到只有 p 的方程式。解出 p 大約 10.28，再回頭算 g 等於 2p 減 15，大約 5.55。",
+      draw: t => roadmap(t, [
+        { x: 260, y: 36, w: 210, h: 40, lines: t => [t > .9 ? "🎯 g ≈ 5.55 ✓" : "🎯 目標：求 g"], col: "#d17a00", at: 0 },
+        { x: 260, y: 118, w: 240, h: 50, lines: ["⭐ 核心未知數：長度 p", "（點 P 的座標 (0, −p)）"], col: "#ff8a3d", at: .1, glow: true },
+        { x: 150, y: 215, w: 190, h: 50, lines: ["面積算兩次", "PA = 2p"], col: "#118ab2", at: .3 },
+        { x: 400, y: 215, w: 200, h: 50, lines: ["畢氏定理", "PA² = 20² + (15 − p)²"], col: "#1f9d55", at: .4 },
+        { x: 275, y: 300, w: 290, h: 52, lines: ["🌉 PA 是橋：兩種寫法相等", "(2p)² = 20² + (15 − p)²"], col: "#7b4dff", at: .55, glow: true },
+        { x: 275, y: 372, w: 210, h: 40, lines: ["解出 p ≈ 10.28"], col: "#c25e12", at: .7 }
+      ], [
+        { a: [260, 56], b: [260, 92], at: .07, label: "全等三角形：g = 2p − 15", lx: 272, ly: 80, col: "#d17a00" },
+        { a: [215, 143], b: [165, 189], at: .27, col: "#118ab2" },
+        { a: [305, 143], b: [385, 189], at: .37, col: "#1f9d55" },
+        { a: [150, 240], b: [215, 273], at: .5, col: "#118ab2" },
+        { a: [400, 240], b: [335, 273], at: .5, col: "#1f9d55" },
+        { a: [275, 326], b: [275, 351], at: .67, col: "#7b4dff" },
+        { pts: [[170, 372], [24, 372], [24, 36], [152, 36]], at: .82, col: "#d17a00", label: "g = 2p − 15 ≈ 5.55 🏆", lx: 34, ly: 66 }
+      ]),
+      math: [[0, "目標：求 g"], [.1, "全等三角形 → g = 2p − 15，<b>只要求出長度 p</b>"], [.3, "兩個方法都在講 PA：面積 → PA = 2p；畢氏 → PA² = 20² + (15 − p)²"], [.55, "<b>PA 是橋</b>：兩種寫法相等 → 只有 p 的方程式"], [.7, "解出 p ≈ 10.28"], [.82, "回頭：<b>g = 2p − 15 ≈ 5.55</b>"]] },
     { name: "畫地圖", say: "第一步，畫地圖。穀倉中心當原點，半徑 10。麥唐納在負 20、負 15，麥奎格在 20、負 g。g 太小，視線撞進穀倉；g 太大，離穀倉太遠。我們要找剛好擦過的 g。",
       draw: t => { const g = t < .85 ? 10 - 9 * Math.cos(t / .85 * 3 * Math.PI) * (1 - t / .85) + (GT - 10) * (t / .85) : GT; return base(g) + people(g); },
       math: [[0, "A(−20, −15)、B(20, −g)、半徑 10"], [.85, "目標：找出讓視線<b>剛好擦過</b>的 g"]] },
@@ -879,7 +915,7 @@ wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！
   const DUR = 6000;
   (function loop(now) {
     if ($("#s7").classList.contains("on")) {
-      const t = (now - t0) / DUR; render(t);
+      const t = (now - t0) / (SC[cur].dur || DUR); render(t);
       if (auto && t >= 1 && !speechSynthesis.speaking) {
         if (!waitUntil) waitUntil = now + 800;
         else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }

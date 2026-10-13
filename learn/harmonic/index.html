@@ -621,7 +621,44 @@ $$("#bchoices button").forEach(b => b.onclick = () => {
   const panel = lines => `<rect x="6" y="6" width="${Math.min(440, Math.max(...lines.map(l => l[0].length)) * 15 + 20)}" height="${lines.length * 27 + 10}" rx="8" fill="#fff" opacity=".9" stroke="#eadfce"/>` +
     lines.map((l, i) => txt(16, 30 + i * 27, l[0], l[1], l[2] || 16, l[3] ?? 1)).join("");
   const COLS = ["#7b4dff", "#ff8a3d", "#118ab2", "#d64545", "#1f9d55"];
+  // 解題路線圖：nodes = {x, y, w, h, lines, col, at, glow}，edges = {a, b, at, label, lx, ly, col, pts}（像素座標）
+  function roadmap(t, nodes, edges) {
+    const kk = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    let h = `<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>`;
+    edges.forEach(e => {
+      const f = kk(e.at, e.at + .06), col = e.col || "#7a6f85";
+      if (e.pts) h += `<polyline points="${e.pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${col}" stroke-width="3" opacity="${f}" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      else if (f > 0) h += `<line x1="${e.a[0]}" y1="${e.a[1]}" x2="${e.a[0] + (e.b[0] - e.a[0]) * f}" y2="${e.a[1] + (e.b[1] - e.a[1]) * f}" stroke="${col}" stroke-width="2.5" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      if (e.label) h += `<text x="${e.lx}" y="${e.ly}" font-size="13" fill="${col}" font-weight="700" text-anchor="${e.anchor || "start"}" opacity="${kk(e.at + .04, e.at + .1)}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${e.label}</text>`;
+    });
+    nodes.forEach(n => {
+      const op = kk(n.at, n.at + .06), lines = typeof n.lines === "function" ? n.lines(t) : n.lines;
+      const sw = n.glow ? 2.5 + 2 * Math.abs(Math.sin(t * 14)) * (1 - kk(n.at + .15, n.at + .3)) : 2.5;
+      h += `<g opacity="${op}"><rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="10" fill="#fff" stroke="${n.col}" stroke-width="${sw}"/>` +
+        lines.map((l, i) => `<text x="${n.x}" y="${n.y + 5 + (i - (lines.length - 1) / 2) * 19}" font-size="${i ? 13 : 14}" fill="${n.col}" font-weight="700" text-anchor="middle">${l}</text>`).join("") + `</g>`;
+    });
+    return h;
+  }
   const SC = [
+    { name: "解題路線圖", dur: 11000, say: "先看解題路線圖。我們要求所有根的調和平均。調和平均三步驟需要兩樣東西：根有幾個，和倒數加起來是多少。根的個數：每個括號 2 個，不會重複，一共 4050 個。倒數的和：根太醜不能算，這裡的橋是韋達定理，每個括號兩根的倒數和都是負 3 分之 4，跟 k 無關。2025 個加起來是負 2700。平均是負 3 分之 2，再倒回來，答案是負 2 分之 3。",
+      draw: t => roadmap(t, [
+        { x: 260, y: 26, w: 300, h: 36, lines: ["🎯 目標：所有根的調和平均"], col: "#d17a00", at: 0 },
+        { x: 130, y: 100, w: 220, h: 38, lines: ["① 根有幾個？"], col: "#118ab2", at: .12 },
+        { x: 390, y: 100, w: 220, h: 38, lines: ["② 倒數加起來是多少？"], col: "#d64545", at: .12 },
+        { x: 130, y: 172, w: 220, h: 48, lines: ["每個括號 2 個、不重複", "共 4050 個"], col: "#118ab2", at: .25 },
+        { x: 390, y: 172, w: 236, h: 48, lines: ["🌉 根太醜不算！韋達定理：", "每個括號倒數和 = −4/3"], col: "#7b4dff", at: .4, glow: true },
+        { x: 390, y: 240, w: 210, h: 34, lines: ["2025 × (−4/3) = −2700"], col: "#d64545", at: .55 },
+        { x: 130, y: 240, w: 230, h: 34, lines: ["平均 = −2700 ÷ 4050 = −2/3"], col: "#118ab2", at: .68 },
+        { x: 260, y: 298, w: 280, h: 34, lines: ["倒回來：調和平均 = −3/2 🏆"], col: "#1f9d55", at: .82 }
+      ], [
+        { a: [210, 44], b: [140, 80], at: .07 }, { a: [310, 44], b: [380, 80], at: .07, label: "三步驟需要兩樣東西", lx: 260, ly: 68, anchor: "middle" },
+        { a: [130, 119], b: [130, 147], at: .22, col: "#118ab2" },
+        { a: [390, 119], b: [390, 147], at: .37, col: "#d64545" },
+        { a: [390, 196], b: [390, 222], at: .52, col: "#d64545" },
+        { a: [130, 196], b: [130, 222], at: .65, col: "#118ab2" }, { a: [285, 240], b: [246, 240], at: .65, col: "#d64545" },
+        { a: [130, 257], b: [200, 280], at: .8, col: "#1f9d55" }
+      ]),
+      math: [[0, "目標：所有根的調和平均 = 倒數的平均，再倒回來"], [.12, "需要兩樣東西：① 根有幾個 ② 倒數的和"], [.25, "① 每個括號 2 個、不重複 → 4050 個"], [.4, "② <b>橋是韋達定理</b>：不用算根，每個括號倒數和 = −4/3"], [.55, "2025 個 −4/3 → −2700"], [.68, "平均 −2/3 → 倒回來 <b>−3/2</b>"]] },
     { name: "調和平均三步驟", say: "第一步，先記住調和平均怎麼算：每個數倒過來，求平均，再倒過來。例如 4、4、5，倒過來是 4 分之 1、4 分之 1、5 分之 1，平均是 30 分之 7，再倒過來是 7 分之 30。",
       draw: t => { const ph = t < .25 ? 0 : t < .5 ? 1 : 2, flip = Math.abs(Math.cos(Math.PI * k(t, .15, .35)));
         const nums = ph === 0 ? ["4", "4", "5"] : ["1/4", "1/4", "1/5"];
@@ -691,7 +728,7 @@ $$("#bchoices button").forEach(b => b.onclick = () => {
   const DUR = 6000;
   (function loop(now) {
     if ($("#s6").classList.contains("on")) {
-      const t = (now - t0) / DUR; render(t);
+      const t = (now - t0) / (SC[cur].dur || DUR); render(t);
       if (auto && t >= 1 && !speechSynthesis.speaking) {
         if (!waitUntil) waitUntil = now + 800;
         else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }
