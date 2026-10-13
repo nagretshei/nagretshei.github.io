@@ -313,6 +313,12 @@
     PA 是一條斜斜的線。從 A 橫著走到南北線，再直直走到 P，就圍出一個<b>直角三角形</b>，PA 是斜邊。
     畢氏定理：<b>斜邊² = 橫的² + 直的²</b>。
   </div>
+  <div class="card">
+    <svg class="map" id="map4" width="100%" viewBox="0 0 520 400"></svg>
+    麥奎格往南 g = <span class="big" id="g4n"></span> 公尺 <input type="range" id="g4" min="0" max="20" step="0.05" value="5.55">
+    <div class="info" id="info4"></div>
+    <div class="tip">綠色三角形：A → A′ 是「橫的」，A′ → P 是「直的」，A → P 是斜邊。A′ 那個角是直角（橫線和南北線垂直）。</div>
+  </div>
   <div class="card" id="m5">
     <div class="step on">
       A 在 (−20, −15)，P 在 (0, −p)。橫的那一段長多少？ <input class="n" data-ans="20">
@@ -649,6 +655,15 @@ function drawMap(svg, g, o = {}) {
     h += `<polygon points="${px(20)},${py(-g)} ${px(0)},${py(-g)} ${px(0)},${py(P[1])}" fill="rgba(242,183,5,.3)" stroke="#d19a00" stroke-width="2"/>`;
     h += `<text x="${px(0) - 26}" y="${py(-15) + 5}" font-size="14" fill="#118ab2">A′</text><text x="${px(0) + 6}" y="${py(-g) + 5}" font-size="14" fill="#a07400">B′</text>`;
   }
+  if (o.pyth) {
+    const up = F.p < 15 ? 1 : -1, k = 1.4; // 直角記號：從 A′ 往西、往 P 的方向各走 1.4 公尺
+    h += `<polygon points="${px(-20)},${py(-15)} ${px(0)},${py(-15)} ${px(0)},${py(P[1])}" fill="rgba(31,157,85,.22)" stroke="#1f9d55" stroke-width="2.5"/>`;
+    h += `<polyline points="${px(-k)},${py(-15)} ${px(-k)},${py(-15 + up * k)} ${px(0)},${py(-15 + up * k)}" fill="none" stroke="#1f9d55" stroke-width="1.5"/>`;
+    h += `<text x="${px(0) + 5}" y="${py(-15) + 16}" font-size="14" fill="#1f9d55">A′</text>`;
+    h += `<text x="${px(-10) - 22}" y="${py(-15) + 20}" font-size="15" fill="#1f9d55" font-weight="700">橫 = 20</text>`;
+    if (Math.abs(15 - F.p) > 1.5) h += `<text x="${px(0) + 28}" y="${py((-15 + P[1]) / 2) + 5}" font-size="15" fill="#1f9d55" font-weight="700">直 = ${F.p < 15 ? "15 − p" : "p − 15"}</text>`;
+    h += `<text x="${px(-10) - 40}" y="${py((-15 + P[1]) / 2) - 14}" font-size="15" fill="#c25e12" font-weight="700">斜邊 PA</text>`;
+  }
   if (o.tri) h += `<polygon points="${px(0)},${py(0)} ${px(0)},${py(P[1])} ${px(-20)},${py(-15)}" fill="rgba(255,138,61,.28)" stroke="#ff8a3d" stroke-width="2"/>`;
   h += `<line x1="${px(-20)}" y1="${py(-15)}" x2="${px(20)}" y2="${py(-g)}" stroke="${c}" stroke-width="3"/>`;
   if (o.perp) {
@@ -679,6 +694,11 @@ function mapLevel(i, o, info) {
 mapLevel(0, {}, () => "");
 mapLevel(1, { perp: true }, F => `中心到視線的最短距離 d ≈ <b>${fmt(F.d)}</b> 公尺（穀倉半徑是 10）`);
 mapLevel(2, { P: true, twin: true }, (F, g) => `p = (15 + ${fmt(g)}) ÷ 2 = <b>${fmt(F.p)}</b>`);
+mapLevel(4, { P: true, pyth: true }, F => {
+  const v = Math.abs(15 - F.p);
+  return `橫 = 20，直 = ${F.p < 15 ? "15 − p" : "p − 15"} = ${F.p < 15 ? "15 − " + fmt(F.p) : fmt(F.p) + " − 15"} = ${fmt(v)}<br>
+    PA² = 20² + ${fmt(v)}² = 400 + ${fmt(v * v)} = ${fmt(400 + v * v)}，PA ≈ <b>${fmt(F.PA)}</b>　（2p ≈ ${fmt(2 * F.p)}）`;
+});
 mapLevel(3, { P: true, tri: true, perp: true }, F => `<table class="steps">
   <tr><th>用 OP 當底：面積 = p × 20 ÷ 2</th><td>${fmt(F.p)} × 20 ÷ 2 = <b>${fmt(10 * F.p)}</b></td></tr>
   <tr><th>用 PA 當底：面積 = PA × d ÷ 2</th><td>${fmt(F.PA)} × ${fmt(F.d)} ÷ 2 = <b>${fmt(F.PA * F.d / 2)}</b></td></tr>
