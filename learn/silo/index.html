@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>穀倉切線大冒險｜相切、面積與畢氏定理</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --go:#ff8a3d; --back:#118ab2; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  input[type=range] { width:100%; }
+  input.n { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid #f2b705; padding:10px 16px; border-radius:8px; margin:12px 0; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  .step { display:none; } .step.on { display:block; margin-bottom:14px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button, .choices button { font-size:17px; margin:4px; padding:5px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .fr { display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; line-height:1.25; margin:0 3px; }
+  .fr > span:first-child { border-bottom:1.5px solid currentColor; padding:0 4px; }
+  .bar { height:26px; border-radius:6px; color:#fff; font-size:14px; padding:0 8px; display:flex; align-items:center; white-space:nowrap; }
+  .math { font-size:20px; }
+  .tip { font-size:14px; color:#7a6f85; }
+  table.derive td { vertical-align:middle; padding:8px 10px; }
+  table.derive td:first-child { width:34%; font-size:15px; }
+  table.derive td:last-child { color:#8a5a00; }
+  table.derive td:nth-child(2) { white-space:nowrap; }
+  table.derive td:first-child { min-width:200px; }
+  svg.map { background:#fbfdf7; border:1px solid var(--line); border-radius:10px; }
+  .info { margin-top:6px; font-size:16px; }
+  .st-hit { color:var(--bad); font-weight:700; } .st-tan { color:var(--ok); font-weight:700; } .st-miss { color:var(--accent); font-weight:700; }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>🌾 穀倉切線大冒險</h1>
+  <span class="part">地圖篇</span>
+  <button class="tab on" data-go="0">1. 農場地圖</button>
+  <button class="tab" data-go="1">2. 剛好擦過</button>
+  <span class="part">工具篇</span>
+  <button class="tab" data-go="2">3. 中間點 P</button>
+  <button class="tab" data-go="3">4. 兩種算面積</button>
+  <button class="tab" data-go="4">5. 畢氏定理</button>
+  <span class="part">解題篇</span>
+  <button class="tab" data-go="5">6. 配方法</button>
+  <button class="tab" data-go="6">7. 大魔王</button>
+  <button class="tab" data-go="7">8. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 1：農場地圖 ============ -->
+<section class="on" id="s0">
+  <div class="card story">
+    <h2>關卡 1：農場地圖</h2>
+    田中間有一座圓圓的穀倉，<b>直徑 20 公尺</b>。兩個農夫站在穀倉的南邊：
+    <b>麥唐納</b>在穀倉中心西邊 20 公尺、南邊 15 公尺；<b>麥奎格</b>在中心東邊 20 公尺、南邊 g 公尺。
+    他們想看見對方，可是穀倉擋在中間……麥奎格要站在哪裡，視線才會<b>剛好擦過</b>穀倉？
+    數學家的第一招：<b>畫成地圖</b>。
+  </div>
+  <div class="card">
+    <svg class="map" id="map0" width="100%" viewBox="0 0 520 400"></svg>
+    麥奎格往南 g = <span class="big" id="g0n"></span> 公尺 <input type="range" id="g0" min="0" max="20" step="0.05" value="0">
+    <div class="info" id="info0"></div>
+  </div>
+  <div class="card" id="m1">
+    <div class="tip">負數前面加減號，例如 -20。</div>
+    <div class="step on">
+      把穀倉中心當作原點 (0, 0)。<b>往東</b> x 變大、<b>往北</b> y 變大；往西、往南就是負的。<br>
+      麥唐納的座標是 ( <input class="n" data-ans="-20"> , <input class="n" data-ans="-15"> )
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 西邊是 x 的負方向，走 20 公尺 → x = −20。<br>💡 南邊是 y 的負方向，走 15 公尺 → y = −15。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      穀倉直徑 20 公尺，<b>半徑</b>是幾公尺？ <input class="n" data-ans="10">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 半徑是從中心到邊邊的距離，剛好是直徑的一半：20 ÷ 2。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      拉動上面的拉桿，讓視線變成<b>綠色「剛好擦過」</b>。這時 g 大約是多少？（寫到小數第一位就好）
+      <input class="n" data-ans="5.55" data-tol="0.25">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 g 太小，視線會撞進穀倉（紅色）；g 太大，視線離穀倉太遠（紫色）。在 5 和 6 之間慢慢拉。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 「視線剛好擦過圓」在數學上叫做<b>相切</b>，這條線叫做<b>切線</b>。<br>
+      用拉桿只能找到「大約 5.5」，可是 AMC 要的是<b>一點都不差的精確答案</b>。接下來幾關，我們一步一步把它算出來。
+    </div>
+    <div class="nav"><button class="go" data-go="1">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：剛好擦過 ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 2：剛好擦過＝距離剛好是半徑</h2>
+    怎麼用數學判斷「剛好擦過」？從穀倉中心 O 往視線畫一條<b>最短</b>的線段，量它有多長，叫它 <b>d</b>。拉動拉桿觀察 d 的變化。
+  </div>
+  <div class="card">
+    <svg class="map" id="map1" width="100%" viewBox="0 0 520 400"></svg>
+    麥奎格往南 g = <span class="big" id="g1n"></span> 公尺 <input type="range" id="g1" min="0" max="20" step="0.05" value="2">
+    <div class="info" id="info1"></div>
+  </div>
+  <div class="card" id="m2">
+    <div class="step on">
+      當 d <b>比 10 小</b>的時候，視線怎麼了？
+      <div class="choices" data-right="0">
+        <button>穿進穀倉，被擋住了</button><button>離穀倉很遠</button><button>剛好擦過</button>
+      </div>
+      <div class="hint">💡 穀倉邊上每一點離中心都是 10。視線離中心比 10 還近，表示它經過穀倉的「裡面」。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      剛好擦過的時候，d 等於多少？ <input class="n" data-ans="10">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 擦過的那一點就在穀倉的邊上，邊上的點離中心都是半徑那麼遠。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      最短的那條線段，跟視線的夾角是幾度？（看圖上的小方塊） <input class="n" data-ans="90">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 圖上的小方塊是「直角記號」，直角是幾度？</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：為什麼垂直的那條最短？</b><br>
+        從 O 垂直畫到視線上的點叫 T。再隨便在視線上取另一點 Q，連 OQ。<br>
+        O、T、Q 三點圍成一個直角三角形，直角在 T，OQ 是<b>斜邊</b>。<br>
+        畢氏定理：OQ² = OT² + TQ²。TQ² 是正的，所以 OQ² 比 OT² 大，OQ 就比 OT 長。<br>
+        不管 Q 選哪裡都一樣，所以垂直的 OT 是最短的。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 <b>切線判斷法：</b>圓心到直線的垂直距離 = 半徑 ⇔ 直線剛好擦過圓。<br>
+      所以題目變成：<b>找出 g，讓 O 到視線的距離剛好是 10。</b>
+    </div>
+    <div class="nav"><button class="go" data-go="2">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：中間點 P ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 3：中間點 P</h2>
+    視線從麥唐納走到麥奎格，中途會穿過「穿過穀倉中心的南北線」。把這個交叉點叫做 <b>P</b>，它在中心南邊 <b>p</b> 公尺。
+  </div>
+  <div class="card">
+    <svg class="map" id="map2" width="100%" viewBox="0 0 520 400"></svg>
+    麥奎格往南 g = <span class="big" id="g2n"></span> 公尺 <input type="range" id="g2" min="0" max="20" step="0.05" value="5">
+    <div class="info" id="info2"></div>
+  </div>
+  <div class="card" id="m3">
+    <div class="step on">
+      麥唐納離南北線幾公尺？ <input class="n" data-ans="20">　麥奎格呢？ <input class="n" data-ans="20">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 南北線就是 x = 0 那條線。麥唐納在西邊 20、麥奎格在東邊 20。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      兩個人離南北線一樣遠，所以 P 剛好在視線的<b>正中間</b>。<br>
+      如果 g = 5（麥唐納在南 15、麥奎格在南 5），p = ? <input class="n" data-ans="10" data-wrong='{"20":"15 + 5 = 20 是加起來，正中間要再除以 2。","5":"5 是麥奎格的位置，P 在兩個人的正中間。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 正中間的位置 = 兩個人位置的平均 = (15 + 5) ÷ 2。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：為什麼左右一樣遠，就是正中間？</b><br>
+        直線的傾斜是<b>均勻</b>的：往東走一樣遠，往南（或往北）就變一樣多。<br>
+        從麥唐納往東走 20 公尺到 P，再往東走 20 公尺到麥奎格，兩段一樣長，所以高度的變化也一樣多。<br>
+        麥唐納在南 15、麥奎格在南 5，一共差 10，每段變 5：15 − 5 = 10，P 在南 10。這就是 (15 + 5) ÷ 2。
+      </div>
+    </div>
+    <div class="step">
+      反過來：如果算出 p = 12，麥奎格的 g 是多少？ <input class="n" data-ans="9" data-wrong='{"6":"p = 12 是平均，不是一半。平均 = (15 + g) ÷ 2，所以 15 + g 要等於 24。","27":"(15 + g) ÷ 2 = 12，先兩邊乘 2 得到 15 + g = 24，再減 15。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 (15 + g) ÷ 2 = 12。兩邊都乘 2：15 + g = 24。兩邊都減 15：g = ?</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 p = (15 + g) ÷ 2，反過來就是 <b>g = 2p − 15</b>。<br>
+      只要算出 p，就能得到 g！接下來的目標：<b>算出 p</b>。
+    </div>
+    <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：兩種算面積 ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 4：同一個三角形，兩種算面積</h2>
+    三角形面積 = 底 × 高 ÷ 2。而且<b>哪一條邊當底都可以</b>（高要配合那條底，跟底垂直），算出來的面積一定一樣。這個小魔法是破關關鍵！
+  </div>
+  <div class="card">
+    <svg class="map" id="map3" width="100%" viewBox="0 0 520 400"></svg>
+    麥奎格往南 g = <span class="big" id="g3n"></span> 公尺 <input type="range" id="g3" min="0" max="20" step="0.05" value="3">
+    <div class="info" id="info3"></div>
+  </div>
+  <div class="card" id="m4">
+    <div class="tip">分數用斜線寫，例如 24/5；也可以寫小數。</div>
+    <div class="step on">
+      <b>暖身：</b>直角三角形的兩條直角邊是 6 和 8，斜邊是 10。<br>
+      用兩條直角邊當底和高，面積 = ? <input class="n" data-ans="24" data-wrong='{"48":"6 × 8 = 48，還要除以 2。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 直角三角形的兩條直角邊互相垂直，一條當底、另一條就是高：6 × 8 ÷ 2。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      現在改拿<b>斜邊 10 當底</b>，跟它垂直的高 h 是多少？ <input class="n" data-ans="4.8">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 面積還是 24，所以 10 × h ÷ 2 = 24。<br>💡 兩邊乘 2：10 × h = 48。兩邊除以 10：h = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      回到地圖上的橘色三角形 <b>O、P、A</b>（A 是麥唐納）。<br>
+      先拿 <b>OP</b> 當底，它在南北線上，長度是 p。高要跟底垂直，也就是 A 到南北線的<b>水平</b>距離 = ? <input class="n" data-ans="20">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 底是直的（南北方向），跟它垂直的方向是橫的（東西方向）。麥唐納在南北線西邊幾公尺？</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      所以面積 = p × 20 ÷ 2 = ?
+      <div class="choices" data-right="1">
+        <button data-why="p × 20 = 20p，還沒除以 2。">20p</button><button>10p</button><button data-why="20 ÷ 2 = 10，不是 5。">5p</button>
+      </div>
+      <div class="hint">💡 p × 20 = 20p，再除以 2。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      換拿 <b>PA</b>（視線的一段）當底。跟它垂直的高，就是 O 到視線的垂直距離。<br>
+      剛好擦過的時候，這個距離是多少？（第 2 關學過） <input class="n" data-ans="10">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 第 2 關：剛好擦過 ⇔ 中心到視線的距離 = 半徑。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      所以面積 = PA × 10 ÷ 2 = 5 × PA。<br>
+      兩種算法算的是<b>同一個三角形</b>，一定相等：5 × PA = 10p。所以 PA = ?
+      <div class="choices" data-right="0">
+        <button>2p</button><button data-why="兩邊都除以 5：左邊剩 PA，右邊 10p ÷ 5 是多少？">p ÷ 2</button><button data-why="不是加法喔。兩邊都除以 5 看看。">p + 5</button>
+      </div>
+      <div class="hint">💡 5 × PA = 10p，兩邊都除以 5。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c4key">
+    <div class="key">
+      🔑 剛好擦過的時候：<b>PA = 2p</b>。<br>
+      回去拉一下拉桿，看地圖下面的表：只有在「剛好擦過」的時候，PA 才會等於 2p。
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：畢氏定理 ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 5：畢氏定理列方程式</h2>
+    PA 是一條斜斜的線。從 A 橫著走到南北線，再直直走到 P，就圍出一個<b>直角三角形</b>，PA 是斜邊。
+    畢氏定理：<b>斜邊² = 橫的² + 直的²</b>。
+  </div>
+  <div class="card" id="m5">
+    <div class="step on">
+      A 在 (−20, −15)，P 在 (0, −p)。橫的那一段長多少？ <input class="n" data-ans="20">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 從 x = −20 走到 x = 0。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      直的那一段：A 在南邊 15，P 在南邊 p，差 15 − p。<br>
+      先用數字試：如果 p = 10，直的是 15 − 10 = 5，PA² = 20² + 5² = ? <input class="n" data-ans="425">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 20² = 20 × 20 = 400，5² = 5 × 5 = 25。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      一般的情況：PA² = 20² + (15 − p)²。<br>
+      上一關說 PA = 2p，所以 PA² = (2p)² = ?
+      <div class="choices" data-right="0">
+        <button>4p²</button><button data-why="平方是「整個 2p」乘自己，2 也要平方。">2p²</button><button data-why="(2p)² = 2p × 2p，p 也乘了兩次。">4p</button>
+      </div>
+      <div class="hint">💡 (2p)² = 2p × 2p = 2 × 2 × p × p。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      展開 (15 − p)² = (15 − p) × (15 − p)。用分配律，前面每一項乘後面每一項，一共四項：
+      <table class="steps">
+        <tr><th></th><th>× 15</th><th>× (−p)</th></tr>
+        <tr><th>15</th><td>225</td><td>−15p</td></tr>
+        <tr><th>−p</th><td>−15p</td><td>p²（負乘負得正）</td></tr>
+      </table>
+      合起來：(15 − p)² = 225 − <input class="n" data-ans="30"> p + p²
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 中間有兩個 −15p，加起來是 −15p − 15p。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      現在方程式是 4p² = 400 + 225 − 30p + p²。把右邊全部搬到左邊，整理成：<br>
+      <input class="n" data-ans="3"> p² + 30p − <input class="n" data-ans="625"> = 0
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 先算 400 + 225。搬到另一邊要變號：p² 搬過去變 −p²，−30p 搬過去變 +30p，625 搬過去變 −625。<br>💡 4p² − p² = ?</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：一步一步整理</b>
+        <table class="steps">
+          <tr><td>原式</td><td>4p² = 400 + 225 − 30p + p²</td></tr>
+          <tr><td>400 + 225 = 625</td><td>4p² = 625 − 30p + p²</td></tr>
+          <tr><td>右邊搬到左邊（變號）</td><td>4p² − p² + 30p − 625 = 0</td></tr>
+          <tr><td>4p² − p² = 3p²</td><td>3p² + 30p − 625 = 0</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c5key">
+    <div class="key">
+      🔑 得到一個二次方程式：<b>3p² + 30p − 625 = 0</b>。下一關把它解出來！
+    </div>
+    <div class="nav"><button class="go" data-go="5">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：配方法 ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 6：用配方法解 p</h2>
+    解 3p² + 30p − 625 = 0。方法是倒數大冒險學過的<b>配方法</b>：想辦法湊出「某個東西的平方」。
+  </div>
+  <div class="card" id="m6">
+    <div class="tip">分數用斜線寫，例如 700/3。</div>
+    <div class="step on">
+      ① 把 625 搬到右邊：3p² + 30p = 625。兩邊都除以 3，讓 p² 前面變成 1：<br>
+      p² + <input class="n" data-ans="10"> p = <span class="fr"><span>625</span><span>3</span></span>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 每一項都要除以 3：3p² ÷ 3 = p²，30p ÷ 3 = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      ② 湊平方：(p + 5)² = p² + 10p + 25（因為 10 = 2 × 5，5 × 5 = 25）。<br>
+      所以兩邊都加 25，左邊就變成 (p + 5)²：<br>
+      (p + 5)² = <span class="fr"><span>625</span><span>3</span></span> + 25 = <input class="n" data-ans="700/3" data-wrong='{"650/3":"25 不能直接加到分子上，要先把 25 寫成「3 分之幾」。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 通分：25 = <span class="fr"><span>75</span><span>3</span></span>（25 × 3 = 75）。再把分子加起來：625 + 75。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      ③ 平方等於 <span class="fr"><span>700</span><span>3</span></span> 的數有兩個：p + 5 = +√(700/3) 或 p + 5 = −√(700/3)。我們要哪一個？
+      <div class="choices" data-right="0">
+        <button>正的 +</button><button data-why="取負的話，p = −5 − √(700/3) 是負數。p 是 P 在中心「南邊」幾公尺，要是正的。">負的 −</button>
+      </div>
+      <div class="hint">💡 p 是距離（P 在中心南邊幾公尺），要是正的。−5 再減一個正數，會變成什麼？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>負的那個 p ≈ −20.3，代表 P 在中心<b>北邊</b>，那是另一條從麥唐納出發、擦過穀倉<b>北邊</b>的視線。那時 g = 2p − 15 是負的，可是題目說 g &gt; 0，所以不要它。
+      </div>
+    </div>
+    <div class="step">
+      ④ 化簡根號 √(700/3)：<br>
+      　分母 3 開不出整數，所以分子分母都乘 3：<span class="fr"><span>700</span><span>3</span></span> = <span class="fr"><span>2100</span><span>9</span></span>，分母 9 = 3²，√9 = 3。<br>
+      　所以 √(700/3) = <span class="fr"><span>√2100</span><span>3</span></span>。<br>
+      　再把 2100 拆成「平方數 × 剩下的」：2100 = 100 × 21，√2100 = <input class="n" data-ans="10"> √21
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 √(100 × 21) = √100 × √21，√100 = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      ⑤ 所以 p + 5 = <span class="fr"><span>10√21</span><span>3</span></span>，p = <span class="fr"><span>10√21</span><span>3</span></span> − 5 = <span class="fr"><span>10√21 − 15</span><span>3</span></span>（5 = <span class="fr"><span>15</span><span>3</span></span>）。<br>
+      用 √21 ≈ 4.5826 算算看，p 大約是多少？（寫到小數第二位） <input class="n" data-ans="10.275" data-tol="0.02">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 10 × 4.5826 = 45.826；45.826 − 15 = 30.826；30.826 ÷ 3 ≈ ?</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c6key">
+    <div class="key">
+      🔑 <b>p = <span class="fr"><span>10√21 − 15</span><span>3</span></span> ≈ 10.28</b>。<br>
+      回第 4 關把拉桿拉到「剛好擦過」，表上的 p 也差不多是 10.28！
+    </div>
+    <div class="nav"><button class="go" data-go="6">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：大魔王 ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 7：大魔王（2025 AMC 10A 第 20 題）</h2>
+    直徑 20 公尺的穀倉（圓柱）立在田裡。麥唐納在穀倉中心西邊 20 公尺、南邊 15 公尺；麥奎格在中心東邊 20 公尺、南邊 g 公尺（g &gt; 0）。
+    兩人之間的視線剛好和穀倉<b>相切</b>。<br>
+    g 可以寫成 <span class="fr"><span>a√b − c</span><span>d</span></span>，其中 a、b、c、d 都是正整數，b 不能被任何質數的平方整除，d 和「a、c 的最大公因數」互質。
+    求 a + b + c + d。<br>
+    (A) 119　(B) 120　(C) 121　(D) 122　(E) 123
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 1：</b>第 3 關：g = 2p − 15。第 6 關：p = <span class="fr"><span>10√21 − 15</span><span>3</span></span>。先算 2p = ?
+      <div class="choices" data-right="0">
+        <button><span class="fr"><span>20√21 − 30</span><span>3</span></span></button>
+        <button data-why="分子的每一項都要乘 2，−15 也要變成 −30。"><span class="fr"><span>20√21 − 15</span><span>3</span></span></button>
+        <button data-why="乘 2 是乘在分子上，分母不變。分母乘 2 會變成除以 2。"><span class="fr"><span>10√21 − 15</span><span>6</span></span></button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 分數乘 2，就是分子乘 2：(10√21 − 15) × 2 = 10√21 × 2 − 15 × 2。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 2：</b>要減 15，先把 15 寫成分母是 3 的分數：15 = <input class="n" data-ans="45"> / 3
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 分母是 3，分子要是 15 × 3。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 3：</b>g = <span class="fr"><span>20√21 − 30</span><span>3</span></span> − <span class="fr"><span>45</span><span>3</span></span> = ?
+      <div class="choices" data-right="1">
+        <button data-why="−30 再減 45，是更負，不是變回正的。"><span class="fr"><span>20√21 + 15</span><span>3</span></span></button>
+        <button><span class="fr"><span>20√21 − 75</span><span>3</span></span></button>
+        <button data-why="−30 的部分也要算進去：−30 − 45 = ?"><span class="fr"><span>20√21 − 45</span><span>3</span></span></button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 分母一樣，分子相減：20√21 − 30 − 45。√21 不能跟整數合併，只算 −30 − 45。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>驗算：</b>g = (20 × 4.5826 − 75) ÷ 3 = (91.652 − 75) ÷ 3 ≈ 5.55，跟第 1 關用拉桿找到的一樣！
+      </div>
+    </div>
+    <div class="step">
+      <b>步驟 4：</b>對照 <span class="fr"><span>a√b − c</span><span>d</span></span>：a = 20、b = 21、c = 75、d = 3。檢查條件：<br>
+      21 可以被某個質數的平方（4、9、25、49……）整除嗎？
+      <div class="choices" data-right="1"><button data-why="21 = 3 × 7。4 不整除 21，9 也不整除 21，再大的平方都比 21 大。">可以</button><button>不可以</button></div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 把 21 拆成質數相乘：21 = 3 × 7。每個質數只出現一次，就沒有平方。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>21 = 3 × 7，沒有重複的質數，所以 √21 已經化到最簡，不能再拆出整數。（像 √2100 = 10√21 就是拆出了 100 = 10²。）
+      </div>
+    </div>
+    <div class="step">
+      <b>步驟 5：</b>a = 20、c = 75 的最大公因數 = ? <input class="n" data-ans="5" data-wrong='{"1":"20 和 75 都是 5 的倍數喔。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 20 = 2 × 2 × 5，75 = 3 × 5 × 5，共同的質數是哪個？（公因數大冒險學過！）</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>d = 3 和 5 沒有共同因數（互質），條件成立 ✓<br>
+        為什麼題目要這個條件？因為 <span class="fr"><span>40√21 − 150</span><span>6</span></span> 也等於 g（上下都乘 2）。
+        如果 d 和 a、c 有共同因數，就代表還能約分。這個條件規定「約到最簡」，寫法就只剩一種，a + b + c + d 才有唯一答案。
+      </div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>a + b + c + d = 20 + 21 + 75 + 3 = ?
+      <div class="choices" data-right="0">
+        <button>(A) 119</button><button data-why="再加一次：20 + 21 = 41，41 + 75 = 116，116 + 3 = ?">(B) 120</button><button data-why="再加一次：20 + 21 = 41，41 + 75 = 116，116 + 3 = ?">(C) 121</button>
+        <button data-why="再加一次：20 + 21 = 41，41 + 75 = 116，116 + 3 = ?">(D) 122</button><button data-why="再加一次：20 + 21 = 41，41 + 75 = 116，116 + 3 = ?">(E) 123</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 20 + 21 = 41，41 + 75 = 116，116 + 3 = ?</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="bsum">
+    <div class="proof">
+      📐 <b>完整解答（把上面的步驟串起來）</b><br>
+      ① 穀倉中心當原點，半徑 10。麥唐納 A(−20, −15)，麥奎格 B(20, −g)。<br>
+      ② 視線和南北線交在 P(0, −p)。A、B 離南北線一樣遠，P 是 AB 的中點，所以 p = (15 + g) ÷ 2，也就是 g = 2p − 15。<br>
+      ③ 三角形 OPA 面積算兩次：用 OP 當底 = p × 20 ÷ 2 = 10p；用 PA 當底，高是圓心到切線的距離 10，面積 = 5 × PA。所以 PA = 2p。<br>
+      ④ 畢氏定理：PA² = 20² + (15 − p)²，代入 PA = 2p：4p² = 625 − 30p + p²，整理成 3p² + 30p − 625 = 0。<br>
+      ⑤ 配方：(p + 5)² = <span class="fr"><span>700</span><span>3</span></span>，p 取正：p = <span class="fr"><span>10√21 − 15</span><span>3</span></span>。<br>
+      ⑥ g = 2p − 15 = <span class="fr"><span>20√21 − 75</span><span>3</span></span>，a + b + c + d = 20 + 21 + 75 + 3 = <b>119</b>，答案 <b>(A)</b>。
+    </div>
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 幾何題先畫座標地圖<br>
+      ② 相切 ⇔ 圓心到直線的距離 = 半徑<br>
+      ③ 「距離」很難算時，想想它是哪個三角形的「高」，用兩種方法算面積<br>
+      ④ 對稱的位置（左右一樣遠）會送你一個中點
+    </div>
+    <div class="nav"><button class="go" data-go="7">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 8：無限練習 ============ -->
+<section id="s7">
+  <div class="card story">
+    <h2>關卡 8：無限練習</h2>
+    數字每次都不一樣。先練「兩種算面積」，熟了再挑戰穀倉變化題！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">兩種算面積</button><button id="lvHard">穀倉變化題</button></div>
+    <div id="pq" class="story"></div>
+    答案 = <input class="n" id="pans"> <button class="go" id="pchk">確認</button>
+    <button class="ghost" id="pshow">看解法</button>
+    <button class="ghost" id="pnew">下一題</button>
+    <div class="tip" id="ptip"></div>
+    <div class="fb" id="pfb"></div>
+    <div id="psol" class="proof hidden"></div>
+    <div>連續答對：<span class="big" id="pstreak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const gcd = (a, b) => b ? gcd(b, a % b) : Math.abs(a);
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+// 讀使用者輸入的數：可以是整數、小數、分數 a/b，減號用 - 或 −
+function val(s) {
+  s = String(s).trim().replace(/−|–/g, "-").replace(/\s/g, "");
+  if (!s) return NaN;
+  const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  return m ? +m[1] / +m[2] : Number(s);
+}
+const same = (a, b, tol = 1e-9) => Math.abs(a - b) <= tol;
+function frac(n, d) { if (d < 0) { n = -n; d = -d; } const g = gcd(n, d); n /= g; d /= g; return d === 1 ? `${n}` : `${n}/${d}`; }
+const fmt = (x, k = 2) => (Math.round(x * 10 ** k) / 10 ** k).toString().replace("-", "−");
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "silo";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+// 已經過關的關卡：打勾、把重點和推導直接打開，回來複習不用重新作答
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => {
+  $$(".tab[data-go]")[i]?.classList.add("done");
+  $$(`#s${i} .card.hidden`).forEach(c => c.classList.remove("hidden"));
+});
+
+// 一步一步的關卡：輸入框 data-ans（data-tol 容許誤差）比對、提示鈕、選擇題（data-why 針對錯答）
+function chkStep(step) {
+  const ins = [...step.querySelectorAll("input")];
+  const right = i => same(val(i.value), val(i.dataset.ans), +i.dataset.tol || 1e-9);
+  const ok = ins.every(right);
+  const decimal = ins.some(i => !right(i) && /\./.test(i.value) && /\//.test(i.dataset.ans));
+  const wrong = ins.length === 1 && ins[0].dataset.wrong ? JSON.parse(ins[0].dataset.wrong) : {};
+  const hit = Object.keys(wrong).find(k => same(val(ins[0].value), val(k)));
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : hit ? "❌ " + wrong[hit] : decimal ? "❌ 試試用分數寫，例如 700/3" : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  if (!ok && step.querySelector(".hint") && step.dataset.miss) step.querySelector(".hint").classList.add("on");
+  step.dataset.miss = ok ? "" : "1";
+  return ok;
+}
+function wireSteps(box, onLast) {
+  const steps = [...box.querySelectorAll(".step")];
+  const next = step => { const n = steps[steps.indexOf(step) + 1]; n ? n.classList.add("on") : onLast && onLast(); };
+  steps.forEach(step => {
+    step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+    step.querySelector(".chk")?.addEventListener("click", () => {
+      if (!chkStep(step)) return;
+      const ex = step.querySelector(".explain");
+      if (ex && ex.classList.contains("hidden")) { show(ex); setTimeout(() => { speak(ex, false); next(step); }, 50); }
+      else next(step);
+    });
+    const pick = step.querySelector(".choices[data-right]");
+    if (pick) [...pick.querySelectorAll("button")].forEach((b, k) => b.onclick = () => {
+      const ok = k === +pick.dataset.right;
+      fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : b.dataset.why ? "❌ " + b.dataset.why : "🤔 再想想看");
+      if (!ok) step.querySelector(".hint")?.classList.add("on");
+      if (ok) {
+        const pf = step.querySelector(".proof");
+        if (pf && pf.classList.contains("hidden")) { show(pf); setTimeout(() => { speak(pf, false); next(step); }, 50); }
+        else next(step);
+      }
+    });
+  });
+}
+
+// ---------- 農場地圖 ----------
+// 世界座標（公尺）：x −26～26、y −26～14，每公尺 10 像素；北在上
+const px = x => (x + 26) * 10, py = y => (14 - y) * 10;
+function farm(g) {
+  const A = [-20, -15], dx = 40, dy = 15 - g, L = Math.hypot(dx, dy);
+  const t = -(A[0] * dx + A[1] * dy) / (L * L), T = [A[0] + t * dx, A[1] + t * dy], d = Math.hypot(...T);
+  const p = (15 + g) / 2;
+  return { A, B: [20, -g], T, d, p, PA: Math.hypot(20, 15 - p), L, dx, dy, st: d < 9.95 ? "hit" : d <= 10.05 ? "tan" : "miss" };
+}
+const ST = { hit: "💥 視線撞進穀倉，看不到對方", tan: "✨ 剛好擦過穀倉邊邊！", miss: "👀 看得到，但離穀倉還有空隙" };
+const COL = { hit: "#d64545", tan: "#1f9d55", miss: "#7b4dff" };
+function drawMap(svg, g, o = {}) {
+  const F = farm(g), c = COL[F.st], P = [0, -F.p];
+  let h = "";
+  for (let x = -25; x <= 25; x += 5) h += `<line x1="${px(x)}" y1="0" x2="${px(x)}" y2="400" stroke="#eef0e6"/>`;
+  for (let y = -25; y <= 10; y += 5) h += `<line x1="0" y1="${py(y)}" x2="520" y2="${py(y)}" stroke="#eef0e6"/>`;
+  h += `<line x1="${px(0)}" y1="0" x2="${px(0)}" y2="400" stroke="#9a8fa5" stroke-dasharray="5 5"/>`;
+  h += `<line x1="0" y1="${py(0)}" x2="520" y2="${py(0)}" stroke="#9a8fa5" stroke-dasharray="5 5"/>`;
+  h += `<text x="478" y="26" font-size="15" fill="#2b2233">北 ↑</text>`;
+  h += `<circle cx="${px(0)}" cy="${py(0)}" r="100" fill="#f6e2bd" stroke="#b8864b" stroke-width="2"/>`;
+  h += `<text x="${px(0) - 14}" y="${py(0) - 60}" font-size="14" fill="#8a5a00">穀倉</text>`;
+  if (o.tri) h += `<polygon points="${px(0)},${py(0)} ${px(0)},${py(P[1])} ${px(-20)},${py(-15)}" fill="rgba(255,138,61,.28)" stroke="#ff8a3d" stroke-width="2"/>`;
+  h += `<line x1="${px(-20)}" y1="${py(-15)}" x2="${px(20)}" y2="${py(-g)}" stroke="${c}" stroke-width="3"/>`;
+  if (o.perp) {
+    const [tx, ty] = F.T, ux = F.dx / F.L, uy = F.dy / F.L, nx = -tx / F.d, ny = -ty / F.d, s = 1.4;
+    h += `<line x1="${px(0)}" y1="${py(0)}" x2="${px(tx)}" y2="${py(ty)}" stroke="#2b2233" stroke-width="2" stroke-dasharray="6 4"/>`;
+    h += `<polyline points="${px(tx + s * ux)},${py(ty + s * uy)} ${px(tx + s * ux + s * nx)},${py(ty + s * uy + s * ny)} ${px(tx + s * nx)},${py(ty + s * ny)}" fill="none" stroke="#2b2233"/>`;
+    h += `<text x="${px(tx / 2) + 6}" y="${py(ty / 2)}" font-size="15" fill="#2b2233">d</text>`;
+    h += `<circle cx="${px(tx)}" cy="${py(ty)}" r="4" fill="#2b2233"/><text x="${px(tx) + 6}" y="${py(ty) + 16}" font-size="13">T</text>`;
+  }
+  if (o.P) {
+    h += `<circle cx="${px(0)}" cy="${py(P[1])}" r="6" fill="#ff8a3d"/><text x="${px(0) + 9}" y="${py(P[1]) + 18}" font-size="15" fill="#c25e12" font-weight="700">P</text>`;
+    h += `<text x="${px(0) - 18}" y="${py(P[1] / 2) + 5}" font-size="15" fill="#c25e12">p</text>`;
+  }
+  h += `<circle cx="${px(0)}" cy="${py(0)}" r="4" fill="#2b2233"/><text x="${px(0) + 6}" y="${py(0) - 6}" font-size="14">O</text>`;
+  h += `<circle cx="${px(-20)}" cy="${py(-15)}" r="7" fill="#118ab2"/><text x="${px(-20) - 30}" y="${py(-15) + 26}" font-size="14" fill="#118ab2">A 麥唐納</text>`;
+  h += `<circle cx="${px(20)}" cy="${py(-g)}" r="7" fill="#d17a00"/><text x="${px(20) - 30}" y="${py(-g) + 26}" font-size="14" fill="#d17a00">B 麥奎格</text>`;
+  svg.innerHTML = h;
+  return F;
+}
+function mapLevel(i, o, info) {
+  const r = $("#g" + i), upd = () => {
+    const g = +r.value, F = drawMap($("#map" + i), g, o);
+    $(`#g${i}n`).textContent = g.toFixed(2);
+    $("#info" + i).innerHTML = `<span class="st-${F.st}">${ST[F.st]}</span><br>` + info(F, g);
+  };
+  r.oninput = upd; upd();
+}
+mapLevel(0, {}, () => "");
+mapLevel(1, { perp: true }, F => `中心到視線的最短距離 d ≈ <b>${fmt(F.d)}</b> 公尺（穀倉半徑是 10）`);
+mapLevel(2, { P: true }, (F, g) => `p = (15 + ${fmt(g)}) ÷ 2 = <b>${fmt(F.p)}</b>`);
+mapLevel(3, { P: true, tri: true, perp: true }, F => `<table class="steps">
+  <tr><th>用 OP 當底：面積 = p × 20 ÷ 2</th><td>${fmt(F.p)} × 20 ÷ 2 = <b>${fmt(10 * F.p)}</b></td></tr>
+  <tr><th>用 PA 當底：面積 = PA × d ÷ 2</th><td>${fmt(F.PA)} × ${fmt(F.d)} ÷ 2 = <b>${fmt(F.PA * F.d / 2)}</b></td></tr>
+  <tr><th>PA 和 2p</th><td>PA ≈ ${fmt(F.PA)}，2p ≈ ${fmt(2 * F.p)}</td></tr></table>`);
+
+wireSteps($("#m1"), () => { show("#c1key"); done(0); });
+wireSteps($("#m2"), () => { show("#c2key"); done(1); });
+wireSteps($("#m3"), () => { show("#c3key"); done(2); });
+wireSteps($("#m4"), () => { show("#c4key"); done(3); });
+wireSteps($("#m5"), () => { show("#c5key"); done(4); });
+wireSteps($("#m6"), () => { show("#c6key"); done(5); });
+wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！20 + 21 + 75 + 3 = 119，答案 A。"); show("#bsum"); done(6); });
+
+// ---------- 關卡 8：無限練習 ----------
+let P = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+const pick = a => a[rnd(0, a.length - 1)];
+function newProblem() {
+  if (mode === "easy") {
+    const [a, b, c] = pick([[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [9, 12, 15], [7, 24, 25], [12, 16, 20]]);
+    P = { easy: true, a, b, c, ans: frac(a * b, c) };
+    $("#pq").innerHTML = `直角三角形兩條直角邊是 <b>${a}</b> 和 <b>${b}</b>，斜邊是 <b>${c}</b>。拿斜邊當底，高是多少？`;
+    $("#ptip").textContent = "可以寫分數（例如 24/5）或小數。";
+  } else {
+    let r, k, h, s, p, g;
+    do {
+      r = pick([5, 6, 8, 10, 12]); k = pick([2, 3]); h = k * r; s = rnd(r + 1, 3 * r);
+      const K = k * k - 1, m = s / K;
+      p = -m + Math.sqrt((h * h + s * s) / K + m * m); g = 2 * p - s;
+    } while (g < 0.5);
+    P = { r, k, h, s, p, g, ans: g };
+    $("#pq").innerHTML = `穀倉直徑 <b>${2 * r}</b> 公尺。麥唐納在中心西邊 <b>${h}</b>、南邊 <b>${s}</b> 公尺；麥奎格在東邊 <b>${h}</b>、南邊 g 公尺（g &gt; 0）。兩人的視線和穀倉相切，g 是多少？`;
+    $("#ptip").textContent = "寫到小數第二位，例如 5.55。";
+  }
+  $("#pans").value = ""; fb($("#pfb"), null, ""); $("#psol").classList.add("hidden");
+}
+function solution() {
+  if (P.easy) {
+    const { a, b, c } = P;
+    return `① 用兩條直角邊算面積：${a} × ${b} ÷ 2 = ${a * b / 2}<br>
+      ② 斜邊當底：${c} × 高 ÷ 2 = ${a * b / 2}<br>
+      ③ 兩邊乘 2：${c} × 高 = ${a * b}，兩邊除以 ${c}：高 = ${a * b}/${c} = <b>${P.ans}</b>（≈ ${fmt(a * b / c)}）`;
+  }
+  const { r, k, h, s, p, g } = P, K = k * k - 1, m = s / K, R = (h * h + s * s) / K;
+  return `① P 是視線和南北線的交點，在中心南邊 p。兩人離南北線都是 ${h}，P 是正中間：g = 2p − ${s}<br>
+    ② 三角形 OPA 面積算兩次：p × ${h} ÷ 2 = PA × ${r} ÷ 2，所以 PA = ${k}p<br>
+    ③ 畢氏定理：PA² = ${h}² + (${s} − p)²，代入：${k * k}p² = ${h * h} + ${s * s} − ${2 * s}p + p²<br>
+    ④ 整理：${K}p² + ${2 * s}p − ${h * h + s * s} = 0，兩邊除以 ${K}：p² + ${fmt(2 * m, 4)}p = ${fmt(R, 4)}<br>
+    ⑤ 配方：(p + ${fmt(m, 4)})² = ${fmt(R, 4)} + ${fmt(m * m, 4)} = ${fmt(R + m * m, 4)}<br>
+    ⑥ 取正的：p = −${fmt(m, 4)} + √${fmt(R + m * m, 4)} ≈ ${fmt(p, 4)}<br>
+    ⑦ g = 2p − ${s} ≈ <b>${fmt(g)}</b>`;
+}
+$("#pchk").onclick = () => {
+  const ok = same(val($("#pans").value), P.easy ? val(P.ans) : P.ans, P.easy ? 0.006 : 0.011);
+  streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
+  fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再算一次，或看解法");
+  if (streak >= 3 && !P.easy) done(7);
+};
+$("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
+$("#pnew").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+// 把畫面上的數學唸成中文：分數「b 分之 a」、x² 唸「x 平方」、負號唸「負」
+function readable(el) {
+  if (typeof el === "string") return el;
+  const c = el.cloneNode(true);
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden").forEach(b => b.remove());
+  c.querySelectorAll(".fr").forEach(f => f.replaceWith(` ${f.children[1].textContent} 分之 ${f.children[0].textContent} `));
+  c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  c.querySelectorAll("table.derive tr:first-child").forEach(r => r.remove());
+  c.querySelectorAll("td, th, br").forEach(td => td.append("，"));
+  return c.textContent;
+}
+function toSpeech(t) {
+  return t.replace(/[🔄🔑🎉✅❌🤔🏆📐⭐💡]/gu, "").trim()
+    .replace(/(^|[\s=(（：，、×÷和是！？。])[−-](?=\d+\/\d)/g, "$1負")
+    .replace(/(\d+(?:\.\d+)?|[a-z]|r[₁₂])\/(\d+|[a-z]|r[₁₂])/g, " $2 分之 $1 ")
+    .replace(/r₁/g, "r 一").replace(/r₂/g, "r 二").replace(/([a-zA-Z\d])²/g, " $1 平方").replace(/\)²/g, ") 的平方")
+    .replace(/(^|[=(（：，、×÷和！？。]\s*)[−-](?=[\d√])/g, "$1負").replace(/分之\s*[−-]/g, "分之負")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ")
+    .replace(/≈/g, " 大約是 ").replace(/√/g, " 根號 ").replace(/±/g, " 正負 ").replace(/</g, " 小於 ").replace(/>/g, " 大於 ").replace(/≠/g, " 不等於 ").replace(/→/g, "，").replace(/…/g, "，一直到，")
+    .replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(readable(t)));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+const HELLO = "你好，我們一起來玩穀倉切線大冒險！穀倉的半徑是 10 公尺。";
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak(HELLO); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak(HELLO); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak(HELLO); };
+$("#vTest").onclick = () => speak(HELLO);
+$$(".story, .key, .proof").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story"));
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+const watchOnce = (el, isOn, target) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(target(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st));
+new MutationObserver(() => speak($("#pq"))).observe($("#pq"), { childList: true });
+</script>
+</body>
+</html>
