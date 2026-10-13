@@ -215,7 +215,22 @@
       <div class="fb"></div>
     </div>
     <div class="step">
-      A′ 在南 15、B′ 在南 g，P 在它們的正中間。<br>
+      點 A′ 在南 15、點 B′ 在南 g，點 P 在它們的正中間。<b>為什麼長度 p = (15 + g) ÷ 2？</b><br>
+      把南北線想成一把<b>尺</b>：從中心 O 往南量，每個點就是尺上的一個刻度。拉動拉桿換 g 看看：
+      <svg id="ruler" width="100%" viewBox="0 0 520 150" style="background:#fff;border:1px solid var(--line);border-radius:10px;margin:6px 0"></svg>
+      g = <span class="big" id="rgn">5</span> <input type="range" id="rg" min="0" max="20" step="1" value="5">
+      <div class="proof">
+        📐 <b>一步一步推：</b>左邊是一般的 g，右邊用 g = 5 算一次，對照著看。
+        <div style="overflow-x:auto"><table class="steps derive">
+          <tr><th>步驟</th><th>一般的 g</th><th>例子 g = 5</th></tr>
+          <tr><td>① 點 A′ 和點 B′ 相差多遠？大的減小的</td><td>15 − g</td><td>15 − 5 = 10</td></tr>
+          <tr><td>② 正中間 = 從 B′ 往南走「相差的一半」</td><td>p = g + (15 − g) ÷ 2</td><td>p = 5 + 10 ÷ 2 = 10</td></tr>
+          <tr><td>③ 把 g 寫成「2g ÷ 2」，兩項才能合在同一個 ÷ 2 底下</td><td>p = (2g + 15 − g) ÷ 2</td><td>p = (10 + 15 − 5) ÷ 2</td></tr>
+          <tr><td>④ 合併：2g − g = g</td><td><b>p = (15 + g) ÷ 2</b></td><td>p = (15 + 5) ÷ 2 = 10</td></tr>
+        </table></div>
+        直覺：<b>加起來再分成兩半</b>，就是兩個數「公平地各讓一步」的中間點，這就是<b>平均</b>。<br>
+        如果 g 比 15 大（B′ 在 A′ 南邊），把 ① 改成 g − 15、從 A′ 往南走一半，最後一樣得到 (15 + g) ÷ 2。拉桿拉過 15 驗證看看！
+      </div>
       如果 g = 5（麥唐納在南 15、麥奎格在南 5），p = ? <input class="n" data-ans="10" data-wrong='{"20":"15 + 5 = 20 是加起來，正中間要再除以 2。","5":"5 是麥奎格的位置，P 在兩個人的正中間。"}'>
       <button class="go chk">確認</button> <button class="ghost hb">提示</button>
       <div class="hint">💡 A′P = B′P，所以 P 到南 15 和到南 5 一樣遠。15 和 5 差 10，各分一半是 5。</div>
@@ -729,6 +744,19 @@ function mapLevel(i, o, info) {
 }
 mapLevel(0, {}, () => "");
 mapLevel(1, { perp: true }, F => `中心到視線的最短距離 d ≈ <b>${fmt(F.d)}</b> 公尺（穀倉半徑是 10）`);
+// 關卡 3 的尺：南北線上的 A′、B′、P
+function ruler() {
+  const g = +$("#rg").value, p = (15 + g) / 2, X = m => 30 + m * 23, lo = Math.min(g, 15), hi = Math.max(g, 15);
+  $("#rgn").textContent = g;
+  let h = `<line x1="${X(0)}" y1="70" x2="${X(20)}" y2="70" stroke="#2b2233" stroke-width="2"/>`;
+  for (let m = 0; m <= 20; m++) h += `<line x1="${X(m)}" y1="${m % 5 ? 64 : 58}" x2="${X(m)}" y2="70" stroke="#2b2233"/>` + (m % 5 ? "" : `<text x="${X(m)}" y="88" font-size="12" text-anchor="middle" fill="#7a6f85">${m}</text>`);
+  h += `<text x="${X(0)}" y="144" font-size="12" fill="#7a6f85">O（中心）　← 北</text><text x="${X(20)}" y="144" font-size="12" fill="#7a6f85" text-anchor="end">往南幾公尺　南 →</text>`;
+  if (hi > lo) [[lo, p], [p, hi]].forEach(([a, b]) => h += `<path d="M${X(a)} 44 v-6 H${X(b)} v6" fill="none" stroke="#7b4dff" stroke-width="2"/><text x="${(X(a) + X(b)) / 2}" y="32" font-size="13" text-anchor="middle" fill="#7b4dff" font-weight="700">${fmt((hi - lo) / 2)}</text>`);
+  const pt = (m, col, lab, dy) => `<circle cx="${X(m)}" cy="70" r="7" fill="${col}"/><text x="${X(m)}" y="${70 + dy}" font-size="13" text-anchor="middle" fill="${col}" font-weight="700">${lab}</text>`;
+  h += pt(15, "#118ab2", "A′", 34) + pt(g, "#d17a00", "B′", g === 15 ? 48 : 34) + pt(p, "#ff8a3d", `P（p = ${fmt(p)}）`, 52);
+  $("#ruler").innerHTML = h;
+}
+$("#rg").oninput = ruler; ruler();
 mapLevel(2, { P: true, twin: true }, (F, g) => `p = (15 + ${fmt(g)}) ÷ 2 = <b>${fmt(F.p)}</b>`);
 // 關卡 6 講解圖：從 A 出發的兩條切線（世界座標 x −32～32、y −30～60，每公尺 6.25 像素）
 (() => {
@@ -805,7 +833,7 @@ wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！
         poly([A, A1, P], "rgba(17,138,178,.3)", "#118ab2", k(t, .35, .5)) + poly([[20, -GT], [0, -GT], P], "rgba(242,183,5,.35)", "#d19a00", k(t, .45, .6)) +
         txt(A1, "A′ 在南 15", "#118ab2", k(t, .6, .7), 14, -80, 18) + txt([0, -GT], "B′ 在南 g", "#a07400", k(t, .6, .7), 14, 8, -6) +
         people(GT) + dot(P, 6, "#ff8a3d", k(t, 0, .1)) + txt(P, "點 P", "#c25e12", k(t, 0, .1), 15, 9, 18),
-      math: [[0, "大寫 <b>P</b> 是<b>點</b>：視線穿過南北線的地方"], [.2, "小寫 <b>p</b> 是<b>長度</b>：線段 OP 有多長（點 P 在中心南邊幾公尺）"], [.45, "藍、黃三角形全等 → 點 P 在點 A′ 和點 B′ 的正中間"], [.65, "A′ 在南 15、B′ 在南 g → 長度 p = (15 + g) ÷ 2"], [.85, "<b>g = 2p − 15</b>　→　只要求出長度 p！"]] },
+      math: [[0, "大寫 <b>P</b> 是<b>點</b>：視線穿過南北線的地方"], [.2, "小寫 <b>p</b> 是<b>長度</b>：線段 OP 有多長（點 P 在中心南邊幾公尺）"], [.45, "藍、黃三角形全等 → 點 P 在點 A′ 和點 B′ 的正中間"], [.65, "A′ 在南 15、B′ 在南 g → 點 P 在正中間 = 從 B′ 往南走「相差的一半」：p = g + (15 − g) ÷ 2 = (15 + g) ÷ 2"], [.85, "<b>g = 2p − 15</b>　→　只要求出長度 p！"]] },
     { name: "面積 → PA = 2p", say: "第四步，三角形 O P A 的面積算兩次。用 O P 當底，高是 20，面積是 10 p。用 P A 當底，高是剛剛的 10，面積是 5 乘 P A。兩個一樣大，所以 P A 等於 2 p。",
       draw: t => { const a = k(t, 0, .1), first = t < .5; let h = base(GT) + poly([O, P, A], "rgba(255,138,61,.25)", "#ff8a3d", a);
         if (first) h += seg(O, P, "#c25e12", 6, k(t, .05, .15)) + seg(A, A1, "#118ab2", 3, k(t, .15, .25), "6 4") + txt([-10, -15], "高 20", "#118ab2", k(t, .15, .25), 15, -20, 20) + txt([0, -PT / 2], "底 p", "#c25e12", k(t, .05, .15), 15, 8, 5);
