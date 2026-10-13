@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 13 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1096,6 +1096,33 @@ High Fidelity Neural Audio Compression (EnCodec) - arXiv: https://arxiv.org/abs/
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:37</itunes:duration>
       <itunes:episode>39</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Can Melodies Evolve? Composing with Genetic Algorithms</title>
+      <description><![CDATA[Can melodies evolve? Little Pi introduces the genetic algorithm, which John Holland turned into a computer method in 1975 based on Darwin's survival of the fittest. Start with a random crowd of melodies, where every note is a gene, and score each one (its fitness). Pick high scorers as parents, cut and join their halves (crossover), and once in a while randomly change a note (mutation). Repeat generation after generation, and good-sounding features pile up. Al Biles's GenJam (1994) evolved jazz solos with a human judge and even traded phrases with him on stage, but ran into the fitness bottleneck. DarwinTunes (2012) let 6,931 listeners rate music loops over 2,513 generations, and chords and rhythms emerged from noise. Plus a secret: Teacher Lin Na-Wei's work Salamander Quintet uses a genetic algorithm too.
+
+References:
+Genetic algorithm - Wikipedia: https://en.wikipedia.org/wiki/Genetic_algorithm
+GenJam (Al Biles): https://genjam.org/
+Evolution of music by public choice (DarwinTunes, PNAS 2012): https://pmc.ncbi.nlm.nih.gov/articles/PMC3409751
+Salamander Quintet: https://zoelin.me/salamander/]]></description>
+      <itunes:summary><![CDATA[Can melodies evolve? Little Pi introduces the genetic algorithm, which John Holland turned into a computer method in 1975 based on Darwin's survival of the fittest. Start with a random crowd of melodies, where every note is a gene, and score each one (its fitness). Pick high scorers as parents, cut and join their halves (crossover), and once in a while randomly change a note (mutation). Repeat generation after generation, and good-sounding features pile up. Al Biles's GenJam (1994) evolved jazz solos with a human judge and even traded phrases with him on stage, but ran into the fitness bottleneck. DarwinTunes (2012) let 6,931 listeners rate music loops over 2,513 generations, and chords and rhythms emerged from noise. Plus a secret: Teacher Lin Na-Wei's work Salamander Quintet uses a genetic algorithm too.
+
+References:
+Genetic algorithm - Wikipedia: https://en.wikipedia.org/wiki/Genetic_algorithm
+GenJam (Al Biles): https://genjam.org/
+Evolution of music by public choice (DarwinTunes, PNAS 2012): https://pmc.ncbi.nlm.nih.gov/articles/PMC3409751
+Salamander Quintet: https://zoelin.me/salamander/]]></itunes:summary>
+      <pubDate>Wed, 14 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep40.mp3" length="1347264" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep40.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:45</itunes:duration>
+      <itunes:episode>40</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
