@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 14 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1123,6 +1123,31 @@ Evolution of music by public choice（DarwinTunes，PNAS 2012）：https://pmc.n
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:41</itunes:duration>
       <itunes:episode>40</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI作曲也在擲骰子？取樣溫度 Temperature 與 top-k、top-p</title>
+      <description><![CDATA[同一句提示詞按兩次，為什麼生出兩首不一樣的歌？這集小皮拆解AI作曲背後的骰子：自回歸模型每一步給的是一張候選清單，每個候選各有一個百分比（MusicGen每本密碼本有1024種候選）。每次都挑第一名（貪婪解碼）會平淡又一直打轉，所以改成照百分比抽籤。溫度Temperature把分數除以溫度再換成百分比：低溫保守、高溫冒險；top-k只留前k名再抽（MusicGen預設k=250）；top-p（核取樣，Holtzman等人2019）從第一名累加到p就停，名額會自己伸縮。MusicGen預設溫度1、top-k 250、top-p 0（代表不用）。
+
+參考資料：
+The Curious Case of Neural Text Degeneration（top-p 核取樣論文）：https://arxiv.org/abs/1904.09751
+AudioCraft MusicGen 原始碼：https://github.com/facebookresearch/audiocraft/blob/main/audiocraft/models/musicgen.py
+Softmax function － Wikipedia：https://en.wikipedia.org/wiki/Softmax_function]]></description>
+      <itunes:summary><![CDATA[同一句提示詞按兩次，為什麼生出兩首不一樣的歌？這集小皮拆解AI作曲背後的骰子：自回歸模型每一步給的是一張候選清單，每個候選各有一個百分比（MusicGen每本密碼本有1024種候選）。每次都挑第一名（貪婪解碼）會平淡又一直打轉，所以改成照百分比抽籤。溫度Temperature把分數除以溫度再換成百分比：低溫保守、高溫冒險；top-k只留前k名再抽（MusicGen預設k=250）；top-p（核取樣，Holtzman等人2019）從第一名累加到p就停，名額會自己伸縮。MusicGen預設溫度1、top-k 250、top-p 0（代表不用）。
+
+參考資料：
+The Curious Case of Neural Text Degeneration（top-p 核取樣論文）：https://arxiv.org/abs/1904.09751
+AudioCraft MusicGen 原始碼：https://github.com/facebookresearch/audiocraft/blob/main/audiocraft/models/musicgen.py
+Softmax function － Wikipedia：https://en.wikipedia.org/wiki/Softmax_function]]></itunes:summary>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep41.mp3" length="3335460" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep41.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:28</itunes:duration>
+      <itunes:episode>41</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

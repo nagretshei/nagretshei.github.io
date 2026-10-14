@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 14 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1123,6 +1123,31 @@ Salamander Quintet: https://zoelin.me/salamander/]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:45</itunes:duration>
       <itunes:episode>40</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Is AI Rolling Dice When It Composes? Temperature, Top-k and Top-p</title>
+      <description><![CDATA[Same prompt, two different songs? Little Pi takes apart the dice behind AI music generation. At every step, an autoregressive model gives a list where every candidate has a probability (each MusicGen codebook has 1,024 candidates). Always picking number one (greedy decoding) is bland and repetitive, so models sample instead. Temperature divides the scores before turning them into probabilities: low is safe, high is risky. Top-k keeps only the top k candidates (MusicGen's default is 250). Top-p, or nucleus sampling (Holtzman et al., 2019), adds probabilities from the top until it passes p, so the number of candidates stretches and shrinks. MusicGen's defaults: temperature 1, top-k 250, top-p 0 (off).
+
+References:
+The Curious Case of Neural Text Degeneration (top-p paper): https://arxiv.org/abs/1904.09751
+AudioCraft MusicGen source code: https://github.com/facebookresearch/audiocraft/blob/main/audiocraft/models/musicgen.py
+Softmax function - Wikipedia: https://en.wikipedia.org/wiki/Softmax_function]]></description>
+      <itunes:summary><![CDATA[Same prompt, two different songs? Little Pi takes apart the dice behind AI music generation. At every step, an autoregressive model gives a list where every candidate has a probability (each MusicGen codebook has 1,024 candidates). Always picking number one (greedy decoding) is bland and repetitive, so models sample instead. Temperature divides the scores before turning them into probabilities: low is safe, high is risky. Top-k keeps only the top k candidates (MusicGen's default is 250). Top-p, or nucleus sampling (Holtzman et al., 2019), adds probabilities from the top until it passes p, so the number of candidates stretches and shrinks. MusicGen's defaults: temperature 1, top-k 250, top-p 0 (off).
+
+References:
+The Curious Case of Neural Text Degeneration (top-p paper): https://arxiv.org/abs/1904.09751
+AudioCraft MusicGen source code: https://github.com/facebookresearch/audiocraft/blob/main/audiocraft/models/musicgen.py
+Softmax function - Wikipedia: https://en.wikipedia.org/wiki/Softmax_function]]></itunes:summary>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep41.mp3" length="1258704" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep41.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:30</itunes:duration>
+      <itunes:episode>41</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
