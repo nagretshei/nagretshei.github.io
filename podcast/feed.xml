@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1148,6 +1148,33 @@ Softmax function － Wikipedia：https://en.wikipedia.org/wiki/Softmax_function]
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:28</itunes:duration>
       <itunes:episode>41</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 為什麼聽得懂提示詞？CFG 無分類器引導 Classifier-Free Guidance</title>
+      <description><![CDATA[明明打了「爵士薩克斯風」，AI卻生出一段鋼琴？這集小皮介紹讓AI乖乖聽話的旋鈕CFG（Classifier-Free Guidance，無分類器引導）。舊做法「分類器引導」（Dhariwal與Nichol，2021）要另外訓練一個評審模型；2021年Jonathan Ho與Tim Salimans改成同一個模型每一步算兩次：一次有提示詞、一次沒有，再把兩者的差距放大（沒提示＋強度×（有提示−沒提示））。訓練時隨機拿掉提示詞，MusicGen就是20%的時間不給提示詞，一個模型身兼兩職。強度怎麼設定：MusicGen預設3（cfg_coef），Stable Audio Open官方範例用7；太高只剩一種聲音、容易失真，而且每步算兩次，生成時間約變兩倍。
+
+參考資料：
+Classifier-Free Diffusion Guidance（Ho & Salimans）：https://arxiv.org/abs/2207.12598
+Simple and Controllable Music Generation（MusicGen 論文）：https://arxiv.org/abs/2306.05284
+Diffusion Models Beat GANs on Image Synthesis（分類器引導）：https://arxiv.org/abs/2105.05233
+Stable Audio Open 1.0 模型頁：https://huggingface.co/stabilityai/stable-audio-open-1.0]]></description>
+      <itunes:summary><![CDATA[明明打了「爵士薩克斯風」，AI卻生出一段鋼琴？這集小皮介紹讓AI乖乖聽話的旋鈕CFG（Classifier-Free Guidance，無分類器引導）。舊做法「分類器引導」（Dhariwal與Nichol，2021）要另外訓練一個評審模型；2021年Jonathan Ho與Tim Salimans改成同一個模型每一步算兩次：一次有提示詞、一次沒有，再把兩者的差距放大（沒提示＋強度×（有提示−沒提示））。訓練時隨機拿掉提示詞，MusicGen就是20%的時間不給提示詞，一個模型身兼兩職。強度怎麼設定：MusicGen預設3（cfg_coef），Stable Audio Open官方範例用7；太高只剩一種聲音、容易失真，而且每步算兩次，生成時間約變兩倍。
+
+參考資料：
+Classifier-Free Diffusion Guidance（Ho & Salimans）：https://arxiv.org/abs/2207.12598
+Simple and Controllable Music Generation（MusicGen 論文）：https://arxiv.org/abs/2306.05284
+Diffusion Models Beat GANs on Image Synthesis（分類器引導）：https://arxiv.org/abs/2105.05233
+Stable Audio Open 1.0 模型頁：https://huggingface.co/stabilityai/stable-audio-open-1.0]]></itunes:summary>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep42.mp3" length="3393556" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep42.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:32</itunes:duration>
+      <itunes:episode>42</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

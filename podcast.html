@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep42 · 2026/10/16</span>
+        <div class="lang-zh">
+          <h3>AI 為什麼聽得懂提示詞？CFG 無分類器引導 Classifier-Free Guidance</h3>
+          <p>明明打了「爵士薩克斯風」，AI卻生出一段鋼琴？這集小皮介紹讓AI乖乖聽話的旋鈕CFG（Classifier-Free Guidance，無分類器引導）。舊做法「分類器引導」（Dhariwal與Nichol，2021）要另外訓練一個評審模型；2021年Jonathan Ho與Tim Salimans改成同一個模型每一步算兩次：一次有提示詞、一次沒有，再把兩者的差距放大（沒提示＋強度×（有提示−沒提示））。訓練時隨機拿掉提示詞，MusicGen就是20%的時間不給提示詞，一個模型身兼兩職。強度怎麼設定：MusicGen預設3（cfg_coef），Stable Audio Open官方範例用7；太高只剩一種聲音、容易失真，而且每步算兩次，生成時間約變兩倍。</p>
+          <audio controls preload="none" src="podcast/audio/ep42.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Why Does AI Follow Your Prompt? Classifier-Free Guidance (CFG) Explained</h3>
+          <p>You type "jazz saxophone" and get a piano piece? Little Pi introduces CFG, Classifier-Free Guidance, the knob that makes AI follow your prompt. The older classifier guidance (Dhariwal and Nichol, 2021) needed a separate judge model. In 2021, Jonathan Ho and Tim Salimans had the same model calculate twice at every step, once with the prompt and once without, then amplify the difference (unconditional + scale x (conditional - unconditional)). During training the prompt is randomly dropped: MusicGen drops it 20% of the time, so one model does both jobs. How high to set it: MusicGen defaults to 3 (cfg_coef), and Stable Audio Open's official example uses 7. Too high leaves only one sound and can distort, and calculating twice roughly doubles generation time.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep42.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep41 · 2026/10/15</span>
         <div class="lang-zh">
           <h3>AI作曲也在擲骰子？取樣溫度 Temperature 與 top-k、top-p</h3>

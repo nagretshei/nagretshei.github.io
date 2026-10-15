@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1148,6 +1148,33 @@ Softmax function - Wikipedia: https://en.wikipedia.org/wiki/Softmax_function]]><
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:30</itunes:duration>
       <itunes:episode>41</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Does AI Follow Your Prompt? Classifier-Free Guidance (CFG) Explained</title>
+      <description><![CDATA[You type "jazz saxophone" and get a piano piece? Little Pi introduces CFG, Classifier-Free Guidance, the knob that makes AI follow your prompt. The older classifier guidance (Dhariwal and Nichol, 2021) needed a separate judge model. In 2021, Jonathan Ho and Tim Salimans had the same model calculate twice at every step, once with the prompt and once without, then amplify the difference (unconditional + scale x (conditional - unconditional)). During training the prompt is randomly dropped: MusicGen drops it 20% of the time, so one model does both jobs. How high to set it: MusicGen defaults to 3 (cfg_coef), and Stable Audio Open's official example uses 7. Too high leaves only one sound and can distort, and calculating twice roughly doubles generation time.
+
+References:
+Classifier-Free Diffusion Guidance (Ho & Salimans): https://arxiv.org/abs/2207.12598
+Simple and Controllable Music Generation (MusicGen paper): https://arxiv.org/abs/2306.05284
+Diffusion Models Beat GANs on Image Synthesis (classifier guidance): https://arxiv.org/abs/2105.05233
+Stable Audio Open 1.0: https://huggingface.co/stabilityai/stable-audio-open-1.0]]></description>
+      <itunes:summary><![CDATA[You type "jazz saxophone" and get a piano piece? Little Pi introduces CFG, Classifier-Free Guidance, the knob that makes AI follow your prompt. The older classifier guidance (Dhariwal and Nichol, 2021) needed a separate judge model. In 2021, Jonathan Ho and Tim Salimans had the same model calculate twice at every step, once with the prompt and once without, then amplify the difference (unconditional + scale x (conditional - unconditional)). During training the prompt is randomly dropped: MusicGen drops it 20% of the time, so one model does both jobs. How high to set it: MusicGen defaults to 3 (cfg_coef), and Stable Audio Open's official example uses 7. Too high leaves only one sound and can distort, and calculating twice roughly doubles generation time.
+
+References:
+Classifier-Free Diffusion Guidance (Ho & Salimans): https://arxiv.org/abs/2207.12598
+Simple and Controllable Music Generation (MusicGen paper): https://arxiv.org/abs/2306.05284
+Diffusion Models Beat GANs on Image Synthesis (classifier guidance): https://arxiv.org/abs/2105.05233
+Stable Audio Open 1.0: https://huggingface.co/stabilityai/stable-audio-open-1.0]]></itunes:summary>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep42.mp3" length="1197360" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep42.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:20</itunes:duration>
+      <itunes:episode>42</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
