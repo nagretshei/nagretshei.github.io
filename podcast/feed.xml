@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1175,6 +1175,33 @@ Stable Audio Open 1.0 模型頁：https://huggingface.co/stabilityai/stable-audi
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:32</itunes:duration>
       <itunes:episode>42</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 的聲音密碼本怎麼越疊越清楚？RVQ 殘差向量量化 Residual Vector Quantization</title>
+      <description><![CDATA[AI把聲音變成密碼時，為什麼要用好幾本密碼本？這集小皮拆解第36集一句帶過的RVQ（Residual Vector Quantization，殘差向量量化）：編碼器把聲音切成小格、每格變成一串數字（向量），去密碼本找最接近的號碼。只用一本不是太粗糙、就是大到存不下——SoundStream論文的例子：3 kbps、每秒100格，一本要約10億個號碼；改成5本、每本64個，只要320個。RVQ讓每一本只補上一本剩下的差距（殘差），像付錢先用百元鈔、再用十元、一元。EnCodec每秒75格、每本1024個號碼，2本＝1.5 kbps、32本＝24 kbps；MusicGen用4本、每秒50格。SoundStream訓練時隨機只用前幾本（量化器丟棄Quantizer Dropout），一個模型就能選多種音質，也讓第一本最關鍵。多級向量量化最早可追溯到1982年Juang與Gray的語音編碼研究。
+
+參考資料：
+SoundStream: An End-to-End Neural Audio Codec：https://arxiv.org/abs/2107.03312
+SoundStream － Google Research 部落格：https://research.google/blog/soundstream-an-end-to-end-neural-audio-codec/
+High Fidelity Neural Audio Compression（EnCodec）：https://arxiv.org/abs/2210.13438
+Simple and Controllable Music Generation（MusicGen 論文）：https://arxiv.org/abs/2306.05284]]></description>
+      <itunes:summary><![CDATA[AI把聲音變成密碼時，為什麼要用好幾本密碼本？這集小皮拆解第36集一句帶過的RVQ（Residual Vector Quantization，殘差向量量化）：編碼器把聲音切成小格、每格變成一串數字（向量），去密碼本找最接近的號碼。只用一本不是太粗糙、就是大到存不下——SoundStream論文的例子：3 kbps、每秒100格，一本要約10億個號碼；改成5本、每本64個，只要320個。RVQ讓每一本只補上一本剩下的差距（殘差），像付錢先用百元鈔、再用十元、一元。EnCodec每秒75格、每本1024個號碼，2本＝1.5 kbps、32本＝24 kbps；MusicGen用4本、每秒50格。SoundStream訓練時隨機只用前幾本（量化器丟棄Quantizer Dropout），一個模型就能選多種音質，也讓第一本最關鍵。多級向量量化最早可追溯到1982年Juang與Gray的語音編碼研究。
+
+參考資料：
+SoundStream: An End-to-End Neural Audio Codec：https://arxiv.org/abs/2107.03312
+SoundStream － Google Research 部落格：https://research.google/blog/soundstream-an-end-to-end-neural-audio-codec/
+High Fidelity Neural Audio Compression（EnCodec）：https://arxiv.org/abs/2210.13438
+Simple and Controllable Music Generation（MusicGen 論文）：https://arxiv.org/abs/2306.05284]]></itunes:summary>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep43.mp3" length="3375584" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep43.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:31</itunes:duration>
+      <itunes:episode>43</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

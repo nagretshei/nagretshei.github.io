@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1175,6 +1175,33 @@ Stable Audio Open 1.0: https://huggingface.co/stabilityai/stable-audio-open-1.0]
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:20</itunes:duration>
       <itunes:episode>42</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Do AI Audio Codebooks Get Clearer Layer by Layer? Residual Vector Quantization (RVQ) Explained</title>
+      <description><![CDATA[Why does AI use several codebooks to turn sound into tokens? Little Pi unpacks RVQ, Residual Vector Quantization, mentioned briefly in episode 36. The encoder cuts sound into short slices, turns each into a vector, and looks up the closest entry in a codebook. One codebook is either too rough or too huge: in the SoundStream paper's example, at 3 kbps and 100 slices per second, a single codebook would need about a billion entries, while 5 codebooks of 64 entries need only 320. In RVQ each codebook only fixes what the previous one left over (the residual), like paying with hundreds, then tens, then ones. EnCodec uses 75 slices per second and 1024 entries per codebook: 2 codebooks = 1.5 kbps, 32 = 24 kbps; MusicGen uses 4 codebooks at 50 slices per second. SoundStream's quantizer dropout randomly uses only the first few codebooks during training, so one model supports multiple quality levels and the first codebook carries the most important information. Multi-stage vector quantization goes back to Juang and Gray's 1982 speech coding work.
+
+References:
+SoundStream: An End-to-End Neural Audio Codec: https://arxiv.org/abs/2107.03312
+SoundStream - Google Research blog: https://research.google/blog/soundstream-an-end-to-end-neural-audio-codec/
+High Fidelity Neural Audio Compression (EnCodec): https://arxiv.org/abs/2210.13438
+Simple and Controllable Music Generation (MusicGen paper): https://arxiv.org/abs/2306.05284]]></description>
+      <itunes:summary><![CDATA[Why does AI use several codebooks to turn sound into tokens? Little Pi unpacks RVQ, Residual Vector Quantization, mentioned briefly in episode 36. The encoder cuts sound into short slices, turns each into a vector, and looks up the closest entry in a codebook. One codebook is either too rough or too huge: in the SoundStream paper's example, at 3 kbps and 100 slices per second, a single codebook would need about a billion entries, while 5 codebooks of 64 entries need only 320. In RVQ each codebook only fixes what the previous one left over (the residual), like paying with hundreds, then tens, then ones. EnCodec uses 75 slices per second and 1024 entries per codebook: 2 codebooks = 1.5 kbps, 32 = 24 kbps; MusicGen uses 4 codebooks at 50 slices per second. SoundStream's quantizer dropout randomly uses only the first few codebooks during training, so one model supports multiple quality levels and the first codebook carries the most important information. Multi-stage vector quantization goes back to Juang and Gray's 1982 speech coding work.
+
+References:
+SoundStream: An End-to-End Neural Audio Codec: https://arxiv.org/abs/2107.03312
+SoundStream - Google Research blog: https://research.google/blog/soundstream-an-end-to-end-neural-audio-codec/
+High Fidelity Neural Audio Compression (EnCodec): https://arxiv.org/abs/2210.13438
+Simple and Controllable Music Generation (MusicGen paper): https://arxiv.org/abs/2306.05284]]></itunes:summary>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep43.mp3" length="1257840" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep43.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:30</itunes:duration>
+      <itunes:episode>43</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
