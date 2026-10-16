@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>無和集合大冒險｜配對與抽屜原理</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --gold:#f2b705; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  input[type=range] { width:100%; }
+  input.n { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid var(--gold); padding:10px 16px; border-radius:8px; margin:12px 0; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  table.derive td { vertical-align:middle; padding:8px 10px; }
+  table.derive td:first-child { min-width:190px; font-size:15px; }
+  .step { display:none; } .step.on { display:block; margin-bottom:14px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button, .choices button { font-size:17px; margin:4px; padding:5px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .math { font-size:20px; }
+  .tip { font-size:14px; color:#7a6f85; }
+  /* 數字格子 */
+  .board { display:grid; grid-template-columns:repeat(10, 1fr); gap:6px; margin:10px 0; }
+  .tile { aspect-ratio:1; min-width:0; font-size:18px; font-weight:700; border:2px solid var(--line); border-radius:10px; background:#fff; color:var(--fg); cursor:pointer; padding:0; }
+  .tile.in { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tile.bad { background:var(--bad); color:#fff; border-color:var(--bad); }
+  .tile.king { background:var(--gold); color:#fff; border-color:var(--gold); cursor:default; }
+  .status { min-height:28px; font-weight:600; }
+  /* 抽屜 */
+  .drawers { display:flex; gap:6px; flex-wrap:wrap; margin:10px 0; align-items:flex-start; }
+  .drawer { border:2px dashed #c9b8a0; border-radius:12px; padding:5px; display:flex; flex-direction:column; gap:5px; align-items:center; width:54px; }
+  .drawer .tile { width:40px; font-size:16px; }
+  .drawer.bad { border-color:var(--bad); border-style:solid; background:#fdecec; }
+  .drawer.single { border-color:#9a8fa5; }
+  .drawer.kingbox { border:2px solid var(--gold); background:#fff8db; }
+  .drawer small { font-size:11px; color:#7a6f85; line-height:1.2; text-align:center; }
+  .sock { display:flex; flex-wrap:wrap; gap:6px; }
+  .sock div { width:62px; min-height:62px; border:2px solid var(--line); border-radius:10px; text-align:center; font-size:20px; line-height:1.3; padding-top:4px; background:#fff; }
+  .sock div.bad { border-color:var(--bad); background:#fdecec; }
+  @media (max-width:520px) { main { padding:12px; } .card { padding:14px 14px; } .tile { font-size:14px; border-radius:7px; } .board { gap:4px; } table.derive { min-width:600px; } table.derive td:first-child { min-width:150px; } }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>➕ 無和集合大冒險</h1>
+  <span class="part">規則篇</span>
+  <button class="tab on" data-go="0">1. 什麼是無和</button>
+  <button class="tab" data-go="1">2. 越多越好</button>
+  <span class="part">證明篇</span>
+  <button class="tab" data-go="2">3. 抽屜原理</button>
+  <button class="tab" data-go="3">4. 配對抽屜</button>
+  <button class="tab" data-go="4">5. 最大的數不是 20</button>
+  <button class="tab" data-go="5">6. 大魔王</button>
+  <button class="tab" data-go="6">7. 整合回顧</button>
+  <button class="tab" data-go="7">8. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 1：什麼是無和 ============ -->
+<section class="on" id="s0">
+  <div class="card story">
+    <h2>關卡 1：什麼是無和</h2>
+    一個集合叫做<b>無和集合</b>（sum-free），意思是：從集合裡任意挑兩個數 x 和 y 加起來，答案 x + y <b>都不能</b>也在這個集合裡。<br>
+    注意：x 和 y <b>可以是同一個數</b>（自己加自己也算）。<br>
+    點下面的格子選數字，看看它是不是無和集合。出問題的數會變紅色。
+  </div>
+  <div class="card">
+    <div class="yn">試試看：<button data-load="1,4,6">{1, 4, 6}</button><button data-load="1,4,5">{1, 4, 5}</button><button data-load="2,4,7">{2, 4, 7}</button><button data-load="">清空</button></div>
+    <div id="b1"></div>
+    <div class="status" id="b1s"></div>
+  </div>
+  <div class="card" id="g1">
+    <div class="step on">
+      題目說 {1, 4, 5} <b>不是</b>無和集合，因為 1 + 4 = <input class="n" data-ans="5">，而這個數也在集合裡。
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      {2, 4, 7} 是無和集合嗎？（先在上面的格子點點看）
+      <div class="yn" data-right="1"><button>是</button><button>不是</button></div>
+      <div class="hint">💡 2 + 4 = 6、2 + 7 = 9、4 + 7 = 11 都不在集合裡……可是別忘了「自己加自己」也算：2 + 2 = ?</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>把所有可以挑的兩個數都列出來（可以挑同一個數兩次）：<br>
+        　2 + 2 = <b>4</b>　← 4 在集合裡！<br>
+        　2 + 4 = 6、2 + 7 = 9、4 + 4 = 8、4 + 7 = 11、7 + 7 = 14　（都不在）<br>
+        只要有<b>一組</b>出問題就不行，所以 {2, 4, 7} <b>不是</b>無和集合。<br>
+        記住：<b>如果 a 在集合裡，a 的兩倍就不能在</b>（因為 a + a = 2a）。
+      </div>
+    </div>
+    <div class="step">
+      如果 6 在集合裡，下面哪一個數<b>一定不能</b>也在？
+      <div class="choices" data-right="0"><button>3</button><button>5</button><button>7</button></div>
+      <div class="hint">💡 用「自己加自己」想：哪個數加上自己等於 6？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>3 + 3 = 6，所以 3 和 6 不能同時在。<br>
+        5 呢？5 要和 1 一起才會加成 6（5 + 1 = 6），只有 5 和 6 沒問題。7 比 6 大，7 加任何正數都比 6 大，也沒問題。
+      </div>
+    </div>
+    <div class="step">
+      {3, 5, 7, 9} 是無和集合嗎？
+      <div class="yn" data-right="0"><button>是</button><button>不是</button></div>
+      <div class="hint">💡 把兩兩加起來（包括自己加自己）列出來，看答案是奇數還是偶數。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>3 + 3 = 6、3 + 5 = 8、3 + 7 = 10……每一個和都是<b>偶數</b>，可是集合裡全部是<b>奇數</b>，所以加起來的數一定不在集合裡。<br>
+        它是無和集合！這個「奇數加奇數」的觀察下一關會用到。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 <b>無和集合的規則：</b>集合裡任意兩個數（<b>可以是同一個數</b>）加起來，都不在集合裡。<br>
+      要檢查一個集合，就把所有「x + y」列出來，看有沒有掉回集合裡。
+    </div>
+    <div class="nav"><button class="go" data-go="1">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：越多越好 ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 2：越多越好</h2>
+    大魔王問：從 1, 2, 3, …, 20 裡面挑數字，組成無和集合，<b>最多能挑幾個</b>？<br>
+    先自己動手！在下面的格子裡挑越多越好，但不能有紅色。
+  </div>
+  <div class="card">
+    <div id="b2"></div>
+    <div class="status" id="b2s"></div>
+    <div>你的最高紀錄：<span class="big" id="b2best">0</span> 個　<button class="ghost" id="b2clear">清空</button></div>
+  </div>
+  <div class="card" id="g2">
+    <div class="step on">
+      上一關的 {3, 5, 7, 9} 全是奇數。<b>奇數 + 奇數</b>一定是？
+      <div class="choices" data-right="1"><button>奇數</button><button>偶數</button><button>不一定</button></div>
+      <div class="hint">💡 試試看：1 + 3 = 4、5 + 7 = 12、9 + 9 = 18。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>每個奇數都是「偶數 + 1」，例如 5 = 4 + 1、7 = 6 + 1。<br>
+        兩個奇數加起來 = 偶數 + 1 + 偶數 + 1 = 偶數 + 偶數 + 2，全部都是偶數，所以答案一定是<b>偶數</b>。<br>
+        所以如果集合裡<b>只有奇數</b>，任兩個加起來都是偶數，一定不在集合裡 → 它一定是無和集合！
+      </div>
+    </div>
+    <div class="step">
+      那就把 1 到 20 的<b>奇數全部</b>拿來。一共有幾個？ <input class="n" data-ans="10" data-wrong='{"9":"從 1 數到 19：1, 3, 5, 7, 9, 11, 13, 15, 17, 19，再數一次？","20":"20 是全部的數，奇數只有一半。"}'>
+      <button class="go chk">確認</button> <button class="ghost" data-fill="odd">放到格子上</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 1 到 20 有 20 個數，奇數和偶數輪流出現（奇、偶、奇、偶……），所以奇數剛好佔一半。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      另一個想法：只拿<b>大的數</b> 11, 12, …, 20。裡面兩個數加起來，<b>最小</b>會是多少？ <input class="n" data-ans="22" data-wrong='{"23":"x 和 y 可以是同一個數喔！最小的數自己加自己。","21":"最小的數是 11，11 + 11 = ?"}'>
+      <button class="go chk">確認</button> <button class="ghost" data-fill="big">放到格子上</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 要讓和最小，就挑最小的數。最小的是 11，而且可以挑兩次。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>最小的和是 11 + 11 = 22。任何兩個數加起來都 ≥ 22，可是集合裡最大只有 20，所以和<b>不可能</b>在集合裡。<br>
+        {11, 12, …, 20} 也是無和集合，一樣是 <b>10 個</b>。
+      </div>
+    </div>
+    <div class="step">
+      那把 10 也放進去，變成 {10, 11, …, 20}（11 個），還是無和集合嗎？
+      <div class="yn" data-right="1"><button>是</button><button>不是</button></div>
+      <div class="hint">💡 這次最小的數是 10。10 + 10 = ?</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>10 + 10 = <b>20</b>，20 在集合裡，所以不行。<br>
+        這是大魔王最常見的陷阱：{10, …, 20} 看起來有 11 個，但它<b>不是</b>無和集合。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 我們找到兩個 10 個數的無和集合：<b>{1, 3, 5, …, 19}</b> 和 <b>{11, 12, …, 20}</b>。所以答案<b>至少是 10</b>。<br>
+      可是，能不能找到 <b>11 個</b>？在上面的格子試很久都找不到，不代表真的不可能，也許只是還沒找到。<br>
+      要說「不可能」，就需要<b>證明</b>。證明篇開始！
+    </div>
+    <div class="nav"><button class="go" data-go="2">進入證明篇 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：抽屜原理 ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 3：抽屜原理</h2>
+    證明需要一個好用的工具：<b>抽屜原理</b>。房間裡有 9 個抽屜，你把襪子一雙一雙放進去。拉動拉桿，看看會發生什麼事。
+  </div>
+  <div class="card">
+    襪子：<span class="big" id="sockN">5</span> 雙 <input type="range" id="sockR" min="1" max="18" value="5">
+    <div class="sock" id="socks"></div>
+    <div class="status" id="sockS"></div>
+  </div>
+  <div class="card" id="g3">
+    <div class="step on">
+      把 <b>10 雙</b>襪子放進 9 個抽屜，不管怎麼放，<b>一定</b>有某個抽屜至少放了幾雙？ <input class="n" data-ans="2">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 想像你很努力讓每個抽屜都只放 1 雙：9 個抽屜放完 9 雙，第 10 雙要放哪裡？</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      反過來說：如果規定<b>每個抽屜最多只能放 1 雙</b>，9 個抽屜最多放幾雙？ <input class="n" data-ans="9">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 <b>抽屜原理：</b>每個抽屜最多放 1 個，那總數就<b>不會超過抽屜的個數</b>。<br>
+      下一關，我們要把 1 到 19 兩個兩個「裝進抽屜」，而無和的規則會告訴我們：每個抽屜最多只能拿 1 個數。
+    </div>
+    <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：配對抽屜 ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 4：配對抽屜</h2>
+    先假設集合裡<b>最大的數是 20</b>（👑 金色那格）。<br>
+    因為 20 是最大的，其他的數都在 1 到 19 裡面。我們把 1 到 19 兩兩配對，<b>每一對加起來剛好是 20</b>，放進同一個抽屜。點點看，同一個抽屜選兩個會怎樣？
+  </div>
+  <div class="card">
+    <div class="drawers" id="d4"></div>
+    <div class="status" id="d4s"></div>
+    <div class="tip">這裡只檢查「加起來等於 20」的問題，其他的和（例如 3 + 5 = 8）先不管。就算放寬規則，最多也只能拿這麼多，真正的集合只會更少。</div>
+  </div>
+  <div class="card" id="g4">
+    <div class="step on">
+      如果 3 在集合裡，哪一個數就<b>不能</b>在？（提示：兩個加起來會變成 20） <input class="n" data-ans="17">
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>3 + 17 = 20，而 20 在集合裡，所以 3 和 17 不能同時在。它們就在同一個抽屜裡。
+      </div>
+    </div>
+    <div class="step">
+      1 配 19、2 配 18、3 配 17……一共可以配成幾對？ <input class="n" data-ans="9" data-wrong='{"10":"10 的搭檔是誰？20 − 10 = 10，是它自己，所以 10 沒辦法跟別人配成一對。","19":"這是數字的個數，兩個數配成一對喔。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 照順序寫：(1, 19)、(2, 18)、(3, 17)、(4, 16)、(5, 15)、(6, 14)、(7, 13)、(8, 12)、(9, 11)，下一個是 (10, 10)，搭檔是自己。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      落單的 10 可以在集合裡嗎？
+      <div class="yn" data-right="1"><button>可以</button><button>不可以</button></div>
+      <div class="hint">💡 自己加自己也算！</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>10 + 10 = 20，20 在集合裡，所以 10 <b>不能</b>選。
+      </div>
+    </div>
+    <div class="step">
+      9 個抽屜，每個最多拿 1 個；10 不能拿；再加上 20 自己。集合<b>最多</b>幾個數？ <input class="n" data-ans="10" data-wrong='{"9":"別忘了 20 自己也在集合裡！","11":"10 不能拿喔（10 + 10 = 20）。","19":"每個抽屜只能拿 1 個，不能兩個都拿。","20":"每個抽屜只能拿 1 個，不能兩個都拿。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 9 個抽屜最多 9 個（抽屜原理）＋ 20 自己 1 個。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>為什麼每個抽屜最多拿 1 個？因為抽屜裡的兩個數 i 和 20 − i 加起來是 20，兩個都拿的話，i + (20 − i) = 20 在集合裡，違反規則。<br>
+        所以最多 9（抽屜）+ 1（20 自己）= <b>10 個</b>。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c4key">
+    <div class="key">
+      🔑 如果集合裡最大的數是 20，它<b>最多 10 個</b>數。<br>
+      可是，最大的數不一定是 20 啊！例如 {1, 3, …, 19} 最大的數是 19。下一關看其他情況。
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：最大的數不是 20 ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 5：最大的數不是 20</h2>
+    假設集合裡最大的數是 <b>M</b>（M 可能是 1 到 20 的任何一個）。一樣的方法：把比 M 小的數兩兩配對，每對加起來等於 M。拉動拉桿換 M 看看。
+  </div>
+  <div class="card">
+    最大的數 M = <span class="big" id="mN">19</span> <input type="range" id="mR" min="2" max="20" value="19">
+    <div class="drawers" id="d5"></div>
+    <div class="status" id="d5s"></div>
+  </div>
+  <div class="card" id="g5">
+    <div class="step on">
+      M = 19：(1, 18)、(2, 17)……一共配成幾對？ <input class="n" data-ans="9" data-wrong='{"10":"9 的搭檔是 10，10 的搭檔是 9，是同一對，別算兩次。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 (1, 18)、(2, 17)、(3, 16)、(4, 15)、(5, 14)、(6, 13)、(7, 12)、(8, 11)、(9, 10)。19 是奇數，19 ÷ 2 不是整數，所以沒有落單的數。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      所以 M = 19 時，集合最多幾個？ <input class="n" data-ans="10" data-wrong='{"9":"別忘了 19 自己！"}'>
+      <button class="go chk">確認</button>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      M = 15 時最多幾個？（可以拉拉桿看） <input class="n" data-ans="8" data-wrong='{"7":"7 對，再加上 15 自己。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 (1, 14)、(2, 13)……(7, 8)，一共 7 對，再加 15 自己。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      不管 M 是 1 到 20 的哪一個，集合<b>最多</b>都不會超過幾個？ <input class="n" data-ans="10">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 拉桿從 2 拉到 20，看「最多」那個數字最大是多少。M 越大，抽屜越多，所以看 M = 19 和 M = 20。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c5key">
+    <div class="key">
+      🔑 不管最大的數 M 是多少，無和集合<b>最多 10 個</b>。再加上關卡 2 找到的 10 個的例子，答案就是 <b>10</b>！
+    </div>
+    <div class="proof">
+      📐 <b>一般的 M 怎麼算？</b>左邊是一般的推導，右邊用 M = 20 和 M = 19 對照著看。
+      <div style="overflow-x:auto"><table class="steps derive">
+        <tr><th>步驟</th><th>M 是偶數（例 20）</th><th>M 是奇數（例 19）</th></tr>
+        <tr><td>① M 是最大的，其他數都在 1 到 M − 1 裡</td><td>1 到 19</td><td>1 到 18</td></tr>
+        <tr><td>② 把 i 和 M − i 配成一對（加起來 = M）</td><td>(1, 19)…(9, 11)<br>中間的 10 落單</td><td>(1, 18)…(9, 10)<br>沒有落單</td></tr>
+        <tr><td>③ 數抽屜：M − 1 個數，兩個一對</td><td>(M − 2) ÷ 2 對<br>（扣掉落單的 M ÷ 2）<br>例：18 ÷ 2 = 9 對</td><td>(M − 1) ÷ 2 對<br>例：18 ÷ 2 = 9 對</td></tr>
+        <tr><td>④ 落單的 M ÷ 2 自己加自己 = M，不能拿</td><td>10 + 10 = 20 ✗</td><td>（沒有落單的）</td></tr>
+        <tr><td>⑤ 每個抽屜最多 1 個，再加上 M 自己</td><td>(M − 2) ÷ 2 + 1 = <b>M ÷ 2</b><br>例：9 + 1 = 10</td><td>(M − 1) ÷ 2 + 1 = <b>(M + 1) ÷ 2</b><br>例：9 + 1 = 10</td></tr>
+        <tr><td>⑥ M 最大只到 20</td><td>M ≤ 20 → M ÷ 2 ≤ <b>10</b></td><td>M ≤ 19 → (M + 1) ÷ 2 ≤ <b>10</b></td></tr>
+      </table></div>
+      兩種情況都 ≤ 10，所以<b>任何</b>無和集合都不會超過 10 個。
+    </div>
+    <div class="nav"><button class="go" data-go="5">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：大魔王 ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 6：大魔王（2025 AMC 10A 第 21 題）</h2>
+    一個集合叫做<b>無和</b>，如果集合裡任意兩個數 x 和 y（可以相同），x + y 都不在集合裡。例如 {1, 4, 6} 和空集合是無和，{1, 4, 5} 不是。<br>
+    {1, 2, 3, …, 20} 的無和子集合，<b>最多</b>可以有幾個數？
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 1：先找例子（證明「至少」）。</b>下面哪一個是 10 個數的無和集合？
+      <div class="choices" data-right="0"><button>{1, 3, 5, …, 19}</button><button>{2, 4, 6, …, 20}</button><button>{1, 2, 3, …, 10}</button></div>
+      <div class="hint">💡 一個一個檢查：有沒有「自己加自己」或「兩個加起來」掉回集合裡？例如 2 + 2 = 4 在不在 {2, 4, …, 20} 裡？1 + 1 = 2 在不在 {1, …, 10} 裡？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>{1, 3, …, 19} 全是奇數，奇數 + 奇數 = 偶數，一定不在集合裡 ✓。<br>
+        {2, 4, …, 20}：偶數 + 偶數還是偶數，2 + 2 = 4 就掉回集合裡了 ✗。<br>
+        {1, …, 10}：1 + 1 = 2 在集合裡 ✗。<br>
+        找到一個 10 個的例子，所以答案<b>至少 10</b>。
+      </div>
+    </div>
+    <div class="step">
+      <b>步驟 2：證明不能更多。</b>設集合裡最大的數是 M。如果 i 和 M − i <b>都</b>在集合裡，會怎樣？
+      <div class="choices" data-right="0"><button>i + (M − i) = M 也在集合裡，違反規則</button><button>沒關係，可以</button><button>只有 i 是偶數才有問題</button></div>
+      <div class="hint">💡 把 i 和 M − i 加起來看看，再想想 M 在不在集合裡。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>i + (M − i) = M，而 M 是集合裡的數，所以 i 和 M − i <b>最多只能拿一個</b>。把 (i, M − i) 當成一個抽屜，每個抽屜最多 1 個。
+      </div>
+    </div>
+    <div class="step">
+      <b>步驟 3：</b>M = 20 時，集合最多幾個數？ <input class="n" data-ans="10" data-wrong='{"9":"9 個抽屜各 1 個，別忘了 20 自己！","11":"10 + 10 = 20，所以落單的 10 不能拿。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 抽屜 (1, 19)…(9, 11) 共 9 個，每個最多 1 個；10 落單但 10 + 10 = 20 不能拿；再加 20 自己。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>9 個抽屜 × 最多 1 個 + 20 自己 = <b>10</b>。
+      </div>
+    </div>
+    <div class="step">
+      <b>步驟 4：</b>M 換成比 20 小的數，上限會超過 10 嗎？
+      <div class="yn" data-right="1"><button>會</button><button>不會</button></div>
+      <div class="hint">💡 M 越小，能配對的數越少，抽屜越少。關卡 5 的表：M 是偶數最多 M ÷ 2，奇數最多 (M + 1) ÷ 2。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>M = 19 最多 (19 + 1) ÷ 2 = 10；M = 18 最多 9；M 越小越少。所以任何無和集合都<b>不超過 10 個</b>。
+      </div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>「至少 10」而且「至多 10」，答案是？
+      <div class="choices" id="bchoices">
+        <button data-v="A">(A) 8</button><button data-v="B">(B) 9</button><button data-v="C">(C) 10</button>
+        <button data-v="D">(D) 11</button><button data-v="E">(E) 12</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 步驟 1 找到 10 個的例子；步驟 3、4 證明不可能超過 10。</div>
+      <div class="fb" id="bfb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="bsum">
+    <div class="proof">
+      📐 <b>完整解答</b><br>
+      ① <b>至少 10：</b>{1, 3, 5, …, 19} 全是奇數，任兩個相加是偶數，不在集合裡，所以是 10 個數的無和集合。（{11, …, 20} 也可以：最小的和 11 + 11 = 22 &gt; 20。）<br>
+      ② <b>至多 10：</b>設最大的數是 M。比 M 小的數配成 (i, M − i)，因為 i + (M − i) = M 在集合裡，每對最多拿 1 個；M 是偶數時落單的 M ÷ 2 也不能拿（M ÷ 2 + M ÷ 2 = M）。<br>
+      　M 偶數：最多 (M − 2) ÷ 2 + 1 = M ÷ 2 ≤ 10；M 奇數：最多 (M − 1) ÷ 2 + 1 = (M + 1) ÷ 2 ≤ 10。<br>
+      ③ 至少 10 又至多 10，答案 <b>10，(C)</b>。
+    </div>
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 問「最多幾個」要做兩件事：<b>找例子</b>（證明做得到）＋<b>證明不能更多</b>（做不到更多）<br>
+      ② 「兩個加起來等於 M」→ 把數配成對，用<b>抽屜原理</b>：每對最多拿 1 個<br>
+      ③ 小心「自己加自己」：{10, …, 20} 因為 10 + 10 = 20 而失敗
+    </div>
+    <div class="nav"><button class="go" data-go="6">整合回顧：一次看完整個解法 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：整合回顧 ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 7：整合回顧</h2>
+    步驟很多，很容易忘記「為什麼要做這一步」。這一關用動畫把整個解法從頭串一次。按「▶ 自動播放全部」，或點上面的小方塊跳到任一步。
+  </div>
+  <div class="card">
+    <div class="yn" id="rcChain"></div>
+    <svg id="rcMap" width="100%" viewBox="0 0 520 320" style="background:#fff;border:1px solid var(--line);border-radius:10px"></svg>
+    <div style="margin:8px 0">
+      <button class="ghost" id="rcPrev">◀ 上一步</button>
+      <button class="go" id="rcAuto">▶ 自動播放全部</button>
+      <button class="ghost" id="rcAgain">↻ 重播這一步</button>
+      <button class="ghost" id="rcNext">下一步 ▶</button>
+    </div>
+    <div class="key" id="rcSay"></div>
+    <div class="proof" id="rcMath" style="min-height:60px"></div>
+  </div>
+  <div class="card hidden" id="c7key">
+    <div class="key">
+      🔑 <b>整個解法的骨架：</b>「最多幾個」→ 分成兩半 → 至少：找例子（全部奇數）→ 至多：看最大的數 M，把小的數配成加起來等於 M 的對，每對最多 1 個 → 兩邊都是 10 → 答案 10。
+    </div>
+    <div class="nav"><button class="go" data-go="7">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 8：無限練習 ============ -->
+<section id="s7">
+  <div class="card story">
+    <h2>關卡 8：無限練習</h2>
+    先練「判斷是不是無和」，熟了再挑戰 AMC 變化題（1 到 N 換成別的數）！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">判斷無和</button><button id="lvHard">AMC 變化題</button></div>
+    <div id="pq" class="story"></div>
+    <div id="pEasyBox" class="yn">答案：<button id="pyes">是無和</button><button id="pno">不是無和</button></div>
+    <div id="pHardBox" class="hidden">答案 = <input class="n" id="pans"> <button class="go" id="pchk">確認</button></div>
+    <button class="ghost" id="pshow">看解法</button>
+    <button class="ghost" id="pnew">下一題</button>
+    <div class="fb" id="pfb"></div>
+    <div id="psol" class="proof hidden"></div>
+    <div>連續答對：<span class="big" id="pstreak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+function val(s) {
+  s = String(s).trim().replace(/−|–/g, "-").replace(/\s/g, "");
+  if (!s) return NaN;
+  const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  return m ? +m[1] / +m[2] : Number(s);
+}
+const same = (a, b) => Math.abs(a - b) < 1e-9;
+const setStr = a => "{" + [...a].sort((x, y) => x - y).join(", ") + "}";
+// 集合裡所有出問題的組合 [x, y, x + y]（x ≤ y，可以相同）
+function conflicts(S) {
+  const a = [...S].sort((x, y) => x - y), out = [];
+  for (let i = 0; i < a.length; i++) for (let j = i; j < a.length; j++) if (S.has(a[i] + a[j])) out.push([a[i], a[j], a[i] + a[j]]);
+  return out;
+}
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "sumfree";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => {
+  $$(".tab[data-go]")[i]?.classList.add("done");
+  $$(`#s${i} .card.hidden`).forEach(c => c.classList.remove("hidden"));
+});
+
+// 一步一步的關卡：輸入框 data-ans 比對、提示鈕、選擇題、是非題
+function chkStep(step) {
+  const ins = [...step.querySelectorAll("input")];
+  const ok = ins.every(i => same(val(i.value), val(i.dataset.ans)));
+  const wrong = ins.length === 1 && ins[0].dataset.wrong ? JSON.parse(ins[0].dataset.wrong) : {};
+  const hit = Object.keys(wrong).find(k => same(val(ins[0].value), val(k)));
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : hit ? "❌ " + wrong[hit] : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  if (!ok && step.querySelector(".hint") && step.dataset.miss) step.querySelector(".hint").classList.add("on");
+  step.dataset.miss = ok ? "" : "1";
+  return ok;
+}
+function wireSteps(box, onLast) {
+  const steps = [...box.querySelectorAll(".step")];
+  const next = step => { const n = steps[steps.indexOf(step) + 1]; n ? n.classList.add("on") : onLast && onLast(); };
+  steps.forEach(step => {
+    step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+    step.querySelector(".chk")?.addEventListener("click", () => {
+      if (!chkStep(step)) return;
+      const ex = step.querySelector(".explain");
+      if (ex && ex.classList.contains("hidden")) { show(ex); setTimeout(() => { speak(ex, false); next(step); }, 50); }
+      else next(step);
+    });
+    const pick = step.querySelector(".choices[data-right], .yn[data-right]");
+    if (pick) [...pick.querySelectorAll("button")].forEach((b, k) => b.onclick = () => {
+      const ok = k === +pick.dataset.right;
+      fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : "🤔 再想想看");
+      if (!ok) step.querySelector(".hint")?.classList.add("on");
+      if (ok) {
+        const pf = step.querySelector(".proof");
+        if (pf && pf.classList.contains("hidden")) { show(pf); setTimeout(() => { speak(pf, false); next(step); }, 50); }
+        else next(step);
+      }
+    });
+  });
+}
+
+// ---------- 數字格子：點選、即時檢查 ----------
+function makeBoard(el, N, onChange) {
+  const S = new Set(), tiles = [];
+  el.className = "board"; el.innerHTML = "";
+  for (let n = 1; n <= N; n++) {
+    const b = document.createElement("button"); b.className = "tile"; b.textContent = n;
+    b.onclick = () => { S.has(n) ? S.delete(n) : S.add(n); upd(); };
+    el.append(b); tiles[n] = b;
+  }
+  function upd() {
+    const bad = conflicts(S), badN = new Set(bad.flat());
+    tiles.forEach((t, n) => { t.classList.toggle("in", S.has(n)); t.classList.toggle("bad", badN.has(n)); });
+    onChange(S, bad);
+  }
+  upd();
+  return { S, set(arr) { S.clear(); arr.forEach(x => S.add(x)); upd(); } };
+}
+const describe = (S, bad) => !S.size ? "還沒選任何數（空集合也是無和集合喔）" :
+  bad.length ? `❌ ${setStr(S)} 不是無和：` + bad.slice(0, 4).map(([x, y, z]) => `${x} + ${y} = ${z}`).join("、") + (bad.length > 4 ? "……" : "") + " 都在集合裡"
+  : `✅ ${setStr(S)} 是無和集合，有 ${S.size} 個數`;
+
+// ---------- 關卡 1 ----------
+const B1 = makeBoard($("#b1"), 20, (S, bad) => $("#b1s").textContent = describe(S, bad));
+$$("[data-load]").forEach(b => b.onclick = () => B1.set(b.dataset.load ? b.dataset.load.split(",").map(Number) : []));
+B1.set([1, 4, 6]);
+wireSteps($("#g1"), () => { show("#c1key"); done(0); });
+
+// ---------- 關卡 2 ----------
+let best = 0;
+const B2 = makeBoard($("#b2"), 20, (S, bad) => {
+  let s = describe(S, bad);
+  if (!bad.length && S.size > best) { best = S.size; $("#b2best").textContent = best; }
+  if (!bad.length && S.size >= 10) s += "　🎉 太厲害了！能不能再多一個？";
+  $("#b2s").textContent = s;
+});
+$("#b2clear").onclick = () => B2.set([]);
+$$("[data-fill]").forEach(b => b.onclick = () => B2.set(b.dataset.fill === "odd" ? [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] : [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]));
+wireSteps($("#g2"), () => { show("#c2key"); done(1); });
+
+// ---------- 關卡 3：襪子與抽屜 ----------
+function socks() {
+  const n = +$("#sockR").value, box = Array(9).fill(0);
+  $("#sockN").textContent = n;
+  for (let i = 0; i < n; i++) box[i % 9]++;
+  $("#socks").innerHTML = box.map((c, i) => `<div class="${c >= 2 ? "bad" : ""}">${"🧦".repeat(c) || "&nbsp;"}<br><small style="font-size:11px;color:#7a6f85">抽屜 ${i + 1}</small></div>`).join("");
+  $("#sockS").textContent = n <= 9 ? `${n} 雙 ≤ 9 個抽屜：可以每個抽屜最多放 1 雙。` : `${n} 雙 > 9 個抽屜：就算平均分，也一定有抽屜放了 2 雙以上（紅色）！`;
+}
+$("#sockR").oninput = socks; socks();
+wireSteps($("#g3"), () => { show("#c3key"); done(2); });
+
+// ---------- 配對抽屜（關卡 4、5 共用） ----------
+function makeDrawers(el, statusEl) {
+  let M = 20; const S = new Set();
+  function render() {
+    const P = Math.floor((M - 1) / 2);
+    let h = "";
+    for (let i = 1; i <= P; i++) {
+      const both = S.has(i) && S.has(M - i);
+      h += `<div class="drawer ${both ? "bad" : ""}"><button class="tile ${S.has(i) ? (both ? "bad" : "in") : ""}" data-n="${i}">${i}</button><button class="tile ${S.has(M - i) ? (both ? "bad" : "in") : ""}" data-n="${M - i}">${M - i}</button><small>和 = ${M}</small></div>`;
+    }
+    if (M % 2 === 0) h += `<div class="drawer single"><button class="tile ${S.has(M / 2) ? "bad" : ""}" data-n="${M / 2}">${M / 2}</button><small>落單<br>${M / 2}+${M / 2}=${M}</small></div>`;
+    h += `<div class="drawer kingbox"><button class="tile king">${M}</button><small>👑 最大</small></div>`;
+    el.innerHTML = h;
+    const bad = [];
+    for (let i = 1; i <= P; i++) if (S.has(i) && S.has(M - i)) bad.push(`${i} + ${M - i} = ${M}`);
+    if (M % 2 === 0 && S.has(M / 2)) bad.push(`${M / 2} + ${M / 2} = ${M}`);
+    const cnt = S.size + 1, cap = P + 1;
+    statusEl.textContent = bad.length ? `❌ ${bad.join("、")}，${M} 在集合裡，不行！` :
+      `已選 ${S.size} 個 + ${M} 自己 = ${cnt} 個　（${P} 個抽屜各最多 1 個 + ${M} = 最多 ${cap} 個）` + (cnt === cap ? " 🎯 滿了！" : "");
+  }
+  el.onclick = e => { const n = +e.target.dataset.n; if (!n) return; S.has(n) ? S.delete(n) : S.add(n); render(); };
+  render();
+  return { setM(m) { M = m; S.clear(); render(); } };
+}
+makeDrawers($("#d4"), $("#d4s"));
+wireSteps($("#g4"), () => { show("#c4key"); done(3); });
+
+const D5 = makeDrawers($("#d5"), $("#d5s"));
+$("#mR").oninput = () => { const m = +$("#mR").value; $("#mN").textContent = m; D5.setM(m); };
+D5.setM(19);
+wireSteps($("#g5"), () => { show("#c5key"); done(4); });
+
+// ---------- 關卡 6：大魔王 ----------
+wireSteps($("#boss"));
+$$("#bchoices button").forEach(b => b.onclick = () => {
+  const ok = b.dataset.v === "C";
+  const why = { A: "我們已經找到 10 個的例子了（全部奇數），所以答案至少是 10。", B: "我們已經找到 10 個的例子了（全部奇數），所以答案至少是 10。",
+    D: "{10, 11, …, 20} 看起來有 11 個，可是 10 + 10 = 20！配對的證明說最多只有 10 個。", E: "配對的證明說：不管最大的數是多少，最多只有 10 個。" };
+  fb($("#bfb"), ok, ok ? "🏆 答對了！至少 10、至多 10，答案 C。" : "❌ " + why[b.dataset.v]);
+  if (!ok) b.closest(".step").querySelector(".hint").classList.add("on");
+  if (ok) { show("#bsum"); done(5); }
+});
+
+// ---------- 關卡 7：整合回顧（動畫） ----------
+(() => {
+  const cl = x => Math.max(0, Math.min(1, x)), k = (t, a, b) => cl((t - a) / (b - a));
+  const txt = (x, y, str, col = "#2b2233", size = 16, op = 1, anchor = "start") => `<text x="${x}" y="${y}" font-size="${size}" fill="${col}" opacity="${op}" font-weight="700" text-anchor="${anchor}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${str}</text>`;
+  const FILL = { in: "#7b4dff", bad: "#d64545", gold: "#f2b705", dim: "#efe8ff" };
+  // 一個數字方塊；st = "" | in | bad | gold | dim
+  const T = (x, y, n, st = "", op = 1, s = 38) => `<g opacity="${op}"><rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${FILL[st] || "#fff"}" stroke="${st && st !== "dim" ? FILL[st] : "#eadfce"}" stroke-width="2"/><text x="${x + s / 2}" y="${y + s / 2 + 6}" font-size="${s > 32 ? 16 : 13}" font-weight="700" text-anchor="middle" fill="${st && st !== "dim" ? "#fff" : "#2b2233"}">${n}</text></g>`;
+  // 1–20 兩排格子
+  const grid = (stOf, y0 = 60) => { let h = ""; for (let n = 1; n <= 20; n++) h += T(22 + ((n - 1) % 10) * 48, y0 + Math.floor((n - 1) / 10) * 50, n, stOf(n)); return h; };
+  // 配對抽屜圖：最大的數 M，抽屜依序在 t = a0 + i·step 出現
+  function drawersSVG(M, t, a0 = 0, step = 0) {
+    const P = Math.floor((M - 1) / 2), cols = P + (M % 2 ? 0 : 1) + 1, cw = Math.min(50, 500 / cols), s = cw - 12;
+    let h = "";
+    for (let i = 1; i <= P; i++) {
+      const x = 12 + (i - 1) * cw, op = k(t, a0 + i * step, a0 + i * step + .04);
+      h += `<rect x="${x - 3}" y="52" width="${s + 6}" height="${2 * s + 16}" rx="8" fill="none" stroke="#c9b8a0" stroke-dasharray="4 3" stroke-width="2" opacity="${op}"/>` + T(x, 56, i, "", op, s) + T(x, 62 + s, M - i, "", op, s);
+    }
+    let x = 12 + P * cw;
+    if (M % 2 === 0) { const op = k(t, a0 + (P + 1) * step, a0 + (P + 1) * step + .04); h += T(x, 56, M / 2, "bad", op, s) + txt(x + s / 2, 80 + 2 * s, "✗", "#d64545", 16, op, "middle"); x += cw; }
+    const op = k(t, a0 + (P + 2) * step, a0 + (P + 2) * step + .04);
+    h += T(x, 56, M, "gold", op, s) + txt(x + s / 2, 46, "👑", "#f2b705", 16, op, "middle");
+    return h;
+  }
+  const cap = M => Math.floor((M - 1) / 2) + 1;
+  function roadmap(t, nodes, edges) {
+    const kk = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    let h = `<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>`;
+    edges.forEach(e => {
+      const f = kk(e.at, e.at + .06), col = e.col || "#7a6f85";
+      if (f > 0) h += `<line x1="${e.a[0]}" y1="${e.a[1]}" x2="${e.a[0] + (e.b[0] - e.a[0]) * f}" y2="${e.a[1] + (e.b[1] - e.a[1]) * f}" stroke="${col}" stroke-width="2.5" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      if (e.label) h += `<text x="${e.lx}" y="${e.ly}" font-size="13" fill="${col}" font-weight="700" text-anchor="${e.anchor || "start"}" opacity="${kk(e.at + .04, e.at + .1)}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${e.label}</text>`;
+    });
+    nodes.forEach(n => {
+      const op = kk(n.at, n.at + .06);
+      const sw = n.glow ? 2.5 + 2 * Math.abs(Math.sin(t * 14)) * (1 - kk(n.at + .15, n.at + .3)) : 2.5;
+      h += `<g opacity="${op}"><rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="10" fill="#fff" stroke="${n.col}" stroke-width="${sw}"/>` +
+        n.lines.map((l, i) => `<text x="${n.x}" y="${n.y + 5 + (i - (n.lines.length - 1) / 2) * 19}" font-size="${i ? 13 : 14}" fill="${n.col}" font-weight="700" text-anchor="middle">${l}</text>`).join("") + `</g>`;
+    });
+    return h;
+  }
+  const SC = [
+    { name: "解題路線圖", dur: 12000, say: "先看解題路線圖。題目問無和集合最多幾個。問最多幾個，要做兩件事：第一，找一個例子，證明至少有幾個；第二，證明不能更多。例子：全部的奇數，奇數加奇數是偶數，一共 10 個。證明不能更多，這裡的橋是看集合裡最大的數 M，把比它小的數兩兩配對，每對加起來等於 M，所以每對最多拿一個，加上 M 自己，最多 10 個。至少 10，至多 10，答案是 10。",
+      draw: t => roadmap(t, [
+        { x: 260, y: 26, w: 310, h: 36, lines: ["🎯 目標：無和子集合最多幾個？"], col: "#d17a00", at: 0 },
+        { x: 130, y: 100, w: 220, h: 38, lines: ["① 至少幾個？找例子"], col: "#118ab2", at: .12 },
+        { x: 390, y: 100, w: 230, h: 38, lines: ["② 至多幾個？證明不能更多"], col: "#d64545", at: .12 },
+        { x: 130, y: 172, w: 220, h: 48, lines: ["全部奇數 1, 3, …, 19", "奇 + 奇 = 偶 → 10 個 ✓"], col: "#118ab2", at: .25 },
+        { x: 390, y: 172, w: 236, h: 48, lines: ["🌉 看最大的數 M", "配對 i 和 M − i（和 = M）"], col: "#7b4dff", at: .4, glow: true },
+        { x: 390, y: 240, w: 236, h: 48, lines: ["每對最多 1 個 + M 自己", "→ 最多 10 個"], col: "#d64545", at: .58 },
+        { x: 260, y: 298, w: 320, h: 34, lines: ["至少 10 ＝ 至多 10 → 答案 10 (C) 🏆"], col: "#1f9d55", at: .78 }
+      ], [
+        { a: [210, 44], b: [140, 80], at: .07 }, { a: [310, 44], b: [380, 80], at: .07, label: "最多幾個 = 兩件事", lx: 260, ly: 68, anchor: "middle" },
+        { a: [130, 119], b: [130, 147], at: .22, col: "#118ab2" },
+        { a: [390, 119], b: [390, 147], at: .37, col: "#d64545" },
+        { a: [390, 196], b: [390, 215], at: .55, col: "#d64545" },
+        { a: [130, 196], b: [200, 280], at: .75, col: "#1f9d55" }, { a: [390, 264], b: [320, 280], at: .75, col: "#1f9d55" }
+      ]),
+      math: [[0, "目標：{1, …, 20} 的無和子集合最多幾個"], [.12, "「最多幾個」= ① 找例子（至少）＋ ② 證明不能更多（至多）"], [.25, "① 全部奇數，10 個"], [.4, "② <b>橋是配對</b>：看最大的數 M，i 和 M − i 只能拿一個"], [.58, "每對最多 1 個 + M 自己 → 最多 10 個"], [.78, "答案 <b>10 (C)</b>"]] },
+    { name: "無和的規則", say: "第一步，先記住規則：集合裡任兩個數加起來，不能也在集合裡。1 加 4 等於 5，所以 1、4、5 不行。而且自己加自己也算，2 加 2 等於 4，所以 2 和 4 不能同時在。",
+      draw: t => { const A = t < .5, sel = A ? [1, 4, 5] : [2, 4], hit = A ? t > .25 : t > .75; let h = "";
+        for (let n = 1; n <= 10; n++) h += T(22 + (n - 1) * 48, 100, n, sel.includes(n) ? (hit ? "bad" : "in") : "");
+        h += txt(260, 60, A ? "{1, 4, 5}" : "{2, 4}", "#7b4dff", 24, 1, "middle");
+        h += txt(260, 200, A ? "1 + 4 = 5 也在集合裡 ✗" : "2 + 2 = 4 ✗ 自己加自己也算！", "#d64545", 22, A ? k(t, .25, .32) : k(t, .75, .82), "middle");
+        return h; },
+      math: [[0, "規則：任兩個數 x、y（可以相同），x + y 都不能在集合裡"], [.25, "1 + 4 = 5 → {1, 4, 5} 不是無和"], [.6, "2 + 2 = 4 → {2, 4} 也不行"]] },
+    { name: "例子：全部奇數", say: "第二步，找例子。把奇數全部拿來。奇數加奇數一定是偶數，可是集合裡一個偶數都沒有，所以加起來一定不在集合裡。一共 10 個。",
+      draw: t => { const c = Math.floor(k(t, 0, .45) * 10);
+        let h = grid(n => n % 2 && (n + 1) / 2 <= c ? "in" : "", 50);
+        h += txt(260, 200, "奇數 + 奇數 = 偶數", "#118ab2", 22, k(t, .5, .58), "middle");
+        h += txt(260, 235, "偶數一個都沒選 → 加起來不會在集合裡", "#2b2233", 16, k(t, .62, .7), "middle");
+        h += txt(260, 280, "一共 10 個 ✓ → 答案至少 10", "#1f9d55", 22, k(t, .8, .88), "middle");
+        return h; },
+      math: [[0, "{1, 3, 5, …, 19}"], [.5, "奇數 + 奇數 = 偶數，不在集合裡"], [.8, "<b>10 個</b> → 答案至少 10"]] },
+    { name: "陷阱：10 到 20", say: "另一個例子是 11 到 20，最小的和是 11 加 11 等於 22，超過 20，也是 10 個。那加上 10 變成 11 個呢？10 加 10 等於 20，不行！",
+      draw: t => { const c = Math.floor(k(t, 0, .35) * 10), bad = t > .62;
+        let h = grid(n => n >= 11 && n - 10 <= c ? (bad && n === 20 ? "bad" : "in") : n === 10 && t > .55 ? (bad ? "bad" : "in") : "", 50);
+        h += txt(260, 200, "最小的和：11 + 11 = 22 > 20 ✓", "#118ab2", 20, k(t, .38, .45), "middle");
+        h += txt(260, 250, "加上 10？10 + 10 = 20 ✗", "#d64545", 22, k(t, .62, .7), "middle");
+        h += txt(260, 290, "{10, …, 20} 不是無和，不能湊到 11 個", "#d64545", 16, k(t, .75, .82), "middle");
+        return h; },
+      math: [[0, "{11, …, 20}：最小的和 22 > 20，也是 10 個"], [.55, "加 10 變 11 個？"], [.62, "<b>10 + 10 = 20</b> ✗ 這是最常見的陷阱（選項 D）"]] },
+    { name: "配對抽屜 M = 20", dur: 10000, say: "第三步，證明不能更多。假設最大的數是 20。把 1 到 19 配對：1 配 19，2 配 18，一直到 9 配 11，每對加起來是 20，所以每對最多拿一個。10 落單，但 10 加 10 等於 20，也不能拿。9 個抽屜加上 20 自己，最多 10 個。",
+      draw: t => drawersSVG(20, t, .02, .05) +
+        txt(260, 210, "每對加起來 = 20 → 每個抽屜最多拿 1 個", "#7b4dff", 17, k(t, .6, .66), "middle") +
+        txt(260, 245, "落單的 10：10 + 10 = 20，不能拿", "#d64545", 16, k(t, .68, .74), "middle") +
+        txt(260, 290, "9 個抽屜 + 20 自己 = 最多 10 個", "#1f9d55", 22, k(t, .8, .88), "middle"),
+      math: [[0, "M = 20 是最大的數，其他數都在 1 到 19"], [.1, "(1, 19)、(2, 18)、…、(9, 11)：每對和 = 20"], [.6, "兩個都拿 → i + (20 − i) = 20 在集合裡 ✗，所以每對最多 1 個"], [.8, "9 + 1 = <b>最多 10 個</b>"]] },
+    { name: "M 不是 20", dur: 10000, say: "第四步，最大的數不是 20 怎麼辦？一樣配對。M 是 19，9 對加 19 自己，最多 10 個。M 是 18，最多 9 個。M 越小，抽屜越少。所以不管 M 是多少，都不會超過 10 個。",
+      draw: t => { const Ms = [20, 19, 18, 15, 10], idx = Math.min(4, Math.floor(t * 5)), M = Ms[idx];
+        let h = txt(260, 30, `最大的數 M = ${M}`, "#d17a00", 18, 1, "middle") + drawersSVG(M, 1);
+        Ms.slice(0, idx + 1).forEach((m, j) => h += txt(150, 200 + j * 24, `M = ${m}：${Math.floor((m - 1) / 2)} 對 + 1 = 最多 ${cap(m)} 個`, j === idx ? "#7b4dff" : "#9a8fa5", 16));
+        return h; },
+      math: [[0, "M 是偶數：最多 M ÷ 2 個"], [.2, "M 是奇數：最多 (M + 1) ÷ 2 個"], [.6, "M ≤ 20 → <b>永遠 ≤ 10</b>"]] },
+    { name: "至少 = 至多", say: "最後，例子告訴我們至少 10 個，配對告訴我們至多 10 個。兩邊都是 10，答案就是 10，選 C！",
+      draw: t => { const m = k(t, .4, .7);
+        const box = (x, y, w, str, col, op) => `<g opacity="${op}"><rect x="${x}" y="${y}" width="${w}" height="56" rx="12" fill="#fff" stroke="${col}" stroke-width="3"/><text x="${x + w / 2}" y="${y + 35}" font-size="20" font-weight="700" fill="${col}" text-anchor="middle">${str}</text></g>`;
+        return box(20 + 70 * m, 50, 200, "至少 10（例子）", "#118ab2", k(t, 0, .1) * (1 - k(t, .7, .75))) +
+          box(300 - 70 * m, 50, 200, "至多 10（配對）", "#d64545", k(t, .15, .25) * (1 - k(t, .7, .75))) +
+          box(110, 140, 300, "答案 = 10 (C) 🏆", "#1f9d55", k(t, .72, .82)); },
+      math: [[0, "例子 → 答案 ≥ 10"], [.15, "配對 → 答案 ≤ 10"], [.72, "所以答案 = <b>10，(C)</b>"]] }
+  ];
+  let cur = 0, t0 = 0, auto = false, waitUntil = 0;
+  $("#rcChain").innerHTML = SC.map((s, i) => `<button data-rc="${i}">${i + 1}. ${s.name}</button>`).join(" → ");
+  function paint() { $$("#rcChain button").forEach((b, j) => { b.style.background = j === cur ? "#7b4dff" : j < cur ? "#efe8ff" : "#fff"; b.style.color = j === cur ? "#fff" : ""; }); }
+  function render(t) {
+    const s = SC[cur]; $("#rcMap").innerHTML = s.draw(cl(t));
+    const lines = s.math.filter(m => cl(t) >= m[0]);
+    $("#rcMath").innerHTML = lines.map((m, j) => `<div style="opacity:${j === lines.length - 1 ? 1 : .6}">${m[1]}</div>`).join("");
+  }
+  function enter(i) {
+    cur = Math.max(0, Math.min(SC.length - 1, i)); t0 = performance.now(); waitUntil = 0; paint();
+    $("#rcSay").textContent = SC[cur].say; speak(SC[cur].say);
+    if (cur === SC.length - 1) { show("#c7key"); done(6); }
+  }
+  const setAuto = on => { auto = on; $("#rcAuto").textContent = on ? "⏸ 暫停自動播放" : "▶ 自動播放全部"; };
+  $("#rcChain").onclick = e => { const i = e.target.dataset.rc; if (i !== undefined) { setAuto(false); enter(+i); } };
+  $("#rcPrev").onclick = () => { setAuto(false); enter(cur - 1); };
+  $("#rcNext").onclick = () => { setAuto(false); enter(cur + 1); };
+  $("#rcAgain").onclick = () => enter(cur);
+  $("#rcAuto").onclick = () => { if (auto) { setAuto(false); speechSynthesis.cancel(); } else { setAuto(true); enter(cur === SC.length - 1 ? 0 : cur); } };
+  const DUR = 7000;
+  (function loop(now) {
+    if ($("#s6").classList.contains("on")) {
+      const t = (now - t0) / (SC[cur].dur || DUR); render(t);
+      if (auto && t >= 1 && !speechSynthesis.speaking) {
+        if (!waitUntil) waitUntil = now + 800;
+        else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }
+      }
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+  paint(); $("#rcSay").textContent = SC[0].say;
+})();
+
+// ---------- 關卡 8：無限練習 ----------
+let P = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+function newProblem() {
+  if (mode === "easy") {
+    // 一半機率出無和集合、一半出有問題的集合
+    const want = Math.random() < .5;
+    let S;
+    for (let tries = 0; tries < 500; tries++) {
+      S = new Set(); const n = rnd(3, 5);
+      while (S.size < n) S.add(rnd(1, 20));
+      if ((conflicts(S).length === 0) === want) break;
+    }
+    P = { easy: true, S, bad: conflicts(S) };
+    $("#pq").innerHTML = `<b>${setStr(S)}</b> 是無和集合嗎？`;
+  } else {
+    const N = Math.random() < .2 ? 25 : rnd(6, 50);
+    P = { N, ans: Math.ceil(N / 2) };
+    $("#pq").innerHTML = `{1, 2, 3, …, ${N}} 的無和子集合，最多可以有幾個數？` + (N === 25 ? "<br><span class='tip'>（這是 2022 AMC 10B 第 14 題！）</span>" : "");
+  }
+  $("#pans").value = ""; fb($("#pfb"), null, ""); $("#psol").classList.add("hidden");
+  $("#pEasyBox").classList.toggle("hidden", mode !== "easy"); $("#pHardBox").classList.toggle("hidden", mode === "easy");
+}
+function solution() {
+  if (P.easy) {
+    const a = [...P.S].sort((x, y) => x - y), sums = [];
+    for (let i = 0; i < a.length; i++) for (let j = i; j < a.length; j++) { const z = a[i] + a[j]; sums.push(P.S.has(z) ? `<b style="color:#d64545">${a[i]} + ${a[j]} = ${z}</b>` : `${a[i]} + ${a[j]} = ${z}`); }
+    return `把所有兩兩相加（包括自己加自己）列出來：<br>${sums.join("、")}<br>` +
+      (P.bad.length ? `紅色的和也在集合裡，所以<b>不是</b>無和集合。` : `沒有一個和在集合裡，所以<b>是</b>無和集合。`);
+  }
+  const { N } = P, odd = Math.ceil(N / 2), Me = N % 2 ? N - 1 : N, Mo = N % 2 ? N : N - 1;
+  return `① <b>至少：</b>全部奇數 1, 3, …, ${N % 2 ? N : N - 1}，奇數 + 奇數 = 偶數，一共 ${odd} 個。<br>
+    ② <b>至多：</b>設最大的數是 M，把 i 和 M − i 配成對（和 = M），每對最多 1 個，再加上 M 自己。<br>
+    　M 是偶數：最多 M ÷ 2 個，M 最大是 ${Me}，所以 ≤ ${Me / 2}<br>
+    　M 是奇數：最多 (M + 1) ÷ 2 個，M 最大是 ${Mo}，所以 ≤ ${(Mo + 1) / 2}<br>
+    ③ 至少 ${odd}、至多 ${odd}，答案 <b>${odd}</b>。`;
+}
+function grade(ok) {
+  streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
+  fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再想一次，或看解法");
+  if (streak >= 3 && mode === "hard") done(7);
+}
+$("#pyes").onclick = () => grade(P.bad.length === 0);
+$("#pno").onclick = () => grade(P.bad.length > 0);
+$("#pchk").onclick = () => grade(same(val($("#pans").value), P.ans));
+$("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
+$("#pnew").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+function readable(el) {
+  if (typeof el === "string") return el;
+  const c = el.cloneNode(true);
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden").forEach(b => b.remove());
+  c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  c.querySelectorAll("table.derive tr:first-child").forEach(r => r.remove());
+  c.querySelectorAll("td, th, br").forEach(td => td.append("，"));
+  return c.textContent;
+}
+function toSpeech(t) {
+  return t.replace(/[➕🔑🎉✅❌🤔🏆📐⭐💡👑🎯🧦🌉]/gu, "").trim()
+    .replace(/\{\}/g, " 空集合 ").replace(/\{/g, " 集合 ").replace(/\}/g, " ")
+    .replace(/(\d+)\/(\d+)/g, " $2 分之 $1 ")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ")
+    .replace(/≤/g, " 小於等於 ").replace(/≥/g, " 大於等於 ").replace(/</g, " 小於 ").replace(/>/g, " 大於 ").replace(/≠/g, " 不等於 ")
+    .replace(/✗/g, " 不行 ").replace(/✓/g, " ").replace(/→/g, "，").replace(/…/g, "，一直到，")
+    .replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(readable(t)));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+const HELLO = "你好，我們一起來玩無和集合大冒險！1 加 4 等於 5。";
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak(HELLO); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak(HELLO); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak(HELLO); };
+$("#vTest").onclick = () => speak(HELLO);
+$$(".story, .key, .proof").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story"));
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+const watchOnce = (el, isOn, target) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(target(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st));
+new MutationObserver(() => speak($("#pq"))).observe($("#pq"), { childList: true });
+</script>
+</body>
+</html>
