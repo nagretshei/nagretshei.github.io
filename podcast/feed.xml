@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 17 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1202,6 +1202,62 @@ Simple and Controllable Music Generation（MusicGen 論文）：https://arxiv.or
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:31</itunes:duration>
       <itunes:episode>43</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 怎麼知道該聽哪裡？注意力機制 Attention</title>
+      <description><![CDATA[AI寫第9小節的時候，怎麼知道要回頭看第1小節？這集小皮拆解第37集一句帶過的注意力機制（Attention）。舊方法像傳話遊戲，資訊一格一格往後傳，越傳越忘；注意力讓每一格直接回頭看前面所有格子，打分數（加起來100%），越高分越注意。分數怎麼打：每一格準備查詢（Query）、鑰匙（Key）、內容（Value），拿查詢去對鑰匙，越對得上就讀越多內容，像在圖書館先看書背標籤再決定翻哪本。多頭注意力（Multi-Head Attention）同時用好幾組，各看各的重點，分工由模型自己學。音樂看自己叫自注意力，看文字叫交叉注意力——MusicGen先用T5把文字變成數字，再用交叉注意力回頭看。注意力2014年先用在機器翻譯，2017年《Attention Is All You Need》誕生Transformer，2018年Google Magenta的Music Transformer寫出一分鐘、前後有呼應的鋼琴音樂；代價是格子數變2倍，要比對的組合變4倍。
+
+參考資料：
+Neural Machine Translation by Jointly Learning to Align and Translate（Bahdanau, Cho & Bengio 2014）：https://arxiv.org/abs/1409.0473
+Attention Is All You Need（Vaswani et al. 2017）：https://arxiv.org/abs/1706.03762
+Music Transformer（Huang et al. 2018）：https://arxiv.org/abs/1809.04281
+Simple and Controllable Music Generation（MusicGen 論文）：https://arxiv.org/abs/2306.05284]]></description>
+      <itunes:summary><![CDATA[AI寫第9小節的時候，怎麼知道要回頭看第1小節？這集小皮拆解第37集一句帶過的注意力機制（Attention）。舊方法像傳話遊戲，資訊一格一格往後傳，越傳越忘；注意力讓每一格直接回頭看前面所有格子，打分數（加起來100%），越高分越注意。分數怎麼打：每一格準備查詢（Query）、鑰匙（Key）、內容（Value），拿查詢去對鑰匙，越對得上就讀越多內容，像在圖書館先看書背標籤再決定翻哪本。多頭注意力（Multi-Head Attention）同時用好幾組，各看各的重點，分工由模型自己學。音樂看自己叫自注意力，看文字叫交叉注意力——MusicGen先用T5把文字變成數字，再用交叉注意力回頭看。注意力2014年先用在機器翻譯，2017年《Attention Is All You Need》誕生Transformer，2018年Google Magenta的Music Transformer寫出一分鐘、前後有呼應的鋼琴音樂；代價是格子數變2倍，要比對的組合變4倍。
+
+參考資料：
+Neural Machine Translation by Jointly Learning to Align and Translate（Bahdanau, Cho & Bengio 2014）：https://arxiv.org/abs/1409.0473
+Attention Is All You Need（Vaswani et al. 2017）：https://arxiv.org/abs/1706.03762
+Music Transformer（Huang et al. 2018）：https://arxiv.org/abs/1809.04281
+Simple and Controllable Music Generation（MusicGen 論文）：https://arxiv.org/abs/2306.05284]]></itunes:summary>
+      <pubDate>Sun, 18 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep44.mp3" length="3270676" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep44.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:24</itunes:duration>
+      <itunes:episode>44</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 把聲音收進哪裡？潛空間與自編碼器 Latent Space &amp; Autoencoder</title>
+      <description><![CDATA[第38集說Stable Audio Open在「壓縮過的空間」裡做擴散，那個空間在哪裡？這集小皮介紹潛空間（Latent Space）與自編碼器（Autoencoder）：編碼器把聲音壓小、解碼器再還原，中間最窄的瓶頸只放得下精華，像出國用真空壓縮袋打包行李。瓶頸裡的數字就像地圖座標，相像的聲音會靠在一起——長笛和雙簧管是鄰居，鼓聲住在另一區，這是模型自己整理出來的。2017年Google Magenta的NSynth用約30萬個單音訓練，在長笛和風琴之間取中間點，就得到世界上本來不存在的新音色，還做成實體合成器NSynth Super；2018年MusicVAE能在兩段旋律之間慢慢變過去。2013年的變分自編碼器（VAE）讓每個聲音變成一團雲，地圖沒有破洞。Stable Audio Open用VAE把44.1 kHz立體聲（每秒88,200個數字）壓成每秒21.5格×64個數字，小了約64倍，在小地圖上擴散再解碼，這就是潛在擴散（Latent Diffusion）。最後比較EnCodec（瓶頸後接RVQ變號碼、適合接龍）和Stable Audio（連續座標、適合擴散）。
+
+參考資料：
+Auto-Encoding Variational Bayes（Kingma & Welling 2013）：https://arxiv.org/abs/1312.6114
+Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders（NSynth）：https://arxiv.org/abs/1704.01279
+MusicVAE（Roberts et al. 2018）：https://arxiv.org/abs/1803.05428
+High-Resolution Image Synthesis with Latent Diffusion Models：https://arxiv.org/abs/2112.10752
+Stable Audio Open：https://arxiv.org/abs/2407.14358]]></description>
+      <itunes:summary><![CDATA[第38集說Stable Audio Open在「壓縮過的空間」裡做擴散，那個空間在哪裡？這集小皮介紹潛空間（Latent Space）與自編碼器（Autoencoder）：編碼器把聲音壓小、解碼器再還原，中間最窄的瓶頸只放得下精華，像出國用真空壓縮袋打包行李。瓶頸裡的數字就像地圖座標，相像的聲音會靠在一起——長笛和雙簧管是鄰居，鼓聲住在另一區，這是模型自己整理出來的。2017年Google Magenta的NSynth用約30萬個單音訓練，在長笛和風琴之間取中間點，就得到世界上本來不存在的新音色，還做成實體合成器NSynth Super；2018年MusicVAE能在兩段旋律之間慢慢變過去。2013年的變分自編碼器（VAE）讓每個聲音變成一團雲，地圖沒有破洞。Stable Audio Open用VAE把44.1 kHz立體聲（每秒88,200個數字）壓成每秒21.5格×64個數字，小了約64倍，在小地圖上擴散再解碼，這就是潛在擴散（Latent Diffusion）。最後比較EnCodec（瓶頸後接RVQ變號碼、適合接龍）和Stable Audio（連續座標、適合擴散）。
+
+參考資料：
+Auto-Encoding Variational Bayes（Kingma & Welling 2013）：https://arxiv.org/abs/1312.6114
+Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders（NSynth）：https://arxiv.org/abs/1704.01279
+MusicVAE（Roberts et al. 2018）：https://arxiv.org/abs/1803.05428
+High-Resolution Image Synthesis with Latent Diffusion Models：https://arxiv.org/abs/2112.10752
+Stable Audio Open：https://arxiv.org/abs/2407.14358]]></itunes:summary>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep45.mp3" length="3358030" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep45.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:30</itunes:duration>
+      <itunes:episode>45</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

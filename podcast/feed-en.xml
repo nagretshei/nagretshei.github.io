@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 17 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1202,6 +1202,62 @@ Simple and Controllable Music Generation (MusicGen paper): https://arxiv.org/abs
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:30</itunes:duration>
       <itunes:episode>43</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Does AI Know Where to Listen? The Attention Mechanism Explained</title>
+      <description><![CDATA[When AI writes bar nine, how does it know to look back at bar one? Little Pi unpacks the attention mechanism, mentioned briefly in episode 37. Older models worked like a game of telephone, passing information along step by step and forgetting more the farther it went. Attention lets every step look straight back at all earlier steps and give each a score (adding up to 100%): the higher the score, the more attention. How are scores decided? Each step prepares a Query, a Key and a Value; the query is matched against every key, and the better the match, the more of that value gets read, like checking book spines in a library before deciding what to open. Multi-head attention runs several sets at once, each learning its own focus. Music looking at itself is self-attention; looking at text is cross-attention: MusicGen turns the prompt into numbers with T5, then glances back at it with cross-attention. Attention was first used for machine translation in 2014; the 2017 paper Attention Is All You Need gave birth to the Transformer; and in 2018 Google Magenta's Music Transformer wrote minute-long piano music with themes that answer each other. The price: double the steps, four times the comparisons.
+
+References:
+Neural Machine Translation by Jointly Learning to Align and Translate (Bahdanau, Cho & Bengio 2014): https://arxiv.org/abs/1409.0473
+Attention Is All You Need (Vaswani et al. 2017): https://arxiv.org/abs/1706.03762
+Music Transformer (Huang et al. 2018): https://arxiv.org/abs/1809.04281
+Simple and Controllable Music Generation (MusicGen paper): https://arxiv.org/abs/2306.05284]]></description>
+      <itunes:summary><![CDATA[When AI writes bar nine, how does it know to look back at bar one? Little Pi unpacks the attention mechanism, mentioned briefly in episode 37. Older models worked like a game of telephone, passing information along step by step and forgetting more the farther it went. Attention lets every step look straight back at all earlier steps and give each a score (adding up to 100%): the higher the score, the more attention. How are scores decided? Each step prepares a Query, a Key and a Value; the query is matched against every key, and the better the match, the more of that value gets read, like checking book spines in a library before deciding what to open. Multi-head attention runs several sets at once, each learning its own focus. Music looking at itself is self-attention; looking at text is cross-attention: MusicGen turns the prompt into numbers with T5, then glances back at it with cross-attention. Attention was first used for machine translation in 2014; the 2017 paper Attention Is All You Need gave birth to the Transformer; and in 2018 Google Magenta's Music Transformer wrote minute-long piano music with themes that answer each other. The price: double the steps, four times the comparisons.
+
+References:
+Neural Machine Translation by Jointly Learning to Align and Translate (Bahdanau, Cho & Bengio 2014): https://arxiv.org/abs/1409.0473
+Attention Is All You Need (Vaswani et al. 2017): https://arxiv.org/abs/1706.03762
+Music Transformer (Huang et al. 2018): https://arxiv.org/abs/1809.04281
+Simple and Controllable Music Generation (MusicGen paper): https://arxiv.org/abs/2306.05284]]></itunes:summary>
+      <pubDate>Sun, 18 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep44.mp3" length="1167984" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep44.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:15</itunes:duration>
+      <itunes:episode>44</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Where Does AI Keep Sound? Latent Space and Autoencoders Explained</title>
+      <description><![CDATA[Episode 38 said Stable Audio Open does diffusion inside a compressed space. Where is that space? Little Pi introduces the latent space and the autoencoder: an encoder squeezes sound down, a decoder rebuilds it, and the narrow bottleneck in the middle only fits the essentials, like packing clothes in vacuum storage bags. The numbers in the bottleneck are like map coordinates, and similar sounds end up close together: flute and oboe are neighbors, drums live in another neighborhood, and the model organizes this by itself. In 2017 Google Magenta's NSynth was trained on about 300,000 single notes; taking the point halfway between a flute and an organ yields a brand-new tone color, later built into the NSynth Super hardware synth. In 2018 MusicVAE morphed gradually between melodies. The 2013 Variational Autoencoder (VAE) turns each sound into a small cloud, so the map has no holes. Stable Audio Open uses a VAE to squeeze 44.1 kHz stereo (88,200 numbers per second) into 21.5 frames per second of 64 numbers each, about 64 times smaller, then runs diffusion on that small map and decodes it back: latent diffusion. Finally, EnCodec (RVQ codes after the bottleneck, for token prediction) versus Stable Audio (continuous coordinates, for diffusion).
+
+References:
+Auto-Encoding Variational Bayes (Kingma & Welling 2013): https://arxiv.org/abs/1312.6114
+Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders (NSynth): https://arxiv.org/abs/1704.01279
+MusicVAE (Roberts et al. 2018): https://arxiv.org/abs/1803.05428
+High-Resolution Image Synthesis with Latent Diffusion Models: https://arxiv.org/abs/2112.10752
+Stable Audio Open: https://arxiv.org/abs/2407.14358]]></description>
+      <itunes:summary><![CDATA[Episode 38 said Stable Audio Open does diffusion inside a compressed space. Where is that space? Little Pi introduces the latent space and the autoencoder: an encoder squeezes sound down, a decoder rebuilds it, and the narrow bottleneck in the middle only fits the essentials, like packing clothes in vacuum storage bags. The numbers in the bottleneck are like map coordinates, and similar sounds end up close together: flute and oboe are neighbors, drums live in another neighborhood, and the model organizes this by itself. In 2017 Google Magenta's NSynth was trained on about 300,000 single notes; taking the point halfway between a flute and an organ yields a brand-new tone color, later built into the NSynth Super hardware synth. In 2018 MusicVAE morphed gradually between melodies. The 2013 Variational Autoencoder (VAE) turns each sound into a small cloud, so the map has no holes. Stable Audio Open uses a VAE to squeeze 44.1 kHz stereo (88,200 numbers per second) into 21.5 frames per second of 64 numbers each, about 64 times smaller, then runs diffusion on that small map and decodes it back: latent diffusion. Finally, EnCodec (RVQ codes after the bottleneck, for token prediction) versus Stable Audio (continuous coordinates, for diffusion).
+
+References:
+Auto-Encoding Variational Bayes (Kingma & Welling 2013): https://arxiv.org/abs/1312.6114
+Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders (NSynth): https://arxiv.org/abs/1704.01279
+MusicVAE (Roberts et al. 2018): https://arxiv.org/abs/1803.05428
+High-Resolution Image Synthesis with Latent Diffusion Models: https://arxiv.org/abs/2112.10752
+Stable Audio Open: https://arxiv.org/abs/2407.14358]]></itunes:summary>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep45.mp3" length="1242288" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep45.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:27</itunes:duration>
+      <itunes:episode>45</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
