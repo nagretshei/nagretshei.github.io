@@ -267,7 +267,7 @@
   <div class="card hidden" id="c3key">
     <div class="key">
       🔑 <b>抽屜原理：</b>每個抽屜最多放 1 個，那總數就<b>不會超過抽屜的個數</b>。<br>
-      下一關，我們要把 1 到 19 兩個兩個「裝進抽屜」，而無和的規則會告訴我們：每個抽屜最多只能拿 1 個數。
+      下一關，我們要把「不能同時選」的兩個數（冤家）裝進同一個抽屜，而無和的規則會告訴我們：每個抽屜最多只能拿 1 個數。
     </div>
     <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
   </div>
@@ -277,12 +277,20 @@
 <section id="s3">
   <div class="card story">
     <h2>關卡 4：配對抽屜</h2>
-    先假設集合裡<b>最大的數是 20</b>（👑 金色那格）。<br>
-    因為 20 是最大的，其他的數都在 1 到 19 裡面。我們把 1 到 19 兩兩配對，<b>每一對加起來剛好是 20</b>，放進同一個抽屜。點點看，同一個抽屜選兩個會怎樣？
+    ⚠️ <b>注意，任務換了！</b>關卡 2 是「<b>找</b>」無和集合；證明篇要回答的是「<b>為什麼不可能有 11 個</b>」。<br>
+    方法：假設有人已經交給你一個無和集合，看它<b>受到什麼限制</b>。先假設它<b>最大的數是 20</b>（👑 金色那格），其他的數就都在 1 到 19 裡面。
+  </div>
+  <div class="card key">
+    🤝 <b>冤家配對：</b>3 和 17 加起來是 20。如果兩個<b>都</b>選，3 + 17 = 20 就掉回集合裡，違反規則！<br>
+    所以 3 和 17 是一對「<b>冤家</b>」：<b>最多只能選一個</b>。<br>
+    我們把加起來等於 20 的冤家放進同一個抽屜：(1, 19)、(2, 18)……。配對<b>不是</b>要把它們一起選，而是要找出「哪些數不能一起選」。<br>
+    點點看，同一個抽屜選兩個會怎樣？
   </div>
   <div class="card">
     <div class="drawers" id="d4"></div>
     <div class="status" id="d4s"></div>
+    <button class="ghost" id="d4ex">把例子 {11, 12, …, 20} 放進來看看</button> <button class="ghost" id="d4clr">清空</button>
+    <div class="tip hidden" id="d4exTip">看！{11, …, 20} 在每個抽屜裡<b>剛好選一個</b>（大的那個），每對冤家都已經用掉了，所以再也塞不進第 11 個數。</div>
     <div class="tip">這裡只檢查「加起來等於 20」的問題，其他的和（例如 3 + 5 = 8）先不管。就算放寬規則，最多也只能拿這麼多，真正的集合只會更少。</div>
   </div>
   <div class="card" id="g4">
@@ -339,6 +347,8 @@
     最大的數 M = <span class="big" id="mN">19</span> <input type="range" id="mR" min="2" max="20" value="19">
     <div class="drawers" id="d5"></div>
     <div class="status" id="d5s"></div>
+    <button class="ghost" id="d5ex">把例子「全部奇數」放進來看看（M = 19）</button>
+    <div class="tip hidden" id="d5exTip">M = 19 時，冤家 (1, 18)、(2, 17)……每對都是一奇一偶，全部奇數剛好在每對裡選了奇數那一個，一對一個，滿了。</div>
   </div>
   <div class="card" id="g5">
     <div class="step on">
@@ -660,14 +670,17 @@ function makeDrawers(el, statusEl) {
   }
   el.onclick = e => { const n = +e.target.dataset.n; if (!n) return; S.has(n) ? S.delete(n) : S.add(n); render(); };
   render();
-  return { setM(m) { M = m; S.clear(); render(); } };
+  return { setM(m) { M = m; S.clear(); render(); }, pick(arr) { S.clear(); arr.forEach(x => S.add(x)); render(); } };
 }
-makeDrawers($("#d4"), $("#d4s"));
+const D4 = makeDrawers($("#d4"), $("#d4s"));
+$("#d4ex").onclick = () => { D4.pick([11, 12, 13, 14, 15, 16, 17, 18, 19]); show("#d4exTip"); };
+$("#d4clr").onclick = () => D4.pick([]);
 wireSteps($("#g4"), () => { show("#c4key"); done(3); });
 
 const D5 = makeDrawers($("#d5"), $("#d5s"));
 $("#mR").oninput = () => { const m = +$("#mR").value; $("#mN").textContent = m; D5.setM(m); };
 D5.setM(19);
+$("#d5ex").onclick = () => { $("#mR").value = 19; $("#mN").textContent = 19; D5.setM(19); D5.pick([1, 3, 5, 7, 9, 11, 13, 15, 17]); show("#d5exTip"); };
 wireSteps($("#g5"), () => { show("#c5key"); done(4); });
 
 // ---------- 關卡 6：大魔王 ----------
