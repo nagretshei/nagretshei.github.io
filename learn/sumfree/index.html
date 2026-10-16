@@ -120,6 +120,19 @@
       </div>
     </div>
     <div class="step">
+      自己加自己可以，那<b>加三次</b>呢？3 + 3 + 3 = 9，所以 {3, 9} 是無和集合嗎？
+      <div class="yn" data-right="0"><button>是</button><button>不是</button></div>
+      <div class="hint">💡 規則說的是挑「x 和 y」<b>兩個</b>數相加。把 {3, 9} 裡所有「兩個數相加」列出來：3 + 3、3 + 9、9 + 9。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>規則每次只挑<b>兩個</b>數（可以是同一個數），不會挑三個。<br>
+        　3 + 3 = 6、3 + 9 = 12、9 + 9 = 18　（都不在集合裡）<br>
+        所以 {3, 9} <b>是</b>無和集合。3 + 3 + 3 是三個數相加，不用檢查。<br>
+        那拆成兩步呢？先 3 + 3 = 6，再 6 + 3 = 9？不行，因為 6 不在集合裡，「6 + 3」不是集合裡的兩個數相加。<br>
+        如果集合是 {3, 6, 9} 就不行了：3 + 3 = 6 和 3 + 6 = 9 都掉回集合裡。
+      </div>
+    </div>
+    <div class="step">
       如果 6 在集合裡，下面哪一個數<b>一定不能</b>也在？
       <div class="choices" data-right="0"><button>3</button><button>5</button><button>7</button></div>
       <div class="hint">💡 用「自己加自己」想：哪個數加上自己等於 6？</div>
