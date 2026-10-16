@@ -169,10 +169,16 @@
     大魔王問：從 1, 2, 3, …, 20 裡面挑數字，組成無和集合，<b>最多能挑幾個</b>？<br>
     先自己動手！在下面的格子裡挑越多越好，但不能有紅色。
   </div>
+  <div class="card key">
+    🎯 <b>挑戰任務：</b>電腦把所有可能都檢查過了，剛好有 <b>3 組</b>「10 個數的無和集合」。你能把 3 組全部找出來嗎？<br>
+    <span class="tip">（其實只要找到 1 組，就能證明「答案至少是 10」。找全部 3 組是額外的挑戰，順便看看有哪些不同的想法。）</span>
+  </div>
   <div class="card">
     <div id="b2"></div>
     <div class="status" id="b2s"></div>
     <div>你的最高紀錄：<span class="big" id="b2best">0</span> 個　<button class="ghost" id="b2clear">清空</button></div>
+    <div style="margin-top:8px">找到的 10 個數無和集合：<b id="b2cnt">0</b> / 3 組</div>
+    <div id="b2found"></div>
   </div>
   <div class="card" id="g2">
     <div class="step on">
@@ -212,10 +218,21 @@
         這是大魔王最常見的陷阱：{10, …, 20} 看起來有 11 個，但它<b>不是</b>無和集合。
       </div>
     </div>
+    <div class="step">
+      那把 <b>20 拿掉</b>，變成 {10, 11, …, 19}（10 個），是無和集合嗎？
+      <div class="yn" data-right="0"><button>是</button><button>不是</button></div>
+      <div class="hint">💡 這次最小的數是 10，最小的和 10 + 10 = 20。20 還在集合裡嗎？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>最小的和是 10 + 10 = 20，任何兩個數加起來都 ≥ 20，可是集合裡最大只有 19，所以和<b>不可能</b>在集合裡。<br>
+        {10, 11, …, 19} 也是 10 個數的無和集合！這就是第 3 組。<br>
+        <button class="ghost" data-fill="mid">放到格子上</button>
+      </div>
+    </div>
   </div>
   <div class="card hidden" id="c2key">
     <div class="key">
-      🔑 我們找到兩個 10 個數的無和集合：<b>{1, 3, 5, …, 19}</b> 和 <b>{11, 12, …, 20}</b>。所以答案<b>至少是 10</b>。<br>
+      🔑 10 個數的無和集合一共 3 組：<b>{1, 3, 5, …, 19}</b>、<b>{11, 12, …, 20}</b>、<b>{10, 11, …, 19}</b>。只要有 1 組，答案就<b>至少是 10</b>。<br>
       可是，能不能找到 <b>11 個</b>？在上面的格子試很久都找不到，不代表真的不可能，也許只是還沒找到。<br>
       要說「不可能」，就需要<b>證明</b>。證明篇開始！
     </div>
@@ -593,15 +610,21 @@ B1.set([1, 4, 6]);
 wireSteps($("#g1"), () => { show("#c1key"); done(0); });
 
 // ---------- 關卡 2 ----------
-let best = 0;
+let best = 0; const found = [];
 const B2 = makeBoard($("#b2"), 20, (S, bad) => {
   let s = describe(S, bad);
   if (!bad.length && S.size > best) { best = S.size; $("#b2best").textContent = best; }
-  if (!bad.length && S.size >= 10) s += "　🎉 太厲害了！能不能再多一個？";
+  const key = setStr(S);
+  if (!bad.length && S.size >= 10 && !found.includes(key)) {
+    found.push(key); s += `　🎉 找到第 ${found.length} 組！`;
+    $("#b2cnt").textContent = found.length;
+    $("#b2found").innerHTML = found.map((f, i) => `<div>${"①②③④"[i]} ${f}</div>`).join("");
+    if (found.length === 3) s += "全部找齊了！";
+  } else if (!bad.length && S.size >= 10) s += "　（這組已經找過了）";
   $("#b2s").textContent = s;
 });
 $("#b2clear").onclick = () => B2.set([]);
-$$("[data-fill]").forEach(b => b.onclick = () => B2.set(b.dataset.fill === "odd" ? [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] : [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]));
+$$("[data-fill]").forEach(b => b.onclick = () => B2.set(({ odd: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19], big: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20], mid: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19] })[b.dataset.fill]));
 wireSteps($("#g2"), () => { show("#c2key"); done(1); });
 
 // ---------- 關卡 3：襪子與抽屜 ----------
