@@ -54,6 +54,7 @@
   .drawer .tile { width:40px; font-size:16px; }
   .drawer.bad { border-color:var(--bad); border-style:solid; background:#fdecec; }
   .drawer.single { border-color:#9a8fa5; }
+  .drawer.used { border-color:var(--ok); border-style:solid; background:#e9f8ef; }
   .drawer.kingbox { border:2px solid var(--gold); background:#fff8db; }
   .drawer small { font-size:11px; color:#7a6f85; line-height:1.2; text-align:center; }
   .sock { display:flex; flex-wrap:wrap; gap:6px; }
@@ -292,6 +293,15 @@
     <button class="ghost" id="d4ex">把例子 {11, 12, …, 20} 放進來看看</button> <button class="ghost" id="d4clr">清空</button>
     <div class="tip hidden" id="d4exTip">看！{11, …, 20} 在每個抽屜裡<b>剛好選一個</b>（大的那個），每對冤家都已經用掉了，所以再也塞不進第 11 個數。</div>
     <div class="tip">這裡只檢查「加起來等於 20」的問題，其他的和（例如 3 + 5 = 8）先不管。就算放寬規則，最多也只能拿這麼多，真正的集合只會更少。</div>
+  </div>
+  <div class="card" id="cnt4">
+    <b>🎲 數數看：冤家格怎麼幫我們數個數？</b><br>
+    隨便拿一個「最大的數是 20」的無和集合，把每個數放進它自己的格子。集合有幾個數，就等於「每一格放了幾個」加起來。
+    <div style="margin:8px 0"><button class="go" id="c4play">▶ 放進格子</button> <button class="ghost" id="c4new">換一個集合</button></div>
+    <div class="math" id="c4set"></div>
+    <div class="drawers" id="c4d"></div>
+    <div id="c4log" style="font-size:16px;min-height:28px"></div>
+    <div class="key hidden" id="c4sum"></div>
   </div>
   <div class="card" id="g4">
     <div class="step on">
@@ -673,6 +683,53 @@ function makeDrawers(el, statusEl) {
   return { setM(m) { M = m; S.clear(); render(); }, pick(arr) { S.clear(); arr.forEach(x => S.add(x)); render(); } };
 }
 const D4 = makeDrawers($("#d4"), $("#d4s"));
+
+// 數數看：隨機拿一個最大是 20 的無和集合，一個一個放進冤家格
+let C4 = new Set(), c4timer = null;
+function c4random() {
+  for (;;) {
+    const S = new Set([20]), target = 3 + Math.floor(Math.random() * 5);
+    const order = Array.from({ length: 19 }, (_, i) => i + 1).sort(() => Math.random() - .5);
+    for (const x of order) { if (S.size >= target) break; S.add(x); if (conflicts(S).length) S.delete(x); }
+    if (S.size >= 3) return S;
+  }
+}
+const pairOf = x => x === 20 ? "20 自己那一格" : x === 10 ? "落單的 10" : `(${Math.min(x, 20 - x)}, ${Math.max(x, 20 - x)}) 格`;
+function c4draw(placed) {
+  let h = "";
+  for (let i = 1; i <= 9; i++) {
+    const used = placed.has(i) || placed.has(20 - i);
+    h += `<div class="drawer ${used ? "used" : ""}"><button class="tile ${placed.has(i) ? "in" : ""}">${i}</button><button class="tile ${placed.has(20 - i) ? "in" : ""}">${20 - i}</button><small>${used ? "放了 1 個" : "空的"}</small></div>`;
+  }
+  h += `<div class="drawer single"><button class="tile">10</button><small>不能放</small></div>`;
+  h += `<div class="drawer kingbox"><button class="tile ${placed.has(20) ? "king" : ""}">20</button><small>👑 自己</small></div>`;
+  $("#c4d").innerHTML = h;
+}
+function c4new() {
+  clearTimeout(c4timer); C4 = c4random();
+  $("#c4set").innerHTML = `集合：<b>${setStr(C4)}</b>　<span class="tip">（✅ 檢查過，是無和集合，共 ${C4.size} 個數）</span>`;
+  $("#c4log").innerHTML = ""; $("#c4sum").classList.add("hidden"); c4draw(new Set());
+}
+function c4play() {
+  clearTimeout(c4timer); $("#c4sum").classList.add("hidden");
+  const seq = [...C4].filter(x => x !== 20).sort((a, b) => a - b).concat(20), placed = new Set(), log = [];
+  c4draw(placed);
+  const tick = j => {
+    if (j === seq.length) {
+      const k = C4.size - 1;
+      $("#c4sum").innerHTML = `🔑 <b>數數看：</b>用到 <b>${k}</b> 個冤家格（每格放 1 個）＋ 20 自己 1 個 = <b>${C4.size} 個數</b>，正好是集合的個數。<br>
+        還有 ${9 - k} 個冤家格是空的。想讓集合變大，只能把空格填上，可是每格最多放 1 個（放 2 個就會加成 20）。<br>
+        就算 9 格全部填滿，也只有 9 + 1 = <b>10 個</b>。所以不管集合長什麼樣子，都<b>不可能超過 10 個</b>。`;
+      show("#c4sum"); speak($("#c4sum"), false); return;
+    }
+    const x = seq[j]; placed.add(x); c4draw(placed);
+    log.push(`${x} → ${pairOf(x)}`);
+    $("#c4log").innerHTML = log.join("　");
+    c4timer = setTimeout(() => tick(j + 1), 900);
+  };
+  tick(0);
+}
+$("#c4new").onclick = c4new; $("#c4play").onclick = c4play; c4new();
 $("#d4ex").onclick = () => { D4.pick([11, 12, 13, 14, 15, 16, 17, 18, 19]); show("#d4exTip"); };
 $("#d4clr").onclick = () => D4.pick([]);
 wireSteps($("#g4"), () => { show("#c4key"); done(3); });
