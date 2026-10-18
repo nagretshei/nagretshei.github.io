@@ -650,7 +650,7 @@ function done(i) {
 
 // 一步一步的關卡：輸入框 data-ans（data-tol 容許誤差）比對、提示鈕、選擇題（data-why 針對錯答）
 function chkStep(step) {
-  const ins = [...step.querySelectorAll("input")];
+  const ins = [...step.querySelectorAll("input[data-ans]")];
   const right = i => same(val(i.value), val(i.dataset.ans), +i.dataset.tol || 1e-9);
   const ok = ins.every(right);
   const decimal = ins.some(i => !right(i) && /\./.test(i.value) && /\//.test(i.dataset.ans));
