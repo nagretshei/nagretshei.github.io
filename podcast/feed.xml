@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1258,6 +1258,35 @@ Stable Audio Open：https://arxiv.org/abs/2407.14358]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:30</itunes:duration>
       <itunes:episode>45</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>擦 1000 步太慢了！擴散模型怎麼越生越快｜雜訊排程與 DDIM</title>
+      <description><![CDATA[第38集說擴散模型從雜訊一步步擦出音樂，但到底要擦幾步？每一步擦多少？這集小皮介紹雜訊排程（Noise Schedule）與步數（Sampling Steps）。雜訊排程是訓練時加雜訊的時間表，像把果汁慢慢加水稀釋。2020年DDPM用1000步的線性排程，但加得太快，後面一大段聲音早就不見了，等於白做工；2021年OpenAI的Alex Nichol與Prafulla Dhariwal提出餘弦排程（Cosine Schedule），頭尾放慢，每一步都有事做。生成時若也走1000步太慢，2020年Stanford團隊的DDIM讓同一個模型跨大步，論文實測快10到50倍。步數太少雜訊擦不乾淨、太多則變慢且聽不出分別，Stable Audio Open這類工具常見設定在幾十到一兩百步，還能選不同的取樣器（Sampler）。最後介紹蒸餾（Distillation）、2023年的一致性模型（Consistency Models），以及2025年Stability AI與Arm推出、官方宣稱手機8秒內能生成11秒聲音的Stable Audio Open Small。
+
+參考資料：
+DDPM（Ho et al. 2020）：https://arxiv.org/abs/2006.11239
+Improved DDPM（Nichol & Dhariwal 2021）：https://arxiv.org/abs/2102.09672
+DDIM（Song, Meng & Ermon 2020）：https://arxiv.org/abs/2010.02502
+Consistency Models（Song et al. 2023）：https://arxiv.org/abs/2303.01469
+Stable Audio Open Small：https://stability.ai/news/stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deployment-for-on-device-audio-control]]></description>
+      <itunes:summary><![CDATA[第38集說擴散模型從雜訊一步步擦出音樂，但到底要擦幾步？每一步擦多少？這集小皮介紹雜訊排程（Noise Schedule）與步數（Sampling Steps）。雜訊排程是訓練時加雜訊的時間表，像把果汁慢慢加水稀釋。2020年DDPM用1000步的線性排程，但加得太快，後面一大段聲音早就不見了，等於白做工；2021年OpenAI的Alex Nichol與Prafulla Dhariwal提出餘弦排程（Cosine Schedule），頭尾放慢，每一步都有事做。生成時若也走1000步太慢，2020年Stanford團隊的DDIM讓同一個模型跨大步，論文實測快10到50倍。步數太少雜訊擦不乾淨、太多則變慢且聽不出分別，Stable Audio Open這類工具常見設定在幾十到一兩百步，還能選不同的取樣器（Sampler）。最後介紹蒸餾（Distillation）、2023年的一致性模型（Consistency Models），以及2025年Stability AI與Arm推出、官方宣稱手機8秒內能生成11秒聲音的Stable Audio Open Small。
+
+參考資料：
+DDPM（Ho et al. 2020）：https://arxiv.org/abs/2006.11239
+Improved DDPM（Nichol & Dhariwal 2021）：https://arxiv.org/abs/2102.09672
+DDIM（Song, Meng & Ermon 2020）：https://arxiv.org/abs/2010.02502
+Consistency Models（Song et al. 2023）：https://arxiv.org/abs/2303.01469
+Stable Audio Open Small：https://stability.ai/news/stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deployment-for-on-device-audio-control]]></itunes:summary>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep46.mp3" length="3348835" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep46.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:29</itunes:duration>
+      <itunes:episode>46</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

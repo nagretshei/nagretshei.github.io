@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1258,6 +1258,35 @@ Stable Audio Open: https://arxiv.org/abs/2407.14358]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:27</itunes:duration>
       <itunes:episode>45</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>1000 Steps Is Too Slow! How Diffusion Models Got Faster: Noise Schedules and DDIM</title>
+      <description><![CDATA[Episode 38 said diffusion models wipe noise away step by step until music appears. But how many steps, and how much noise per step? Little Pi explains the noise schedule and sampling steps. The noise schedule is the timetable for adding noise during training, like slowly watering down a glass of juice. In 2020 DDPM used a 1000-step linear schedule, but it adds noise too fast, so a long stretch near the end is pure noise and wasted work. In 2021 OpenAI's Alex Nichol and Prafulla Dhariwal proposed the cosine schedule, slowing down at both ends so every step counts. Generating with 1000 steps is too slow, so Stanford's DDIM (2020) lets the same model take big strides, 10 to 50 times faster in the paper's experiments. Too few steps leave grainy hiss, too many are slow with no audible gain; tools like Stable Audio Open usually use a few dozen to one or two hundred steps, with a choice of samplers. Finally: distillation, Consistency Models (2023), and Stable Audio Open Small (2025, Stability AI and Arm), officially generating 11 seconds of audio on a phone in under 8 seconds.
+
+References:
+DDPM (Ho et al. 2020): https://arxiv.org/abs/2006.11239
+Improved DDPM (Nichol & Dhariwal 2021): https://arxiv.org/abs/2102.09672
+DDIM (Song, Meng & Ermon 2020): https://arxiv.org/abs/2010.02502
+Consistency Models (Song et al. 2023): https://arxiv.org/abs/2303.01469
+Stable Audio Open Small: https://stability.ai/news/stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deployment-for-on-device-audio-control]]></description>
+      <itunes:summary><![CDATA[Episode 38 said diffusion models wipe noise away step by step until music appears. But how many steps, and how much noise per step? Little Pi explains the noise schedule and sampling steps. The noise schedule is the timetable for adding noise during training, like slowly watering down a glass of juice. In 2020 DDPM used a 1000-step linear schedule, but it adds noise too fast, so a long stretch near the end is pure noise and wasted work. In 2021 OpenAI's Alex Nichol and Prafulla Dhariwal proposed the cosine schedule, slowing down at both ends so every step counts. Generating with 1000 steps is too slow, so Stanford's DDIM (2020) lets the same model take big strides, 10 to 50 times faster in the paper's experiments. Too few steps leave grainy hiss, too many are slow with no audible gain; tools like Stable Audio Open usually use a few dozen to one or two hundred steps, with a choice of samplers. Finally: distillation, Consistency Models (2023), and Stable Audio Open Small (2025, Stability AI and Arm), officially generating 11 seconds of audio on a phone in under 8 seconds.
+
+References:
+DDPM (Ho et al. 2020): https://arxiv.org/abs/2006.11239
+Improved DDPM (Nichol & Dhariwal 2021): https://arxiv.org/abs/2102.09672
+DDIM (Song, Meng & Ermon 2020): https://arxiv.org/abs/2010.02502
+Consistency Models (Song et al. 2023): https://arxiv.org/abs/2303.01469
+Stable Audio Open Small: https://stability.ai/news/stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deployment-for-on-device-audio-control]]></itunes:summary>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep46.mp3" length="1238544" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep46.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:26</itunes:duration>
+      <itunes:episode>46</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
