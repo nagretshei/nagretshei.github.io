@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>泡泡相切大冒險｜外切、直角與兩式相減</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --go:#ff8a3d; --back:#118ab2; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  input[type=range] { width:100%; }
+  input.n { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid #f2b705; padding:10px 16px; border-radius:8px; margin:12px 0; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  .step { display:none; } .step.on { display:block; margin-bottom:14px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button, .choices button { font-size:17px; margin:4px; padding:5px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .fr { display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; line-height:1.25; margin:0 3px; }
+  .fr > span:first-child { border-bottom:1.5px solid currentColor; padding:0 4px; }
+  .math { font-size:20px; }
+  .tip { font-size:14px; color:#7a6f85; }
+  table.derive td { vertical-align:middle; padding:8px 10px; }
+  table.derive td:first-child { width:34%; font-size:15px; min-width:200px; }
+  table.derive td:last-child { color:#8a5a00; }
+  table.derive td:nth-child(2) { white-space:nowrap; }
+  svg.map { background:#fbfdf7; border:1px solid var(--line); border-radius:10px; }
+  .info { margin-top:6px; font-size:16px; }
+  .st-hit { color:var(--bad); font-weight:700; } .st-tan { color:var(--ok); font-weight:700; } .st-miss { color:var(--accent); font-weight:700; }
+  .eq { display:inline-block; background:#f6f0ff; border-radius:8px; padding:2px 10px; margin:2px 0; font-size:18px; }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>🫧 泡泡相切大冒險</h1>
+  <span class="part">地圖篇</span>
+  <button class="tab on" data-go="0">1. 泡泡地圖</button>
+  <button class="tab" data-go="1">2. 外切</button>
+  <span class="part">工具篇</span>
+  <button class="tab" data-go="2">3. 3-4-5 直角</button>
+  <button class="tab" data-go="3">4. 放上座標</button>
+  <button class="tab" data-go="4">5. 相減得 x</button>
+  <button class="tab" data-go="5">6. 再減得 y</button>
+  <span class="part">解題篇</span>
+  <button class="tab" data-go="6">7. 代回解 r</button>
+  <button class="tab" data-go="7">8. 大魔王</button>
+  <button class="tab" data-go="8">9. 整合回顧</button>
+  <button class="tab" data-go="9">10. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 1：泡泡地圖 ============ -->
+<section class="on" id="s0">
+  <div class="card story">
+    <h2>關卡 1：泡泡地圖</h2>
+    三顆泡泡，半徑是 <b>1</b>（藍）、<b>2</b>（橘）、<b>3</b>（綠），兩兩互相<b>貼著</b>。
+    中間的縫裡卡著一顆<b>小泡泡</b>（紫），跟三顆大泡泡都剛好貼著。小泡泡的半徑 <b>r</b> 是多少？<br>
+    先動手試試看：小泡泡一直貼著藍泡泡和橘泡泡，拉動拉桿改變 r，看它跟綠泡泡的關係。
+  </div>
+  <div class="card">
+    <svg class="map" id="map0" width="100%" viewBox="0 0 400 440" style="max-width:440px;display:block;margin:0 auto"></svg>
+    小泡泡半徑 r = <span class="big" id="r0n"></span> <input type="range" id="r0" min="0.05" max="0.6" step="0.001" value="0.45">
+    <button class="ghost" id="zoom0">🔍 放大中間</button>
+    <div class="info" id="info0"></div>
+  </div>
+  <div class="card" id="m1">
+    <div class="step on">
+      把 r 拉到最大（0.6），小泡泡怎麼了？
+      <div class="choices" data-right="0">
+        <button>擠進綠泡泡裡了</button><button data-why="看圖：紫色泡泡和綠色泡泡有重疊的部分。">跟綠泡泡中間還有縫</button><button data-why="剛好貼著的時候畫面會寫「三顆泡泡都剛好貼著」，現在不是。">剛好貼著</button>
+      </div>
+      <div class="hint">💡 看畫面下面的文字和顏色：紅色代表擠進去了。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      慢慢把 r 往小的拉，讓小泡泡跟三顆都<b>剛好貼著</b>（文字變綠色）。這時 r 大約是多少？（寫到小數第二位）
+      <input class="n" data-ans="0.26" data-tol="0.01">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 按「🔍 放大中間」比較看得清楚。在 0.2 和 0.3 之間慢慢拉。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>問題來了：</b>把五個選項換成小數看看——
+        <table class="steps">
+          <tr><td>(A) <span class="fr"><span>1</span><span>4</span></span></td><td>= 0.25</td></tr>
+          <tr><td>(B) <span class="fr"><span>6</span><span>23</span></span></td><td>≈ 0.261</td></tr>
+          <tr><td>(C) <span class="fr"><span>3</span><span>11</span></span></td><td>≈ 0.273</td></tr>
+          <tr><td>(D) <span class="fr"><span>5</span><span>17</span></span></td><td>≈ 0.294</td></tr>
+          <tr><td>(E) <span class="fr"><span>3</span><span>10</span></span></td><td>= 0.3</td></tr>
+        </table>
+        (A)、(B)、(C) 都在 0.26 附近，差不到 0.02，用拉桿根本分不出來！所以我們要用數學<b>精確</b>算出來。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 「兩個圓從外面剛好貼著」在數學上叫做<b>外切</b>。<br>
+      拉桿只能找到「大約 0.26」，可是選項太接近了。接下來幾關，我們一步一步把 r <b>精確</b>算出來。
+    </div>
+    <div class="nav"><button class="go" data-go="1">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：外切 ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 2：外切＝圓心距離是半徑相加</h2>
+    兩個圓剛好貼著的時候，它們的<b>圓心</b>離多遠？用半徑 2（橘）和半徑 3（綠）的兩個圓來試。拉動拉桿改變兩個圓心的距離 d。
+  </div>
+  <div class="card">
+    <svg class="map" id="map1" width="100%" viewBox="0 0 520 240"></svg>
+    圓心距離 d = <span class="big" id="d1n"></span> <input type="range" id="d1" min="1" max="8" step="0.05" value="3">
+    <div class="info" id="info1"></div>
+  </div>
+  <div class="card" id="m2">
+    <div class="step on">
+      拉動拉桿，讓兩個圓<b>剛好貼著</b>。這時 d = ? <input class="n" data-ans="5">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 d 太小兩個圓會重疊，d 太大會分開。找文字變綠色的那個位置。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      兩個圓貼著的那一點叫<b>切點 T</b>。T 在哪裡？
+      <div class="choices" data-right="0">
+        <button>剛好在兩個圓心的連線上</button><button data-why="看圖：貼著的時候，T 一定在兩個圓心中間那條虛線上。下面有講解為什麼。">不一定在連線上</button>
+      </div>
+      <div class="hint">💡 把拉桿拉到剛好貼著，看綠色的 T 點在哪裡。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：為什麼切點一定在連線上？</b><br>
+        ① 把整張圖沿著「兩個圓心的連線」<b>對折</b>。圓是對稱的，對折後兩個圓都跟原本完全重合。<br>
+        ② 假設切點 T 不在連線上，對折後 T 會落到另一個點 T′。T 在兩個圓上，對折後 T′ 也在兩個圓上，所以 T′ 也是兩個圓碰到的地方。<br>
+        ③ 這樣兩個圓就碰到<b>兩個點</b>，代表它們交叉、重疊了，不是「剛好貼著只碰一點」。矛盾！<br>
+        ④ 所以 T 一定在連線上。從橘色圓心走到 T 是半徑 2，從 T 走到綠色圓心是半徑 3，加起來：<b>d = 2 + 3 = 5</b>。
+      </div>
+    </div>
+    <div class="step">
+      回到三顆泡泡。把圓心叫做 <b>A</b>（藍，半徑 1）、<b>B</b>（橘，半徑 2）、<b>C</b>（綠，半徑 3）。<br>
+      AB = <input class="n" data-ans="3">　AC = <input class="n" data-ans="4">　BC = <input class="n" data-ans="5">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 外切：圓心距離 = 兩個半徑相加。AB 就是藍和橘：1 + 2。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      小泡泡的圓心叫 <b>Q</b>。Q 到 A 的距離是多少？
+      <div class="choices" data-right="0">
+        <button>1 + r</button><button data-why="兩個泡泡是從外面貼著，圓心距離要把兩個半徑「加」起來。">1 − r</button><button data-why="r 只是小泡泡自己的半徑。從 Q 走到 A，還要再走過藍泡泡的半徑 1。">r</button>
+      </div>
+      <div class="hint">💡 小泡泡半徑 r，藍泡泡半徑 1，外切就是半徑相加。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 <b>外切 ⇔ 圓心距離 = 兩個半徑相加。</b><br>
+      所以：AB = 3、AC = 4、BC = 5；小泡泡圓心 Q 到 A、B、C 的距離是 <b>1 + r、2 + r、3 + r</b>。
+    </div>
+    <div class="nav"><button class="go" data-go="2">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：3-4-5 直角 ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 3：3-4-5 藏著一個直角</h2>
+    把三個圓心 A、B、C 連起來，得到一個三角形，三邊是 <b>3、4、5</b>。這三個數字很有名，你看得出來嗎？
+  </div>
+  <div class="card">
+    <svg class="map" id="map2" width="100%" viewBox="0 0 400 440" style="max-width:440px;display:block;margin:0 auto"></svg>
+  </div>
+  <div class="card" id="m3">
+    <div class="step on">
+      3² + 4² = <input class="n" data-ans="25" data-wrong='{"7":"平方是自己乘自己：3² = 3 × 3 = 9，不是 3。","14":"3² = 3 × 3 = 9，不是 3 × 2。"}'>　5² = <input class="n" data-ans="25">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 3² = 9，4² = 16，5² = 5 × 5。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      兩條短邊的平方加起來，剛好等於最長邊的平方。這代表什麼？
+      <div class="choices" data-right="0">
+        <button>它是直角三角形</button><button data-why="正三角形三邊一樣長，這裡是 3、4、5。">它是正三角形</button><button data-why="3² + 4² = 5² 剛好是畢氏定理的樣子，看下面的講解。">沒有什麼特別</button>
+      </div>
+      <div class="hint">💡 畢氏定理：直角三角形的「斜邊² = 一股² + 另一股²」。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：為什麼 3² + 4² = 5² 就一定有直角？</b><br>
+        ① 先在紙上畫一個<b>真的</b>直角三角形，兩條直角邊是 3 和 4。<br>
+        ② 畢氏定理：它的斜邊² = 3² + 4² = 25，所以斜邊 = 5。這個三角形三邊是 3、4、5。<br>
+        ③ 我們的三角形 ABC 三邊也是 3、4、5。想像用三根長度 3、4、5 的木棒拼三角形：不管怎麼拼，拼出來的形狀都<b>一模一樣</b>（數學叫「全等」）。<br>
+        ④ 所以三角形 ABC 跟①畫的那個完全一樣，也有一個直角，就在 3 和 4 兩條邊夾住的地方。
+      </div>
+    </div>
+    <div class="step">
+      直角在哪一個圓心？
+      <div class="choices" data-right="0">
+        <button>A（半徑 1 的藍泡泡）</button><button data-why="從 B 出發的兩條邊是 BA = 3 和 BC = 5，不是 3 和 4。">B（半徑 2 的橘泡泡）</button><button data-why="從 C 出發的兩條邊是 CA = 4 和 CB = 5，不是 3 和 4。">C（半徑 3 的綠泡泡）</button>
+      </div>
+      <div class="hint">💡 直角在「3 和 4 兩條邊夾住」的地方。AB = 3、AC = 4，這兩條邊都從哪一點出發？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>AB = 3 和 AC = 4 都從 A 出發，所以直角在 A。<br>
+        另一個看法：直角的<b>對面</b>永遠是最長的斜邊。最長邊 5 是 BC，它的對面是 A。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 三個圓心連成 3-4-5 <b>直角三角形</b>，直角在 A（藍泡泡的圓心）。<br>
+      有直角就太好了：直角的兩條邊互相垂直，就像座標的 x 軸和 y 軸！下一關把它放上座標。
+    </div>
+    <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：放上座標 ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 4：放上座標，列出方程式</h2>
+    把直角那一點 A 放在原點，兩條直角邊分別放在 x 軸和 y 軸上。這樣每個圓心都有座標，就能用畢氏定理算距離了。
+  </div>
+  <div class="card">
+    <svg class="map" id="map3" width="100%" viewBox="0 0 400 440" style="max-width:440px;display:block;margin:0 auto"></svg>
+  </div>
+  <div class="card" id="m4">
+    <div class="step on" data-map='{"axes":1,"tri":1,"coords":"A"}'>
+      A = (0, 0)。AB = 3，沿著 x 軸往右放。B 的座標 = ( <input class="n" data-ans="3"> , <input class="n" data-ans="0"> )
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 從原點往右走 3：x = 3。沒有往上或往下：y = 0。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" data-map='{"axes":1,"tri":1,"coords":"AB"}'>
+      AC = 4，跟 AB 垂直。C 的座標 = ( <input class="n" data-ans="0"> , <input class="n" data-ans="4"> )
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 跟 x 軸垂直的方向就是 y 軸。從原點往上走 4。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>為什麼可以這樣放？</b>A 是直角，AB 和 AC 互相垂直；x 軸和 y 軸也互相垂直。所以把 A 放在原點、AB 放在 x 軸上，AC 就剛好落在 y 軸上。
+        三角形本身沒變，只是我們幫它選了一個好算的位置。
+      </div>
+    </div>
+    <div class="step" data-map='{"axes":1,"tri":1,"coords":"ABC","r":1,"legs":"A"}'>
+      小泡泡的圓心 Q 的座標叫做 <b>(x, y)</b>，x 和 y 是我們還不知道的數。<br>
+      看藍色小三角形：從 A 往右走 x、再往上走 y 就到 Q，QA 是斜邊。QA = 1 + r（上一關），畢氏定理寫成：
+      <div class="choices" data-right="0">
+        <button>x² + y² = (1 + r)²</button><button data-why="斜邊不是兩條邊直接相加，畢氏定理是「平方」加起來。">x + y = 1 + r</button><button data-why="斜邊是整個 (1 + r)，要整個平方：(1 + r)²，不是只有 r 平方。">x² + y² = 1 + r²</button>
+      </div>
+      <div class="hint">💡 斜邊² = 橫² + 直²。橫 = x，直 = y，斜邊 = 1 + r。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" data-map='{"axes":1,"tri":1,"coords":"ABC","r":1,"legs":"B"}'>
+      看橘色小三角形：從 B(3, 0) 到 Q(x, y)。橫的那一段多長？
+      <div class="choices" data-right="0">
+        <button>3 − x</button><button data-why="x 是 Q 到 y 軸（A 那邊）的距離。B 在 x = 3，要算 Q 到 B 橫著差多少。">x</button><button data-why="Q 和 B 都在 y 軸右邊，橫著的距離是「大的減小的」。">3 + x</button>
+      </div>
+      <div class="hint">💡 B 的 x 座標是 3，Q 的 x 座標是 x，兩個相減。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 直的那一段是 y（Q 比 x 軸高 y），斜邊 QB = 2 + r。畢氏定理：<br>
+        <span class="eq">② (3 − x)² + y² = (2 + r)²</span>
+      </div>
+    </div>
+    <div class="step" data-map='{"axes":1,"tri":1,"coords":"ABC","r":1,"legs":"C"}'>
+      看綠色小三角形：從 C(0, 4) 到 Q(x, y)。直的那一段多長？
+      <div class="choices" data-right="0">
+        <button>4 − y</button><button data-why="y 是 Q 到 x 軸的高度。C 在 y = 4，要算 Q 到 C 直著差多少。">y</button><button data-why="Q 在 C 的下面，直著的距離是「大的減小的」。">4 + y</button>
+      </div>
+      <div class="hint">💡 C 的 y 座標是 4，Q 的 y 座標是 y，兩個相減。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 橫的那一段是 x（Q 離 y 軸 x），斜邊 QC = 3 + r。畢氏定理：<br>
+        <span class="eq">③ x² + (4 − y)² = (3 + r)²</span>
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c4key">
+    <div class="key">
+      🔑 三個方程式：<br>
+      <span class="eq">① x² + y² = (1 + r)²</span><br>
+      <span class="eq">② (3 − x)² + y² = (2 + r)²</span><br>
+      <span class="eq">③ x² + (4 − y)² = (3 + r)²</span><br>
+      三個未知數 x、y、r，三個方程式，一定解得出來！可是到處都是平方，怎麼辦？下一關有妙招。
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：相減得 x ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 5：兩式相減，平方消失</h2>
+    看 ① 和 ②：<br>
+    <span class="eq">① x² + y² = (1 + r)²</span>　<span class="eq">② (3 − x)² + y² = (2 + r)²</span><br>
+    兩個式子裡都有<b>一模一樣的 y²</b>。如果把 ② 減掉 ①，左邊的 y² 減 y² 就<b>不見了</b>！先用數字暖身。
+  </div>
+  <div class="card" id="m5">
+    <div class="tip">負數前面加減號，例如 -9。</div>
+    <div class="step on">
+      <b>暖身：</b>x² + y² = 25，(3 − x)² + y² = 16。<br>
+      第二式減第一式：左邊 y² 不見了，剩下 (3 − x)² − x²；右邊 16 − 25 = ? <input class="n" data-ans="-9" data-wrong='{"9":"16 比 25 小，16 − 25 是負的。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 要照順序：第二式的右邊 16，減掉第一式的右邊 25。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      展開 (3 − x)² = (3 − x) × (3 − x)。用分配律，前面每一項乘後面每一項：
+      <table class="steps">
+        <tr><th></th><th>× 3</th><th>× (−x)</th></tr>
+        <tr><th>3</th><td>9</td><td>−3x</td></tr>
+        <tr><th>−x</th><td>−3x</td><td>x²（負乘負得正）</td></tr>
+      </table>
+      合起來：(3 − x)² = 9 − <input class="n" data-ans="6"> x + x²
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 中間有兩個 −3x，加起來是 −3x − 3x。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      所以 (3 − x)² − x² = 9 − 6x + x² − x² = 9 − 6x，<b>x² 也消掉了</b>！<br>
+      方程式變成 9 − 6x = −9，x = ? <input class="n" data-ans="3" data-wrong='{"0":"9 − 6x = −9，兩邊都加 6x 再加 9：18 = 6x。","-3":"9 − 6x = −9 → 18 = 6x，x 是正的。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 兩邊都加 6x：9 = −9 + 6x。兩邊都加 9：18 = 6x。兩邊都除以 6。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>驗算：</b>x = 3 代回第一式：9 + y² = 25，y² = 16，y = 4。<br>
+        第二式：(3 − 3)² + 4² = 0 + 16 = 16 ✓。兩個都對！<br>
+        <b>為什麼相減這麼好用？</b>兩個式子展開後都有 x² 和 y²，相減就把它們一起消掉，只剩下沒有平方的 x，一下就解出來了。
+      </div>
+    </div>
+    <div class="step">
+      現在回到泡泡：② − ① 的右邊是 (2 + r)² − (1 + r)²。一樣用分配律展開：
+      <table class="steps">
+        <tr><td>(2 + r)²</td><td>= 4 + 2r + 2r + r² = 4 + 4r + r²</td></tr>
+        <tr><td>(1 + r)²</td><td>= 1 + r + r + r² = 1 + 2r + r²</td></tr>
+      </table>
+      相減（r² 也消掉了）：(4 + 4r + r²) − (1 + 2r + r²) = <input class="n" data-ans="3"> + <input class="n" data-ans="2"> r
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 一樣的放一起減：4 − 1 = ?，4r − 2r = ?，r² − r² = 0。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      左邊跟暖身一樣是 9 − 6x。所以 9 − 6x = 3 + 2r。把 x 用 r 寫出來：x = ?
+      <div class="choices" data-right="0">
+        <button>1 − <span class="fr"><span>r</span><span>3</span></span></button>
+        <button data-why="9 − 6x = 3 + 2r，6x 搬到右邊、2r 搬到左邊都要變號：9 − 3 − 2r = 6x。">1 + <span class="fr"><span>r</span><span>3</span></span></button>
+        <button data-why="2r ÷ 6 = r ÷ 3，不是 r ÷ 2。">1 − <span class="fr"><span>r</span><span>2</span></span></button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 想辦法讓 6x 單獨在一邊：9 − 3 − 2r = 6x，再兩邊都除以 6。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>一步一步整理：</b>
+        <table class="steps">
+          <tr><td>原式</td><td>9 − 6x = 3 + 2r</td></tr>
+          <tr><td>兩邊都加 6x，再減 3、減 2r</td><td>9 − 3 − 2r = 6x</td></tr>
+          <tr><td>9 − 3 = 6</td><td>6 − 2r = 6x</td></tr>
+          <tr><td>兩邊都除以 6（每一項都要除）</td><td>1 − <span class="fr"><span>2r</span><span>6</span></span> = x</td></tr>
+          <tr><td><span class="fr"><span>2</span><span>6</span></span> 約分成 <span class="fr"><span>1</span><span>3</span></span></td><td><b>x = 1 − <span class="fr"><span>r</span><span>3</span></span></b></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c5key">
+    <div class="key">
+      🔑 兩式相減，<b>一樣的平方會消掉</b>，留下好解的式子。<br>
+      ② − ① 得到：<b>x = 1 − <span class="fr"><span>r</span><span>3</span></span></b>。下一關用同一招算 y！
+    </div>
+    <div class="nav"><button class="go" data-go="5">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：再減得 y ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 6：再減一次，得到 y</h2>
+    這次用 ③ 減 ①：<br>
+    <span class="eq">③ x² + (4 − y)² = (3 + r)²</span>　<span class="eq">① x² + y² = (1 + r)²</span>
+  </div>
+  <div class="card" id="m6">
+    <div class="step on">
+      ③ − ①，這次左邊哪一個會直接消掉？
+      <div class="choices" data-right="0">
+        <button>x²</button><button data-why="③ 裡面是 (4 − y)²，① 裡面是 y²，兩個不一樣，不能直接消。">y²</button><button data-why="一定有東西會消掉喔，找兩個式子都有、而且一模一樣的那一項。">都不會消</button>
+      </div>
+      <div class="hint">💡 找兩個式子都有、一模一樣的那一項。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      展開 (4 − y)² = 16 − <input class="n" data-ans="8"> y + y²
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 跟 (3 − x)² 一樣：4 × 4 = 16，中間兩個 −4y 加起來，最後 y × y = y²。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 所以左邊：(4 − y)² − y² = 16 − 8y + y² − y² = <b>16 − 8y</b>（y² 也消掉了）。
+      </div>
+    </div>
+    <div class="step">
+      右邊：(3 + r)² − (1 + r)²。<br>
+      (3 + r)² = 9 + 6r + r²，(1 + r)² = 1 + 2r + r²，相減 = <input class="n" data-ans="8"> + <input class="n" data-ans="4"> r
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 9 − 1 = ?，6r − 2r = ?，r² − r² = 0。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      16 − 8y = 8 + 4r。把 y 用 r 寫出來：y = ?
+      <div class="choices" data-right="1">
+        <button data-why="4r ÷ 8 = r ÷ 2，不是 r ÷ 4。">1 − <span class="fr"><span>r</span><span>4</span></span></button>
+        <button>1 − <span class="fr"><span>r</span><span>2</span></span></button>
+        <button data-why="4r 搬到左邊要變號：16 − 8 − 4r = 8y。">1 + <span class="fr"><span>r</span><span>2</span></span></button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 跟上一關一樣：16 − 8 − 4r = 8y，再兩邊都除以 8。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>一步一步整理：</b>
+        <table class="steps">
+          <tr><td>原式</td><td>16 − 8y = 8 + 4r</td></tr>
+          <tr><td>兩邊都加 8y，再減 8、減 4r</td><td>16 − 8 − 4r = 8y</td></tr>
+          <tr><td>16 − 8 = 8</td><td>8 − 4r = 8y</td></tr>
+          <tr><td>兩邊都除以 8</td><td>1 − <span class="fr"><span>4r</span><span>8</span></span> = y</td></tr>
+          <tr><td>約分</td><td><b>y = 1 − <span class="fr"><span>r</span><span>2</span></span></b></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="step">
+      檢查一下：拉動下面的拉桿，看 Q 的位置是不是真的符合公式。如果 r = 0.6，Q 的座標是 ( <input class="n" data-ans="0.8"> , <input class="n" data-ans="0.7"> )
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 x = 1 − 0.6 ÷ 3 = 1 − 0.2；y = 1 − 0.6 ÷ 2 = 1 − 0.3。</div>
+      <div class="fb"></div>
+      <svg class="map" id="map5" width="100%" viewBox="0 0 400 440" style="max-width:440px;display:block;margin:8px auto"></svg>
+      小泡泡半徑 r = <span class="big" id="r5n"></span> <input type="range" id="r5" min="0.05" max="0.6" step="0.001" value="0.6">
+      <div class="info" id="info5"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c6key">
+    <div class="key">
+      🔑 小泡泡的圓心 <b>Q = (1 − <span class="fr"><span>r</span><span>3</span></span> , 1 − <span class="fr"><span>r</span><span>2</span></span>)</b>。<br>
+      x 和 y 都用 r 寫出來了！還有一個式子 ① 沒用完，下一關把它們代回去，就只剩 r 了。
+    </div>
+    <div class="nav"><button class="go" data-go="6">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：代回解 r ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 7：代回去，解出 r</h2>
+    把 x = 1 − <span class="fr"><span>r</span><span>3</span></span>、y = 1 − <span class="fr"><span>r</span><span>2</span></span> 代進 <span class="eq">① x² + y² = (1 + r)²</span>，就得到一個只有 r 的方程式。
+  </div>
+  <div class="card" id="m7">
+    <div class="step on">
+      先把 x 寫成一個分數：1 = <span class="fr"><span>3</span><span>3</span></span>，所以 x = <span class="fr"><span>3</span><span>3</span></span> − <span class="fr"><span>r</span><span>3</span></span> = ?
+      <div class="choices" data-right="0">
+        <button><span class="fr"><span>3 − r</span><span>3</span></span></button>
+        <button data-why="分母一樣，分子相減：3 − r。分母不用相減。"><span class="fr"><span>3 − r</span><span>0</span></span></button>
+        <button data-why="1 要先寫成 3/3，分子是 3 − r，不是 1 − r。"><span class="fr"><span>1 − r</span><span>3</span></span></button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 分母一樣的分數相減，分母不變，分子相減。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 同樣的方法：y = 1 − <span class="fr"><span>r</span><span>2</span></span> = <span class="fr"><span>2 − r</span><span>2</span></span>。<br>
+        代進 ①：<span class="fr"><span>(3 − r)²</span><span>9</span></span> + <span class="fr"><span>(2 − r)²</span><span>4</span></span> = (1 + r)²
+        （分數的平方：分子平方、分母也平方，3² = 9、2² = 4）
+      </div>
+    </div>
+    <div class="step">
+      分母有 9 和 4，很麻煩。整個式子每一項都乘同一個數，把分母全部消掉。要乘幾？（9 和 4 的最小公倍數）
+      <input class="n" data-ans="36" data-wrong='{"13":"9 + 4 = 13 是加起來，要找 9 和 4 都能整除的數。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 9 和 4 沒有共同的因數，最小公倍數就是 9 × 4。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 每一項都乘 36：
+        <table class="steps">
+          <tr><td>36 × <span class="fr"><span>(3 − r)²</span><span>9</span></span></td><td>= 4(3 − r)²</td><td>（36 ÷ 9 = 4）</td></tr>
+          <tr><td>36 × <span class="fr"><span>(2 − r)²</span><span>4</span></span></td><td>= 9(2 − r)²</td><td>（36 ÷ 4 = 9）</td></tr>
+          <tr><td>36 × (1 + r)²</td><td>= 36(1 + r)²</td><td></td></tr>
+        </table>
+        方程式變成：<span class="eq">4(3 − r)² + 9(2 − r)² = 36(1 + r)²</span>
+      </div>
+    </div>
+    <div class="step">
+      展開左邊：
+      <table class="steps">
+        <tr><td>4(3 − r)²</td><td>= 4(9 − 6r + r²)</td><td>= 36 − 24r + 4r²</td></tr>
+        <tr><td>9(2 − r)²</td><td>= 9(4 − 4r + r²)</td><td>= 36 − 36r + 9r²</td></tr>
+      </table>
+      左邊加起來 = <input class="n" data-ans="72"> − <input class="n" data-ans="60"> r + <input class="n" data-ans="13"> r²
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 一樣的放一起加：36 + 36 = ?，24r + 36r = ?，4r² + 9r² = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      右邊：36(1 + r)² = 36(1 + 2r + r²) = 36 + 72r + 36r²。<br>
+      72 − 60r + 13r² = 36 + 72r + 36r²。把左邊全部搬到右邊（右邊的 r² 比較多，搬過去 r² 前面才是正的）：<br>
+      0 = <input class="n" data-ans="23"> r² + <input class="n" data-ans="132"> r − <input class="n" data-ans="36">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 搬到另一邊要變號：13r² 搬過去變 −13r²，−60r 搬過去變 +60r，72 搬過去變 −72。<br>💡 36r² − 13r² = ?，72r + 60r = ?，36 − 72 = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      解 23r² + 132r − 36 = 0。試試看拆成兩個括號相乘：<b>(23r + a)(r + b)</b>。展開它：
+      <table class="steps">
+        <tr><td>(23r + a)(r + b)</td><td>= 23r² + 23b·r + a·r + ab = 23r² + (23b + a)r + ab</td></tr>
+      </table>
+      要跟 23r² + 132r − 36 一樣，就需要：<b>23b + a = 132</b>，而且 <b>a × b = −36</b>。<br>
+      一個一個試 b（從 36 的因數試起），a 用 a = 132 − 23b 算：
+      <table class="steps">
+        <tr><th>b</th><th>a = 132 − 23b</th><th>a × b</th></tr>
+        <tr><td>1</td><td>109</td><td>109 ✗</td></tr>
+        <tr><td>2</td><td>86</td><td>172 ✗</td></tr>
+        <tr><td>3</td><td>63</td><td>189 ✗</td></tr>
+        <tr><td>4</td><td>40</td><td>160 ✗</td></tr>
+        <tr><td>6</td><td>?</td><td>?</td></tr>
+      </table>
+      b = 6 的時候，a = <input class="n" data-ans="-6" data-wrong='{"6":"132 − 23 × 6 = 132 − 138，138 比 132 大，結果是負的。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 23 × 6 = 138。132 − 138 = ?</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 a = −6、b = 6，a × b = −36 ✓！所以：<br>
+        <span class="eq">23r² + 132r − 36 = (23r − 6)(r + 6)</span><br>
+        展開驗算：23r × r = 23r²；23r × 6 = 138r；−6 × r = −6r；−6 × 6 = −36。138r − 6r = 132r ✓
+      </div>
+    </div>
+    <div class="step">
+      (23r − 6)(r + 6) = 0。<b>兩個數相乘等於 0，至少有一個是 0</b>（因為不是 0 的數乘不是 0 的數，不可能是 0）。<br>
+      所以 23r − 6 = 0，或 r + 6 = 0。哪一個是我們要的？
+      <div class="choices" data-right="0">
+        <button>23r − 6 = 0，r = <span class="fr"><span>6</span><span>23</span></span></button>
+        <button data-why="r + 6 = 0 會得到 r = −6。半徑是長度，不可能是負的。">r + 6 = 0，r = −6</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 r 是泡泡的半徑，是長度。長度可以是負的嗎？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 23r − 6 = 0 → 23r = 6 → <b>r = <span class="fr"><span>6</span><span>23</span></span> ≈ 0.261</b>。<br>
+        跟第 1 關用拉桿找到的「大約 0.26」一樣！而且現在我們知道它<b>精確</b>是 6/23，不是 1/4，也不是 3/11。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c7key">
+    <div class="key">
+      🔑 <b>r = <span class="fr"><span>6</span><span>23</span></span></b>。<br>
+      回第 1 關把拉桿拉到 0.261，看看三顆泡泡是不是都剛好貼著！
+    </div>
+    <div class="nav"><button class="go" data-go="7">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 8：大魔王 ============ -->
+<section id="s7">
+  <div class="card story">
+    <h2>關卡 8：大魔王（2025 AMC 10A 第 22 題）</h2>
+    一個半徑 r 的圓，被三個半徑 1、2、3 的圓圍住。三個圓都和中間的圓<b>外切</b>，而且彼此也兩兩外切。r 是多少？<br>
+    <span class="tip">（原題的圖：半徑 3 在左下、2 在上面、1 在右邊。跟我們的地圖只是轉了方向，形狀完全一樣。）</span><br>
+    (A) <span class="fr"><span>1</span><span>4</span></span>　(B) <span class="fr"><span>6</span><span>23</span></span>　(C) <span class="fr"><span>3</span><span>11</span></span>　(D) <span class="fr"><span>5</span><span>17</span></span>　(E) <span class="fr"><span>3</span><span>10</span></span>
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 1：</b>三個大圓的圓心連成三角形，三邊是多少？
+      <div class="choices" data-right="1">
+        <button data-why="1、2、3 是半徑。外切的時候，圓心距離是兩個半徑相加。">1、2、3</button><button>3、4、5</button><button data-why="再算一次：1 + 2 = 3，1 + 3 = 4，2 + 3 = 5。">2、3、4</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 第 2 關：外切 ⇔ 圓心距離 = 半徑相加。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 2：</b>3² + 4² = 5²，所以是直角三角形。直角在哪？
+      <div class="choices" data-right="0">
+        <button>半徑 1 的圓心 A</button><button data-why="直角的對面是最長邊 5，5 是半徑 2 和半徑 3 的圓心連線，所以直角在另一個點。">半徑 2 的圓心 B</button><button data-why="直角的對面是最長邊 5，5 是半徑 2 和半徑 3 的圓心連線，所以直角在另一個點。">半徑 3 的圓心 C</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 直角在 3 和 4 兩條邊夾住的地方，3 = 1 + 2、4 = 1 + 3，都跟哪個圓有關？</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 3：</b>放座標 A(0, 0)、B(3, 0)、C(0, 4)，中間小圓的圓心 Q(x, y)。Q 到 A、B、C 的距離分別是？
+      <div class="choices" data-right="0">
+        <button>1 + r、2 + r、3 + r</button><button data-why="小圓和大圓是從外面貼著（外切），半徑要相加。">1 − r、2 − r、3 − r</button><button data-why="Q 是小圓的圓心，到大圓的「圓心」要走過兩個半徑。">r、r、r</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 小圓和每個大圓都外切。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 畢氏定理列出：① x² + y² = (1 + r)²　② (3 − x)² + y² = (2 + r)²　③ x² + (4 − y)² = (3 + r)²
+      </div>
+    </div>
+    <div class="step">
+      <b>步驟 4：</b>② − ①、③ − ①，把平方消掉，得到：
+      <div class="choices" data-right="0">
+        <button>x = 1 − <span class="fr"><span>r</span><span>3</span></span>，y = 1 − <span class="fr"><span>r</span><span>2</span></span></button>
+        <button data-why="搬項的時候要變號：9 − 6x = 3 + 2r → 6x = 6 − 2r，是減。">x = 1 + <span class="fr"><span>r</span><span>3</span></span>，y = 1 + <span class="fr"><span>r</span><span>2</span></span></button>
+        <button data-why="6x = 6 − 2r 還要兩邊除以 6，8y = 8 − 4r 還要兩邊除以 8。">x = 6 − 2r，y = 8 − 4r</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 第 5、6 關：9 − 6x = 3 + 2r，16 − 8y = 8 + 4r。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 5：</b>代回 ①，乘 36、整理，得到：
+      <div class="choices" data-right="0">
+        <button>23r² + 132r − 36 = 0</button>
+        <button data-why="右邊的 36(1 + r)² 也要展開、一起搬過來，不能只整理左邊。">13r² − 60r + 72 = 0</button>
+        <button data-why="−60r 搬到右邊變 +60r，72r + 60r = +132r。">23r² − 132r − 36 = 0</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 第 7 關：72 − 60r + 13r² = 36 + 72r + 36r²，左邊全部搬到右邊。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>(23r − 6)(r + 6) = 0，r 是正的。答案是？
+      <div class="choices" data-right="1">
+        <button data-why="1/4 = 0.25，代進 23r² + 132r − 36：23/16 + 33 − 36 ≈ −1.56，不是 0。">(A) 1/4</button><button>(B) 6/23</button><button data-why="3/11 ≈ 0.273，代進 23r² + 132r − 36 不是 0。看 23r − 6 = 0 解出什麼。">(C) 3/11</button>
+        <button data-why="看 23r − 6 = 0：r = 6 ÷ 23。">(D) 5/17</button><button data-why="看 23r − 6 = 0：r = 6 ÷ 23。">(E) 3/10</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 23r − 6 = 0 → 23r = 6 → r = ?</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="bsum">
+    <div class="proof">
+      📐 <b>完整解答（把上面的步驟串起來）</b><br>
+      ① 外切 ⇔ 圓心距離 = 半徑相加。三個大圓心 A、B、C 的距離是 3、4、5；小圓心 Q 到它們是 1 + r、2 + r、3 + r。<br>
+      ② 3² + 4² = 5²，三角形 ABC 是直角三角形，直角在 A。放座標 A(0, 0)、B(3, 0)、C(0, 4)，Q(x, y)。<br>
+      ③ 畢氏定理：x² + y² = (1 + r)²、(3 − x)² + y² = (2 + r)²、x² + (4 − y)² = (3 + r)²。<br>
+      ④ 第二式減第一式：9 − 6x = 3 + 2r → x = 1 − r/3。第三式減第一式：16 − 8y = 8 + 4r → y = 1 − r/2。<br>
+      ⑤ 代回第一式、乘 36：4(3 − r)² + 9(2 − r)² = 36(1 + r)²，整理成 23r² + 132r − 36 = 0。<br>
+      ⑥ (23r − 6)(r + 6) = 0，r 是正的：<b>r = <span class="fr"><span>6</span><span>23</span></span></b>，答案 <b>(B)</b>。
+    </div>
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 圓貼圓（外切）→ 圓心距離 = 半徑相加<br>
+      ② 看到 3、4、5 → 想到直角，直角那一點放原點<br>
+      ③ 距離用畢氏定理寫成方程式<br>
+      ④ 好幾個式子都有一樣的平方 → 兩式相減，平方消失
+    </div>
+    <div class="proof">
+      🌟 <b>偷偷告訴你（進階）：</b>數學家笛卡兒發現了一個專門算「四個互相外切的圓」的公式，叫<b>笛卡兒圓定理</b>。
+      把半徑倒過來叫「彎曲度」：1、<span class="fr"><span>1</span><span>2</span></span>、<span class="fr"><span>1</span><span>3</span></span>，中間小圓的彎曲度
+      = 1 + <span class="fr"><span>1</span><span>2</span></span> + <span class="fr"><span>1</span><span>3</span></span> + 2 × √(1 × <span class="fr"><span>1</span><span>2</span></span> + <span class="fr"><span>1</span><span>2</span></span> × <span class="fr"><span>1</span><span>3</span></span> + <span class="fr"><span>1</span><span>3</span></span> × 1)
+      = <span class="fr"><span>11</span><span>6</span></span> + 2 × 1 = <span class="fr"><span>23</span><span>6</span></span>，
+      倒回來 r = <span class="fr"><span>6</span><span>23</span></span>。一樣的答案！不過不記得公式也沒關係，我們用畢氏定理就做出來了。
+    </div>
+    <div class="nav"><button class="go" data-go="8">整合回顧：一次看完整個解法 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 9：整合回顧 ============ -->
+<section id="s8">
+  <div class="card story">
+    <h2>關卡 9：整合回顧</h2>
+    步驟很多，很容易忘記「為什麼要做這一步」。這一關用動畫把整個解法從頭串一次。按「▶ 自動播放全部」，或點上面的小方塊跳到任一步。
+  </div>
+  <div class="card">
+    <div class="yn" id="rcChain"></div>
+    <svg class="map" id="rcMap" width="100%" viewBox="0 0 520 440"></svg>
+    <div style="margin:8px 0">
+      <button class="ghost" id="rcPrev">◀ 上一步</button>
+      <button class="go" id="rcAuto">▶ 自動播放全部</button>
+      <button class="ghost" id="rcAgain">↻ 重播這一步</button>
+      <button class="ghost" id="rcNext">下一步 ▶</button>
+    </div>
+    <div class="key" id="rcSay"></div>
+    <div class="proof" id="rcMath" style="min-height:60px"></div>
+  </div>
+  <div class="card hidden" id="c9key">
+    <div class="key">
+      🔑 <b>整個解法的骨架：</b>要找 r → 先找小圓心 Q(x, y) → 外切給我們三段距離 → 3-4-5 直角讓我們放座標 → 畢氏定理變成三個方程式 → 兩式相減消掉平方，x、y 都用 r 寫出來 → 代回去只剩 r → 因式分解得 r = 6/23。<br>
+      每一步都是把「不知道怎麼算的東西」換成「會算的東西」。
+    </div>
+    <div class="nav"><button class="go" data-go="9">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 10：無限練習 ============ -->
+<section id="s9">
+  <div class="card story">
+    <h2>關卡 10：無限練習</h2>
+    數字每次都不一樣。先練「兩式相減」，熟了再挑戰泡泡變化題！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">兩式相減</button><button id="lvHard">泡泡變化題</button></div>
+    <div id="pq" class="story"></div>
+    答案 = <input class="n" id="pans"> <button class="go" id="pchk">確認</button>
+    <button class="ghost" id="pshow">看解法</button>
+    <button class="ghost" id="pnew">下一題</button>
+    <div class="tip" id="ptip"></div>
+    <div class="fb" id="pfb"></div>
+    <div id="psol" class="proof hidden"></div>
+    <div>連續答對：<span class="big" id="pstreak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const gcd = (a, b) => b ? gcd(b, a % b) : Math.abs(a);
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+// 讀使用者輸入的數：可以是整數、小數、分數 a/b，減號用 - 或 −
+function val(s) {
+  s = String(s).trim().replace(/−|–/g, "-").replace(/\s/g, "");
+  if (!s) return NaN;
+  const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  return m ? +m[1] / +m[2] : Number(s);
+}
+const same = (a, b, tol = 1e-9) => Math.abs(a - b) <= tol;
+const fmt = (x, k = 2) => (Math.round(x * 10 ** k) / 10 ** k).toString().replace("-", "−");
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "bubbles";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+// 已經過關的關卡：打勾、把重點和推導直接打開，回來複習不用重新作答
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => {
+  $$(".tab[data-go]")[i]?.classList.add("done");
+  $$(`#s${i} .card.hidden`).forEach(c => c.classList.remove("hidden"));
+});
+
+// 一步一步的關卡：輸入框 data-ans（data-tol 容許誤差）比對、提示鈕、選擇題（data-why 針對錯答）
+function chkStep(step) {
+  const ins = [...step.querySelectorAll("input[data-ans]")];
+  const right = i => same(val(i.value), val(i.dataset.ans), +i.dataset.tol || 1e-9);
+  const ok = ins.every(right);
+  const decimal = ins.some(i => !right(i) && /\./.test(i.value) && /\//.test(i.dataset.ans));
+  const wrong = ins.length >= 1 && ins[0].dataset.wrong ? JSON.parse(ins[0].dataset.wrong) : {};
+  const hit = Object.keys(wrong).find(k => same(val(ins[0].value), val(k)));
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : hit ? "❌ " + wrong[hit] : decimal ? "❌ 試試用分數寫，例如 6/23" : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  if (!ok && step.querySelector(".hint") && step.dataset.miss) step.querySelector(".hint").classList.add("on");
+  step.dataset.miss = ok ? "" : "1";
+  return ok;
+}
+function wireSteps(box, onLast) {
+  const steps = [...box.querySelectorAll(".step")];
+  const next = step => { const n = steps[steps.indexOf(step) + 1]; n ? n.classList.add("on") : onLast && onLast(); };
+  steps.forEach(step => {
+    step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+    step.querySelector(".chk")?.addEventListener("click", () => {
+      if (!chkStep(step)) return;
+      const ex = step.querySelector(".explain");
+      if (ex && ex.classList.contains("hidden")) { show(ex); setTimeout(() => { speak(ex, false); next(step); }, 50); }
+      else next(step);
+    });
+    const pick = step.querySelector(".choices[data-right]");
+    if (pick) [...pick.querySelectorAll("button")].forEach((b, k) => b.onclick = () => {
+      const ok = k === +pick.dataset.right;
+      fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : b.dataset.why ? "❌ " + b.dataset.why : "🤔 再想想看");
+      if (!ok) step.querySelector(".hint")?.classList.add("on");
+      if (ok) {
+        const pf = step.querySelector(".proof");
+        if (pf && pf.classList.contains("hidden")) { show(pf); setTimeout(() => { speak(pf, false); next(step); }, 50); }
+        else next(step);
+      }
+    });
+  });
+}
+
+// ---------- 泡泡地圖 ----------
+// 圓心 A(0,0) 半徑 1、B(3,0) 半徑 2、C(0,4) 半徑 3；北在上，y 往上變大
+const RT = 6 / 23;
+const BUB = [
+  { c: [0, 0], r: 1, col: "#118ab2", fill: "rgba(17,138,178,.16)", name: "A", nm: "藍" },
+  { c: [3, 0], r: 2, col: "#d17a00", fill: "rgba(255,138,61,.16)", name: "B", nm: "橘" },
+  { c: [0, 4], r: 3, col: "#1f9d55", fill: "rgba(31,157,85,.14)", name: "C", nm: "綠" }];
+// 小泡泡一直貼著 A 和 B：x 用「兩式相減」的結果，y 用畢氏定理
+function inner(r) {
+  const x = 1 - r / 3, y = Math.sqrt(Math.max(0, (1 + r) ** 2 - x * x)), gap = Math.hypot(x, y - 4) - (3 + r);
+  return { Q: [x, y], gap, st: Math.abs(r - RT) < 0.0035 ? "tan" : gap < 0 ? "hit" : "miss" };
+}
+const ST = { hit: "💥 太大了，擠進綠泡泡裡", tan: "✨ 三顆泡泡都剛好貼著！", miss: "👀 還沒碰到綠泡泡，中間有縫" };
+const COL = { hit: "#d64545", tan: "#1f9d55", miss: "#7b4dff" };
+// 視窗：s 每單位幾像素，(x0, y0) 是左上角的世界座標，ox 是往右平移
+const FULL = { s: 45, x0: -3.4, y0: 7.4, ox: 0, w: 400 }, ZOOM = { s: 90, x0: -0.9, y0: 4.6, ox: 0, w: 400 };
+const FULLW = { s: 45, x0: -3.4, y0: 7.4, ox: 60, w: 520 }, ZOOMW = { s: 90, x0: -1.8, y0: 4.6, ox: 0, w: 520 };
+const T = (X, Y, str, col, size = 15, anchor = "start", op = 1, w = 700) => `<text x="${X}" y="${Y}" font-size="${size}" fill="${col}" font-weight="${w}" text-anchor="${anchor}" opacity="${op}" style="paint-order:stroke;stroke:#fbfdf7;stroke-width:4px">${str}</text>`;
+// o：r 小泡泡半徑、st 依狀態上色、axes/tri/dist 圖層透明度、legs "A"/"B"/"C"(可多個)、coords "ABC"、lop 腿的透明度
+function drawC(V, o = {}) {
+  const X = x => V.ox + (x - V.x0) * V.s, Y = y => (V.y0 - y) * V.s, H = 440, W = V.w;
+  const zoom = V.s > 60;
+  let h = "";
+  for (let x = Math.ceil(V.x0); x <= V.x0 + W / V.s; x++) h += `<line x1="${X(x)}" y1="0" x2="${X(x)}" y2="${H}" stroke="#eef0e6"/>`;
+  for (let y = Math.floor(V.y0); y >= V.y0 - H / V.s; y--) h += `<line x1="0" y1="${Y(y)}" x2="${W}" y2="${Y(y)}" stroke="#eef0e6"/>`;
+  if (o.axes) {
+    const a = o.axes;
+    h += `<g opacity="${a}"><line x1="0" y1="${Y(0)}" x2="${W}" y2="${Y(0)}" stroke="#9a8fa5" stroke-width="1.5"/><line x1="${X(0)}" y1="0" x2="${X(0)}" y2="${H}" stroke="#9a8fa5" stroke-width="1.5"/>`;
+    for (let k = 1; k <= 4; k++) h += `<text x="${X(k)}" y="${Y(0) + 16}" font-size="12" fill="#7a6f85" text-anchor="middle">${k}</text><text x="${X(0) - 6}" y="${Y(k) + 4}" font-size="12" fill="#7a6f85" text-anchor="end">${k}</text>`;
+    h += `<text x="${W - 14}" y="${Y(0) - 6}" font-size="15" fill="#7a6f85">x</text><text x="${X(0) + 6}" y="14" font-size="15" fill="#7a6f85">y</text></g>`;
+  }
+  BUB.forEach(b => {
+    h += `<circle cx="${X(b.c[0])}" cy="${Y(b.c[1])}" r="${b.r * V.s}" fill="${b.fill}" stroke="${b.col}" stroke-width="2.5"/>`;
+    h += `<circle cx="${X(b.c[0])}" cy="${Y(b.c[1])}" r="4" fill="${b.col}"/>`;
+    if (!zoom) {
+      const lp = { A: [-0.95, -1.35], B: [3, -1.0], C: [0, 6.3] }[b.name];
+      h += T(X(lp[0]), Y(lp[1]), `${b.nm}・半徑 ${b.r}`, b.col, 14, "middle");
+    }
+  });
+  if (o.tri) {
+    const a = o.tri, [A, B, C] = BUB.map(b => b.c), m = 0.22;
+    h += `<g opacity="${a}"><polygon points="${[A, B, C].map(q => X(q[0]) + "," + Y(q[1])).join(" ")}" fill="rgba(123,77,255,.06)" stroke="#7b4dff" stroke-width="2.5"/>`;
+    h += `<polyline points="${X(m)},${Y(0)} ${X(m)},${Y(m)} ${X(0)},${Y(m)}" fill="none" stroke="#7b4dff" stroke-width="1.8"/>`;
+    h += T(X(1.5), Y(0) + 20, "3", "#7b4dff", 17, "middle") + T(X(0) - 14, Y(2.5) + 5, "4", "#7b4dff", 17, "end") + T(X(1.7), Y(2.3), "5", "#7b4dff", 17, "middle") + `</g>`;
+  }
+  const lab = (b, str, dx, dy, anchor) => T(X(b[0]) + dx, Y(b[1]) + dy, str, "#2b2233", 14, anchor);
+  if (o.coords !== undefined) {
+    if (o.coords.includes("A")) h += lab([0, 0], "A(0, 0)", -8, 20, "end");
+    if (o.coords.includes("B")) h += lab([3, 0], "B(3, 0)", 4, -24, "end");
+    if (o.coords.includes("C")) h += lab([0, 4], "C(0, 4)", 10, 16, "start");
+  } else BUB.forEach(b => h += lab(b.c, b.name, 7, -7, "start"));
+  if (o.r) {
+    const r = o.r === 1 ? RT : o.r, I = inner(r), [qx, qy] = I.Q, col = o.st ? COL[I.st] : "#7b4dff";
+    if (o.legs) {
+      const lop = o.lop ?? 1, L = (pts, c, fill) => `<polygon points="${pts.map(q => X(q[0]) + "," + Y(q[1])).join(" ")}" fill="${fill}" stroke="${c}" stroke-width="2" opacity="${lop}"/>`;
+      if (o.legs.includes("A")) h += L([[0, 0], [qx, 0], [qx, qy]], "#118ab2", "rgba(17,138,178,.22)") + T(X(qx / 2), Y(0) - 6, "x", "#118ab2", 15, "middle", lop) + T(X(qx) + 6, Y(qy / 2) + 5, "y", "#118ab2", 15, "start", lop);
+      if (o.legs.includes("B")) h += L([[3, 0], [qx, 0], [qx, qy]], "#d17a00", "rgba(255,138,61,.22)") + T(X((qx + 3) / 2), Y(0) - 6, "3 − x", "#d17a00", 15, "middle", lop) + T(X(qx) - 6, Y(qy / 2) + 5, "y", "#d17a00", 15, "end", lop);
+      if (o.legs.includes("C")) h += L([[0, 4], [0, qy], [qx, qy]], "#1f9d55", "rgba(31,157,85,.2)") + T(X(qx / 2), Y(qy) + 18, "x", "#1f9d55", 15, "middle", lop) + T(X(0) + 6, Y((qy + 4) / 2), "4 − y", "#1f9d55", 15, "start", lop);
+    }
+    if (o.dist) {
+      const d = o.dist;
+      BUB.forEach((b, i) => {
+        h += `<line x1="${X(qx)}" y1="${Y(qy)}" x2="${X(b.c[0])}" y2="${Y(b.c[1])}" stroke="${b.col}" stroke-width="2" stroke-dasharray="6 4" opacity="${d}"/>`;
+        const mx = (qx + b.c[0]) / 2, my = (qy + b.c[1]) / 2, off = [[-14, 14, "end"], [10, -8, "start"], [10, 0, "start"]][i];
+        h += T(X(mx) + off[0], Y(my) + off[1], `${b.r} + r`, b.col, 15, off[2], d);
+      });
+    }
+    h += `<circle cx="${X(qx)}" cy="${Y(qy)}" r="${r * V.s}" fill="rgba(123,77,255,.25)" stroke="${col}" stroke-width="2.5"/>`;
+    h += `<circle cx="${X(qx)}" cy="${Y(qy)}" r="3.5" fill="#2b2233"/>`;
+    if (o.qlab !== false) h += T(X(qx) + 7, Y(qy) - 7, o.coords !== undefined && o.coords.includes("C") ? "Q(x, y)" : "Q", "#5a2fd6", 14);
+  }
+  return h;
+}
+
+// 關卡 1：拉 r
+let zoom0 = false;
+function lv0() {
+  const r = +$("#r0").value, I = inner(r);
+  $("#map0").innerHTML = drawC(zoom0 ? ZOOM : FULL, { r, st: true });
+  $("#r0n").textContent = r.toFixed(3);
+  $("#info0").innerHTML = `<span class="st-${I.st}">${ST[I.st]}</span>`;
+}
+$("#r0").oninput = lv0; $("#zoom0").onclick = () => { zoom0 = !zoom0; $("#zoom0").textContent = zoom0 ? "🔍 看全部" : "🔍 放大中間"; lv0(); }; lv0();
+
+// 關卡 2：兩個圓靠近、分開
+function lv1() {
+  const d = +$("#d1").value, X = x => 10 + (x + 2.6) * 36, Y = 120, tan = Math.abs(d - 5) < 0.03, st = tan ? "tan" : d < 5 ? "hit" : "miss";
+  let h = `<line x1="0" y1="${Y}" x2="520" y2="${Y}" stroke="#9a8fa5" stroke-dasharray="5 5"/>`;
+  h += `<circle cx="${X(0)}" cy="${Y}" r="${2 * 36}" fill="rgba(255,138,61,.16)" stroke="#d17a00" stroke-width="2.5"/>`;
+  h += `<circle cx="${X(d)}" cy="${Y}" r="${3 * 36}" fill="rgba(31,157,85,.14)" stroke="#1f9d55" stroke-width="2.5"/>`;
+  h += `<line x1="${X(0)}" y1="${Y}" x2="${X(2)}" y2="${Y}" stroke="#d17a00" stroke-width="5"/><line x1="${X(d)}" y1="${Y}" x2="${X(d - 3)}" y2="${Y}" stroke="#1f9d55" stroke-width="5" opacity=".75"/>`;
+  h += T(X(1), Y - 10, "2", "#d17a00", 16, "middle") + T(X(d - 1.5), Y + 24, "3", "#1f9d55", 16, "middle");
+  h += `<circle cx="${X(0)}" cy="${Y}" r="5" fill="#d17a00"/><circle cx="${X(d)}" cy="${Y}" r="5" fill="#1f9d55"/>`;
+  h += `<path d="M${X(0)} 225 v-8 H${X(d)} v8" fill="none" stroke="#2b2233" stroke-width="1.5"/>` + T((X(0) + X(d)) / 2, 212, `d = ${fmt(d)}`, "#2b2233", 15, "middle");
+  if (tan) h += `<circle cx="${X(2)}" cy="${Y}" r="7" fill="none" stroke="#1f9d55" stroke-width="3"/>` + T(X(2), Y - 30, "切點 T", "#1f9d55", 15, "middle");
+  $("#map1").innerHTML = h;
+  $("#d1n").textContent = d.toFixed(2);
+  $("#info1").innerHTML = `<span class="st-${st}">${tan ? "✨ 剛好貼著！" : d < 5 ? "💥 兩個圓重疊了" : "👀 兩個圓分開了"}</span>　半徑相加 2 + 3 = 5`;
+}
+$("#d1").oninput = lv1; lv1();
+
+// 關卡 3：三角形
+$("#map2").innerHTML = drawC(ZOOM, { tri: 1 });
+// 關卡 4：每一步換一張圖
+const map3 = o => $("#map3").innerHTML = drawC(ZOOM, o);
+map3({ axes: 1, tri: 1, coords: "A" });
+$$("#m4 .step[data-map]").forEach(st => new MutationObserver(() => { if (st.classList.contains("on")) map3(JSON.parse(st.dataset.map)); }).observe(st, { attributes: true, attributeFilter: ["class"] }));
+$("#s3").addEventListener("click", e => { const st = e.target.closest(".step[data-map]"); if (st) map3(JSON.parse(st.dataset.map)); });
+// 關卡 6：拉 r 看 Q 的位置
+function lv5() {
+  const r = +$("#r5").value, I = inner(r), [x, y] = I.Q;
+  $("#map5").innerHTML = drawC(ZOOM, { axes: 1, coords: "ABC", r, st: true, legs: "A", lop: .7 });
+  $("#r5n").textContent = r.toFixed(3);
+  $("#info5").innerHTML = `<span class="st-${I.st}">${ST[I.st]}</span><br>公式：x = 1 − ${r.toFixed(3)} ÷ 3 = <b>${fmt(x, 3)}</b>，y = 1 − ${r.toFixed(3)} ÷ 2 = <b>${fmt(1 - r / 2, 3)}</b><br>
+    檢查 ①：x² + y² = ${fmt(x * x + (1 - r / 2) ** 2, 4)}，(1 + r)² = ${fmt((1 + r) ** 2, 4)}${Math.abs(I.gap) < 0.01 || I.st === "tan" ? "　✓ 三個式子都對！" : "（① 和 ② 永遠對；③ 只有在剛好貼著時才對）"}`;
+}
+$("#r5").oninput = lv5; lv5();
+
+wireSteps($("#m1"), () => { show("#c1key"); done(0); });
+wireSteps($("#m2"), () => { show("#c2key"); done(1); });
+wireSteps($("#m3"), () => { show("#c3key"); done(2); });
+wireSteps($("#m4"), () => { show("#c4key"); done(3); });
+wireSteps($("#m5"), () => { show("#c5key"); done(4); });
+wireSteps($("#m6"), () => { show("#c6key"); done(5); });
+wireSteps($("#m7"), () => { show("#c7key"); done(6); });
+wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！r = 6/23，答案 B。"); show("#bsum"); done(7); });
+
+// ---------- 關卡 9：整合回顧（動畫） ----------
+(() => {
+  const cl = x => Math.max(0, Math.min(1, x)), k = (t, a, b) => cl((t - a) / (b - a));
+  // 解題路線圖：nodes = {x, y, w, h, lines, col, at, glow}，edges = {a, b, at, label, lx, ly, col, pts}（像素座標）
+  function roadmap(t, nodes, edges) {
+    const kk = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    let h = `<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>`;
+    edges.forEach(e => {
+      const f = kk(e.at, e.at + .06), col = e.col || "#7a6f85";
+      if (e.pts) h += `<polyline points="${e.pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${col}" stroke-width="3" opacity="${f}" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      else if (f > 0) h += `<line x1="${e.a[0]}" y1="${e.a[1]}" x2="${e.a[0] + (e.b[0] - e.a[0]) * f}" y2="${e.a[1] + (e.b[1] - e.a[1]) * f}" stroke="${col}" stroke-width="2.5" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      if (e.label) h += `<text x="${e.lx}" y="${e.ly}" font-size="13" fill="${col}" font-weight="700" text-anchor="${e.anchor || "start"}" opacity="${kk(e.at + .04, e.at + .1)}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${e.label}</text>`;
+    });
+    nodes.forEach(n => {
+      const op = kk(n.at, n.at + .06), lines = typeof n.lines === "function" ? n.lines(t) : n.lines;
+      const sw = n.glow ? 2.5 + 2 * Math.abs(Math.sin(t * 14)) * (1 - kk(n.at + .15, n.at + .3)) : 2.5;
+      h += `<g opacity="${op}"><rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="10" fill="#fff" stroke="${n.col}" stroke-width="${sw}"/>` +
+        lines.map((l, i) => `<text x="${n.x}" y="${n.y + 5 + (i - (lines.length - 1) / 2) * 19}" font-size="${i ? 13 : 14}" fill="${n.col}" font-weight="700" text-anchor="middle">${l}</text>`).join("") + `</g>`;
+    });
+    return h;
+  }
+  const SC = [
+    { name: "解題路線圖", dur: 12000, say: "先看解題路線圖。我們要求小泡泡的半徑 r。r 跟小泡泡的圓心 Q 綁在一起，所以核心未知數是 Q 的座標 x 和 y。外切告訴我們三段距離：1 加 r、2 加 r、3 加 r。三個圓心連成 3、4、5 直角三角形，讓我們放上座標。用畢氏定理寫出三個方程式。兩式相減是一座橋：平方消掉，x 和 y 都用 r 寫出來。代回第一個式子，只剩 r，因式分解得到 r 等於 23 分之 6。",
+      draw: t => roadmap(t, [
+        { x: 260, y: 30, w: 220, h: 40, lines: t => [t > .9 ? "🎯 r = 6/23 ✓" : "🎯 目標：求 r"], col: "#7b4dff", at: 0 },
+        { x: 260, y: 102, w: 250, h: 50, lines: ["⭐ 核心未知數：點 Q(x, y)", "（小泡泡的圓心）"], col: "#5a2fd6", at: .1, glow: true },
+        { x: 140, y: 190, w: 210, h: 50, lines: ["外切：半徑相加", "距離 1+r、2+r、3+r"], col: "#118ab2", at: .2 },
+        { x: 392, y: 190, w: 220, h: 50, lines: ["3-4-5 直角 → 放座標", "A(0,0) B(3,0) C(0,4)"], col: "#1f9d55", at: .3 },
+        { x: 266, y: 268, w: 280, h: 40, lines: ["畢氏定理：三個方程式 ①②③"], col: "#d17a00", at: .42 },
+        { x: 266, y: 340, w: 300, h: 52, lines: ["🌉 兩式相減：平方消失", "x = 1 − r/3、y = 1 − r/2"], col: "#c25e12", at: .55, glow: true },
+        { x: 266, y: 410, w: 300, h: 40, lines: ["代回 ①：23r² + 132r − 36 = 0"], col: "#d64545", at: .68 }
+      ], [
+        { a: [260, 50], b: [260, 76], at: .07, label: "Q 到三個圓心的距離都跟 r 有關", lx: 272, ly: 68, col: "#7b4dff" },
+        { a: [210, 127], b: [160, 164], at: .17, col: "#118ab2" },
+        { a: [310, 127], b: [372, 164], at: .27, col: "#1f9d55" },
+        { a: [150, 215], b: [220, 247], at: .39, col: "#118ab2" },
+        { a: [380, 215], b: [312, 247], at: .39, col: "#1f9d55" },
+        { a: [266, 288], b: [266, 313], at: .52, col: "#d17a00" },
+        { a: [266, 366], b: [266, 389], at: .65, col: "#c25e12" },
+        { pts: [[116, 410], [22, 410], [22, 30], [148, 30]], at: .82, col: "#7b4dff", label: "因式分解 → r = 6/23 🏆", lx: 32, ly: 62 }
+      ]),
+      math: [[0, "目標：求 r"], [.1, "r 跟小泡泡圓心 Q 綁在一起 → <b>核心未知數是 Q(x, y)</b>"], [.2, "外切 → 三段距離；3-4-5 直角 → 放座標"], [.42, "畢氏定理 → 三個方程式"], [.55, "<b>兩式相減是橋</b>：平方消掉，x、y 都用 r 寫"], [.68, "代回 → 只有 r 的方程式"], [.82, "<b>r = 6/23</b>"]] },
+    { name: "外切", say: "第一步，外切。圓貼著圓，圓心距離就是兩個半徑相加。小泡泡圓心 Q 到藍、橘、綠三個圓心，分別是 1 加 r、2 加 r、3 加 r。",
+      draw: t => drawC(FULLW, { r: 1, dist: k(t, .2, .5), qlab: true }),
+      math: [[0, "外切 ⇔ 圓心距離 = 半徑相加"], [.4, "QA = 1 + r、QB = 2 + r、QC = 3 + r"]] },
+    { name: "3-4-5 直角", say: "第二步，三個大圓心的距離是 3、4、5。3 平方加 4 平方等於 5 平方，所以是直角三角形，直角在藍泡泡的圓心 A。",
+      draw: t => drawC(ZOOMW, { tri: k(t, 0, .4) }),
+      math: [[0, "AB = 1 + 2 = 3、AC = 1 + 3 = 4、BC = 2 + 3 = 5"], [.4, "3² + 4² = 9 + 16 = 25 = 5² → <b>直角在 A</b>"]] },
+    { name: "放座標", say: "第三步，直角那一點 A 放在原點，B 在 x 軸上的 3，C 在 y 軸上的 4。小泡泡圓心 Q 的座標叫 x、y。",
+      draw: t => drawC(ZOOMW, { axes: k(t, 0, .3), tri: 1, coords: t > .3 ? (t > .6 ? "ABC" : "AB") : "A", r: t > .75 ? 1 : 0 }),
+      math: [[0, "A(0, 0)"], [.3, "B(3, 0)"], [.6, "C(0, 4)"], [.75, "小泡泡圓心 <b>Q(x, y)</b>"]] },
+    { name: "三個方程式", say: "第四步，畫三個直角三角形，用畢氏定理。藍色：x 平方加 y 平方，等於 1 加 r 的平方。橘色：3 減 x 的平方加 y 平方，等於 2 加 r 的平方。綠色：x 平方加 4 減 y 的平方，等於 3 加 r 的平方。",
+      draw: t => drawC(ZOOMW, { axes: 1, coords: "ABC", r: 1, legs: t < .33 ? "A" : t < .66 ? "B" : "C", lop: 1 }),
+      math: [[0, "① x² + y² = (1 + r)²"], [.33, "② (3 − x)² + y² = (2 + r)²"], [.66, "③ x² + (4 − y)² = (3 + r)²"]] },
+    { name: "兩式相減", say: "第五步，兩式相減。② 減 ①，y 平方和 x 平方都消掉，剩下 9 減 6x 等於 3 加 2r，所以 x 等於 1 減 3 分之 r。③ 減 ①，剩下 16 減 8y 等於 8 加 4r，所以 y 等於 1 減 2 分之 r。",
+      draw: t => drawC(ZOOMW, { axes: 1, coords: "ABC", r: 1, legs: t < .5 ? "AB" : "AC", lop: .55 }),
+      math: [[0, "② − ①：(3 − x)² − x² = (2 + r)² − (1 + r)²"], [.2, "9 − 6x = 3 + 2r → <b>x = 1 − r/3</b>"], [.5, "③ − ①：(4 − y)² − y² = (3 + r)² − (1 + r)²"], [.7, "16 − 8y = 8 + 4r → <b>y = 1 − r/2</b>"]] },
+    { name: "代回解 r", say: "第六步，把 x 和 y 代回第一個式子，乘 36，整理得到 23 r 平方加 132 r 減 36 等於 0。因式分解成 23r 減 6，乘 r 加 6。半徑是正的，所以 r 等於 23 分之 6。看，小泡泡慢慢變大，剛好貼住三顆泡泡！",
+      draw: t => { const r = t < .3 ? 0.05 : 0.05 + (RT - 0.05) * k(t, .3, .85); return drawC(ZOOMW, { r, st: true, coords: "ABC", qlab: false }); },
+      math: [[0, "4(3 − r)² + 9(2 − r)² = 36(1 + r)²"], [.25, "23r² + 132r − 36 = 0"], [.5, "(23r − 6)(r + 6) = 0"], [.85, "<b>r = 6/23 ≈ 0.261</b>（r = −6 不是長度，不要）"]] },
+    { name: "答案", say: "最後，r 等於 23 分之 6，大約 0.261，就是第一關用拉桿找到的大小。答案是 B！",
+      draw: t => drawC(ZOOMW, { r: 1, st: true, coords: "ABC" }) + T(260, 30, "r = 6/23 🏆", "#1f9d55", 22 + 6 * Math.abs(Math.sin(t * 6)) * (1 - k(t, .7, 1)), "middle"),
+      math: [[0, "<b>r = 6/23</b>，答案 <b>(B)</b> 🏆"]] }
+  ];
+  let cur = 0, t0 = 0, auto = false, waitUntil = 0;
+  $("#rcChain").innerHTML = SC.map((s, i) => `<button data-rc="${i}">${i + 1}. ${s.name}</button>`).join(" → ");
+  function render(t) {
+    const s = SC[cur]; $("#rcMap").innerHTML = s.draw(cl(t));
+    const lines = s.math.filter(m => cl(t) >= m[0]);
+    $("#rcMath").innerHTML = lines.map((m, j) => `<div style="opacity:${j === lines.length - 1 ? 1 : .6}">${m[1]}</div>`).join("");
+  }
+  function enter(i) {
+    cur = Math.max(0, Math.min(SC.length - 1, i)); t0 = performance.now(); waitUntil = 0;
+    $$("#rcChain button").forEach((b, j) => { b.style.background = j === cur ? "#7b4dff" : j < cur ? "#efe8ff" : "#fff"; b.style.color = j === cur ? "#fff" : ""; });
+    $("#rcSay").textContent = SC[cur].say; speak(SC[cur].say);
+    if (cur === SC.length - 1) { show("#c9key"); done(8); }
+  }
+  const setAuto = on => { auto = on; $("#rcAuto").textContent = on ? "⏸ 暫停自動播放" : "▶ 自動播放全部"; };
+  $("#rcChain").onclick = e => { const i = e.target.dataset.rc; if (i !== undefined) { setAuto(false); enter(+i); } };
+  $("#rcPrev").onclick = () => { setAuto(false); enter(cur - 1); };
+  $("#rcNext").onclick = () => { setAuto(false); enter(cur + 1); };
+  $("#rcAgain").onclick = () => enter(cur);
+  $("#rcAuto").onclick = () => { if (auto) { setAuto(false); speechSynthesis.cancel(); } else { setAuto(true); enter(cur === SC.length - 1 ? 0 : cur); } };
+  const DUR = 6000;
+  (function loop(now) {
+    if ($("#s8").classList.contains("on")) {
+      const t = (now - t0) / (SC[cur].dur || DUR); render(t);
+      if (auto && t >= 1 && !speechSynthesis.speaking) {
+        if (!waitUntil) waitUntil = now + 800;
+        else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }
+      }
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+  $$("#rcChain button").forEach((b, j) => b.style.background = j === 0 ? "#7b4dff" : "#fff");
+  $("#rcChain button").style.color = "#fff";
+  $("#rcSay").textContent = SC[0].say;
+})();
+
+// ---------- 關卡 10：無限練習 ----------
+// 分數小工具：{n, d}
+const Fr = (n, d = 1) => { if (d < 0) { n = -n; d = -d; } const g = gcd(n, d) || 1; return { n: n / g, d: d / g }; };
+const fadd = (a, b) => Fr(a.n * b.d + b.n * a.d, a.d * b.d), fmul = (a, b) => Fr(a.n * b.n, a.d * b.d);
+const fstr = a => a.d === 1 ? `${a.n}` : `${a.n}/${a.d}`.replace("-", "−");
+const lcm = (a, b) => a / gcd(a, b) * b;
+let P = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+const pick = a => a[rnd(0, a.length - 1)];
+// 泡泡變化題：半徑 a < b < c 要讓三個圓心剛好是直角三角形（直角在最小的圓）
+const TRIPLES = [[1, 2, 3], [2, 4, 6], [3, 6, 9], [2, 3, 10], [3, 5, 12], [4, 6, 20]];
+function newProblem() {
+  if (mode === "easy") {
+    const x = rnd(1, 6), y = rnd(1, 6), d = rnd(2, 9);
+    P = { easy: true, x, y, d, S1: x * x + y * y, S2: (d - x) ** 2 + y * y, ans: x };
+    $("#pq").innerHTML = `<span class="eq">x² + y² = ${P.S1}</span>　<span class="eq">(${d} − x)² + y² = ${P.S2}</span><br>兩式相減，x = ?`;
+    $("#ptip").textContent = "答案是整數。";
+  } else {
+    const [a, b, c] = pick(TRIPLES), u = a + b, v = a + c, w = b + c;
+    const p = Fr(b - a, u), q = Fr(c - a, v);
+    const A2 = fadd(fadd(fmul(p, p), fmul(q, q)), Fr(-1)), B1 = fmul(Fr(-2 * a), fadd(fadd(p, q), Fr(1)));
+    let L = lcm(A2.d, B1.d), A = A2.n * L / A2.d, B = B1.n * L / B1.d, C = a * a * L;
+    if (A < 0) { A = -A; B = -B; C = -C; }
+    const g = gcd(gcd(A, B), C); A /= g; B /= g; C /= g;
+    const kk = fadd(fadd(fadd(Fr(1, a), Fr(1, b)), Fr(1, c)), Fr(2, a)), r = Fr(kk.d, kk.n);
+    P = { a, b, c, u, v, w, p, q, A, B, C, r, ans: r.n / r.d };
+    $("#pq").innerHTML = `三顆泡泡半徑是 <b>${a}</b>、<b>${b}</b>、<b>${c}</b>，兩兩外切。中間夾著一顆小泡泡，跟三顆都外切。小泡泡的半徑 r 是多少？`;
+    $("#ptip").textContent = "寫分數（例如 6/23），或小數到第三位。";
+  }
+  $("#pans").value = ""; fb($("#pfb"), null, ""); $("#psol").classList.add("hidden");
+}
+function solution() {
+  if (P.easy) {
+    const { d, S1, S2, x } = P, diff = S2 - S1;
+    return `① 第二式減第一式：y² 消掉，左邊剩 (${d} − x)² − x²，右邊 ${S2} − ${S1} = ${fmt(diff)}<br>
+      ② 展開 (${d} − x)² = ${d * d} − ${2 * d}x + x²，所以左邊 = ${d * d} − ${2 * d}x（x² 也消掉）<br>
+      ③ ${d * d} − ${2 * d}x = ${fmt(diff)} → ${2 * d}x = ${d * d} − (${fmt(diff)}) = ${d * d - diff}<br>
+      ④ x = ${d * d - diff} ÷ ${2 * d} = <b>${x}</b>`;
+  }
+  const { a, b, c, u, v, w, p, q, A, B, C, r } = P, D = B * B - 4 * A * C;
+  return `① 外切：圓心距離 ${a} + ${b} = ${u}、${a} + ${c} = ${v}、${b} + ${c} = ${w}。${u}² + ${v}² = ${u * u + v * v} = ${w}²，直角在半徑 ${a} 的圓心。<br>
+    ② 座標 A(0, 0)、B(${u}, 0)、C(0, ${v})，小泡泡圓心 Q(x, y)：<br>
+    　x² + y² = (${a} + r)²，(${u} − x)² + y² = (${b} + r)²，x² + (${v} − y)² = (${c} + r)²<br>
+    ③ 第二式減第一式：${u * u} − ${2 * u}x = ${b * b - a * a} + ${2 * (b - a)}r → x = ${a} − ${fstr(p)} r<br>
+    ④ 第三式減第一式：${v * v} − ${2 * v}y = ${c * c - a * a} + ${2 * (c - a)}r → y = ${a} − ${fstr(q)} r<br>
+    ⑤ 代回第一式整理：${A}r² + ${B}r − ${-C} = 0<br>
+    ⑥ 公式解取正的：r = (−${B} + √${D}) ÷ ${2 * A} = (−${B} + ${Math.round(Math.sqrt(D))}) ÷ ${2 * A} = <b>${fstr(r)}</b>（≈ ${fmt(r.n / r.d, 4)}）`;
+}
+$("#pchk").onclick = () => {
+  const ok = same(val($("#pans").value), P.ans, P.easy ? 1e-9 : 0.0006);
+  streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
+  fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再算一次，或看解法");
+  if (streak >= 3 && !P.easy) done(9);
+};
+$("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
+$("#pnew").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+// 把畫面上的數學唸成中文：分數「b 分之 a」、x² 唸「x 平方」、負號唸「負」
+function readable(el) {
+  if (typeof el === "string") return el;
+  const c = el.cloneNode(true);
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden, svg").forEach(b => b.remove());
+  c.querySelectorAll(".fr").forEach(f => f.replaceWith(` ${f.children[1].textContent} 分之 ${f.children[0].textContent} `));
+  c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  c.querySelectorAll("table.derive tr:first-child").forEach(r => r.remove());
+  c.querySelectorAll("td, th, br").forEach(td => td.append("，"));
+  return c.textContent;
+}
+function toSpeech(t) {
+  return t.replace(/[🔄🔑🎉✅❌🤔🏆📐⭐💡🌟🫧]/gu, "").trim()
+    .replace(/(^|[\s=(（：，、×÷和是！？。])[−-](?=\d+\/\d)/g, "$1負")
+    .replace(/(\d+(?:\.\d+)?|[a-z])\/(\d+|[a-z])/g, " $2 分之 $1 ")
+    .replace(/([a-zA-Z\d])²/g, " $1 平方").replace(/\)²/g, ") 的平方")
+    .replace(/(^|[=(（：，、×÷和！？。]\s*)[−-](?=[\d√])/g, "$1負").replace(/分之\s*[−-]/g, "分之負")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ")
+    .replace(/≈/g, " 大約是 ").replace(/√/g, " 根號 ").replace(/±/g, " 正負 ").replace(/</g, " 小於 ").replace(/>/g, " 大於 ").replace(/≠/g, " 不等於 ").replace(/→/g, "，").replace(/⇔/g, "，就是，").replace(/…/g, "，一直到，")
+    .replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(readable(t)));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+const HELLO = "你好，我們一起來玩泡泡相切大冒險！三顆泡泡的半徑是 1、2、3。";
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak(HELLO); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak(HELLO); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak(HELLO); };
+$("#vTest").onclick = () => speak(HELLO);
+$$(".story, .key, .proof").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story"));
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+const watchOnce = (el, isOn, target) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(target(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st));
+new MutationObserver(() => speak($("#pq"))).observe($("#pq"), { childList: true });
+</script>
+</body>
+</html>
