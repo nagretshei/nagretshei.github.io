@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>角平分線大冒險｜高、角平分線定理與畢氏定理</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --go:#ff8a3d; --back:#118ab2; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  input[type=range] { width:100%; }
+  input.n { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid #f2b705; padding:10px 16px; border-radius:8px; margin:12px 0; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  .step { display:none; } .step.on { display:block; margin-bottom:14px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button, .choices button { font-size:17px; margin:4px; padding:5px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .fr { display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; line-height:1.25; margin:0 3px; }
+  .fr > span:first-child { border-bottom:1.5px solid currentColor; padding:0 4px; }
+  .tip { font-size:14px; color:#7a6f85; }
+  svg.map { background:#fbfdf7; border:1px solid var(--line); border-radius:10px; }
+  .info { margin-top:6px; font-size:16px; }
+  .st-hit { color:var(--bad); font-weight:700; } .st-tan { color:var(--ok); font-weight:700; } .st-miss { color:var(--accent); font-weight:700; }
+  .en { color:#118ab2; font-size:.82em; font-style:italic; margin:0 3px; }
+  .eq { display:inline-block; background:#f6f0ff; border-radius:8px; padding:2px 10px; margin:2px 0; font-size:18px; }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>🔺 角平分線大冒險</h1>
+  <span class="part">地圖篇</span>
+  <button class="tab on" data-go="0">1. 平分線與高</button>
+  <span class="part">工具篇</span>
+  <button class="tab" data-go="1">2. 找垂足 D</button>
+  <button class="tab" data-go="2">3. 角平分線定理</button>
+  <span class="part">解題篇</span>
+  <button class="tab" data-go="3">4. 分份數求 DP</button>
+  <button class="tab" data-go="4">5. 畢氏收尾</button>
+  <button class="tab" data-go="5">6. 大魔王</button>
+  <button class="tab" data-go="6">7. 整合回顧</button>
+  <button class="tab" data-go="7">8. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 1：平分線與高 ============ -->
+<section class="on" id="s0">
+  <div class="card story">
+    <h2>關卡 1：角平分線和高</h2>
+    三角形 ABC 的三邊：AB = <b>80</b>、BC = <b>45</b>、AC = <b>75</b>。
+    題目說「∠B 的<b>角平分線</b><span class="en">(angle bisector)</span>」和「AB 邊上的<b>高</b><span class="en">(altitude)</span>」交在一點 P，要求 BP。<br>
+    先認識這兩條線。拉動拉桿，從 B 射出一條紅色的線，看它把 ∠B 切成的兩個角。
+  </div>
+  <div class="card">
+    <svg class="map" id="map0" width="100%" viewBox="0 0 520 330"></svg>
+    紅線的角度 <input type="range" id="a0" min="2" max="65" step="0.1" value="15">
+    <div class="info" id="info0"></div>
+  </div>
+  <div class="card" id="m1">
+    <div class="step on">
+      拉動拉桿，讓紅線把 ∠B 分成<b>一樣大</b>的兩半（文字變綠色）。這時每一半大約幾度？（寫到整數）
+      <input class="n" data-ans="33.6" data-tol="0.7">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 看圖下面的兩個角度，讓 ∠1 和 ∠2 一樣大。在 30 到 37 之間慢慢拉。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 把一個角切成兩個<b>一樣大</b>的角，這條線就叫<b>角平分線</b><span class="en">(angle bisector)</span>。
+        ∠B 大約 67.1°，一半大約 33.6°。
+      </div>
+    </div>
+    <div class="step">
+      再看藍色虛線：從 C <b>垂直</b><span class="en">(perpendicular)</span>畫到 AB 上，碰到 AB 的點叫 <b>D</b>（垂足<span class="en">foot of the altitude</span>）。CD 就是「AB 邊上的高」。<br>
+      ∠CDB 是幾度？ <input class="n" data-ans="90">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 垂直就是兩條線夾成直角<span class="en">(right angle)</span>。直角是幾度？</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      紅線（角平分線）和藍線（高）交在 P。BP 是哪一段？
+      <div class="choices" data-right="0">
+        <button>從 B 沿著紅線走到 P</button><button data-why="那是從 B 沿著 AB 走到 D，叫 BD。">從 B 沿著 AB 走到 D</button><button data-why="那是 B 到 C 的邊，長 45。">從 B 走到 C</button>
+      </div>
+      <div class="hint">💡 BP 的兩端是 B 和 P。P 在紅線上。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 <b>角平分線</b><span class="en">(angle bisector)</span>：把角切成一樣大的兩半。<b>高</b><span class="en">(altitude)</span>：從頂點垂直畫到對邊，跟對邊夾 90°。<br>
+      仔細看：B、D、P 三點圍成一個<b>直角三角形</b><span class="en">(right triangle)</span>，直角在 D，BP 是斜邊<span class="en">(hypotenuse)</span>！<br>
+      所以只要知道 <b>BD</b> 和 <b>DP</b>，畢氏定理就能算出 BP。接下來兩關分別找它們。
+    </div>
+    <div class="nav"><button class="go" data-go="1">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：找垂足 D ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 2：找垂足 D，算出 BD</h2>
+    高 CD 把三角形切成<b>兩個直角三角形</b>：左邊 △ADC（斜邊 AC = 75）和右邊 △BDC（斜邊 BC = 45）。
+    它們<b>共用</b>同一條直角邊 CD。<br>
+    設 BD = x。拉動拉桿換 x，看看兩根長度固定的棍子（從 A 出發長 75、從 B 出發長 45）能不能在 D 的正上方碰在一起。
+  </div>
+  <div class="card">
+    <svg class="map" id="map1" width="100%" viewBox="0 0 520 345"></svg>
+    BD = x = <span class="big" id="t1n"></span> <input type="range" id="t1" min="6" max="28" step="0.1" value="26">
+    <div class="info" id="info1"></div>
+  </div>
+  <div class="card" id="m2">
+    <div class="tip">分數用斜線寫，例如 35/2；也可以寫小數。</div>
+    <div class="step on">
+      先用拉桿找：兩根棍子剛好碰在一起的時候，x 大約是多少？（寫到小數第一位）
+      <input class="n" data-ans="17.5" data-tol="0.4">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 看藍色和綠色兩個高度，讓它們一樣高（文字變綠色）。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      用畢氏定理<span class="en">(Pythagorean Theorem)</span>精確地算。右邊 △BDC：斜邊 45，直角邊 x 和 CD，所以 CD² = 45² − x²。<br>
+      左邊 △ADC：斜邊 75，直角邊是 AD 和 CD。AD = ?
+      <div class="choices" data-right="0">
+        <button>80 − x</button><button data-why="AD + DB 才是整條 AB = 80。">80 + x</button><button data-why="x 是 BD，不是 AD。">x</button>
+      </div>
+      <div class="hint">💡 AB = 80 被 D 切成兩段：AD 和 DB。DB = x。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 所以 CD² = 75² − (80 − x)²。<br>
+        CD² 同時等於兩個式子，兩個式子就相等：<br>
+        <span class="eq">45² − x² = 75² − (80 − x)²</span>
+      </div>
+    </div>
+    <div class="step">
+      展開<span class="en">(expand)</span> (80 − x)² = (80 − x) × (80 − x)，用分配律<span class="en">(distributive property)</span>：
+      <table class="steps">
+        <tr><th></th><th>× 80</th><th>× (−x)</th></tr>
+        <tr><th>80</th><td>6400</td><td>−80x</td></tr>
+        <tr><th>−x</th><td>−80x</td><td>x²（負乘負得正）</td></tr>
+      </table>
+      (80 − x)² = 6400 − <input class="n" data-ans="160"> x + x²
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 中間兩個 −80x 加起來。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      代進去：2025 − x² = 5625 − (6400 − 160x + x²) = 5625 − 6400 + 160x − x²。<br>
+      兩邊都有 −x²，<b>消掉</b><span class="en">(cancel)</span>！剩下 2025 = −775 + 160x。所以 160x = ? <input class="n" data-ans="2800" data-wrong='{"1250":"−775 搬到左邊要變號，變成 +775：2025 + 775。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 括號前面是減號，拆括號時裡面每一項都要變號：−6400、+160x、−x²。<br>💡 兩邊都加 775：2025 + 775 = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      x = 2800 ÷ 160 = ? <input class="n" data-ans="17.5">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 上下先約掉 10：280 ÷ 16。再約掉 8：35 ÷ 2。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>BD = 17.5 = <span class="fr"><span>35</span><span>2</span></span></b>，跟拉桿找到的一樣！
+      </div>
+    </div>
+    <div class="step">
+      最後算 CD²，等一下會用到：CD² = 45² − 17.5² = 2025 − 306.25 = ? <input class="n" data-ans="1718.75">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 17.5² = 17.5 × 17.5 = 306.25。2025 − 306.25 = ?</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 1718.75 不是完全平方數，開根號會很醜。<b>小撇步：先不要開根號，把 CD² 留著</b>，最後再處理。<br>
+        用分數寫比較好算：CD² = 2025 − <span class="fr"><span>1225</span><span>4</span></span> = <span class="fr"><span>8100</span><span>4</span></span> − <span class="fr"><span>1225</span><span>4</span></span> = <b><span class="fr"><span>6875</span><span>4</span></span></b>
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 共用一條高的兩個直角三角形：<b>把 CD² 寫兩次，讓它們相等</b>，x² 會消掉。<br>
+      得到 <b>BD = 17.5</b>，CD² = <span class="fr"><span>6875</span><span>4</span></span>（先不開根號）。
+    </div>
+    <div class="nav"><button class="go" data-go="2">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：角平分線定理 ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 3：角平分線的祕密</h2>
+    看右邊的直角三角形 BDC。BP 是 ∠B 的角平分線，它把對面的邊 DC 切成兩段：<b>DP</b> 和 <b>PC</b>。這兩段有什麼關係？
+  </div>
+  <div class="card">
+    <svg class="map" id="map2" width="100%" viewBox="0 0 520 330"></svg>
+  </div>
+  <div class="card" id="m3">
+    <div class="step on">
+      從 P 往 BC 畫垂直線，碰到 BC 的點叫 <b>E</b>。看兩個小三角形：粉紅 △BDP 和黃色 △BEP。
+      <div class="proof">
+        📐 一樣一樣比：<br>
+        ① ∠D 和 ∠E 都是 90°（都是垂直畫下去的）。<br>
+        ② B 的兩個角一樣大（BP 是角平分線）。<br>
+        ③ 斜邊 BP 是<b>共用</b>的同一條。<br>
+        兩個角一樣、加上一條對應的邊一樣，兩個三角形就<b>一模一樣</b>（全等<span class="en">congruent, AAS</span>）。
+      </div>
+      所以 PD 和 PE 哪一個比較長？
+      <div class="choices" data-right="2">
+        <button data-why="兩個三角形全等，PD 和 PE 是對應的邊。">PD 比較長</button><button data-why="兩個三角形全等，PD 和 PE 是對應的邊。">PE 比較長</button><button>一樣長</button>
+      </div>
+      <div class="hint">💡 全等的三角形，對應的邊一樣長。PD 對 PE。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>PD = PE</b>：角平分線上的點，到角的兩邊<b>一樣遠</b><span class="en">(equidistant)</span>。
+      </div>
+    </div>
+    <div class="step">
+      現在用「<b>同一個三角形算兩次面積</b><span class="en">(area)</span>」。<br>
+      <b>第一種看法：</b>△BDP 的底<span class="en">(base)</span>是 BD，高<span class="en">(height)</span>是 PD；△BCP 的底是 BC，高是 PE（= PD）。<br>
+      兩個三角形的高一樣，面積的比就是底的比：面積 △BDP : 面積 △BCP = BD : <input class="n" data-ans="45">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 △BCP 的底是 BC，BC 多長？</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 為什麼高一樣，面積比 = 底的比？<br>
+        面積 △BDP = BD × PD ÷ 2，面積 △BCP = BC × PD ÷ 2。兩個都有「× PD ÷ 2」，比的時候約掉，只剩 BD : BC。
+      </div>
+    </div>
+    <div class="step">
+      <b>第二種看法：</b>把 △BDP 和 △BCP 的底都放在直線 DC 上：底分別是 <b>DP</b> 和 <b>PC</b>。<br>
+      它們的高都是 B 到直線 DC 的垂直距離。這個距離是哪一段？
+      <div class="choices" data-right="0">
+        <button>BD</button><button data-why="BP 是斜的，沒有跟 DC 垂直。">BP</button><button data-why="BC 是斜的，沒有跟 DC 垂直。">BC</button>
+      </div>
+      <div class="hint">💡 ∠BDC = 90°，BD 跟 DC 垂直。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 高一樣都是 BD，所以面積 △BDP : 面積 △BCP = DP : PC。
+      </div>
+    </div>
+    <div class="step">
+      兩種看法算的是同樣兩個三角形，比一定一樣：
+      <span class="eq">DP : PC = BD : BC</span><br>
+      這叫<b>角平分線定理</b><span class="en">(Angle Bisector Theorem)</span>。代入 BD = 17.5、BC = 45：<br>
+      17.5 : 45 化成最簡整數比 = <input class="n" data-ans="7"> : <input class="n" data-ans="18">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 先兩邊乘 2 去掉小數：35 : 90。再兩邊除以 5。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      拉桿驗證：換一個直角三角形（BC 一樣是 45，BD 不一樣），角平分線定理還成立嗎？
+      <svg class="map" id="map2b" width="100%" viewBox="0 0 520 330" style="margin:6px 0"></svg>
+      BD = <span class="big" id="t2n"></span> <input type="range" id="t2" min="6" max="42" step="0.5" value="17.5">
+      <div class="info" id="info2"></div>
+      不管 BD 是多少，DP : PC 都等於 BD : BC 嗎？
+      <div class="choices" data-right="0">
+        <button>都會相等</button><button data-why="拉一下拉桿，看表格的兩個比值。">只有 17.5 才相等</button>
+      </div>
+      <div class="hint">💡 拉幾個不同的 BD，比較表格裡的兩個數。</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 <b>角平分線定理：</b>角平分線把對邊切成兩段，兩段的比 = 夾著這個角的兩邊的比。<br>
+      <span class="en">Angle Bisector Theorem: the bisector divides the opposite side in the ratio of the two adjacent sides.</span><br>
+      這題：<b>DP : PC = BD : BC = 7 : 18</b>。
+    </div>
+    <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：分份數求 DP ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 4：分份數，算出 DP²</h2>
+    DP : PC = 7 : 18。把整條 CD 想成切成好幾<b>份</b><span class="en">(parts)</span>，DP 佔 7 份、PC 佔 18 份。
+  </div>
+  <div class="card">
+    <svg class="map" id="map3" width="100%" viewBox="0 0 520 330"></svg>
+  </div>
+  <div class="card" id="m4">
+    <div class="tip">分數用斜線寫，例如 539/4。</div>
+    <div class="step on">
+      CD 一共切成幾份？ <input class="n" data-ans="25" data-wrong='{"11":"DP 和 PC 加起來才是整條 CD：7 + 18。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 DP 7 份 + PC 18 份。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      所以 DP = CD × ?
+      <div class="choices" data-right="0">
+        <button><span class="fr"><span>7</span><span>25</span></span></button><button data-why="7 : 18 是 DP 比 PC，不是 DP 比整條 CD。整條是 25 份。"><span class="fr"><span>7</span><span>18</span></span></button><button data-why="18 份是 PC，DP 只有 7 份。"><span class="fr"><span>18</span><span>25</span></span></button>
+      </div>
+      <div class="hint">💡 25 份裡面 DP 佔 7 份。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      我們只有 CD²，沒有 CD。沒關係，兩邊都平方：DP² = (<span class="fr"><span>7</span><span>25</span></span>)² × CD² = <span class="fr"><span>49</span><span>?</span></span> × CD²。分母是多少？
+      <input class="n" data-ans="625" data-wrong='{"50":"平方是自己乘自己：25 × 25，不是 25 × 2。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 分數平方：分子平方 7 × 7 = 49，分母也平方 25 × 25 = ?</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      DP² = <span class="fr"><span>49</span><span>625</span></span> × <span class="fr"><span>6875</span><span>4</span></span>。先約分：6875 ÷ 625 = ? <input class="n" data-ans="11">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 625 × 10 = 6250，6875 − 6250 = 625，所以再多 1 個 625。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 DP² = 49 × <span class="fr"><span>11</span><span>4</span></span> = <b><span class="fr"><span>539</span><span>4</span></span></b>。
+        （為什麼可以這樣約？625 在分母、6875 在分子，乘法可以先把它們約掉再乘。）
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c4key">
+    <div class="key">
+      🔑 <b>DP² = <span class="fr"><span>539</span><span>4</span></span></b>。<br>
+      重點：比是 7 : 18，整條是 7 + 18 = 25 份。而且全程用 CD²，一次根號都不用開！
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：畢氏收尾 ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 5：畢氏定理收尾</h2>
+    回到第 1 關發現的直角三角形 BDP：直角在 D，BP 是斜邊。<br>
+    <span class="eq">BP² = BD² + DP²</span>
+  </div>
+  <div class="card">
+    <svg class="map" id="map4" width="100%" viewBox="0 0 520 330"></svg>
+  </div>
+  <div class="card" id="m5">
+    <div class="tip">分數用斜線寫，例如 1225/4。</div>
+    <div class="step on">
+      BD = <span class="fr"><span>35</span><span>2</span></span>，BD² = ? <input class="n" data-ans="1225/4">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 分子平方 35 × 35 = 1225，分母平方 2 × 2 = 4。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      BP² = <span class="fr"><span>1225</span><span>4</span></span> + <span class="fr"><span>539</span><span>4</span></span> = ? <input class="n" data-ans="441" data-wrong='{"1764":"1764 是分子，還要除以分母 4。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 分母一樣，分子相加：1225 + 539 = 1764。再除以 4。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      BP² = 441，BP = ? <input class="n" data-ans="21">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 哪個數乘自己等於 441？20 × 20 = 400，再大一點。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>BP = 21</b>！醜醜的 CD² = 6875/4 一路都沒開根號，最後竟然變成漂亮的 441 = 21²。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c5key">
+    <div class="key">
+      🔑 <b>BP = 21</b>。看地圖量一量，紅線從 B 到 P 差不多就是 21！
+    </div>
+    <div class="nav"><button class="go" data-go="5">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：大魔王 ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 6：大魔王（2025 AMC 10A 第 23 題）</h2>
+    <div class="proof">📜 <span class="en" style="font-size:1em"><b>Original problem:</b> Triangle ABC has side lengths AB = 80, BC = 45, and AC = 75. The bisector of ∠B and the altitude to side AB intersect at point P. What is BP?</span></div>
+    三角形 ABC 三邊 AB = 80、BC = 45、AC = 75。∠B 的角平分線和 AB 邊上的高交在 P。BP 是多少？<br>
+    (A) 18　(B) 19　(C) 20　(D) 21　(E) 22
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 1：</b>高 CD 的垂足是 D。BP 是哪個直角三角形的斜邊？
+      <div class="choices" data-right="0">
+        <button>△BDP</button><button data-why="△BDC 的斜邊是 BC，不是 BP。">△BDC</button><button data-why="△ADC 根本沒有 B 點。">△ADC</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 找有 B、P 兩點，而且有 90° 角的三角形。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 2：</b>設 BD = x，CD² 寫兩次：45² − x² = 75² − (80 − x)²。x = ?
+      <div class="choices" data-right="1">
+        <button data-why="代回去檢查：45² − 15² = 1800，75² − 65² = 1400，不相等。">15</button><button>17.5</button><button data-why="代回去檢查：45² − 20² = 1625，75² − 60² = 2025，不相等。">20</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 第 2 關：展開後 x² 消掉，160x = 2800。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 3：</b>角平分線定理：DP : PC = ?
+      <div class="choices" data-right="0">
+        <button>BD : BC = 7 : 18</button><button data-why="角平分線是 ∠B 的，夾著 ∠B 的兩邊是 BD 和 BC。">AD : AC</button><button data-why="比要用夾著角的兩條邊，BP 是角平分線本身。">BP : BC</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 在 △BDC 裡，夾著 ∠B 的兩條邊是哪兩條？</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 4：</b>CD² = 45² − 17.5² = <span class="fr"><span>6875</span><span>4</span></span>，DP = <span class="fr"><span>7</span><span>25</span></span> CD。DP² = ?
+      <div class="choices" data-right="0">
+        <button><span class="fr"><span>539</span><span>4</span></span></button>
+        <button data-why="7/25 要整個平方：49/625，不是 7/25。"><span class="fr"><span>1925</span><span>4</span></span></button>
+        <button data-why="6875/4 是 CD²，還要再乘上 (7/25)² = 49/625。"><span class="fr"><span>6875</span><span>4</span></span></button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 DP² = (7/25)² × CD² = 49/625 × 6875/4，6875 ÷ 625 = 11。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>BP² = <span class="fr"><span>1225</span><span>4</span></span> + <span class="fr"><span>539</span><span>4</span></span> = 441。答案是？
+      <div class="choices" data-right="3">
+        <button data-why="18² = 324，不是 441。">(A) 18</button><button data-why="19² = 361，不是 441。">(B) 19</button><button data-why="20² = 400，不是 441。">(C) 20</button>
+        <button>(D) 21</button><button data-why="22² = 484，不是 441。">(E) 22</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 哪個數的平方是 441？</div>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="bsum">
+    <div class="proof">
+      📐 <b>完整解答（把上面的步驟串起來）</b><br>
+      ① 高 CD 的垂足 D。△BDP 的直角在 D，BP 是斜邊：BP² = BD² + DP²。<br>
+      ② 設 BD = x：CD² = 45² − x² = 75² − (80 − x)²，x² 消掉，160x = 2800，<b>BD = 35/2</b>。CD² = 2025 − 1225/4 = <b>6875/4</b>。<br>
+      ③ 角平分線定理（在 △BDC）：DP : PC = BD : BC = 35/2 : 45 = <b>7 : 18</b>，所以 DP = (7/25) CD。<br>
+      ④ DP² = (49/625) × (6875/4) = 49 × 11/4 = <b>539/4</b>。<br>
+      ⑤ BP² = 1225/4 + 539/4 = 1764/4 = 441，<b>BP = 21</b>，答案 <b>(D)</b>。
+    </div>
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 要求的線段是誰的斜邊？找直角三角形<br>
+      ② 兩個直角三角形共用一條高 → 把高² 寫兩次，平方會消掉<br>
+      ③ 角平分線 → 對邊的比 = 夾角兩邊的比<br>
+      ④ 醜的根號先別開，平方留到最後
+    </div>
+    <div class="key">
+      📖 <b>英文小字典（考試會看到的字）</b>
+      <table class="steps">
+        <tr><td>角平分線</td><td><i>angle bisector</i></td></tr>
+        <tr><td>高 / 垂足</td><td><i>altitude / foot of the altitude</i></td></tr>
+        <tr><td>垂直</td><td><i>perpendicular</i></td></tr>
+        <tr><td>直角三角形 / 直角</td><td><i>right triangle / right angle</i></td></tr>
+        <tr><td>斜邊 / 直角邊</td><td><i>hypotenuse / legs</i></td></tr>
+        <tr><td>畢氏定理</td><td><i>Pythagorean Theorem</i></td></tr>
+        <tr><td>角平分線定理</td><td><i>Angle Bisector Theorem</i></td></tr>
+        <tr><td>全等</td><td><i>congruent</i></td></tr>
+        <tr><td>到兩邊一樣遠</td><td><i>equidistant</i></td></tr>
+        <tr><td>面積 / 底 / 高</td><td><i>area / base / height</i></td></tr>
+        <tr><td>比</td><td><i>ratio</i></td></tr>
+        <tr><td>展開 / 分配律</td><td><i>expand / distributive property</i></td></tr>
+        <tr><td>交點</td><td><i>intersect / point of intersection</i></td></tr>
+      </table>
+    </div>
+    <div class="proof">
+      🌟 <b>偷偷告訴你（進階）：</b>學了三角函數以後，有更快的算法：cos B = <span class="fr"><span>BD</span><span>BC</span></span> = <span class="fr"><span>17.5</span><span>45</span></span> = <span class="fr"><span>7</span><span>18</span></span>，
+      用「半角公式」cos²(B/2) = <span class="fr"><span>1 + cos B</span><span>2</span></span> = <span class="fr"><span>25</span><span>36</span></span>，cos(B/2) = <span class="fr"><span>5</span><span>6</span></span>，
+      BP = BD ÷ cos(B/2) = 17.5 × <span class="fr"><span>6</span><span>5</span></span> = 21。一樣的答案！
+    </div>
+    <div class="nav"><button class="go" data-go="6">整合回顧：一次看完整個解法 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：整合回顧 ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 7：整合回顧</h2>
+    步驟很多，很容易忘記「為什麼要做這一步」。這一關用動畫把整個解法從頭串一次。按「▶ 自動播放全部」，或點上面的小方塊跳到任一步。
+  </div>
+  <div class="card">
+    <div class="yn" id="rcChain"></div>
+    <svg class="map" id="rcMap" width="100%" viewBox="0 0 520 330"></svg>
+    <div style="margin:8px 0">
+      <button class="ghost" id="rcPrev">◀ 上一步</button>
+      <button class="go" id="rcAuto">▶ 自動播放全部</button>
+      <button class="ghost" id="rcAgain">↻ 重播這一步</button>
+      <button class="ghost" id="rcNext">下一步 ▶</button>
+    </div>
+    <div class="key" id="rcSay"></div>
+    <div class="proof" id="rcMath" style="min-height:60px"></div>
+  </div>
+  <div class="card hidden" id="c7key">
+    <div class="key">
+      🔑 <b>整個解法的骨架：</b>BP 是直角三角形 BDP 的斜邊 → 需要 BD 和 DP → BD 用「CD² 寫兩次」→ DP 用角平分線定理分份數 → 畢氏定理得 BP = 21。<br>
+      每一步都是把「不知道怎麼算的東西」換成「會算的東西」。
+    </div>
+    <div class="nav"><button class="go" data-go="7">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 8：無限練習 ============ -->
+<section id="s7">
+  <div class="card story">
+    <h2>關卡 8：無限練習</h2>
+    數字每次都不一樣。先練「角平分線定理」，熟了再挑戰變化題！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">角平分線定理</button><button id="lvHard">變化題</button></div>
+    <div id="pq" class="story"></div>
+    答案 = <input class="n" id="pans"> <button class="go" id="pchk">確認</button>
+    <button class="ghost" id="pshow">看解法</button>
+    <button class="ghost" id="pnew">下一題</button>
+    <div class="tip" id="ptip"></div>
+    <div class="fb" id="pfb"></div>
+    <div id="psol" class="proof hidden"></div>
+    <div>連續答對：<span class="big" id="pstreak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const gcd = (a, b) => b ? gcd(b, a % b) : Math.abs(a);
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+// 讀使用者輸入的數：可以是整數、小數、分數 a/b，減號用 - 或 −
+function val(s) {
+  s = String(s).trim().replace(/−|–/g, "-").replace(/\s/g, "");
+  if (!s) return NaN;
+  const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  return m ? +m[1] / +m[2] : Number(s);
+}
+const same = (a, b, tol = 1e-9) => Math.abs(a - b) <= tol;
+const fmt = (x, k = 2) => (Math.round(x * 10 ** k) / 10 ** k).toString().replace("-", "−");
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "bisector";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+// 已經過關的關卡：打勾、把重點和推導直接打開，回來複習不用重新作答
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => {
+  $$(".tab[data-go]")[i]?.classList.add("done");
+  $$(`#s${i} .card.hidden`).forEach(c => c.classList.remove("hidden"));
+});
+
+// 一步一步的關卡：輸入框 data-ans（data-tol 容許誤差）比對、提示鈕、選擇題（data-why 針對錯答）
+function chkStep(step) {
+  const ins = [...step.querySelectorAll("input[data-ans]")];
+  const right = i => same(val(i.value), val(i.dataset.ans), +i.dataset.tol || 1e-9);
+  const ok = ins.every(right);
+  const decimal = ins.some(i => !right(i) && /\./.test(i.value) && /\//.test(i.dataset.ans));
+  const wrong = ins.length >= 1 && ins[0].dataset.wrong ? JSON.parse(ins[0].dataset.wrong) : {};
+  const hit = Object.keys(wrong).find(k => same(val(ins[0].value), val(k)));
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : hit ? "❌ " + wrong[hit] : decimal ? "❌ 試試用分數寫，例如 1225/4" : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  if (!ok && step.querySelector(".hint") && step.dataset.miss) step.querySelector(".hint").classList.add("on");
+  step.dataset.miss = ok ? "" : "1";
+  return ok;
+}
+function wireSteps(box, onLast) {
+  const steps = [...box.querySelectorAll(".step")];
+  const next = step => { const n = steps[steps.indexOf(step) + 1]; n ? n.classList.add("on") : onLast && onLast(); };
+  steps.forEach(step => {
+    step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+    step.querySelector(".chk")?.addEventListener("click", () => {
+      if (!chkStep(step)) return;
+      const ex = step.querySelector(".explain");
+      if (ex && ex.classList.contains("hidden")) { show(ex); setTimeout(() => { speak(ex, false); next(step); }, 50); }
+      else next(step);
+    });
+    const pick = step.querySelector(".choices[data-right]");
+    if (pick) [...pick.querySelectorAll("button")].forEach((b, k) => b.onclick = () => {
+      const ok = k === +pick.dataset.right;
+      fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : b.dataset.why ? "❌ " + b.dataset.why : "🤔 再想想看");
+      if (!ok) step.querySelector(".hint")?.classList.add("on");
+      if (ok) {
+        const pf = [...step.querySelectorAll(".proof")].find(p => p.classList.contains("hidden"));
+        if (pf) { show(pf); setTimeout(() => { speak(pf, false); next(step); }, 50); }
+        else next(step);
+      }
+    });
+  });
+}
+
+// ---------- 三角形地圖 ----------
+// 世界座標：A(0,0)、B(80,0)、D(62.5,0)、C(62.5, h)，h² = 6875/4
+const H = Math.sqrt(6875 / 4), A = [0, 0], B = [80, 0], C = [62.5, H], D = [62.5, 0];
+const BC_U = [(C[0] - B[0]) / 45, C[1] / 45], ANG_B = Math.atan2(C[1], B[0] - C[0]) * 180 / Math.PI;
+const BIS = (() => { const v = [-1 + BC_U[0], BC_U[1]], L = Math.hypot(...v); return [v[0] / L, v[1] / L]; })();
+const P = [B[0] + 21 * BIS[0], B[1] + 21 * BIS[1]], E = [B[0] + 17.5 * BC_U[0], 17.5 * BC_U[1]];
+const px = x => 40 + x * 5.5, py = y => 300 - y * 5.5;
+const T = (q, str, col, size = 15, dx = 0, dy = 0, anchor = "start", op = 1) => `<text x="${px(q[0]) + dx}" y="${py(q[1]) + dy}" font-size="${size}" fill="${col}" font-weight="700" text-anchor="${anchor}" opacity="${op}" style="paint-order:stroke;stroke:#fbfdf7;stroke-width:4px">${str}</text>`;
+const seg = (a, b, col, w = 2.5, op = 1, dash = "") => `<line x1="${px(a[0])}" y1="${py(a[1])}" x2="${px(b[0])}" y2="${py(b[1])}" stroke="${col}" stroke-width="${w}" opacity="${op}" ${dash ? `stroke-dasharray="${dash}"` : ""}/>`;
+const poly = (pts, fill, stroke, op = 1) => `<polygon points="${pts.map(q => px(q[0]) + "," + py(q[1])).join(" ")}" fill="${fill}" stroke="${stroke}" stroke-width="2" opacity="${op}"/>`;
+const dot = (q, col, r = 4, op = 1) => `<circle cx="${px(q[0])}" cy="${py(q[1])}" r="${r}" fill="${col}" opacity="${op}"/>`;
+const part = (a, b, f) => [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+// 直角記號：在頂點 q，沿 u、v 兩個方向各走 s
+const rmark = (q, u, v, s = 2.2, col = "#2b2233", op = 1) => `<polyline points="${px(q[0] + s * u[0])},${py(q[1] + s * u[1])} ${px(q[0] + s * u[0] + s * v[0])},${py(q[1] + s * u[1] + s * v[1])} ${px(q[0] + s * v[0])},${py(q[1] + s * v[1])}" fill="none" stroke="${col}" stroke-width="1.5" opacity="${op}"/>`;
+function base(o = {}) {
+  let h = "";
+  for (let x = 0; x <= 80; x += 10) h += `<line x1="${px(x)}" y1="0" x2="${px(x)}" y2="330" stroke="#f0f1e8"/>`;
+  h += poly([A, B, C], "rgba(123,77,255,.05)", "#2b2233");
+  if (o.sides !== false) h += T(part(A, B, .5), "80", "#2b2233", 15, 0, 20, "middle") + T(part(A, C, .5), "75", "#2b2233", 15, -14, -4, "end") + T(part(B, C, .5), "45", "#2b2233", 15, 10, 0);
+  return h;
+}
+const labels = () => dot(A, "#2b2233") + T(A, "A", "#2b2233", 16, -14, 18) + dot(B, "#2b2233") + T(B, "B", "#2b2233", 16, 6, 18) + dot(C, "#2b2233") + T(C, "C", "#2b2233", 16, -5, -10);
+const alt = (op = 1) => seg(C, D, "#4a6cf7", 2.5, op, "7 5") + rmark(D, [-1, 0], [0, 1], 2.2, "#4a6cf7", op) + dot(D, "#4a6cf7", 4, op) + T(D, "D", "#4a6cf7", 16, -6, 20, "end", op);
+const bis = (op = 1, len = 92) => seg(B, [B[0] + len * BIS[0], len * BIS[1]], "#d64545", 2.5, op, "7 5");
+const ptP = (op = 1) => dot(P, "#2b2233", 5, op) + T(P, "P", "#2b2233", 16, 8, -4, "start", op);
+
+// 關卡 1：轉動紅線
+function lv0() {
+  const a = +$("#a0").value, r = a * Math.PI / 180, end = [B[0] - 92 * Math.cos(r), 92 * Math.sin(r)];
+  const a2 = ANG_B - a, eq = Math.abs(a2 - a) < 1;
+  let h = base() + alt(.9) + seg(B, end, eq ? "#1f9d55" : "#d64545", 2.5, 1, "7 5");
+  const arc = (r0, from, to, col) => { const f = from * Math.PI / 180, t = to * Math.PI / 180; return `<path d="M${px(B[0] - r0 * Math.cos(f))} ${py(r0 * Math.sin(f))} A${r0 * 5.5} ${r0 * 5.5} 0 0 0 ${px(B[0] - r0 * Math.cos(t))} ${py(r0 * Math.sin(t))}" fill="none" stroke="${col}" stroke-width="3"/>`; };
+  h += arc(13, 0, a, "#ff8a3d") + arc(17, a, ANG_B, "#7b4dff");
+  h += T([B[0] - 24 * Math.cos(r / 2), 24 * Math.sin(r / 2)], "∠1", "#ff8a3d", 14, 0, 5, "middle") + T([B[0] - 26 * Math.cos((a + ANG_B) / 2 * Math.PI / 180), 26 * Math.sin((a + ANG_B) / 2 * Math.PI / 180)], "∠2", "#7b4dff", 14, 0, 5, "middle");
+  if (eq) h += ptP();
+  $("#map0").innerHTML = h + labels();
+  $("#info0").innerHTML = `∠1 ≈ <b>${fmt(a, 1)}°</b>　∠2 ≈ <b>${fmt(a2, 1)}°</b>　` + (eq ? `<span class="st-tan">✨ 平分了！紅線就是角平分線，它和藍色的高交在 P</span>` : `<span class="st-miss">兩個角還不一樣大</span>`);
+}
+$("#a0").oninput = lv0; lv0();
+
+// 關卡 2：BD = x 的兩根棍子
+function lv1() {
+  const t = +$("#t1").value, Dx = [80 - t, 0], hR = Math.sqrt(Math.max(0, 45 * 45 - t * t)), aL = 80 - t, hL = aL <= 75 ? Math.sqrt(75 * 75 - aL * aL) : NaN;
+  const ok = Math.abs(t - 17.5) < 0.25;
+  let h = "";
+  for (let x = 0; x <= 80; x += 10) h += `<line x1="${px(x)}" y1="0" x2="${px(x)}" y2="330" stroke="#f0f1e8"/>`;
+  h += seg(A, B, "#2b2233", 2.5) + T(part(A, B, .5), "80", "#2b2233", 15, 0, 20, "middle");
+  h += seg(Dx, [Dx[0], 52], "#9a8fa5", 1.5, 1, "4 4") + rmark(Dx, [-1, 0], [0, 1], 2.2, "#9a8fa5");
+  const R = [Dx[0], hR], L = [Dx[0], hL];
+  h += seg(B, R, "#118ab2", 3) + dot(R, "#118ab2", 5) + T(part(B, R, .5), "45", "#118ab2", 15, 8, 0);
+  if (!isNaN(hL)) h += seg(A, L, "#1f9d55", 3) + dot(L, "#1f9d55", 5) + T(part(A, L, .5), "75", "#1f9d55", 15, -12, -4, "end");
+  h += `<path d="M${px(Dx[0])} 326 v-6 H${px(80)} v6" fill="none" stroke="#c25e12" stroke-width="2"/>` + T([(Dx[0] + 80) / 2, 0], `x = ${fmt(t, 1)}`, "#c25e12", 14, 0, 42, "middle");
+  h += dot(A, "#2b2233") + T(A, "A", "#2b2233", 16, -14, 18) + dot(B, "#2b2233") + T(B, "B", "#2b2233", 16, 6, 18) + T(Dx, "D", "#2b2233", 15, -6, 20, "end");
+  if (ok) h += T(R, "C", "#1f9d55", 16, -5, -10);
+  $("#map1").innerHTML = h;
+  $("#t1n").textContent = t.toFixed(1);
+  $("#info1").innerHTML = `從 B 那根算的高 = √(45² − x²) ≈ <b style="color:#118ab2">${fmt(hR)}</b>　從 A 那根算的高 = √(75² − (80 − x)²) ≈ <b style="color:#1f9d55">${isNaN(hL) ? "碰不到" : fmt(hL)}</b><br>` +
+    (ok ? `<span class="st-tan">✨ 兩根棍子碰在一起了！那一點就是 C</span>` : `<span class="st-miss">高度不一樣，碰不在一起</span>`);
+}
+$("#t1").oninput = lv1; lv1();
+
+// 關卡 3：全等三角形與兩種面積
+$("#map2").innerHTML = base({ sides: false }) + poly([B, D, P], "rgba(214,69,69,.2)", "#d64545") + poly([B, E, P], "rgba(242,183,5,.3)", "#d19a00") +
+  alt() + bis(1, 30) + seg(P, E, "#d19a00", 2.5) + rmark(E, [-BC_U[0], -BC_U[1]], [(P[0] - E[0]) / Math.hypot(P[0] - E[0], P[1] - E[1]), (P[1] - E[1]) / Math.hypot(P[0] - E[0], P[1] - E[1])], 2, "#d19a00") +
+  dot(E, "#d19a00", 4) + T(E, "E", "#a07400", 16, 8, -2) + T(part(D, P, .5), "PD", "#d64545", 14, -8, 5, "end") + T(part(P, E, .5), "PE", "#a07400", 14, 4, -8) + T(part(B, D, .5), "17.5", "#d64545", 14, 0, 20, "middle") + T(part(B, C, .62), "45", "#2b2233", 15, 10, 0) + labels() + ptP();
+// 關卡 3 拉桿：換一個直角三角形驗證角平分線定理
+function lv2() {
+  const t = +$("#t2").value, cd = Math.sqrt(45 * 45 - t * t), dp = cd * t / (t + 45), pc = cd - dp;
+  const X = x => 150 + x * 8, Y = y => 305 - y * 6.2, D2 = [0, 0], B2 = [t, 0], C2 = [0, cd], P2 = [0, dp];
+  const L = (a, b, c, w = 2.5, d = "") => `<line x1="${X(a[0])}" y1="${Y(a[1])}" x2="${X(b[0])}" y2="${Y(b[1])}" stroke="${c}" stroke-width="${w}" ${d ? `stroke-dasharray="${d}"` : ""}/>`;
+  const tx = (q, s, c, dx, dy, an = "start") => `<text x="${X(q[0]) + dx}" y="${Y(q[1]) + dy}" font-size="15" font-weight="700" fill="${c}" text-anchor="${an}" style="paint-order:stroke;stroke:#fbfdf7;stroke-width:4px">${s}</text>`;
+  let h = `<polygon points="${[D2, B2, C2].map(q => X(q[0]) + "," + Y(q[1])).join(" ")}" fill="rgba(123,77,255,.05)" stroke="#2b2233" stroke-width="2"/>`;
+  h += L(B2, P2, "#d64545", 2.5, "7 5") + L(D2, P2, "#ff8a3d", 6) + L(P2, C2, "#7b4dff", 6);
+  h += tx(D2, "D", "#2b2233", -16, 16) + tx(B2, "B", "#2b2233", 6, 16) + tx(C2, "C", "#2b2233", -16, 4) + tx(P2, "P", "#d64545", -16, 5) + tx([t / 2, 0], `BD = ${fmt(t, 1)}`, "#2b2233", 0, 20, "middle") + tx([t / 2, cd / 2], "BC = 45", "#2b2233", 10, 0);
+  h += tx([0, dp / 2], "DP", "#ff8a3d", 8, 5) + tx([0, (dp + cd) / 2], "PC", "#7b4dff", 8, 5);
+  $("#map2b").innerHTML = h;
+  $("#t2n").textContent = t.toFixed(1);
+  $("#info2").innerHTML = `<table class="steps"><tr><td>DP ÷ PC</td><td>${fmt(dp)} ÷ ${fmt(pc)} = <b>${fmt(dp / pc, 3)}</b></td></tr><tr><td>BD ÷ BC</td><td>${fmt(t, 1)} ÷ 45 = <b>${fmt(t / 45, 3)}</b></td></tr></table>`;
+}
+$("#t2").oninput = lv2; lv2();
+// 關卡 4：CD 分 25 份
+(() => {
+  let h = base({ sides: false }) + alt() + bis(1, 30);
+  for (let k = 0; k <= 25; k++) { const q = part(D, C, k / 25); h += `<line x1="${px(q[0]) - 5}" y1="${py(q[1])}" x2="${px(q[0]) + 5}" y2="${py(q[1])}" stroke="${k <= 7 ? "#ff8a3d" : "#7b4dff"}" stroke-width="1.5"/>`; }
+  h += seg(D, P, "#ff8a3d", 6) + seg(P, C, "#7b4dff", 6, .6);
+  h += T(part(D, P, .5), "DP：7 份", "#c25e12", 15, -10, 5, "end") + T(part(P, C, .5), "PC：18 份", "#5a2fd6", 15, -10, 5, "end");
+  $("#map3").innerHTML = h + labels() + ptP();
+})();
+// 關卡 5：直角三角形 BDP
+$("#map4").innerHTML = base({ sides: false }) + alt(.5) + poly([B, D, P], "rgba(31,157,85,.22)", "#1f9d55") + seg(B, P, "#d64545", 4) + T(part(B, D, .5), "BD = 35/2", "#1f9d55", 14, 0, 20, "middle") + T(part(D, P, .5), "DP² = 539/4", "#1f9d55", 14, -8, 5, "end") + T(part(B, P, .5), "BP = ?", "#d64545", 15, 10, -6) + labels() + ptP();
+
+wireSteps($("#m1"), () => { show("#c1key"); done(0); });
+wireSteps($("#m2"), () => { show("#c2key"); done(1); });
+wireSteps($("#m3"), () => { show("#c3key"); done(2); });
+wireSteps($("#m4"), () => { show("#c4key"); done(3); });
+wireSteps($("#m5"), () => { show("#c5key"); done(4); });
+wireSteps($("#boss"), () => { fb($$("#boss .fb").pop(), true, "🏆 答對了！BP = 21，答案 D。"); show("#bsum"); done(5); });
+
+// ---------- 關卡 7：整合回顧（動畫） ----------
+(() => {
+  const cl = x => Math.max(0, Math.min(1, x)), k = (t, a, b) => cl((t - a) / (b - a));
+  // 解題路線圖：nodes = {x, y, w, h, lines, col, at, glow}，edges = {a, b, at, label, lx, ly, col, pts}（像素座標）
+  function roadmap(t, nodes, edges) {
+    const kk = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    let h = `<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>`;
+    edges.forEach(e => {
+      const f = kk(e.at, e.at + .06), col = e.col || "#7a6f85";
+      if (e.pts) h += `<polyline points="${e.pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${col}" stroke-width="3" opacity="${f}" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      else if (f > 0) h += `<line x1="${e.a[0]}" y1="${e.a[1]}" x2="${e.a[0] + (e.b[0] - e.a[0]) * f}" y2="${e.a[1] + (e.b[1] - e.a[1]) * f}" stroke="${col}" stroke-width="2.5" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      if (e.label) h += `<text x="${e.lx}" y="${e.ly}" font-size="13" fill="${col}" font-weight="700" text-anchor="${e.anchor || "start"}" opacity="${kk(e.at + .04, e.at + .1)}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${e.label}</text>`;
+    });
+    nodes.forEach(n => {
+      const op = kk(n.at, n.at + .06), lines = typeof n.lines === "function" ? n.lines(t) : n.lines;
+      const sw = n.glow ? 2.5 + 2 * Math.abs(Math.sin(t * 14)) * (1 - kk(n.at + .15, n.at + .3)) : 2.5;
+      h += `<g opacity="${op}"><rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="10" fill="#fff" stroke="${n.col}" stroke-width="${sw}"/>` +
+        lines.map((l, i) => `<text x="${n.x}" y="${n.y + 5 + (i - (lines.length - 1) / 2) * 19}" font-size="${i ? 13 : 14}" fill="${n.col}" font-weight="700" text-anchor="middle">${l}</text>`).join("") + `</g>`;
+    });
+    return h;
+  }
+  const SC = [
+    { name: "解題路線圖", dur: 11000, say: "先看解題路線圖。我們要求 BP。BP 是直角三角形 BDP 的斜邊，所以要找兩條直角邊 BD 和 DP。BD 用 CD 平方寫兩次算出來，等於 17.5。DP 用角平分線定理：DP 比 PC 等於 BD 比 BC，等於 7 比 18。CD 平方是一座橋，兩邊都用到它，而且不用開根號。最後畢氏定理，BP 平方等於 441，BP 等於 21。",
+      draw: t => roadmap(t, [
+        { x: 260, y: 26, w: 220, h: 38, lines: t => [t > .9 ? "🎯 BP = 21 ✓" : "🎯 目標：求 BP"], col: "#d64545", at: 0 },
+        { x: 260, y: 92, w: 280, h: 48, lines: ["⭐ BP 是直角 △BDP 的斜邊", "需要 BD 和 DP"], col: "#1f9d55", at: .1, glow: true },
+        { x: 135, y: 180, w: 220, h: 48, lines: ["CD² 寫兩次", "BD = 17.5"], col: "#118ab2", at: .25 },
+        { x: 390, y: 180, w: 220, h: 48, lines: ["角平分線定理", "DP : PC = 7 : 18"], col: "#d17a00", at: .38 },
+        { x: 260, y: 250, w: 290, h: 40, lines: ["🌉 CD² = 6875/4（不開根號）"], col: "#7b4dff", at: .52, glow: true },
+        { x: 260, y: 308, w: 290, h: 38, lines: ["BP² = BD² + DP² = 441"], col: "#c25e12", at: .68 }
+      ], [
+        { a: [260, 45], b: [260, 66], at: .07, col: "#d64545" },
+        { a: [200, 116], b: [150, 155], at: .22, col: "#118ab2" },
+        { a: [320, 116], b: [375, 155], at: .35, col: "#d17a00" },
+        { a: [150, 204], b: [215, 229], at: .5, col: "#118ab2", label: "", lx: 0, ly: 0 },
+        { a: [375, 204], b: [305, 229], at: .5, col: "#d17a00", label: "DP = (7/25)·CD", lx: 380, ly: 225 },
+        { a: [260, 270], b: [260, 288], at: .65, col: "#7b4dff" },
+        { pts: [[115, 308], [20, 308], [20, 26], [148, 26]], at: .82, col: "#d64545", label: "√441 = 21 🏆", lx: 30, ly: 58 }
+      ]),
+      math: [[0, "目標：求 BP"], [.1, "BP 是直角三角形 BDP 的斜邊 → 要 <b>BD</b> 和 <b>DP</b>"], [.25, "CD² 寫兩次 → BD = 17.5"], [.38, "角平分線定理 → DP : PC = 7 : 18"], [.52, "<b>CD² 是橋</b>：兩邊都用到，不用開根號"], [.68, "BP² = 441 → <b>BP = 21</b>"]] },
+    { name: "認識兩條線", say: "第一步，紅線是角 B 的角平分線，把角 B 分成一樣大的兩半。藍線是 AB 邊上的高，從 C 垂直畫到 AB，垂足是 D。兩條線交在 P。B、D、P 圍成直角三角形，BP 是斜邊。",
+      draw: t => base() + bis(k(t, 0, .3)) + alt(k(t, .3, .55)) + ptP(k(t, .55, .65)) + poly([B, D, P], "rgba(31,157,85,.25)", "#1f9d55", k(t, .7, .85)) + labels(),
+      math: [[0, "紅線：∠B 的<b>角平分線</b>"], [.3, "藍線：AB 邊上的<b>高</b> CD，∠CDB = 90°"], [.7, "△BDP 是直角三角形，<b>BP 是斜邊</b>"]] },
+    { name: "CD² 寫兩次", say: "第二步，設 BD 等於 x。從右邊看，CD 平方等於 45 平方減 x 平方。從左邊看，CD 平方等於 75 平方減 80 減 x 的平方。兩個相等，x 平方消掉，160 x 等於 2800，x 等於 17.5。",
+      draw: t => base() + poly([B, D, C], "rgba(17,138,178,.2)", "#118ab2", k(t, 0, .2)) + poly([A, D, C], "rgba(31,157,85,.2)", "#1f9d55", k(t, .25, .45)) + alt() + T(part(B, D, .5), "x", "#118ab2", 16, 0, 20, "middle", k(t, 0, .2)) + T(part(A, D, .5), "80 − x", "#1f9d55", 15, 0, 38, "middle", k(t, .25, .45)) + T(part(B, D, .5), "17.5", "#c25e12", 16, 0, 38, "middle", k(t, .8, .9)) + labels(),
+      math: [[0, "右邊：CD² = 45² − x²"], [.25, "左邊：CD² = 75² − (80 − x)²"], [.5, "相等 → x² 消掉 → 160x = 2800"], [.8, "<b>BD = 17.5</b>，CD² = 6875/4"]] },
+    { name: "角平分線定理", say: "第三步，P 在角平分線上，到 BD 和 BC 一樣遠，PD 等於 PE。三角形 BDP 和 BCP 的面積算兩次：一次用 BD、BC 當底，一次用 DP、PC 當底。所以 DP 比 PC 等於 BD 比 BC，等於 7 比 18。",
+      draw: t => base({ sides: false }) + poly([B, D, P], "rgba(214,69,69,.22)", "#d64545", k(t, 0, .2)) + poly([B, E, P], "rgba(242,183,5,.3)", "#d19a00", k(t, .1, .3)) + alt() + bis(1, 30) + seg(P, E, "#d19a00", 2.5, k(t, .1, .3)) + dot(E, "#d19a00", 4, k(t, .1, .3)) + T(E, "E", "#a07400", 16, 8, -2, "start", k(t, .1, .3)) +
+        seg(D, P, "#ff8a3d", 6, k(t, .55, .7)) + seg(P, C, "#7b4dff", 6, k(t, .55, .7) * .7) + T(part(D, P, .5), "7", "#c25e12", 16, -10, 5, "end", k(t, .7, .85)) + T(part(P, C, .5), "18", "#5a2fd6", 16, -10, 5, "end", k(t, .7, .85)) + labels() + ptP(),
+      math: [[0, "全等 → <b>PD = PE</b>（角平分線上的點到兩邊一樣遠）"], [.35, "面積算兩次 → DP : PC = BD : BC"], [.7, "= 17.5 : 45 = <b>7 : 18</b>"]] },
+    { name: "分份數", say: "第四步，CD 一共 25 份，DP 佔 7 份，所以 DP 等於 25 分之 7 的 CD。兩邊平方，DP 平方等於 625 分之 49 乘 CD 平方，等於 4 分之 539。",
+      draw: t => { let h = base({ sides: false }) + alt() + bis(1, 30); const n = Math.round(25 * k(t, 0, .5));
+        for (let i = 0; i <= n; i++) { const q = part(D, C, i / 25); h += `<line x1="${px(q[0]) - 5}" y1="${py(q[1])}" x2="${px(q[0]) + 5}" y2="${py(q[1])}" stroke="${i <= 7 ? "#ff8a3d" : "#7b4dff"}" stroke-width="1.5"/>`; }
+        return h + seg(D, P, "#ff8a3d", 6, k(t, .5, .6)) + T(part(D, P, .5), "DP = 7/25 CD", "#c25e12", 15, -10, 5, "end", k(t, .5, .6)) + labels() + ptP(); },
+      math: [[0, "7 + 18 = 25 份"], [.5, "DP = (7/25) × CD"], [.7, "DP² = (49/625) × (6875/4) = <b>539/4</b>"]] },
+    { name: "畢氏得 BP", say: "最後，畢氏定理。BP 平方等於 BD 平方加 DP 平方，等於 4 分之 1225 加 4 分之 539，等於 441。BP 等於 21，答案 D！",
+      draw: t => base({ sides: false }) + alt(.4) + poly([B, D, P], "rgba(31,157,85,.25)", "#1f9d55") + seg(B, P, "#d64545", 4 + 3 * Math.abs(Math.sin(t * 6)) * (1 - k(t, .7, 1))) + T(part(B, P, .5), t > .5 ? "BP = 21 🏆" : "BP", "#d64545", 16, 10, -6) + labels() + ptP(),
+      math: [[0, "BP² = BD² + DP² = 1225/4 + 539/4"], [.3, "= 1764/4 = 441"], [.5, "<b>BP = 21</b>，答案 <b>(D)</b> 🏆"]] }
+  ];
+  let cur = 0, t0 = 0, auto = false, waitUntil = 0;
+  $("#rcChain").innerHTML = SC.map((s, i) => `<button data-rc="${i}">${i + 1}. ${s.name}</button>`).join(" → ");
+  function render(t) {
+    const s = SC[cur]; $("#rcMap").innerHTML = s.draw(cl(t));
+    const lines = s.math.filter(m => cl(t) >= m[0]);
+    $("#rcMath").innerHTML = lines.map((m, j) => `<div style="opacity:${j === lines.length - 1 ? 1 : .6}">${m[1]}</div>`).join("");
+  }
+  function enter(i) {
+    cur = Math.max(0, Math.min(SC.length - 1, i)); t0 = performance.now(); waitUntil = 0;
+    $$("#rcChain button").forEach((b, j) => { b.style.background = j === cur ? "#7b4dff" : j < cur ? "#efe8ff" : "#fff"; b.style.color = j === cur ? "#fff" : ""; });
+    $("#rcSay").textContent = SC[cur].say; speak(SC[cur].say);
+    if (cur === SC.length - 1) { show("#c7key"); done(6); }
+  }
+  const setAuto = on => { auto = on; $("#rcAuto").textContent = on ? "⏸ 暫停自動播放" : "▶ 自動播放全部"; };
+  $("#rcChain").onclick = e => { const i = e.target.dataset.rc; if (i !== undefined) { setAuto(false); enter(+i); } };
+  $("#rcPrev").onclick = () => { setAuto(false); enter(cur - 1); };
+  $("#rcNext").onclick = () => { setAuto(false); enter(cur + 1); };
+  $("#rcAgain").onclick = () => enter(cur);
+  $("#rcAuto").onclick = () => { if (auto) { setAuto(false); speechSynthesis.cancel(); } else { setAuto(true); enter(cur === SC.length - 1 ? 0 : cur); } };
+  const DUR = 6000;
+  (function loop(now) {
+    if ($("#s6").classList.contains("on")) {
+      const t = (now - t0) / (SC[cur].dur || DUR); render(t);
+      if (auto && t >= 1 && !speechSynthesis.speaking) {
+        if (!waitUntil) waitUntil = now + 800;
+        else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }
+      }
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+  $$("#rcChain button").forEach((b, j) => b.style.background = j === 0 ? "#7b4dff" : "#fff");
+  $("#rcChain button").style.color = "#fff";
+  $("#rcSay").textContent = SC[0].say;
+})();
+
+// ---------- 關卡 8：無限練習 ----------
+let Q = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+const pick = a => a[rnd(0, a.length - 1)];
+const fstr = (n, d) => { const g = gcd(n, d); n /= g; d /= g; return d === 1 ? `${n}` : `${n}/${d}`; };
+// 變化題：三邊都是整數、答案 BP 也是整數的三角形 [AB, BC, AC]（D 落在 AB 上）
+const TRI = [[80, 45, 75], [35, 45, 45], [56, 100, 100], [20, 20, 24], [15, 12, 18], [30, 18, 33], [40, 24, 44], [50, 30, 55], [31, 60, 64], [18, 30, 33], [30, 66, 69], [39, 96, 99], [55, 20, 53], [38, 42, 53], [64, 66, 86]];
+function newProblem() {
+  if (mode === "easy") {
+    let m, n, t, s;
+    do { m = rnd(2, 9); n = rnd(2, 9); t = rnd(1, 3); s = rnd(t + 1, t + 3); } while (m === n || gcd(m, n) !== 1 || Math.abs(m - n) * s >= (m + n) * t);
+    Q = { easy: true, BA: m * s, BC: n * s, AC: (m + n) * t, m, n, t, ans: m * t };
+    $("#pq").innerHTML = `三角形 ABC 中，BA = <b>${Q.BA}</b>、BC = <b>${Q.BC}</b>、AC = <b>${Q.AC}</b>。∠B 的角平分線交 AC 於 D，AD = ?`;
+    $("#ptip").textContent = "答案是整數。";
+  } else {
+    const [ab, bc, ac] = pick(TRI), d2 = ab * ab + bc * bc - ac * ac, den = 2 * ab; // BD = d2 / den
+    const bd = d2 / den, cd2 = bc * bc - bd * bd, bp = bd * Math.sqrt(2 / (1 + bd / bc));
+    Q = { ab, bc, ac, d2, den, bd, cd2, bp: Math.round(bp), ans: Math.round(bp) };
+    $("#pq").innerHTML = `三角形 ABC：AB = <b>${ab}</b>、BC = <b>${bc}</b>、AC = <b>${ac}</b>。∠B 的角平分線和 AB 邊上的高交在 P。BP = ?`;
+    $("#ptip").textContent = "答案是整數。分數用斜線寫比較好算。";
+  }
+  $("#pans").value = ""; fb($("#pfb"), null, ""); $("#psol").classList.add("hidden");
+}
+function solution() {
+  if (Q.easy) {
+    const { BA, BC, AC, ans } = Q, g = gcd(BA, BC);
+    return `① 角平分線定理：AD : DC = BA : BC = ${BA} : ${BC} = ${BA / g} : ${BC / g}<br>
+      ② AC 一共 ${BA / g} + ${BC / g} = ${(BA + BC) / g} 份，每份 ${AC} ÷ ${(BA + BC) / g} = ${AC * g / (BA + BC)}<br>
+      ③ AD 佔 ${BA / g} 份：AD = ${BA / g} × ${AC * g / (BA + BC)} = <b>${ans}</b>`;
+  }
+  const { ab, bc, ac, d2, den, bp } = Q, g = gcd(d2, bc * den), ratio = [d2 / g, bc * den / g]; // BD : BC = d2/den : bc
+  const bdS = fstr(d2, den), bd2 = fstr(d2 * d2, den * den), cd2 = fstr(bc * bc * den * den - d2 * d2, den * den);
+  const s = ratio[0] + ratio[1], dp2n = ratio[0] ** 2 * (bc * bc * den * den - d2 * d2), dp2d = s * s * den * den;
+  return `① 設 BD = x：${bc}² − x² = ${ac}² − (${ab} − x)²，x² 消掉 → ${2 * ab}x = ${d2} → BD = <b>${bdS}</b><br>
+    ② CD² = ${bc}² − (${bdS})² = ${cd2}（先不開根號）<br>
+    ③ 角平分線定理：DP : PC = BD : BC = ${ratio[0]} : ${ratio[1]}，DP = (${ratio[0]}/${s}) × CD<br>
+    ④ DP² = (${ratio[0] ** 2}/${s * s}) × ${cd2} = ${fstr(dp2n, dp2d)}<br>
+    ⑤ BP² = BD² + DP² = ${bd2} + ${fstr(dp2n, dp2d)} = ${bp * bp}，<b>BP = ${bp}</b>`;
+}
+$("#pchk").onclick = () => {
+  const ok = same(val($("#pans").value), Q.ans, 1e-6);
+  streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
+  fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再算一次，或看解法");
+  if (streak >= 3 && !Q.easy) done(7);
+};
+$("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
+$("#pnew").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+// 把畫面上的數學唸成中文：分數「b 分之 a」、x² 唸「x 平方」、負號唸「負」
+function readable(el) {
+  if (typeof el === "string") return el;
+  const c = el.cloneNode(true);
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden, svg, .en, i").forEach(b => b.remove());
+  c.querySelectorAll(".fr").forEach(f => f.replaceWith(` ${f.children[1].textContent} 分之 ${f.children[0].textContent} `));
+  c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  c.querySelectorAll("td, th, br").forEach(td => td.append("，"));
+  return c.textContent;
+}
+function toSpeech(t) {
+  return t.replace(/[🔄🔑🎉✅❌🤔🏆📐⭐💡🌟🔺📜📖]/gu, "").trim()
+    .replace(/∠/g, "角 ").replace(/△/g, "三角形 ").replace(/\s:\s/g, " 比 ")
+    .replace(/(^|[\s=(（：，、×÷和是！？。])[−-](?=\d+\/\d)/g, "$1負")
+    .replace(/(\d+(?:\.\d+)?|[a-z])\/(\d+|[a-z])/g, " $2 分之 $1 ")
+    .replace(/([a-zA-Z\d])²/g, " $1 平方").replace(/\)²/g, ") 的平方")
+    .replace(/(^|[=(（：，、×÷和！？。]\s*)[−-](?=[\d√])/g, "$1負").replace(/分之\s*[−-]/g, "分之負")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ")
+    .replace(/≈/g, " 大約是 ").replace(/√/g, " 根號 ").replace(/</g, " 小於 ").replace(/>/g, " 大於 ").replace(/→/g, "，").replace(/⇔/g, "，就是，").replace(/…/g, "，")
+    .replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(readable(t)));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+const HELLO = "你好，我們一起來玩角平分線大冒險！";
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak(HELLO); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak(HELLO); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak(HELLO); };
+$("#vTest").onclick = () => speak(HELLO);
+$$(".story, .key, .proof").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story"));
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+const watchOnce = (el, isOn, target) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(target(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st));
+new MutationObserver(() => speak($("#pq"))).observe($("#pq"), { childList: true });
+</script>
+</body>
+</html>
