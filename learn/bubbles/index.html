@@ -48,6 +48,7 @@
   svg.map { background:#fbfdf7; border:1px solid var(--line); border-radius:10px; }
   .info { margin-top:6px; font-size:16px; }
   .st-hit { color:var(--bad); font-weight:700; } .st-tan { color:var(--ok); font-weight:700; } .st-miss { color:var(--accent); font-weight:700; }
+  .en { color:#118ab2; font-size:.82em; font-style:italic; margin:0 3px; }
   .eq { display:inline-block; background:#f6f0ff; border-radius:8px; padding:2px 10px; margin:2px 0; font-size:18px; }
 </style>
 </head>
@@ -83,7 +84,7 @@
 <section class="on" id="s0">
   <div class="card story">
     <h2>關卡 1：泡泡地圖</h2>
-    三顆泡泡，半徑是 <b>1</b>（藍）、<b>2</b>（橘）、<b>3</b>（綠），兩兩互相<b>貼著</b>。
+    三顆泡泡（圓 circle），半徑<span class="en">(radius)</span>是 <b>1</b>（藍）、<b>2</b>（橘）、<b>3</b>（綠），兩兩互相<b>貼著</b>。
     中間的縫裡卡著一顆<b>小泡泡</b>（紫），跟三顆大泡泡都剛好貼著。小泡泡的半徑 <b>r</b> 是多少？<br>
     先動手試試看：小泡泡一直貼著藍泡泡和橘泡泡，拉動拉桿改變 r，看它跟綠泡泡的關係。
   </div>
@@ -123,7 +124,7 @@
   </div>
   <div class="card hidden" id="c1key">
     <div class="key">
-      🔑 「兩個圓從外面剛好貼著」在數學上叫做<b>外切</b>。<br>
+      🔑 「兩個圓從外面剛好貼著」在數學上叫做<b>外切</b><span class="en">(externally tangent)</span>。<br>
       拉桿只能找到「大約 0.26」，可是選項太接近了。接下來幾關，我們一步一步把 r <b>精確</b>算出來。
     </div>
     <div class="nav"><button class="go" data-go="1">下一關 →</button></div>
@@ -134,7 +135,7 @@
 <section id="s1">
   <div class="card story">
     <h2>關卡 2：外切＝圓心距離是半徑相加</h2>
-    兩個圓剛好貼著的時候，它們的<b>圓心</b>離多遠？用半徑 2（橘）和半徑 3（綠）的兩個圓來試。拉動拉桿改變兩個圓心的距離 d。
+    兩個圓剛好貼著的時候，它們的<b>圓心</b><span class="en">(center)</span>離多遠？用半徑 2（橘）和半徑 3（綠）的兩個圓來試。拉動拉桿改變兩個圓心的距離 d。
   </div>
   <div class="card">
     <svg class="map" id="map1" width="100%" viewBox="0 0 520 240"></svg>
@@ -149,7 +150,7 @@
       <div class="fb"></div>
     </div>
     <div class="step">
-      兩個圓貼著的那一點叫<b>切點 T</b>。T 在哪裡？
+      兩個圓貼著的那一點叫<b>切點 T</b><span class="en">(point of tangency)</span>。T 在哪裡？
       <div class="choices" data-right="0">
         <button>剛好在兩個圓心的連線上</button><button data-why="看圖：貼著的時候，T 一定在兩個圓心中間那條虛線上。下面有講解為什麼。">不一定在連線上</button>
       </div>
@@ -157,7 +158,7 @@
       <div class="fb"></div>
       <div class="proof hidden">
         📐 <b>講解：為什麼切點一定在連線上？</b><br>
-        ① 把整張圖沿著「兩個圓心的連線」<b>對折</b>。圓是對稱的，對折後兩個圓都跟原本完全重合。<br>
+        ① 把整張圖沿著「兩個圓心的連線」<b>對折</b><span class="en">(reflect)</span>。圓是對稱的，對折後兩個圓都跟原本完全重合。<br>
         ② 假設切點 T 不在連線上，對折後 T 會落到另一個點 T′。T 在兩個圓上，對折後 T′ 也在兩個圓上，所以 T′ 也是兩個圓碰到的地方。<br>
         ③ 這樣兩個圓就碰到<b>兩個點</b>，代表它們交叉、重疊了，不是「剛好貼著只碰一點」。矛盾！<br>
         ④ 所以 T 一定在連線上。從橘色圓心走到 T 是半徑 2，從 T 走到綠色圓心是半徑 3，加起來：<b>d = 2 + 3 = 5</b>。
@@ -181,7 +182,7 @@
   </div>
   <div class="card hidden" id="c2key">
     <div class="key">
-      🔑 <b>外切 ⇔ 圓心距離 = 兩個半徑相加。</b><br>
+      🔑 <b>外切 ⇔ 圓心距離 = 兩個半徑相加。</b><br><span class="en">Externally tangent circles: distance between centers = sum of the radii.</span><br>
       所以：AB = 3、AC = 4、BC = 5；小泡泡圓心 Q 到 A、B、C 的距離是 <b>1 + r、2 + r、3 + r</b>。
     </div>
     <div class="nav"><button class="go" data-go="2">下一關 →</button></div>
@@ -213,10 +214,10 @@
       <div class="fb"></div>
       <div class="proof hidden">
         📐 <b>講解：為什麼 3² + 4² = 5² 就一定有直角？</b><br>
-        ① 先在紙上畫一個<b>真的</b>直角三角形，兩條直角邊是 3 和 4。<br>
-        ② 畢氏定理：它的斜邊² = 3² + 4² = 25，所以斜邊 = 5。這個三角形三邊是 3、4、5。<br>
-        ③ 我們的三角形 ABC 三邊也是 3、4、5。想像用三根長度 3、4、5 的木棒拼三角形：不管怎麼拼，拼出來的形狀都<b>一模一樣</b>（數學叫「全等」）。<br>
-        ④ 所以三角形 ABC 跟①畫的那個完全一樣，也有一個直角，就在 3 和 4 兩條邊夾住的地方。
+        ① 先在紙上畫一個<b>真的</b>直角三角形<span class="en">(right triangle)</span>，兩條直角邊<span class="en">(legs)</span>是 3 和 4。<br>
+        ② 畢氏定理<span class="en">(Pythagorean Theorem)</span>：它的斜邊<span class="en">(hypotenuse)</span>² = 3² + 4² = 25，所以斜邊 = 5。這個三角形三邊是 3、4、5。<br>
+        ③ 我們的三角形 ABC 三邊也是 3、4、5。想像用三根長度 3、4、5 的木棒拼三角形：不管怎麼拼，拼出來的形狀都<b>一模一樣</b>（數學叫「全等」<span class="en">(congruent, SSS)</span>）。<br>
+        ④ 所以三角形 ABC 跟①畫的那個完全一樣，也有一個直角<span class="en">(right angle)</span>，就在 3 和 4 兩條邊夾住的地方。
       </div>
     </div>
     <div class="step">
@@ -234,7 +235,7 @@
   </div>
   <div class="card hidden" id="c3key">
     <div class="key">
-      🔑 三個圓心連成 3-4-5 <b>直角三角形</b>，直角在 A（藍泡泡的圓心）。<br>
+      🔑 三個圓心連成 3-4-5 <b>直角三角形</b>，直角在 A（藍泡泡的圓心）。<br><span class="en">If a² + b² = c², it is a right triangle (converse of the Pythagorean Theorem).</span><br>
       有直角就太好了：直角的兩條邊互相垂直，就像座標的 x 軸和 y 軸！下一關把它放上座標。
     </div>
     <div class="nav"><button class="go" data-go="3">下一關 →</button></div>
@@ -245,7 +246,7 @@
 <section id="s3">
   <div class="card story">
     <h2>關卡 4：放上座標，列出方程式</h2>
-    把直角那一點 A 放在原點，兩條直角邊分別放在 x 軸和 y 軸上。這樣每個圓心都有座標，就能用畢氏定理算距離了。
+    把直角那一點 A 放在原點<span class="en">(origin)</span>，兩條直角邊分別放在 x 軸<span class="en">(x-axis)</span>和 y 軸<span class="en">(y-axis)</span>上。這樣每個圓心都有座標<span class="en">(coordinates)</span>，就能用畢氏定理算距離了。
   </div>
   <div class="card">
     <svg class="map" id="map3" width="100%" viewBox="0 0 400 440" style="max-width:440px;display:block;margin:0 auto"></svg>
@@ -263,7 +264,7 @@
       <div class="hint">💡 跟 x 軸垂直的方向就是 y 軸。從原點往上走 4。</div>
       <div class="fb"></div>
       <div class="proof explain hidden">
-        📐 <b>為什麼可以這樣放？</b>A 是直角，AB 和 AC 互相垂直；x 軸和 y 軸也互相垂直。所以把 A 放在原點、AB 放在 x 軸上，AC 就剛好落在 y 軸上。
+        📐 <b>為什麼可以這樣放？</b>A 是直角，AB 和 AC 互相垂直<span class="en">(perpendicular)</span>；x 軸和 y 軸也互相垂直。所以把 A 放在原點、AB 放在 x 軸上，AC 就剛好落在 y 軸上。
         三角形本身沒變，只是我們幫它選了一個好算的位置。
       </div>
     </div>
@@ -303,7 +304,7 @@
   </div>
   <div class="card hidden" id="c4key">
     <div class="key">
-      🔑 三個方程式：<br>
+      🔑 三個方程式<span class="en">(a system of 3 equations)</span>：<br>
       <span class="eq">① x² + y² = (1 + r)²</span><br>
       <span class="eq">② (3 − x)² + y² = (2 + r)²</span><br>
       <span class="eq">③ x² + (4 − y)² = (3 + r)²</span><br>
@@ -316,7 +317,7 @@
 <!-- ============ 關卡 5：相減得 x ============ -->
 <section id="s4">
   <div class="card story">
-    <h2>關卡 5：兩式相減，平方消失</h2>
+    <h2>關卡 5：兩式相減，平方消失</h2><span class="en">Subtract one equation from the other to eliminate the squares.</span><br>
     看 ① 和 ②：<br>
     <span class="eq">① x² + y² = (1 + r)²</span>　<span class="eq">② (3 − x)² + y² = (2 + r)²</span><br>
     兩個式子裡都有<b>一模一樣的 y²</b>。如果把 ② 減掉 ①，左邊的 y² 減 y² 就<b>不見了</b>！先用數字暖身。
@@ -331,7 +332,7 @@
       <div class="fb"></div>
     </div>
     <div class="step">
-      展開 (3 − x)² = (3 − x) × (3 − x)。用分配律，前面每一項乘後面每一項：
+      展開<span class="en">(expand)</span> (3 − x)² = (3 − x) × (3 − x)。用分配律<span class="en">(distributive property)</span>，前面每一項乘後面每一項：
       <table class="steps">
         <tr><th></th><th>× 3</th><th>× (−x)</th></tr>
         <tr><th>3</th><td>9</td><td>−3x</td></tr>
@@ -349,7 +350,7 @@
       <div class="hint">💡 兩邊都加 6x：9 = −9 + 6x。兩邊都加 9：18 = 6x。兩邊都除以 6。</div>
       <div class="fb"></div>
       <div class="proof explain hidden">
-        📐 <b>驗算：</b>x = 3 代回第一式：9 + y² = 25，y² = 16，y = 4。<br>
+        📐 <b>驗算</b><span class="en">(check)</span><b>：</b>x = 3 代回<span class="en">(substitute)</span>第一式：9 + y² = 25，y² = 16，y = 4。<br>
         第二式：(3 − 3)² + 4² = 0 + 16 = 16 ✓。兩個都對！<br>
         <b>為什麼相減這麼好用？</b>兩個式子展開後都有 x² 和 y²，相減就把它們一起消掉，只剩下沒有平方的 x，一下就解出來了。
       </div>
@@ -389,7 +390,7 @@
   </div>
   <div class="card hidden" id="c5key">
     <div class="key">
-      🔑 兩式相減，<b>一樣的平方會消掉</b>，留下好解的式子。<br>
+      🔑 兩式相減<span class="en">(subtract the equations)</span>，<b>一樣的平方會消掉</b><span class="en">(cancel)</span>，留下好解的式子。<br>
       ② − ① 得到：<b>x = 1 − <span class="fr"><span>r</span><span>3</span></span></b>。下一關用同一招算 y！
     </div>
     <div class="nav"><button class="go" data-go="5">下一關 →</button></div>
@@ -472,7 +473,7 @@
 <section id="s6">
   <div class="card story">
     <h2>關卡 7：代回去，解出 r</h2>
-    把 x = 1 − <span class="fr"><span>r</span><span>3</span></span>、y = 1 − <span class="fr"><span>r</span><span>2</span></span> 代進 <span class="eq">① x² + y² = (1 + r)²</span>，就得到一個只有 r 的方程式。
+    把 x = 1 − <span class="fr"><span>r</span><span>3</span></span>、y = 1 − <span class="fr"><span>r</span><span>2</span></span> 代進 <span class="eq">① x² + y² = (1 + r)²</span>，就得到一個只有 r 的方程式<span class="en">(equation in r)</span>。
   </div>
   <div class="card" id="m7">
     <div class="step on">
@@ -492,7 +493,7 @@
       </div>
     </div>
     <div class="step">
-      分母有 9 和 4，很麻煩。整個式子每一項都乘同一個數，把分母全部消掉。要乘幾？（9 和 4 的最小公倍數）
+      分母有 9 和 4，很麻煩。整個式子每一項都乘同一個數，把分母全部消掉。要乘幾？（9 和 4 的最小公倍數<span class="en">(least common multiple, LCM)</span>）
       <input class="n" data-ans="36" data-wrong='{"13":"9 + 4 = 13 是加起來，要找 9 和 4 都能整除的數。"}'>
       <button class="go chk">確認</button> <button class="ghost hb">提示</button>
       <div class="hint">💡 9 和 4 沒有共同的因數，最小公倍數就是 9 × 4。</div>
@@ -520,14 +521,14 @@
     </div>
     <div class="step">
       右邊：36(1 + r)² = 36(1 + 2r + r²) = 36 + 72r + 36r²。<br>
-      72 − 60r + 13r² = 36 + 72r + 36r²。把左邊全部搬到右邊（右邊的 r² 比較多，搬過去 r² 前面才是正的）：<br>
+      72 − 60r + 13r² = 36 + 72r + 36r²。把左邊全部搬到右邊<span class="en">(move all terms to one side)</span>（右邊的 r² 比較多，搬過去 r² 前面才是正的）：<br>
       0 = <input class="n" data-ans="23"> r² + <input class="n" data-ans="132"> r − <input class="n" data-ans="36">
       <button class="go chk">確認</button> <button class="ghost hb">提示</button>
       <div class="hint">💡 搬到另一邊要變號：13r² 搬過去變 −13r²，−60r 搬過去變 +60r，72 搬過去變 −72。<br>💡 36r² − 13r² = ?，72r + 60r = ?，36 − 72 = ?</div>
       <div class="fb"></div>
     </div>
     <div class="step">
-      解 23r² + 132r − 36 = 0。試試看拆成兩個括號相乘：<b>(23r + a)(r + b)</b>。展開它：
+      解二次方程式<span class="en">(quadratic equation)</span> 23r² + 132r − 36 = 0。試試看拆成兩個括號相乘<span class="en">(factor)</span>：<b>(23r + a)(r + b)</b>。展開它：
       <table class="steps">
         <tr><td>(23r + a)(r + b)</td><td>= 23r² + 23b·r + a·r + ab = 23r² + (23b + a)r + ab</td></tr>
       </table>
@@ -552,7 +553,7 @@
       </div>
     </div>
     <div class="step">
-      (23r − 6)(r + 6) = 0。<b>兩個數相乘等於 0，至少有一個是 0</b>（因為不是 0 的數乘不是 0 的數，不可能是 0）。<br>
+      (23r − 6)(r + 6) = 0。<b>兩個數相乘等於 0，至少有一個是 0</b><span class="en">(zero product property)</span>（因為不是 0 的數乘不是 0 的數，不可能是 0）。<br>
       所以 23r − 6 = 0，或 r + 6 = 0。哪一個是我們要的？
       <div class="choices" data-right="0">
         <button>23r − 6 = 0，r = <span class="fr"><span>6</span><span>23</span></span></button>
@@ -580,6 +581,7 @@
 <section id="s7">
   <div class="card story">
     <h2>關卡 8：大魔王（2025 AMC 10A 第 22 題）</h2>
+    <div class="proof" style="font-style:italic">📜 <span class="en" style="font-size:1em"><b>Original problem:</b> A circle of radius r is surrounded by three circles, whose radii are 1, 2, and 3, all externally tangent to the inner circle and externally tangent to each other. What is r?</span></div>
     一個半徑 r 的圓，被三個半徑 1、2、3 的圓圍住。三個圓都和中間的圓<b>外切</b>，而且彼此也兩兩外切。r 是多少？<br>
     <span class="tip">（原題的圖：半徑 3 在左下、2 在上面、1 在右邊。跟我們的地圖只是轉了方向，形狀完全一樣。）</span><br>
     (A) <span class="fr"><span>1</span><span>4</span></span>　(B) <span class="fr"><span>6</span><span>23</span></span>　(C) <span class="fr"><span>3</span><span>11</span></span>　(D) <span class="fr"><span>5</span><span>17</span></span>　(E) <span class="fr"><span>3</span><span>10</span></span>
@@ -665,9 +667,13 @@
       ③ 距離用畢氏定理寫成方程式<br>
       ④ 好幾個式子都有一樣的平方 → 兩式相減，平方消失
     </div>
+    <div class="key">
+      📖 <b>英文小字典（考試會看到的字）</b>
+      <table class="steps"><tr><td>圓 / 半徑 / 圓心</td><td><i>circle / radius (複數 radii) / center</i></td></tr><tr><td>外切</td><td><i>externally tangent</i></td></tr><tr><td>切點</td><td><i>point of tangency</i></td></tr><tr><td>直角三角形 / 直角</td><td><i>right triangle / right angle</i></td></tr><tr><td>直角邊 / 斜邊</td><td><i>legs / hypotenuse</i></td></tr><tr><td>畢氏定理</td><td><i>Pythagorean Theorem</i></td></tr><tr><td>全等</td><td><i>congruent</i></td></tr><tr><td>座標 / 原點</td><td><i>coordinates / origin</i></td></tr><tr><td>x 軸 / y 軸</td><td><i>x-axis / y-axis</i></td></tr><tr><td>互相垂直</td><td><i>perpendicular</i></td></tr><tr><td>展開 / 分配律</td><td><i>expand / distributive property</i></td></tr><tr><td>代入 / 消去</td><td><i>substitute / eliminate</i></td></tr><tr><td>最小公倍數</td><td><i>least common multiple (LCM)</i></td></tr><tr><td>二次方程式</td><td><i>quadratic equation</i></td></tr><tr><td>因式分解</td><td><i>factor (factoring)</i></td></tr><tr><td>相乘等於 0 的性質</td><td><i>zero product property</i></td></tr><tr><td>公式解</td><td><i>quadratic formula</i></td></tr></table>
+    </div>
     <div class="proof">
-      🌟 <b>偷偷告訴你（進階）：</b>數學家笛卡兒發現了一個專門算「四個互相外切的圓」的公式，叫<b>笛卡兒圓定理</b>。
-      把半徑倒過來叫「彎曲度」：1、<span class="fr"><span>1</span><span>2</span></span>、<span class="fr"><span>1</span><span>3</span></span>，中間小圓的彎曲度
+      🌟 <b>偷偷告訴你（進階）：</b>數學家笛卡兒發現了一個專門算「四個互相外切的圓」的公式，叫<b>笛卡兒圓定理</b><span class="en">(Descartes' Circle Theorem)</span>。
+      把半徑倒過來叫「彎曲度」<span class="en">(curvature)</span>：1、<span class="fr"><span>1</span><span>2</span></span>、<span class="fr"><span>1</span><span>3</span></span>，中間小圓的彎曲度
       = 1 + <span class="fr"><span>1</span><span>2</span></span> + <span class="fr"><span>1</span><span>3</span></span> + 2 × √(1 × <span class="fr"><span>1</span><span>2</span></span> + <span class="fr"><span>1</span><span>2</span></span> × <span class="fr"><span>1</span><span>3</span></span> + <span class="fr"><span>1</span><span>3</span></span> × 1)
       = <span class="fr"><span>11</span><span>6</span></span> + 2 × 1 = <span class="fr"><span>23</span><span>6</span></span>，
       倒回來 r = <span class="fr"><span>6</span><span>23</span></span>。一樣的答案！不過不記得公式也沒關係，我們用畢氏定理就做出來了。
@@ -1068,7 +1074,7 @@ function solution() {
     ③ 第二式減第一式：${u * u} − ${2 * u}x = ${b * b - a * a} + ${2 * (b - a)}r → x = ${a} − ${fstr(p)} r<br>
     ④ 第三式減第一式：${v * v} − ${2 * v}y = ${c * c - a * a} + ${2 * (c - a)}r → y = ${a} − ${fstr(q)} r<br>
     ⑤ 代回第一式整理：${A}r² + ${B}r − ${-C} = 0<br>
-    ⑥ 公式解取正的：r = (−${B} + √${D}) ÷ ${2 * A} = (−${B} + ${Math.round(Math.sqrt(D))}) ÷ ${2 * A} = <b>${fstr(r)}</b>（≈ ${fmt(r.n / r.d, 4)}）`;
+    ⑥ 公式解（quadratic formula）取正的：r = (−${B} + √${D}) ÷ ${2 * A} = (−${B} + ${Math.round(Math.sqrt(D))}) ÷ ${2 * A} = <b>${fstr(r)}</b>（≈ ${fmt(r.n / r.d, 4)}）`;
 }
 $("#pchk").onclick = () => {
   const ok = same(val($("#pans").value), P.ans, P.easy ? 1e-9 : 0.0006);
@@ -1097,7 +1103,7 @@ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
 function readable(el) {
   if (typeof el === "string") return el;
   const c = el.cloneNode(true);
-  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden, svg").forEach(b => b.remove());
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden, svg, .en, i").forEach(b => b.remove());
   c.querySelectorAll(".fr").forEach(f => f.replaceWith(` ${f.children[1].textContent} 分之 ${f.children[0].textContent} `));
   c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
   c.querySelectorAll("table.derive tr:first-child").forEach(r => r.remove());
