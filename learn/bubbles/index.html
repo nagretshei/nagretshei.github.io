@@ -909,7 +909,8 @@ $("#map2").innerHTML = drawC(ZOOM, { tri: 1 });
 const map3 = o => $("#map3").innerHTML = drawC(ZOOM, o);
 map3({ axes: 1, tri: 1, coords: "A" });
 $$("#m4 .step[data-map]").forEach(st => new MutationObserver(() => { if (st.classList.contains("on")) map3(JSON.parse(st.dataset.map)); }).observe(st, { attributes: true, attributeFilter: ["class"] }));
-$("#s3").addEventListener("click", e => { const st = e.target.closest(".step[data-map]"); if (st) map3(JSON.parse(st.dataset.map)); });
+// 點題目文字可回看該步的圖；點按鈕不算（答對時下一步已經換圖，不要蓋回去）
+$("#s3").addEventListener("click", e => { if (e.target.closest("button, input")) return; const st = e.target.closest(".step[data-map]"); if (st) map3(JSON.parse(st.dataset.map)); });
 // 關卡 6：拉 r 看 Q 的位置
 function lv5() {
   const r = +$("#r5").value, I = inner(r), [x, y] = I.Q;
