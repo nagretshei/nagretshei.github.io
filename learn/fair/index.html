@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>公平數大冒險｜一座山與三種選擇</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --gold:#f2b705; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  input[type=range] { width:100%; }
+  input.n { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid var(--gold); padding:10px 16px; border-radius:8px; margin:12px 0; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+  .orig { background:#f4f0ff; border-left:6px solid var(--accent); padding:10px 16px; border-radius:8px; margin:8px 0; font-size:18px; line-height:1.8; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  table.derive td { vertical-align:middle; padding:8px 10px; }
+  table.derive td:first-child { min-width:190px; font-size:15px; }
+  .step { display:none; } .step.on { display:block; margin-bottom:14px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button, .choices button { font-size:17px; margin:4px; padding:5px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .math { font-size:20px; }
+  .tip { font-size:14px; color:#7a6f85; }
+  .en { color:#118ab2; font-size:.82em; font-style:italic; margin:0 3px; }
+  .status { min-height:28px; font-weight:600; }
+  svg.mt { width:100%; background:#fff; border:1px solid var(--line); border-radius:10px; }
+  /* 五步路線 */
+  .five { display:grid; gap:8px; margin:10px 0; }
+  .five button { text-align:left; font-size:16px; border:2px solid var(--line); border-radius:12px; background:#fff; padding:8px 14px; cursor:pointer; line-height:1.5; transition:all .4s; }
+  .five button.lit { border-color:var(--accent); background:#f4f0ff; }
+  .five button b { color:var(--accent); }
+  /* 排列卡片 */
+  .perms { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+  .perms button { font-size:22px; font-weight:700; padding:6px 16px; border-radius:12px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .perms button.in { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .perms button.right { border-color:var(--ok); background:#e9f8ef; color:var(--ok); }
+  .perms button.wrong { border-color:var(--bad); background:#fdecec; color:var(--bad); }
+  /* 三種選擇 */
+  .digs { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
+  .digs button { width:62px; padding:4px 0; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; font-size:20px; font-weight:700; line-height:1.2; }
+  .digs button small { display:block; font-size:12px; font-weight:400; }
+  .digs button.L { background:#e3f2fb; border-color:#118ab2; color:#0b6d8c; }
+  .digs button.R { background:#fde8e0; border-color:#e06c3c; color:#b4471b; }
+  .digs button.top { background:var(--gold); border-color:var(--gold); color:#fff; cursor:default; }
+  .list { font-size:18px; font-variant-numeric:tabular-nums; word-spacing:6px; }
+  @media (max-width:520px) { main { padding:12px; } .card { padding:14px 14px; } table.derive { min-width:560px; } table.derive td:first-child { min-width:150px; } .digs button { width:52px; } }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>⛰️ 公平數大冒險</h1>
+  <button class="tab on" data-go="0">0. 題目＋五步地圖</button>
+  <span class="part">細部講解</span>
+  <button class="tab" data-go="1">1. 看懂規則</button>
+  <button class="tab" data-go="2">2. 畫成一座山</button>
+  <button class="tab" data-go="3">3. 山頂和兩邊山坡</button>
+  <button class="tab" data-go="4">4. 三種選擇</button>
+  <button class="tab" data-go="5">5. 全部加起來</button>
+  <span class="part">挑戰</span>
+  <button class="tab" data-go="6">6. 大魔王</button>
+  <button class="tab" data-go="7">7. 整合回顧</button>
+  <button class="tab" data-go="8">8. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 0：題目＋五步地圖 ============ -->
+<section class="on" id="s0">
+  <div class="card">
+    <h2>📜 原題（2025 AMC 10A 第 24 題）</h2>
+    <div class="orig"><span lang="en">Call a positive integer <b>fair</b> if no digit is used more than once, it has no 0s, and no digit is adjacent to two greater digits. For example, 196, 23, and 12463 are fair, but 1546, 320, and 34321 are not. How many fair positive integers are there?<br>
+    (A) 511　(B) 2584　(C) 9841　(D) 17711　(E) 19682</span></div>
+  </div>
+  <div class="card story">
+    <h2>題目在說什麼？</h2>
+    一個正整數<span class="en">(positive integer)</span>如果同時符合下面三條規則，就叫做<b>公平數</b><span class="en">(fair)</span>：<br>
+    ① 每個數字<span class="en">(digit)</span>最多用一次（不能重複）<br>
+    ② 不能有 0<br>
+    ③ 沒有任何一個數字「<b>兩邊的鄰居都比它大</b>」<span class="en">(adjacent to two greater digits)</span><br>
+    例如 196、23、12463 是公平數；1546、320、34321 不是。公平數一共有幾個？
+  </div>
+  <div class="card">
+    <h2>🗺️ 五步地圖：先看整體怎麼走</h2>
+    數字最多 9 位、排法超級多，一個一個數不完。我們用五步把它變成好算的問題。點任何一步可以直接跳到那一關的細部講解。
+    <div class="five" id="five">
+      <button data-go="1"><b>① 看懂規則</b>：不重複、沒有 0、沒有「兩邊都比它大」的數字。頭尾只有一個鄰居，永遠不會違規。</button>
+      <button data-go="2"><b>② 畫成一座山</b>：把每個數字畫成一根柱子。違規的數字就是「山谷」，所以公平數一定是<b>先上坡、再下坡</b>的一座山。</button>
+      <button data-go="3"><b>③ 山頂是最大的數字</b>：山頂最高，所以是最大的數字。其他數字只要決定放「左坡」還是「右坡」，順序就自動排好了。</button>
+      <button data-go="4"><b>④ 三種選擇</b>：先決定山頂是 m，比 m 小的每個數字都有 3 種選擇：不用、左坡、右坡。所以山頂是 m 的公平數有 3<sup>m−1</sup> 個。</button>
+      <button data-go="5"><b>⑤ 全部加起來</b>：山頂可以是 1 到 9，加起來 1 + 3 + 9 + … + 6561 = <b>9841</b>，答案 (C)。</button>
+    </div>
+    <button class="go" id="fivePlay">▶ 播放五步地圖</button>
+    <div class="key">
+      🔑 <b>整體的想法：</b>直接數「排法」太亂，所以先換個樣子看（畫成山），再找出決定一切的關鍵（山頂），最後把每個數字的選擇相乘、各種山頂相加。
+    </div>
+    <div class="nav"><button class="go" data-go="1">開始細部講解：步驟 ① →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 1：看懂規則 ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 1：看懂規則（步驟 ①）</h2>
+    在下面輸入任何正整數，電腦會幫你檢查三條規則，並把數字畫成柱子（下一關會用到）。先試試題目裡的例子！
+  </div>
+  <div class="card">
+    <div class="yn">試試看：<button data-try="196">196</button><button data-try="23">23</button><button data-try="12463">12463</button><button data-try="1546">1546</button><button data-try="320">320</button><button data-try="34321">34321</button></div>
+    輸入一個數：<input class="n" id="t1" value="196" inputmode="numeric" style="width:160px">
+    <svg class="mt" id="m1" viewBox="0 0 520 220"></svg>
+    <div class="status" id="t1s"></div>
+  </div>
+  <div class="card" id="g1">
+    <div class="step on">
+      先看規則 ③ 的「鄰居」<span class="en">(adjacent)</span>。196 最前面的 <b>1</b>，有幾個鄰居？ <input class="n" data-ans="1" data-wrong='{"2":"1 的左邊什麼都沒有喔，只有右邊的 9。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 鄰居就是緊貼在旁邊的數字。1 是第一個，左邊沒有東西。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>1 只有一個鄰居（9）。要違規，必須「<b>兩個</b>鄰居都比它大」，只有一個鄰居就不可能湊到兩個。<br>
+        所以<b>頭和尾的數字永遠不會違反規則 ③</b>，只要檢查中間的數字。
+      </div>
+    </div>
+    <div class="step">
+      196 中間的 <b>9</b>，兩邊是 1 和 6，都比 9 <b>小</b>。這樣算違規嗎？
+      <div class="yn" data-right="1"><button>算違規</button><button>不算</button></div>
+      <div class="hint">💡 仔細讀規則：違規的是「兩邊都比它<b>大</b>」，不是「兩邊都比它小」。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>規則只禁止「兩邊都比它<b>大</b>」。9 兩邊都比它小，沒問題（下一關會看到，這種數字是「山頂」）。一邊大一邊小也沒問題。<br>
+        要小心的是像 958 這種：中間的 5，兩邊的 9 和 8 都比 5 大 → 違規。
+      </div>
+    </div>
+    <div class="step">
+      2 的兩個鄰居是 1 和 4（在 12463 裡），「兩邊<b>都</b>比 2 大」嗎？
+      <div class="yn" data-right="1"><button>是</button><button>不是</button></div>
+      <div class="hint">💡 一個一個比：1 比 2 大嗎？4 比 2 大嗎？兩個都要「是」才算。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>4 比 2 大，可是 1 比 2 小，只有一邊比較大，所以<b>不算</b>違規。<br>
+        12463 中間的數字：2（鄰居 1、4）、4（鄰居 2、6）、6（鄰居 4、3），沒有一個兩邊都比它大，而且沒有重複、沒有 0 → 公平 ✓
+      </div>
+    </div>
+    <div class="step">
+      1546 為什麼<b>不</b>公平？
+      <div class="choices" data-right="1"><button>有數字重複</button><button>4 夾在 5 和 6 中間，兩邊都比 4 大</button><button>有 0</button></div>
+      <div class="hint">💡 檢查中間的 5 和 4：5 的鄰居是 1 和 4；4 的鄰居是 5 和 6。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>4 的兩個鄰居 5 和 6 都比 4 大 → 違反規則 ③。
+      </div>
+    </div>
+    <div class="step">
+      34321 為什麼<b>不</b>公平？
+      <div class="choices" data-right="0"><button>3 用了兩次</button><button>有數字兩邊都比它大</button><button>有 0</button></div>
+      <div class="hint">💡 34321 的中間：4（鄰居 3、3）、3（鄰居 4、2）、2（鄰居 3、1），沒有兩邊都比它大的。那別的規則呢？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>34321 每個中間數字都沒有違反規則 ③，可是 <b>3 出現了兩次</b>，違反規則 ①。320 則是因為<b>有 0</b>，違反規則 ②。<br>
+        三條規則每一條都可能讓它不公平，要三條都檢查。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 <b>公平數的三條規則：</b>① 不重複 ② 沒有 0 ③ 沒有「兩邊都比它大」的數字。<br>
+      規則 ① ② 代表：公平數只能從 1, 2, …, 9 裡挑數字，每個最多一次，所以<b>最多 9 位數</b>。<br>
+      規則 ③ 只要檢查中間的數字，頭尾一定沒事。
+    </div>
+    <div class="nav"><button class="go" data-go="2">下一關：步驟 ② →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：畫成一座山 ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 2：畫成一座山（步驟 ②）</h2>
+    把每個數字畫成一根柱子，數字越大柱子越高，再把柱子頂端連起來，就像一條山路。紅色是違反規則 ③ 的數字，金色是最高的數字。
+  </div>
+  <div class="card">
+    <div class="yn">試試看：<button data-try2="12463">12463</button><button data-try2="1546">1546</button><button data-try2="537">537</button><button data-try2="2618">2618</button><button data-try2="123">123</button><button data-try2="98741">98741</button></div>
+    輸入一個數：<input class="n" id="t2" value="12463" inputmode="numeric" style="width:160px">
+    <svg class="mt" id="m2" viewBox="0 0 520 220"></svg>
+    <div class="status" id="t2s"></div>
+  </div>
+  <div class="card" id="g2">
+    <div class="step on">
+      12463 畫成山：一路<b>上坡</b>走到哪個數字，接著開始下坡？ <input class="n" data-ans="6">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 1 → 2 → 4 → 6 都在變高，6 → 3 變低。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      換成 1546，紅色的 4 在圖上看起來像什麼？
+      <div class="choices" data-right="1"><button>山頂</button><button>山谷</button><button>平地</button></div>
+      <div class="hint">💡 4 的左邊 5 比較高，右邊 6 也比較高。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>兩邊都比它高的地方，就是<b>山谷</b><span class="en">(valley)</span>。<br>
+        規則 ③「沒有數字兩邊都比它大」換句話說就是：<b>山路上不能有山谷</b>。
+      </div>
+    </div>
+    <div class="step">
+      如果一條山路先<b>下坡</b>、後來又<b>上坡</b>（例如 537：5 → 3 下坡，3 → 7 上坡），中間一定會出現什麼？
+      <div class="choices" data-right="0"><button>山谷</button><button>山頂</button><button>不一定</button></div>
+      <div class="hint">💡 在上面輸入 537 看看。下坡走到最低點，再往上爬，最低點的兩邊是什麼樣子？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>從下坡轉成上坡的那個轉彎點，左邊比它高（剛剛從上面走下來），右邊也比它高（接著要往上爬）→ 它就是山谷。<br>
+        所以公平數<b>不可以「下坡之後又上坡」</b>。
+      </div>
+    </div>
+    <div class="step">
+      既然不能「下坡之後又上坡」，公平數的山路長什麼樣子？
+      <div class="choices" data-right="0"><button>先上坡、再下坡（只有一座山）</button><button>可以有好幾座山</button><button>一定要先下坡</button></div>
+      <div class="hint">💡 試試 2618：2 → 6 上、6 → 1 下、1 → 8 上，變成兩座山，中間的 1 是紅色山谷。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>兩座山中間一定夾著山谷，所以只能有<b>一座山</b>：先一路上坡<span class="en">(increasing)</span>，到山頂<span class="en">(peak)</span>以後一路下坡<span class="en">(decreasing)</span>。
+      </div>
+    </div>
+    <div class="step">
+      123 只有上坡、沒有下坡，它是公平數嗎？
+      <div class="yn" data-right="0"><button>是</button><button>不是</button></div>
+      <div class="hint">💡 檢查中間的 2：鄰居 1 和 3，兩邊都比 2 大嗎？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>是！上坡或下坡可以是「空的」：123 只有上坡（山頂在最右邊）、98741 只有下坡（山頂在最左邊）、只有一個數字的 7 也算一座山（只有山頂）。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 <b>公平數 = 一座山：</b>先上坡、再下坡（上坡或下坡可以是空的），數字不重複、沒有 0。
+    </div>
+    <div class="nav"><button class="go" data-go="3">下一關：步驟 ③ →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：山頂和兩邊山坡 ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 3：山頂和兩邊山坡（步驟 ③）</h2>
+    先拿 1、3、6 三個數字來玩。它們排成三位數一共有 6 種。哪幾種是公平數？點選你覺得公平的，再按「檢查」。
+  </div>
+  <div class="card">
+    <div class="perms" id="perms"></div>
+    <button class="go" id="permChk">檢查</button> <button class="ghost" id="permClr">重來</button>
+    <div class="status" id="permS"></div>
+  </div>
+  <div class="card" id="g3">
+    <div class="step on">
+      1、3、6 排出來的數，公平的有幾個？ <input class="n" data-ans="4" data-wrong='{"6":"不是每一種都公平喔，例如 316：1 夾在 3 和 6 中間。","2":"再檢查一次，例如 136、631 都是一座山。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 6 種是 136、163、316、361、613、631。只有中間的數字可能違規：中間是 1 的話，兩邊（3 和 6）一定都比 1 大。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>不公平的是 316 和 613（1 在中間變成山谷）。公平的有 136、163、361、631，共 <b>4 個</b>。
+      </div>
+    </div>
+    <div class="step">
+      這 4 個公平數裡，最大的數字 6 都在哪裡？
+      <div class="choices" data-right="0"><button>都在山頂（最高的位置）</button><button>都在最前面</button><button>都在最後面</button></div>
+      <div class="hint">💡 136 的 6 在最後、631 的 6 在最前、163 和 361 的 6 在中間，位置不一樣。可是在山的圖上呢？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>山頂是整座山最高的點，最大的數字柱子最高，所以<b>山頂一定是最大的數字</b>。它可以在最前面、中間或最後面，但一定是山頂。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="lr">
+    <b>⛰️ 左坡還是右坡？</b>山頂 6 已經固定了。點 1 和 3，讓它們在「左坡」和「右坡」之間切換，看看會變成哪個數。<br>
+    <span class="tip">左坡要由小到大排（上坡），右坡要由大到小排（下坡），所以只要決定每個數字在哪一邊，順序就自動排好了。</span>
+    <div class="digs" id="lrDigs"></div>
+    <div class="math" id="lrNum"></div>
+    <svg class="mt" id="mlr" viewBox="0 0 520 220"></svg>
+  </div>
+  <div class="card hidden" id="g3b">
+    <div class="step on">
+      1 和 3 <b>都放左坡</b>，排出來的數是？ <input class="n" data-ans="136" data-wrong='{"316":"左坡是上坡，要由小到大：先 1 再 3。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 左坡在山頂左邊，由小到大往上爬：□ □ 6。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      3 放<b>左坡</b>、1 放<b>右坡</b>，排出來的數是？ <input class="n" data-ans="361" data-wrong='{"163":"反過來了：3 在左邊（山頂前面），1 在右邊（山頂後面）。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 左坡的 3 寫在 6 前面，右坡的 1 寫在 6 後面。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      1 有「左、右」2 種選擇，3 也有 2 種。兩個數字一起選，一共幾種？ <input class="n" data-ans="4" data-wrong='{"2":"1 的每一種，都可以配上 3 的 2 種：2 × 2。","3":"不是加，是乘：1 的每一種都配 3 的 2 種。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 列出來：(1 左, 3 左)、(1 左, 3 右)、(1 右, 3 左)、(1 右, 3 右)。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>2 × 2 = 4，剛好就是上面找到的 4 個公平數。每一種「左右選法」對應一個公平數，不多也不少。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 <b>山頂是最大的數字。</b>其他數字只要決定放「左坡」或「右坡」，左坡由小到大、右坡由大到小，整個數就決定了。
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關：步驟 ④ →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：三種選擇 ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 4：三種選擇（步驟 ④）</h2>
+    上一關是「先挑好數字」。可是題目要數的是<b>全部</b>公平數，數字要用哪幾個也還沒決定。<br>
+    新方法：先決定<b>山頂是 m</b>。比 m 小的每個數字，都有 <b>3 種</b>選擇：<b>不用</b>、<b>放左坡</b>、<b>放右坡</b>。比 m 大的數字呢？一定不能用（不然山頂就不是 m 了）。<br>
+    拉動拉桿選山頂，再點下面的數字切換：不用 → 左坡 → 右坡。
+  </div>
+  <div class="card">
+    山頂 m = <span class="big" id="pkN">3</span> <input type="range" id="pkR" min="1" max="9" value="3">
+    <div class="digs" id="pkDigs"></div>
+    <div class="math" id="pkNum"></div>
+    <svg class="mt" id="mpk" viewBox="0 0 520 220"></svg>
+    <button class="ghost" id="pkAll">列出山頂是 m 的全部公平數</button>
+    <div class="list hidden" id="pkList"></div>
+  </div>
+  <div class="card" id="g4">
+    <div class="step on">
+      山頂是 2，比 2 小的只有 1。山頂是 2 的公平數有幾個？ <input class="n" data-ans="3" data-wrong='{"2":"別忘了「不用」也是一種選擇：只有一個 2，也是公平數。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 1 不用 → 2；1 放左坡 → 12；1 放右坡 → 21。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      山頂是 3：1 有 3 種選擇、2 也有 3 種。一共幾個？ <input class="n" data-ans="9" data-wrong='{"6":"是乘不是加：1 的每一種選擇，都可以配上 2 的 3 種選擇。","3":"1 和 2 各有 3 種，要一起看：3 × 3。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 把拉桿拉到 3，按「列出全部」看看。1 選「不用」時，2 有 3 種；1 選「左坡」時，2 也有 3 種；1 選「右坡」時，2 還是 3 種。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>3 × 3 = 9 個：3、13、31、23、32、123、132、231、321。<br>
+        <div style="overflow-x:auto"><table class="steps">
+          <tr><th>1 ＼ 2</th><th>2 不用</th><th>2 左坡</th><th>2 右坡</th></tr>
+          <tr><td>1 不用</td><td>3</td><td>23</td><td>32</td></tr>
+          <tr><td>1 左坡</td><td>13</td><td>123</td><td>132</td></tr>
+          <tr><td>1 右坡</td><td>31</td><td>231</td><td>321</td></tr>
+        </table></div>
+      </div>
+    </div>
+    <div class="step">
+      反過來看：25971 是公平數，山頂是 9。哪些數字放在<b>右坡</b>？
+      <div class="choices" data-right="1"><button>2 和 5</button><button>7 和 1</button><button>3、4、6、8</button></div>
+      <div class="hint">💡 右坡在山頂 9 的<b>右邊</b>（後面）。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>25971：2、5 在左坡，7、1 在右坡，3、4、6、8「不用」。<br>
+        <b>每個公平數都能讀出唯一一種選法</b>，每種選法也排出唯一一個公平數。所以「數選法」就等於「數公平數」，不會重複，也不會漏掉。
+      </div>
+    </div>
+    <div class="step">
+      山頂是 4：1、2、3 各有 3 種選擇。一共幾個？ <input class="n" data-ans="27" data-wrong='{"9":"這是 3 個數字裡只算了 2 個：3 × 3 × 3。","12":"是乘不是加：3 × 3 × 3。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 3 × 3 × 3（三個數字，每個 3 種）。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      山頂是 9：1 到 8 這 <b>8 個</b>數字各有 3 種選擇。一共幾個？ <input class="n" data-ans="6561" data-wrong='{"24":"是乘不是加：8 個 3 相乘。","19683":"這是 9 個 3 相乘。比 9 小的數字只有 8 個（1 到 8）。","2187":"這是 7 個 3 相乘，再乘一個 3。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 8 個 3 相乘，寫成 3<sup>8</sup>。一個一個乘：3、9、27、81、243、729、2187、□。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>3 × 3 × 3 × 3 × 3 × 3 × 3 × 3 = 3<sup>8</sup> = <b>6561</b>。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c4key">
+    <div class="key">
+      🔑 <b>山頂是 m 的公平數有 3<sup>m−1</sup> 個：</b>比 m 小的數字有 m − 1 個，每個 3 種選擇（不用／左坡／右坡），全部相乘。
+    </div>
+    <div class="proof">
+      📐 <b>一般式和例子對照：</b>
+      <div style="overflow-x:auto"><table class="steps derive">
+        <tr><th>步驟</th><th>一般（山頂 m）</th><th>例子（山頂 3）</th></tr>
+        <tr><td>① 比山頂小的數字</td><td>1, 2, …, m − 1，共 m − 1 個</td><td>1, 2，共 2 個</td></tr>
+        <tr><td>② 比山頂大的數字</td><td>不能用（用了山頂就不是 m）</td><td>4 到 9 都不能用</td></tr>
+        <tr><td>③ 每個小數字的選擇</td><td>不用／左坡／右坡，3 種</td><td>1：3 種、2：3 種</td></tr>
+        <tr><td>④ 一起選（相乘）</td><td>3 × 3 × … × 3（m − 1 個）= 3<sup>m−1</sup></td><td>3 × 3 = 9</td></tr>
+      </table></div>
+    </div>
+    <div class="nav"><button class="go" data-go="5">下一關：步驟 ⑤ →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：全部加起來 ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 5：全部加起來（步驟 ⑤）</h2>
+    每個公平數都有一個山頂，而且只有一個。所以把「山頂是 1」「山頂是 2」……每一種的個數加起來，就是全部的公平數。
+  </div>
+  <div class="card" id="g5">
+    <div class="step on">
+      山頂可以是哪些數字？
+      <div class="choices" data-right="1"><button>只有 9</button><button>1 到 9 都可以</button><button>0 到 9 都可以</button></div>
+      <div class="hint">💡 山頂是最大的數字。23 的山頂是幾？0 可以用嗎？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>23 的山頂是 3、196 的山頂是 9，山頂不一定是 9。0 不能用，所以山頂可以是 <b>1 到 9</b>。
+      </div>
+    </div>
+    <div class="step">
+      山頂是 1 的公平數有幾個？ <input class="n" data-ans="1" data-wrong='{"0":"只有一個數字 1，也是正整數，它是公平數喔！","3":"比 1 小的數字有幾個？（0 不能用）"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 比 1 小的數字一個都沒有，所以只能是「1」自己。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>只有「1」這一個。公式 3<sup>m−1</sup> 在 m = 1 時是 3<sup>0</sup>，任何數的 0 次方都是 1（一個 3 都不乘），剛好對得上。
+      </div>
+    </div>
+    <div class="step">
+      先用小的情況檢查：如果只能用數字 1、2、3，公平數一共有幾個？ <input class="n" data-ans="13" data-wrong='{"9":"這只算了山頂是 3 的，山頂是 1 和 2 的也要加。","12":"山頂是 1：1 個；山頂是 2：3 個；山頂是 3：9 個。再加一次？"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 山頂是 1、2、3 各有 3<sup>0</sup>、3<sup>1</sup>、3<sup>2</sup> 個：1 + 3 + 9。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>1 + 3 + 9 = <b>13</b>。全部列出來對對看：1｜2、12、21｜3、13、31、23、32、123、132、231、321，剛好 13 個 ✓
+      </div>
+    </div>
+    <div class="step">
+      現在 1 到 9 全部：
+      <div style="overflow-x:auto"><table class="steps">
+        <tr><th>山頂 m</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+        <tr><th>個數 3<sup>m−1</sup></th><td>1</td><td>3</td><td>9</td><td>27</td><td>81</td><td>243</td><td>729</td><td>2187</td><td>6561</td></tr>
+      </table></div>
+      全部加起來是多少？ <input class="n" data-ans="9841" data-wrong='{"6561":"這只有山頂是 9 的，山頂是 1 到 8 的也要加。","19682":"這是 3⁹ − 1，還要再除以 2（看下面的講解）。","19683":"這是 3⁹，不是我們要的和。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 一個一個累加：1 → 4 → 13 → 40 → 121 → 364 → 1093 → 3280 → □（3280 + 6561）。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>1 + 3 + 9 + 27 + 81 + 243 + 729 + 2187 + 6561 = <b>9841</b>。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c5key">
+    <div class="key">
+      🔑 公平數一共 <b>9841</b> 個，答案 (C)。
+    </div>
+    <div class="proof">
+      📐 <b>不用一個一個加的快速算法（等比級數<span class="en">geometric series</span>）：</b>每一項都是前一項 × 3，就可以用「乘 3 再相減」。
+      <div style="overflow-x:auto"><table class="steps derive">
+        <tr><th>步驟</th><th>一般（1 到 n）</th><th>例子（1 到 3）</th></tr>
+        <tr><td>① 叫這個和 S</td><td>S = 1 + 3 + … + 3<sup>n−1</sup></td><td>S = 1 + 3 + 9</td></tr>
+        <tr><td>② 每一項都乘 3</td><td>3S = 3 + 9 + … + 3<sup>n</sup></td><td>3S = 3 + 9 + 27</td></tr>
+        <tr><td>③ 相減：中間的項一樣，全部消掉</td><td>3S − S = 3<sup>n</sup> − 1</td><td>3S − S = 27 − 1</td></tr>
+        <tr><td>④ 3S − S = 2S，除以 2</td><td>S = (3<sup>n</sup> − 1) ÷ 2</td><td>S = 26 ÷ 2 = 13 ✓</td></tr>
+        <tr><td>⑤ 代入 n = 9</td><td>(3<sup>9</sup> − 1) ÷ 2</td><td>(19683 − 1) ÷ 2 = <b>9841</b></td></tr>
+      </table></div>
+      選項 (E) 19682 = 3<sup>9</sup> − 1，就是第 ④ 步忘了除以 2 的陷阱。
+    </div>
+    <div class="nav"><button class="go" data-go="6">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：大魔王 ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 6：大魔王（2025 AMC 10A 第 24 題）</h2>
+    一個正整數如果數字不重複、沒有 0、而且沒有任何數字「兩邊都比它大」，就叫做公平數。例如 196、23、12463 是公平數，1546、320、34321 不是。公平數一共有幾個？
+  </div>
+  <div class="card">
+    <div class="orig"><span lang="en">Call a positive integer <b>fair</b> if no digit is used more than once, it has no 0s, and no digit is adjacent to two greater digits. For example, 196, 23, and 12463 are fair, but 1546, 320, and 34321 are not. How many fair positive integers are there?</span></div>
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 ①②：</b>把公平數畫成柱子，它的形狀一定是？
+      <div class="choices" data-right="1"><button>上下交錯，像鋸齒</button><button>一座山：先上坡再下坡（可以只有上坡或只有下坡）</button><button>一定一直上坡</button></div>
+      <div class="hint">💡 「兩邊都比它大」的數字在圖上是山谷。沒有山谷的山路長什麼樣子？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">📐 <b>講解：</b>下坡之後再上坡，轉彎點就是山谷，所以只能先上再下，一座山。</div>
+    </div>
+    <div class="step">
+      <b>步驟 ③：</b>山頂一定是？
+      <div class="choices" data-right="2"><button>9</button><button>第一個數字</button><button>用到的數字裡最大的那個</button></div>
+      <div class="hint">💡 23 的山頂是 3、136 的山頂在最後面。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">📐 <b>講解：</b>山頂最高，所以是最大的數字，不一定是 9，也不一定在最前面。</div>
+    </div>
+    <div class="step">
+      <b>步驟 ④：</b>山頂是 m 時，比 m 小的每個數字有幾種選擇？ <input class="n" data-ans="3" data-wrong='{"2":"左坡、右坡……還有一種：「不用」！","1":"每個小數字可以不用、放左坡或放右坡。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 想想 1 在山頂是 2 時：2、12、21。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ④：</b>山頂是 9 的公平數有幾個？ <input class="n" data-ans="6561" data-wrong='{"19683":"比 9 小的只有 8 個數字：3⁸。","24":"是乘不是加：8 個 3 相乘。","256":"這是 2⁸，只算了左坡右坡，忘了「不用」。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 1 到 8 共 8 個數字，每個 3 種：3<sup>8</sup>。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ⑤：</b>山頂是 1 到 9 的全部加起來（1 + 3 + 9 + … + 6561）是多少？ <input class="n" data-ans="9841" data-wrong='{"6561":"山頂是 1 到 8 的也要加進來。","19682":"(3⁹ − 1) 還要除以 2。","19683":"這是 3⁹，用 (3⁹ − 1) ÷ 2。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 用關卡 5 的快速算法：(3<sup>9</sup> − 1) ÷ 2 = (19683 − 1) ÷ 2。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>答案是？
+      <div class="choices" id="bchoices">
+        <button data-v="A">(A) 511</button><button data-v="B">(B) 2584</button><button data-v="C">(C) 9841</button>
+        <button data-v="D">(D) 17711</button><button data-v="E">(E) 19682</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 上一步算出來的和。</div>
+      <div class="fb" id="bfb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="bsum">
+    <div class="proof">
+      📐 <b>完整解答</b><br>
+      ① <b>一座山：</b>「兩邊都比它大」的數字就是山谷。下坡之後再上坡一定有山谷，所以公平數是先上坡、再下坡的一座山。<br>
+      ② <b>山頂：</b>山頂是用到的數字裡最大的，叫它 m（1 ≤ m ≤ 9）。比 m 大的數字不能用。<br>
+      ③ <b>三種選擇：</b>1 到 m − 1 每個數字可以不用、放左坡（由小到大）、放右坡（由大到小），選好就排出唯一一個公平數；反過來每個公平數也只對應一種選法。所以山頂是 m 的有 3<sup>m−1</sup> 個。<br>
+      ④ <b>加起來：</b>1 + 3 + 3<sup>2</sup> + … + 3<sup>8</sup> = (3<sup>9</sup> − 1) ÷ 2 = (19683 − 1) ÷ 2 = <b>9841</b>，答案 <b>(C)</b>。
+    </div>
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 「兩邊都比它大」→ 畫成高度圖，就是<b>山谷</b>；沒有山谷 = 一座山<br>
+      ② 找出決定一切的關鍵：<b>山頂 = 最大的數字</b><br>
+      ③ 每個數字各自選擇 → <b>相乘</b>；不同的山頂 → <b>相加</b><br>
+      ④ 別忘了「不用」也是一種選擇；等比級數用「乘 3 再相減」
+    </div>
+    <div class="key">
+      📖 <b>英文小字典（考試會看到的字）</b>
+      <table class="steps">
+        <tr><td>正整數</td><td><i>positive integer</i></td></tr>
+        <tr><td>數字（0 到 9 的每一位）</td><td><i>digit</i></td></tr>
+        <tr><td>用了不只一次（重複）</td><td><i>used more than once</i></td></tr>
+        <tr><td>相鄰、緊鄰</td><td><i>adjacent</i></td></tr>
+        <tr><td>比較大的</td><td><i>greater</i></td></tr>
+        <tr><td>公平的（題目自己定義的名字）</td><td><i>fair</i></td></tr>
+        <tr><td>山頂 / 山谷</td><td><i>peak / valley</i></td></tr>
+        <tr><td>遞增（上坡）/ 遞減（下坡）</td><td><i>increasing / decreasing</i></td></tr>
+        <tr><td>等比級數</td><td><i>geometric series</i></td></tr>
+        <tr><td>分情況討論</td><td><i>casework</i></td></tr>
+      </table>
+    </div>
+    <div class="proof">
+      🌟 <b>偷偷告訴你（另一種算法）：</b>也可以照「幾位數」來分。k 位數的公平數：先從 1 到 9 挑 k 個數字，最大的當山頂，其他 k − 1 個每個選左坡或右坡（2 種），所以是「挑法 × 2<sup>k−1</sup>」。例如 2 位數：挑 2 個數字有 36 種，× 2 = 72 個。把 k = 1 到 9 全部加起來，一樣是 9841！
+    </div>
+    <div class="nav"><button class="go" data-go="7">整合回顧：一次看完整個解法 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：整合回顧 ============ -->
+<section id="s7">
+  <div class="card story">
+    <h2>關卡 7：整合回顧</h2>
+    用動畫把整個解法從頭串一次。按「▶ 自動播放全部」，或點上面的小方塊跳到任一步。
+  </div>
+  <div class="card">
+    <div class="yn" id="rcChain"></div>
+    <svg id="rcMap" width="100%" viewBox="0 0 520 320" style="background:#fff;border:1px solid var(--line);border-radius:10px"></svg>
+    <div style="margin:8px 0">
+      <button class="ghost" id="rcPrev">◀ 上一步</button>
+      <button class="go" id="rcAuto">▶ 自動播放全部</button>
+      <button class="ghost" id="rcAgain">↻ 重播這一步</button>
+      <button class="ghost" id="rcNext">下一步 ▶</button>
+    </div>
+    <div class="key" id="rcSay"></div>
+    <div class="proof" id="rcMath" style="min-height:60px"></div>
+  </div>
+  <div class="card hidden" id="c7key">
+    <div class="key">
+      🔑 <b>整個解法的骨架：</b>規則 ③ = 沒有山谷 → 公平數是一座山 → 山頂是最大的數字 m → 比 m 小的每個數字 3 種選擇，共 3<sup>m−1</sup> 個 → 山頂 1 到 9 加起來 = 9841。
+    </div>
+    <div class="nav"><button class="go" data-go="8">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 8：無限練習 ============ -->
+<section id="s8">
+  <div class="card story">
+    <h2>關卡 8：無限練習</h2>
+    先練「判斷是不是公平數」，熟了再挑戰 AMC 變化題！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">判斷公平數</button><button id="lvHard">AMC 變化題</button></div>
+    <div id="pq" class="story"></div>
+    <div id="pEasyBox" class="yn">答案：<button id="pyes">是公平數</button><button id="pno">不是公平數</button></div>
+    <div id="pHardBox" class="hidden">答案 = <input class="n" id="pans"> <button class="go" id="pchk">確認</button></div>
+    <button class="ghost" id="pshow">看解法</button>
+    <button class="ghost" id="pnew">下一題</button>
+    <div class="fb" id="pfb"></div>
+    <div id="psol" class="proof hidden"></div>
+    <div>連續答對：<span class="big" id="pstreak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+function val(s) {
+  s = String(s).trim().replace(/−|–/g, "-").replace(/\s/g, "");
+  if (!s) return NaN;
+  const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  return m ? +m[1] / +m[2] : Number(s);
+}
+const same = (a, b) => Math.abs(a - b) < 1e-9;
+
+// ---------- 公平數的檢查 ----------
+// 山谷：中間的數字，兩邊都比它大
+const valleys = ds => ds.map((d, i) => i > 0 && i < ds.length - 1 && ds[i - 1] > d && ds[i + 1] > d ? i : -1).filter(i => i >= 0);
+function problems(s) {
+  const ds = [...s].map(Number), out = [];
+  if (ds.includes(0)) out.push("有 0（規則 ②）");
+  const seen = {};
+  ds.forEach(d => seen[d] = (seen[d] || 0) + 1);
+  Object.keys(seen).filter(d => seen[d] > 1 && d !== "0").forEach(d => out.push(`${d} 用了 ${seen[d]} 次（規則 ①）`));
+  valleys(ds).forEach(i => out.push(`${ds[i]} 夾在 ${ds[i - 1]} 和 ${ds[i + 1]} 中間，兩邊都比它大（規則 ③）`));
+  return out;
+}
+const isFair = s => problems(s).length === 0;
+
+// 把數字畫成柱子：山谷紅色、最大的金色
+function mountain(ds, o = {}) {
+  const n = ds.length; if (!n) return "";
+  const cx = o.cx ?? 260, base = o.base ?? 190, unit = o.unit ?? 17, sw = Math.min(o.sw ?? 54, (o.width ?? 480) / n);
+  const x0 = cx - n * sw / 2, mx = Math.max(...ds), vs = valleys(ds), op = o.op ?? 1;
+  let h = `<g opacity="${op}">`, pts = [];
+  ds.forEach((d, i) => {
+    const x = x0 + i * sw + 4, w = sw - 8, ht = Math.max(d * unit, 2), y = base - ht;
+    const col = vs.includes(i) ? "#d64545" : d === mx ? "#f2b705" : o.side ? (o.side[i] === "L" ? "#118ab2" : o.side[i] === "R" ? "#e06c3c" : "#7b4dff") : "#7b4dff";
+    h += `<rect x="${x}" y="${y}" width="${w}" height="${ht}" rx="6" fill="${col}" opacity=".85"/>`;
+    h += `<text x="${x + w / 2}" y="${base + 20}" font-size="18" font-weight="700" text-anchor="middle" fill="#2b2233">${d}</text>`;
+    if (vs.includes(i)) h += `<text x="${x + w / 2}" y="${y - 8}" font-size="14" font-weight="700" text-anchor="middle" fill="#d64545">山谷</text>`;
+    else if (d === mx && n > 1 && o.peakLabel !== false) h += `<text x="${x + w / 2}" y="${y - 8}" font-size="14" font-weight="700" text-anchor="middle" fill="#d17a00">山頂</text>`;
+    pts.push(`${x + w / 2},${y}`);
+  });
+  if (n > 1) h += `<polyline points="${pts.join(" ")}" fill="none" stroke="#2b2233" stroke-width="2.5" stroke-dasharray="6 4"/>`;
+  return h + "</g>";
+}
+// 由山頂 m 和每個小數字的選擇（0 不用 / L / R）排出公平數
+function build(m, side) {
+  const L = [], R = [];
+  for (let d = 1; d < m; d++) { if (side[d] === "L") L.push(d); if (side[d] === "R") R.push(d); }
+  return L.join("") + m + R.reverse().join("");
+}
+function allWithPeak(m) {
+  const out = [], k = m - 1;
+  for (let c = 0; c < 3 ** k; c++) {
+    const side = {}; let x = c;
+    for (let d = 1; d < m; d++) { side[d] = ["", "L", "R"][x % 3]; x = Math.floor(x / 3); }
+    out.push(build(m, side));
+  }
+  return out.sort((a, b) => a.length - b.length || a - b);
+}
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.closest("[data-go]")?.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "fair";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => {
+  $$(".tab[data-go]")[i]?.classList.add("done");
+  $$(`#s${i} .card.hidden`).forEach(c => c.classList.remove("hidden"));
+});
+
+// 一步一步的關卡：輸入框 data-ans 比對、提示鈕、選擇題、是非題
+function chkStep(step) {
+  const ins = [...step.querySelectorAll("input")];
+  const ok = ins.every(i => same(val(i.value), val(i.dataset.ans)));
+  const wrong = ins.length === 1 && ins[0].dataset.wrong ? JSON.parse(ins[0].dataset.wrong) : {};
+  const hit = Object.keys(wrong).find(k => same(val(ins[0].value), val(k)));
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : hit ? "❌ " + wrong[hit] : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  if (!ok && step.querySelector(".hint") && step.dataset.miss) step.querySelector(".hint").classList.add("on");
+  step.dataset.miss = ok ? "" : "1";
+  return ok;
+}
+function wireSteps(box, onLast) {
+  const steps = [...box.querySelectorAll(".step")];
+  const next = step => { const n = steps[steps.indexOf(step) + 1]; n ? n.classList.add("on") : onLast && onLast(); };
+  steps.forEach(step => {
+    step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+    step.querySelector(".chk")?.addEventListener("click", () => {
+      if (!chkStep(step)) return;
+      const ex = step.querySelector(".explain");
+      if (ex && ex.classList.contains("hidden")) { show(ex); setTimeout(() => { speak(ex, false); next(step); }, 50); }
+      else next(step);
+    });
+    const pick = step.querySelector(".choices[data-right], .yn[data-right]");
+    if (pick) [...pick.querySelectorAll("button")].forEach((b, k) => b.onclick = () => {
+      const ok = k === +pick.dataset.right;
+      fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : "🤔 再想想看");
+      if (!ok) step.querySelector(".hint")?.classList.add("on");
+      if (ok) {
+        const pf = step.querySelector(".proof");
+        if (pf && pf.classList.contains("hidden")) { show(pf); setTimeout(() => { speak(pf, false); next(step); }, 50); }
+        else next(step);
+      }
+    });
+  });
+}
+
+// ---------- 關卡 0：五步地圖 ----------
+let fiveTimer = null;
+$("#fivePlay").onclick = () => {
+  clearTimeout(fiveTimer); speechSynthesis.cancel();
+  const bs = $$("#five button"); bs.forEach(b => b.classList.remove("lit"));
+  const tick = j => {
+    if (j === bs.length) { done(0); return; }
+    bs[j].classList.add("lit"); speak(bs[j], false);
+    const wait = () => speechSynthesis.speaking && voiceOn ? fiveTimer = setTimeout(wait, 300) : fiveTimer = setTimeout(() => tick(j + 1), 600);
+    fiveTimer = setTimeout(wait, 800);
+  };
+  tick(0);
+};
+
+$("#s0 .nav .go").addEventListener("click", () => done(0));
+
+// ---------- 關卡 1、2：輸入一個數 ----------
+function tester(inp, svg, st) {
+  const upd = () => {
+    const s = inp.value.replace(/\D/g, "").slice(0, 12);
+    if (!s) { svg.innerHTML = ""; st.textContent = "請輸入一個正整數"; return; }
+    svg.innerHTML = mountain([...s].map(Number), { unit: s.length > 9 ? 15 : 17 });
+    const p = problems(s);
+    st.textContent = p.length ? `❌ ${s} 不是公平數：` + p.join("；") : `✅ ${s} 是公平數！`;
+  };
+  inp.oninput = upd; upd();
+  return v => { inp.value = v; upd(); };
+}
+const set1 = tester($("#t1"), $("#m1"), $("#t1s"));
+$$("[data-try]").forEach(b => b.onclick = () => set1(b.dataset.try));
+wireSteps($("#g1"), () => { show("#c1key"); done(1); });
+const set2 = tester($("#t2"), $("#m2"), $("#t2s"));
+$$("[data-try2]").forEach(b => b.onclick = () => set2(b.dataset.try2));
+wireSteps($("#g2"), () => { show("#c2key"); done(2); });
+
+// ---------- 關卡 3：1、3、6 的排列 ----------
+const PERMS = ["136", "163", "316", "361", "613", "631"], picked = new Set();
+function drawPerms(judge) {
+  $("#perms").innerHTML = PERMS.map(p => {
+    let c = picked.has(p) ? "in" : "";
+    if (judge) c = isFair(p) ? "right" : picked.has(p) ? "wrong" : "";
+    return `<button data-p="${p}" class="${c}">${p}${judge ? (isFair(p) ? " ✓" : " ✗") : ""}</button>`;
+  }).join("");
+}
+$("#perms").onclick = e => { const p = e.target.dataset.p; if (!p) return; picked.has(p) ? picked.delete(p) : picked.add(p); drawPerms(false); $("#permS").textContent = ""; };
+$("#permChk").onclick = () => {
+  const right = PERMS.filter(isFair), ok = right.length === picked.size && right.every(p => picked.has(p));
+  drawPerms(true);
+  $("#permS").textContent = ok ? "✅ 全對！公平的是 " + right.join("、") + "。不公平的 316、613 都是 1 夾在中間變成山谷。"
+    : "🤔 綠色 ✓ 是公平的，紅色是選錯的。不公平的 316、613：中間的 1 兩邊都比它大。";
+};
+$("#permClr").onclick = () => { picked.clear(); drawPerms(false); $("#permS").textContent = ""; };
+drawPerms(false);
+
+// 左坡／右坡切換（山頂 6，數字 1、3）
+const LR = { 1: "L", 3: "L" };
+function drawLR() {
+  $("#lrDigs").innerHTML = [1, 3].map(d => `<button data-d="${d}" class="${LR[d]}">${d}<small>${LR[d] === "L" ? "左坡" : "右坡"}</small></button>`).join("") +
+    `<button class="top">6<small>山頂</small></button>`;
+  const L = [1, 3].filter(d => LR[d] === "L"), R = [3, 1].filter(d => LR[d] === "R"), s = L.join("") + "6" + R.join("");
+  $("#lrNum").innerHTML = `左坡 ${L.join("、") || "（空）"} ＋ 山頂 6 ＋ 右坡 ${R.join("、") || "（空）"} → <b>${s}</b>`;
+  const ds = [...s].map(Number);
+  $("#mlr").innerHTML = mountain(ds, { side: ds.map(d => d === 6 ? "" : LR[d]) });
+}
+$("#lrDigs").onclick = e => { const d = e.target.closest("button")?.dataset.d; if (!d) return; LR[d] = LR[d] === "L" ? "R" : "L"; drawLR(); };
+drawLR();
+wireSteps($("#g3"), () => { show("#lr"); show("#g3b"); });
+wireSteps($("#g3b"), () => { show("#c3key"); done(3); });
+
+// ---------- 關卡 4：山頂 m，三種選擇 ----------
+let PK = 3, PS = {};
+function drawPk() {
+  $("#pkN").textContent = PK;
+  let h = "";
+  for (let d = 1; d < PK; d++) h += `<button data-d="${d}" class="${PS[d] || ""}">${d}<small>${PS[d] === "L" ? "左坡" : PS[d] === "R" ? "右坡" : "不用"}</small></button>`;
+  h += `<button class="top">${PK}<small>山頂</small></button>`;
+  for (let d = PK + 1; d <= 9; d++) h += `<button disabled style="opacity:.3">${d}<small>不能用</small></button>`;
+  $("#pkDigs").innerHTML = h;
+  const s = build(PK, PS), ds = [...s].map(Number);
+  $("#pkNum").innerHTML = `→ <b>${s}</b>　<span class="tip">（山頂是 ${PK} 的公平數一共 ${PK - 1} 個 3 相乘 = ${3 ** (PK - 1)} 個）</span>`;
+  $("#mpk").innerHTML = mountain(ds, { side: ds.map(d => PS[d] || "") });
+  $("#pkAll").textContent = `列出山頂是 ${PK} 的全部公平數`;
+}
+$("#pkDigs").onclick = e => { const d = e.target.closest("button")?.dataset.d; if (!d) return; PS[d] = PS[d] === "L" ? "R" : PS[d] === "R" ? "" : "L"; drawPk(); };
+$("#pkR").oninput = () => { PK = +$("#pkR").value; PS = {}; $("#pkList").classList.add("hidden"); drawPk(); };
+$("#pkAll").onclick = () => {
+  const all = allWithPeak(PK);
+  $("#pkList").innerHTML = all.length <= 81 ? `共 <b>${all.length}</b> 個：` + all.join("、")
+    : `共 <b>${all.length}</b> 個，太多了，只列前 81 個：` + all.slice(0, 81).join("、") + "……";
+  show("#pkList");
+};
+drawPk();
+wireSteps($("#g4"), () => { show("#c4key"); done(4); });
+
+// ---------- 關卡 5 ----------
+wireSteps($("#g5"), () => { show("#c5key"); done(5); });
+
+// ---------- 關卡 6：大魔王 ----------
+wireSteps($("#boss"));
+$$("#bchoices button").forEach(b => b.onclick = () => {
+  const ok = b.dataset.v === "C";
+  const why = { A: "511 = 2⁹ − 1，只數了「挑哪些數字」，沒有算每組數字能排成幾種山。", B: "2584 是費氏數列裡的數，跟這題的算法無關。山頂是 m 有 3^(m−1) 個，加起來是多少？",
+    D: "17711 也是費氏數列裡的數。照步驟 ⑤ 把 1 + 3 + … + 6561 加起來。", E: "19682 = 3⁹ − 1，還要除以 2！" };
+  fb($("#bfb"), ok, ok ? "🏆 答對了！1 + 3 + 9 + … + 6561 = 9841，答案 C。" : "❌ " + why[b.dataset.v]);
+  if (!ok) b.closest(".step").querySelector(".hint").classList.add("on");
+  if (ok) { show("#bsum"); done(6); }
+});
+
+// ---------- 關卡 7：整合回顧（動畫） ----------
+(() => {
+  const cl = x => Math.max(0, Math.min(1, x)), k = (t, a, b) => cl((t - a) / (b - a));
+  const txt = (x, y, str, col = "#2b2233", size = 16, op = 1, anchor = "start") => `<text x="${x}" y="${y}" font-size="${size}" fill="${col}" opacity="${op}" font-weight="700" text-anchor="${anchor}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${str}</text>`;
+  function roadmap(t, nodes, edges) {
+    const kk = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    let h = `<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>`;
+    edges.forEach(e => {
+      const f = kk(e.at, e.at + .06), col = e.col || "#7a6f85";
+      if (f > 0) h += `<line x1="${e.a[0]}" y1="${e.a[1]}" x2="${e.a[0] + (e.b[0] - e.a[0]) * f}" y2="${e.a[1] + (e.b[1] - e.a[1]) * f}" stroke="${col}" stroke-width="2.5" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      if (e.label) h += `<text x="${e.lx}" y="${e.ly}" font-size="13" fill="${col}" font-weight="700" text-anchor="${e.anchor || "start"}" opacity="${kk(e.at + .04, e.at + .1)}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${e.label}</text>`;
+    });
+    nodes.forEach(n => {
+      const op = kk(n.at, n.at + .06);
+      const sw = n.glow ? 2.5 + 2 * Math.abs(Math.sin(t * 14)) * (1 - kk(n.at + .15, n.at + .3)) : 2.5;
+      h += `<g opacity="${op}"><rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="10" fill="#fff" stroke="${n.col}" stroke-width="${sw}"/>` +
+        n.lines.map((l, i) => `<text x="${n.x}" y="${n.y + 5 + (i - (n.lines.length - 1) / 2) * 19}" font-size="${i ? 13 : 14}" fill="${n.col}" font-weight="700" text-anchor="middle">${l}</text>`).join("") + `</g>`;
+    });
+    return h;
+  }
+  const P3 = allWithPeak(3);
+  const SUMS = [1, 3, 9, 27, 81, 243, 729, 2187, 6561];
+  const SC = [
+    { name: "解題路線圖", dur: 13000, say: "先看解題路線圖。題目問公平數有幾個。第一步，把規則三換個樣子看：兩邊都比它大的數字，畫成柱子就是山谷，所以公平數是一座山。第二步，這裡的橋是山頂：山頂一定是最大的數字 m。第三步，比 m 小的每個數字有三種選擇，不用、左坡、右坡，所以山頂是 m 的有 3 的 m 減 1 次方個。最後把山頂 1 到 9 全部加起來，得到 9841，答案 C。",
+      draw: t => roadmap(t, [
+        { x: 260, y: 26, w: 300, h: 36, lines: ["🎯 目標：公平數有幾個？"], col: "#d17a00", at: 0 },
+        { x: 260, y: 88, w: 360, h: 46, lines: ["① 規則 ③：兩邊都比它大 = 山谷", "② 沒有山谷 → 公平數是一座山"], col: "#118ab2", at: .12 },
+        { x: 260, y: 152, w: 300, h: 40, lines: ["🌉 ③ 山頂 = 最大的數字 m"], col: "#7b4dff", at: .3, glow: true },
+        { x: 260, y: 216, w: 400, h: 46, lines: ["④ 比 m 小的每個數字：不用／左坡／右坡", "→ 3 × 3 × … = 3^(m−1) 個"], col: "#d64545", at: .48 },
+        { x: 260, y: 290, w: 400, h: 40, lines: ["⑤ 山頂 1～9 加起來 = 9841 → (C) 🏆"], col: "#1f9d55", at: .7 }
+      ], [
+        { a: [260, 44], b: [260, 63], at: .08 },
+        { a: [260, 111], b: [260, 130], at: .26 },
+        { a: [260, 172], b: [260, 191], at: .44, label: "每個數字各自選 → 相乘", lx: 275, ly: 186 },
+        { a: [260, 239], b: [260, 268], at: .64, label: "不同山頂 → 相加", lx: 275, ly: 258 }
+      ]),
+      math: [[0, "目標：數出所有公平數"], [.12, "① ② 規則 ③ = 沒有山谷 → 一座山"], [.3, "③ <b>橋是山頂</b>：最大的數字 m"], [.48, "④ 每個小數字 3 種 → 3<sup>m−1</sup>"], [.7, "⑤ 1 + 3 + … + 3<sup>8</sup> = <b>9841 (C)</b>"]] },
+    { name: "規則 ③ 是山谷", say: "第一步，把數字畫成柱子。196 的 9 兩邊都比較矮，是山頂，沒問題。1546 的 4 兩邊都比較高，是山谷，違規。所以規則三就是：不能有山谷。",
+      draw: t => { const A = t < .45, ds = A ? [1, 9, 6] : [1, 5, 4, 6];
+        return txt(260, 34, A ? "196 ✓" : "1546 ✗", A ? "#1f9d55" : "#d64545", 24, 1, "middle") + mountain(ds, { base: 230, unit: 18 }) +
+          txt(260, 290, A ? "9 兩邊都比較矮 → 山頂，沒問題" : "4 兩邊都比較高 → 山谷 = 違規", A ? "#d17a00" : "#d64545", 18, A ? k(t, .15, .25) : k(t, .6, .7), "middle"); },
+      math: [[0, "畫成柱子：數字越大越高"], [.15, "196：9 是山頂 ✓"], [.5, "1546：4 兩邊都比它大 → <b>山谷</b> ✗"]] },
+    { name: "一座山", dur: 9000, say: "第二步，下坡之後再上坡，轉彎點一定是山谷。所以公平數只能先上坡、再下坡，像 12463 這樣，是一座山。",
+      draw: t => { const A = t < .45, ds = A ? [5, 3, 7] : [1, 2, 4, 6, 3], c = A ? 3 : Math.max(1, Math.ceil(k(t, .45, .8) * 5));
+        return txt(260, 34, A ? "537：下坡再上坡" : "12463：先上坡、再下坡", A ? "#d64545" : "#118ab2", 22, 1, "middle") + mountain(ds.slice(0, c), { base: 230, unit: 18 }) +
+          txt(260, 292, A ? "轉彎的 3 變成山谷 ✗" : "只有一座山 ✓", A ? "#d64545" : "#1f9d55", 18, A ? k(t, .15, .25) : k(t, .82, .9), "middle"); },
+      math: [[0, "下坡 → 上坡：轉彎點是山谷 ✗"], [.45, "所以公平數 = <b>先上坡、再下坡</b>（一座山）"]] },
+    { name: "山頂 + 三種選擇", dur: 12000, say: "第三步，山頂一定是最大的數字。以山頂 3 為例，1 和 2 各有三種選擇：不用、左坡、右坡。3 乘 3，一共 9 個。",
+      draw: t => { const i = Math.min(8, Math.floor(k(t, .1, .9) * 9)), s = P3[i], ds = [...s].map(Number);
+        let h = txt(260, 30, "山頂 = 3，1 和 2 各選：不用／左坡／右坡", "#7b4dff", 17, 1, "middle") + mountain(ds, { base: 200, unit: 30 });
+        h += txt(260, 250, P3.slice(0, i + 1).join("、"), "#2b2233", 16, 1, "middle");
+        h += txt(260, 295, "3 × 3 = 9 個", "#1f9d55", 22, k(t, .88, .95), "middle");
+        return h; },
+      math: [[0, "山頂是最大的數字"], [.1, "比山頂小的每個數字：不用／左坡（由小到大）／右坡（由大到小）"], [.88, "山頂 3：3 × 3 = <b>9</b> 個"]] },
+    { name: "山頂是 m", dur: 9000, say: "第四步，山頂是 m 的時候，比 m 小的有 m 減 1 個數字，每個三種選擇，所以有 3 的 m 減 1 次方個。山頂是 9，就是 3 的 8 次方，6561 個。",
+      draw: t => { let h = txt(260, 30, "山頂 m → 3^(m−1) 個", "#d64545", 20, 1, "middle");
+        SUMS.forEach((v, j) => { const op = k(t, .05 + j * .09, .1 + j * .09), y = 60 + j * 27;
+          h += txt(150, y, `山頂 ${j + 1}：`, "#2b2233", 17, op) + txt(250, y, `3^${j} = ${v}`, "#7b4dff", 17, op); });
+        return h; },
+      math: [[0, "比 m 小的數字有 m − 1 個"], [.2, "每個 3 種 → 3<sup>m−1</sup>"], [.8, "山頂 9：3<sup>8</sup> = <b>6561</b>"]] },
+    { name: "全部加起來", dur: 10000, say: "最後把山頂 1 到 9 全部加起來。1 加 3 加 9 一直加到 6561，等於 9841。快速算法是 3 的 9 次方減 1，再除以 2。答案是 C！",
+      draw: t => { let run = 0, h = "";
+        SUMS.forEach((v, j) => { run += v; const op = k(t, j * .07, j * .07 + .05), y = 40 + j * 24;
+          h += txt(140, y, `+ ${v}`, "#7b4dff", 16, op) + txt(260, y, `累計 ${run}`, "#2b2233", 16, op); });
+        h += txt(260, 278, "(3^9 − 1) ÷ 2 = 19682 ÷ 2 = 9841", "#118ab2", 17, k(t, .7, .78), "middle");
+        h += txt(260, 308, "答案 9841 (C) 🏆", "#1f9d55", 22, k(t, .85, .92), "middle");
+        return h; },
+      math: [[0, "1 + 3 + 9 + 27 + 81 + 243 + 729 + 2187 + 6561"], [.65, "= <b>9841</b>"], [.7, "快速算法：(3<sup>9</sup> − 1) ÷ 2"], [.85, "答案 <b>(C)</b>"]] }
+  ];
+  let cur = 0, t0 = 0, auto = false, waitUntil = 0;
+  $("#rcChain").innerHTML = SC.map((s, i) => `<button data-rc="${i}">${i + 1}. ${s.name}</button>`).join(" → ");
+  function paint() { $$("#rcChain button").forEach((b, j) => { b.style.background = j === cur ? "#7b4dff" : j < cur ? "#efe8ff" : "#fff"; b.style.color = j === cur ? "#fff" : ""; }); }
+  function render(t) {
+    const s = SC[cur]; $("#rcMap").innerHTML = s.draw(cl(t));
+    const lines = s.math.filter(m => cl(t) >= m[0]);
+    $("#rcMath").innerHTML = lines.map((m, j) => `<div style="opacity:${j === lines.length - 1 ? 1 : .6}">${m[1]}</div>`).join("");
+  }
+  function enter(i) {
+    cur = Math.max(0, Math.min(SC.length - 1, i)); t0 = performance.now(); waitUntil = 0; paint();
+    $("#rcSay").textContent = SC[cur].say; speak(SC[cur].say);
+    if (cur === SC.length - 1) { show("#c7key"); done(7); }
+  }
+  const setAuto = on => { auto = on; $("#rcAuto").textContent = on ? "⏸ 暫停自動播放" : "▶ 自動播放全部"; };
+  $("#rcChain").onclick = e => { const i = e.target.dataset.rc; if (i !== undefined) { setAuto(false); enter(+i); } };
+  $("#rcPrev").onclick = () => { setAuto(false); enter(cur - 1); };
+  $("#rcNext").onclick = () => { setAuto(false); enter(cur + 1); };
+  $("#rcAgain").onclick = () => enter(cur);
+  $("#rcAuto").onclick = () => { if (auto) { setAuto(false); speechSynthesis.cancel(); } else { setAuto(true); enter(cur === SC.length - 1 ? 0 : cur); } };
+  const DUR = 7000;
+  (function loop(now) {
+    if ($("#s7").classList.contains("on")) {
+      const t = (now - t0) / (SC[cur].dur || DUR); render(t);
+      if (auto && t >= 1 && !speechSynthesis.speaking) {
+        if (!waitUntil) waitUntil = now + 800;
+        else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }
+      }
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+  paint(); $("#rcSay").textContent = SC[0].say;
+})();
+
+// ---------- 關卡 8：無限練習 ----------
+let P = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = rnd(0, i); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function newProblem() {
+  if (mode === "easy") {
+    const want = Math.random() < .5, n = rnd(3, 6);
+    let s;
+    if (want) {
+      const ds = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, n), m = Math.max(...ds), side = {};
+      ds.forEach(d => side[d] = Math.random() < .5 ? "L" : "R");
+      s = [...ds].filter(d => d !== m).sort((a, b) => a - b).filter(d => side[d] === "L").join("") + m +
+        [...ds].filter(d => d !== m).sort((a, b) => b - a).filter(d => side[d] === "R").join("");
+    } else {
+      const r = Math.random();
+      for (let tries = 0; tries < 500; tries++) {
+        s = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, n).join("");
+        if (r < .15) { const i = rnd(1, n - 1); s = s.slice(0, i) + "0" + s.slice(i); }
+        else if (r < .3) { const i = rnd(0, n - 1), j = rnd(0, n - 1); if (Math.abs(i - j) > 1) s = s.slice(0, j) + s[i] + s.slice(j + 1); }
+        if (!isFair(s)) break;
+      }
+    }
+    P = { easy: true, s };
+    $("#pq").innerHTML = `<b>${s}</b> 是公平數嗎？`;
+  } else if (Math.random() < .5) {
+    const n = rnd(2, 8);
+    P = { n, ans: (3 ** n - 1) / 2, kind: "digits" };
+    $("#pq").innerHTML = `如果只能用數字 1 到 ${n}（每個最多一次、沒有 0、沒有數字兩邊都比它大），公平數一共有幾個？`;
+  } else {
+    const m = rnd(2, 9);
+    P = { m, ans: 3 ** (m - 1), kind: "peak" };
+    $("#pq").innerHTML = `最大的數字（山頂）是 ${m} 的公平數有幾個？`;
+  }
+  $("#pans").value = ""; fb($("#pfb"), null, ""); $("#psol").classList.add("hidden");
+  $("#pEasyBox").classList.toggle("hidden", mode !== "easy"); $("#pHardBox").classList.toggle("hidden", mode === "easy");
+}
+function solution() {
+  if (P.easy) {
+    const p = problems(P.s), ds = [...P.s].map(Number);
+    return `<svg class="mt" viewBox="0 0 520 220">${mountain(ds)}</svg>` +
+      (p.length ? `${P.s} <b>不是</b>公平數：${p.join("；")}。` : `${P.s} 沒有重複、沒有 0，畫成柱子是一座山（沒有山谷），所以<b>是</b>公平數。`);
+  }
+  if (P.kind === "peak") {
+    const { m } = P;
+    return `比 ${m} 小的數字有 1 到 ${m - 1}，共 ${m - 1} 個；比 ${m} 大的都不能用。<br>
+      每個小數字 3 種選擇（不用／左坡／右坡），全部相乘：3<sup>${m - 1}</sup> = <b>${P.ans}</b>。`;
+  }
+  const { n } = P, terms = Array.from({ length: n }, (_, i) => 3 ** i);
+  return `山頂可以是 1 到 ${n}，山頂是 m 的有 3<sup>m−1</sup> 個：<br>
+    ${terms.join(" + ")} = <b>${P.ans}</b><br>
+    快速算法：(3<sup>${n}</sup> − 1) ÷ 2 = (${3 ** n} − 1) ÷ 2 = ${P.ans}。`;
+}
+function grade(ok) {
+  streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
+  fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再想一次，或看解法");
+  if (streak >= 3 && mode === "hard") done(8);
+}
+$("#pyes").onclick = () => grade(isFair(P.s));
+$("#pno").onclick = () => grade(!isFair(P.s));
+$("#pchk").onclick = () => grade(same(val($("#pans").value), P.ans));
+$("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
+$("#pnew").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+// 次方唸成「的 X 次方」；英文和圖不唸
+function readable(el) {
+  if (typeof el === "string") return el;
+  const c = el.cloneNode(true);
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden, svg, .en, i, [lang=en]").forEach(b => b.remove());
+  c.querySelectorAll("sup").forEach(s => s.replaceWith(` 的 ${s.textContent} 次方 `));
+  c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  c.querySelectorAll("table.derive tr:first-child").forEach(r => r.remove());
+  c.querySelectorAll("td, th, br").forEach(td => td.append("，"));
+  return c.textContent;
+}
+function toSpeech(t) {
+  return t.replace(/[⛰️🔑🎉✅❌🤔🏆📐⭐💡👑🎯🌉🗺️📜📖🌟]/gu, "").trim()
+    .replace(/(\d)\^\((m−1)\)/g, "$1 的 m 減 1 次方").replace(/(\d)\^(\d)/g, "$1 的 $2 次方")
+    .replace(/([0-9])⁸/g, "$1 的 8 次方").replace(/([0-9])⁹/g, "$1 的 9 次方")
+    .replace(/[①②③④⑤]/g, m => " 第" + "一二三四五"["①②③④⑤".indexOf(m)] + "步 ")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/=/g, " 等於 ")
+    .replace(/≤/g, " 小於等於 ").replace(/</g, " 小於 ").replace(/>/g, " 大於 ")
+    .replace(/✗/g, " 不行 ").replace(/✓/g, " ").replace(/→/g, "，").replace(/…/g, "，一直到，").replace(/～/g, " 到 ")
+    .replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(readable(t)));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+const HELLO = "你好，我們一起來玩公平數大冒險！";
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak(HELLO); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak(HELLO); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak(HELLO); };
+$("#vTest").onclick = () => speak(HELLO);
+$$(".story, .key, .proof").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]")?.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story"));
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+const watchOnce = (el, isOn, target) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(target(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st));
+new MutationObserver(() => speak($("#pq"))).observe($("#pq"), { childList: true });
+</script>
+</body>
+</html>
