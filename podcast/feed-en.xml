@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 20 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1287,6 +1287,39 @@ Stable Audio Open Small: https://stability.ai/news/stability-ai-and-arm-release-
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:26</itunes:duration>
       <itunes:episode>46</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Same Word, Different Jobs! Distillation in Language Models vs Music AI</title>
+      <description><![CDATA[Distillation is a hot word in the language model world, and music generation AI uses it too, but the same word means two different jobs. It comes from a 2015 paper by Geoffrey Hinton and colleagues: a big teacher model guides a small student, giving not just the right answer but soft labels like seventy percent violin, twenty percent viola, using the temperature from episode 41 to make the hints clearer. Language model distillation turns big into small: Hugging Face's DistilBERT (2019) is 40% smaller, 60% faster and keeps about 97% of BERT's language understanding; DeepSeek-R1 (2025) used about 800,000 worked examples to train distilled Qwen and Llama models from 1.5B to 70B. Music diffusion distillation turns many steps into few: progressive distillation (Tim Salimans and Jonathan Ho, Google, 2022) has the student do in one step what the teacher does in two, halving each round from 8192 steps down to 4; then came consistency distillation; and Presto! (Adobe and UC San Diego, 2024) distills both steps and layers, 10 to 18 times faster, 32 seconds of mono music in 0.23 seconds. Finally, a correction: episode 46 said Stable Audio Open Small relies on distillation, but it mainly uses adversarial post-training (ARC), which its authors stress is not distillation.
+
+References:
+Distilling the Knowledge in a Neural Network (Hinton et al. 2015): https://arxiv.org/abs/1503.02531
+DistilBERT (Sanh et al. 2019): https://arxiv.org/abs/1910.01108
+DeepSeek-R1: https://github.com/deepseek-ai/DeepSeek-R1
+Progressive Distillation (Salimans & Ho 2022): https://arxiv.org/abs/2202.00512
+Consistency Models (Song et al. 2023): https://arxiv.org/abs/2303.01469
+Presto! (Novack et al. 2024): https://arxiv.org/abs/2410.05167
+ARC / Stable Audio Open Small (2025): https://arxiv.org/abs/2505.08175]]></description>
+      <itunes:summary><![CDATA[Distillation is a hot word in the language model world, and music generation AI uses it too, but the same word means two different jobs. It comes from a 2015 paper by Geoffrey Hinton and colleagues: a big teacher model guides a small student, giving not just the right answer but soft labels like seventy percent violin, twenty percent viola, using the temperature from episode 41 to make the hints clearer. Language model distillation turns big into small: Hugging Face's DistilBERT (2019) is 40% smaller, 60% faster and keeps about 97% of BERT's language understanding; DeepSeek-R1 (2025) used about 800,000 worked examples to train distilled Qwen and Llama models from 1.5B to 70B. Music diffusion distillation turns many steps into few: progressive distillation (Tim Salimans and Jonathan Ho, Google, 2022) has the student do in one step what the teacher does in two, halving each round from 8192 steps down to 4; then came consistency distillation; and Presto! (Adobe and UC San Diego, 2024) distills both steps and layers, 10 to 18 times faster, 32 seconds of mono music in 0.23 seconds. Finally, a correction: episode 46 said Stable Audio Open Small relies on distillation, but it mainly uses adversarial post-training (ARC), which its authors stress is not distillation.
+
+References:
+Distilling the Knowledge in a Neural Network (Hinton et al. 2015): https://arxiv.org/abs/1503.02531
+DistilBERT (Sanh et al. 2019): https://arxiv.org/abs/1910.01108
+DeepSeek-R1: https://github.com/deepseek-ai/DeepSeek-R1
+Progressive Distillation (Salimans & Ho 2022): https://arxiv.org/abs/2202.00512
+Consistency Models (Song et al. 2023): https://arxiv.org/abs/2303.01469
+Presto! (Novack et al. 2024): https://arxiv.org/abs/2410.05167
+ARC / Stable Audio Open Small (2025): https://arxiv.org/abs/2505.08175]]></itunes:summary>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep47.mp3" length="1355904" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep47.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:46</itunes:duration>
+      <itunes:episode>47</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

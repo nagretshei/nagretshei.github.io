@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 20 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1287,6 +1287,39 @@ Stable Audio Open Small：https://stability.ai/news/stability-ai-and-arm-release
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:29</itunes:duration>
       <itunes:episode>46</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>同樣叫蒸餾，差很多！語言模型 vs 音樂 AI 的「蒸餾」｜Distillation</title>
+      <description><![CDATA[LLM圈很流行講「蒸餾（Distillation）」，音樂生成AI也在用，但同一個詞其實是兩件事。蒸餾來自2015年Geoffrey Hinton等人的論文：大老師模型帶小學生模型，不只給標準答案，還給「七成像小提琴、兩成像中提琴」的軟標籤，並用第41集的溫度讓提示更明顯。語言模型的蒸餾是「大變小」：2019年Hugging Face的DistilBERT小40%、快60%、保留約97%語言理解能力；2025年DeepSeek-R1用約80萬筆示範訓練出1.5B到70B的Qwen、Llama蒸餾版。音樂擴散模型的蒸餾是「多步變少步」：2022年Google的Tim Salimans與Jonathan Ho提出漸進式蒸餾，老師走兩步、學生一步走完，每輪砍一半，從8192步砍到4步；之後有一致性蒸餾；2024年Adobe與UC San Diego的Presto!連步數帶層數一起蒸餾，快10到18倍，32秒單聲道音樂只要0.23秒。最後小皮更正：第46集說Stable Audio Open Small靠蒸餾，其實它主要用的是對抗式後訓練ARC，作者強調不是蒸餾。
+
+參考資料：
+Distilling the Knowledge in a Neural Network（Hinton et al. 2015）：https://arxiv.org/abs/1503.02531
+DistilBERT（Sanh et al. 2019）：https://arxiv.org/abs/1910.01108
+DeepSeek-R1：https://github.com/deepseek-ai/DeepSeek-R1
+Progressive Distillation（Salimans & Ho 2022）：https://arxiv.org/abs/2202.00512
+Consistency Models（Song et al. 2023）：https://arxiv.org/abs/2303.01469
+Presto!（Novack et al. 2024）：https://arxiv.org/abs/2410.05167
+ARC / Stable Audio Open Small（2025）：https://arxiv.org/abs/2505.08175]]></description>
+      <itunes:summary><![CDATA[LLM圈很流行講「蒸餾（Distillation）」，音樂生成AI也在用，但同一個詞其實是兩件事。蒸餾來自2015年Geoffrey Hinton等人的論文：大老師模型帶小學生模型，不只給標準答案，還給「七成像小提琴、兩成像中提琴」的軟標籤，並用第41集的溫度讓提示更明顯。語言模型的蒸餾是「大變小」：2019年Hugging Face的DistilBERT小40%、快60%、保留約97%語言理解能力；2025年DeepSeek-R1用約80萬筆示範訓練出1.5B到70B的Qwen、Llama蒸餾版。音樂擴散模型的蒸餾是「多步變少步」：2022年Google的Tim Salimans與Jonathan Ho提出漸進式蒸餾，老師走兩步、學生一步走完，每輪砍一半，從8192步砍到4步；之後有一致性蒸餾；2024年Adobe與UC San Diego的Presto!連步數帶層數一起蒸餾，快10到18倍，32秒單聲道音樂只要0.23秒。最後小皮更正：第46集說Stable Audio Open Small靠蒸餾，其實它主要用的是對抗式後訓練ARC，作者強調不是蒸餾。
+
+參考資料：
+Distilling the Knowledge in a Neural Network（Hinton et al. 2015）：https://arxiv.org/abs/1503.02531
+DistilBERT（Sanh et al. 2019）：https://arxiv.org/abs/1910.01108
+DeepSeek-R1：https://github.com/deepseek-ai/DeepSeek-R1
+Progressive Distillation（Salimans & Ho 2022）：https://arxiv.org/abs/2202.00512
+Consistency Models（Song et al. 2023）：https://arxiv.org/abs/2303.01469
+Presto!（Novack et al. 2024）：https://arxiv.org/abs/2410.05167
+ARC / Stable Audio Open Small（2025）：https://arxiv.org/abs/2505.08175]]></itunes:summary>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep47.mp3" length="3606297" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep47.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:45</itunes:duration>
+      <itunes:episode>47</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
