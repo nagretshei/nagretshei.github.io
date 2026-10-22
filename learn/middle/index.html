@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>中間邊大冒險｜圓、中垂線與機率</title>
+<style>
+  :root { --bg:#fff8ee; --fg:#2b2233; --accent:#7b4dff; --ok:#1f9d55; --bad:#d64545; --card:#fff; --line:#eadfce; --gold:#f2b705; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.7 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; }
+  header { padding:14px 20px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; border-bottom:2px solid var(--line); background:#fff; position:sticky; top:0; z-index:2; }
+  header h1 { font-size:19px; margin:0 10px 0 0; }
+  .tab { border:2px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; cursor:pointer; font-size:14px; }
+  .tab.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tab.done::after { content:" ⭐"; }
+  .part { font-size:13px; color:#7a6f85; margin-left:6px; }
+  main { max-width:860px; margin:0 auto; padding:24px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:var(--card); border:2px solid var(--line); border-radius:16px; padding:20px 24px; margin:16px 0; }
+  h2 { margin-top:0; }
+  .story { font-size:18px; }
+  input[type=range] { width:100%; }
+  input.n { font-size:18px; width:110px; padding:4px 8px; border:2px solid var(--line); border-radius:8px; }
+  button.go { background:var(--accent); color:#fff; border:0; border-radius:10px; padding:6px 16px; font-size:16px; cursor:pointer; margin:4px 4px 4px 0; }
+  button.ghost { background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:10px; padding:4px 12px; font-size:15px; cursor:pointer; margin:4px 4px 4px 0; }
+  .fb { min-height:28px; font-weight:600; }
+  .fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+  .big { font-size:28px; font-weight:700; }
+  .key { background:#fff3c4; border-left:6px solid var(--gold); padding:10px 16px; border-radius:8px; margin:12px 0; }
+  .proof { background:#eef6ff; border-left:6px solid #4a90d9; padding:8px 16px; border-radius:8px; margin:8px 0; font-variant-numeric:tabular-nums; }
+  .orig { background:#f4f0ff; border-left:6px solid var(--accent); padding:10px 16px; border-radius:8px; margin:8px 0; font-size:18px; line-height:1.8; }
+  table.steps { border-collapse:collapse; margin:8px 0; }
+  table.steps td, table.steps th { padding:4px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; text-align:left; }
+  table.derive td { vertical-align:middle; padding:8px 10px; }
+  table.derive td:first-child { min-width:190px; font-size:15px; }
+  .step { display:none; } .step.on { display:block; margin-bottom:14px; }
+  .hint { color:#7a6f85; font-size:15px; display:none; } .hint.on { display:block; }
+  .yn button, .choices button { font-size:17px; margin:4px; padding:5px 16px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .nav { display:flex; justify-content:flex-end; }
+  .say { float:right; border:0; background:#efe8ff; border-radius:50%; width:34px; height:34px; cursor:pointer; font-size:16px; }
+  .hidden { display:none; }
+  .math { font-size:20px; }
+  .tip { font-size:14px; color:#7a6f85; }
+  .en { color:#118ab2; font-size:.82em; font-style:italic; margin:0 3px; }
+  .status { min-height:28px; font-weight:600; }
+  svg.sq { width:100%; max-width:440px; display:block; margin:6px auto; background:#fff; border:1px solid var(--line); border-radius:10px; touch-action:none; user-select:none; }
+  .five { display:grid; gap:8px; margin:10px 0; }
+  .five button { text-align:left; font-size:16px; border:2px solid var(--line); border-radius:12px; background:#fff; padding:8px 14px; cursor:pointer; line-height:1.5; transition:all .4s; }
+  .five button.lit { border-color:var(--accent); background:#f4f0ff; }
+  .five button b { color:var(--accent); }
+  .tg button { font-size:15px; margin:3px; padding:3px 12px; border-radius:999px; border:2px solid var(--line); background:#fff; cursor:pointer; }
+  .tg button.on { background:#efe8ff; border-color:var(--accent); color:var(--accent); font-weight:700; }
+  .cap { text-align:center; font-weight:700; min-height:28px; }
+  .g { color:#1f9d55; font-weight:700; } .o { color:#e06c3c; font-weight:700; }
+  @media (max-width:520px) { main { padding:12px; } .card { padding:14px 14px; } table.derive { min-width:560px; } table.derive td:first-child { min-width:150px; } }
+</style>
+</head>
+<body>
+<header>
+  <a href="../" class="tab" style="text-decoration:none;color:inherit">← 練習場</a>
+  <h1>🎲 中間邊大冒險</h1>
+  <button class="tab on" data-go="0">0. 題目＋五步地圖</button>
+  <span class="part">細部講解</span>
+  <button class="tab" data-go="1">1. 機率＝面積</button>
+  <button class="tab" data-go="2">2. 誰在中間</button>
+  <button class="tab" data-go="3">3. 兩條分界線</button>
+  <button class="tab" data-go="4">4. 交點和正三角形</button>
+  <button class="tab" data-go="5">5. 算兩塊面積</button>
+  <span class="part">挑戰</span>
+  <button class="tab" data-go="6">6. 大魔王</button>
+  <button class="tab" data-go="7">7. 整合回顧</button>
+  <button class="tab" data-go="8">8. 無限練習</button>
+  <button class="tab" id="voiceBtn" style="margin-left:auto">🔊 語音：開</button>
+  <button class="tab" id="voiceSet">🎀 聲音設定</button>
+  <div id="voicePanel" class="card hidden" style="position:absolute;right:20px;top:60px;width:300px;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+    聲音 <select id="vName" style="font-size:16px"></select><br>
+    音調（越高越可愛）<input type="range" id="vPitch" min="0.8" max="2" step="0.1"><br>
+    速度 <input type="range" id="vRate" min="0.7" max="1.5" step="0.05"><br>
+    <button class="go" id="vTest">試聽</button> <button class="ghost" id="vClose">完成</button>
+  </div>
+</header>
+<main>
+
+<!-- ============ 關卡 0：題目＋五步地圖 ============ -->
+<section class="on" id="s0">
+  <div class="card">
+    <h2>📜 原題（2025 AMC 10A 第 25 題）</h2>
+    <div class="orig"><span lang="en">A point <i>P</i> is chosen at random inside square <i>ABCD</i>. The probability that <i>AP</i> is neither the shortest nor the longest side of △<i>APB</i> can be written as (<i>a</i> + <i>b</i>π − <i>c</i>√<i>d</i>) / <i>e</i>, where <i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>, and <i>e</i> are positive integers, gcd(<i>a</i>, <i>b</i>, <i>c</i>, <i>e</i>) = 1, and <i>d</i> is not divisible by the square of a prime. What is <i>a</i> + <i>b</i> + <i>c</i> + <i>d</i> + <i>e</i>?<br>
+    (A) 25　(B) 26　(C) 27　(D) 28　(E) 29</span></div>
+  </div>
+  <div class="card story">
+    <h2>題目在說什麼？</h2>
+    在正方形<span class="en">(square)</span> ABCD 裡面隨機<span class="en">(at random)</span>選一個點 P。把 P 和 A、B 連起來，得到三角形 APB，它有三條邊：AP、BP、AB。<br>
+    AP「<b>既不是最短、也不是最長</b>」<span class="en">(neither the shortest nor the longest)</span>，就是 AP 剛好排在<b>中間</b>。這件事發生的機率<span class="en">(probability)</span>是多少？<br>
+    答案會長得像 (a + bπ − c√d) / e，題目要我們把 a、b、c、d、e 加起來。
+  </div>
+  <div class="card">
+    <h2>🗺️ 五步地圖：先看整體怎麼走</h2>
+    點是「隨便選」的，不可能一個一個試。我們用五步把機率變成面積來算。點任何一步可以直接跳到那一關的細部講解。
+    <div class="five" id="five">
+      <button data-go="1"><b>① 機率＝面積</b>：正方形邊長當作 1，面積是 1。P 落在某一塊的機率 = 那一塊的面積 ÷ 1，所以只要算面積。</button>
+      <button data-go="2"><b>② 誰在中間</b>：三條邊 AP、BP、AB（= 1）。AP 在中間只有兩種排法：<span class="g">BP &lt; AP &lt; AB</span> 或 <span class="o">AB &lt; AP &lt; BP</span>。</button>
+      <button data-go="3"><b>③ 兩條分界線</b>：AP = AB 的點是以 A 為圓心、半徑 1 的<b>圓</b>；AP = BP 的點是 AB 的<b>中垂線</b>。兩條線把正方形切開，AP 在中間的是<span class="g">綠色</span>和<span class="o">橘色</span>兩塊。</button>
+      <button data-go="4"><b>④ 交點 S 和正三角形</b>：圓和中垂線交在 S，AS = BS = AB = 1，三角形 ABS 是正三角形，角是 60°，高是 √3/2。</button>
+      <button data-go="5"><b>⑤ 算兩塊面積</b>：<span class="g">綠色 = π/6 − √3/8</span>，<span class="o">橘色 = 1/2 − √3/8 − π/12</span>。加起來 = (6 + π − 3√3)/12，所以 6 + 1 + 3 + 3 + 12 = <b>25</b>，答案 (A)。</button>
+    </div>
+    <button class="go" id="fivePlay">▶ 播放五步地圖</button>
+    <div class="key">
+      🔑 <b>整體的想法：</b>「隨機選點的機率」換成「面積」；「AP 排第幾」換成「P 在分界線的哪一邊」。分界線是圓和直線，面積就用扇形和三角形拼出來。
+    </div>
+    <div class="nav"><button class="go" data-go="1">開始細部講解：步驟 ① →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 1：機率＝面積 ============ -->
+<section id="s1">
+  <div class="card story">
+    <h2>關卡 1：機率＝面積（步驟 ①）</h2>
+    在正方形裡隨便撒點，看看落在藍色區域的點佔了多少。撒越多點，比例會越接近藍色區域的面積。正方形邊長都當作 1。
+  </div>
+  <div class="card">
+    <div class="tg" id="r1tg">藍色區域：<button data-r="half" class="on">左半邊</button><button data-r="quarter">四分之一圓</button></div>
+    <svg class="sq" id="f1" viewBox="0 0 400 360"></svg>
+    <button class="go" id="d1a">撒 50 個點</button> <button class="go" id="d1b">撒 500 個點</button> <button class="ghost" id="d1c">清除</button>
+    <div class="status" id="f1s"></div>
+  </div>
+  <div class="card" id="g1">
+    <div class="step on" data-fig="half">
+      正方形邊長是 1，面積<span class="en">(area)</span>是多少？ <input class="n" data-ans="1">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 正方形面積 = 邊長 × 邊長 = 1 × 1。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" data-fig="half">
+      P 落在<b>左半邊</b>的機率是多少？（可以輸入分數，例如 1/3） <input class="n" data-ans="1/2" data-wrong='{"2":"機率不會超過 1 喔。左半邊佔整個正方形的幾分之幾？"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 左半邊是寬 1/2、高 1 的長方形，面積 1/2。按「撒 500 個點」看看藍點大概佔幾成。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>點是「隨機」選的，每個地方被選到的機會都一樣，所以落在一塊區域的機率 = <b>這塊的面積 ÷ 正方形面積</b>。<br>
+        左半邊面積 1/2，正方形面積 1，機率 = 1/2 ÷ 1 = <b>1/2</b>。
+      </div>
+    </div>
+    <div class="step" data-fig="quarter">
+      換成以 A 為圓心、半徑 1 的<b>四分之一圓</b>（把上面的藍色區域切到「四分之一圓」看看）。P 落在裡面的機率是？
+      <div class="choices" data-right="1"><button>1/4</button><button>π/4</button><button>π</button><button>π/2</button></div>
+      <div class="hint">💡 整個圓的面積是 π × 半徑²，半徑 1 就是 π。四分之一圓是整個圓的 1/4。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>整個圓面積 = π × 1² = π，四分之一圓 = π/4，除以正方形面積 1 還是 <b>π/4 ≈ 0.785</b>。撒 500 個點，藍點大約會有 78%～79%。<br>
+        題目答案裡有 π，就是因為要算的區域邊界有一段是<b>圓弧</b>。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c1key">
+    <div class="key">
+      🔑 <b>幾何機率<span class="en">(geometric probability)</span>：</b>機率 = 區域面積 ÷ 正方形面積。正方形邊長取 1，面積是 1，所以<b>機率就等於區域的面積</b>。
+    </div>
+    <div class="nav"><button class="go" data-go="2">下一關：步驟 ② →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 2：誰在中間 ============ -->
+<section id="s2">
+  <div class="card story">
+    <h2>關卡 2：誰在中間（步驟 ②）</h2>
+    在正方形裡<b>拖曳點 P</b>，看看三角形 APB 三條邊的長度，以及 AP 排第幾。
+  </div>
+  <div class="card">
+    <svg class="sq" id="f2" viewBox="0 0 400 360"></svg>
+    <div class="status" id="f2s"></div>
+    <button class="go" id="d2a">撒 300 個點：AP 在中間的塗綠色</button> <button class="ghost" id="d2c">清除點</button>
+    <div class="status" id="f2d"></div>
+  </div>
+  <div class="card" id="g2">
+    <div class="step on">
+      三角形<span class="en">(triangle)</span> APB 的三條邊<span class="en">(side)</span>是哪三條？
+      <div class="choices" data-right="0"><button>AP、BP、AB</button><button>AP、BP、CP</button><button>AB、BC、CD</button></div>
+      <div class="hint">💡 三角形 APB 的三個頂點是 A、P、B，每兩個頂點連一條邊。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      AB 多長？ <input class="n" data-ans="1">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 AB 是正方形的一條邊。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>AB 是正方形的邊，長度固定是 <b>1</b>，P 怎麼動都不會變。會變的只有 AP 和 BP。
+      </div>
+    </div>
+    <div class="step">
+      「AP 既不是最短、也不是最長」是什麼意思？
+      <div class="choices" data-right="0"><button>三條邊由短排到長，AP 排在中間</button><button>AP 最長</button><button>AP 和 AB 一樣長</button></div>
+      <div class="hint">💡 三條邊排隊，不是第一名（最短）也不是最後一名（最長），只剩一個位置。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      AP 在中間，代表另外兩條邊一條比 AP 短、一條比 AP 長。第一種是 BP &lt; AP &lt; AB（BP 比較短、AB 比較長）。<b>另一種</b>是？
+      <div class="choices" data-right="0"><button>AB &lt; AP &lt; BP</button><button>AP &lt; BP &lt; AB</button><button>BP &lt; AB &lt; AP</button></div>
+      <div class="hint">💡 把「誰比較短」交換：這次 AB 比 AP 短、BP 比 AP 長。另外兩個選項裡，AP 都不在中間。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>比 AP 短的那條可以是 BP 或 AB，所以只有兩種：<br>
+        <span class="g">情況一：BP &lt; AP &lt; AB</span>（AP 比 BP 長、比 1 短）<br>
+        <span class="o">情況二：AB &lt; AP &lt; BP</span>（AP 比 1 長、比 BP 短）
+      </div>
+    </div>
+    <div class="step">
+      按上面的「撒 300 個點」，AP 在中間的點塗成綠色。綠點聚成<b>幾塊</b>？ <input class="n" data-ans="2" data-wrong='{"1":"仔細看左上角，靠近 D 的地方是不是也有一小塊綠點？"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 一塊在右下，比較大；另一塊在左上角，很細很小。多撒幾次就看得出來。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>兩塊剛好對應兩種情況。下一關要找出這兩塊的<b>邊界</b>，才能算面積。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c2key">
+    <div class="key">
+      🔑 <b>AP 在中間 = 兩種情況：</b><span class="g">BP &lt; AP &lt; AB</span> 或 <span class="o">AB &lt; AP &lt; BP</span>。AB = 1 固定不動。
+    </div>
+    <div class="nav"><button class="go" data-go="3">下一關：步驟 ③ →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 3：兩條分界線 ============ -->
+<section id="s3">
+  <div class="card story">
+    <h2>關卡 3：兩條分界線（步驟 ③）</h2>
+    每一種情況都是在「比大小」：AP 和 AB 比、AP 和 BP 比。先找出「剛好一樣長」的點在哪裡，那就是分界線。拖曳 P 看看。
+  </div>
+  <div class="card">
+    <div class="tg" id="t3">顯示：<button data-t="circle">圓 AP = 1</button><button data-t="line">中垂線 AP = BP</button><button data-t="r1">情況一</button><button data-t="r2">情況二</button></div>
+    <svg class="sq" id="f3" viewBox="0 0 400 360"></svg>
+    <div class="status" id="f3s"></div>
+  </div>
+  <div class="card" id="g3">
+    <div class="step on">
+      哪些點 P 會讓 <b>AP = AB = 1</b>？
+      <div class="choices" data-right="0"><button>以 A 為圓心、半徑 1 的圓</button><button>以 B 為圓心、半徑 1 的圓</button><button>一條直線</button></div>
+      <div class="hint">💡 「到 A 的距離都是 1」的點，排起來是什麼形狀？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>圓<span class="en">(circle)</span>的定義就是「到圓心距離都一樣的點」。到 A 距離都是 1 → 以 A 為圓心、半徑<span class="en">(radius)</span> 1 的圓。在正方形裡面，它是從 B 彎到 D 的四分之一圓弧（藍線）。
+      </div>
+    </div>
+    <div class="step" data-fig="circle">
+      P 在藍色圓弧的<b>裡面</b>（靠近 A 那一邊）時，AP 比 1 大還是小？
+      <div class="choices" data-right="1"><button>比 1 大</button><button>比 1 小</button></div>
+      <div class="hint">💡 拖曳 P 到靠近 A 的地方，看 AP 的長度。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>圓裡面的點離圓心比較近，所以 <b>圓裡面 → AP &lt; 1</b>，<b>圓外面 → AP &gt; 1</b>。
+      </div>
+    </div>
+    <div class="step" data-fig="circle">
+      哪些點 P 會讓 <b>AP = BP</b>（到 A 和到 B 一樣遠）？
+      <div class="choices" data-right="1"><button>對角線 AC</button><button>AB 的中垂線（通過 AB 中點、和 AB 垂直的直線）</button><button>邊 AD</button></div>
+      <div class="hint">💡 AB 的中點 M 到 A、B 都是 1/2，一樣遠。從 M 往正上方走呢？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>從 AB 中點 M 往正上方畫一條直線，線上任何一點 P，三角形 PMA 和 PMB：PM 共用、MA = MB = 1/2、在 M 的角都是 90°，兩邊夾一角全等（SAS），所以 <b>PA = PB</b>。<br>
+        這條線叫<b>中垂線</b><span class="en">(perpendicular bisector)</span>：通過中點、而且垂直。用座標說就是「x = 1/2」那條直線（紫色虛線）。
+      </div>
+    </div>
+    <div class="step" data-fig="line">
+      P 在中垂線的<b>左邊</b>（靠近 A）時，AP 和 BP 誰比較短？
+      <div class="choices" data-right="0"><button>AP 比較短</button><button>BP 比較短</button></div>
+      <div class="hint">💡 拖曳 P 到左邊看看。離 A 比較近，AP 就……</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b><b>中垂線左邊 → AP &lt; BP</b>；<b>中垂線右邊 → AP &gt; BP</b>。
+      </div>
+    </div>
+    <div class="step" data-fig="line">
+      <span class="g">情況一 BP &lt; AP &lt; AB</span> 拆成兩個條件：BP &lt; AP、而且 AP &lt; 1。P 要在哪裡？
+      <div class="choices" data-right="0"><button>中垂線右邊，而且在圓裡面</button><button>中垂線左邊，而且在圓外面</button><button>中垂線左邊，而且在圓裡面</button></div>
+      <div class="hint">💡 BP &lt; AP → AP 比較長 → P 在中垂線的哪一邊？AP &lt; 1 → 圓的裡面還是外面？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>BP &lt; AP → 右邊；AP &lt; 1 → 圓裡面。就是圖上的<span class="g">綠色</span>那塊（右下角，被圓弧和中垂線圍起來）。
+      </div>
+    </div>
+    <div class="step" data-fig="r1">
+      <span class="o">情況二 AB &lt; AP &lt; BP</span> 拆成：1 &lt; AP、而且 AP &lt; BP。P 要在哪裡？
+      <div class="choices" data-right="1"><button>中垂線右邊，而且在圓外面</button><button>中垂線左邊，而且在圓外面</button><button>中垂線左邊，而且在圓裡面</button></div>
+      <div class="hint">💡 AP &gt; 1 → 圓外面；AP &lt; BP → 中垂線左邊。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>圓外面 + 左邊 = 圖上的<span class="o">橘色</span>那塊：左上角，夾在圓弧上面、中垂線左邊的細長一條。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c3key">
+    <div class="key">
+      🔑 <b>兩條分界線：</b>圓（AP = 1）分「AP 比 1 長或短」；中垂線（AP = BP）分「AP 比 BP 長或短」。<br>
+      <span class="g">綠色 = 圓裡面 + 右邊</span>；<span class="o">橘色 = 圓外面 + 左邊</span>。答案 = 綠色面積 + 橘色面積。
+    </div>
+    <div class="nav"><button class="go" data-go="4">下一關：步驟 ④ →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 4：交點和正三角形 ============ -->
+<section id="s4">
+  <div class="card story">
+    <h2>關卡 4：交點和正三角形（步驟 ④）</h2>
+    綠色和橘色兩塊在圓弧和中垂線的交點 S 碰在一起。要算面積，得先知道 S 在哪裡、角度是多少。
+  </div>
+  <div class="card">
+    <svg class="sq" id="f4" viewBox="0 0 400 360"></svg>
+  </div>
+  <div class="card" id="g4">
+    <div class="step on" data-fig="AS">
+      S 在圓弧上。AS 多長？ <input class="n" data-ans="1">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 圓弧上的每個點到圓心 A 的距離都是半徑。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" data-fig="BS">
+      S 也在中垂線上。BS 多長？ <input class="n" data-ans="1" data-wrong='{"0.5":"0.5 是 AM（到中點）。中垂線上的點到 A、B 一樣遠，BS = AS。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 中垂線上的點：到 A 的距離 = 到 B 的距離。上一題 AS = 1。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" data-fig="eq">
+      三角形 ABS 三條邊 AB、AS、BS 都是 1，叫做正三角形<span class="en">(equilateral triangle)</span>。∠BAS 是幾度？ <input class="n" data-ans="60" data-wrong='{"90":"正方形的角才是 90°。正三角形三個角一樣大，加起來 180°。","45":"三個角一樣大，180° ÷ 3。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 三角形內角和 180°，正三角形三個角一樣大：180 ÷ 3。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" data-fig="DAS">
+      ∠DAB 是正方形的角 90°。那 ∠DAS（AS 和 AD 之間）是幾度？ <input class="n" data-ans="30" data-wrong='{"60":"60° 是 ∠BAS。90° 扣掉 60° 剩多少？"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 90° − 60°。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step" data-fig="SM">
+      M 是 AB 中點，AM = 1/2，SM 垂直 AB。三角形 AMS 是直角三角形，用畢氏定理：SM² = AS² − AM² = ？（輸入分數或小數） <input class="n" data-ans="3/4" data-wrong='{"0.5":"AS² = 1、AM² = (1/2)² = 1/4，1 − 1/4 = ？","1/2":"AM² 是 (1/2)² = 1/4，不是 1/2。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 斜邊 AS = 1，一股 AM = 1/2。SM² = 1² − (1/2)² = 1 − 1/4。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>畢氏定理：AM² + SM² = AS²，所以 SM² = 1 − 1/4 = <b>3/4</b>。
+      </div>
+    </div>
+    <div class="step" data-fig="SM">
+      SM² = 3/4，那 SM = ？
+      <div class="choices" data-right="2"><button>3/4</button><button>3/2</button><button>√3/2</button><button>√3/4</button></div>
+      <div class="hint">💡 開根號：√(3/4) = √3 ÷ √4。√4 是多少？</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>√(3/4) = √3 / √4 = <b>√3/2 ≈ 0.866</b>。所以 S 的高度是 √3/2，S 的位置是「往右 1/2、往上 √3/2」。<br>
+        這就是答案裡 √3 的來源，也就是 d = 3。
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c4key">
+    <div class="key">
+      🔑 <b>交點 S：</b>AS = BS = AB = 1 → 正三角形 → ∠BAS = 60°、∠DAS = 30°；高 SM = √3/2，AM = 1/2。
+    </div>
+    <div class="nav"><button class="go" data-go="5">下一關：步驟 ⑤ →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 5：算兩塊面積 ============ -->
+<section id="s5">
+  <div class="card story">
+    <h2>關卡 5：算兩塊面積（步驟 ⑤）</h2>
+    綠色和橘色都有一邊是彎的，不能直接用長方形或三角形公式。辦法是：用<b>扇形</b>、<b>三角形</b>、<b>長方形</b>這些會算的形狀，加加減減拼出來。
+  </div>
+  <div class="card">
+    <div class="tg" id="t5">看圖：<button data-m="sec60">扇形 ABS</button><button data-m="tri">三角形 AMS</button><button data-m="green">綠色</button><button data-m="rect">左半長方形</button><button data-m="sec30">扇形 SAD</button><button data-m="orange">橘色</button><button data-m="both">兩塊一起</button></div>
+    <svg class="sq" id="f5" viewBox="0 0 400 360"></svg>
+    <div class="cap" id="f5c"></div>
+  </div>
+  <div class="card">
+    <div class="proof">
+      📐 <b>扇形<span class="en">(sector)</span>面積公式怎麼來：</b>扇形是圓切下來的一片，圓心角佔 360° 的幾分之幾，面積就佔整個圓的幾分之幾。
+      <div style="overflow-x:auto"><table class="steps derive">
+        <tr><th>步驟</th><th>一般（半徑 r、圓心角 θ）</th><th>例子（半徑 1、60°）</th></tr>
+        <tr><td>① 整個圓的面積</td><td>π × r²</td><td>π × 1² = π</td></tr>
+        <tr><td>② 扇形佔整圈的幾分之幾</td><td>θ ÷ 360</td><td>60 ÷ 360 = 1/6</td></tr>
+        <tr><td>③ 相乘</td><td>π × r² × θ/360</td><td>π × 1/6 = π/6</td></tr>
+      </table></div>
+    </div>
+  </div>
+  <div class="card" id="g5">
+    <div class="step on" data-fig="sec60">
+      <b>先算<span class="g">綠色</span>。</b>扇形 ABS（圓心 A、從 AB 轉到 AS，60°）是整個圓的幾分之幾？ <input class="n" data-ans="1/6" data-wrong='{"1/4":"1/4 是 90° 的四分之一圓。60° 佔 360° 的幾分之幾？","60":"要的是「幾分之幾」：60 ÷ 360。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 60 ÷ 360，約分。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>60/360 = 1/6，整個圓面積 π，所以扇形 ABS = <b>π/6</b>。
+      </div>
+    </div>
+    <div class="step" data-fig="tri">
+      三角形 AMS：底 AM = 1/2，高 SM = √3/2。面積是？
+      <div class="choices" data-right="1"><button>√3/4</button><button>√3/8</button><button>√3/2</button></div>
+      <div class="hint">💡 三角形面積 = 底 × 高 ÷ 2 = 1/2 × √3/2 ÷ 2。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b>1/2 × √3/2 = √3/4，再 ÷ 2 = <b>√3/8</b>。
+      </div>
+    </div>
+    <div class="step" data-fig="green">
+      看圖：扇形 ABS 被中垂線切成兩塊，左邊是三角形 AMS，右邊是綠色。所以<span class="g">綠色</span> = ？
+      <div class="choices" data-right="0"><button>π/6 − √3/8</button><button>π/6 + √3/8</button><button>√3/8 − π/6</button></div>
+      <div class="hint">💡 扇形 = 三角形 + 綠色，所以綠色 = 扇形 − 三角形。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b><span class="g">綠色 = 扇形 ABS − 三角形 AMS = π/6 − √3/8 ≈ 0.524 − 0.217 = 0.307</span>
+      </div>
+    </div>
+    <div class="step" data-fig="sec30">
+      <b>再算<span class="o">橘色</span>。</b>中垂線左邊是一個長方形（寬 1/2、高 1），面積 1/2。裡面在圓弧下面的部分 = 三角形 AMS + 扇形 SAD（30°）。扇形 SAD 是整個圓的幾分之幾？ <input class="n" data-ans="1/12" data-wrong='{"1/6":"1/6 是 60°。這個扇形是 30°。","30":"要的是「幾分之幾」：30 ÷ 360。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 30 ÷ 360，約分。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>30/360 = 1/12，所以扇形 SAD = <b>π/12</b>。
+      </div>
+    </div>
+    <div class="step" data-fig="orange">
+      <span class="o">橘色</span> = 左半長方形 − 三角形 AMS − 扇形 SAD = ？
+      <div class="choices" data-right="1"><button>1/2 − π/6</button><button>1/2 − √3/8 − π/12</button><button>1/2 + √3/8 − π/12</button></div>
+      <div class="hint">💡 長方形 1/2，扣掉圓弧下面的兩塊：√3/8 和 π/12。</div>
+      <div class="fb"></div>
+      <div class="proof hidden">
+        📐 <b>講解：</b><span class="o">橘色 = 1/2 − √3/8 − π/12 ≈ 0.5 − 0.217 − 0.262 = 0.022</span>，難怪看起來那麼細。
+      </div>
+    </div>
+    <div class="step" data-fig="both">
+      綠色 + 橘色 = (π/6 − √3/8) + (1/2 − √3/8 − π/12)。π 的部分 π/6 − π/12 = 幾 π？（輸入分數） <input class="n" data-ans="1/12" data-wrong='{"1/6":"還要減掉 π/12 喔。","1/3":"是減不是加：π/6 − π/12。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 通分：π/6 = 2π/12，2π/12 − π/12 = ？</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>2π/12 − π/12 = <b>π/12</b>。√3 的部分：−√3/8 − √3/8 = −2√3/8 = −√3/4。<br>
+        所以總和 = 1/2 + π/12 − √3/4。
+      </div>
+    </div>
+    <div class="step" data-fig="both">
+      把 1/2 + π/12 − √3/4 通分成分母 12：(a + bπ − c√d)/12。分子是 6 + π − 3√3，所以 a + b + c + d + e = ？ <input class="n" data-ans="25" data-wrong='{"47":"(12 + 2π − 6√3)/24 沒有約分：分子分母都可以除以 2。","22":"e 是分母 12 也要加進去：6 + 1 + 3 + 3 + 12。","24":"b 是 π 前面的數字，π 等於 1π，所以 b = 1。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 1/2 = 6/12、√3/4 = 3√3/12。所以 a = 6、b = 1、c = 3、d = 3、e = 12。</div>
+      <div class="fb"></div>
+      <div class="proof explain hidden">
+        📐 <b>講解：</b>
+        <div style="overflow-x:auto"><table class="steps derive">
+          <tr><th>步驟</th><th>算式</th><th>為什麼</th></tr>
+          <tr><td>① 三項分別通分</td><td>1/2 = 6/12、π/12、√3/4 = 3√3/12</td><td>分母都變成 12</td></tr>
+          <tr><td>② 合在一起</td><td>(6 + π − 3√3)/12</td><td>分子相加減</td></tr>
+          <tr><td>③ 檢查題目條件</td><td>gcd(6, 1, 3, 12) = 1</td><td>不能再約分（b = 1，沒有共同因數）</td></tr>
+          <tr><td>④ 檢查 d</td><td>d = 3</td><td>3 不能被任何質數的平方（4、9、25…）整除</td></tr>
+          <tr><td>⑤ 加起來</td><td>6 + 1 + 3 + 3 + 12 = <b>25</b></td><td>答案 (A)</td></tr>
+        </table></div>
+        驗算：(6 + 3.1416 − 5.1962)/12 ≈ <b>0.329</b>。回關卡 2 撒點，綠點大約佔三成三，對得上！
+      </div>
+    </div>
+  </div>
+  <div class="card hidden" id="c5key">
+    <div class="key">
+      🔑 <span class="g">綠色 = π/6 − √3/8</span>、<span class="o">橘色 = 1/2 − √3/8 − π/12</span>，加起來 = (6 + π − 3√3)/12，a + b + c + d + e = <b>25</b>，答案 (A)。
+    </div>
+    <div class="nav"><button class="go" data-go="6">挑戰大魔王 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 6：大魔王 ============ -->
+<section id="s6">
+  <div class="card story">
+    <h2>關卡 6：大魔王（2025 AMC 10A 第 25 題）</h2>
+    在正方形 ABCD 裡隨機選一點 P。AP 在三角形 APB 裡既不是最短邊、也不是最長邊的機率可以寫成 (a + bπ − c√d)/e，其中 a、b、c、d、e 是正整數，gcd(a, b, c, e) = 1，d 不能被任何質數的平方整除。求 a + b + c + d + e。
+  </div>
+  <div class="card">
+    <div class="orig"><span lang="en">A point <i>P</i> is chosen at random inside square <i>ABCD</i>. The probability that <i>AP</i> is neither the shortest nor the longest side of △<i>APB</i> can be written as (<i>a</i> + <i>b</i>π − <i>c</i>√<i>d</i>) / <i>e</i>, where <i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>, and <i>e</i> are positive integers, gcd(<i>a</i>, <i>b</i>, <i>c</i>, <i>e</i>) = 1, and <i>d</i> is not divisible by the square of a prime. What is <i>a</i> + <i>b</i> + <i>c</i> + <i>d</i> + <i>e</i>?</span></div>
+  </div>
+  <div class="card" id="boss">
+    <div class="step on">
+      <b>步驟 ①：</b>正方形邊長取 1，機率等於什麼？
+      <div class="choices" data-right="0"><button>區域的面積（因為正方形面積是 1）</button><button>區域的周長</button><button>一定是 1/2</button></div>
+      <div class="hint">💡 機率 = 區域面積 ÷ 正方形面積。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ②：</b>AP 在中間，有哪兩種情況？
+      <div class="choices" data-right="1"><button>AP &lt; BP &lt; AB 或 AP &lt; AB &lt; BP</button><button>BP &lt; AP &lt; AB 或 AB &lt; AP &lt; BP</button><button>AP = BP 或 AP = AB</button></div>
+      <div class="hint">💡 AP 要夾在另外兩條中間。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ③：</b>兩條分界線是？
+      <div class="choices" data-right="2"><button>對角線 AC 和 BD</button><button>以 B 為圓心的圓和邊 AD</button><button>以 A 為圓心、半徑 1 的圓，和 AB 的中垂線</button></div>
+      <div class="hint">💡 AP = AB = 1 是什麼形狀？AP = BP 是什麼形狀？</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ④：</b>圓和中垂線交於 S，三角形 ABS 是正三角形。∠BAS 是幾度？ <input class="n" data-ans="60">
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 AS = BS = AB = 1。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ⑤：</b>綠色（圓裡面、中垂線右邊）的面積 = ？
+      <div class="choices" data-right="0"><button>π/6 − √3/8</button><button>π/4 − √3/8</button><button>π/12 + √3/8</button></div>
+      <div class="hint">💡 60° 扇形 − 三角形 AMS。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ⑤：</b>橘色（圓外面、中垂線左邊）的面積 = ？
+      <div class="choices" data-right="2"><button>1/2 − π/6</button><button>π/12 − √3/8</button><button>1/2 − √3/8 − π/12</button></div>
+      <div class="hint">💡 左半長方形 1/2，扣掉三角形 AMS 和 30° 扇形 SAD。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>步驟 ⑤：</b>加起來寫成 (a + bπ − c√d)/e，a + b + c + d + e = ？ <input class="n" data-ans="25" data-wrong='{"47":"(12 + 2π − 6√3)/24 還能約分，分子分母除以 2。","22":"分母 e = 12 也要加。"}'>
+      <button class="go chk">確認</button> <button class="ghost hb">提示</button>
+      <div class="hint">💡 1/2 + π/12 − √3/4 = (6 + π − 3√3)/12。</div>
+      <div class="fb"></div>
+    </div>
+    <div class="step">
+      <b>最後一步：</b>答案是？
+      <div class="choices" id="bchoices">
+        <button data-v="A">(A) 25</button><button data-v="B">(B) 26</button><button data-v="C">(C) 27</button>
+        <button data-v="D">(D) 28</button><button data-v="E">(E) 29</button>
+      </div>
+      <button class="ghost hb">提示</button>
+      <div class="hint">💡 上一步算出來的和。</div>
+      <div class="fb" id="bfb"></div>
+    </div>
+  </div>
+  <div class="card hidden" id="bsum">
+    <div class="proof">
+      📐 <b>完整解答</b><br>
+      ① <b>機率＝面積：</b>正方形邊長取 1，A = 左下、B = 右下。機率就是符合條件的區域面積。<br>
+      ② <b>兩種情況：</b>AB = 1。AP 在中間 ⇔ BP &lt; AP &lt; 1 或 1 &lt; AP &lt; BP。<br>
+      ③ <b>分界線：</b>AP = 1 是以 A 為圓心、半徑 1 的圓（圓內 AP &lt; 1）；AP = BP 是 AB 的中垂線（左邊 AP &lt; BP）。情況一 = 圓內＋右邊（綠），情況二 = 圓外＋左邊（橘）。<br>
+      ④ <b>交點 S：</b>AS = BS = AB = 1，正三角形，∠BAS = 60°，∠DAS = 30°，高 √3/2。<br>
+      ⑤ <b>面積：</b>綠 = π/6 − √3/8；橘 = 1/2 − √3/8 − π/12。和 = 1/2 + π/12 − √3/4 = (6 + π − 3√3)/12。<br>
+      6 + 1 + 3 + 3 + 12 = <b>25</b>，答案 <b>(A)</b>。
+    </div>
+    <div class="key">
+      🏆 <b>解題口訣：</b><br>
+      ① 隨機選點 → 機率 = 面積（邊長取 1 最方便）<br>
+      ② 「誰在中間」→ 拆成兩個「比大小」<br>
+      ③ 「一樣長」的點就是分界線：到一點等距 = <b>圓</b>，到兩點等距 = <b>中垂線</b><br>
+      ④ 彎的區域 → 用扇形、三角形、長方形加加減減
+    </div>
+    <div class="key">
+      📖 <b>英文小字典（考試會看到的字）</b>
+      <table class="steps">
+        <tr><td>隨機選</td><td><i>chosen at random</i></td></tr>
+        <tr><td>機率</td><td><i>probability</i></td></tr>
+        <tr><td>正方形 / 三角形</td><td><i>square / triangle</i></td></tr>
+        <tr><td>既不…也不…</td><td><i>neither … nor …</i></td></tr>
+        <tr><td>最短 / 最長的邊</td><td><i>the shortest / the longest side</i></td></tr>
+        <tr><td>圓 / 半徑 / 扇形</td><td><i>circle / radius / sector</i></td></tr>
+        <tr><td>中垂線</td><td><i>perpendicular bisector</i></td></tr>
+        <tr><td>正三角形</td><td><i>equilateral triangle</i></td></tr>
+        <tr><td>面積</td><td><i>area</i></td></tr>
+        <tr><td>最大公因數</td><td><i>greatest common divisor (gcd)</i></td></tr>
+        <tr><td>不能被質數的平方整除</td><td><i>not divisible by the square of a prime</i></td></tr>
+      </table>
+    </div>
+    <div class="proof">
+      🌟 <b>偷偷告訴你：</b>同樣的切法也能算「AP 最短」和「AP 最長」的機率。AP 最短 = 圓裡面＋左邊 = √3/8 + π/12 ≈ 0.478；AP 最長 = 圓外面＋右邊 = 1/2 − (π/6 − √3/8) ≈ 0.193。三種加起來 0.478 + 0.329 + 0.193 = 1，剛好把正方形分完！
+    </div>
+    <div class="nav"><button class="go" data-go="7">整合回顧：一次看完整個解法 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 7：整合回顧 ============ -->
+<section id="s7">
+  <div class="card story">
+    <h2>關卡 7：整合回顧</h2>
+    用動畫把整個解法從頭串一次。按「▶ 自動播放全部」，或點上面的小方塊跳到任一步。
+  </div>
+  <div class="card">
+    <div class="yn" id="rcChain"></div>
+    <svg id="rcMap" width="100%" viewBox="0 0 520 390" style="background:#fff;border:1px solid var(--line);border-radius:10px"></svg>
+    <div style="margin:8px 0">
+      <button class="ghost" id="rcPrev">◀ 上一步</button>
+      <button class="go" id="rcAuto">▶ 自動播放全部</button>
+      <button class="ghost" id="rcAgain">↻ 重播這一步</button>
+      <button class="ghost" id="rcNext">下一步 ▶</button>
+    </div>
+    <div class="key" id="rcSay"></div>
+    <div class="proof" id="rcMath" style="min-height:60px"></div>
+  </div>
+  <div class="card hidden" id="c7key">
+    <div class="key">
+      🔑 <b>整個解法的骨架：</b>機率 = 面積 → AP 在中間有兩種情況 → 圓（AP = 1）和中垂線（AP = BP）切出綠、橘兩塊 → 交點 S 是正三角形的頂點（60°、√3/2）→ 扇形和三角形加減出面積 → (6 + π − 3√3)/12 → 25。
+    </div>
+    <div class="nav"><button class="go" data-go="8">無限練習 →</button></div>
+  </div>
+</section>
+
+<!-- ============ 關卡 8：無限練習 ============ -->
+<section id="s8">
+  <div class="card story">
+    <h2>關卡 8：無限練習</h2>
+    先練「看位置判斷 AP 排第幾」，熟了再挑戰計算題！
+  </div>
+  <div class="card">
+    <div class="yn">選題型：<button id="lvEasy">AP 排第幾</button><button id="lvHard">計算題</button></div>
+    <div id="pq" class="story"></div>
+    <svg class="sq hidden" id="pf" viewBox="0 0 400 360"></svg>
+    <div id="pEasyBox" class="yn">AP 是：<button data-r="short">最短</button><button data-r="mid">中間</button><button data-r="long">最長</button></div>
+    <div id="pHardBox" class="hidden">答案 = <input class="n" id="pans"> <button class="go" id="pchk">確認</button></div>
+    <button class="ghost" id="pshow">看解法</button>
+    <button class="ghost" id="pnew">下一題</button>
+    <div class="fb" id="pfb"></div>
+    <div id="psol" class="proof hidden"></div>
+    <div>連續答對：<span class="big" id="pstreak">0</span></div>
+  </div>
+</section>
+
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const show = el => (typeof el === "string" ? $(el) : el).classList.remove("hidden");
+function fb(el, ok, text) { el.className = "fb " + (ok === null ? "" : ok ? "ok" : "bad"); el.textContent = text; }
+function val(s) {
+  s = String(s).trim().replace(/−|–/g, "-").replace(/\s/g, "");
+  if (!s) return NaN;
+  const m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+  return m ? +m[1] / +m[2] : Number(s);
+}
+const same = (a, b) => Math.abs(a - b) < 1e-9;
+
+// ---------- 正方形圖：A(0,0) 左下、B(1,0) 右下，邊長 1 = 300px ----------
+const X = x => 50 + 300 * x, Y = y => 330 - 300 * y;
+const R3 = Math.sqrt(3), SY = (330 - 150 * R3).toFixed(2), ARC_LEN = 150 * Math.PI;
+const COL = { green: "#1f9d55", orange: "#e06c3c", circle: "#118ab2", line: "#7b4dff", ap: "#d64545", bp: "#d17a00" };
+const PATH = {
+  mid1: `M200 330 L350 330 A300 300 0 0 0 200 ${SY} Z`,
+  mid2: `M200 ${SY} L200 30 L50 30 A300 300 0 0 1 200 ${SY} Z`,
+  short: `M50 330 L200 330 L200 ${SY} A300 300 0 0 0 50 30 Z`,
+  long: `M350 330 L350 30 L200 30 L200 ${SY} A300 300 0 0 1 350 330 Z`,
+  sec60: `M50 330 L350 330 A300 300 0 0 0 200 ${SY} Z`,
+  sec30: `M50 330 L200 ${SY} A300 300 0 0 0 50 30 Z`,
+  tri: `M50 330 L200 330 L200 ${SY} Z`,
+  rect: `M50 330 L200 330 L200 30 L50 30 Z`,
+  half: `M50 330 L200 330 L200 30 L50 30 Z`,
+  quarter: `M50 330 L350 330 A300 300 0 0 0 50 30 Z`
+};
+const lab = (x, y, s, col = "#2b2233", size = 18, anchor = "middle") => `<text x="${x}" y="${y}" font-size="${size}" font-weight="700" fill="${col}" text-anchor="${anchor}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${s}</text>`;
+function fig(o = {}) {
+  let h = "";
+  (o.fills || []).forEach(([k, col, op = .45]) => h += `<path d="${PATH[k]}" fill="${col}" opacity="${op}"/>`);
+  if (o.dots) h += o.dots.map(d => `<circle cx="${X(d.x).toFixed(1)}" cy="${Y(d.y).toFixed(1)}" r="3" fill="${d.c}"/>`).join("");
+  h += `<rect x="50" y="30" width="300" height="300" fill="none" stroke="#2b2233" stroke-width="2.5"/>`;
+  if (o.circle) {
+    const f = o.circle === true ? 1 : o.circle;
+    h += `<path d="M350 330 A300 300 0 0 0 50 30" fill="none" stroke="${COL.circle}" stroke-width="3" stroke-dasharray="${(ARC_LEN * f).toFixed(1)} 9999" opacity="${o.faint ? .4 : 1}"/>`;
+    if (o.circleLabel && f >= 1) h += lab(278, 104, "AP = 1", COL.circle, 16);
+  }
+  if (o.line) {
+    const f = o.line === true ? 1 : o.line;
+    h += `<line x1="200" y1="330" x2="200" y2="${330 - 300 * f}" stroke="${COL.line}" stroke-width="3" stroke-dasharray="8 5" opacity="${o.faint ? .4 : 1}"/>`;
+    if (o.lineLabel && f >= 1) h += lab(212, 200, "AP = BP", COL.line, 16, "start");
+  }
+  if (o.extra) h += o.extra;
+  if (o.S) h += `<circle cx="200" cy="${SY}" r="5" fill="#2b2233"/>` + lab(212, +SY + 4, "S", "#2b2233", 18, "start");
+  if (o.M) h += `<circle cx="200" cy="330" r="4" fill="#2b2233"/>` + lab(200, 352, "M", "#2b2233", 16);
+  if (o.P) {
+    const px = X(o.P.x), py = Y(o.P.y);
+    h += `<line x1="50" y1="330" x2="${px}" y2="${py}" stroke="${COL.ap}" stroke-width="3"/>`;
+    h += `<line x1="350" y1="330" x2="${px}" y2="${py}" stroke="${COL.bp}" stroke-width="3"/>`;
+    h += `<circle cx="${px}" cy="${py}" r="9" fill="#fff" stroke="#2b2233" stroke-width="3"/>` + lab(px + 12, py - 10, "P", "#2b2233", 18, "start");
+  }
+  h += lab(42, 348, "A", "#2b2233", 18, "end") + lab(358, 348, "B", "#2b2233", 18, "start") + lab(358, 30, "C", "#2b2233", 18, "start") + lab(42, 30, "D", "#2b2233", 18, "end");
+  return h;
+}
+const lens = p => ({ ap: Math.hypot(p.x, p.y), bp: Math.hypot(1 - p.x, p.y) });
+// 比 AP 短的邊有幾條：0 最短、1 中間、2 最長
+function rankAP(p) { const { ap, bp } = lens(p); return ["short", "mid", "long"][(bp < ap) + (1 < ap)]; }
+const RANKZH = { short: "最短", mid: "中間", long: "最長" };
+function drag(svg, cb) {
+  const cl = v => Math.max(.01, Math.min(.99, v));
+  const pt = e => { const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY; const q = p.matrixTransform(svg.getScreenCTM().inverse()); return { x: cl((q.x - 50) / 300), y: cl((330 - q.y) / 300) }; };
+  let on = false;
+  svg.addEventListener("pointerdown", e => { on = true; svg.setPointerCapture(e.pointerId); cb(pt(e)); });
+  svg.addEventListener("pointermove", e => { if (on) cb(pt(e)); });
+  svg.addEventListener("pointerup", () => on = false);
+  svg.addEventListener("pointercancel", () => on = false);
+}
+// 固定種子的亂數（整合回顧用，每次播一樣）
+function mulberry(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+// 步驟出現時，換對應的圖
+function figSteps(box, set) {
+  box.querySelectorAll(".step[data-fig]").forEach(st => new MutationObserver(() => { if (st.classList.contains("on")) set(st.dataset.fig); })
+    .observe(st, { attributes: true, attributeFilter: ["class"] }));
+}
+
+// ---------- 分頁 ----------
+function go(i) {
+  $$("section").forEach((s, k) => s.classList.toggle("on", k == i));
+  $$(".tab[data-go]").forEach((t, k) => t.classList.toggle("on", k == i));
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const g = e.target.closest("[data-go]")?.dataset.go; if (g !== undefined) go(+g); });
+const PROG_ID = "middle";
+function done(i) {
+  $$(".tab[data-go]")[i].classList.add("done");
+  const all = JSON.parse(localStorage.getItem("learn-progress") || "{}"), mine = new Set(all[PROG_ID] || []);
+  mine.add(i); all[PROG_ID] = [...mine]; localStorage.setItem("learn-progress", JSON.stringify(all));
+}
+(JSON.parse(localStorage.getItem("learn-progress") || "{}")[PROG_ID] || []).forEach(i => {
+  $$(".tab[data-go]")[i]?.classList.add("done");
+  $$(`#s${i} .card.hidden`).forEach(c => c.classList.remove("hidden"));
+});
+
+function chkStep(step) {
+  const ins = [...step.querySelectorAll("input")];
+  const ok = ins.every(i => same(val(i.value), val(i.dataset.ans)));
+  const wrong = ins.length === 1 && ins[0].dataset.wrong ? JSON.parse(ins[0].dataset.wrong) : {};
+  const hit = Object.keys(wrong).find(k => same(val(ins[0].value), val(k)));
+  fb(step.querySelector(".fb"), ok, ok ? "✅ 正確！" : hit ? "❌ " + wrong[hit] : "❌ 再檢查一下" + (step.querySelector(".hint") ? "，可以按提示" : ""));
+  if (!ok && step.querySelector(".hint") && step.dataset.miss) step.querySelector(".hint").classList.add("on");
+  step.dataset.miss = ok ? "" : "1";
+  return ok;
+}
+function wireSteps(box, onLast) {
+  const steps = [...box.querySelectorAll(".step")];
+  const next = step => { const n = steps[steps.indexOf(step) + 1]; n ? n.classList.add("on") : onLast && onLast(); };
+  steps.forEach(step => {
+    step.querySelector(".hb")?.addEventListener("click", () => step.querySelector(".hint").classList.add("on"));
+    step.querySelector(".chk")?.addEventListener("click", () => {
+      if (!chkStep(step)) return;
+      const ex = step.querySelector(".explain");
+      if (ex && ex.classList.contains("hidden")) { show(ex); setTimeout(() => { speak(ex, false); next(step); }, 50); }
+      else next(step);
+    });
+    const pick = step.querySelector(".choices[data-right], .yn[data-right]");
+    if (pick) [...pick.querySelectorAll("button")].forEach((b, k) => b.onclick = () => {
+      const ok = k === +pick.dataset.right;
+      fb(step.querySelector(".fb"), ok, ok ? "✅ 對！" : "🤔 再想想看");
+      if (!ok) step.querySelector(".hint")?.classList.add("on");
+      if (ok) {
+        const pf = step.querySelector(".proof");
+        if (pf && pf.classList.contains("hidden")) { show(pf); setTimeout(() => { speak(pf, false); next(step); }, 50); }
+        else next(step);
+      }
+    });
+  });
+}
+
+// ---------- 關卡 0：五步地圖 ----------
+let fiveTimer = null;
+$("#fivePlay").onclick = () => {
+  clearTimeout(fiveTimer); speechSynthesis.cancel();
+  const bs = $$("#five button"); bs.forEach(b => b.classList.remove("lit"));
+  const tick = j => {
+    if (j === bs.length) { done(0); return; }
+    bs[j].classList.add("lit"); speak(bs[j], false);
+    const wait = () => speechSynthesis.speaking && voiceOn ? fiveTimer = setTimeout(wait, 300) : fiveTimer = setTimeout(() => tick(j + 1), 600);
+    fiveTimer = setTimeout(wait, 800);
+  };
+  tick(0);
+};
+$("#s0 .nav .go").addEventListener("click", () => done(0));
+
+// ---------- 關卡 1：撒點 ----------
+let R1 = "half", D1 = [];
+const in1 = p => R1 === "half" ? p.x < .5 : p.x * p.x + p.y * p.y < 1;
+function draw1() {
+  $$("#r1tg button").forEach(b => b.classList.toggle("on", b.dataset.r === R1));
+  const dots = D1.map(p => ({ ...p, c: in1(p) ? "#118ab2" : "#bbb" }));
+  $("#f1").innerHTML = fig({ fills: [[R1, "#118ab2", .2]], dots, circle: R1 === "quarter" });
+  const k = D1.filter(in1).length, area = R1 === "half" ? "1/2 = 0.5" : "π/4 ≈ 0.785";
+  $("#f1s").innerHTML = D1.length ? `落在藍色區域：${k} / ${D1.length} = <b>${(k / D1.length).toFixed(3)}</b>　（藍色面積 = ${area}）` : `藍色面積 = ${area}。按「撒點」試試看！`;
+}
+const scatter = (arr, n) => { for (let i = 0; i < n; i++) arr.push({ x: Math.random(), y: Math.random() }); };
+$("#d1a").onclick = () => { scatter(D1, 50); draw1(); };
+$("#d1b").onclick = () => { scatter(D1, 500); draw1(); };
+$("#d1c").onclick = () => { D1 = []; draw1(); };
+$("#r1tg").onclick = e => { const r = e.target.dataset.r; if (r) { R1 = r; draw1(); } };
+figSteps($("#g1"), k => { R1 = k; draw1(); });
+draw1();
+wireSteps($("#g1"), () => { show("#c1key"); done(1); });
+
+// ---------- 關卡 2：拖曳 P、撒點 ----------
+let P2 = { x: .7, y: .45 }, D2 = [];
+function draw2() {
+  $("#f2").innerHTML = fig({ dots: D2.map(p => ({ ...p, c: rankAP(p) === "mid" ? COL.green : "#ccc" })), P: P2 });
+  const { ap, bp } = lens(P2), r = rankAP(P2);
+  const arr = [["AP", ap], ["BP", bp], ["AB", 1]].sort((a, b) => a[1] - b[1]).map(a => a[0] === "AP" ? `<span style="color:${COL.ap}">AP</span>` : a[0]);
+  $("#f2s").innerHTML = `<span style="color:${COL.ap}">AP = ${ap.toFixed(2)}</span>，<span style="color:${COL.bp}">BP = ${bp.toFixed(2)}</span>，AB = 1　由短到長：${arr.join(" &lt; ")} → AP 是<b>${RANKZH[r]}</b>`;
+  const g = D2.filter(p => rankAP(p) === "mid").length;
+  $("#f2d").innerHTML = D2.length ? `綠點 ${g} / ${D2.length} = <b>${(g / D2.length).toFixed(3)}</b>（這就是機率的估計值）` : "";
+}
+drag($("#f2"), p => { P2 = p; draw2(); });
+$("#d2a").onclick = () => { scatter(D2, 300); draw2(); };
+$("#d2c").onclick = () => { D2 = []; draw2(); };
+draw2();
+wireSteps($("#g2"), () => { show("#c2key"); done(2); });
+
+// ---------- 關卡 3：兩條分界線 ----------
+let P3 = { x: .3, y: .6 };
+const S3 = { circle: false, line: false, r1: false, r2: false };
+function draw3() {
+  $$("#t3 button").forEach(b => b.classList.toggle("on", S3[b.dataset.t]));
+  const fills = [S3.r1 && ["mid1", COL.green], S3.r2 && ["mid2", COL.orange]].filter(Boolean);
+  $("#f3").innerHTML = fig({ fills, circle: S3.circle, line: S3.line, circleLabel: true, lineLabel: true, P: P3 });
+  const { ap, bp } = lens(P3);
+  $("#f3s").innerHTML = `AP = ${ap.toFixed(2)} → 在圓的<b>${ap < 1 ? "裡面" : "外面"}</b>（AP ${ap < 1 ? "&lt;" : "&gt;"} 1）；BP = ${bp.toFixed(2)} → 在中垂線<b>${P3.x < .5 ? "左邊" : "右邊"}</b>（AP ${ap < bp ? "&lt;" : "&gt;"} BP）→ AP 是<b>${RANKZH[rankAP(P3)]}</b>`;
+}
+drag($("#f3"), p => { P3 = p; draw3(); });
+$("#t3").onclick = e => { const t = e.target.dataset.t; if (t) { S3[t] = !S3[t]; draw3(); } };
+figSteps($("#g3"), k => { S3[k] = true; if (k === "r1") S3.line = S3.circle = true; draw3(); });
+draw3();
+wireSteps($("#g3"), () => { S3.r2 = true; draw3(); show("#c3key"); done(3); });
+
+// ---------- 關卡 4：交點 S ----------
+const S4 = new Set();
+function draw4() {
+  let ex = "";
+  const has = k => S4.has(k);
+  if (has("eq")) ex += `<polygon points="50,330 350,330 200,${SY}" fill="#7b4dff" opacity=".12"/>`;
+  if (has("AS")) ex += `<line x1="50" y1="330" x2="200" y2="${SY}" stroke="${COL.ap}" stroke-width="3.5"/>` + lab(112, 190, "1", COL.ap, 20);
+  if (has("BS")) ex += `<line x1="350" y1="330" x2="200" y2="${SY}" stroke="${COL.bp}" stroke-width="3.5"/>` + lab(288, 190, "1", COL.bp, 20);
+  if (has("eq")) ex += `<path d="M90 330 A40 40 0 0 0 70 295.36" fill="none" stroke="#2b2233" stroke-width="2"/>` + lab(100, 316, "60°", "#2b2233", 15, "start") + lab(290, 322, "AB = 1", "#2b2233", 15);
+  if (has("DAS")) ex += `<path d="M77.5 282.37 A55 55 0 0 0 50 275" fill="none" stroke="${COL.circle}" stroke-width="2"/>` + lab(60, 262, "30°", COL.circle, 15, "start");
+  if (has("SM")) ex += `<line x1="200" y1="330" x2="200" y2="${SY}" stroke="#2b2233" stroke-width="3"/><path d="M200 318 L212 318 L212 330" fill="none" stroke="#2b2233" stroke-width="1.5"/>` +
+    lab(208, 230, "高 SM", "#2b2233", 15, "start") + lab(125, 350, "AM = 1/2", "#2b2233", 14);
+  $("#f4").innerHTML = fig({ circle: true, line: true, faint: true, extra: ex, S: true, M: has("SM") });
+}
+figSteps($("#g4"), k => { if (k === "BS") S4.add("AS"); if (k === "SM") S4.add("eq"); S4.add(k); draw4(); });
+S4.add("AS"); draw4();
+wireSteps($("#g4"), () => { show("#c4key"); done(4); });
+
+// ---------- 關卡 5：面積 ----------
+let M5 = "sec60";
+const F5 = {
+  sec60: { fills: [["sec60", COL.circle, .3]], cap: "扇形 ABS：圓心 A、半徑 1、60° → 整圓的 1/6 = π/6" },
+  tri: { fills: [["tri", COL.line, .35]], cap: "三角形 AMS：底 1/2、高 √3/2 → 面積 √3/8" },
+  green: { fills: [["tri", COL.line, .15], ["mid1", COL.green, .55]], cap: "綠色 = 扇形 ABS − 三角形 AMS = π/6 − √3/8" },
+  rect: { fills: [["rect", COL.bp, .25]], cap: "左半長方形：寬 1/2、高 1 → 面積 1/2" },
+  sec30: { fills: [["tri", COL.line, .3], ["sec30", COL.circle, .3]], cap: "圓弧下面的左半邊 = 三角形 AMS (√3/8) + 扇形 SAD (30° → π/12)" },
+  orange: { fills: [["tri", COL.line, .12], ["sec30", COL.circle, .12], ["mid2", COL.orange, .65]], cap: "橘色 = 1/2 − √3/8 − π/12" },
+  both: { fills: [["mid1", COL.green, .55], ["mid2", COL.orange, .65]], cap: "綠 + 橘 = (π/6 − √3/8) + (1/2 − √3/8 − π/12)" }
+};
+function draw5() {
+  $$("#t5 button").forEach(b => b.classList.toggle("on", b.dataset.m === M5));
+  const f = F5[M5], ang = M5 === "sec60" || M5 === "green" ? `<path d="M90 330 A40 40 0 0 0 70 295.36" fill="none" stroke="#2b2233" stroke-width="2"/>` + lab(100, 316, "60°", "#2b2233", 15, "start")
+    : M5 === "sec30" ? `<path d="M77.5 282.37 A55 55 0 0 0 50 275" fill="none" stroke="#2b2233" stroke-width="2"/>` + lab(60, 262, "30°", "#2b2233", 15, "start") : "";
+  $("#f5").innerHTML = fig({ fills: f.fills, circle: true, line: true, extra: ang + `<line x1="50" y1="330" x2="200" y2="${SY}" stroke="#2b2233" stroke-width="1.5" stroke-dasharray="4 4"/>`, S: true, M: true });
+  $("#f5c").textContent = f.cap;
+}
+$("#t5").onclick = e => { const m = e.target.dataset.m; if (m) { M5 = m; draw5(); } };
+figSteps($("#g5"), k => { M5 = k; draw5(); });
+draw5();
+wireSteps($("#g5"), () => { show("#c5key"); done(5); });
+
+// ---------- 關卡 6：大魔王 ----------
+wireSteps($("#boss"));
+$$("#bchoices button").forEach(b => b.onclick = () => {
+  const ok = b.dataset.v === "A";
+  fb($("#bfb"), ok, ok ? "🏆 答對了！(6 + π − 3√3)/12，6 + 1 + 3 + 3 + 12 = 25，答案 A。" : "❌ 再加一次：a = 6、b = 1、c = 3、d = 3、e = 12。");
+  if (!ok) b.closest(".step").querySelector(".hint").classList.add("on");
+  if (ok) { show("#bsum"); done(6); }
+});
+
+// ---------- 關卡 7：整合回顧（動畫） ----------
+(() => {
+  const cl = x => Math.max(0, Math.min(1, x)), k = (t, a, b) => cl((t - a) / (b - a));
+  const txt = (x, y, str, col = "#2b2233", size = 16, op = 1, anchor = "start") => `<text x="${x}" y="${y}" font-size="${size}" fill="${col}" opacity="${op}" font-weight="700" text-anchor="${anchor}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${str}</text>`;
+  const sq = (o, cap, col = "#2b2233", op = 1) => `<g transform="translate(60,0)">${fig(o)}</g>` + txt(260, 382, cap, col, 17, op, "middle");
+  function roadmap(t, nodes, edges) {
+    const kk = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    let h = `<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>`;
+    edges.forEach(e => {
+      const f = kk(e.at, e.at + .06), col = e.col || "#7a6f85";
+      if (f > 0) h += `<line x1="${e.a[0]}" y1="${e.a[1]}" x2="${e.a[0] + (e.b[0] - e.a[0]) * f}" y2="${e.a[1] + (e.b[1] - e.a[1]) * f}" stroke="${col}" stroke-width="2.5" ${f >= 1 ? 'marker-end="url(#ah)"' : ""}/>`;
+      if (e.label) h += `<text x="${e.lx}" y="${e.ly}" font-size="13" fill="${col}" font-weight="700" text-anchor="${e.anchor || "start"}" opacity="${kk(e.at + .04, e.at + .1)}" style="paint-order:stroke;stroke:#fff;stroke-width:4px">${e.label}</text>`;
+    });
+    nodes.forEach(n => {
+      const op = kk(n.at, n.at + .06);
+      const sw = n.glow ? 2.5 + 2 * Math.abs(Math.sin(t * 14)) * (1 - kk(n.at + .15, n.at + .3)) : 2.5;
+      h += `<g opacity="${op}"><rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="10" fill="#fff" stroke="${n.col}" stroke-width="${sw}"/>` +
+        n.lines.map((l, i) => `<text x="${n.x}" y="${n.y + 5 + (i - (n.lines.length - 1) / 2) * 19}" font-size="${i ? 13 : 14}" fill="${n.col}" font-weight="700" text-anchor="middle">${l}</text>`).join("") + `</g>`;
+    });
+    return h;
+  }
+  const rnd = mulberry(25), DOTS = Array.from({ length: 260 }, () => ({ x: rnd(), y: rnd() }));
+  const SC = [
+    { name: "解題路線圖", dur: 15000, say: "先看解題路線圖。題目問 AP 在中間的機率。第一步，正方形邊長取 1，機率就是面積。第二步，AP 在中間有兩種情況。第三步，這裡的橋是兩條分界線：AP 等於 1 是一個圓，AP 等於 BP 是中垂線，它們切出綠色和橘色兩塊。第四步，圓和中垂線的交點 S 跟 A、B 形成正三角形。第五步，用扇形和三角形算出兩塊面積，加起來，答案是 25，選 A。",
+      draw: t => roadmap(t, [
+        { x: 260, y: 24, w: 340, h: 34, lines: ["🎯 目標：AP 在中間的機率"], col: "#d17a00", at: 0 },
+        { x: 260, y: 80, w: 360, h: 40, lines: ["① 邊長取 1 → 機率 = 面積"], col: "#118ab2", at: .1 },
+        { x: 260, y: 140, w: 400, h: 46, lines: ["② 兩種情況", "BP < AP < AB　或　AB < AP < BP"], col: "#118ab2", at: .2 },
+        { x: 260, y: 206, w: 420, h: 46, lines: ["🌉 ③ 分界線：圓（AP = 1）、中垂線（AP = BP）", "→ 切出綠色、橘色兩塊"], col: "#7b4dff", at: .34, glow: true },
+        { x: 260, y: 270, w: 400, h: 44, lines: ["④ 交點 S：正三角形 ABS", "60°、30°、高 √3/2"], col: "#d64545", at: .5 },
+        { x: 260, y: 342, w: 440, h: 50, lines: ["⑤ 綠 π/6 − √3/8 ＋ 橘 1/2 − √3/8 − π/12", "= (6 + π − 3√3)/12 → 25 (A) 🏆"], col: "#1f9d55", at: .68 }
+      ], [
+        { a: [260, 41], b: [260, 58], at: .06 },
+        { a: [260, 100], b: [260, 115], at: .16 },
+        { a: [260, 163], b: [260, 181], at: .28 },
+        { a: [260, 229], b: [260, 246], at: .44 },
+        { a: [260, 292], b: [260, 315], at: .6, label: "扇形、三角形加加減減", lx: 275, ly: 308 }
+      ]),
+      math: [[0, "目標：AP 是三角形 APB 中間長的邊"], [.1, "① 機率 = 面積"], [.2, "② BP &lt; AP &lt; AB 或 AB &lt; AP &lt; BP"], [.34, "③ <b>橋是兩條分界線</b>：圓、中垂線"], [.5, "④ 正三角形 ABS"], [.68, "⑤ (6 + π − 3√3)/12 → <b>25 (A)</b>"]] },
+    { name: "機率＝面積", dur: 9000, say: "第一步，在正方形裡隨機撒點，AP 在中間的點塗成綠色。綠點佔的比例，就是綠色區域的面積，大約百分之三十三。",
+      draw: t => { const n = Math.floor(k(t, 0, .75) * DOTS.length), ds = DOTS.slice(0, n), g = ds.filter(p => rankAP(p) === "mid").length;
+        return sq({ dots: ds.map(p => ({ ...p, c: rankAP(p) === "mid" ? COL.green : "#ccc" })) }, n ? `綠點 ${g} / ${n} ≈ ${(g / n).toFixed(2)}` : "隨機撒點……", COL.green); },
+      math: [[0, "隨機選點：每個地方機會一樣"], [.3, "機率 = 區域面積 ÷ 正方形面積（= 1）"], [.8, "綠點大約佔 0.33"]] },
+    { name: "兩種情況", dur: 9000, say: "第二步，AB 等於 1。AP 在中間有兩種情況。情況一，BP 小於 AP 小於 AB，是右下角綠色那塊。情況二，AB 小於 AP 小於 BP，是左上角橘色那一小條。",
+      draw: t => sq({ fills: [t > .15 && ["mid1", COL.green, .55], t > .55 && ["mid2", COL.orange, .7]].filter(Boolean), P: t < .55 ? { x: .72, y: .4 } : { x: .3, y: .97 } },
+        t < .55 ? "情況一：BP < AP < AB（綠）" : "情況二：AB < AP < BP（橘）", t < .55 ? COL.green : COL.orange, k(t, .1, .2)),
+      math: [[0, "AB = 1 固定"], [.15, "<span class='g'>情況一：BP &lt; AP &lt; AB</span>"], [.55, "<span class='o'>情況二：AB &lt; AP &lt; BP</span>"]] },
+    { name: "兩條分界線", dur: 10000, say: "第三步，到 A 的距離等於 1 的點，是以 A 為圓心、半徑 1 的圓，圓裡面 AP 小於 1。到 A 和 B 一樣遠的點，是 AB 的中垂線，左邊 AP 比 BP 短。綠色是圓裡面加右邊，橘色是圓外面加左邊。",
+      draw: t => sq({ circle: k(t, .05, .4), line: k(t, .45, .75), circleLabel: true, lineLabel: true, fills: t > .8 ? [["mid1", COL.green, .5], ["mid2", COL.orange, .65]] : [] },
+        t < .45 ? "AP = 1：以 A 為圓心、半徑 1 的圓" : t < .8 ? "AP = BP：AB 的中垂線" : "綠 = 圓內＋右邊；橘 = 圓外＋左邊", t < .45 ? COL.circle : t < .8 ? COL.line : "#2b2233"),
+      math: [[0, "AP = 1 → 圓；圓裡面 AP &lt; 1"], [.45, "AP = BP → 中垂線；左邊 AP &lt; BP"], [.8, "<span class='g'>綠 = 圓內＋右</span>，<span class='o'>橘 = 圓外＋左</span>"]] },
+    { name: "正三角形", dur: 9000, say: "第四步，圓和中垂線交在 S。AS 是半徑等於 1，BS 等於 AS 也是 1，所以三角形 ABS 是正三角形，角度 60 度，剩下的角是 30 度。用畢氏定理，高 SM 等於 2 分之根號 3。",
+      draw: t => { let ex = `<polygon points="50,330 350,330 200,${SY}" fill="#7b4dff" opacity="${.15 * k(t, .1, .3)}" stroke="#7b4dff" stroke-width="2.5" stroke-opacity="${k(t, .1, .3)}"/>`;
+        if (t > .35) ex += `<path d="M90 330 A40 40 0 0 0 70 295.36" fill="none" stroke="#2b2233" stroke-width="2"/>` + lab(100, 316, "60°", "#2b2233", 15, "start") + `<path d="M77.5 282.37 A55 55 0 0 0 50 275" fill="none" stroke="${COL.circle}" stroke-width="2"/>` + lab(60, 262, "30°", COL.circle, 15, "start");
+        if (t > .6) ex += `<line x1="200" y1="330" x2="200" y2="${SY}" stroke="#2b2233" stroke-width="3"/>` + lab(208, 230, "√3/2", "#2b2233", 16, "start") + lab(125, 350, "1/2", "#2b2233", 14);
+        return sq({ circle: true, line: true, faint: true, extra: ex, S: true, M: t > .6 }, t < .35 ? "AS = BS = AB = 1 → 正三角形" : t < .6 ? "∠BAS = 60°、∠DAS = 30°" : "SM² = 1 − 1/4 = 3/4 → SM = √3/2", "#7b4dff"); },
+      math: [[0, "AS = 1（半徑）、BS = AS（中垂線）"], [.35, "正三角形 → 60°；90° − 60° = 30°"], [.6, "高 SM = √(1 − 1/4) = √3/2"]] },
+    { name: "綠色面積", dur: 9000, say: "第五步，先算綠色。60 度的扇形是整個圓的六分之一，面積 6 分之派。扣掉三角形 AMS，面積 8 分之根號 3。綠色等於 6 分之派減 8 分之根號 3。",
+      draw: t => { const m = t < .35 ? "sec60" : t < .65 ? "tri" : "green"; return sq({ fills: F5[m].fills, circle: true, line: true, S: true, M: true }, F5[m].cap, COL.green); },
+      math: [[0, "扇形 ABS = π × 1² × 60/360 = π/6"], [.35, "三角形 AMS = 1/2 × √3/2 ÷ 2 = √3/8"], [.65, "<span class='g'>綠 = π/6 − √3/8</span>"]] },
+    { name: "橘色面積", dur: 9000, say: "再算橘色。中垂線左邊的長方形面積 2 分之 1，扣掉三角形 AMS 8 分之根號 3，再扣掉 30 度扇形 12 分之派。橘色等於 2 分之 1 減 8 分之根號 3 減 12 分之派。",
+      draw: t => { const m = t < .33 ? "rect" : t < .66 ? "sec30" : "orange"; return sq({ fills: F5[m].fills, circle: true, line: true, S: true, M: true }, F5[m].cap, COL.orange); },
+      math: [[0, "左半長方形 = 1/2"], [.33, "扣掉 三角形 √3/8 ＋ 扇形 π/12"], [.66, "<span class='o'>橘 = 1/2 − √3/8 − π/12</span>"]] },
+    { name: "加起來", dur: 11000, say: "最後加起來。派的部分，6 分之派減 12 分之派，等於 12 分之派。根號 3 的部分，減 8 分之根號 3 兩次，等於減 4 分之根號 3。通分成分母 12，得到 12 分之 6 加派減 3 根號 3。6 加 1 加 3 加 3 加 12 等於 25，答案是 A！",
+      draw: t => `<g transform="translate(10,40) scale(.62)">${fig({ fills: F5.both.fills, circle: true, line: true })}</g>` +
+        txt(270, 70, "綠 π/6 − √3/8", COL.green, 17, k(t, 0, .08)) + txt(270, 100, "橘 1/2 − √3/8 − π/12", COL.orange, 17, k(t, .05, .12)) +
+        txt(270, 150, "π/6 − π/12 = π/12", "#2b2233", 17, k(t, .2, .28)) + txt(270, 180, "−√3/8 − √3/8 = −√3/4", "#2b2233", 17, k(t, .32, .4)) +
+        txt(270, 225, "1/2 + π/12 − √3/4", "#7b4dff", 18, k(t, .45, .52)) + txt(270, 260, "= (6 + π − 3√3)/12", "#7b4dff", 20, k(t, .55, .62)) +
+        txt(270, 310, "6 + 1 + 3 + 3 + 12 = 25", "#1f9d55", 19, k(t, .7, .78)) + txt(270, 350, "答案 (A) 🏆", "#1f9d55", 24, k(t, .85, .92)),
+      math: [[0, "綠 + 橘"], [.2, "π：π/6 − π/12 = π/12；√3：−√3/8 − √3/8 = −√3/4"], [.55, "通分：(6 + π − 3√3)/12"], [.7, "a + b + c + d + e = <b>25 (A)</b>"]] }
+  ];
+  let cur = 0, t0 = 0, auto = false, waitUntil = 0;
+  $("#rcChain").innerHTML = SC.map((s, i) => `<button data-rc="${i}">${i + 1}. ${s.name}</button>`).join(" → ");
+  function paint() { $$("#rcChain button").forEach((b, j) => { b.style.background = j === cur ? "#7b4dff" : j < cur ? "#efe8ff" : "#fff"; b.style.color = j === cur ? "#fff" : ""; }); }
+  function render(t) {
+    const s = SC[cur]; $("#rcMap").innerHTML = s.draw(cl(t));
+    const lines = s.math.filter(m => cl(t) >= m[0]);
+    $("#rcMath").innerHTML = lines.map((m, j) => `<div style="opacity:${j === lines.length - 1 ? 1 : .6}">${m[1]}</div>`).join("");
+  }
+  function enter(i) {
+    cur = Math.max(0, Math.min(SC.length - 1, i)); t0 = performance.now(); waitUntil = 0; paint();
+    $("#rcSay").textContent = SC[cur].say; speak(SC[cur].say);
+    if (cur === SC.length - 1) { show("#c7key"); done(7); }
+  }
+  const setAuto = on => { auto = on; $("#rcAuto").textContent = on ? "⏸ 暫停自動播放" : "▶ 自動播放全部"; };
+  $("#rcChain").onclick = e => { const i = e.target.dataset.rc; if (i !== undefined) { setAuto(false); enter(+i); } };
+  $("#rcPrev").onclick = () => { setAuto(false); enter(cur - 1); };
+  $("#rcNext").onclick = () => { setAuto(false); enter(cur + 1); };
+  $("#rcAgain").onclick = () => enter(cur);
+  $("#rcAuto").onclick = () => { if (auto) { setAuto(false); speechSynthesis.cancel(); } else { setAuto(true); enter(cur === SC.length - 1 ? 0 : cur); } };
+  const DUR = 7000;
+  (function loop(now) {
+    if ($("#s7").classList.contains("on")) {
+      const t = (now - t0) / (SC[cur].dur || DUR); render(t);
+      if (auto && t >= 1 && !speechSynthesis.speaking) {
+        if (!waitUntil) waitUntil = now + 800;
+        else if (now > waitUntil) { if (cur < SC.length - 1) enter(cur + 1); else setAuto(false); }
+      }
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+  paint(); $("#rcSay").textContent = SC[0].say;
+})();
+
+// ---------- 關卡 8：無限練習 ----------
+let P = {}, streak = 0, mode = "easy";
+const rnd = (lo, hi) => lo + Math.floor(Math.random() * (hi - lo + 1));
+const pick = a => a[rnd(0, a.length - 1)];
+const gcd = (a, b) => b ? gcd(b, a % b) : a;
+const fracStr = (n, d) => { const g = gcd(n, d); return d / g === 1 ? `${n / g}` : `${n / g}/${d / g}`; };
+const PI = Math.PI;
+const PROBS = {
+  apShort: { q: "AP 是<b>最短</b>邊", v: PI / 12 + R3 / 8, sol: "AP 最短 = AP &lt; BP（中垂線左邊）而且 AP &lt; 1（圓裡面）= 三角形 AMS + 扇形 SAD = √3/8 + π/12 ≈ 0.2165 + 0.2618" },
+  apLong: { q: "AP 是<b>最長</b>邊", v: .5 - PI / 6 + R3 / 8, sol: "AP 最長 = 中垂線右邊而且圓外面 = 右半長方形 1/2 − 綠色 (π/6 − √3/8) ≈ 0.5 − 0.3071" },
+  apMid: { q: "AP 是<b>中間</b>的邊", v: (6 + PI - 3 * R3) / 12, sol: "就是大魔王：(6 + π − 3√3)/12" },
+  bpMid: { q: "<b>BP</b> 是中間的邊", v: (6 + PI - 3 * R3) / 12, sol: "把正方形左右翻過來，A 和 B 交換，BP 就變成 AP。所以機率跟「AP 在中間」一樣：(6 + π − 3√3)/12" },
+  abMid: { q: "<b>AB</b> 是中間的邊", v: 1 - (6 + PI - 3 * R3) / 6, sol: "三條邊一定有一條在中間：P(AP 中間) + P(BP 中間) + P(AB 中間) = 1。AP、BP 在中間各是 (6 + π − 3√3)/12，所以 AB 在中間 = 1 − 2 × 0.3288" }
+};
+function newProblem() {
+  $("#pf").classList.toggle("hidden", mode !== "easy");
+  if (mode === "easy") {
+    let p;
+    do { p = { x: .05 + Math.random() * .9, y: .05 + Math.random() * .9 }; } while (Math.abs(lens(p).ap - 1) < .05 || Math.abs(p.x - .5) < .04);
+    P = { easy: true, p };
+    $("#pq").innerHTML = "看 P 的位置（藍色是 AP = 1 的圓，紫色是中垂線），AP 是三角形 APB 的哪一種邊？";
+    $("#pf").innerHTML = fig({ circle: true, line: true, P: p });
+  } else {
+    const r = Math.random();
+    if (r < .35) {
+      const rad = pick([1, 2, 3, 4, 6]), th = pick([30, 45, 60, 90, 120, 150]);
+      P = { kind: "sector", rad, th, ans: rad * rad * th / 360 };
+      $("#pq").innerHTML = `半徑 ${rad}、圓心角 ${th}° 的扇形，面積是幾 π？（可以輸入分數，例如 1/6）`;
+    } else if (r < .6) {
+      const s = pick([1, 2, 4, 6, 8, 10]);
+      P = { kind: "height", s, ans: s / 2 };
+      $("#pq").innerHTML = `邊長 ${s} 的正三角形，高是幾 √3？（可以輸入分數）`;
+    } else {
+      const key = pick(Object.keys(PROBS));
+      P = { kind: "prob", key, ans: Math.round(PROBS[key].v * 100) / 100 };
+      $("#pq").innerHTML = `正方形 ABCD 裡隨機選一點 P，${PROBS[key].q}的機率是多少？（四捨五入到小數第二位，例如 0.25）`;
+    }
+  }
+  $("#pans").value = ""; fb($("#pfb"), null, ""); $("#psol").classList.add("hidden");
+  $("#pEasyBox").classList.toggle("hidden", mode !== "easy"); $("#pHardBox").classList.toggle("hidden", mode === "easy");
+}
+function solution() {
+  if (P.easy) {
+    const { ap, bp } = lens(P.p), r = rankAP(P.p);
+    return `P 在圓的<b>${ap < 1 ? "裡面" : "外面"}</b> → AP ${ap < 1 ? "&lt;" : "&gt;"} AB = 1；P 在中垂線<b>${P.p.x < .5 ? "左邊" : "右邊"}</b> → AP ${ap < bp ? "&lt;" : "&gt;"} BP。<br>
+      所以 AP 是<b>${RANKZH[r]}</b>。（實際長度：AP = ${ap.toFixed(2)}、BP = ${bp.toFixed(2)}、AB = 1）`;
+  }
+  if (P.kind === "sector") {
+    const { rad, th } = P;
+    return `整個圓 = π × ${rad}² = ${rad * rad}π；扇形佔 ${th}/360 = ${fracStr(th, 360)}。<br>面積 = ${rad * rad}π × ${fracStr(th, 360)} = <b>${fracStr(rad * rad * th, 360)} π</b>。`;
+  }
+  if (P.kind === "height") {
+    const { s } = P;
+    return `高把底邊切成兩半，每半 ${fracStr(s, 2)}。畢氏定理：高² = ${s}² − (${fracStr(s, 2)})² = ${s * s} − ${fracStr(s * s, 4)} = ${fracStr(3 * s * s, 4)}。<br>
+      高 = √(${fracStr(3 * s * s, 4)}) = <b>${fracStr(s, 2)} √3</b>（就是邊長 × √3/2）。`;
+  }
+  const pr = PROBS[P.key];
+  return `${pr.sol} ≈ ${pr.v.toFixed(4)}，四捨五入 = <b>${P.ans.toFixed(2)}</b>`;
+}
+function grade(ok) {
+  streak = ok ? streak + 1 : 0; $("#pstreak").textContent = streak;
+  fb($("#pfb"), ok, ok ? "✅ 正確！按「下一題」繼續" : "❌ 不對喔，再想一次，或看解法");
+  if (streak >= 3 && mode === "hard") done(8);
+}
+$("#pEasyBox").onclick = e => { const r = e.target.dataset.r; if (r) grade(r === rankAP(P.p)); };
+$("#pchk").onclick = () => grade(P.kind === "prob" ? Math.abs(val($("#pans").value) - P.ans) < .006 : same(val($("#pans").value), P.ans));
+$("#pshow").onclick = () => { $("#psol").innerHTML = solution(); show("#psol"); speak($("#psol")); };
+$("#pnew").onclick = newProblem;
+$("#lvEasy").onclick = () => { mode = "easy"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+$("#lvHard").onclick = () => { mode = "hard"; streak = 0; $("#pstreak").textContent = 0; newProblem(); };
+newProblem();
+
+// ---------- 語音 ----------
+let voiceOn = true, zhVoice = null;
+const VS = Object.assign({ name: "Meijia", pitch: 1.4, rate: 1.0 }, JSON.parse(localStorage.getItem("quest-voice") || "{}"));
+function pickVoice() {
+  const vs = speechSynthesis.getVoices().filter(v => v.lang.startsWith("zh"));
+  zhVoice = vs.find(v => v.name.startsWith(VS.name)) || vs.find(v => v.lang === "zh-TW") || vs[0] || null;
+  const sel = $("#vName");
+  sel.innerHTML = vs.map(v => `<option value="${v.name}">${v.name}（${v.lang}）</option>`).join("");
+  if (zhVoice) sel.value = zhVoice.name;
+}
+pickVoice(); speechSynthesis.onvoiceschanged = pickVoice;
+// 英文和圖不唸
+function readable(el) {
+  if (typeof el === "string") return el;
+  const c = el.cloneNode(true);
+  c.querySelectorAll(".say, button.go, button.ghost, .hint:not(.on), .hidden, svg, .en, i, [lang=en]").forEach(b => b.remove());
+  c.querySelectorAll("sup").forEach(s => s.replaceWith(` 的 ${s.textContent} 次方 `));
+  c.querySelectorAll("input").forEach(i => i.replaceWith(" 多少 "));
+  c.querySelectorAll("table.derive tr:first-child").forEach(r => r.remove());
+  c.querySelectorAll("td, th, br").forEach(td => td.append("，"));
+  return c.textContent;
+}
+// 分數唸成「幾分之幾」、π 唸「派」、√ 唸「根號」
+function toSpeech(t) {
+  return t.replace(/\p{Extended_Pictographic}|️/gu, "").trim()
+    .replace(/√\(([^)]+)\)/g, "根號 $1 ")
+    .replace(/\(([^()]+)\)\/(\d+)/g, " $2 分之 $1 ")
+    .replace(/(\d*[π√]?\d*)\/(\d+)/g, (m, a, b) => a ? ` ${b} 分之 ${a} ` : m)
+    .replace(/π/g, " 派 ").replace(/√/g, " 根號 ").replace(/²/g, " 平方 ").replace(/°/g, " 度 ").replace(/∠/g, " 角 ").replace(/△/g, " 三角形 ")
+    .replace(/[①②③④⑤]/g, m => " 第" + "一二三四五"["①②③④⑤".indexOf(m)] + "步 ")
+    .replace(/÷/g, " 除以 ").replace(/×/g, " 乘 ").replace(/[−-]/g, " 減 ").replace(/\+/g, " 加 ").replace(/≈/g, " 大約 ").replace(/=/g, " 等於 ")
+    .replace(/⇔/g, " 也就是 ").replace(/</g, " 小於 ").replace(/>/g, " 大於 ")
+    .replace(/✗/g, " 不行 ").replace(/✓/g, " ").replace(/→/g, "，").replace(/…/g, "，").replace(/～/g, " 到 ")
+    .replace(/\s+/g, " ").trim();
+}
+function speak(t, interrupt = true) {
+  if (!voiceOn || !t) return;
+  if (interrupt) speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(toSpeech(readable(t)));
+  u.lang = "zh-TW"; if (zhVoice) u.voice = zhVoice; u.pitch = VS.pitch; u.rate = VS.rate;
+  speechSynthesis.speak(u);
+}
+$("#voiceBtn").onclick = () => {
+  voiceOn = !voiceOn; speechSynthesis.cancel();
+  $("#voiceBtn").textContent = voiceOn ? "🔊 語音：開" : "🔇 語音：關";
+};
+$("#vPitch").value = VS.pitch; $("#vRate").value = VS.rate;
+const saveVS = () => localStorage.setItem("quest-voice", JSON.stringify(VS));
+const HELLO = "你好，我們一起來玩中間邊大冒險！";
+$("#voiceSet").onclick = () => $("#voicePanel").classList.toggle("hidden");
+$("#vClose").onclick = () => $("#voicePanel").classList.add("hidden");
+$("#vName").onchange = e => { VS.name = e.target.value; pickVoice(); saveVS(); speak(HELLO); };
+$("#vPitch").onchange = e => { VS.pitch = +e.target.value; saveVS(); speak(HELLO); };
+$("#vRate").onchange = e => { VS.rate = +e.target.value; saveVS(); speak(HELLO); };
+$("#vTest").onclick = () => speak(HELLO);
+$$(".story, .key, .proof").forEach(el => {
+  const b = document.createElement("button"); b.className = "say"; b.textContent = "🔈"; b.title = "再聽一次";
+  b.onclick = e => { e.stopPropagation(); speak(el); };
+  el.prepend(b);
+});
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]")?.dataset.go;
+  if (g !== undefined) speak($("#s" + g + " .story"));
+});
+const lastSaid = new WeakMap();
+$$(".fb").forEach(el => new MutationObserver(() => {
+  const t = el.textContent.trim();
+  if (t && t !== lastSaid.get(el)) { lastSaid.set(el, t); speak(t); }
+  if (!t) lastSaid.set(el, "");
+}).observe(el, { childList: true, characterData: true, subtree: true }));
+const watchOnce = (el, isOn, target) => {
+  let said = false;
+  new MutationObserver(() => { if (!said && isOn()) { said = true; speak(target(), false); } })
+    .observe(el, { attributes: true, attributeFilter: ["class"] });
+};
+$$(".card.hidden").forEach(card => { const k = card.querySelector(".key"); if (k) watchOnce(card, () => !card.classList.contains("hidden"), () => k); });
+$$(".step:not(.on)").forEach(st => watchOnce(st, () => st.classList.contains("on"), () => st));
+new MutationObserver(() => speak($("#pq"))).observe($("#pq"), { childList: true });
+</script>
+</body>
+</html>
