@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep48 · 2026/10/23</span>
+        <div class="lang-zh">
+          <h3>不靠老師，靠評審挑毛病！對抗式後訓練 ARC｜Stable Audio Open Small 怎麼變快</h3>
+          <p>第47集小皮更正：Stable Audio Open Small變快主要不是靠蒸餾，而是對抗式後訓練ARC。不靠老師模型，靠一個專門挑毛病的評審。對抗的點子來自2014年Ian Goodfellow等人的生成對抗網路GAN：生成器像做假鈔、判別器像驗鈔員。研究團隊先訓練好整流模型（Rectified Flow），主體從約10.6億參數瘦身到3.4億，原本要50步，後訓練請評審特訓到只走8步。第一招相對式對抗：同一句提示的真錄音和生成作品擺在一起，評審要說哪個比較真。第二招對比式：把提示洗牌，評審要抓出配錯的提示，學會檢查貼不貼題，因此不用第42集的CFG（每步算兩次、一次有提示一次沒有、再放大差距），每步只算一次，記憶體省將近一半。成果：H100生成12秒立體聲約75毫秒、RTX 3090 187毫秒、Arm手機約6.6秒。聽眾測驗的多樣性ARC 4.4分、蒸餾派Presto! 2.7分，代價是音質和貼題度稍低。而且兩篇的第一作者都是Zachary Novack。</p>
+          <audio controls preload="none" src="podcast/audio/ep48.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>No Teacher, Just a Picky Judge! Adversarial Post-Training (ARC) and Stable Audio Open Small</h3>
+          <p>Episode 47 corrected that Stable Audio Open Small gets its speed mainly not from distillation but from adversarial post-training (ARC): no teacher model, just a judge whose job is finding faults. The adversarial idea comes from GANs (Ian Goodfellow et al., 2014): a generator like a counterfeiter and a discriminator like a bank inspector. The team first trained a rectified flow model, slimming Stable Audio Open&#x27;s core from about 1.06 billion to 340 million parameters; it normally needs 50 steps, and post-training coaches it down to 8. Trick one, relativistic adversarial training: a real recording and a generated clip for the same prompt are compared side by side, and the judge says which is more real. Trick two, contrastive training: prompts are shuffled and the judge must catch mismatches, learning to check prompt fit, so the model no longer needs CFG from episode 42 (computing every step twice, with and without the prompt, then amplifying the difference) and computes each step once, saving almost half the memory. Results: 12 seconds of stereo in about 75 ms on an H100, 187 ms on an RTX 3090, about 6.6 s on an Arm phone. In listening tests ARC scored 4.4 for variety versus 2.7 for the distillation method Presto!, at the cost of slightly lower quality and prompt matching. And both papers share the same first author, Zachary Novack.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep48.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep47 · 2026/10/22</span>
         <div class="lang-zh">
           <h3>同樣叫蒸餾，差很多！語言模型 vs 音樂 AI 的「蒸餾」｜Distillation</h3>

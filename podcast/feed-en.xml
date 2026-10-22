@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 22 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1320,6 +1320,35 @@ ARC / Stable Audio Open Small (2025): https://arxiv.org/abs/2505.08175]]></itune
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:46</itunes:duration>
       <itunes:episode>47</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>No Teacher, Just a Picky Judge! Adversarial Post-Training (ARC) and Stable Audio Open Small</title>
+      <description><![CDATA[Episode 47 corrected that Stable Audio Open Small gets its speed mainly not from distillation but from adversarial post-training (ARC): no teacher model, just a judge whose job is finding faults. The adversarial idea comes from GANs (Ian Goodfellow et al., 2014): a generator like a counterfeiter and a discriminator like a bank inspector. The team first trained a rectified flow model, slimming Stable Audio Open's core from about 1.06 billion to 340 million parameters; it normally needs 50 steps, and post-training coaches it down to 8. Trick one, relativistic adversarial training: a real recording and a generated clip for the same prompt are compared side by side, and the judge says which is more real. Trick two, contrastive training: prompts are shuffled and the judge must catch mismatches, learning to check prompt fit, so the model no longer needs CFG from episode 42 (computing every step twice, with and without the prompt, then amplifying the difference) and computes each step once, saving almost half the memory. Results: 12 seconds of stereo in about 75 ms on an H100, 187 ms on an RTX 3090, about 6.6 s on an Arm phone. In listening tests ARC scored 4.4 for variety versus 2.7 for the distillation method Presto!, at the cost of slightly lower quality and prompt matching. And both papers share the same first author, Zachary Novack.
+
+References:
+ARC (Novack et al. 2025): https://arxiv.org/abs/2505.08175
+Stable Audio Open Small: https://huggingface.co/stabilityai/stable-audio-open-small
+Generative Adversarial Networks (Goodfellow et al. 2014): https://arxiv.org/abs/1406.2661
+The relativistic discriminator (Jolicoeur-Martineau 2018): https://arxiv.org/abs/1807.00734
+Presto! (Novack et al. 2024): https://arxiv.org/abs/2410.05167]]></description>
+      <itunes:summary><![CDATA[Episode 47 corrected that Stable Audio Open Small gets its speed mainly not from distillation but from adversarial post-training (ARC): no teacher model, just a judge whose job is finding faults. The adversarial idea comes from GANs (Ian Goodfellow et al., 2014): a generator like a counterfeiter and a discriminator like a bank inspector. The team first trained a rectified flow model, slimming Stable Audio Open's core from about 1.06 billion to 340 million parameters; it normally needs 50 steps, and post-training coaches it down to 8. Trick one, relativistic adversarial training: a real recording and a generated clip for the same prompt are compared side by side, and the judge says which is more real. Trick two, contrastive training: prompts are shuffled and the judge must catch mismatches, learning to check prompt fit, so the model no longer needs CFG from episode 42 (computing every step twice, with and without the prompt, then amplifying the difference) and computes each step once, saving almost half the memory. Results: 12 seconds of stereo in about 75 ms on an H100, 187 ms on an RTX 3090, about 6.6 s on an Arm phone. In listening tests ARC scored 4.4 for variety versus 2.7 for the distillation method Presto!, at the cost of slightly lower quality and prompt matching. And both papers share the same first author, Zachary Novack.
+
+References:
+ARC (Novack et al. 2025): https://arxiv.org/abs/2505.08175
+Stable Audio Open Small: https://huggingface.co/stabilityai/stable-audio-open-small
+Generative Adversarial Networks (Goodfellow et al. 2014): https://arxiv.org/abs/1406.2661
+The relativistic discriminator (Jolicoeur-Martineau 2018): https://arxiv.org/abs/1807.00734
+Presto! (Novack et al. 2024): https://arxiv.org/abs/2410.05167]]></itunes:summary>
+      <pubDate>Fri, 23 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep48.mp3" length="1365120" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep48.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:48</itunes:duration>
+      <itunes:episode>48</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

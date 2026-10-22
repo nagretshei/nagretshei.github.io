@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 22 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1320,6 +1320,35 @@ ARC / Stable Audio Open Small（2025）：https://arxiv.org/abs/2505.08175]]></i
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:45</itunes:duration>
       <itunes:episode>47</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>不靠老師，靠評審挑毛病！對抗式後訓練 ARC｜Stable Audio Open Small 怎麼變快</title>
+      <description><![CDATA[第47集小皮更正：Stable Audio Open Small變快主要不是靠蒸餾，而是對抗式後訓練ARC。不靠老師模型，靠一個專門挑毛病的評審。對抗的點子來自2014年Ian Goodfellow等人的生成對抗網路GAN：生成器像做假鈔、判別器像驗鈔員。研究團隊先訓練好整流模型（Rectified Flow），主體從約10.6億參數瘦身到3.4億，原本要50步，後訓練請評審特訓到只走8步。第一招相對式對抗：同一句提示的真錄音和生成作品擺在一起，評審要說哪個比較真。第二招對比式：把提示洗牌，評審要抓出配錯的提示，學會檢查貼不貼題，因此不用第42集的CFG（每步算兩次、一次有提示一次沒有、再放大差距），每步只算一次，記憶體省將近一半。成果：H100生成12秒立體聲約75毫秒、RTX 3090 187毫秒、Arm手機約6.6秒。聽眾測驗的多樣性ARC 4.4分、蒸餾派Presto! 2.7分，代價是音質和貼題度稍低。而且兩篇的第一作者都是Zachary Novack。
+
+參考資料：
+ARC（Novack et al. 2025）：https://arxiv.org/abs/2505.08175
+Stable Audio Open Small：https://huggingface.co/stabilityai/stable-audio-open-small
+Generative Adversarial Networks（Goodfellow et al. 2014）：https://arxiv.org/abs/1406.2661
+The relativistic discriminator（Jolicoeur-Martineau 2018）：https://arxiv.org/abs/1807.00734
+Presto!（Novack et al. 2024）：https://arxiv.org/abs/2410.05167]]></description>
+      <itunes:summary><![CDATA[第47集小皮更正：Stable Audio Open Small變快主要不是靠蒸餾，而是對抗式後訓練ARC。不靠老師模型，靠一個專門挑毛病的評審。對抗的點子來自2014年Ian Goodfellow等人的生成對抗網路GAN：生成器像做假鈔、判別器像驗鈔員。研究團隊先訓練好整流模型（Rectified Flow），主體從約10.6億參數瘦身到3.4億，原本要50步，後訓練請評審特訓到只走8步。第一招相對式對抗：同一句提示的真錄音和生成作品擺在一起，評審要說哪個比較真。第二招對比式：把提示洗牌，評審要抓出配錯的提示，學會檢查貼不貼題，因此不用第42集的CFG（每步算兩次、一次有提示一次沒有、再放大差距），每步只算一次，記憶體省將近一半。成果：H100生成12秒立體聲約75毫秒、RTX 3090 187毫秒、Arm手機約6.6秒。聽眾測驗的多樣性ARC 4.4分、蒸餾派Presto! 2.7分，代價是音質和貼題度稍低。而且兩篇的第一作者都是Zachary Novack。
+
+參考資料：
+ARC（Novack et al. 2025）：https://arxiv.org/abs/2505.08175
+Stable Audio Open Small：https://huggingface.co/stabilityai/stable-audio-open-small
+Generative Adversarial Networks（Goodfellow et al. 2014）：https://arxiv.org/abs/1406.2661
+The relativistic discriminator（Jolicoeur-Martineau 2018）：https://arxiv.org/abs/1807.00734
+Presto!（Novack et al. 2024）：https://arxiv.org/abs/2410.05167]]></itunes:summary>
+      <pubDate>Fri, 23 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep48.mp3" length="3557814" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep48.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:42</itunes:duration>
+      <itunes:episode>48</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
