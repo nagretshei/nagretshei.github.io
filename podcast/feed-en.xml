@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 24 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1380,6 +1380,58 @@ Llasa / X-Codec 2 (Ye et al. 2025): https://arxiv.org/abs/2502.04128]]></itunes:
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:35</itunes:duration>
       <itunes:episode>49</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The World Goes Quiet When You Put Them On? How Noise Cancelling Headphones (ANC) Make Noise Disappear</title>
+      <description><![CDATA[On the subway or a plane, you press the noise cancelling button and the rumble suddenly drops: your headphones are using sound to destroy sound. Little Pi first separates two kinds of quiet: passive isolation, where ear cups and ear tips block sound out, and active noise cancellation (ANC), where microphones and a chip create a sound that cancels the noise. The core idea: sound is air pressure going up and down; a microphone hears the noise, the chip instantly calculates an upside-down copy of the wave and plays it, so the peaks meet the troughs and they cancel out, which has to happen extremely fast. There are three microphone designs: feedforward on the outside, feedback near your ear checking what noise is left, and hybrid using both. Why can you still hear people talking? Steady low hums like engines and air conditioners are easiest to cancel, while fast-changing sounds like speech and typing are mostly blocked by passive isolation. History: in the 1930s German physicist Paul Lueg patented cancelling noise with an inverted wave; in 1978 Amar Bose, founder of Bose, was bothered by noise on a flight from Europe to the US and began sketching; a pilots' headset launched in 1989, and QuietComfort for passengers in 2000. Finally, transparency mode uses the outside microphones the other way to let outside sound in, so switch it on when walking or crossing the street; and in a quieter environment you don't need to turn your music way up.
+
+References:
+Noise-cancelling headphones - Wikipedia: https://en.wikipedia.org/wiki/Noise-cancelling_headphones
+Active noise control - Wikipedia: https://en.wikipedia.org/wiki/Active_noise_control
+Bose Aviation history: https://boseaviation.com/about/history/]]></description>
+      <itunes:summary><![CDATA[On the subway or a plane, you press the noise cancelling button and the rumble suddenly drops: your headphones are using sound to destroy sound. Little Pi first separates two kinds of quiet: passive isolation, where ear cups and ear tips block sound out, and active noise cancellation (ANC), where microphones and a chip create a sound that cancels the noise. The core idea: sound is air pressure going up and down; a microphone hears the noise, the chip instantly calculates an upside-down copy of the wave and plays it, so the peaks meet the troughs and they cancel out, which has to happen extremely fast. There are three microphone designs: feedforward on the outside, feedback near your ear checking what noise is left, and hybrid using both. Why can you still hear people talking? Steady low hums like engines and air conditioners are easiest to cancel, while fast-changing sounds like speech and typing are mostly blocked by passive isolation. History: in the 1930s German physicist Paul Lueg patented cancelling noise with an inverted wave; in 1978 Amar Bose, founder of Bose, was bothered by noise on a flight from Europe to the US and began sketching; a pilots' headset launched in 1989, and QuietComfort for passengers in 2000. Finally, transparency mode uses the outside microphones the other way to let outside sound in, so switch it on when walking or crossing the street; and in a quieter environment you don't need to turn your music way up.
+
+References:
+Noise-cancelling headphones - Wikipedia: https://en.wikipedia.org/wiki/Noise-cancelling_headphones
+Active noise control - Wikipedia: https://en.wikipedia.org/wiki/Active_noise_control
+Bose Aviation history: https://boseaviation.com/about/history/]]></itunes:summary>
+      <pubDate>Sun, 25 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep50.mp3" length="1266624" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep50.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:31</itunes:duration>
+      <itunes:episode>50</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Sound Flying Over Your Head? What Dolby Atmos and Spatial Audio Really Are</title>
+      <description><![CDATA[At the movies a helicopter seems to fly right over your head, and now streaming services and headphones advertise Dolby Atmos and spatial audio. How is that different from old surround sound? From two-channel stereo to 5.1 and 7.1 surround (the point one is the subwoofer), the traditional approach assigns every sound to a fixed speaker during mixing. Dolby Atmos first adds height, with speakers on the ceiling. The bigger breakthrough is the sound object: background ambience stays in a fixed channel bed, while something like a passing bird is an object carrying coordinates, and at playback the system works out which speakers should play it based on how many speakers the room has and where they are. A film can carry up to 128 tracks and a theater can drive up to 64 speakers, so one mix adapts to large and small rooms alike. Pixar's Brave (2012) was the first film released in Dolby Atmos. No ceiling speakers at home? Soundbars bounce sound off the ceiling, and headphones simulate how your head and ears change sound to fool your brain, with head tracking keeping sounds in place when you turn. Apple Music launched spatial audio with Dolby Atmos in 2021, but mixers have to create a separate immersive mix; it isn't a button that turns old songs 3D.
+
+References:
+Dolby Atmos - Wikipedia: https://en.wikipedia.org/wiki/Dolby_Atmos
+Surround sound - Wikipedia: https://en.wikipedia.org/wiki/Surround_sound
+Head-related transfer function - Wikipedia: https://en.wikipedia.org/wiki/Head-related_transfer_function
+Apple Music announces Spatial Audio and Lossless Audio (Apple Newsroom, 2021): https://www.apple.com/newsroom/2021/05/apple-music-announces-spatial-audio-and-lossless-audio/]]></description>
+      <itunes:summary><![CDATA[At the movies a helicopter seems to fly right over your head, and now streaming services and headphones advertise Dolby Atmos and spatial audio. How is that different from old surround sound? From two-channel stereo to 5.1 and 7.1 surround (the point one is the subwoofer), the traditional approach assigns every sound to a fixed speaker during mixing. Dolby Atmos first adds height, with speakers on the ceiling. The bigger breakthrough is the sound object: background ambience stays in a fixed channel bed, while something like a passing bird is an object carrying coordinates, and at playback the system works out which speakers should play it based on how many speakers the room has and where they are. A film can carry up to 128 tracks and a theater can drive up to 64 speakers, so one mix adapts to large and small rooms alike. Pixar's Brave (2012) was the first film released in Dolby Atmos. No ceiling speakers at home? Soundbars bounce sound off the ceiling, and headphones simulate how your head and ears change sound to fool your brain, with head tracking keeping sounds in place when you turn. Apple Music launched spatial audio with Dolby Atmos in 2021, but mixers have to create a separate immersive mix; it isn't a button that turns old songs 3D.
+
+References:
+Dolby Atmos - Wikipedia: https://en.wikipedia.org/wiki/Dolby_Atmos
+Surround sound - Wikipedia: https://en.wikipedia.org/wiki/Surround_sound
+Head-related transfer function - Wikipedia: https://en.wikipedia.org/wiki/Head-related_transfer_function
+Apple Music announces Spatial Audio and Lossless Audio (Apple Newsroom, 2021): https://www.apple.com/newsroom/2021/05/apple-music-announces-spatial-audio-and-lossless-audio/]]></itunes:summary>
+      <pubDate>Mon, 26 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep51.mp3" length="1187136" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep51.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:18</itunes:duration>
+      <itunes:episode>51</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
