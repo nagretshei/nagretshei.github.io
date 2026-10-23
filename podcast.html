@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep49 · 2026/10/24</span>
+        <div class="lang-zh">
+          <h3>讓 AI 的聲音積木帶著意思！X-Codec 語意特徵｜為什麼加了語意，AI 比較不會唸錯字</h3>
+          <p>第36集只用一句話帶過的X-Codec，這集小皮專門拆解。EnCodec、DAC這類編碼器為壓縮而生，只在乎還原的聲音像不像，不在乎聲音在說什麼，像只抄筆畫、不懂字義的速記員，所以VALL-E這類用音訊token合成語音的模型常跳字、唸錯字。X-Codec請來Meta在2021年提出的HuBERT：靠「遮住一段、自己猜」的自監督學習，學會分辨這是什麼聲音，也就是語意特徵。X-Codec讓聲音走兩條路：聲學編碼器記音色細節、HuBERT記這是什麼聲音，兩者在進入密碼本（RVQ）前合併；解碼時要交兩份作業：還原波形、還原語意特徵。成績：同一套VALL-E只換編碼器，字錯誤率EnCodec 6.37%、DAC 6.81%、X-Codec 3.26%，接近真人錄音2.23%；音質評分3.02升到4.22。音樂與音效版本用約20萬小時聲音自訓通用HuBERT，音樂接龍、文字生成音效都變好，代價是波形細節略差。開源歌曲模型YuE用的是X-Codec精簡版；2025年的X-Codec 2只用一本65536個號碼的密碼本、每秒50塊積木、語意改用Wav2Vec2-BERT，並做出語音合成模型Llasa（1B、3B、8B）。</p>
+          <audio controls preload="none" src="podcast/audio/ep49.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Giving AI&#x27;s Sound Blocks Meaning! X-Codec Semantic Features and Why Fewer Words Go Wrong</h3>
+          <p>X-Codec only got one sentence in episode 36, so this episode Little Pi takes it apart. Codecs like EnCodec and DAC were built for compression: they care whether the rebuilt sound sounds the same, not what it means, like a stenographer copying strokes without understanding the words, so models like VALL-E that build speech from audio tokens often skip or misread words. X-Codec brings in HuBERT (Meta, 2021), which learns by hiding part of a clip and guessing it, and so learns to tell what a sound is: semantic features. X-Codec sends sound down two paths, an acoustic encoder for timbre and detail and HuBERT for meaning, merged before the codebook (RVQ); decoding must hand in two assignments, rebuilding the waveform and rebuilding the semantic features. Results with the same VALL-E setup: word error rate 6.37% with EnCodec, 6.81% with DAC, 3.26% with X-Codec, close to 2.23% for real recordings; speech quality score up from 3.02 to 4.22. For music and sound, a general-purpose HuBERT trained on about 200,000 hours improved music continuation and text-to-sound, at the cost of slightly less waveform detail. The open-source song model YuE uses a compact X-Codec; X-Codec 2 (2025) uses a single 65,536-entry codebook at 50 tokens per second with Wav2Vec2-BERT, powering the Llasa speech model (1B, 3B, 8B).</p>
+          <audio controls preload="none" src="podcast/audio/en/ep49.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep48 · 2026/10/23</span>
         <div class="lang-zh">
           <h3>不靠老師，靠評審挑毛病！對抗式後訓練 ARC｜Stable Audio Open Small 怎麼變快</h3>

@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1349,6 +1349,37 @@ Presto! (Novack et al. 2024): https://arxiv.org/abs/2410.05167]]></itunes:summar
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:48</itunes:duration>
       <itunes:episode>48</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Giving AI's Sound Blocks Meaning! X-Codec Semantic Features and Why Fewer Words Go Wrong</title>
+      <description><![CDATA[X-Codec only got one sentence in episode 36, so this episode Little Pi takes it apart. Codecs like EnCodec and DAC were built for compression: they care whether the rebuilt sound sounds the same, not what it means, like a stenographer copying strokes without understanding the words, so models like VALL-E that build speech from audio tokens often skip or misread words. X-Codec brings in HuBERT (Meta, 2021), which learns by hiding part of a clip and guessing it, and so learns to tell what a sound is: semantic features. X-Codec sends sound down two paths, an acoustic encoder for timbre and detail and HuBERT for meaning, merged before the codebook (RVQ); decoding must hand in two assignments, rebuilding the waveform and rebuilding the semantic features. Results with the same VALL-E setup: word error rate 6.37% with EnCodec, 6.81% with DAC, 3.26% with X-Codec, close to 2.23% for real recordings; speech quality score up from 3.02 to 4.22. For music and sound, a general-purpose HuBERT trained on about 200,000 hours improved music continuation and text-to-sound, at the cost of slightly less waveform detail. The open-source song model YuE uses a compact X-Codec; X-Codec 2 (2025) uses a single 65,536-entry codebook at 50 tokens per second with Wav2Vec2-BERT, powering the Llasa speech model (1B, 3B, 8B).
+
+References:
+X-Codec (Ye et al. 2024): https://arxiv.org/abs/2408.17175
+HuBERT (Hsu et al. 2021): https://arxiv.org/abs/2106.07447
+EnCodec (Défossez et al. 2022): https://arxiv.org/abs/2210.13438
+X-Codec - Hugging Face Transformers: https://huggingface.co/docs/transformers/model_doc/xcodec
+YuE: https://github.com/multimodal-art-projection/YuE
+Llasa / X-Codec 2 (Ye et al. 2025): https://arxiv.org/abs/2502.04128]]></description>
+      <itunes:summary><![CDATA[X-Codec only got one sentence in episode 36, so this episode Little Pi takes it apart. Codecs like EnCodec and DAC were built for compression: they care whether the rebuilt sound sounds the same, not what it means, like a stenographer copying strokes without understanding the words, so models like VALL-E that build speech from audio tokens often skip or misread words. X-Codec brings in HuBERT (Meta, 2021), which learns by hiding part of a clip and guessing it, and so learns to tell what a sound is: semantic features. X-Codec sends sound down two paths, an acoustic encoder for timbre and detail and HuBERT for meaning, merged before the codebook (RVQ); decoding must hand in two assignments, rebuilding the waveform and rebuilding the semantic features. Results with the same VALL-E setup: word error rate 6.37% with EnCodec, 6.81% with DAC, 3.26% with X-Codec, close to 2.23% for real recordings; speech quality score up from 3.02 to 4.22. For music and sound, a general-purpose HuBERT trained on about 200,000 hours improved music continuation and text-to-sound, at the cost of slightly less waveform detail. The open-source song model YuE uses a compact X-Codec; X-Codec 2 (2025) uses a single 65,536-entry codebook at 50 tokens per second with Wav2Vec2-BERT, powering the Llasa speech model (1B, 3B, 8B).
+
+References:
+X-Codec (Ye et al. 2024): https://arxiv.org/abs/2408.17175
+HuBERT (Hsu et al. 2021): https://arxiv.org/abs/2106.07447
+EnCodec (Défossez et al. 2022): https://arxiv.org/abs/2210.13438
+X-Codec - Hugging Face Transformers: https://huggingface.co/docs/transformers/model_doc/xcodec
+YuE: https://github.com/multimodal-art-projection/YuE
+Llasa / X-Codec 2 (Ye et al. 2025): https://arxiv.org/abs/2502.04128]]></itunes:summary>
+      <pubDate>Sat, 24 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep49.mp3" length="1287072" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep49.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:35</itunes:duration>
+      <itunes:episode>49</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

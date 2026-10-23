@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1349,6 +1349,37 @@ Presto!（Novack et al. 2024）：https://arxiv.org/abs/2410.05167]]></itunes:su
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:42</itunes:duration>
       <itunes:episode>48</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>讓 AI 的聲音積木帶著意思！X-Codec 語意特徵｜為什麼加了語意，AI 比較不會唸錯字</title>
+      <description><![CDATA[第36集只用一句話帶過的X-Codec，這集小皮專門拆解。EnCodec、DAC這類編碼器為壓縮而生，只在乎還原的聲音像不像，不在乎聲音在說什麼，像只抄筆畫、不懂字義的速記員，所以VALL-E這類用音訊token合成語音的模型常跳字、唸錯字。X-Codec請來Meta在2021年提出的HuBERT：靠「遮住一段、自己猜」的自監督學習，學會分辨這是什麼聲音，也就是語意特徵。X-Codec讓聲音走兩條路：聲學編碼器記音色細節、HuBERT記這是什麼聲音，兩者在進入密碼本（RVQ）前合併；解碼時要交兩份作業：還原波形、還原語意特徵。成績：同一套VALL-E只換編碼器，字錯誤率EnCodec 6.37%、DAC 6.81%、X-Codec 3.26%，接近真人錄音2.23%；音質評分3.02升到4.22。音樂與音效版本用約20萬小時聲音自訓通用HuBERT，音樂接龍、文字生成音效都變好，代價是波形細節略差。開源歌曲模型YuE用的是X-Codec精簡版；2025年的X-Codec 2只用一本65536個號碼的密碼本、每秒50塊積木、語意改用Wav2Vec2-BERT，並做出語音合成模型Llasa（1B、3B、8B）。
+
+參考資料：
+X-Codec（Ye et al. 2024）：https://arxiv.org/abs/2408.17175
+HuBERT（Hsu et al. 2021）：https://arxiv.org/abs/2106.07447
+EnCodec（Défossez et al. 2022）：https://arxiv.org/abs/2210.13438
+X-Codec － Hugging Face Transformers：https://huggingface.co/docs/transformers/model_doc/xcodec
+YuE：https://github.com/multimodal-art-projection/YuE
+Llasa / X-Codec 2（Ye et al. 2025）：https://arxiv.org/abs/2502.04128]]></description>
+      <itunes:summary><![CDATA[第36集只用一句話帶過的X-Codec，這集小皮專門拆解。EnCodec、DAC這類編碼器為壓縮而生，只在乎還原的聲音像不像，不在乎聲音在說什麼，像只抄筆畫、不懂字義的速記員，所以VALL-E這類用音訊token合成語音的模型常跳字、唸錯字。X-Codec請來Meta在2021年提出的HuBERT：靠「遮住一段、自己猜」的自監督學習，學會分辨這是什麼聲音，也就是語意特徵。X-Codec讓聲音走兩條路：聲學編碼器記音色細節、HuBERT記這是什麼聲音，兩者在進入密碼本（RVQ）前合併；解碼時要交兩份作業：還原波形、還原語意特徵。成績：同一套VALL-E只換編碼器，字錯誤率EnCodec 6.37%、DAC 6.81%、X-Codec 3.26%，接近真人錄音2.23%；音質評分3.02升到4.22。音樂與音效版本用約20萬小時聲音自訓通用HuBERT，音樂接龍、文字生成音效都變好，代價是波形細節略差。開源歌曲模型YuE用的是X-Codec精簡版；2025年的X-Codec 2只用一本65536個號碼的密碼本、每秒50塊積木、語意改用Wav2Vec2-BERT，並做出語音合成模型Llasa（1B、3B、8B）。
+
+參考資料：
+X-Codec（Ye et al. 2024）：https://arxiv.org/abs/2408.17175
+HuBERT（Hsu et al. 2021）：https://arxiv.org/abs/2106.07447
+EnCodec（Défossez et al. 2022）：https://arxiv.org/abs/2210.13438
+X-Codec － Hugging Face Transformers：https://huggingface.co/docs/transformers/model_doc/xcodec
+YuE：https://github.com/multimodal-art-projection/YuE
+Llasa / X-Codec 2（Ye et al. 2025）：https://arxiv.org/abs/2502.04128]]></itunes:summary>
+      <pubDate>Sat, 24 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep49.mp3" length="3428247" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep49.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:34</itunes:duration>
+      <itunes:episode>49</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
