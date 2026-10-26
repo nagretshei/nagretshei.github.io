@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1432,6 +1432,35 @@ Apple Music announces Spatial Audio and Lossless Audio (Apple Newsroom, 2021): h
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:18</itunes:duration>
       <itunes:episode>51</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Does AI Understand Your Prompt? CLAP, the Matchmaker Between Text and Sound</title>
+      <description><![CDATA[Type "lazy jazz piano on a rainy day" into an AI music site and you get music, but how does AI know which sound goes with which sentence? Meet CLAP (Contrastive Language-Audio Pretraining), inspired by OpenAI's 2021 image-text model CLIP. It works like two towers: a sound tower and a text tower turn a dog's bark and the words "a dog is barking" into 512 numbers each, placed on one shared map where matching meanings sit close together. Training is a matching game: a batch of sounds and descriptions forms a table, true pairs on the diagonal are pulled together and the rest pushed apart, with no hand labeling needed. The result is zero-shot classification: LAION-CLAP (2022), trained on about 630,000 pairs, scores 91.0% on the 50-class ESC-50 environmental sound test, above Microsoft CLAP's 82.6%. Generative AI uses it too: AudioLDM trains on sound coordinates and swaps in text coordinates to generate; Google's MusicLM uses the similar MuLan (44 million recordings); the first Stable Audio used its own CLAP, while Stable Audio Open switched to T5. The CLAP score is also a common way to grade whether AI output matches its prompt. Its weakness: a 2023 study found it can't really tell "one after another" from "at the same time"; it mostly notices keywords.
+
+References:
+CLAP: Learning Audio Concepts From Natural Language Supervision（微軟 CLAP，2022）: https://arxiv.org/abs/2206.04769
+Large-scale Contrastive Language-Audio Pretraining（LAION-CLAP，2022）: https://arxiv.org/abs/2211.06687
+AudioLDM（2023）: https://arxiv.org/abs/2301.12503
+MuLan（2022）: https://arxiv.org/abs/2208.12415
+Audio-Text Models Do Not Yet Leverage Natural Language（2023）: https://arxiv.org/abs/2303.10667]]></description>
+      <itunes:summary><![CDATA[Type "lazy jazz piano on a rainy day" into an AI music site and you get music, but how does AI know which sound goes with which sentence? Meet CLAP (Contrastive Language-Audio Pretraining), inspired by OpenAI's 2021 image-text model CLIP. It works like two towers: a sound tower and a text tower turn a dog's bark and the words "a dog is barking" into 512 numbers each, placed on one shared map where matching meanings sit close together. Training is a matching game: a batch of sounds and descriptions forms a table, true pairs on the diagonal are pulled together and the rest pushed apart, with no hand labeling needed. The result is zero-shot classification: LAION-CLAP (2022), trained on about 630,000 pairs, scores 91.0% on the 50-class ESC-50 environmental sound test, above Microsoft CLAP's 82.6%. Generative AI uses it too: AudioLDM trains on sound coordinates and swaps in text coordinates to generate; Google's MusicLM uses the similar MuLan (44 million recordings); the first Stable Audio used its own CLAP, while Stable Audio Open switched to T5. The CLAP score is also a common way to grade whether AI output matches its prompt. Its weakness: a 2023 study found it can't really tell "one after another" from "at the same time"; it mostly notices keywords.
+
+References:
+CLAP: Learning Audio Concepts From Natural Language Supervision（微軟 CLAP，2022）: https://arxiv.org/abs/2206.04769
+Large-scale Contrastive Language-Audio Pretraining（LAION-CLAP，2022）: https://arxiv.org/abs/2211.06687
+AudioLDM（2023）: https://arxiv.org/abs/2301.12503
+MuLan（2022）: https://arxiv.org/abs/2208.12415
+Audio-Text Models Do Not Yet Leverage Natural Language（2023）: https://arxiv.org/abs/2303.10667]]></itunes:summary>
+      <pubDate>Tue, 27 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep52.mp3" length="1383120" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep52.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:51</itunes:duration>
+      <itunes:episode>52</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1432,6 +1432,35 @@ Apple Music announces Spatial Audio and Lossless Audio（Apple Newsroom, 2021）
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:37</itunes:duration>
       <itunes:episode>51</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 怎麼聽懂你的提示詞？CLAP 文字和聲音的媒人</title>
+      <description><![CDATA[在 AI 音樂生成網站打一句「下雨天的慵懶爵士鋼琴」就有音樂，AI 怎麼知道文字跟哪種聲音配得起來？主角是 CLAP（對比式語言聲音預訓練），靈感來自 OpenAI 2021 年圖片配文字的 CLIP。它像兩座塔：聲音塔和文字塔把狗叫聲與「狗在叫」各自變成 512 個數字，放進同一張地圖，意思相配就靠近。訓練用配對遊戲：一批聲音和描述排成表格，對角線的正確配對拉近、其他推遠，不用人工貼標籤。練好後能零樣本分類：LAION-CLAP（2022）用約 63 萬組資料，在 ESC-50 五十種環境聲猜中 91.0%，比微軟 CLAP 的 82.6% 高。生成 AI 也用它：AudioLDM 練習時只看聲音座標、生成時換成文字座標；Google MusicLM 用類似的 MuLan（4400 萬首錄音）；第一代 Stable Audio 用自訓的 CLAP，Stable Audio Open 改用 T5。CLAP 分數也常被拿來評 AI 成品跟提示詞配不配。弱點：2023 年研究發現它分不太出「先後」和「同時」，比較像只認得關鍵字。
+
+參考資料：
+CLAP: Learning Audio Concepts From Natural Language Supervision（微軟 CLAP，2022）：https://arxiv.org/abs/2206.04769
+Large-scale Contrastive Language-Audio Pretraining（LAION-CLAP，2022）：https://arxiv.org/abs/2211.06687
+AudioLDM（2023）：https://arxiv.org/abs/2301.12503
+MuLan（2022）：https://arxiv.org/abs/2208.12415
+Audio-Text Models Do Not Yet Leverage Natural Language（2023）：https://arxiv.org/abs/2303.10667]]></description>
+      <itunes:summary><![CDATA[在 AI 音樂生成網站打一句「下雨天的慵懶爵士鋼琴」就有音樂，AI 怎麼知道文字跟哪種聲音配得起來？主角是 CLAP（對比式語言聲音預訓練），靈感來自 OpenAI 2021 年圖片配文字的 CLIP。它像兩座塔：聲音塔和文字塔把狗叫聲與「狗在叫」各自變成 512 個數字，放進同一張地圖，意思相配就靠近。訓練用配對遊戲：一批聲音和描述排成表格，對角線的正確配對拉近、其他推遠，不用人工貼標籤。練好後能零樣本分類：LAION-CLAP（2022）用約 63 萬組資料，在 ESC-50 五十種環境聲猜中 91.0%，比微軟 CLAP 的 82.6% 高。生成 AI 也用它：AudioLDM 練習時只看聲音座標、生成時換成文字座標；Google MusicLM 用類似的 MuLan（4400 萬首錄音）；第一代 Stable Audio 用自訓的 CLAP，Stable Audio Open 改用 T5。CLAP 分數也常被拿來評 AI 成品跟提示詞配不配。弱點：2023 年研究發現它分不太出「先後」和「同時」，比較像只認得關鍵字。
+
+參考資料：
+CLAP: Learning Audio Concepts From Natural Language Supervision（微軟 CLAP，2022）：https://arxiv.org/abs/2206.04769
+Large-scale Contrastive Language-Audio Pretraining（LAION-CLAP，2022）：https://arxiv.org/abs/2211.06687
+AudioLDM（2023）：https://arxiv.org/abs/2301.12503
+MuLan（2022）：https://arxiv.org/abs/2208.12415
+Audio-Text Models Do Not Yet Leverage Natural Language（2023）：https://arxiv.org/abs/2303.10667]]></itunes:summary>
+      <pubDate>Tue, 27 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep52.mp3" length="3684874" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep52.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:50</itunes:duration>
+      <itunes:episode>52</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
