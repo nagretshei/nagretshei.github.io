@@ -27,7 +27,7 @@ COUNTRIES = [
 # (名稱, 緯度, 經度)
 CITIES = [
     ("Taipei", 25.033, 121.565), ("Taichung", 24.148, 120.674), ("Kaohsiung", 22.627, 120.301), ("New York", 40.713, -74.006), ("Boston", 42.360, -71.059),
-    ("West Lafayette", 40.426, -86.908), ("Madison", 43.073, -89.401),
+    ("West Lafayette", 40.426, -86.908), ("Madison", 43.073, -89.401), ("Indianapolis", 39.768, -86.158),
     ("Carbondale", 37.727, -89.217),
     ("Calgary", 51.045, -114.072), ("Mexico City", 19.433, -99.133),
     ("Curitiba", -25.429, -49.271), ("Buenos Aires", -34.604, -58.382),
