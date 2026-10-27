@@ -424,6 +424,11 @@ nav.site-nav a.active { color: var(--accent-2); }
 .logo-chip img { height: 26px; width: auto; display: block; }
 .logo-chip img.logo-square { height: 40px; }
 
+/* ---------- World map ---------- */
+.world-map { margin: 8px 0 36px; }
+.world-map img { display: block; width: 100%; height: auto; }
+.world-map figcaption { margin-top: 6px; text-align: center; }
+
 /* ---------- Curated card (with logo) ---------- */
 .curated-card {
   display: flex;
