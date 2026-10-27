@@ -428,6 +428,92 @@ nav.site-nav a.active { color: var(--accent-2); }
 .world-map { margin: 8px 0 36px; }
 .world-map img { display: block; width: 100%; height: auto; }
 .world-map figcaption { margin-top: 6px; text-align: center; }
+.world-map-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.world-map-stage svg { display: block; width: 100%; height: auto; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.world-map-stage.zoomed { background: var(--bg-alt); }
+.world-map-stage.zoomed svg { touch-action: none; cursor: grab; }
+.world-map-stage.zoomed svg:active { cursor: grabbing; }
+.world-map-stage .land, .world-map-stage .country, .world-map-stage .city { vector-effect: non-scaling-stroke; }
+.world-map-stage .country:hover { fill: #255a8f; }
+.world-map-stage .city { pointer-events: none; transition: fill .15s; }
+.world-map-stage .city.active { fill: var(--text); }
+.world-map-stage .city-hits circle { fill: transparent; cursor: pointer; outline: none; }
+.world-map-stage .city-hits circle:focus-visible { stroke: var(--accent-2); stroke-width: 2px; vector-effect: non-scaling-stroke; }
+.world-map-controls {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  gap: 6px;
+}
+.world-map-controls button {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--surface-border);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .92);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+.world-map-controls button:hover { background: var(--surface); }
+.world-map-tip {
+  position: absolute;
+  z-index: 2;
+  max-width: min(300px, calc(100% - 8px));
+  padding: 10px 30px 10px 12px;
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(10, 42, 67, .16);
+  font-size: 13px;
+  line-height: 1.45;
+  max-height: calc(100% - 8px);
+  overflow-y: auto;
+}
+.world-map-tip.below { position: relative; left: auto !important; top: auto !important; max-width: none; max-height: none; margin: 8px 0 0; box-shadow: none; }
+.world-map-stage:has(.world-map-tip.below:not([hidden])) { overflow: visible; }
+.world-map-tip strong { display: block; margin-bottom: 4px; font-size: 14px; }
+.world-map-tip ul { margin: 0; padding-left: 16px; }
+.world-map-tip li { margin: 2px 0; }
+.world-map-tip a { color: var(--accent-2); }
+.world-map-tip-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: none;
+  color: var(--text-dim);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.world-map-label {
+  position: absolute;
+  z-index: 1;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--text);
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.card.flash { animation: card-flash 1.6s ease-out; }
+@keyframes card-flash {
+  0%, 30% { box-shadow: 0 0 0 3px var(--accent-2); }
+  100% { box-shadow: 0 0 0 3px transparent; }
+}
 
 /* ---------- Curated card (with logo) ---------- */
 .curated-card {
@@ -604,3 +690,8 @@ footer.site-footer {
 }
 footer.site-footer a { color: var(--text-dim); }
 footer.site-footer .social { margin-bottom: 10px; }
+@media (max-width: 560px) {
+  .world-map-controls { position: static; justify-content: flex-end; gap: 4px; margin-top: 6px; }
+  .world-map-controls button { min-width: 26px; height: 26px; padding: 0 7px; font-size: 13px; border-radius: 7px; }
+  .world-map-tip { font-size: 12px; padding: 8px 26px 8px 10px; }
+}
