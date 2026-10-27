@@ -422,6 +422,7 @@ nav.site-nav a.active { color: var(--accent-2); }
 }
 .logo-chip.dark { background: var(--text); border-color: var(--text); }
 .logo-chip img { height: 26px; width: auto; display: block; }
+.logo-chip img.logo-square { height: 40px; }
 
 /* ---------- Curated card (with logo) ---------- */
 .curated-card {
