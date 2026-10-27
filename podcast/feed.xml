@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 27 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1461,6 +1461,35 @@ Audio-Text Models Do Not Yet Leverage Natural Language（2023）：https://arxiv
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:50</itunes:duration>
       <itunes:episode>52</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 先畫照片再出聲？梅爾頻譜與神經聲碼器</title>
+      <description><![CDATA[很多會說話、會唱歌的 AI 不是直接做出聲音，而是先畫一張「聲音的照片」——梅爾頻譜，再請神經聲碼器把照片變回聲音。頻譜圖橫軸是時間、縱軸是高低、越亮越大聲；梅爾刻度（1937 年提出，名字來自 melody）照耳朵的感覺畫尺，低音區切得細、高音區切得粗，常用 80 格。但頻譜圖丟掉了相位（每條波的起跑點），1984 年的 Griffin-Lim 靠反覆猜測補回來，2022 年爆紅的 Riffusion 就用這招，聲音常帶金屬味。神經聲碼器讓 AI 學著畫波形：2016 年 DeepMind 的 WaveNet 一個點一個點畫，好聽但很慢；2020 年韓國 Kakao 的 HiFi-GAN 用生成對抗網路，仿畫家照梅爾頻譜畫波形、多組鑑定師分辨真假，在一張 V100 GPU 上比即時快 167.9 倍；2022 年 NVIDIA 的 BigVGAN 是通用聲碼器，沒聽過的歌聲、小提琴也畫得出來，第二版支援 44.1kHz。AudioLDM 先用擴散模型畫梅爾頻譜再交給 HiFi-GAN 出聲；MusicGen 則走 EnCodec 解碼器的另一條路。
+
+參考資料：
+A Scale for the Measurement of the Psychological Magnitude Pitch（1937）：https://doi.org/10.1121/1.1915893
+WaveNet（2016）：https://arxiv.org/abs/1609.03499
+HiFi-GAN（2020）：https://arxiv.org/abs/2010.05646
+BigVGAN（2022）：https://arxiv.org/abs/2206.04658
+AudioLDM（2023）：https://arxiv.org/abs/2301.12503]]></description>
+      <itunes:summary><![CDATA[很多會說話、會唱歌的 AI 不是直接做出聲音，而是先畫一張「聲音的照片」——梅爾頻譜，再請神經聲碼器把照片變回聲音。頻譜圖橫軸是時間、縱軸是高低、越亮越大聲；梅爾刻度（1937 年提出，名字來自 melody）照耳朵的感覺畫尺，低音區切得細、高音區切得粗，常用 80 格。但頻譜圖丟掉了相位（每條波的起跑點），1984 年的 Griffin-Lim 靠反覆猜測補回來，2022 年爆紅的 Riffusion 就用這招，聲音常帶金屬味。神經聲碼器讓 AI 學著畫波形：2016 年 DeepMind 的 WaveNet 一個點一個點畫，好聽但很慢；2020 年韓國 Kakao 的 HiFi-GAN 用生成對抗網路，仿畫家照梅爾頻譜畫波形、多組鑑定師分辨真假，在一張 V100 GPU 上比即時快 167.9 倍；2022 年 NVIDIA 的 BigVGAN 是通用聲碼器，沒聽過的歌聲、小提琴也畫得出來，第二版支援 44.1kHz。AudioLDM 先用擴散模型畫梅爾頻譜再交給 HiFi-GAN 出聲；MusicGen 則走 EnCodec 解碼器的另一條路。
+
+參考資料：
+A Scale for the Measurement of the Psychological Magnitude Pitch（1937）：https://doi.org/10.1121/1.1915893
+WaveNet（2016）：https://arxiv.org/abs/1609.03499
+HiFi-GAN（2020）：https://arxiv.org/abs/2010.05646
+BigVGAN（2022）：https://arxiv.org/abs/2206.04658
+AudioLDM（2023）：https://arxiv.org/abs/2301.12503]]></itunes:summary>
+      <pubDate>Wed, 28 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep53.mp3" length="3734611" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep53.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:53</itunes:duration>
+      <itunes:episode>53</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 27 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1461,6 +1461,35 @@ Audio-Text Models Do Not Yet Leverage Natural Language（2023）: https://arxiv.
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:51</itunes:duration>
       <itunes:episode>52</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>AI Draws a Photo Before It Speaks? Mel Spectrograms and Neural Vocoders</title>
+      <description><![CDATA[Many AIs that talk or sing don't make sound directly: they first draw a "photo of sound," the mel spectrogram, and a neural vocoder turns it back into audio. A spectrogram puts time on the horizontal axis and pitch on the vertical, with brighter meaning louder; the mel scale (proposed in 1937, named after "melody") redraws the ruler the way ears hear, with fine slices for low sounds and coarse ones for high, often just 80 bands. But a spectrogram throws away phase, each wave's starting line. Griffin-Lim (1984) guesses it back over and over, and viral 2022 app Riffusion used it, giving a metallic flavor. Neural vocoders let AI learn to paint waveforms: DeepMind's WaveNet (2016) painted one point at a time, beautiful but slow; Kakao's HiFi-GAN (2020) uses a generative adversarial network, a forger painting waveforms from the mel spectrogram while teams of detectives judge real from fake, running 167.9x faster than real time on one V100 GPU; NVIDIA's BigVGAN (2022) is a universal vocoder that handles unseen singing and violins, and v2 supports 44.1 kHz. AudioLDM draws a mel spectrogram with diffusion and hands it to HiFi-GAN, while MusicGen takes the other road with the EnCodec decoder.
+
+References:
+A Scale for the Measurement of the Psychological Magnitude Pitch (1937): https://doi.org/10.1121/1.1915893
+WaveNet (2016): https://arxiv.org/abs/1609.03499
+HiFi-GAN (2020): https://arxiv.org/abs/2010.05646
+BigVGAN (2022): https://arxiv.org/abs/2206.04658
+AudioLDM (2023): https://arxiv.org/abs/2301.12503]]></description>
+      <itunes:summary><![CDATA[Many AIs that talk or sing don't make sound directly: they first draw a "photo of sound," the mel spectrogram, and a neural vocoder turns it back into audio. A spectrogram puts time on the horizontal axis and pitch on the vertical, with brighter meaning louder; the mel scale (proposed in 1937, named after "melody") redraws the ruler the way ears hear, with fine slices for low sounds and coarse ones for high, often just 80 bands. But a spectrogram throws away phase, each wave's starting line. Griffin-Lim (1984) guesses it back over and over, and viral 2022 app Riffusion used it, giving a metallic flavor. Neural vocoders let AI learn to paint waveforms: DeepMind's WaveNet (2016) painted one point at a time, beautiful but slow; Kakao's HiFi-GAN (2020) uses a generative adversarial network, a forger painting waveforms from the mel spectrogram while teams of detectives judge real from fake, running 167.9x faster than real time on one V100 GPU; NVIDIA's BigVGAN (2022) is a universal vocoder that handles unseen singing and violins, and v2 supports 44.1 kHz. AudioLDM draws a mel spectrogram with diffusion and hands it to HiFi-GAN, while MusicGen takes the other road with the EnCodec decoder.
+
+References:
+A Scale for the Measurement of the Psychological Magnitude Pitch (1937): https://doi.org/10.1121/1.1915893
+WaveNet (2016): https://arxiv.org/abs/1609.03499
+HiFi-GAN (2020): https://arxiv.org/abs/2010.05646
+BigVGAN (2022): https://arxiv.org/abs/2206.04658
+AudioLDM (2023): https://arxiv.org/abs/2301.12503]]></itunes:summary>
+      <pubDate>Wed, 28 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep53.mp3" length="1469232" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep53.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:05</itunes:duration>
+      <itunes:episode>53</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep53 · 2026/10/28</span>
+        <div class="lang-zh">
+          <h3>AI 先畫照片再出聲？梅爾頻譜與神經聲碼器</h3>
+          <p>很多會說話、會唱歌的 AI 不是直接做出聲音，而是先畫一張「聲音的照片」——梅爾頻譜，再請神經聲碼器把照片變回聲音。頻譜圖橫軸是時間、縱軸是高低、越亮越大聲；梅爾刻度（1937 年提出，名字來自 melody）照耳朵的感覺畫尺，低音區切得細、高音區切得粗，常用 80 格。但頻譜圖丟掉了相位（每條波的起跑點），1984 年的 Griffin-Lim 靠反覆猜測補回來，2022 年爆紅的 Riffusion 就用這招，聲音常帶金屬味。神經聲碼器讓 AI 學著畫波形：2016 年 DeepMind 的 WaveNet 一個點一個點畫，好聽但很慢；2020 年韓國 Kakao 的 HiFi-GAN 用生成對抗網路，仿畫家照梅爾頻譜畫波形、多組鑑定師分辨真假，在一張 V100 GPU 上比即時快 167.9 倍；2022 年 NVIDIA 的 BigVGAN 是通用聲碼器，沒聽過的歌聲、小提琴也畫得出來，第二版支援 44.1kHz。AudioLDM 先用擴散模型畫梅爾頻譜再交給 HiFi-GAN 出聲；MusicGen 則走 EnCodec 解碼器的另一條路。</p>
+          <audio controls preload="none" src="podcast/audio/ep53.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>AI Draws a Photo Before It Speaks? Mel Spectrograms and Neural Vocoders</h3>
+          <p>Many AIs that talk or sing don&#x27;t make sound directly: they first draw a &quot;photo of sound,&quot; the mel spectrogram, and a neural vocoder turns it back into audio. A spectrogram puts time on the horizontal axis and pitch on the vertical, with brighter meaning louder; the mel scale (proposed in 1937, named after &quot;melody&quot;) redraws the ruler the way ears hear, with fine slices for low sounds and coarse ones for high, often just 80 bands. But a spectrogram throws away phase, each wave&#x27;s starting line. Griffin-Lim (1984) guesses it back over and over, and viral 2022 app Riffusion used it, giving a metallic flavor. Neural vocoders let AI learn to paint waveforms: DeepMind&#x27;s WaveNet (2016) painted one point at a time, beautiful but slow; Kakao&#x27;s HiFi-GAN (2020) uses a generative adversarial network, a forger painting waveforms from the mel spectrogram while teams of detectives judge real from fake, running 167.9x faster than real time on one V100 GPU; NVIDIA&#x27;s BigVGAN (2022) is a universal vocoder that handles unseen singing and violins, and v2 supports 44.1 kHz. AudioLDM draws a mel spectrogram with diffusion and hands it to HiFi-GAN, while MusicGen takes the other road with the EnCodec decoder.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep53.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep52 · 2026/10/27</span>
         <div class="lang-zh">
           <h3>AI 怎麼聽懂你的提示詞？CLAP 文字和聲音的媒人</h3>
