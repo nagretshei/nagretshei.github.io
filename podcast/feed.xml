@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 28 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1490,6 +1490,37 @@ AudioLDM（2023）：https://arxiv.org/abs/2301.12503]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:53</itunes:duration>
       <itunes:episode>53</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 不繞路了！流匹配 Flow Matching 讓生成走直線</title>
+      <description><![CDATA[擴散模型要一步一步擦掉雜訊，從雜訊走回聲音的路常常彎彎曲曲，所以步數多、速度慢。流匹配（Flow Matching）的想法是乾脆走直線：每次抽一段真聲音和一把雜訊連成直線，在線上隨便選一點（兩者按比例混合），考模型「該往哪走、走多快」，正確答案就是真聲音減掉雜訊，不用模擬整條路。練久了模型心中就有一張箭頭地圖（向量場），生成時從雜訊出發、跟著箭頭走幾步就到。但幾百萬條直線交叉，整體路線還是有點彎：2022 年德州大學團隊的整流（Rectified Flow）用練好的模型再配一次對、再練一次把路拉直；同年 Meta 發表 Flow Matching 論文。語音 AI 最早大量採用：Meta 的 Voicebox（2023）、上海交通大學等團隊開源的 F5-TTS（2024，10 萬小時多語言，十秒語音約一秒半做好，Sway Sampling 把步子多花在開頭）。音樂方面：開源 ACE-Step（2025）在潛空間用流匹配，A100 約 20 秒做出 4 分鐘的歌；2026 年 5 月的 Stable Audio 3 以流匹配打底，再加對抗式後訓練減少步數，H200 不到 2 秒，小型和中型開放權重。
+
+參考資料：
+Flow Matching for Generative Modeling（Lipman et al. 2022）：https://arxiv.org/abs/2210.02747
+Rectified Flow（Liu, Gong & Liu 2022）：https://arxiv.org/abs/2209.03003
+Voicebox（Le et al. 2023）：https://arxiv.org/abs/2306.15687
+F5-TTS（Chen et al. 2024）：https://arxiv.org/abs/2410.06885
+ACE-Step（2025）：https://arxiv.org/abs/2506.00045
+Stable Audio 3（2026）：https://arxiv.org/abs/2605.17991]]></description>
+      <itunes:summary><![CDATA[擴散模型要一步一步擦掉雜訊，從雜訊走回聲音的路常常彎彎曲曲，所以步數多、速度慢。流匹配（Flow Matching）的想法是乾脆走直線：每次抽一段真聲音和一把雜訊連成直線，在線上隨便選一點（兩者按比例混合），考模型「該往哪走、走多快」，正確答案就是真聲音減掉雜訊，不用模擬整條路。練久了模型心中就有一張箭頭地圖（向量場），生成時從雜訊出發、跟著箭頭走幾步就到。但幾百萬條直線交叉，整體路線還是有點彎：2022 年德州大學團隊的整流（Rectified Flow）用練好的模型再配一次對、再練一次把路拉直；同年 Meta 發表 Flow Matching 論文。語音 AI 最早大量採用：Meta 的 Voicebox（2023）、上海交通大學等團隊開源的 F5-TTS（2024，10 萬小時多語言，十秒語音約一秒半做好，Sway Sampling 把步子多花在開頭）。音樂方面：開源 ACE-Step（2025）在潛空間用流匹配，A100 約 20 秒做出 4 分鐘的歌；2026 年 5 月的 Stable Audio 3 以流匹配打底，再加對抗式後訓練減少步數，H200 不到 2 秒，小型和中型開放權重。
+
+參考資料：
+Flow Matching for Generative Modeling（Lipman et al. 2022）：https://arxiv.org/abs/2210.02747
+Rectified Flow（Liu, Gong & Liu 2022）：https://arxiv.org/abs/2209.03003
+Voicebox（Le et al. 2023）：https://arxiv.org/abs/2306.15687
+F5-TTS（Chen et al. 2024）：https://arxiv.org/abs/2410.06885
+ACE-Step（2025）：https://arxiv.org/abs/2506.00045
+Stable Audio 3（2026）：https://arxiv.org/abs/2605.17991]]></itunes:summary>
+      <pubDate>Thu, 29 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep54.mp3" length="3445383" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep54.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:35</itunes:duration>
+      <itunes:episode>54</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

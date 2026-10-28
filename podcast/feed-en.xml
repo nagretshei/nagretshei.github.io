@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 28 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1490,6 +1490,37 @@ AudioLDM (2023): https://arxiv.org/abs/2301.12503]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:05</itunes:duration>
       <itunes:episode>53</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>AI Stops Taking Detours! Flow Matching Walks a Straight Line</title>
+      <description><![CDATA[Diffusion models wipe away noise one step at a time, and the path from noise back to sound is often twisty, so they need many steps and run slowly. Flow matching's idea is to just walk a straight line: take a piece of real sound and a handful of noise, connect them, pick any point on the line (the two mixed in proportion), and test the model on which way to go and how fast. The right answer is the real sound minus the noise, with no need to simulate the whole path. After lots of practice the model has an arrow map in its head (a vector field); to generate, start from noise and follow the arrows for a few steps. But millions of crossing lines still make the overall path bend a little: rectified flow (University of Texas, 2022) re-pairs with the trained model and trains again to straighten it, and Meta published the Flow Matching paper the same year. Speech AI adopted it first: Meta's Voicebox (2023) and the open-source F5-TTS (2024, led by Shanghai Jiao Tong University, 100,000 hours of multilingual speech, ten seconds of speech in about 1.5 seconds, with Sway Sampling spending more steps at the start). In music, open-source ACE-Step (2025) uses flow matching in latent space and makes a four-minute song in about 20 seconds on an A100; Stable Audio 3 (May 2026) builds on flow matching plus adversarial post-training to cut steps, taking under 2 seconds on an H200, with small and medium weights released.
+
+References:
+Flow Matching for Generative Modeling (Lipman et al. 2022): https://arxiv.org/abs/2210.02747
+Rectified Flow (Liu, Gong & Liu 2022): https://arxiv.org/abs/2209.03003
+Voicebox (Le et al. 2023): https://arxiv.org/abs/2306.15687
+F5-TTS (Chen et al. 2024): https://arxiv.org/abs/2410.06885
+ACE-Step (2025): https://arxiv.org/abs/2506.00045
+Stable Audio 3 (2026): https://arxiv.org/abs/2605.17991]]></description>
+      <itunes:summary><![CDATA[Diffusion models wipe away noise one step at a time, and the path from noise back to sound is often twisty, so they need many steps and run slowly. Flow matching's idea is to just walk a straight line: take a piece of real sound and a handful of noise, connect them, pick any point on the line (the two mixed in proportion), and test the model on which way to go and how fast. The right answer is the real sound minus the noise, with no need to simulate the whole path. After lots of practice the model has an arrow map in its head (a vector field); to generate, start from noise and follow the arrows for a few steps. But millions of crossing lines still make the overall path bend a little: rectified flow (University of Texas, 2022) re-pairs with the trained model and trains again to straighten it, and Meta published the Flow Matching paper the same year. Speech AI adopted it first: Meta's Voicebox (2023) and the open-source F5-TTS (2024, led by Shanghai Jiao Tong University, 100,000 hours of multilingual speech, ten seconds of speech in about 1.5 seconds, with Sway Sampling spending more steps at the start). In music, open-source ACE-Step (2025) uses flow matching in latent space and makes a four-minute song in about 20 seconds on an A100; Stable Audio 3 (May 2026) builds on flow matching plus adversarial post-training to cut steps, taking under 2 seconds on an H200, with small and medium weights released.
+
+References:
+Flow Matching for Generative Modeling (Lipman et al. 2022): https://arxiv.org/abs/2210.02747
+Rectified Flow (Liu, Gong & Liu 2022): https://arxiv.org/abs/2209.03003
+Voicebox (Le et al. 2023): https://arxiv.org/abs/2306.15687
+F5-TTS (Chen et al. 2024): https://arxiv.org/abs/2410.06885
+ACE-Step (2025): https://arxiv.org/abs/2506.00045
+Stable Audio 3 (2026): https://arxiv.org/abs/2605.17991]]></itunes:summary>
+      <pubDate>Thu, 29 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep54.mp3" length="1371888" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep54.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:49</itunes:duration>
+      <itunes:episode>54</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
