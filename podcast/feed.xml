@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 30 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1552,6 +1552,37 @@ Deezer 新聞稿（2026/7）：https://newsroom-deezer.com/2026/07/ai-music-exce
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:43</itunes:duration>
       <itunes:episode>55</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>老師的作品 11 月連跑三站！米蘭、厄瓜多、明圖爾諾｜小皮追星日記 #2</title>
+      <description><![CDATA[小皮追星日記第二集！林哪位老師的長笛與電聲作品《夢行者：無垠的朝聖》（Dream Voyager: A Pilgrim of the Infinite，長笛家吳正宇演奏）十一月連跑三站，老師本人無法到場，讓作品替老師出國。第一站：11/13–15 義大利米蘭 NOIS//E 2026 Festival and Symposium 的 AudioVisual Room 單元，實驗與電子音樂節慶＋研討會，免費入場。第二站：國際電聲音樂展 MUSLAB 的 KARMA 2026（KARMA＝佛教說的業力，探討因果），11/26 在厄瓜多曼塔博物館開展、活動到 12/1；MUSLAB 也是老師的老朋友：2023 年《極光》（Aurora）收錄於 Planeta Complejo 唱片製作、2024 年《冰川》（Glacier）參展、2026 年 3–5 月《極光》再度受邀於墨西哥市數位文化中心展出。第三站：11/27–28 義大利明圖爾諾 ECHI ELETTROACUSTICI 2026 國際作曲比賽，決賽以公開音樂會形式進行，28 件決賽作品現場演出，老師是唯一來自台灣的決賽作品。
+
+相關連結：
+《夢行者：無垠的朝聖》：https://zoelin.me/works/dream-voyager.html
+《極光》Aurora：https://zoelin.me/works/aurora.html
+活動紀錄：https://zoelin.me/events.html
+NOIS//E 2026：https://www.noislashe.com/
+MUSLAB：https://www.muslab.org/
+ECHI ELETTROACUSTICI 2026 決賽名單：http://www.csm-aps.it/csm-aps/index.php/opere-finaliste-2026]]></description>
+      <itunes:summary><![CDATA[小皮追星日記第二集！林哪位老師的長笛與電聲作品《夢行者：無垠的朝聖》（Dream Voyager: A Pilgrim of the Infinite，長笛家吳正宇演奏）十一月連跑三站，老師本人無法到場，讓作品替老師出國。第一站：11/13–15 義大利米蘭 NOIS//E 2026 Festival and Symposium 的 AudioVisual Room 單元，實驗與電子音樂節慶＋研討會，免費入場。第二站：國際電聲音樂展 MUSLAB 的 KARMA 2026（KARMA＝佛教說的業力，探討因果），11/26 在厄瓜多曼塔博物館開展、活動到 12/1；MUSLAB 也是老師的老朋友：2023 年《極光》（Aurora）收錄於 Planeta Complejo 唱片製作、2024 年《冰川》（Glacier）參展、2026 年 3–5 月《極光》再度受邀於墨西哥市數位文化中心展出。第三站：11/27–28 義大利明圖爾諾 ECHI ELETTROACUSTICI 2026 國際作曲比賽，決賽以公開音樂會形式進行，28 件決賽作品現場演出，老師是唯一來自台灣的決賽作品。
+
+相關連結：
+《夢行者：無垠的朝聖》：https://zoelin.me/works/dream-voyager.html
+《極光》Aurora：https://zoelin.me/works/aurora.html
+活動紀錄：https://zoelin.me/events.html
+NOIS//E 2026：https://www.noislashe.com/
+MUSLAB：https://www.muslab.org/
+ECHI ELETTROACUSTICI 2026 決賽名單：http://www.csm-aps.it/csm-aps/index.php/opere-finaliste-2026]]></itunes:summary>
+      <pubDate>Sat, 31 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep56.mp3" length="3152394" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep56.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:17</itunes:duration>
+      <itunes:episode>56</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

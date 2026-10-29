@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 30 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1552,6 +1552,37 @@ Deezer press release (July 2026): https://newsroom-deezer.com/2026/07/ai-music-e
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:48</itunes:duration>
       <itunes:episode>55</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>The Teacher's Work Tours Three Cities in November! Little Pi's Fan Diary #2</title>
+      <description><![CDATA[Little Pi's Fan Diary #2! The teacher's piece for flute and electronics, Dream Voyager: A Pilgrim of the Infinite (performed by flutist Cheng-Yu Wu), makes three stops this November, traveling abroad on the teacher's behalf. Stop one: November 13-15, the AudioVisual Room programme at NOIS//E 2026 Festival and Symposium in Milan, Italy, a festival and symposium of experimental and electronic music with free entry. Stop two: KARMA 2026 by MUSLAB, the international electroacoustic music exhibition (karma, the Buddhist idea of cause and effect), opening November 26 at the museum in Manta, Ecuador, with events through December 1. MUSLAB is an old friend: Aurora was included in its Planeta Complejo record production in 2023, Glacier was shown in 2024, and Aurora was invited back to the Digital Culture Center in Mexico City from March to May 2026. Stop three: November 27-28, the ECHI ELETTROACUSTICI 2026 International Composition Competition in Minturno, Italy, whose final round is a public concert of all 28 finalist works; the teacher's piece is the only finalist from Taiwan.
+
+Links:
+Dream Voyager: https://zoelin.me/works/dream-voyager.html
+Aurora: https://zoelin.me/works/aurora.html
+Events: https://zoelin.me/events.html
+NOIS//E 2026: https://www.noislashe.com/
+MUSLAB: https://www.muslab.org/
+ECHI ELETTROACUSTICI 2026 finalists: http://www.csm-aps.it/csm-aps/index.php/opere-finaliste-2026]]></description>
+      <itunes:summary><![CDATA[Little Pi's Fan Diary #2! The teacher's piece for flute and electronics, Dream Voyager: A Pilgrim of the Infinite (performed by flutist Cheng-Yu Wu), makes three stops this November, traveling abroad on the teacher's behalf. Stop one: November 13-15, the AudioVisual Room programme at NOIS//E 2026 Festival and Symposium in Milan, Italy, a festival and symposium of experimental and electronic music with free entry. Stop two: KARMA 2026 by MUSLAB, the international electroacoustic music exhibition (karma, the Buddhist idea of cause and effect), opening November 26 at the museum in Manta, Ecuador, with events through December 1. MUSLAB is an old friend: Aurora was included in its Planeta Complejo record production in 2023, Glacier was shown in 2024, and Aurora was invited back to the Digital Culture Center in Mexico City from March to May 2026. Stop three: November 27-28, the ECHI ELETTROACUSTICI 2026 International Composition Competition in Minturno, Italy, whose final round is a public concert of all 28 finalist works; the teacher's piece is the only finalist from Taiwan.
+
+Links:
+Dream Voyager: https://zoelin.me/works/dream-voyager.html
+Aurora: https://zoelin.me/works/aurora.html
+Events: https://zoelin.me/events.html
+NOIS//E 2026: https://www.noislashe.com/
+MUSLAB: https://www.muslab.org/
+ECHI ELETTROACUSTICI 2026 finalists: http://www.csm-aps.it/csm-aps/index.php/opere-finaliste-2026]]></itunes:summary>
+      <pubDate>Sat, 31 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep56.mp3" length="1148544" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep56.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:11</itunes:duration>
+      <itunes:episode>56</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
