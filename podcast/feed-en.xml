@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 29 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1521,6 +1521,37 @@ Stable Audio 3 (2026): https://arxiv.org/abs/2605.17991]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:49</itunes:duration>
       <itunes:episode>54</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Was This Song Made by AI? How Audio Watermarks and AI Detection Work</title>
+      <description><![CDATA[AI songs sound more and more real: in July 2026 Deezer announced that more than half of the new songs uploaded each day are made by AI (about 90,000 a day at the June peak). There are two ways to tell AI audio apart. Watermarking slips an inaudible code into the sound at generation time and reads it back later with a decoder: very accurate, but it needs the AI company's cooperation. Detection looks for traces the AI left behind: it works on anyone's song but can guess wrong. Audio watermarks are trained with two neural networks together (an embedder and a detector), with deliberate attacks in between: MP3 conversion, noise, speed-ups, cuts. Meta's open-source AudioSeal (2024) scores every 1/16,000 of a second, so it can highlight the AI part of a spliced clip, and detects up to about 100x faster than WavMark. Google's SynthID sits in every sound made by Lyria; its checking site opened to everyone on October 7, but it only recognizes Google's and partners' codes, so Suno and Udio songs come back not detected. Not detected does not mean human-made. With no watermark, Deezer's team found that autoencoders leave evenly spaced little spikes on the spectrum when they scale data back up into sound, an AI fingerprint that reaches over 99% accuracy in several scenarios (ISMIR 2025 best paper). But pitch shifting, recompression, and new architectures make detection harder. AI songs are half the uploads yet only 1-3% of plays, and about 85% of those plays are fraudulent and go unpaid.
+
+References:
+AudioSeal (San Roman et al. 2024): https://arxiv.org/abs/2401.17264
+WavMark (Chen et al. 2023): https://arxiv.org/abs/2308.12770
+SynthID (Google DeepMind): https://deepmind.google/technologies/synthid/
+AI-Generated Music Detection and its Challenges (Afchar et al. 2025): https://arxiv.org/abs/2501.10111
+A Fourier Explanation of AI-music Artifacts (Afchar et al. 2025): https://arxiv.org/abs/2506.19108
+Deezer press release (July 2026): https://newsroom-deezer.com/2026/07/ai-music-exceeds-50-percent-daily-uploads-deezer/]]></description>
+      <itunes:summary><![CDATA[AI songs sound more and more real: in July 2026 Deezer announced that more than half of the new songs uploaded each day are made by AI (about 90,000 a day at the June peak). There are two ways to tell AI audio apart. Watermarking slips an inaudible code into the sound at generation time and reads it back later with a decoder: very accurate, but it needs the AI company's cooperation. Detection looks for traces the AI left behind: it works on anyone's song but can guess wrong. Audio watermarks are trained with two neural networks together (an embedder and a detector), with deliberate attacks in between: MP3 conversion, noise, speed-ups, cuts. Meta's open-source AudioSeal (2024) scores every 1/16,000 of a second, so it can highlight the AI part of a spliced clip, and detects up to about 100x faster than WavMark. Google's SynthID sits in every sound made by Lyria; its checking site opened to everyone on October 7, but it only recognizes Google's and partners' codes, so Suno and Udio songs come back not detected. Not detected does not mean human-made. With no watermark, Deezer's team found that autoencoders leave evenly spaced little spikes on the spectrum when they scale data back up into sound, an AI fingerprint that reaches over 99% accuracy in several scenarios (ISMIR 2025 best paper). But pitch shifting, recompression, and new architectures make detection harder. AI songs are half the uploads yet only 1-3% of plays, and about 85% of those plays are fraudulent and go unpaid.
+
+References:
+AudioSeal (San Roman et al. 2024): https://arxiv.org/abs/2401.17264
+WavMark (Chen et al. 2023): https://arxiv.org/abs/2308.12770
+SynthID (Google DeepMind): https://deepmind.google/technologies/synthid/
+AI-Generated Music Detection and its Challenges (Afchar et al. 2025): https://arxiv.org/abs/2501.10111
+A Fourier Explanation of AI-music Artifacts (Afchar et al. 2025): https://arxiv.org/abs/2506.19108
+Deezer press release (July 2026): https://newsroom-deezer.com/2026/07/ai-music-exceeds-50-percent-daily-uploads-deezer/]]></itunes:summary>
+      <pubDate>Fri, 30 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep55.mp3" length="1365408" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep55.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:48</itunes:duration>
+      <itunes:episode>55</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

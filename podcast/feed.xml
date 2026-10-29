@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 29 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1521,6 +1521,37 @@ Stable Audio 3（2026）：https://arxiv.org/abs/2605.17991]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:35</itunes:duration>
       <itunes:episode>54</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>這首歌是 AI 做的嗎？音樂浮水印與 AI 偵測怎麼運作</title>
+      <description><![CDATA[AI 做的歌越來越像真的，Deezer 2026 年 7 月公布：每天新上傳的歌已經有一半以上是 AI 做的（6 月高峰約一天 9 萬首）。分辨 AI 聲音有兩條路：浮水印是生成時就在聲音裡加入人耳聽不出的暗號，之後用解碼器讀出來，很準但要 AI 公司配合；偵測是事後找 AI 留下的痕跡，誰的歌都能查但可能猜錯。聲音浮水印用兩個神經網路一起練（嵌入器＋偵測器），中間故意轉 MP3、加雜音、加速、剪片段來搗亂。Meta 2024 開源的 AudioSeal 每 1/16000 秒打一個分數，混剪也能標出 AI 那一段，偵測比 WavMark 快最多約兩個數量級。Google 的 SynthID 藏在 Lyria 做的每段聲音裡，10/7 檢查網站開放給所有人，但只認得 Google 與合作夥伴的暗號，Suno、Udio 的歌查不到——沒偵測到不代表是真人做的。沒有浮水印怎麼辦？Deezer 團隊發現自編碼器把資料放大還原時，會在頻譜上留下規律的小尖刺，像 AI 的指紋，好幾種情況準確度超過 99%，獲 ISMIR 2025 最佳論文。但升降音高、再壓縮、換模型架構都會讓偵測變難；AI 歌雖佔一半上傳，只佔總播放 1–3%，其中約 85% 是灌播放數，Deezer 不付錢。
+
+參考資料：
+AudioSeal（San Roman et al. 2024）：https://arxiv.org/abs/2401.17264
+WavMark（Chen et al. 2023）：https://arxiv.org/abs/2308.12770
+SynthID（Google DeepMind）：https://deepmind.google/technologies/synthid/
+AI-Generated Music Detection and its Challenges（Afchar et al. 2025）：https://arxiv.org/abs/2501.10111
+A Fourier Explanation of AI-music Artifacts（Afchar et al. 2025）：https://arxiv.org/abs/2506.19108
+Deezer 新聞稿（2026/7）：https://newsroom-deezer.com/2026/07/ai-music-exceeds-50-percent-daily-uploads-deezer/]]></description>
+      <itunes:summary><![CDATA[AI 做的歌越來越像真的，Deezer 2026 年 7 月公布：每天新上傳的歌已經有一半以上是 AI 做的（6 月高峰約一天 9 萬首）。分辨 AI 聲音有兩條路：浮水印是生成時就在聲音裡加入人耳聽不出的暗號，之後用解碼器讀出來，很準但要 AI 公司配合；偵測是事後找 AI 留下的痕跡，誰的歌都能查但可能猜錯。聲音浮水印用兩個神經網路一起練（嵌入器＋偵測器），中間故意轉 MP3、加雜音、加速、剪片段來搗亂。Meta 2024 開源的 AudioSeal 每 1/16000 秒打一個分數，混剪也能標出 AI 那一段，偵測比 WavMark 快最多約兩個數量級。Google 的 SynthID 藏在 Lyria 做的每段聲音裡，10/7 檢查網站開放給所有人，但只認得 Google 與合作夥伴的暗號，Suno、Udio 的歌查不到——沒偵測到不代表是真人做的。沒有浮水印怎麼辦？Deezer 團隊發現自編碼器把資料放大還原時，會在頻譜上留下規律的小尖刺，像 AI 的指紋，好幾種情況準確度超過 99%，獲 ISMIR 2025 最佳論文。但升降音高、再壓縮、換模型架構都會讓偵測變難；AI 歌雖佔一半上傳，只佔總播放 1–3%，其中約 85% 是灌播放數，Deezer 不付錢。
+
+參考資料：
+AudioSeal（San Roman et al. 2024）：https://arxiv.org/abs/2401.17264
+WavMark（Chen et al. 2023）：https://arxiv.org/abs/2308.12770
+SynthID（Google DeepMind）：https://deepmind.google/technologies/synthid/
+AI-Generated Music Detection and its Challenges（Afchar et al. 2025）：https://arxiv.org/abs/2501.10111
+A Fourier Explanation of AI-music Artifacts（Afchar et al. 2025）：https://arxiv.org/abs/2506.19108
+Deezer 新聞稿（2026/7）：https://newsroom-deezer.com/2026/07/ai-music-exceeds-50-percent-daily-uploads-deezer/]]></itunes:summary>
+      <pubDate>Fri, 30 Oct 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep55.mp3" length="3570771" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep55.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:43</itunes:duration>
+      <itunes:episode>55</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
