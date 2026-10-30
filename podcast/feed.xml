@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1583,6 +1583,68 @@ ECHI ELETTROACUSTICI 2026 決賽名單：http://www.csm-aps.it/csm-aps/index.php
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:17</itunes:duration>
       <itunes:episode>56</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼流行歌的人聲都好準？Auto-Tune 修音怎麼運作</title>
+      <description><![CDATA[流行歌的人聲為什麼每個音都那麼準？一跳一跳的機器人聲又是怎麼來的？Auto-Tune 的發明人 Andy Hildebrand 原本是石油公司 Exxon 的工程師，用震波分析地底找石油；據說一次晚餐朋友開玩笑要他做一台讓人唱歌不走音的盒子，他發現分析震波的數學也能分析人聲，1997 年 Auto-Tune 誕生。修音分三步：先用自相關（把波形跟自己錯開比對，錯開剛好一圈時疊得最整齊）聽出你唱多高，再找出這首歌會用到的音裡最近的那一個，然後只把音高推過去、不改速度和歌詞。關鍵旋鈕「修正速度」設慢很自然，設成 0 音高會瞬間跳格子，就是 1998 年 Cher〈Believe〉的機器人聲（據說製作人一開始還說是聲碼器做的）。為什麼不會變花栗鼠？好的修音只移音高、保留共振峰（喉嚨和口腔形狀造成的嗓音特色）；Melodyne 更把每個音畫成色塊讓錄音師拖拉。T-Pain 把機器人聲變成招牌，2009 年 Jay-Z 發歌〈D.O.A.（Death of Auto-Tune）〉，但修音沒有消失：現在輕修音幾乎是錄音標配，明顯的機器人聲則成了一種效果，像電吉他的破音。
+
+參考資料：
+Auto-Tune（維基百科）：https://en.wikipedia.org/wiki/Auto-Tune
+Antares Auto-Tune：https://www.antarestech.com/
+How An Oil Engineer Created Auto-Tune（Vice）：https://thump.vice.com/en_ca/article/how-an-oil-engineer-created-auto-tune-and-changed-music-forever
+The Number Ones: Cher's Believe（Stereogum）：https://stereogum.com/2191750/the-number-ones-chers-believe/columns/the-number-ones
+Celemony Melodyne：https://www.celemony.com/
+Formant（維基百科）：https://en.wikipedia.org/wiki/Formant]]></description>
+      <itunes:summary><![CDATA[流行歌的人聲為什麼每個音都那麼準？一跳一跳的機器人聲又是怎麼來的？Auto-Tune 的發明人 Andy Hildebrand 原本是石油公司 Exxon 的工程師，用震波分析地底找石油；據說一次晚餐朋友開玩笑要他做一台讓人唱歌不走音的盒子，他發現分析震波的數學也能分析人聲，1997 年 Auto-Tune 誕生。修音分三步：先用自相關（把波形跟自己錯開比對，錯開剛好一圈時疊得最整齊）聽出你唱多高，再找出這首歌會用到的音裡最近的那一個，然後只把音高推過去、不改速度和歌詞。關鍵旋鈕「修正速度」設慢很自然，設成 0 音高會瞬間跳格子，就是 1998 年 Cher〈Believe〉的機器人聲（據說製作人一開始還說是聲碼器做的）。為什麼不會變花栗鼠？好的修音只移音高、保留共振峰（喉嚨和口腔形狀造成的嗓音特色）；Melodyne 更把每個音畫成色塊讓錄音師拖拉。T-Pain 把機器人聲變成招牌，2009 年 Jay-Z 發歌〈D.O.A.（Death of Auto-Tune）〉，但修音沒有消失：現在輕修音幾乎是錄音標配，明顯的機器人聲則成了一種效果，像電吉他的破音。
+
+參考資料：
+Auto-Tune（維基百科）：https://en.wikipedia.org/wiki/Auto-Tune
+Antares Auto-Tune：https://www.antarestech.com/
+How An Oil Engineer Created Auto-Tune（Vice）：https://thump.vice.com/en_ca/article/how-an-oil-engineer-created-auto-tune-and-changed-music-forever
+The Number Ones: Cher's Believe（Stereogum）：https://stereogum.com/2191750/the-number-ones-chers-believe/columns/the-number-ones
+Celemony Melodyne：https://www.celemony.com/
+Formant（維基百科）：https://en.wikipedia.org/wiki/Formant]]></itunes:summary>
+      <pubDate>Sun, 01 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep57.mp3" length="3156573" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep57.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:17</itunes:duration>
+      <itunes:episode>57</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>聽一首歌就寫出音符？AI 自動採譜怎麼運作｜Basic Pitch、MT3</title>
+      <description><![CDATA[聽一首歌就把每個音寫下來叫採譜，以前靠訓練有素的耳朵，現在 AI 也會了。單音好辦（像第 57 集 Auto-Tune 找音高），但和弦的泛音全疊在一起，AI 容易把泛音當成另一個音或猜錯八度，還要知道每顆音何時開始、何時結束。大部分採譜 AI 先把聲音畫成頻譜圖（第 53 集），再畫出鋼琴捲簾：每條橫槓是一顆音符。Google 2018 年的 Onsets and Frames 同時練「抓起音」和「判斷還在不在響」，抓到開頭才算新音符，鋼琴採譜準確度大躍進。Spotify 2022 年開源的 Basic Pitch 輕巧不挑：人聲、吉他、鋼琴都能轉，筆電和網頁都能跑，還記下滑音和顫音，但最擅長一次一種聲音。Google Magenta 的 MT3 把採譜當翻譯：頻譜進、一串像 MIDI 的指令出（換樂器、時間、音符開關），像第 37 集的接龍一個個寫出來，多種樂器一起採還標出誰演奏。但 MIDI 還不是五線譜：要對齊拍子、決定升 Fa 還是降 Sol、分聲部、加記號，還有好幾關。
+
+參考資料：
+Basic Pitch 線上試用：https://basicpitch.spotify.com/
+Basic Pitch 論文（Bittner et al., ICASSP 2022）：https://arxiv.org/abs/2203.09893
+spotify/basic-pitch：https://github.com/spotify/basic-pitch
+MT3（Gardner et al., ICLR 2022）：https://arxiv.org/abs/2111.03017
+magenta/mt3：https://github.com/magenta/mt3
+Onsets and Frames（Hawthorne et al. 2018）：https://arxiv.org/abs/1710.11153]]></description>
+      <itunes:summary><![CDATA[聽一首歌就把每個音寫下來叫採譜，以前靠訓練有素的耳朵，現在 AI 也會了。單音好辦（像第 57 集 Auto-Tune 找音高），但和弦的泛音全疊在一起，AI 容易把泛音當成另一個音或猜錯八度，還要知道每顆音何時開始、何時結束。大部分採譜 AI 先把聲音畫成頻譜圖（第 53 集），再畫出鋼琴捲簾：每條橫槓是一顆音符。Google 2018 年的 Onsets and Frames 同時練「抓起音」和「判斷還在不在響」，抓到開頭才算新音符，鋼琴採譜準確度大躍進。Spotify 2022 年開源的 Basic Pitch 輕巧不挑：人聲、吉他、鋼琴都能轉，筆電和網頁都能跑，還記下滑音和顫音，但最擅長一次一種聲音。Google Magenta 的 MT3 把採譜當翻譯：頻譜進、一串像 MIDI 的指令出（換樂器、時間、音符開關），像第 37 集的接龍一個個寫出來，多種樂器一起採還標出誰演奏。但 MIDI 還不是五線譜：要對齊拍子、決定升 Fa 還是降 Sol、分聲部、加記號，還有好幾關。
+
+參考資料：
+Basic Pitch 線上試用：https://basicpitch.spotify.com/
+Basic Pitch 論文（Bittner et al., ICASSP 2022）：https://arxiv.org/abs/2203.09893
+spotify/basic-pitch：https://github.com/spotify/basic-pitch
+MT3（Gardner et al., ICLR 2022）：https://arxiv.org/abs/2111.03017
+magenta/mt3：https://github.com/magenta/mt3
+Onsets and Frames（Hawthorne et al. 2018）：https://arxiv.org/abs/1710.11153]]></itunes:summary>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep58.mp3" length="3121047" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep58.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:15</itunes:duration>
+      <itunes:episode>58</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

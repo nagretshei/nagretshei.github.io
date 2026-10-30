@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1583,6 +1583,68 @@ ECHI ELETTROACUSTICI 2026 finalists: http://www.csm-aps.it/csm-aps/index.php/ope
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:11</itunes:duration>
       <itunes:episode>56</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Do Pop Vocals Sound So Perfectly in Tune? How Auto-Tune Works</title>
+      <description><![CDATA[Why does every note in pop vocals sound so perfect, and where does that jumpy robot voice come from? Auto-Tune's inventor, Andy Hildebrand, was an Exxon engineer who analyzed seismic waves to find oil. As the story goes, a friend at dinner joked that he should build a box to make her sing in tune; he realized the same math could analyze the voice, and Auto-Tune arrived in 1997. It works in three steps: autocorrelation (comparing the waveform with a shifted copy of itself until it lines up after exactly one cycle) finds how high you're singing; it picks the nearest note the song uses; then it pushes only the pitch there, keeping your timing and lyrics. The key knob, retune speed, sounds natural when slow; set to zero, the pitch snaps instantly, creating the robot voice of Cher's 1998 hit Believe (the producers reportedly first claimed it was a vocoder). Why no chipmunk effect? Good pitch correction keeps the formants, the resonances shaped by your throat and mouth. Melodyne goes further, drawing each note as a draggable blob. T-Pain made the robot voice his signature, Jay-Z released D.O.A. (Death of Auto-Tune) in 2009, yet it never went away: gentle correction is now standard in recording, and the obvious robot voice is an effect, like guitar distortion.
+
+References:
+Auto-Tune (Wikipedia): https://en.wikipedia.org/wiki/Auto-Tune
+Antares Auto-Tune: https://www.antarestech.com/
+How An Oil Engineer Created Auto-Tune (Vice): https://thump.vice.com/en_ca/article/how-an-oil-engineer-created-auto-tune-and-changed-music-forever
+The Number Ones: Cher's Believe (Stereogum): https://stereogum.com/2191750/the-number-ones-chers-believe/columns/the-number-ones
+Celemony Melodyne: https://www.celemony.com/
+Formant (Wikipedia): https://en.wikipedia.org/wiki/Formant]]></description>
+      <itunes:summary><![CDATA[Why does every note in pop vocals sound so perfect, and where does that jumpy robot voice come from? Auto-Tune's inventor, Andy Hildebrand, was an Exxon engineer who analyzed seismic waves to find oil. As the story goes, a friend at dinner joked that he should build a box to make her sing in tune; he realized the same math could analyze the voice, and Auto-Tune arrived in 1997. It works in three steps: autocorrelation (comparing the waveform with a shifted copy of itself until it lines up after exactly one cycle) finds how high you're singing; it picks the nearest note the song uses; then it pushes only the pitch there, keeping your timing and lyrics. The key knob, retune speed, sounds natural when slow; set to zero, the pitch snaps instantly, creating the robot voice of Cher's 1998 hit Believe (the producers reportedly first claimed it was a vocoder). Why no chipmunk effect? Good pitch correction keeps the formants, the resonances shaped by your throat and mouth. Melodyne goes further, drawing each note as a draggable blob. T-Pain made the robot voice his signature, Jay-Z released D.O.A. (Death of Auto-Tune) in 2009, yet it never went away: gentle correction is now standard in recording, and the obvious robot voice is an effect, like guitar distortion.
+
+References:
+Auto-Tune (Wikipedia): https://en.wikipedia.org/wiki/Auto-Tune
+Antares Auto-Tune: https://www.antarestech.com/
+How An Oil Engineer Created Auto-Tune (Vice): https://thump.vice.com/en_ca/article/how-an-oil-engineer-created-auto-tune-and-changed-music-forever
+The Number Ones: Cher's Believe (Stereogum): https://stereogum.com/2191750/the-number-ones-chers-believe/columns/the-number-ones
+Celemony Melodyne: https://www.celemony.com/
+Formant (Wikipedia): https://en.wikipedia.org/wiki/Formant]]></itunes:summary>
+      <pubDate>Sun, 01 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep57.mp3" length="1141488" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep57.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:10</itunes:duration>
+      <itunes:episode>57</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Writing Down Every Note from a Recording? How AI Music Transcription Works: Basic Pitch and MT3</title>
+      <description><![CDATA[Writing down every note you hear is called transcription; it used to take a trained ear, and now AI can do it. A single voice is easy (like Auto-Tune's pitch tracking in episode 57), but in a chord the overtones pile up, so AI may mistake an overtone for a note or guess the wrong octave, and it must also know when each note starts and ends. Most transcription AIs draw the sound as a spectrogram (episode 53) and then draw a piano roll, one bar per note. Google's Onsets and Frames (2018) trains two detectors at once, one for note starts and one for whether a note is still sounding, which greatly improved piano transcription. Spotify's open-source Basic Pitch (2022) is light and instrument-agnostic: voice, guitar, piano; it runs on a laptop or in the browser and captures slides and vibrato, though it works best on one source at a time. Google Magenta's MT3 treats transcription as translation: spectrogram in, a stream of MIDI-like tokens out (instrument, time, note on/off), written one by one like the word chain from episode 37, transcribing many instruments at once and labeling who played each note. But MIDI is not yet a score: aligning to beats, choosing F sharp or G flat, splitting voices and adding markings are still hurdles ahead.
+
+References:
+Basic Pitch demo: https://basicpitch.spotify.com/
+Basic Pitch paper (Bittner et al., ICASSP 2022): https://arxiv.org/abs/2203.09893
+spotify/basic-pitch: https://github.com/spotify/basic-pitch
+MT3 (Gardner et al., ICLR 2022): https://arxiv.org/abs/2111.03017
+magenta/mt3: https://github.com/magenta/mt3
+Onsets and Frames (Hawthorne et al. 2018): https://arxiv.org/abs/1710.11153]]></description>
+      <itunes:summary><![CDATA[Writing down every note you hear is called transcription; it used to take a trained ear, and now AI can do it. A single voice is easy (like Auto-Tune's pitch tracking in episode 57), but in a chord the overtones pile up, so AI may mistake an overtone for a note or guess the wrong octave, and it must also know when each note starts and ends. Most transcription AIs draw the sound as a spectrogram (episode 53) and then draw a piano roll, one bar per note. Google's Onsets and Frames (2018) trains two detectors at once, one for note starts and one for whether a note is still sounding, which greatly improved piano transcription. Spotify's open-source Basic Pitch (2022) is light and instrument-agnostic: voice, guitar, piano; it runs on a laptop or in the browser and captures slides and vibrato, though it works best on one source at a time. Google Magenta's MT3 treats transcription as translation: spectrogram in, a stream of MIDI-like tokens out (instrument, time, note on/off), written one by one like the word chain from episode 37, transcribing many instruments at once and labeling who played each note. But MIDI is not yet a score: aligning to beats, choosing F sharp or G flat, splitting voices and adding markings are still hurdles ahead.
+
+References:
+Basic Pitch demo: https://basicpitch.spotify.com/
+Basic Pitch paper (Bittner et al., ICASSP 2022): https://arxiv.org/abs/2203.09893
+spotify/basic-pitch: https://github.com/spotify/basic-pitch
+MT3 (Gardner et al., ICLR 2022): https://arxiv.org/abs/2111.03017
+magenta/mt3: https://github.com/magenta/mt3
+Onsets and Frames (Hawthorne et al. 2018): https://arxiv.org/abs/1710.11153]]></itunes:summary>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep58.mp3" length="1112832" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep58.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:05</itunes:duration>
+      <itunes:episode>58</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
