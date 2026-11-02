@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep59 · 2026/11/3</span>
+        <div class="lang-zh">
+          <h3>AI 怎麼「讀譜」？把音樂切成一個個字｜符號音樂 token、REMI、ABC 記譜法、NotaGen</h3>
+          <p>之前介紹的 MusicGen 直接生出聲音，音樂 AI 還有另一派：先寫譜。語言模型讀「字」，音樂要切成什麼字？聲音 token（第 36 集）一秒約 200 個、記錄聲音本身；符號 token 記「演奏什麼」：哪個音、第幾拍、持續多久，一小節十幾個字，好改、換什麼聲音都行，但沒有音色。第一招：Google Magenta 2018 年照 MIDI 事件寫（按下、等幾秒、放開），適合記真人演奏，但時間用秒，AI 不知道拍子在哪。第二招：台灣楊奕軒老師團隊 2020 年的 REMI（Pop Music Transformer），加入「小節」和「第幾格」，一小節切 16 格像方格紙，再記音高、力度、持續幾拍，生成的流行鋼琴曲節奏穩多了。第三招：ABC 記譜法，Chris Walshaw 1993 年為記民謠整理的純文字寫譜法，語言模型天生會讀。2025 年北京中央音樂學院等團隊的 NotaGen 把 ABC 用到極致：約 160 萬首 ABC 譜預訓練、約 9 千首精選古典微調，用「年代＋音樂家＋編制」當提示寫出整份五線譜；再用 CLaMP-DPO 請 CLaMP 當評審，像真譜的多學、不像的少學，不用真人評分，盲測贏過其他模型。</p>
+          <audio controls preload="none" src="podcast/audio/ep59.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>How Does AI &quot;Read&quot; Music? Cutting Music into Words: Symbolic Tokens, REMI, ABC Notation and NotaGen</h3>
+          <p>MusicGen generates sound directly, but another camp of music AI writes a score first. Language models read words, so what words should music be cut into? Audio tokens (episode 36) run about 200 per second and record the sound itself; symbolic tokens record what to play: which note, which beat, how long, about a dozen per bar, easy to edit and playable on any instrument, but with no timbre. Approach one: Google Magenta (2018) wrote MIDI events (press, wait, release), great for real performances, but time is in seconds, so AI can&#x27;t find the beat. Approach two: REMI from Yi-Hsuan Yang&#x27;s team in Taiwan (Pop Music Transformer, 2020) adds bar and position words, sixteen slots per bar like graph paper, plus pitch, velocity and duration, giving much steadier rhythm. Approach three: ABC notation, a plain-text notation Chris Walshaw formalized in 1993 for folk tunes, which language models read naturally. NotaGen (2025), led by the Central Conservatory of Music in Beijing, pretrains on about 1.6 million ABC scores, fine-tunes on about 9,000 classical pieces, and is prompted with period, composer and instrumentation; CLaMP-DPO then uses the CLaMP model as a judge so it learns more from outputs that resemble real scores, with no human grading, and it beat other models in blind tests.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep59.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep58 · 2026/11/2</span>
         <div class="lang-zh">
           <h3>聽一首歌就寫出音符？AI 自動採譜怎麼運作｜Basic Pitch、MT3</h3>

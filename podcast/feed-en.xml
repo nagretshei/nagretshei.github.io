@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 02 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1645,6 +1645,37 @@ Onsets and Frames (Hawthorne et al. 2018): https://arxiv.org/abs/1710.11153]]></
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:05</itunes:duration>
       <itunes:episode>58</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Does AI &quot;Read&quot; Music? Cutting Music into Words: Symbolic Tokens, REMI, ABC Notation and NotaGen</title>
+      <description><![CDATA[MusicGen generates sound directly, but another camp of music AI writes a score first. Language models read words, so what words should music be cut into? Audio tokens (episode 36) run about 200 per second and record the sound itself; symbolic tokens record what to play: which note, which beat, how long, about a dozen per bar, easy to edit and playable on any instrument, but with no timbre. Approach one: Google Magenta (2018) wrote MIDI events (press, wait, release), great for real performances, but time is in seconds, so AI can't find the beat. Approach two: REMI from Yi-Hsuan Yang's team in Taiwan (Pop Music Transformer, 2020) adds bar and position words, sixteen slots per bar like graph paper, plus pitch, velocity and duration, giving much steadier rhythm. Approach three: ABC notation, a plain-text notation Chris Walshaw formalized in 1993 for folk tunes, which language models read naturally. NotaGen (2025), led by the Central Conservatory of Music in Beijing, pretrains on about 1.6 million ABC scores, fine-tunes on about 9,000 classical pieces, and is prompted with period, composer and instrumentation; CLaMP-DPO then uses the CLaMP model as a judge so it learns more from outputs that resemble real scores, with no human grading, and it beat other models in blind tests.
+
+References:
+This Time with Feeling (Oore et al. 2018): https://arxiv.org/abs/1808.03715
+Pop Music Transformer / REMI (Huang & Yang 2020): https://arxiv.org/abs/2002.00212
+MidiTok tokenizations: https://miditok.readthedocs.io/en/latest/tokenizations.html
+ABC notation - Wikipedia: https://en.wikipedia.org/wiki/ABC_notation
+A brief history of abc: https://abcnotation.com/history
+NotaGen (Wang et al., IJCAI 2025): https://arxiv.org/abs/2502.18008]]></description>
+      <itunes:summary><![CDATA[MusicGen generates sound directly, but another camp of music AI writes a score first. Language models read words, so what words should music be cut into? Audio tokens (episode 36) run about 200 per second and record the sound itself; symbolic tokens record what to play: which note, which beat, how long, about a dozen per bar, easy to edit and playable on any instrument, but with no timbre. Approach one: Google Magenta (2018) wrote MIDI events (press, wait, release), great for real performances, but time is in seconds, so AI can't find the beat. Approach two: REMI from Yi-Hsuan Yang's team in Taiwan (Pop Music Transformer, 2020) adds bar and position words, sixteen slots per bar like graph paper, plus pitch, velocity and duration, giving much steadier rhythm. Approach three: ABC notation, a plain-text notation Chris Walshaw formalized in 1993 for folk tunes, which language models read naturally. NotaGen (2025), led by the Central Conservatory of Music in Beijing, pretrains on about 1.6 million ABC scores, fine-tunes on about 9,000 classical pieces, and is prompted with period, composer and instrumentation; CLaMP-DPO then uses the CLaMP model as a judge so it learns more from outputs that resemble real scores, with no human grading, and it beat other models in blind tests.
+
+References:
+This Time with Feeling (Oore et al. 2018): https://arxiv.org/abs/1808.03715
+Pop Music Transformer / REMI (Huang & Yang 2020): https://arxiv.org/abs/2002.00212
+MidiTok tokenizations: https://miditok.readthedocs.io/en/latest/tokenizations.html
+ABC notation - Wikipedia: https://en.wikipedia.org/wiki/ABC_notation
+A brief history of abc: https://abcnotation.com/history
+NotaGen (Wang et al., IJCAI 2025): https://arxiv.org/abs/2502.18008]]></itunes:summary>
+      <pubDate>Tue, 03 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep59.mp3" length="1201104" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep59.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:20</itunes:duration>
+      <itunes:episode>59</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
