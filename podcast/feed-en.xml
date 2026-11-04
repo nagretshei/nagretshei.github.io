@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1676,6 +1676,37 @@ NotaGen (Wang et al., IJCAI 2025): https://arxiv.org/abs/2502.18008]]></itunes:s
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:20</itunes:duration>
       <itunes:episode>59</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Singing into a Violin? Letting AI Turn the Synth Knobs: DDSP, Tone Transfer and DDSP-VST</title>
+      <description><![CDATA[Hum into a microphone and out comes a violin? Google Magenta's DDSP (Differentiable Digital Signal Processing, ICLR 2020) doesn't make the AI draw waveforms from scratch; it lets the AI turn a synthesizer's knobs. Neural vocoders (episode 53) draw tens of thousands of points per second and need big models and lots of data. DDSP first extracts pitch with CREPE and loudness, the two lines describing what is played, then hands them to an AI that has only heard the violin, which decides how to turn the knobs, so a voice or a flute becomes a violin. The synthesizer has three parts: harmonics (dozens of sine waves, additive synthesis, whose levels set the timbre), filtered noise (breath, bow scratch), and reverb (the room). Differentiable means the effect of every tiny knob turn can be calculated, so training compares spectra and traces back which way to turn each knob. The models are several times smaller than similar neural synthesizers, each official example trained on under thirteen minutes of audio, and pitch and loudness can be edited separately; the limit is one note at a time. Magenta launched the Tone Transfer web app in October 2020 (flute, saxophone, trumpet, violin) and the free DDSP-VST plugin in 2022; ten to twenty minutes of single-note playing can train your own timbre model.
+
+References:
+DDSP (Engel et al., ICLR 2020): https://arxiv.org/abs/2001.04643
+Magenta DDSP: https://magenta.tensorflow.org/ddsp
+GitHub magenta/ddsp: https://github.com/magenta/ddsp
+Tone Transfer: https://magenta.tensorflow.org/tone-transfer
+DDSP-VST: https://magenta.tensorflow.org/ddsp-vst
+CREPE (Kim et al., 2018): https://arxiv.org/abs/1802.06182]]></description>
+      <itunes:summary><![CDATA[Hum into a microphone and out comes a violin? Google Magenta's DDSP (Differentiable Digital Signal Processing, ICLR 2020) doesn't make the AI draw waveforms from scratch; it lets the AI turn a synthesizer's knobs. Neural vocoders (episode 53) draw tens of thousands of points per second and need big models and lots of data. DDSP first extracts pitch with CREPE and loudness, the two lines describing what is played, then hands them to an AI that has only heard the violin, which decides how to turn the knobs, so a voice or a flute becomes a violin. The synthesizer has three parts: harmonics (dozens of sine waves, additive synthesis, whose levels set the timbre), filtered noise (breath, bow scratch), and reverb (the room). Differentiable means the effect of every tiny knob turn can be calculated, so training compares spectra and traces back which way to turn each knob. The models are several times smaller than similar neural synthesizers, each official example trained on under thirteen minutes of audio, and pitch and loudness can be edited separately; the limit is one note at a time. Magenta launched the Tone Transfer web app in October 2020 (flute, saxophone, trumpet, violin) and the free DDSP-VST plugin in 2022; ten to twenty minutes of single-note playing can train your own timbre model.
+
+References:
+DDSP (Engel et al., ICLR 2020): https://arxiv.org/abs/2001.04643
+Magenta DDSP: https://magenta.tensorflow.org/ddsp
+GitHub magenta/ddsp: https://github.com/magenta/ddsp
+Tone Transfer: https://magenta.tensorflow.org/tone-transfer
+DDSP-VST: https://magenta.tensorflow.org/ddsp-vst
+CREPE (Kim et al., 2018): https://arxiv.org/abs/1802.06182]]></itunes:summary>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep60.mp3" length="1074960" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep60.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:59</itunes:duration>
+      <itunes:episode>60</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

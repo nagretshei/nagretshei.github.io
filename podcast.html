@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep60 · 2026/11/4</span>
+        <div class="lang-zh">
+          <h3>唱歌變小提琴？讓 AI 轉合成器的旋鈕｜DDSP 可微分數位訊號處理、Tone Transfer、DDSP-VST</h3>
+          <p>對著麥克風哼一段，出來卻是小提琴？Google Magenta 的 DDSP（可微分數位訊號處理，ICLR 2020）不讓 AI 從零畫波形，而是讓 AI 轉合成器的旋鈕。第 53 集的神經聲碼器一秒要畫好幾萬個點、模型大又吃資料；DDSP 先用 CREPE 聽出音高、再聽出大小聲，這兩條線記下「演奏什麼」，再交給只聽過小提琴的 AI 決定旋鈕怎麼轉，所以唱歌或長笛都能變成小提琴。合成器有三個零件：泛音（好幾十條正弦波，也就是加法合成，每條多大聲決定音色）、雜訊（氣音、弓擦弦）、殘響（在什麼房間演奏）。「可微分」代表每個旋鈕轉一點點、聲音差多少都算得出來，訓練時比頻譜、一路往回推，AI 就知道該往哪轉。模型比同類小好幾倍，官方範例每個不到 13 分鐘錄音就能訓練，音高和大小聲可分開改；限制是一次只能一個音。2020 年 10 月推出 Tone Transfer 網頁（長笛、薩克斯風、小號、小提琴），2022 年推出免費 DDSP-VST 外掛，錄 10–20 分鐘單音演奏就能訓練自己的音色。</p>
+          <audio controls preload="none" src="podcast/audio/ep60.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Singing into a Violin? Letting AI Turn the Synth Knobs: DDSP, Tone Transfer and DDSP-VST</h3>
+          <p>Hum into a microphone and out comes a violin? Google Magenta&#x27;s DDSP (Differentiable Digital Signal Processing, ICLR 2020) doesn&#x27;t make the AI draw waveforms from scratch; it lets the AI turn a synthesizer&#x27;s knobs. Neural vocoders (episode 53) draw tens of thousands of points per second and need big models and lots of data. DDSP first extracts pitch with CREPE and loudness, the two lines describing what is played, then hands them to an AI that has only heard the violin, which decides how to turn the knobs, so a voice or a flute becomes a violin. The synthesizer has three parts: harmonics (dozens of sine waves, additive synthesis, whose levels set the timbre), filtered noise (breath, bow scratch), and reverb (the room). Differentiable means the effect of every tiny knob turn can be calculated, so training compares spectra and traces back which way to turn each knob. The models are several times smaller than similar neural synthesizers, each official example trained on under thirteen minutes of audio, and pitch and loudness can be edited separately; the limit is one note at a time. Magenta launched the Tone Transfer web app in October 2020 (flute, saxophone, trumpet, violin) and the free DDSP-VST plugin in 2022; ten to twenty minutes of single-note playing can train your own timbre model.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep60.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep59 · 2026/11/3</span>
         <div class="lang-zh">
           <h3>AI 怎麼「讀譜」？把音樂切成一個個字｜符號音樂 token、REMI、ABC 記譜法、NotaGen</h3>

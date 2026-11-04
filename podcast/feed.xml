@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1676,6 +1676,37 @@ NotaGen（Wang et al., IJCAI 2025）：https://arxiv.org/abs/2502.18008]]></itun
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:17</itunes:duration>
       <itunes:episode>59</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>唱歌變小提琴？讓 AI 轉合成器的旋鈕｜DDSP 可微分數位訊號處理、Tone Transfer、DDSP-VST</title>
+      <description><![CDATA[對著麥克風哼一段，出來卻是小提琴？Google Magenta 的 DDSP（可微分數位訊號處理，ICLR 2020）不讓 AI 從零畫波形，而是讓 AI 轉合成器的旋鈕。第 53 集的神經聲碼器一秒要畫好幾萬個點、模型大又吃資料；DDSP 先用 CREPE 聽出音高、再聽出大小聲，這兩條線記下「演奏什麼」，再交給只聽過小提琴的 AI 決定旋鈕怎麼轉，所以唱歌或長笛都能變成小提琴。合成器有三個零件：泛音（好幾十條正弦波，也就是加法合成，每條多大聲決定音色）、雜訊（氣音、弓擦弦）、殘響（在什麼房間演奏）。「可微分」代表每個旋鈕轉一點點、聲音差多少都算得出來，訓練時比頻譜、一路往回推，AI 就知道該往哪轉。模型比同類小好幾倍，官方範例每個不到 13 分鐘錄音就能訓練，音高和大小聲可分開改；限制是一次只能一個音。2020 年 10 月推出 Tone Transfer 網頁（長笛、薩克斯風、小號、小提琴），2022 年推出免費 DDSP-VST 外掛，錄 10–20 分鐘單音演奏就能訓練自己的音色。
+
+參考資料：
+DDSP（Engel et al., ICLR 2020）：https://arxiv.org/abs/2001.04643
+Magenta DDSP：https://magenta.tensorflow.org/ddsp
+GitHub magenta/ddsp：https://github.com/magenta/ddsp
+Tone Transfer：https://magenta.tensorflow.org/tone-transfer
+DDSP-VST：https://magenta.tensorflow.org/ddsp-vst
+CREPE（Kim et al., 2018）：https://arxiv.org/abs/1802.06182]]></description>
+      <itunes:summary><![CDATA[對著麥克風哼一段，出來卻是小提琴？Google Magenta 的 DDSP（可微分數位訊號處理，ICLR 2020）不讓 AI 從零畫波形，而是讓 AI 轉合成器的旋鈕。第 53 集的神經聲碼器一秒要畫好幾萬個點、模型大又吃資料；DDSP 先用 CREPE 聽出音高、再聽出大小聲，這兩條線記下「演奏什麼」，再交給只聽過小提琴的 AI 決定旋鈕怎麼轉，所以唱歌或長笛都能變成小提琴。合成器有三個零件：泛音（好幾十條正弦波，也就是加法合成，每條多大聲決定音色）、雜訊（氣音、弓擦弦）、殘響（在什麼房間演奏）。「可微分」代表每個旋鈕轉一點點、聲音差多少都算得出來，訓練時比頻譜、一路往回推，AI 就知道該往哪轉。模型比同類小好幾倍，官方範例每個不到 13 分鐘錄音就能訓練，音高和大小聲可分開改；限制是一次只能一個音。2020 年 10 月推出 Tone Transfer 網頁（長笛、薩克斯風、小號、小提琴），2022 年推出免費 DDSP-VST 外掛，錄 10–20 分鐘單音演奏就能訓練自己的音色。
+
+參考資料：
+DDSP（Engel et al., ICLR 2020）：https://arxiv.org/abs/2001.04643
+Magenta DDSP：https://magenta.tensorflow.org/ddsp
+GitHub magenta/ddsp：https://github.com/magenta/ddsp
+Tone Transfer：https://magenta.tensorflow.org/tone-transfer
+DDSP-VST：https://magenta.tensorflow.org/ddsp-vst
+CREPE（Kim et al., 2018）：https://arxiv.org/abs/1802.06182]]></itunes:summary>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep60.mp3" length="3077161" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep60.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:12</itunes:duration>
+      <itunes:episode>60</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
