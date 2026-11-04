@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1707,6 +1707,35 @@ CREPE（Kim et al., 2018）：https://arxiv.org/abs/1802.06182]]></itunes:summar
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:12</itunes:duration>
       <itunes:episode>60</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>現場把鼓聲變人聲？筆電就跑得動的 AI 音色轉換｜IRCAM RAVE、nn~、Neutone</title>
+      <description><![CDATA[打一段鼓，喇叭傳出來卻像人聲？IRCAM 的 Antoine Caillon 與 Philippe Esling 在 2021 年提出 RAVE（Realtime Audio Variational autoEncoder），上一集 DDSP 一次只能處理一個音，RAVE 鼓聲、雜訊、和弦都吃。骨架是第 45 集的自編碼器：編碼器把每一小段聲音壓成幾個數字，解碼器只聽過人聲，就會把一切都用人聲說出來，留下鼓的節奏、換掉音色。兩階段訓練：先學壓縮與還原（比頻譜，但聲音有點糊），再把編碼器固定、請評審挑毛病做對抗式微調，跟第 53 集的神經聲碼器同一招。多頻帶分解把聲音切成 16 個頻帶同時算，48 kHz 高音質在一般筆電 CPU 上比即時快約 20 倍（作者實測）。上台用 nn~ 在 Max/MSP、Pure Data 裡載入模型（要匯出串流模式，否則有喀啦聲），日本 Qosmo 的 Neutone 外掛也能在編曲軟體使用，輕量版甚至能在樹莓派上即時運作。還能直接推動潛空間的數字做出新聲音、不給輸入也能自己發聲。最後比較 DDSP（一次一個音、好控制）與 RAVE（什麼聲音都吃、但沒有明確的音高旋鈕）。
+
+參考資料：
+RAVE（Caillon & Esling, 2021）：https://arxiv.org/abs/2111.05011
+GitHub acids-ircam/RAVE：https://github.com/acids-ircam/RAVE
+nn~：https://acids-ircam.github.io/nn_tilde
+Neutone（Qosmo）：https://qosmo.jp/en/r-and-d/neutone
+IRCAM ACIDS：https://acids-ircam.github.io]]></description>
+      <itunes:summary><![CDATA[打一段鼓，喇叭傳出來卻像人聲？IRCAM 的 Antoine Caillon 與 Philippe Esling 在 2021 年提出 RAVE（Realtime Audio Variational autoEncoder），上一集 DDSP 一次只能處理一個音，RAVE 鼓聲、雜訊、和弦都吃。骨架是第 45 集的自編碼器：編碼器把每一小段聲音壓成幾個數字，解碼器只聽過人聲，就會把一切都用人聲說出來，留下鼓的節奏、換掉音色。兩階段訓練：先學壓縮與還原（比頻譜，但聲音有點糊），再把編碼器固定、請評審挑毛病做對抗式微調，跟第 53 集的神經聲碼器同一招。多頻帶分解把聲音切成 16 個頻帶同時算，48 kHz 高音質在一般筆電 CPU 上比即時快約 20 倍（作者實測）。上台用 nn~ 在 Max/MSP、Pure Data 裡載入模型（要匯出串流模式，否則有喀啦聲），日本 Qosmo 的 Neutone 外掛也能在編曲軟體使用，輕量版甚至能在樹莓派上即時運作。還能直接推動潛空間的數字做出新聲音、不給輸入也能自己發聲。最後比較 DDSP（一次一個音、好控制）與 RAVE（什麼聲音都吃、但沒有明確的音高旋鈕）。
+
+參考資料：
+RAVE（Caillon & Esling, 2021）：https://arxiv.org/abs/2111.05011
+GitHub acids-ircam/RAVE：https://github.com/acids-ircam/RAVE
+nn~：https://acids-ircam.github.io/nn_tilde
+Neutone（Qosmo）：https://qosmo.jp/en/r-and-d/neutone
+IRCAM ACIDS：https://acids-ircam.github.io]]></itunes:summary>
+      <pubDate>Thu, 05 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep61.mp3" length="3153648" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep61.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:17</itunes:duration>
+      <itunes:episode>61</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

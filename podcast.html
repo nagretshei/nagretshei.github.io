@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep61 · 2026/11/5</span>
+        <div class="lang-zh">
+          <h3>現場把鼓聲變人聲？筆電就跑得動的 AI 音色轉換｜IRCAM RAVE、nn~、Neutone</h3>
+          <p>打一段鼓，喇叭傳出來卻像人聲？IRCAM 的 Antoine Caillon 與 Philippe Esling 在 2021 年提出 RAVE（Realtime Audio Variational autoEncoder），上一集 DDSP 一次只能處理一個音，RAVE 鼓聲、雜訊、和弦都吃。骨架是第 45 集的自編碼器：編碼器把每一小段聲音壓成幾個數字，解碼器只聽過人聲，就會把一切都用人聲說出來，留下鼓的節奏、換掉音色。兩階段訓練：先學壓縮與還原（比頻譜，但聲音有點糊），再把編碼器固定、請評審挑毛病做對抗式微調，跟第 53 集的神經聲碼器同一招。多頻帶分解把聲音切成 16 個頻帶同時算，48 kHz 高音質在一般筆電 CPU 上比即時快約 20 倍（作者實測）。上台用 nn~ 在 Max/MSP、Pure Data 裡載入模型（要匯出串流模式，否則有喀啦聲），日本 Qosmo 的 Neutone 外掛也能在編曲軟體使用，輕量版甚至能在樹莓派上即時運作。還能直接推動潛空間的數字做出新聲音、不給輸入也能自己發聲。最後比較 DDSP（一次一個音、好控制）與 RAVE（什麼聲音都吃、但沒有明確的音高旋鈕）。</p>
+          <audio controls preload="none" src="podcast/audio/ep61.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Turning Drums into Voices Live? AI Timbre Transfer on a Laptop: IRCAM RAVE, nn~ and Neutone</h3>
+          <p>Play some drums and out comes something like a human voice? In 2021, Antoine Caillon and Philippe Esling at IRCAM introduced RAVE (Realtime Audio Variational autoEncoder). Where DDSP handles one note at a time, RAVE takes drums, noise and chords. Its backbone is the autoencoder from episode 45: the encoder squeezes each slice of sound into a few numbers, and a decoder that has only heard voices answers everything in a voice, keeping the drum rhythm while swapping the timbre. Training has two stages: first learn to compress and restore (matching spectra, but a bit blurry), then freeze the encoder and fine-tune adversarially with a judge, the same trick as the neural vocoders in episode 53. A multi-band decomposition splits sound into 16 bands computed at once, so 48 kHz audio runs about 20 times faster than real time on an ordinary laptop CPU (the authors&#x27; own test). On stage, nn~ loads models in Max/MSP and Pure Data (export in streaming mode to avoid clicks), Qosmo&#x27;s Neutone plugin runs RAVE models in a DAW, and a lightweight version even runs on a Raspberry Pi. You can also push the latent numbers directly to make new sounds, or let it generate with no input. Finally, DDSP (one note, easy control) vs RAVE (any sound, but no clear pitch knob).</p>
+          <audio controls preload="none" src="podcast/audio/en/ep61.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep60 · 2026/11/4</span>
         <div class="lang-zh">
           <h3>唱歌變小提琴？讓 AI 轉合成器的旋鈕｜DDSP 可微分數位訊號處理、Tone Transfer、DDSP-VST</h3>

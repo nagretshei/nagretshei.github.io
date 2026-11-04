@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1707,6 +1707,35 @@ CREPE (Kim et al., 2018): https://arxiv.org/abs/1802.06182]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:02:59</itunes:duration>
       <itunes:episode>60</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Turning Drums into Voices Live? AI Timbre Transfer on a Laptop: IRCAM RAVE, nn~ and Neutone</title>
+      <description><![CDATA[Play some drums and out comes something like a human voice? In 2021, Antoine Caillon and Philippe Esling at IRCAM introduced RAVE (Realtime Audio Variational autoEncoder). Where DDSP handles one note at a time, RAVE takes drums, noise and chords. Its backbone is the autoencoder from episode 45: the encoder squeezes each slice of sound into a few numbers, and a decoder that has only heard voices answers everything in a voice, keeping the drum rhythm while swapping the timbre. Training has two stages: first learn to compress and restore (matching spectra, but a bit blurry), then freeze the encoder and fine-tune adversarially with a judge, the same trick as the neural vocoders in episode 53. A multi-band decomposition splits sound into 16 bands computed at once, so 48 kHz audio runs about 20 times faster than real time on an ordinary laptop CPU (the authors' own test). On stage, nn~ loads models in Max/MSP and Pure Data (export in streaming mode to avoid clicks), Qosmo's Neutone plugin runs RAVE models in a DAW, and a lightweight version even runs on a Raspberry Pi. You can also push the latent numbers directly to make new sounds, or let it generate with no input. Finally, DDSP (one note, easy control) vs RAVE (any sound, but no clear pitch knob).
+
+References:
+RAVE (Caillon & Esling, 2021): https://arxiv.org/abs/2111.05011
+GitHub acids-ircam/RAVE: https://github.com/acids-ircam/RAVE
+nn~: https://acids-ircam.github.io/nn_tilde
+Neutone (Qosmo): https://qosmo.jp/en/r-and-d/neutone
+IRCAM ACIDS: https://acids-ircam.github.io]]></description>
+      <itunes:summary><![CDATA[Play some drums and out comes something like a human voice? In 2021, Antoine Caillon and Philippe Esling at IRCAM introduced RAVE (Realtime Audio Variational autoEncoder). Where DDSP handles one note at a time, RAVE takes drums, noise and chords. Its backbone is the autoencoder from episode 45: the encoder squeezes each slice of sound into a few numbers, and a decoder that has only heard voices answers everything in a voice, keeping the drum rhythm while swapping the timbre. Training has two stages: first learn to compress and restore (matching spectra, but a bit blurry), then freeze the encoder and fine-tune adversarially with a judge, the same trick as the neural vocoders in episode 53. A multi-band decomposition splits sound into 16 bands computed at once, so 48 kHz audio runs about 20 times faster than real time on an ordinary laptop CPU (the authors' own test). On stage, nn~ loads models in Max/MSP and Pure Data (export in streaming mode to avoid clicks), Qosmo's Neutone plugin runs RAVE models in a DAW, and a lightweight version even runs on a Raspberry Pi. You can also push the latent numbers directly to make new sounds, or let it generate with no input. Finally, DDSP (one note, easy control) vs RAVE (any sound, but no clear pitch knob).
+
+References:
+RAVE (Caillon & Esling, 2021): https://arxiv.org/abs/2111.05011
+GitHub acids-ircam/RAVE: https://github.com/acids-ircam/RAVE
+nn~: https://acids-ircam.github.io/nn_tilde
+Neutone (Qosmo): https://qosmo.jp/en/r-and-d/neutone
+IRCAM ACIDS: https://acids-ircam.github.io]]></itunes:summary>
+      <pubDate>Thu, 05 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep61.mp3" length="1147824" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep61.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:11</itunes:duration>
+      <itunes:episode>61</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
