@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep62 · 2026/11/6</span>
+        <div class="lang-zh">
+          <h3>歌手沒唱過的歌，怎麼冒出來的？AI 歌聲合成與 AI 翻唱｜DiffSinger、RVC</h3>
+          <p>網路上的 AI 翻唱，明明是歌手沒唱過的歌，聽起來卻超像本人？AI 唱歌有兩條路：歌聲合成是給歌詞、音符和每個音唱多久，從零生出歌聲；歌聲轉換是給一段錄好的歌，旋律歌詞不變、只換嗓子。2004 年 Yamaha 的 VOCALOID 用真人錄好的音節像拼貼一樣接起來（初音未來就是這樣唱的），接縫有機器味；現在改由神經網路直接畫出整段聲音。DiffSinger（AAAI 2022）用第 38 集的擴散模型，但想了捷徑「淺擴散」：先用簡單模型畫一張有點糊的草稿，只加一點雜訊、從中間開始擦，步數少、細節更清楚，畫好的梅爾頻譜再交給第 53 集的聲碼器；社群維護的 OpenVPI 版本可搭配免費的 OpenUtau 編輯器。RVC（檢索式語音轉換，2023 年爆紅）把「唱什麼」和「誰在唱」拆開：用第 49 集的 HuBERT 抓出唱了哪些字、RMVPE 抓音高，再從目標歌手的錄音裡檢索最像的聲音片段混進去讓音色更像，最後由解碼器用新嗓子唱出來，約 10 分鐘乾淨人聲就能練。AI 翻唱三步驟：聲源分離（第 35 集）拿出人聲 → RVC 換嗓子 → 跟伴奏混回去。最後談聲音是誰的：2023 年〈Heart on My Sleeve〉模仿 Drake 與 The Weeknd 被下架；Holly Herndon 2021 年推出 Holly+，Grimes 2023 年推出 Elf.Tech、版稅五五分。想用別人的聲音，要先經過本人同意。</p>
+          <audio controls preload="none" src="podcast/audio/ep62.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Songs the Singer Never Sang? AI Singing Synthesis and AI Covers: DiffSinger and RVC</h3>
+          <p>AI covers online sound just like real singers performing songs they never sang. There are two roads for AI singing: singing voice synthesis creates a voice from lyrics, notes and durations, while singing voice conversion keeps an existing recording&#x27;s melody and lyrics but swaps the voice. Yamaha&#x27;s VOCALOID (2004) stitched together syllables recorded by a real singer, the way Hatsune Miku sings, but the seams sound robotic; today neural networks paint the whole sound directly. DiffSinger (AAAI 2022) uses the diffusion models from episode 38 with a shortcut called shallow diffusion: a simple model draws a blurry rough draft, a little noise is added, and cleaning starts from the middle, so it takes fewer steps and gives clearer detail; the mel spectrogram then goes to a vocoder (episode 53). The community OpenVPI version works with the free OpenUtau editor. RVC (Retrieval-based Voice Conversion, viral in 2023) separates what is sung from who sings it: HuBERT (episode 49) captures the words, RMVPE captures pitch, and a retrieval step blends in the most similar snippets from the target singer&#x27;s recordings before a decoder sings in the new voice; about ten minutes of clean vocals can train a model. An AI cover takes three steps: source separation (episode 35), RVC, and mixing back with the accompaniment. Finally, whose voice is it? In 2023 Heart on My Sleeve imitated Drake and The Weeknd and was taken down; Holly Herndon launched Holly+ in 2021, and Grimes launched Elf.Tech in 2023 with a fifty-fifty royalty split. Always get permission before using someone else&#x27;s voice.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep62.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep61 · 2026/11/5</span>
         <div class="lang-zh">
           <h3>現場把鼓聲變人聲？筆電就跑得動的 AI 音色轉換｜IRCAM RAVE、nn~、Neutone</h3>

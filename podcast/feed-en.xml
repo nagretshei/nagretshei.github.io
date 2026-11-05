@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 05 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1736,6 +1736,43 @@ IRCAM ACIDS: https://acids-ircam.github.io]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:11</itunes:duration>
       <itunes:episode>61</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Songs the Singer Never Sang? AI Singing Synthesis and AI Covers: DiffSinger and RVC</title>
+      <description><![CDATA[AI covers online sound just like real singers performing songs they never sang. There are two roads for AI singing: singing voice synthesis creates a voice from lyrics, notes and durations, while singing voice conversion keeps an existing recording's melody and lyrics but swaps the voice. Yamaha's VOCALOID (2004) stitched together syllables recorded by a real singer, the way Hatsune Miku sings, but the seams sound robotic; today neural networks paint the whole sound directly. DiffSinger (AAAI 2022) uses the diffusion models from episode 38 with a shortcut called shallow diffusion: a simple model draws a blurry rough draft, a little noise is added, and cleaning starts from the middle, so it takes fewer steps and gives clearer detail; the mel spectrogram then goes to a vocoder (episode 53). The community OpenVPI version works with the free OpenUtau editor. RVC (Retrieval-based Voice Conversion, viral in 2023) separates what is sung from who sings it: HuBERT (episode 49) captures the words, RMVPE captures pitch, and a retrieval step blends in the most similar snippets from the target singer's recordings before a decoder sings in the new voice; about ten minutes of clean vocals can train a model. An AI cover takes three steps: source separation (episode 35), RVC, and mixing back with the accompaniment. Finally, whose voice is it? In 2023 Heart on My Sleeve imitated Drake and The Weeknd and was taken down; Holly Herndon launched Holly+ in 2021, and Grimes launched Elf.Tech in 2023 with a fifty-fifty royalty split. Always get permission before using someone else's voice.
+
+References:
+DiffSinger (Liu et al., AAAI 2022): https://arxiv.org/abs/2105.02446
+GitHub openvpi/DiffSinger: https://github.com/openvpi/DiffSinger
+OpenUtau: https://www.openutau.com
+RVC: https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI
+HuBERT (Hsu et al., 2021): https://arxiv.org/abs/2106.07447
+VOCALOID: https://en.wikipedia.org/wiki/Vocaloid
+Heart on My Sleeve: https://en.wikipedia.org/wiki/Heart_on_My_Sleeve_(Ghostwriter977_song)
+Holly+: https://holly.plus
+Elf.Tech: https://elf.tech]]></description>
+      <itunes:summary><![CDATA[AI covers online sound just like real singers performing songs they never sang. There are two roads for AI singing: singing voice synthesis creates a voice from lyrics, notes and durations, while singing voice conversion keeps an existing recording's melody and lyrics but swaps the voice. Yamaha's VOCALOID (2004) stitched together syllables recorded by a real singer, the way Hatsune Miku sings, but the seams sound robotic; today neural networks paint the whole sound directly. DiffSinger (AAAI 2022) uses the diffusion models from episode 38 with a shortcut called shallow diffusion: a simple model draws a blurry rough draft, a little noise is added, and cleaning starts from the middle, so it takes fewer steps and gives clearer detail; the mel spectrogram then goes to a vocoder (episode 53). The community OpenVPI version works with the free OpenUtau editor. RVC (Retrieval-based Voice Conversion, viral in 2023) separates what is sung from who sings it: HuBERT (episode 49) captures the words, RMVPE captures pitch, and a retrieval step blends in the most similar snippets from the target singer's recordings before a decoder sings in the new voice; about ten minutes of clean vocals can train a model. An AI cover takes three steps: source separation (episode 35), RVC, and mixing back with the accompaniment. Finally, whose voice is it? In 2023 Heart on My Sleeve imitated Drake and The Weeknd and was taken down; Holly Herndon launched Holly+ in 2021, and Grimes launched Elf.Tech in 2023 with a fifty-fifty royalty split. Always get permission before using someone else's voice.
+
+References:
+DiffSinger (Liu et al., AAAI 2022): https://arxiv.org/abs/2105.02446
+GitHub openvpi/DiffSinger: https://github.com/openvpi/DiffSinger
+OpenUtau: https://www.openutau.com
+RVC: https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI
+HuBERT (Hsu et al., 2021): https://arxiv.org/abs/2106.07447
+VOCALOID: https://en.wikipedia.org/wiki/Vocaloid
+Heart on My Sleeve: https://en.wikipedia.org/wiki/Heart_on_My_Sleeve_(Ghostwriter977_song)
+Holly+: https://holly.plus
+Elf.Tech: https://elf.tech]]></itunes:summary>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep62.mp3" length="1289808" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep62.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:35</itunes:duration>
+      <itunes:episode>62</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
