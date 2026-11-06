@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 06 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1773,6 +1773,35 @@ Elf.Tech：https://elf.tech]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:34</itunes:duration>
       <itunes:episode>62</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>閉著眼睛也知道蚊子在哪？兩隻耳朵怎麼聽出方向｜空間聲音系列①</title>
+      <description><![CDATA[空間聲音系列第一集！半夜蚊子在耳邊嗡嗡叫，閉著眼睛也知道在左邊還是右邊，耳朵是怎麼聽出方向的？兩隻耳朵就像頭兩側的兩支麥克風，大腦比較兩份聲音的差別：一是時間差，聲音從左邊來會先到左耳，兩耳只隔十幾公分，最多只差約 0.6～0.7 毫秒，大腦卻分辨得出約十萬分之一秒；二是音量差，頭會擋出「影子」，高音聲波短被擋住，低音聲波長繞得過去。英國物理學家雷利勳爵 1907 年提出雙重理論：低音主要靠時間差、高音主要靠音量差，分界約 1500 赫茲（他也因發現氬氣得過諾貝爾物理獎）。這也解釋了家裡低音喇叭為什麼擺角落也聽不出方向，不過房間還是會影響低音飽滿度。只靠兩耳差別有個漏洞：左前方和左後方的差別幾乎一樣，這些會搞混的位置圍成甜筒形，叫混淆錐；轉一下頭就能幫忙判斷（Wallach 1940），耳廓也是分辨前後上下的祕密武器。最後介紹定位高手倉鴞：兩個耳孔一高一低，連上下都聽得出來。
+
+參考資料：
+Lord Rayleigh, On our perception of sound direction（1907）：https://doi.org/10.1080/14786440709463595
+Sound localization：https://en.wikipedia.org/wiki/Sound_localization
+Interaural time difference：https://en.wikipedia.org/wiki/Interaural_time_difference
+Wallach（1940）：https://doi.org/10.1037/h0054629
+Barn owl：https://en.wikipedia.org/wiki/Barn_owl]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第一集！半夜蚊子在耳邊嗡嗡叫，閉著眼睛也知道在左邊還是右邊，耳朵是怎麼聽出方向的？兩隻耳朵就像頭兩側的兩支麥克風，大腦比較兩份聲音的差別：一是時間差，聲音從左邊來會先到左耳，兩耳只隔十幾公分，最多只差約 0.6～0.7 毫秒，大腦卻分辨得出約十萬分之一秒；二是音量差，頭會擋出「影子」，高音聲波短被擋住，低音聲波長繞得過去。英國物理學家雷利勳爵 1907 年提出雙重理論：低音主要靠時間差、高音主要靠音量差，分界約 1500 赫茲（他也因發現氬氣得過諾貝爾物理獎）。這也解釋了家裡低音喇叭為什麼擺角落也聽不出方向，不過房間還是會影響低音飽滿度。只靠兩耳差別有個漏洞：左前方和左後方的差別幾乎一樣，這些會搞混的位置圍成甜筒形，叫混淆錐；轉一下頭就能幫忙判斷（Wallach 1940），耳廓也是分辨前後上下的祕密武器。最後介紹定位高手倉鴞：兩個耳孔一高一低，連上下都聽得出來。
+
+參考資料：
+Lord Rayleigh, On our perception of sound direction（1907）：https://doi.org/10.1080/14786440709463595
+Sound localization：https://en.wikipedia.org/wiki/Sound_localization
+Interaural time difference：https://en.wikipedia.org/wiki/Interaural_time_difference
+Wallach（1940）：https://doi.org/10.1037/h0054629
+Barn owl：https://en.wikipedia.org/wiki/Barn_owl]]></itunes:summary>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep63.mp3" length="3473386" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep63.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:37</itunes:duration>
+      <itunes:episode>63</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

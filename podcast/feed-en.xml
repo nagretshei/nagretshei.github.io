@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 06 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1773,6 +1773,35 @@ Elf.Tech: https://elf.tech]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:35</itunes:duration>
       <itunes:episode>62</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Hear a Mosquito with Your Eyes Closed? How Two Ears Find Direction | Spatial Sound Series 1</title>
+      <description><![CDATA[The first episode of the Spatial Sound Series! A mosquito buzzes by your ear at night, and you know which side it's on without opening your eyes. How? Your two ears work like two microphones, and the brain compares them. First, the time difference: a sound from the left reaches the left ear first; with ears only a little more than ten centimeters apart, the biggest gap is about 0.6 to 0.7 milliseconds, yet the brain can detect around a hundred-thousandth of a second. Second, the loudness difference: the head casts an acoustic shadow that blocks short high-frequency waves, while long low-frequency waves bend around it. Lord Rayleigh's duplex theory (1907) says low sounds are located mainly by time and high sounds mainly by loudness, with the dividing line around 1500 hertz (he also won the Nobel Prize in Physics for discovering argon). That's why you can hardly tell where a subwoofer sits, though the room still shapes how full the bass sounds. The loophole: front-left and back-left give almost the same differences. These confusable positions form an ice-cream-cone shape called the cone of confusion; turning your head helps (Wallach, 1940), and the outer ear is another secret weapon. Finally, the barn owl, whose ear openings sit at different heights so it can hear up and down too.
+
+References:
+Lord Rayleigh, On our perception of sound direction (1907): https://doi.org/10.1080/14786440709463595
+Sound localization: https://en.wikipedia.org/wiki/Sound_localization
+Interaural time difference: https://en.wikipedia.org/wiki/Interaural_time_difference
+Wallach (1940): https://doi.org/10.1037/h0054629
+Barn owl: https://en.wikipedia.org/wiki/Barn_owl]]></description>
+      <itunes:summary><![CDATA[The first episode of the Spatial Sound Series! A mosquito buzzes by your ear at night, and you know which side it's on without opening your eyes. How? Your two ears work like two microphones, and the brain compares them. First, the time difference: a sound from the left reaches the left ear first; with ears only a little more than ten centimeters apart, the biggest gap is about 0.6 to 0.7 milliseconds, yet the brain can detect around a hundred-thousandth of a second. Second, the loudness difference: the head casts an acoustic shadow that blocks short high-frequency waves, while long low-frequency waves bend around it. Lord Rayleigh's duplex theory (1907) says low sounds are located mainly by time and high sounds mainly by loudness, with the dividing line around 1500 hertz (he also won the Nobel Prize in Physics for discovering argon). That's why you can hardly tell where a subwoofer sits, though the room still shapes how full the bass sounds. The loophole: front-left and back-left give almost the same differences. These confusable positions form an ice-cream-cone shape called the cone of confusion; turning your head helps (Wallach, 1940), and the outer ear is another secret weapon. Finally, the barn owl, whose ear openings sit at different heights so it can hear up and down too.
+
+References:
+Lord Rayleigh, On our perception of sound direction (1907): https://doi.org/10.1080/14786440709463595
+Sound localization: https://en.wikipedia.org/wiki/Sound_localization
+Interaural time difference: https://en.wikipedia.org/wiki/Interaural_time_difference
+Wallach (1940): https://doi.org/10.1037/h0054629
+Barn owl: https://en.wikipedia.org/wiki/Barn_owl]]></itunes:summary>
+      <pubDate>Sat, 07 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep63.mp3" length="1248048" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep63.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:28</itunes:duration>
+      <itunes:episode>63</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
