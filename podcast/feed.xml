@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 07 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1802,6 +1802,60 @@ Barn owl：https://en.wikipedia.org/wiki/Barn_owl]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:37</itunes:duration>
       <itunes:episode>63</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>耳機開多大聲會傷耳朵？60/60 原則與 WHO 安全聆聽建議</title>
+      <description><![CDATA[搭捷運越開越大聲，下車耳朵嗡嗡叫？聲音大小用分貝表示：安靜圖書館約 30、一般說話約 60、很吵的車廂或馬路約 80、演唱會前排可以超過 110 分貝；每多 10 分貝能量變十倍、聽起來約大聲兩倍。世界衛生組織建議大人每週在 80 分貝以內總共聽 40 小時（小朋友 75 分貝），每多 3 分貝安全時間就少一半：86 分貝每週只剩 10 小時、92 分貝只剩 2.5 小時。內耳耳蝸裡像小草一樣的毛細胞負責把振動變成神經訊號，被吵太久會受傷，而且人類的毛細胞壞了不會再生；耳朵悶悶的、嗡嗡叫就是警訊。WHO 估計 12～35 歲年輕人約一半有聽力受損風險，2022 年 BMJ Global Health 研究估計全球約 6.7 億到 13.5 億年輕人有不安全的聆聽習慣。保護耳朵三招：60/60 原則（音量六成以下、聽六十分鐘休息）、打開手機的耳機音量提醒（iPhone 以 80 分貝、7 天 40 小時為標準）、吵的地方用降噪耳機（第 50 集）。
+
+參考資料：
+WHO Safe listening：https://www.who.int/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening
+Dillard et al.（BMJ Global Health, 2022）：https://gh.bmj.com/content/7/11/e010501
+Apple 耳機通知：https://support.apple.com/108968]]></description>
+      <itunes:summary><![CDATA[搭捷運越開越大聲，下車耳朵嗡嗡叫？聲音大小用分貝表示：安靜圖書館約 30、一般說話約 60、很吵的車廂或馬路約 80、演唱會前排可以超過 110 分貝；每多 10 分貝能量變十倍、聽起來約大聲兩倍。世界衛生組織建議大人每週在 80 分貝以內總共聽 40 小時（小朋友 75 分貝），每多 3 分貝安全時間就少一半：86 分貝每週只剩 10 小時、92 分貝只剩 2.5 小時。內耳耳蝸裡像小草一樣的毛細胞負責把振動變成神經訊號，被吵太久會受傷，而且人類的毛細胞壞了不會再生；耳朵悶悶的、嗡嗡叫就是警訊。WHO 估計 12～35 歲年輕人約一半有聽力受損風險，2022 年 BMJ Global Health 研究估計全球約 6.7 億到 13.5 億年輕人有不安全的聆聽習慣。保護耳朵三招：60/60 原則（音量六成以下、聽六十分鐘休息）、打開手機的耳機音量提醒（iPhone 以 80 分貝、7 天 40 小時為標準）、吵的地方用降噪耳機（第 50 集）。
+
+參考資料：
+WHO Safe listening：https://www.who.int/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening
+Dillard et al.（BMJ Global Health, 2022）：https://gh.bmj.com/content/7/11/e010501
+Apple 耳機通知：https://support.apple.com/108968]]></itunes:summary>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep64.mp3" length="2791277" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep64.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:54</itunes:duration>
+      <itunes:episode>64</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>串流時代，黑膠為什麼又紅了？黑膠唱片怎麼發聲、真的比較好聽嗎</title>
+      <description><![CDATA[手機就能聽上億首歌，卻有人排隊買黑膠？黑膠唱片是一條很長的螺旋溝槽，牆壁刻成聲波的形狀，唱針沿著溝槽抖動、唱頭把抖動變成電訊號。歷史：1877 年愛迪生的錫箔圓筒留聲機、1887 年柏林納改成圓盤、1948 年哥倫比亞唱片推出一面約 20 分鐘的長時間黑膠、1982 年 CD 登場後黑膠退場。2008 年美國獨立唱片店發起 Record Store Day；2022 年美國黑膠銷售張數超越 CD，是 1987 年以來第一次；2024 年美國黑膠約 4400 萬張、CD 約 3300 萬張，黑膠營收約 14 億美元、1984 年以來最高。黑膠比較好聽嗎？只比規格，CD 雜訊更少、動態更大；黑膠有爆豆聲、內圈容易失真，「溫暖感」一部分來自細微失真，加上黑膠要另做母帶（低音集中在中間，唱針才不會跳），有時也比較不被壓得那麼大聲——是聽起來不一樣，不是誰比較好。大封面、放唱片翻面的儀式感、支持歌手也是魅力；Luminate 2023 年調查，過去一年買過黑膠的人約只有一半說家裡有唱盤。
+
+參考資料：
+RIAA 2024 年終報告（MusicRow）：https://musicrow.com/2025/03/riaa-reports-paid-music-subscriptions-hits-100-million/
+Vinyl outsells CDs first time since 1987（LAist）：https://laist.com/news/arts-and-entertainment/vinyl-records-outsell-cds-for-the-first-time-since-1987
+Luminate 調查（Consequence）：https://consequence.net/2023/04/half-vinyl-buyers-record-player-study
+Phonograph record：https://en.wikipedia.org/wiki/Phonograph_record
+Record Store Day：https://en.wikipedia.org/wiki/Record_Store_Day]]></description>
+      <itunes:summary><![CDATA[手機就能聽上億首歌，卻有人排隊買黑膠？黑膠唱片是一條很長的螺旋溝槽，牆壁刻成聲波的形狀，唱針沿著溝槽抖動、唱頭把抖動變成電訊號。歷史：1877 年愛迪生的錫箔圓筒留聲機、1887 年柏林納改成圓盤、1948 年哥倫比亞唱片推出一面約 20 分鐘的長時間黑膠、1982 年 CD 登場後黑膠退場。2008 年美國獨立唱片店發起 Record Store Day；2022 年美國黑膠銷售張數超越 CD，是 1987 年以來第一次；2024 年美國黑膠約 4400 萬張、CD 約 3300 萬張，黑膠營收約 14 億美元、1984 年以來最高。黑膠比較好聽嗎？只比規格，CD 雜訊更少、動態更大；黑膠有爆豆聲、內圈容易失真，「溫暖感」一部分來自細微失真，加上黑膠要另做母帶（低音集中在中間，唱針才不會跳），有時也比較不被壓得那麼大聲——是聽起來不一樣，不是誰比較好。大封面、放唱片翻面的儀式感、支持歌手也是魅力；Luminate 2023 年調查，過去一年買過黑膠的人約只有一半說家裡有唱盤。
+
+參考資料：
+RIAA 2024 年終報告（MusicRow）：https://musicrow.com/2025/03/riaa-reports-paid-music-subscriptions-hits-100-million/
+Vinyl outsells CDs first time since 1987（LAist）：https://laist.com/news/arts-and-entertainment/vinyl-records-outsell-cds-for-the-first-time-since-1987
+Luminate 調查（Consequence）：https://consequence.net/2023/04/half-vinyl-buyers-record-player-study
+Phonograph record：https://en.wikipedia.org/wiki/Phonograph_record
+Record Store Day：https://en.wikipedia.org/wiki/Record_Store_Day]]></itunes:summary>
+      <pubDate>Mon, 09 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep65.mp3" length="3099313" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep65.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:14</itunes:duration>
+      <itunes:episode>65</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

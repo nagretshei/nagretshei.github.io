@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 07 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1802,6 +1802,60 @@ Barn owl: https://en.wikipedia.org/wiki/Barn_owl]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:28</itunes:duration>
       <itunes:episode>63</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Loud Is Too Loud for Headphones? The 60/60 Rule and WHO Safe Listening</title>
+      <description><![CDATA[Turning up your headphones on a noisy train and leaving with ringing ears? Loudness is measured in decibels: a quiet library is about 30, normal conversation about 60, a noisy train or busy road about 80, and the front rows of a concert can exceed 110. Every 10 more decibels means ten times the energy and sounds roughly twice as loud. The World Health Organization recommends that adults listen at up to 80 decibels for a total of 40 hours a week (75 decibels for children), and every 3 more decibels halves the safe time: 10 hours at 86 decibels, just 2.5 hours at 92. Hair cells in the cochlea, like tiny blades of grass, turn vibrations into nerve signals; too much loud sound damages them, and human hair cells don't grow back. Muffled or ringing ears are a warning sign. WHO estimates about half of people aged 12 to 35 are at risk, and a 2022 BMJ Global Health study estimated 0.67 to 1.35 billion young people have unsafe listening habits. Three tips: the 60/60 rule, your phone's headphone level alerts (iPhone uses 80 decibels for 40 hours over 7 days), and noise-cancelling headphones in loud places (episode 50).
+
+References:
+WHO Safe listening: https://www.who.int/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening
+Dillard et al. (BMJ Global Health, 2022): https://gh.bmj.com/content/7/11/e010501
+Apple headphone notifications: https://support.apple.com/108968]]></description>
+      <itunes:summary><![CDATA[Turning up your headphones on a noisy train and leaving with ringing ears? Loudness is measured in decibels: a quiet library is about 30, normal conversation about 60, a noisy train or busy road about 80, and the front rows of a concert can exceed 110. Every 10 more decibels means ten times the energy and sounds roughly twice as loud. The World Health Organization recommends that adults listen at up to 80 decibels for a total of 40 hours a week (75 decibels for children), and every 3 more decibels halves the safe time: 10 hours at 86 decibels, just 2.5 hours at 92. Hair cells in the cochlea, like tiny blades of grass, turn vibrations into nerve signals; too much loud sound damages them, and human hair cells don't grow back. Muffled or ringing ears are a warning sign. WHO estimates about half of people aged 12 to 35 are at risk, and a 2022 BMJ Global Health study estimated 0.67 to 1.35 billion young people have unsafe listening habits. Three tips: the 60/60 rule, your phone's headphone level alerts (iPhone uses 80 decibels for 40 hours over 7 days), and noise-cancelling headphones in loud places (episode 50).
+
+References:
+WHO Safe listening: https://www.who.int/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening
+Dillard et al. (BMJ Global Health, 2022): https://gh.bmj.com/content/7/11/e010501
+Apple headphone notifications: https://support.apple.com/108968]]></itunes:summary>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep64.mp3" length="1030320" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep64.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:02:52</itunes:duration>
+      <itunes:episode>64</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Is Vinyl Back in the Streaming Era? How Records Make Sound, and Do They Sound Better?</title>
+      <description><![CDATA[We can stream over a hundred million songs, yet people line up for vinyl. A record is one long spiral groove whose walls are cut in the shape of the sound wave; the needle wiggles along it and the cartridge turns that motion into an electrical signal. History: Edison's tin-foil cylinder phonograph (1877), Emile Berliner's flat disc (1887), Columbia's long-playing record with about 20 minutes per side (1948), and the CD (1982), after which vinyl faded. In 2008, independent US record stores launched Record Store Day; in 2022, vinyl outsold CDs by units in the US for the first time since 1987; in 2024 the US sold about 44 million vinyl records versus 33 million CDs, with vinyl revenue around 1.4 billion dollars, the highest since 1984. Does vinyl sound better? On specs, CDs have less noise and more dynamic range; vinyl has crackles and inner-groove distortion. Its warmth partly comes from subtle distortion and from separate vinyl masters (bass kept centered so the needle stays in the groove, sometimes less loudness compression). It sounds different, not better. Big covers, the ritual of playing a record, and supporting artists add to the appeal; a 2023 Luminate survey found only about half of recent US vinyl buyers said they owned a record player.
+
+References:
+RIAA 2024 year-end report (MusicRow): https://musicrow.com/2025/03/riaa-reports-paid-music-subscriptions-hits-100-million/
+Vinyl outsells CDs first time since 1987 (LAist): https://laist.com/news/arts-and-entertainment/vinyl-records-outsell-cds-for-the-first-time-since-1987
+Luminate survey (Consequence): https://consequence.net/2023/04/half-vinyl-buyers-record-player-study
+Phonograph record: https://en.wikipedia.org/wiki/Phonograph_record
+Record Store Day: https://en.wikipedia.org/wiki/Record_Store_Day]]></description>
+      <itunes:summary><![CDATA[We can stream over a hundred million songs, yet people line up for vinyl. A record is one long spiral groove whose walls are cut in the shape of the sound wave; the needle wiggles along it and the cartridge turns that motion into an electrical signal. History: Edison's tin-foil cylinder phonograph (1877), Emile Berliner's flat disc (1887), Columbia's long-playing record with about 20 minutes per side (1948), and the CD (1982), after which vinyl faded. In 2008, independent US record stores launched Record Store Day; in 2022, vinyl outsold CDs by units in the US for the first time since 1987; in 2024 the US sold about 44 million vinyl records versus 33 million CDs, with vinyl revenue around 1.4 billion dollars, the highest since 1984. Does vinyl sound better? On specs, CDs have less noise and more dynamic range; vinyl has crackles and inner-groove distortion. Its warmth partly comes from subtle distortion and from separate vinyl masters (bass kept centered so the needle stays in the groove, sometimes less loudness compression). It sounds different, not better. Big covers, the ritual of playing a record, and supporting artists add to the appeal; a 2023 Luminate survey found only about half of recent US vinyl buyers said they owned a record player.
+
+References:
+RIAA 2024 year-end report (MusicRow): https://musicrow.com/2025/03/riaa-reports-paid-music-subscriptions-hits-100-million/
+Vinyl outsells CDs first time since 1987 (LAist): https://laist.com/news/arts-and-entertainment/vinyl-records-outsell-cds-for-the-first-time-since-1987
+Luminate survey (Consequence): https://consequence.net/2023/04/half-vinyl-buyers-record-player-study
+Phonograph record: https://en.wikipedia.org/wiki/Phonograph_record
+Record Store Day: https://en.wikipedia.org/wiki/Record_Store_Day]]></itunes:summary>
+      <pubDate>Mon, 09 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep65.mp3" length="1136016" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep65.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:09</itunes:duration>
+      <itunes:episode>65</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
