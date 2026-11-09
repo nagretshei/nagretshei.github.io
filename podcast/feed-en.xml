@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1856,6 +1856,37 @@ Record Store Day: https://en.wikipedia.org/wiki/Record_Store_Day]]></itunes:summ
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:09</itunes:duration>
       <itunes:episode>65</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Does Sound Get Behind Your Head in Headphones? The Pinna, HRTF and Dummy Heads | Spatial Sound Series 2</title>
+      <description><![CDATA[Part two of the spatial sound series! How can footsteps come from behind you in headphones? Last time, our two ears used time and level differences to tell left from right, but front-back and up-down are easy to confuse. Today's hero is the pinna: its folds act as a direction filter, carving notches into certain frequencies, and the notch moves depending on whether sound comes from above, in front or below. The head's shadow, the pinna's notches and reflections from the shoulders and body together make up the head-related transfer function (HRTF), a fingerprint book with left- and right-ear fingerprints for every direction. Everyone's ears differ: in 1998, a Dutch team (Hofman et al.) fitted silicone molds into listeners' ears; elevation judgments collapsed, the brain relearned within several weeks, and the original ears worked immediately once the molds came out. The KEMAR dummy head, introduced by Knowles in 1972, has microphones in its ears; surrounded by speakers, it records each direction's fingerprint, and in 1994 the MIT Media Lab released measurements for over 700 directions for free. Two approaches: dummy-head recording on location (already at the 1881 Paris electricity exhibition, two telephone lines sent opera sound separately to each ear), or a binaural panner that applies a direction's HRTF to a mono sound; with head tracking, sounds stay put when you turn. Using someone else's HRTF causes front-back reversals and in-head sound (Wenzel et al., 1993), which is why some phones scan your ears to personalize it.
+
+References:
+Head-related transfer function: https://en.wikipedia.org/wiki/Head-related_transfer_function
+Gardner & Martin, KEMAR HRTF (MIT Media Lab, 1994): https://sound.media.mit.edu/resources/KEMAR.html
+Hofman et al., Relearning sound localization with new ears (1998): https://doi.org/10.1038/1633
+Wenzel et al., nonindividualized HRTFs (1993): https://doi.org/10.1121/1.407089
+Théâtrophone: https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2trophone
+Binaural recording: https://en.wikipedia.org/wiki/Binaural_recording]]></description>
+      <itunes:summary><![CDATA[Part two of the spatial sound series! How can footsteps come from behind you in headphones? Last time, our two ears used time and level differences to tell left from right, but front-back and up-down are easy to confuse. Today's hero is the pinna: its folds act as a direction filter, carving notches into certain frequencies, and the notch moves depending on whether sound comes from above, in front or below. The head's shadow, the pinna's notches and reflections from the shoulders and body together make up the head-related transfer function (HRTF), a fingerprint book with left- and right-ear fingerprints for every direction. Everyone's ears differ: in 1998, a Dutch team (Hofman et al.) fitted silicone molds into listeners' ears; elevation judgments collapsed, the brain relearned within several weeks, and the original ears worked immediately once the molds came out. The KEMAR dummy head, introduced by Knowles in 1972, has microphones in its ears; surrounded by speakers, it records each direction's fingerprint, and in 1994 the MIT Media Lab released measurements for over 700 directions for free. Two approaches: dummy-head recording on location (already at the 1881 Paris electricity exhibition, two telephone lines sent opera sound separately to each ear), or a binaural panner that applies a direction's HRTF to a mono sound; with head tracking, sounds stay put when you turn. Using someone else's HRTF causes front-back reversals and in-head sound (Wenzel et al., 1993), which is why some phones scan your ears to personalize it.
+
+References:
+Head-related transfer function: https://en.wikipedia.org/wiki/Head-related_transfer_function
+Gardner & Martin, KEMAR HRTF (MIT Media Lab, 1994): https://sound.media.mit.edu/resources/KEMAR.html
+Hofman et al., Relearning sound localization with new ears (1998): https://doi.org/10.1038/1633
+Wenzel et al., nonindividualized HRTFs (1993): https://doi.org/10.1121/1.407089
+Théâtrophone: https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2trophone
+Binaural recording: https://en.wikipedia.org/wiki/Binaural_recording]]></itunes:summary>
+      <pubDate>Tue, 10 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep66.mp3" length="3890825" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep66.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:03</itunes:duration>
+      <itunes:episode>66</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

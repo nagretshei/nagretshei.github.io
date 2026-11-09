@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1856,6 +1856,37 @@ Record Store Day：https://en.wikipedia.org/wiki/Record_Store_Day]]></itunes:sum
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:14</itunes:duration>
       <itunes:episode>65</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>耳機裡的聲音怎麼跑到頭後面？耳廓、HRTF 與假人頭｜空間聲音系列②</title>
+      <description><![CDATA[空間聲音系列第二集！戴耳機時，腳步聲怎麼會從背後傳來？上一集講到兩耳靠時間差和音量差分左右，但前後上下容易搞混，今天的主角是耳廓：耳廓的皺褶像一個方向濾鏡，聲音在裡面反射，有些頻率被挖出「凹口」，聲音從上方、前方、下方來，凹口位置都不一樣。頭擋出的影子、耳廓的凹口、肩膀和身體的反射，加起來就是頭部相關傳輸函數（HRTF），像一本每個方向一份左右耳「聲音指紋」的指紋簿。每個人的耳朵都不同：1998 年荷蘭團隊（Hofman 等）在受試者耳廓貼上矽膠模型，上下判斷立刻錯亂，幾個星期後大腦重新學會，拿掉模型原本的耳朵馬上又能用。假人頭 KEMAR 由 Knowles 公司 1972 年推出，耳朵裡裝麥克風、四周喇叭播測試聲；1994 年 MIT 媒體實驗室免費公開七百多個方向的資料。兩種做法：假人頭現場錄音（1881 年巴黎電力博覽會就用兩條電話線把歌劇院聲音分送左右耳），或用雙耳聲像定位器把單聲道聲音套上某方向的 HRTF，配合頭部追蹤，轉頭聲音留在原地。用別人的 HRTF 容易前後顛倒、聲音黏在頭裡面（Wenzel 等 1993），所以有些手機會請你拍耳朵做個人化版本。
+
+參考資料：
+Head-related transfer function：https://en.wikipedia.org/wiki/Head-related_transfer_function
+Gardner & Martin, KEMAR HRTF（MIT Media Lab, 1994）：https://sound.media.mit.edu/resources/KEMAR.html
+Hofman et al., Relearning sound localization with new ears（1998）：https://doi.org/10.1038/1633
+Wenzel et al., nonindividualized HRTFs（1993）：https://doi.org/10.1121/1.407089
+Théâtrophone：https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2trophone
+Binaural recording：https://en.wikipedia.org/wiki/Binaural_recording]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第二集！戴耳機時，腳步聲怎麼會從背後傳來？上一集講到兩耳靠時間差和音量差分左右，但前後上下容易搞混，今天的主角是耳廓：耳廓的皺褶像一個方向濾鏡，聲音在裡面反射，有些頻率被挖出「凹口」，聲音從上方、前方、下方來，凹口位置都不一樣。頭擋出的影子、耳廓的凹口、肩膀和身體的反射，加起來就是頭部相關傳輸函數（HRTF），像一本每個方向一份左右耳「聲音指紋」的指紋簿。每個人的耳朵都不同：1998 年荷蘭團隊（Hofman 等）在受試者耳廓貼上矽膠模型，上下判斷立刻錯亂，幾個星期後大腦重新學會，拿掉模型原本的耳朵馬上又能用。假人頭 KEMAR 由 Knowles 公司 1972 年推出，耳朵裡裝麥克風、四周喇叭播測試聲；1994 年 MIT 媒體實驗室免費公開七百多個方向的資料。兩種做法：假人頭現場錄音（1881 年巴黎電力博覽會就用兩條電話線把歌劇院聲音分送左右耳），或用雙耳聲像定位器把單聲道聲音套上某方向的 HRTF，配合頭部追蹤，轉頭聲音留在原地。用別人的 HRTF 容易前後顛倒、聲音黏在頭裡面（Wenzel 等 1993），所以有些手機會請你拍耳朵做個人化版本。
+
+參考資料：
+Head-related transfer function：https://en.wikipedia.org/wiki/Head-related_transfer_function
+Gardner & Martin, KEMAR HRTF（MIT Media Lab, 1994）：https://sound.media.mit.edu/resources/KEMAR.html
+Hofman et al., Relearning sound localization with new ears（1998）：https://doi.org/10.1038/1633
+Wenzel et al., nonindividualized HRTFs（1993）：https://doi.org/10.1121/1.407089
+Théâtrophone：https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2trophone
+Binaural recording：https://en.wikipedia.org/wiki/Binaural_recording]]></itunes:summary>
+      <pubDate>Tue, 10 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep66.mp3" length="3933141" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep66.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:06</itunes:duration>
+      <itunes:episode>66</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
