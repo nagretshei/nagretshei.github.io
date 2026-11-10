@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 10 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1887,6 +1887,35 @@ Binaural recording：https://en.wikipedia.org/wiki/Binaural_recording]]></itunes
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:06</itunes:duration>
       <itunes:episode>66</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>聲音離你多遠？耳朵判斷遠近的四個線索｜空間聲音系列③</title>
+      <description><![CDATA[空間聲音系列第三集！閉上眼睛，也知道叫你的人在旁邊還是走廊另一頭，耳朵沒有尺，靠的是好幾個線索。線索一是音量：聲音往四面八方散開，空曠戶外距離加倍大約小 6 分貝；但音量很會騙人，悄悄話和操場另一頭的大喊傳到耳朵可能一樣大聲，大腦會參考聲音「本來有多大聲」，沒聽過的聲音就很難猜。線索二是直接聲和殘響的比例：走遠時直接聲變小，殘響在房間裡差不多一樣大，所以近的聽起來乾、遠的聽起來濕；1975 年 Mershon 與 King 的實驗發現，在有回音的房間裡判斷遠近比在消音室準，殘響就是耳朵的距離尺。線索三是空氣吃掉高音：一百公尺外很高的高音少將近 10 dB，低音幾乎沒變，所以近處打雷是清脆的「啪」，遠處只剩轟隆隆。線索四是貼在耳邊的近場聲音：不到一公尺時頭的影子特別明顯，連低音都有左右耳音量差（Brungart 與 Rabinowitz 1999），耳語影片就是這樣錄的。最後看混音師怎麼把聲音推遠（音量小、殘響多、高音少）或拉近，以及在耳機裡加一點房間殘響，聲音比較不會黏在頭裡。
+
+參考資料：
+Inverse-square law：https://en.wikipedia.org/wiki/Inverse-square_law
+Sound localization：https://en.wikipedia.org/wiki/Sound_localization
+Mershon & King, Intensity and reverberation as factors in the auditory perception of egocentric distance（1975）：https://doi.org/10.3758/BF03204113
+Brungart & Rabinowitz, Auditory localization of nearby sources: HRTFs（1999）：https://doi.org/10.1121/1.427180
+Acoustic attenuation：https://en.wikipedia.org/wiki/Acoustic_attenuation]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第三集！閉上眼睛，也知道叫你的人在旁邊還是走廊另一頭，耳朵沒有尺，靠的是好幾個線索。線索一是音量：聲音往四面八方散開，空曠戶外距離加倍大約小 6 分貝；但音量很會騙人，悄悄話和操場另一頭的大喊傳到耳朵可能一樣大聲，大腦會參考聲音「本來有多大聲」，沒聽過的聲音就很難猜。線索二是直接聲和殘響的比例：走遠時直接聲變小，殘響在房間裡差不多一樣大，所以近的聽起來乾、遠的聽起來濕；1975 年 Mershon 與 King 的實驗發現，在有回音的房間裡判斷遠近比在消音室準，殘響就是耳朵的距離尺。線索三是空氣吃掉高音：一百公尺外很高的高音少將近 10 dB，低音幾乎沒變，所以近處打雷是清脆的「啪」，遠處只剩轟隆隆。線索四是貼在耳邊的近場聲音：不到一公尺時頭的影子特別明顯，連低音都有左右耳音量差（Brungart 與 Rabinowitz 1999），耳語影片就是這樣錄的。最後看混音師怎麼把聲音推遠（音量小、殘響多、高音少）或拉近，以及在耳機裡加一點房間殘響，聲音比較不會黏在頭裡。
+
+參考資料：
+Inverse-square law：https://en.wikipedia.org/wiki/Inverse-square_law
+Sound localization：https://en.wikipedia.org/wiki/Sound_localization
+Mershon & King, Intensity and reverberation as factors in the auditory perception of egocentric distance（1975）：https://doi.org/10.3758/BF03204113
+Brungart & Rabinowitz, Auditory localization of nearby sources: HRTFs（1999）：https://doi.org/10.1121/1.427180
+Acoustic attenuation：https://en.wikipedia.org/wiki/Acoustic_attenuation]]></itunes:summary>
+      <pubDate>Wed, 11 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep67.mp3" length="3662304" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep67.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:49</itunes:duration>
+      <itunes:episode>67</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 10 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1887,6 +1887,35 @@ Binaural recording: https://en.wikipedia.org/wiki/Binaural_recording]]></itunes:
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:03</itunes:duration>
       <itunes:episode>66</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Far Away Is That Sound? Four Clues Your Ears Use to Judge Distance | Spatial Sound Series 3</title>
+      <description><![CDATA[Part three of the spatial sound series! With your eyes closed, you still know whether the person calling you is right beside you or down the hall. Your ears have no ruler, so they rely on several clues. Clue one is loudness: sound spreads out in all directions, and outdoors it drops about 6 dB every time the distance doubles. But loudness can lie: a whisper in your ear and a shout from across a sports field may arrive equally loud, and your brain uses what it knows about how loud a sound normally is, so unfamiliar sounds are hard to judge. Clue two is the ratio of direct sound to reverberation: as you move away, the direct sound weakens while the reverberation stays roughly constant in the room, so close sounds feel dry and distant ones feel wet. In 1975, Mershon and King found that listeners judged distance more accurately in a reverberant room than in an anechoic chamber, so reverberation is your ears' measuring tape. Clue three is air absorption: about 100 meters away, very high frequencies lose almost 10 dB while lows barely change, which is why nearby thunder cracks and distant thunder rumbles. Clue four is the near field: within one meter, the head's shadow becomes so strong that even low frequencies differ between the ears (Brungart and Rabinowitz, 1999), which is how binaural whisper videos work. Finally, how mixing engineers push sounds back (quieter, more reverb, fewer highs) or pull them close, and how a little room reverb keeps headphone sound from feeling stuck inside your head.
+
+References:
+Inverse-square law: https://en.wikipedia.org/wiki/Inverse-square_law
+Sound localization: https://en.wikipedia.org/wiki/Sound_localization
+Mershon & King, Intensity and reverberation as factors in the auditory perception of egocentric distance (1975): https://doi.org/10.3758/BF03204113
+Brungart & Rabinowitz, Auditory localization of nearby sources: HRTFs (1999): https://doi.org/10.1121/1.427180
+Acoustic attenuation: https://en.wikipedia.org/wiki/Acoustic_attenuation]]></description>
+      <itunes:summary><![CDATA[Part three of the spatial sound series! With your eyes closed, you still know whether the person calling you is right beside you or down the hall. Your ears have no ruler, so they rely on several clues. Clue one is loudness: sound spreads out in all directions, and outdoors it drops about 6 dB every time the distance doubles. But loudness can lie: a whisper in your ear and a shout from across a sports field may arrive equally loud, and your brain uses what it knows about how loud a sound normally is, so unfamiliar sounds are hard to judge. Clue two is the ratio of direct sound to reverberation: as you move away, the direct sound weakens while the reverberation stays roughly constant in the room, so close sounds feel dry and distant ones feel wet. In 1975, Mershon and King found that listeners judged distance more accurately in a reverberant room than in an anechoic chamber, so reverberation is your ears' measuring tape. Clue three is air absorption: about 100 meters away, very high frequencies lose almost 10 dB while lows barely change, which is why nearby thunder cracks and distant thunder rumbles. Clue four is the near field: within one meter, the head's shadow becomes so strong that even low frequencies differ between the ears (Brungart and Rabinowitz, 1999), which is how binaural whisper videos work. Finally, how mixing engineers push sounds back (quieter, more reverb, fewer highs) or pull them close, and how a little room reverb keeps headphone sound from feeling stuck inside your head.
+
+References:
+Inverse-square law: https://en.wikipedia.org/wiki/Inverse-square_law
+Sound localization: https://en.wikipedia.org/wiki/Sound_localization
+Mershon & King, Intensity and reverberation as factors in the auditory perception of egocentric distance (1975): https://doi.org/10.3758/BF03204113
+Brungart & Rabinowitz, Auditory localization of nearby sources: HRTFs (1999): https://doi.org/10.1121/1.427180
+Acoustic attenuation: https://en.wikipedia.org/wiki/Acoustic_attenuation]]></itunes:summary>
+      <pubDate>Wed, 11 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep67.mp3" length="1403856" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep67.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:54</itunes:duration>
+      <itunes:episode>67</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
