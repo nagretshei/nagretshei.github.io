@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 11 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1916,6 +1916,33 @@ Acoustic attenuation: https://en.wikipedia.org/wiki/Acoustic_attenuation]]></itu
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:54</itunes:duration>
       <itunes:episode>67</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Who Scores AI Music? Fréchet Audio Distance (FAD) Explained</title>
+      <description><![CDATA[AI can generate ten thousand songs overnight, but nobody can listen to them all, so researchers need an automatic ruler. This episode explains FAD, the Fréchet Audio Distance, the score you see most often in AI music papers. Generated songs have no reference answer to compare against point by point, so in 2019 Kilgour and colleagues at Google proposed FAD, originally for evaluating music enhancement. It works in three steps: an AI model trained on lots of sounds (originally VGGish) acts as the ears and turns each song into a list of numbers, a point in space; the real-music and AI-music point clouds are each summarized by a center and a spread, like an ellipse; and FAD combines the distance between the centers with the difference in shape. Lower is better, and models like MusicLM and MusicGen use it to compare themselves. FAD has traps: fewer songs push the score up, the wrong embedding model misses high-frequency detail, a poor reference playlist bends the ruler, and it ignores whether songs follow the text prompt (that's what the CLAP score is for). Finally, the improvements: Microsoft's 2023 fadtk extrapolates to infinitely many songs (FAD-infinity), recommends music-aware embeddings and scores each song individually, and 2025's KAD drops the ellipse assumption and stabilizes with fewer songs.
+
+References:
+Kilgour et al. 2019 (Interspeech): https://www.isca-archive.org/interspeech_2019/kilgour19_interspeech.html
+Gui et al., Adapting Frechet Audio Distance for Generative Music Evaluation: https://arxiv.org/abs/2311.01616
+microsoft/fadtk: https://github.com/microsoft/fadtk
+KAD: No More FAD!: https://arxiv.org/abs/2502.15602]]></description>
+      <itunes:summary><![CDATA[AI can generate ten thousand songs overnight, but nobody can listen to them all, so researchers need an automatic ruler. This episode explains FAD, the Fréchet Audio Distance, the score you see most often in AI music papers. Generated songs have no reference answer to compare against point by point, so in 2019 Kilgour and colleagues at Google proposed FAD, originally for evaluating music enhancement. It works in three steps: an AI model trained on lots of sounds (originally VGGish) acts as the ears and turns each song into a list of numbers, a point in space; the real-music and AI-music point clouds are each summarized by a center and a spread, like an ellipse; and FAD combines the distance between the centers with the difference in shape. Lower is better, and models like MusicLM and MusicGen use it to compare themselves. FAD has traps: fewer songs push the score up, the wrong embedding model misses high-frequency detail, a poor reference playlist bends the ruler, and it ignores whether songs follow the text prompt (that's what the CLAP score is for). Finally, the improvements: Microsoft's 2023 fadtk extrapolates to infinitely many songs (FAD-infinity), recommends music-aware embeddings and scores each song individually, and 2025's KAD drops the ellipse assumption and stabilizes with fewer songs.
+
+References:
+Kilgour et al. 2019 (Interspeech): https://www.isca-archive.org/interspeech_2019/kilgour19_interspeech.html
+Gui et al., Adapting Frechet Audio Distance for Generative Music Evaluation: https://arxiv.org/abs/2311.01616
+microsoft/fadtk: https://github.com/microsoft/fadtk
+KAD: No More FAD!: https://arxiv.org/abs/2502.15602]]></itunes:summary>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep68.mp3" length="1363824" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep68.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:47</itunes:duration>
+      <itunes:episode>68</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep68 · 2026/11/12</span>
+        <div class="lang-zh">
+          <h3>AI 音樂誰來打分數？一次看懂 FAD 弗雷歇音訊距離</h3>
+          <p>AI 一個晚上就能生出一萬首歌，總不能請人一首一首聽，研究人員需要一把自動的尺。這集介紹 AI 音樂論文最常見的分數 FAD（弗雷歇音訊距離）：生成的新歌沒有標準答案可以逐點比對，2019 年 Google 的 Kilgour 等人提出 FAD，原本用來評估音樂修復。做法分三步：先用聽過大量聲音的 AI 模型（原版是 VGGish）當耳朵，把每首歌變成一串數字、也就是空間裡的一個點；再把真實音樂和 AI 音樂各自算出點雲的中心和散開的形狀（像一個橢圓）；最後比較兩個橢圓的中心距離和形狀差異，加起來就是 FAD，數字越小越像真實音樂，MusicLM、MusicGen 等模型都拿它互相比較。FAD 也有陷阱：歌越少分數越偏高、AI 耳朵選錯會聽不到高音細節、參考歌單選不好整把尺就歪、而且它不管歌有沒有照文字指令生成（那是 CLAP 分數的工作）。最後介紹改良：微軟 2023 年的 fadtk 往無限多首推算（FAD∞）、換更懂音樂的耳朵、每首歌各自打分；2025 年的 KAD 不再假設點雲是橢圓，用更少的歌就能穩定。</p>
+          <audio controls preload="none" src="podcast/audio/ep68.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>Who Scores AI Music? Fréchet Audio Distance (FAD) Explained</h3>
+          <p>AI can generate ten thousand songs overnight, but nobody can listen to them all, so researchers need an automatic ruler. This episode explains FAD, the Fréchet Audio Distance, the score you see most often in AI music papers. Generated songs have no reference answer to compare against point by point, so in 2019 Kilgour and colleagues at Google proposed FAD, originally for evaluating music enhancement. It works in three steps: an AI model trained on lots of sounds (originally VGGish) acts as the ears and turns each song into a list of numbers, a point in space; the real-music and AI-music point clouds are each summarized by a center and a spread, like an ellipse; and FAD combines the distance between the centers with the difference in shape. Lower is better, and models like MusicLM and MusicGen use it to compare themselves. FAD has traps: fewer songs push the score up, the wrong embedding model misses high-frequency detail, a poor reference playlist bends the ruler, and it ignores whether songs follow the text prompt (that&#x27;s what the CLAP score is for). Finally, the improvements: Microsoft&#x27;s 2023 fadtk extrapolates to infinitely many songs (FAD-infinity), recommends music-aware embeddings and scores each song individually, and 2025&#x27;s KAD drops the ellipse assumption and stabilizes with fewer songs.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep68.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep67 · 2026/11/11</span>
         <div class="lang-zh">
           <h3>聲音離你多遠？耳朵判斷遠近的四個線索｜空間聲音系列③</h3>

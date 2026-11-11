@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 11 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1916,6 +1916,33 @@ Acoustic attenuation：https://en.wikipedia.org/wiki/Acoustic_attenuation]]></it
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:49</itunes:duration>
       <itunes:episode>67</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 音樂誰來打分數？一次看懂 FAD 弗雷歇音訊距離</title>
+      <description><![CDATA[AI 一個晚上就能生出一萬首歌，總不能請人一首一首聽，研究人員需要一把自動的尺。這集介紹 AI 音樂論文最常見的分數 FAD（弗雷歇音訊距離）：生成的新歌沒有標準答案可以逐點比對，2019 年 Google 的 Kilgour 等人提出 FAD，原本用來評估音樂修復。做法分三步：先用聽過大量聲音的 AI 模型（原版是 VGGish）當耳朵，把每首歌變成一串數字、也就是空間裡的一個點；再把真實音樂和 AI 音樂各自算出點雲的中心和散開的形狀（像一個橢圓）；最後比較兩個橢圓的中心距離和形狀差異，加起來就是 FAD，數字越小越像真實音樂，MusicLM、MusicGen 等模型都拿它互相比較。FAD 也有陷阱：歌越少分數越偏高、AI 耳朵選錯會聽不到高音細節、參考歌單選不好整把尺就歪、而且它不管歌有沒有照文字指令生成（那是 CLAP 分數的工作）。最後介紹改良：微軟 2023 年的 fadtk 往無限多首推算（FAD∞）、換更懂音樂的耳朵、每首歌各自打分；2025 年的 KAD 不再假設點雲是橢圓，用更少的歌就能穩定。
+
+參考資料：
+Kilgour et al. 2019 (Interspeech)：https://www.isca-archive.org/interspeech_2019/kilgour19_interspeech.html
+Gui et al., Adapting Frechet Audio Distance for Generative Music Evaluation：https://arxiv.org/abs/2311.01616
+microsoft/fadtk：https://github.com/microsoft/fadtk
+KAD: No More FAD!：https://arxiv.org/abs/2502.15602]]></description>
+      <itunes:summary><![CDATA[AI 一個晚上就能生出一萬首歌，總不能請人一首一首聽，研究人員需要一把自動的尺。這集介紹 AI 音樂論文最常見的分數 FAD（弗雷歇音訊距離）：生成的新歌沒有標準答案可以逐點比對，2019 年 Google 的 Kilgour 等人提出 FAD，原本用來評估音樂修復。做法分三步：先用聽過大量聲音的 AI 模型（原版是 VGGish）當耳朵，把每首歌變成一串數字、也就是空間裡的一個點；再把真實音樂和 AI 音樂各自算出點雲的中心和散開的形狀（像一個橢圓）；最後比較兩個橢圓的中心距離和形狀差異，加起來就是 FAD，數字越小越像真實音樂，MusicLM、MusicGen 等模型都拿它互相比較。FAD 也有陷阱：歌越少分數越偏高、AI 耳朵選錯會聽不到高音細節、參考歌單選不好整把尺就歪、而且它不管歌有沒有照文字指令生成（那是 CLAP 分數的工作）。最後介紹改良：微軟 2023 年的 fadtk 往無限多首推算（FAD∞）、換更懂音樂的耳朵、每首歌各自打分；2025 年的 KAD 不再假設點雲是橢圓，用更少的歌就能穩定。
+
+參考資料：
+Kilgour et al. 2019 (Interspeech)：https://www.isca-archive.org/interspeech_2019/kilgour19_interspeech.html
+Gui et al., Adapting Frechet Audio Distance for Generative Music Evaluation：https://arxiv.org/abs/2311.01616
+microsoft/fadtk：https://github.com/microsoft/fadtk
+KAD: No More FAD!：https://arxiv.org/abs/2502.15602]]></itunes:summary>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep68.mp3" length="3570353" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep68.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:43</itunes:duration>
+      <itunes:episode>68</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
