@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 12 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1943,6 +1943,33 @@ KAD: No More FAD!: https://arxiv.org/abs/2502.15602]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:47</itunes:duration>
       <itunes:episode>68</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Sound Bounces Everywhere, So How Do We Still Hear Direction? The Precedence (Haas) Effect | Spatial Sound Series 4</title>
+      <description><![CDATA[Part four of the spatial sound series! At an indoor concert, the singer's voice bounces off walls and ceiling and reaches you from every direction, yet with your eyes closed you still know the singer is center stage. The key is timing: the direct sound takes the shortest path and arrives first, while reflections take a detour and arrive later (sound travels about 34 centimeters per millisecond), usually a few to a few tens of milliseconds behind. For direction, the brain trusts only the first arrival: two identical sounds close together are heard as one, located at the first one. Wallach and colleagues named this the precedence effect in 1949. Under one millisecond, the two sounds merge into an image in between (how a stereo vocal sits between two speakers); from about 1 to 30 milliseconds is the precedence zone; any later and you hear an echo, and short clicks like hand claps reveal echoes sooner than speech. In his doctoral thesis, Helmut Haas found that a sound arriving 10 to 30 milliseconds later can be about 10 dB louder and still lose the direction contest, which is why it's also called the Haas effect. Application one: delay speakers in big venues are set to arrive a little over ten milliseconds after the stage sound, so they add level while the sound still seems to come from the stage. Application two: the Haas widening trick in mixing, copying a track to left and right and delaying one side, which sounds wide and thick but can cause comb filtering on a single phone speaker, so check in mono. Finally, reflections aren't thrown away: direction comes from the first arrival, while room size, distance and fullness come from the reflections.
+
+References:
+Wallach, Newman & Rosenzweig 1949: https://doi.org/10.2307/1418275
+Haas, The influence of a single echo on the audibility of speech (JAES 1972): https://www.aes.org/e-lib/browse.cfm?elib=2093
+Litovsky et al., The precedence effect (JASA 1999): https://doi.org/10.1121/1.427914
+Precedence effect: https://en.wikipedia.org/wiki/Precedence_effect]]></description>
+      <itunes:summary><![CDATA[Part four of the spatial sound series! At an indoor concert, the singer's voice bounces off walls and ceiling and reaches you from every direction, yet with your eyes closed you still know the singer is center stage. The key is timing: the direct sound takes the shortest path and arrives first, while reflections take a detour and arrive later (sound travels about 34 centimeters per millisecond), usually a few to a few tens of milliseconds behind. For direction, the brain trusts only the first arrival: two identical sounds close together are heard as one, located at the first one. Wallach and colleagues named this the precedence effect in 1949. Under one millisecond, the two sounds merge into an image in between (how a stereo vocal sits between two speakers); from about 1 to 30 milliseconds is the precedence zone; any later and you hear an echo, and short clicks like hand claps reveal echoes sooner than speech. In his doctoral thesis, Helmut Haas found that a sound arriving 10 to 30 milliseconds later can be about 10 dB louder and still lose the direction contest, which is why it's also called the Haas effect. Application one: delay speakers in big venues are set to arrive a little over ten milliseconds after the stage sound, so they add level while the sound still seems to come from the stage. Application two: the Haas widening trick in mixing, copying a track to left and right and delaying one side, which sounds wide and thick but can cause comb filtering on a single phone speaker, so check in mono. Finally, reflections aren't thrown away: direction comes from the first arrival, while room size, distance and fullness come from the reflections.
+
+References:
+Wallach, Newman & Rosenzweig 1949: https://doi.org/10.2307/1418275
+Haas, The influence of a single echo on the audibility of speech (JAES 1972): https://www.aes.org/e-lib/browse.cfm?elib=2093
+Litovsky et al., The precedence effect (JASA 1999): https://doi.org/10.1121/1.427914
+Precedence effect: https://en.wikipedia.org/wiki/Precedence_effect]]></itunes:summary>
+      <pubDate>Fri, 13 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep69.mp3" length="1471248" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep69.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:05</itunes:duration>
+      <itunes:episode>69</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
