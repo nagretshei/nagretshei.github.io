@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 13 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1970,6 +1970,33 @@ Precedence effect: https://en.wikipedia.org/wiki/Precedence_effect]]></itunes:su
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:05</itunes:duration>
       <itunes:episode>69</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Headphones vs. Speakers: Crosstalk, Crosstalk Cancellation, and the Sweet Spot | Spatial Sound Series 5</title>
+      <description><![CDATA[Part five of the spatial sound series! The same song can feel like it's inside your head on headphones but out in the room on speakers. Why? With headphones, each channel goes only into its own ear. With speakers, each speaker's sound also wraps around your head into the other ear: that's crosstalk. Crosstalk isn't always bad. Alan Blumlein's 1931 stereo invention relies on it: level differences between two speakers mix at the ears and become interaural time differences at low frequencies. But binaural (dummy head) recordings capture exactly what each ear hears, so on speakers, crosstalk scrambles the cues and everything collapses between the speakers. The fix is crosstalk cancellation: the other speaker sends a polarity-flipped, precisely timed copy that cancels the leak at the ear. Bishnu Atal and Manfred Schroeder developed it at Bell Labs in the 1960s; it later became known as transaural. The costs: a tiny sweet spot, since moving a few centimeters breaks high-frequency cancellation (some systems track your head with a camera, and laptop and soundbar virtual surround use a similar idea), and at certain pitches the system must push hard to compensate, stressing the speakers and changing timbre, a trade-off between accurate direction and natural tone. Ordinary stereo has a sweet spot too: sit at the corner of an equilateral triangle, because if you sit off-center, the nearer speaker arrives first and the precedence effect pulls the vocal toward it. Finally, we compare the strengths of headphones and speakers.
+
+References:
+Alan Blumlein: https://en.wikipedia.org/wiki/Alan_Blumlein
+Atal & Schroeder, Apparent sound source translator (US 3,236,949): https://patents.google.com/patent/US3236949A
+Cooper & Bauck, Prospects for transaural recording (JAES 1989): https://www.aes.org/e-lib/browse.cfm?elib=6097
+Princeton 3D3A Lab: https://www.princeton.edu/3D3A/]]></description>
+      <itunes:summary><![CDATA[Part five of the spatial sound series! The same song can feel like it's inside your head on headphones but out in the room on speakers. Why? With headphones, each channel goes only into its own ear. With speakers, each speaker's sound also wraps around your head into the other ear: that's crosstalk. Crosstalk isn't always bad. Alan Blumlein's 1931 stereo invention relies on it: level differences between two speakers mix at the ears and become interaural time differences at low frequencies. But binaural (dummy head) recordings capture exactly what each ear hears, so on speakers, crosstalk scrambles the cues and everything collapses between the speakers. The fix is crosstalk cancellation: the other speaker sends a polarity-flipped, precisely timed copy that cancels the leak at the ear. Bishnu Atal and Manfred Schroeder developed it at Bell Labs in the 1960s; it later became known as transaural. The costs: a tiny sweet spot, since moving a few centimeters breaks high-frequency cancellation (some systems track your head with a camera, and laptop and soundbar virtual surround use a similar idea), and at certain pitches the system must push hard to compensate, stressing the speakers and changing timbre, a trade-off between accurate direction and natural tone. Ordinary stereo has a sweet spot too: sit at the corner of an equilateral triangle, because if you sit off-center, the nearer speaker arrives first and the precedence effect pulls the vocal toward it. Finally, we compare the strengths of headphones and speakers.
+
+References:
+Alan Blumlein: https://en.wikipedia.org/wiki/Alan_Blumlein
+Atal & Schroeder, Apparent sound source translator (US 3,236,949): https://patents.google.com/patent/US3236949A
+Cooper & Bauck, Prospects for transaural recording (JAES 1989): https://www.aes.org/e-lib/browse.cfm?elib=6097
+Princeton 3D3A Lab: https://www.princeton.edu/3D3A/]]></itunes:summary>
+      <pubDate>Sat, 14 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep70.mp3" length="1504368" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep70.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:11</itunes:duration>
+      <itunes:episode>70</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
