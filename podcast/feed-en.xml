@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 14 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -1991,12 +1991,62 @@ Alan Blumlein: https://en.wikipedia.org/wiki/Alan_Blumlein
 Atal & Schroeder, Apparent sound source translator (US 3,236,949): https://patents.google.com/patent/US3236949A
 Cooper & Bauck, Prospects for transaural recording (JAES 1989): https://www.aes.org/e-lib/browse.cfm?elib=6097
 Princeton 3D3A Lab: https://www.princeton.edu/3D3A/]]></itunes:summary>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 +0800</pubDate>
+      <pubDate>Mon, 16 Nov 2026 12:00:00 +0800</pubDate>
       <enclosure url="https://zoelin.me/podcast/audio/en/ep70.mp3" length="1504368" type="audio/mpeg"/>
       <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep70.mp3</guid>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:11</itunes:duration>
       <itunes:episode>70</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Do You Hear Your Own Echo in Video Calls? And Where Does That Piercing Feedback Beep Come From?</title>
+      <description><![CDATA[Ever hear your own voice come back a beat late in an online meeting, or a shrill beep that makes everyone cover their ears? The echo path: your voice travels to the other person's computer, plays from their speakers, gets picked up by their microphone, and comes back to you. The internet round trip takes a few hundred milliseconds, so you hear yourself late, and it's usually the other side's setup causing it. With that much delay, the brain hears a second sound (recall the precedence effect), and hearing yourself delayed can even make people stutter. Most calls have no echo thanks to echo cancellation: the computer knows what its speakers played, estimates how it will sound after reaching the microphone, and subtracts it, continuously learning the room. It was developed at Bell Labs in the 1960s for overseas phone calls. It slips up when speakers are too loud and distort, when both sides talk at once, or when you move the laptop, and sometimes it suppresses too hard and makes you sound choppy. Feedback is a loop: microphone, amplifier, speaker, back into the microphone; if a pitch grows a little each time around, it snowballs. Two computers in the same room with mics and speakers on is the classic cause, and echo cancellation can't help. Tips: wear headphones (most effective), turn speakers down, don't aim the mic at the speakers, use only one computer's audio per room, and mute when not talking.
+
+References:
+Echo suppression and cancellation: https://en.wikipedia.org/wiki/Echo_suppression_and_cancellation
+Sondhi, An adaptive echo canceller (BSTJ 1967): https://doi.org/10.1002/j.1538-7305.1967.tb01707.x
+Audio feedback: https://en.wikipedia.org/wiki/Audio_feedback]]></description>
+      <itunes:summary><![CDATA[Ever hear your own voice come back a beat late in an online meeting, or a shrill beep that makes everyone cover their ears? The echo path: your voice travels to the other person's computer, plays from their speakers, gets picked up by their microphone, and comes back to you. The internet round trip takes a few hundred milliseconds, so you hear yourself late, and it's usually the other side's setup causing it. With that much delay, the brain hears a second sound (recall the precedence effect), and hearing yourself delayed can even make people stutter. Most calls have no echo thanks to echo cancellation: the computer knows what its speakers played, estimates how it will sound after reaching the microphone, and subtracts it, continuously learning the room. It was developed at Bell Labs in the 1960s for overseas phone calls. It slips up when speakers are too loud and distort, when both sides talk at once, or when you move the laptop, and sometimes it suppresses too hard and makes you sound choppy. Feedback is a loop: microphone, amplifier, speaker, back into the microphone; if a pitch grows a little each time around, it snowballs. Two computers in the same room with mics and speakers on is the classic cause, and echo cancellation can't help. Tips: wear headphones (most effective), turn speakers down, don't aim the mic at the speakers, use only one computer's audio per room, and mute when not talking.
+
+References:
+Echo suppression and cancellation: https://en.wikipedia.org/wiki/Echo_suppression_and_cancellation
+Sondhi, An adaptive echo canceller (BSTJ 1967): https://doi.org/10.1002/j.1538-7305.1967.tb01707.x
+Audio feedback: https://en.wikipedia.org/wiki/Audio_feedback]]></itunes:summary>
+      <pubDate>Sat, 14 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep71.mp3" length="1339200" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep71.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:43</itunes:duration>
+      <itunes:episode>71</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Great Recordings on Your Phone: Get Closer, Pick the Right Room, and Don't Clip | Phone Recording Tips</title>
+      <description><![CDATA[Phone recordings of talking, singing, or playing that sound hollow, distant, and noisy? No need for new gear yet; a few habits make a big difference. Tip one, get closer: doubling the distance drops your voice about 6 dB while room echo and noise stay the same; for speech, keep the phone a hand's length to an arm's length away, but not so close that plosives pop. Tip two, find the microphone: there are holes at the bottom, top, and next to the rear camera, so keep fingers and cases off them. Tip three, choose the room: bathrooms and empty rooms are echoey, while curtains, sofas, and rugs soak up reflections; a closet full of clothes is a podcaster's secret weapon. Turn off fans, air conditioning, and range hoods. Tip four, don't clip: if it's too loud, the waveform gets cut flat and it's almost impossible to fix later, so test-record the loudest part; for drums, piano, or high singing, move the phone farther away, and some apps let you turn off automatic level control. Tip five, beware of wind: shield the phone with your body or a wall, or use a fuzzy windscreen (the "dead cat"). Tip six, settings and placement: Do Not Disturb or airplane mode, the highest audio quality setting, and a steady surface instead of your hand. Finally, listen back on headphones, and consider a clip-on lavalier mic.
+
+References:
+Clipping (audio): https://en.wikipedia.org/wiki/Clipping_(audio)
+Windscreen: https://en.wikipedia.org/wiki/Windscreen
+Apple Support, Voice Memos on iPhone: https://support.apple.com/guide/iphone/iph4d2a39a3b/ios]]></description>
+      <itunes:summary><![CDATA[Phone recordings of talking, singing, or playing that sound hollow, distant, and noisy? No need for new gear yet; a few habits make a big difference. Tip one, get closer: doubling the distance drops your voice about 6 dB while room echo and noise stay the same; for speech, keep the phone a hand's length to an arm's length away, but not so close that plosives pop. Tip two, find the microphone: there are holes at the bottom, top, and next to the rear camera, so keep fingers and cases off them. Tip three, choose the room: bathrooms and empty rooms are echoey, while curtains, sofas, and rugs soak up reflections; a closet full of clothes is a podcaster's secret weapon. Turn off fans, air conditioning, and range hoods. Tip four, don't clip: if it's too loud, the waveform gets cut flat and it's almost impossible to fix later, so test-record the loudest part; for drums, piano, or high singing, move the phone farther away, and some apps let you turn off automatic level control. Tip five, beware of wind: shield the phone with your body or a wall, or use a fuzzy windscreen (the "dead cat"). Tip six, settings and placement: Do Not Disturb or airplane mode, the highest audio quality setting, and a steady surface instead of your hand. Finally, listen back on headphones, and consider a clip-on lavalier mic.
+
+References:
+Clipping (audio): https://en.wikipedia.org/wiki/Clipping_(audio)
+Windscreen: https://en.wikipedia.org/wiki/Windscreen
+Apple Support, Voice Memos on iPhone: https://support.apple.com/guide/iphone/iph4d2a39a3b/ios]]></itunes:summary>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep72.mp3" length="1373040" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep72.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:49</itunes:duration>
+      <itunes:episode>72</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

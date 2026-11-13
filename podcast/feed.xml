@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 14 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -1991,12 +1991,62 @@ Alan Blumlein（維基百科）：https://en.wikipedia.org/wiki/Alan_Blumlein
 Atal & Schroeder, Apparent sound source translator（US 3,236,949）：https://patents.google.com/patent/US3236949A
 Cooper & Bauck, Prospects for transaural recording（JAES 1989）：https://www.aes.org/e-lib/browse.cfm?elib=6097
 Princeton 3D3A Lab：https://www.princeton.edu/3D3A/]]></itunes:summary>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 +0800</pubDate>
+      <pubDate>Mon, 16 Nov 2026 12:00:00 +0800</pubDate>
       <enclosure url="https://zoelin.me/podcast/audio/ep70.mp3" length="3915587" type="audio/mpeg"/>
       <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep70.mp3</guid>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:05</itunes:duration>
       <itunes:episode>70</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>視訊開會為什麼會聽到自己的回音？刺耳的「嗶——」嘯叫又是怎麼來的</title>
+      <description><![CDATA[線上開會、上網課，突然聽到自己的聲音慢半拍跑出來？還有全場摀耳朵的「嗶——」？回音的路線是：你的聲音傳到對方電腦，從對方喇叭放出來，又被對方麥克風收進去傳回你這邊，網路一來一回好幾百毫秒，所以聽到自己慢半拍，而且通常是對方那邊的設定造成的。延遲太久，大腦就把它當成第二個聲音（回扣先到效應），一邊講話一邊聽到慢半拍的自己還會讓人結巴。大部分時候沒有回音，是因為軟體有回音消除：電腦知道自己喇叭放了什麼，推算它進麥克風後的樣子再減掉，並且一直學習房間的回音；這項技術在 1960 年代由貝爾實驗室為越洋電話發展出來。但喇叭太大聲失真、兩邊同時講話、移動電腦時它會失手，有時壓得太用力讓聲音斷斷續續。嘯叫（feedback）則是麥克風→放大→喇叭→又進麥克風的迴圈，某個音高每繞一圈變大一點就越滾越大。同一個房間兩台電腦都開麥克風和喇叭最容易嘯叫，回音消除也沒辦法。小撇步：戴耳機（最有效）、喇叭小聲一點、麥克風別對著喇叭、同一間只開一台的聲音、不講話先靜音。
+
+參考資料：
+Echo suppression and cancellation（維基百科）：https://en.wikipedia.org/wiki/Echo_suppression_and_cancellation
+Sondhi, An adaptive echo canceller（BSTJ 1967）：https://doi.org/10.1002/j.1538-7305.1967.tb01707.x
+Audio feedback（維基百科）：https://en.wikipedia.org/wiki/Audio_feedback]]></description>
+      <itunes:summary><![CDATA[線上開會、上網課，突然聽到自己的聲音慢半拍跑出來？還有全場摀耳朵的「嗶——」？回音的路線是：你的聲音傳到對方電腦，從對方喇叭放出來，又被對方麥克風收進去傳回你這邊，網路一來一回好幾百毫秒，所以聽到自己慢半拍，而且通常是對方那邊的設定造成的。延遲太久，大腦就把它當成第二個聲音（回扣先到效應），一邊講話一邊聽到慢半拍的自己還會讓人結巴。大部分時候沒有回音，是因為軟體有回音消除：電腦知道自己喇叭放了什麼，推算它進麥克風後的樣子再減掉，並且一直學習房間的回音；這項技術在 1960 年代由貝爾實驗室為越洋電話發展出來。但喇叭太大聲失真、兩邊同時講話、移動電腦時它會失手，有時壓得太用力讓聲音斷斷續續。嘯叫（feedback）則是麥克風→放大→喇叭→又進麥克風的迴圈，某個音高每繞一圈變大一點就越滾越大。同一個房間兩台電腦都開麥克風和喇叭最容易嘯叫，回音消除也沒辦法。小撇步：戴耳機（最有效）、喇叭小聲一點、麥克風別對著喇叭、同一間只開一台的聲音、不講話先靜音。
+
+參考資料：
+Echo suppression and cancellation（維基百科）：https://en.wikipedia.org/wiki/Echo_suppression_and_cancellation
+Sondhi, An adaptive echo canceller（BSTJ 1967）：https://doi.org/10.1002/j.1538-7305.1967.tb01707.x
+Audio feedback（維基百科）：https://en.wikipedia.org/wiki/Audio_feedback]]></itunes:summary>
+      <pubDate>Sat, 14 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep71.mp3" length="3902630" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep71.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:04</itunes:duration>
+      <itunes:episode>71</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>用手機錄音也能很好聽！離近一點、找對房間、別讓音量爆掉｜手機錄音小技巧</title>
+      <description><![CDATA[用手機錄說話、唱歌、演奏，播出來卻空空的、遠遠的、一堆雜音？不用急著買器材，改掉幾個小習慣就差很多。第一招離近一點：距離加倍聲音小約 6 分貝，房間的回音和雜音卻沒變小；說話大約放在一個手掌到一個手臂的距離，太貼近會有噗噗聲。第二招找到麥克風：底部、頂端、背面鏡頭旁都有小孔，手指和手機殼別擋住。第三招選對房間：浴室、空房間回音多，窗簾、沙發、地毯多的房間回音少，可以站在掛滿衣服的衣櫃前錄；關掉電扇、冷氣、抽油煙機。第四招音量別爆：太大聲波形被切平就是破音，事後幾乎救不回來，先試錄最大聲的段落；錄鼓、鋼琴、高音時手機反而要放遠，有些 App 可以關掉自動控制音量。第五招小心風聲：用身體或牆壁擋風，外接麥克風加毛毛防風罩（錄音師叫它「死貓」）。第六招設定和擺放：開勿擾或飛航模式、音質改成最高、手機放穩不要拿在手上。最後錄完戴耳機聽一次；想更好可以買領夾式麥克風。
+
+參考資料：
+Clipping (audio)（維基百科）：https://en.wikipedia.org/wiki/Clipping_(audio)
+Windscreen（維基百科）：https://en.wikipedia.org/wiki/Windscreen
+Apple 支援：在 iPhone 上使用語音備忘錄：https://support.apple.com/zh-tw/guide/iphone/iph4d2a39a3b/ios]]></description>
+      <itunes:summary><![CDATA[用手機錄說話、唱歌、演奏，播出來卻空空的、遠遠的、一堆雜音？不用急著買器材，改掉幾個小習慣就差很多。第一招離近一點：距離加倍聲音小約 6 分貝，房間的回音和雜音卻沒變小；說話大約放在一個手掌到一個手臂的距離，太貼近會有噗噗聲。第二招找到麥克風：底部、頂端、背面鏡頭旁都有小孔，手指和手機殼別擋住。第三招選對房間：浴室、空房間回音多，窗簾、沙發、地毯多的房間回音少，可以站在掛滿衣服的衣櫃前錄；關掉電扇、冷氣、抽油煙機。第四招音量別爆：太大聲波形被切平就是破音，事後幾乎救不回來，先試錄最大聲的段落；錄鼓、鋼琴、高音時手機反而要放遠，有些 App 可以關掉自動控制音量。第五招小心風聲：用身體或牆壁擋風，外接麥克風加毛毛防風罩（錄音師叫它「死貓」）。第六招設定和擺放：開勿擾或飛航模式、音質改成最高、手機放穩不要拿在手上。最後錄完戴耳機聽一次；想更好可以買領夾式麥克風。
+
+參考資料：
+Clipping (audio)（維基百科）：https://en.wikipedia.org/wiki/Clipping_(audio)
+Windscreen（維基百科）：https://en.wikipedia.org/wiki/Windscreen
+Apple 支援：在 iPhone 上使用語音備忘錄：https://support.apple.com/zh-tw/guide/iphone/iph4d2a39a3b/ios]]></itunes:summary>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep72.mp3" length="3713713" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep72.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:52</itunes:duration>
+      <itunes:episode>72</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
