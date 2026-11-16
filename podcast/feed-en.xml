@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 16 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2047,6 +2047,35 @@ Apple Support, Voice Memos on iPhone: https://support.apple.com/guide/iphone/iph
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:49</itunes:duration>
       <itunes:episode>72</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>What Does the Pan Knob Actually Do? Panning, Pan Laws, and VBAP | Spatial Sound Series 6</title>
+      <description><![CDATA[Part six of the spatial sound series takes apart the L–R knob on every mixer track. Pan comes from panoramic; in 1940, Disney's Fantasound system for Fantasia introduced the pan pot to move sound smoothly between speakers. Panning only changes the volume balance between speakers, and when both are equally loud a phantom image appears in the middle. A straight-line split gives each speaker half the volume at center, but energy is volume times volume, so each keeps only 1/4 and the pair adds up to 1/2: the total dips about 3 dB. The constant power law gives each speaker about 0.7, so each keeps half the energy and the pair adds up to a whole. The pan law is how much each speaker drops at center: −3 dB (half the energy) suits speakers in a room, −6 dB (a quarter) suits mono fold-down, and −4.5 dB is a compromise. Time differences can pan too (the precedence effect), but they're fragile and comb-filter in mono. Surround systems pan between neighboring pairs, and side images get blurry. In 1997 Ville Pulkki proposed VBAP, using triangles of the three nearest speakers so speakers can be anywhere; its width changes as sounds move, which MDAP evens out by spreading a sound over several directions.
+
+References:
+Panning (audio): https://en.wikipedia.org/wiki/Panning_(audio)
+Panning law: https://en.wikipedia.org/wiki/Pan_law
+Fantasound: https://en.wikipedia.org/wiki/Fantasound
+Pulkki, Virtual Sound Source Positioning Using Vector Base Amplitude Panning (JAES 1997): https://scholar.google.com/scholar?q=Virtual+Sound+Source+Positioning+Using+Vector+Base+Amplitude+Panning
+Zotter & Frank, Ambisonics, Ch. 3 (Springer 2019): https://doi.org/10.1007/978-3-030-17207-7_3]]></description>
+      <itunes:summary><![CDATA[Part six of the spatial sound series takes apart the L–R knob on every mixer track. Pan comes from panoramic; in 1940, Disney's Fantasound system for Fantasia introduced the pan pot to move sound smoothly between speakers. Panning only changes the volume balance between speakers, and when both are equally loud a phantom image appears in the middle. A straight-line split gives each speaker half the volume at center, but energy is volume times volume, so each keeps only 1/4 and the pair adds up to 1/2: the total dips about 3 dB. The constant power law gives each speaker about 0.7, so each keeps half the energy and the pair adds up to a whole. The pan law is how much each speaker drops at center: −3 dB (half the energy) suits speakers in a room, −6 dB (a quarter) suits mono fold-down, and −4.5 dB is a compromise. Time differences can pan too (the precedence effect), but they're fragile and comb-filter in mono. Surround systems pan between neighboring pairs, and side images get blurry. In 1997 Ville Pulkki proposed VBAP, using triangles of the three nearest speakers so speakers can be anywhere; its width changes as sounds move, which MDAP evens out by spreading a sound over several directions.
+
+References:
+Panning (audio): https://en.wikipedia.org/wiki/Panning_(audio)
+Panning law: https://en.wikipedia.org/wiki/Pan_law
+Fantasound: https://en.wikipedia.org/wiki/Fantasound
+Pulkki, Virtual Sound Source Positioning Using Vector Base Amplitude Panning (JAES 1997): https://scholar.google.com/scholar?q=Virtual+Sound+Source+Positioning+Using+Vector+Base+Amplitude+Panning
+Zotter & Frank, Ambisonics, Ch. 3 (Springer 2019): https://doi.org/10.1007/978-3-030-17207-7_3]]></itunes:summary>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep73.mp3" length="1738512" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep73.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:50</itunes:duration>
+      <itunes:episode>73</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
