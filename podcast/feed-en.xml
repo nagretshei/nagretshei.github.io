@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 18 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2107,6 +2107,37 @@ Wang et al., NotaGen (2025): https://arxiv.org/abs/2502.18008]]></itunes:summary
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:44</itunes:duration>
       <itunes:episode>74</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Same Note, Different Sound? Harmonics and Timbre: Sine, Sawtooth, Square Waves and Fourier</title>
+      <description><![CDATA[A flute, a clarinet and a violin can play the same A at 220 Hz and still sound different: the difference is in the harmonics. A sine wave has a single frequency; a real string also vibrates in halves, thirds and quarters, producing harmonics at whole-number multiples, and stacking them one by one keeps the pitch but brightens the sound. A sawtooth wave contains every harmonic (the k-th at 1/k), bright and buzzy, close to how a bowed violin string moves; a square wave has only odd harmonics and sounds hollow, close to a clarinet's low register. Adding more harmonics makes a squarer wave, but the corners always overshoot a little (the Gibbs phenomenon). In the early nineteenth century Joseph Fourier showed that any periodic waveform is a sum of sine waves, so every timbre has its own harmonic recipe. Synthesizers either stack sines (additive synthesis) or start from a sawtooth or square wave and filter away the highs (subtractive synthesis). This episode includes demo sounds of each wave.
+
+References:
+Harmonic: https://en.wikipedia.org/wiki/Harmonic
+Sawtooth wave: https://en.wikipedia.org/wiki/Sawtooth_wave
+Square wave: https://en.wikipedia.org/wiki/Square_wave
+Fourier series: https://en.wikipedia.org/wiki/Fourier_series
+Gibbs phenomenon: https://en.wikipedia.org/wiki/Gibbs_phenomenon
+Clarinet acoustics (UNSW): https://newt.phys.unsw.edu.au/jw/clarinetacoustics.html]]></description>
+      <itunes:summary><![CDATA[A flute, a clarinet and a violin can play the same A at 220 Hz and still sound different: the difference is in the harmonics. A sine wave has a single frequency; a real string also vibrates in halves, thirds and quarters, producing harmonics at whole-number multiples, and stacking them one by one keeps the pitch but brightens the sound. A sawtooth wave contains every harmonic (the k-th at 1/k), bright and buzzy, close to how a bowed violin string moves; a square wave has only odd harmonics and sounds hollow, close to a clarinet's low register. Adding more harmonics makes a squarer wave, but the corners always overshoot a little (the Gibbs phenomenon). In the early nineteenth century Joseph Fourier showed that any periodic waveform is a sum of sine waves, so every timbre has its own harmonic recipe. Synthesizers either stack sines (additive synthesis) or start from a sawtooth or square wave and filter away the highs (subtractive synthesis). This episode includes demo sounds of each wave.
+
+References:
+Harmonic: https://en.wikipedia.org/wiki/Harmonic
+Sawtooth wave: https://en.wikipedia.org/wiki/Sawtooth_wave
+Square wave: https://en.wikipedia.org/wiki/Square_wave
+Fourier series: https://en.wikipedia.org/wiki/Fourier_series
+Gibbs phenomenon: https://en.wikipedia.org/wiki/Gibbs_phenomenon
+Clarinet acoustics (UNSW): https://newt.phys.unsw.edu.au/jw/clarinetacoustics.html]]></itunes:summary>
+      <pubDate>Thu, 19 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep75.mp3" length="1447436" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep75.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:01</itunes:duration>
+      <itunes:episode>75</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

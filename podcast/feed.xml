@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 18 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2107,6 +2107,37 @@ Wang et al., NotaGen（2025）：https://arxiv.org/abs/2502.18008]]></itunes:sum
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:50</itunes:duration>
       <itunes:episode>74</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>同一個音，為什麼聽起來不一樣？泛音與音色｜正弦波、鋸齒波、方波、傅立葉</title>
+      <description><![CDATA[長笛、單簧管、小提琴演奏同一個 A（220Hz），一聽就分得出來，差別在泛音。正弦波只有一個頻率；真實的弦會同時分成兩段、三段、四段振動，產生整數倍頻率的泛音，一個一個疊上去，音高不變、聲音越來越亮。鋸齒波包含全部泛音（第 k 個是 1/k 大），又亮又刺，弓拉小提琴弦的振動很接近它；方波只有奇數泛音，聽起來中空，單簧管低音區就很接近。疊越多泛音越接近方波，但轉角永遠翹起一小截（吉布斯現象）。十九世紀初傅立葉發現任何週期波形都能拆成正弦波相加，每種音色都有一張泛音配方表。合成器的兩種做法：加法合成一個一個疊，減法合成從鋸齒波或方波開始再用濾波器削掉高頻。本集附有正弦波、鋸齒波、方波的示範聲音。
+
+參考資料：
+Harmonic（維基百科）：https://en.wikipedia.org/wiki/Harmonic
+Sawtooth wave（維基百科）：https://en.wikipedia.org/wiki/Sawtooth_wave
+Square wave（維基百科）：https://en.wikipedia.org/wiki/Square_wave
+Fourier series（維基百科）：https://en.wikipedia.org/wiki/Fourier_series
+Gibbs phenomenon（維基百科）：https://en.wikipedia.org/wiki/Gibbs_phenomenon
+Clarinet acoustics（UNSW）：https://newt.phys.unsw.edu.au/jw/clarinetacoustics.html]]></description>
+      <itunes:summary><![CDATA[長笛、單簧管、小提琴演奏同一個 A（220Hz），一聽就分得出來，差別在泛音。正弦波只有一個頻率；真實的弦會同時分成兩段、三段、四段振動，產生整數倍頻率的泛音，一個一個疊上去，音高不變、聲音越來越亮。鋸齒波包含全部泛音（第 k 個是 1/k 大），又亮又刺，弓拉小提琴弦的振動很接近它；方波只有奇數泛音，聽起來中空，單簧管低音區就很接近。疊越多泛音越接近方波，但轉角永遠翹起一小截（吉布斯現象）。十九世紀初傅立葉發現任何週期波形都能拆成正弦波相加，每種音色都有一張泛音配方表。合成器的兩種做法：加法合成一個一個疊，減法合成從鋸齒波或方波開始再用濾波器削掉高頻。本集附有正弦波、鋸齒波、方波的示範聲音。
+
+參考資料：
+Harmonic（維基百科）：https://en.wikipedia.org/wiki/Harmonic
+Sawtooth wave（維基百科）：https://en.wikipedia.org/wiki/Sawtooth_wave
+Square wave（維基百科）：https://en.wikipedia.org/wiki/Square_wave
+Fourier series（維基百科）：https://en.wikipedia.org/wiki/Fourier_series
+Gibbs phenomenon（維基百科）：https://en.wikipedia.org/wiki/Gibbs_phenomenon
+Clarinet acoustics（UNSW）：https://newt.phys.unsw.edu.au/jw/clarinetacoustics.html]]></itunes:summary>
+      <pubDate>Thu, 19 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep75.mp3" length="3819457" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep75.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:59</itunes:duration>
+      <itunes:episode>75</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
