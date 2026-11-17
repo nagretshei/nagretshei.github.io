@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 19 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2138,6 +2138,35 @@ Clarinet acoustics（UNSW）：https://newt.phys.unsw.edu.au/jw/clarinetacoustic
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:59</itunes:duration>
       <itunes:episode>75</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>電影裡的車輪為什麼倒著轉？聲音的疊頻 Aliasing｜奈奎斯特頻率與抗疊頻濾波器</title>
+      <description><![CDATA[老電影裡馬車越跑越快，輪子卻慢慢倒轉：攝影機一秒只拍 24 張，太快的轉動被看成慢的。聲音也一樣，數位錄音每隔一下記一個點，振動太快、點太稀，連起來就變成另一個慢的波。取樣率的一半叫奈奎斯特頻率，超過它的聲音會折回來：取樣率 8000 時，5000Hz 被聽成 3000Hz、7000Hz 被聽成 1000Hz，像紙對折。示範：從 200Hz 滑到 8000Hz 的音，直接降到取樣率 8000，爬到中間反而往下掉。折回來的頻率不是整數倍泛音，聽起來刺耳像金屬聲，數位合成器直接算鋸齒波也會這樣。解法是取樣前先用抗疊頻濾波器（低通）濾掉一半以上的頻率；CD 用 44100，比人耳的兩萬赫茲多出的兩千多赫茲就是留給濾波器的空間。創作上也有人故意要疊頻：E-mu SP-1200 取樣率約 26kHz 的粗糙顆粒感、降取樣效果器（Bitcrusher）。本集附有示範聲音。
+
+參考資料：
+Aliasing（維基百科）：https://en.wikipedia.org/wiki/Aliasing
+Nyquist frequency（維基百科）：https://en.wikipedia.org/wiki/Nyquist_frequency
+Wagon-wheel effect（維基百科）：https://en.wikipedia.org/wiki/Wagon-wheel_effect
+Anti-aliasing filter（維基百科）：https://en.wikipedia.org/wiki/Anti-aliasing_filter
+E-mu SP-1200（維基百科）：https://en.wikipedia.org/wiki/E-mu_SP-1200]]></description>
+      <itunes:summary><![CDATA[老電影裡馬車越跑越快，輪子卻慢慢倒轉：攝影機一秒只拍 24 張，太快的轉動被看成慢的。聲音也一樣，數位錄音每隔一下記一個點，振動太快、點太稀，連起來就變成另一個慢的波。取樣率的一半叫奈奎斯特頻率，超過它的聲音會折回來：取樣率 8000 時，5000Hz 被聽成 3000Hz、7000Hz 被聽成 1000Hz，像紙對折。示範：從 200Hz 滑到 8000Hz 的音，直接降到取樣率 8000，爬到中間反而往下掉。折回來的頻率不是整數倍泛音，聽起來刺耳像金屬聲，數位合成器直接算鋸齒波也會這樣。解法是取樣前先用抗疊頻濾波器（低通）濾掉一半以上的頻率；CD 用 44100，比人耳的兩萬赫茲多出的兩千多赫茲就是留給濾波器的空間。創作上也有人故意要疊頻：E-mu SP-1200 取樣率約 26kHz 的粗糙顆粒感、降取樣效果器（Bitcrusher）。本集附有示範聲音。
+
+參考資料：
+Aliasing（維基百科）：https://en.wikipedia.org/wiki/Aliasing
+Nyquist frequency（維基百科）：https://en.wikipedia.org/wiki/Nyquist_frequency
+Wagon-wheel effect（維基百科）：https://en.wikipedia.org/wiki/Wagon-wheel_effect
+Anti-aliasing filter（維基百科）：https://en.wikipedia.org/wiki/Anti-aliasing_filter
+E-mu SP-1200（維基百科）：https://en.wikipedia.org/wiki/E-mu_SP-1200]]></itunes:summary>
+      <pubDate>Fri, 20 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep76.mp3" length="4103251" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep76.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:16</itunes:duration>
+      <itunes:episode>76</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
