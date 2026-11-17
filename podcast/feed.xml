@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 17 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2076,6 +2076,37 @@ Zotter & Frank, Ambisonics 第3章（Springer 2019）：https://doi.org/10.1007/
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:53</itunes:duration>
       <itunes:episode>73</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>AI 怎麼知道你喜歡哪首歌？RLHF、DPO 與 MusicRL 偏好對齊</title>
+      <description><![CDATA[AI 音樂模型已經能生出像樣的歌，但像樣不等於好聽。預訓練只學會模仿，好歌普通歌照單全收；FAD 也只看像不像真實音樂。要教 AI 人類喜歡什麼，請人打分數標準不一，二選一穩定得多：2017 年 Christiano 等人（OpenAI、DeepMind）只靠約 900 次二選一、真人不到一小時，就教會模擬機器人後空翻。RLHF（從人類回饋做強化學習）分三步：先模仿大量資料學基本功、用二選一訓練評審（獎勵模型）、再用強化學習讓高分的做法多做；2022 年 InstructGPT、後來的 ChatGPT 都這樣訓練。模型會鑽評審漏洞，所以要加一條「牽繩」不讓它離原本模型太遠。2023 年史丹佛 Rafailov 等人提出 DPO，跳過評審和強化學習，直接讓被選的那首更常出現、沒選的少出現。2024 年 Google DeepMind 的 MusicRL 拿 MusicLM 再訓練：自動評審看貼題與音質，再加上約 30 萬筆使用者二選一，兩者合用最受聽眾喜歡。Tango 2 用 CLAP 排名＋DPO，NotaGen 用 CLaMP 當評審＋DPO。最後想想：是誰的喜好？多數人的口味會被放大，實驗性的聲音可能被打低分。
+
+參考資料：
+Christiano et al., Deep Reinforcement Learning from Human Preferences（NeurIPS 2017）：https://arxiv.org/abs/1706.03741
+Ouyang et al., InstructGPT（2022）：https://arxiv.org/abs/2203.02155
+Rafailov et al., Direct Preference Optimization（NeurIPS 2023）：https://arxiv.org/abs/2305.18290
+Cideron et al., MusicRL（2024）：https://arxiv.org/abs/2402.04229
+Majumder et al., Tango 2（2024）：https://arxiv.org/abs/2404.09956
+Wang et al., NotaGen（2025）：https://arxiv.org/abs/2502.18008]]></description>
+      <itunes:summary><![CDATA[AI 音樂模型已經能生出像樣的歌，但像樣不等於好聽。預訓練只學會模仿，好歌普通歌照單全收；FAD 也只看像不像真實音樂。要教 AI 人類喜歡什麼，請人打分數標準不一，二選一穩定得多：2017 年 Christiano 等人（OpenAI、DeepMind）只靠約 900 次二選一、真人不到一小時，就教會模擬機器人後空翻。RLHF（從人類回饋做強化學習）分三步：先模仿大量資料學基本功、用二選一訓練評審（獎勵模型）、再用強化學習讓高分的做法多做；2022 年 InstructGPT、後來的 ChatGPT 都這樣訓練。模型會鑽評審漏洞，所以要加一條「牽繩」不讓它離原本模型太遠。2023 年史丹佛 Rafailov 等人提出 DPO，跳過評審和強化學習，直接讓被選的那首更常出現、沒選的少出現。2024 年 Google DeepMind 的 MusicRL 拿 MusicLM 再訓練：自動評審看貼題與音質，再加上約 30 萬筆使用者二選一，兩者合用最受聽眾喜歡。Tango 2 用 CLAP 排名＋DPO，NotaGen 用 CLaMP 當評審＋DPO。最後想想：是誰的喜好？多數人的口味會被放大，實驗性的聲音可能被打低分。
+
+參考資料：
+Christiano et al., Deep Reinforcement Learning from Human Preferences（NeurIPS 2017）：https://arxiv.org/abs/1706.03741
+Ouyang et al., InstructGPT（2022）：https://arxiv.org/abs/2203.02155
+Rafailov et al., Direct Preference Optimization（NeurIPS 2023）：https://arxiv.org/abs/2305.18290
+Cideron et al., MusicRL（2024）：https://arxiv.org/abs/2402.04229
+Majumder et al., Tango 2（2024）：https://arxiv.org/abs/2404.09956
+Wang et al., NotaGen（2025）：https://arxiv.org/abs/2502.18008]]></itunes:summary>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep74.mp3" length="4644508" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep74.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:50</itunes:duration>
+      <itunes:episode>74</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

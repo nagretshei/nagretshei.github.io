@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 17 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2076,6 +2076,37 @@ Zotter & Frank, Ambisonics, Ch. 3 (Springer 2019): https://doi.org/10.1007/978-3
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:50</itunes:duration>
       <itunes:episode>73</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>How Does AI Know Which Song You Like? RLHF, DPO, and MusicRL Preference Alignment</title>
+      <description><![CDATA[AI music models can already make decent-sounding songs, but decent isn't the same as enjoyable. Pretraining only learns imitation, swallowing great and ordinary songs alike, and FAD only checks whether AI music resembles real music. To teach AI what people like, scores are inconsistent across listeners, but a two-way choice is far more stable: in 2017, Christiano et al. (OpenAI and DeepMind) taught a simulated robot to backflip with about 900 such choices and under an hour of human time. RLHF (reinforcement learning from human feedback) has three steps: imitate lots of data, train a judge (reward model) from the choices, then use reinforcement learning to do more of what scores high; InstructGPT (2022) and later ChatGPT were trained this way. Models exploit loopholes in the judge, so a leash keeps them close to the original model. In 2023, Rafailov et al. at Stanford proposed DPO, skipping the judge and reinforcement learning and learning directly from the choices. Google DeepMind's MusicRL (2024) fine-tuned MusicLM with automatic judges for prompt adherence and audio quality plus about 300,000 user choices; combining both was liked best. Tango 2 used CLAP rankings with DPO, and NotaGen used CLaMP as a judge with DPO. Finally: whose taste? Majority preferences get amplified, and experimental sounds may score low.
+
+References:
+Christiano et al., Deep Reinforcement Learning from Human Preferences (NeurIPS 2017): https://arxiv.org/abs/1706.03741
+Ouyang et al., InstructGPT (2022): https://arxiv.org/abs/2203.02155
+Rafailov et al., Direct Preference Optimization (NeurIPS 2023): https://arxiv.org/abs/2305.18290
+Cideron et al., MusicRL (2024): https://arxiv.org/abs/2402.04229
+Majumder et al., Tango 2 (2024): https://arxiv.org/abs/2404.09956
+Wang et al., NotaGen (2025): https://arxiv.org/abs/2502.18008]]></description>
+      <itunes:summary><![CDATA[AI music models can already make decent-sounding songs, but decent isn't the same as enjoyable. Pretraining only learns imitation, swallowing great and ordinary songs alike, and FAD only checks whether AI music resembles real music. To teach AI what people like, scores are inconsistent across listeners, but a two-way choice is far more stable: in 2017, Christiano et al. (OpenAI and DeepMind) taught a simulated robot to backflip with about 900 such choices and under an hour of human time. RLHF (reinforcement learning from human feedback) has three steps: imitate lots of data, train a judge (reward model) from the choices, then use reinforcement learning to do more of what scores high; InstructGPT (2022) and later ChatGPT were trained this way. Models exploit loopholes in the judge, so a leash keeps them close to the original model. In 2023, Rafailov et al. at Stanford proposed DPO, skipping the judge and reinforcement learning and learning directly from the choices. Google DeepMind's MusicRL (2024) fine-tuned MusicLM with automatic judges for prompt adherence and audio quality plus about 300,000 user choices; combining both was liked best. Tango 2 used CLAP rankings with DPO, and NotaGen used CLaMP as a judge with DPO. Finally: whose taste? Majority preferences get amplified, and experimental sounds may score low.
+
+References:
+Christiano et al., Deep Reinforcement Learning from Human Preferences (NeurIPS 2017): https://arxiv.org/abs/1706.03741
+Ouyang et al., InstructGPT (2022): https://arxiv.org/abs/2203.02155
+Rafailov et al., Direct Preference Optimization (NeurIPS 2023): https://arxiv.org/abs/2305.18290
+Cideron et al., MusicRL (2024): https://arxiv.org/abs/2402.04229
+Majumder et al., Tango 2 (2024): https://arxiv.org/abs/2404.09956
+Wang et al., NotaGen (2025): https://arxiv.org/abs/2502.18008]]></itunes:summary>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep74.mp3" length="1702080" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep74.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:44</itunes:duration>
+      <itunes:episode>74</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

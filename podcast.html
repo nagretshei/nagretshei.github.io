@@ -95,6 +95,20 @@
       <h2><span class="lang-en">Episodes</span><span class="lang-zh">全部集數</span></h2>
 
       <div class="card">
+        <span class="meta">Ep74 · 2026/11/18</span>
+        <div class="lang-zh">
+          <h3>AI 怎麼知道你喜歡哪首歌？RLHF、DPO 與 MusicRL 偏好對齊</h3>
+          <p>AI 音樂模型已經能生出像樣的歌，但像樣不等於好聽。預訓練只學會模仿，好歌普通歌照單全收；FAD 也只看像不像真實音樂。要教 AI 人類喜歡什麼，請人打分數標準不一，二選一穩定得多：2017 年 Christiano 等人（OpenAI、DeepMind）只靠約 900 次二選一、真人不到一小時，就教會模擬機器人後空翻。RLHF（從人類回饋做強化學習）分三步：先模仿大量資料學基本功、用二選一訓練評審（獎勵模型）、再用強化學習讓高分的做法多做；2022 年 InstructGPT、後來的 ChatGPT 都這樣訓練。模型會鑽評審漏洞，所以要加一條「牽繩」不讓它離原本模型太遠。2023 年史丹佛 Rafailov 等人提出 DPO，跳過評審和強化學習，直接讓被選的那首更常出現、沒選的少出現。2024 年 Google DeepMind 的 MusicRL 拿 MusicLM 再訓練：自動評審看貼題與音質，再加上約 30 萬筆使用者二選一，兩者合用最受聽眾喜歡。Tango 2 用 CLAP 排名＋DPO，NotaGen 用 CLaMP 當評審＋DPO。最後想想：是誰的喜好？多數人的口味會被放大，實驗性的聲音可能被打低分。</p>
+          <audio controls preload="none" src="podcast/audio/ep74.mp3"></audio>
+        </div>
+        <div class="lang-en">
+          <h3>How Does AI Know Which Song You Like? RLHF, DPO, and MusicRL Preference Alignment</h3>
+          <p>AI music models can already make decent-sounding songs, but decent isn&#x27;t the same as enjoyable. Pretraining only learns imitation, swallowing great and ordinary songs alike, and FAD only checks whether AI music resembles real music. To teach AI what people like, scores are inconsistent across listeners, but a two-way choice is far more stable: in 2017, Christiano et al. (OpenAI and DeepMind) taught a simulated robot to backflip with about 900 such choices and under an hour of human time. RLHF (reinforcement learning from human feedback) has three steps: imitate lots of data, train a judge (reward model) from the choices, then use reinforcement learning to do more of what scores high; InstructGPT (2022) and later ChatGPT were trained this way. Models exploit loopholes in the judge, so a leash keeps them close to the original model. In 2023, Rafailov et al. at Stanford proposed DPO, skipping the judge and reinforcement learning and learning directly from the choices. Google DeepMind&#x27;s MusicRL (2024) fine-tuned MusicLM with automatic judges for prompt adherence and audio quality plus about 300,000 user choices; combining both was liked best. Tango 2 used CLAP rankings with DPO, and NotaGen used CLaMP as a judge with DPO. Finally: whose taste? Majority preferences get amplified, and experimental sounds may score low.</p>
+          <audio controls preload="none" src="podcast/audio/en/ep74.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="card">
         <span class="meta">Ep73 · 2026/11/17</span>
         <div class="lang-zh">
           <h3>混音台那顆左右旋鈕在做什麼？Panning、聲像定位法則與 VBAP｜空間聲音系列⑥</h3>
