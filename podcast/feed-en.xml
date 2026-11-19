@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 20 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2167,6 +2167,37 @@ E-mu SP-1200: https://en.wikipedia.org/wiki/E-mu_SP-1200]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:19</itunes:duration>
       <itunes:episode>76</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Does a Concert Sound So Different from Headphones? Volume, Full-Body Bass, Sound Engineers, and Late-Arriving Sound</title>
+      <description><![CDATA[Why does the same song feel so different live than on headphones? One: volume. Headphones usually sit around 70 to 80 dB, concerts often exceed 100 dB, and 30 dB is about a thousand times the energy; at loud levels we also hear more bass and treble (Fletcher and Munson's equal-loudness contours, Bell Labs, 1933). Two: subwoofers shake your chest and the floor, so you listen with your whole body. Three: most of what you hear comes from line array speakers, mixed live by an engineer in the middle of the crowd, while singers wear in-ear monitors with their own personal mixes from a monitor engineer backstage. Four: sound travels about 343 meters per second, so 100 meters from the stage it arrives about 0.3 seconds late, and big venues use delay speakers (remember the precedence effect). Headphones have their strengths too: detail, precise left-right positions, and the same sound every time. Finally, protect your ears: the WHO's 2022 standard recommends no more than 100 dB averaged over 15 minutes, and music earplugs turn everything down evenly by about 15 to 20 dB.
+
+References:
+Equal-loudness contour: https://en.wikipedia.org/wiki/Equal-loudness_contour
+Line array: https://en.wikipedia.org/wiki/Line_array
+In-ear monitor: https://en.wikipedia.org/wiki/In-ear_monitor
+Speed of sound: https://en.wikipedia.org/wiki/Speed_of_sound
+WHO Global standard for safe listening venues and events (2022): https://www.who.int/publications/i/item/9789240043114
+Earplug: https://en.wikipedia.org/wiki/Earplug]]></description>
+      <itunes:summary><![CDATA[Why does the same song feel so different live than on headphones? One: volume. Headphones usually sit around 70 to 80 dB, concerts often exceed 100 dB, and 30 dB is about a thousand times the energy; at loud levels we also hear more bass and treble (Fletcher and Munson's equal-loudness contours, Bell Labs, 1933). Two: subwoofers shake your chest and the floor, so you listen with your whole body. Three: most of what you hear comes from line array speakers, mixed live by an engineer in the middle of the crowd, while singers wear in-ear monitors with their own personal mixes from a monitor engineer backstage. Four: sound travels about 343 meters per second, so 100 meters from the stage it arrives about 0.3 seconds late, and big venues use delay speakers (remember the precedence effect). Headphones have their strengths too: detail, precise left-right positions, and the same sound every time. Finally, protect your ears: the WHO's 2022 standard recommends no more than 100 dB averaged over 15 minutes, and music earplugs turn everything down evenly by about 15 to 20 dB.
+
+References:
+Equal-loudness contour: https://en.wikipedia.org/wiki/Equal-loudness_contour
+Line array: https://en.wikipedia.org/wiki/Line_array
+In-ear monitor: https://en.wikipedia.org/wiki/In-ear_monitor
+Speed of sound: https://en.wikipedia.org/wiki/Speed_of_sound
+WHO Global standard for safe listening venues and events (2022): https://www.who.int/publications/i/item/9789240043114
+Earplug: https://en.wikipedia.org/wiki/Earplug]]></itunes:summary>
+      <pubDate>Sat, 21 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep77.mp3" length="1469088" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep77.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:05</itunes:duration>
+      <itunes:episode>77</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

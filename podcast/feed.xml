@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 20 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2167,6 +2167,37 @@ E-mu SP-1200（維基百科）：https://en.wikipedia.org/wiki/E-mu_SP-1200]]></
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:16</itunes:duration>
       <itunes:episode>76</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>演唱會聽起來為什麼跟耳機差那麼多？音量、全身震動、混音師與會遲到的聲音｜演唱會vs耳機</title>
+      <description><![CDATA[同一首歌，演唱會現場跟戴耳機聽為什麼差那麼多？差別一：音量，耳機大約七、八十分貝，現場常超過一百分貝，差 30 分貝能量就差約 1000 倍；大聲時耳朵聽到的低音和高音也比較多（1933 年貝爾實驗室弗萊徹與曼森的等響曲線）。差別二：超低音震動胸口和地板，現場是用全身在聽。差別三：你聽到的大多是線陣列喇叭，觀眾席中間的混音師即時混音；歌手耳朵裡也戴著入耳式監聽，聽的是後台監聽混音師做的專屬混音。差別四：聲音每秒約 343 公尺，離舞台 100 公尺晚約 0.3 秒，大場地靠延遲喇叭補（回扣先到效應）。耳機也有它的好：細節、左右位置、每次都一樣。最後是保護耳朵：WHO 2022 建議每 15 分鐘平均不超過 100 分貝，可戴音樂用耳塞，平均調小約 15–20 分貝。
+
+參考資料：
+Equal-loudness contour：https://en.wikipedia.org/wiki/Equal-loudness_contour
+Line array：https://en.wikipedia.org/wiki/Line_array
+In-ear monitor：https://en.wikipedia.org/wiki/In-ear_monitor
+Speed of sound：https://en.wikipedia.org/wiki/Speed_of_sound
+WHO Global standard for safe listening venues and events (2022)：https://www.who.int/publications/i/item/9789240043114
+Earplug：https://en.wikipedia.org/wiki/Earplug]]></description>
+      <itunes:summary><![CDATA[同一首歌，演唱會現場跟戴耳機聽為什麼差那麼多？差別一：音量，耳機大約七、八十分貝，現場常超過一百分貝，差 30 分貝能量就差約 1000 倍；大聲時耳朵聽到的低音和高音也比較多（1933 年貝爾實驗室弗萊徹與曼森的等響曲線）。差別二：超低音震動胸口和地板，現場是用全身在聽。差別三：你聽到的大多是線陣列喇叭，觀眾席中間的混音師即時混音；歌手耳朵裡也戴著入耳式監聽，聽的是後台監聽混音師做的專屬混音。差別四：聲音每秒約 343 公尺，離舞台 100 公尺晚約 0.3 秒，大場地靠延遲喇叭補（回扣先到效應）。耳機也有它的好：細節、左右位置、每次都一樣。最後是保護耳朵：WHO 2022 建議每 15 分鐘平均不超過 100 分貝，可戴音樂用耳塞，平均調小約 15–20 分貝。
+
+參考資料：
+Equal-loudness contour：https://en.wikipedia.org/wiki/Equal-loudness_contour
+Line array：https://en.wikipedia.org/wiki/Line_array
+In-ear monitor：https://en.wikipedia.org/wiki/In-ear_monitor
+Speed of sound：https://en.wikipedia.org/wiki/Speed_of_sound
+WHO Global standard for safe listening venues and events (2022)：https://www.who.int/publications/i/item/9789240043114
+Earplug：https://en.wikipedia.org/wiki/Earplug]]></itunes:summary>
+      <pubDate>Sat, 21 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep77.mp3" length="4198128" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep77.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:22</itunes:duration>
+      <itunes:episode>77</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
