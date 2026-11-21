@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 21 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2198,6 +2198,64 @@ Earplug：https://en.wikipedia.org/wiki/Earplug]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:22</itunes:duration>
       <itunes:episode>77</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>串流的「無損」值得開嗎？資料量、藍牙瓶頸與盲聽實驗｜串流音質與無損</title>
+      <description><![CDATA[串流的「無損」要不要開？有損壓縮丟掉耳朵不易察覺的部分，高品質約 320 kbps；無損一個位元都不少，CD 品質約 1411 kbps，FLAC 打包後約一半到七成，資料約是有損的 3–5 倍。Apple Music 2021 年起提供無損（最高 24-bit/48 kHz，Hi-Res 最高 192 kHz），Spotify 2025 年 9 月讓 Premium 開放無損（最高 24-bit/44.1 kHz）。代價：一首 3 分鐘的歌約 7 MB 變 20–30 MB。最窄的一段是藍牙：送出前會再壓縮成 AAC、LDAC，AirPods 連 iPhone 用的就是 AAC，想聽到無損要用有線耳機或 Wi-Fi 喇叭。盲聽實驗：Meyer & Moran 2007 在高解析播放中偷偷經過 CD 品質轉換，受測者幾乎聽不出；Reiss 2016 統整 18 個實驗、四百多人，差別很小。比格式影響更大的是耳機喇叭、錄音混音母帶與環境噪音，比較時音量一定要一樣大。
+
+參考資料：
+Spotify Newsroom: Lossless Listening Arrives on Spotify Premium (2025-09-10)：https://newsroom.spotify.com/2025-09-10/lossless-listening-arrives-on-spotify-premium-with-a-richer-more-detailed-listening-experience/
+Apple: About lossless audio in Apple Music：https://support.apple.com/en-us/118295
+Meyer & Moran (2007) Audibility of a CD-Standard A/D/A Loop Inserted into High-Resolution Audio Playback, JAES 55(9)：https://www.aes.org/e-lib/browse.cfm?elib=14195
+Reiss (2016) A Meta-Analysis of High Resolution Audio Perceptual Evaluation, JAES 64(6)：https://www.aes.org/e-lib/browse.cfm?elib=18296
+FLAC：https://en.wikipedia.org/wiki/FLAC]]></description>
+      <itunes:summary><![CDATA[串流的「無損」要不要開？有損壓縮丟掉耳朵不易察覺的部分，高品質約 320 kbps；無損一個位元都不少，CD 品質約 1411 kbps，FLAC 打包後約一半到七成，資料約是有損的 3–5 倍。Apple Music 2021 年起提供無損（最高 24-bit/48 kHz，Hi-Res 最高 192 kHz），Spotify 2025 年 9 月讓 Premium 開放無損（最高 24-bit/44.1 kHz）。代價：一首 3 分鐘的歌約 7 MB 變 20–30 MB。最窄的一段是藍牙：送出前會再壓縮成 AAC、LDAC，AirPods 連 iPhone 用的就是 AAC，想聽到無損要用有線耳機或 Wi-Fi 喇叭。盲聽實驗：Meyer & Moran 2007 在高解析播放中偷偷經過 CD 品質轉換，受測者幾乎聽不出；Reiss 2016 統整 18 個實驗、四百多人，差別很小。比格式影響更大的是耳機喇叭、錄音混音母帶與環境噪音，比較時音量一定要一樣大。
+
+參考資料：
+Spotify Newsroom: Lossless Listening Arrives on Spotify Premium (2025-09-10)：https://newsroom.spotify.com/2025-09-10/lossless-listening-arrives-on-spotify-premium-with-a-richer-more-detailed-listening-experience/
+Apple: About lossless audio in Apple Music：https://support.apple.com/en-us/118295
+Meyer & Moran (2007) Audibility of a CD-Standard A/D/A Loop Inserted into High-Resolution Audio Playback, JAES 55(9)：https://www.aes.org/e-lib/browse.cfm?elib=14195
+Reiss (2016) A Meta-Analysis of High Resolution Audio Perceptual Evaluation, JAES 64(6)：https://www.aes.org/e-lib/browse.cfm?elib=18296
+FLAC：https://en.wikipedia.org/wiki/FLAC]]></itunes:summary>
+      <pubDate>Sun, 22 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep78.mp3" length="3917677" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep78.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:05</itunes:duration>
+      <itunes:episode>78</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>一份錄音，幾顆喇叭都能播？Ambisonics 聲場錄音、四個通道與解碼｜空間聲音系列⑦</title>
+      <description><![CDATA[空間聲音系列第七集：Ambisonics。VBAP 存的是每顆喇叭的訊號，換場地就要重混；Ambisonics 改成記下聽者位置四面八方的整個聲場，播放時再依現場喇叭算出每一顆該播什麼。1970 年代牛津大學的 Michael Gerzon 等人提出，Gerzon 與 Craven 設計了 Soundfield 麥克風，四個收音頭排成三角錐。一階是四條訊號：一條全方向，加上前後、左右、上下三個 8 字形；階數越高（球諧函數）方向越清楚，通道數是（階數＋1）²，一階 4、二階 9、三階 16 條。解碼可以給喇叭圈，也可以加上 HRTF 給耳機，轉頭時把聲場轉回來，聲音就留在原處，所以 VR 與 360 度影片常用。小心格式：ambiX（2011，YouTube 360 使用）與早期 FuMa 的順序和音量規矩不同，拿錯方向會亂掉。限制：低階方向較模糊，坐中間（甜蜜點）最好，偏離中間容易被最近的喇叭拉走（回扣先到效應）。
+
+參考資料：
+Ambisonics：https://en.wikipedia.org/wiki/Ambisonics
+Gerzon (1973) Periphony: With-Height Sound Reproduction, JAES 21(1)：https://www.aes.org/e-lib/browse.cfm?elib=2012
+Soundfield microphone：https://en.wikipedia.org/wiki/Soundfield_microphone
+Nachbar, Zotter, Deleflie & Sontacchi (2011) ambiX – A Suggested Ambisonics Format：https://iem.kug.ac.at/fileadmin/media/iem/projects/2011/ambisonics11_nachbar_zotter_sontacchi_deleflie.pdf
+YouTube Help: Use spatial audio in 360-degree and VR videos：https://support.google.com/youtube/answer/6395969]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第七集：Ambisonics。VBAP 存的是每顆喇叭的訊號，換場地就要重混；Ambisonics 改成記下聽者位置四面八方的整個聲場，播放時再依現場喇叭算出每一顆該播什麼。1970 年代牛津大學的 Michael Gerzon 等人提出，Gerzon 與 Craven 設計了 Soundfield 麥克風，四個收音頭排成三角錐。一階是四條訊號：一條全方向，加上前後、左右、上下三個 8 字形；階數越高（球諧函數）方向越清楚，通道數是（階數＋1）²，一階 4、二階 9、三階 16 條。解碼可以給喇叭圈，也可以加上 HRTF 給耳機，轉頭時把聲場轉回來，聲音就留在原處，所以 VR 與 360 度影片常用。小心格式：ambiX（2011，YouTube 360 使用）與早期 FuMa 的順序和音量規矩不同，拿錯方向會亂掉。限制：低階方向較模糊，坐中間（甜蜜點）最好，偏離中間容易被最近的喇叭拉走（回扣先到效應）。
+
+參考資料：
+Ambisonics：https://en.wikipedia.org/wiki/Ambisonics
+Gerzon (1973) Periphony: With-Height Sound Reproduction, JAES 21(1)：https://www.aes.org/e-lib/browse.cfm?elib=2012
+Soundfield microphone：https://en.wikipedia.org/wiki/Soundfield_microphone
+Nachbar, Zotter, Deleflie & Sontacchi (2011) ambiX – A Suggested Ambisonics Format：https://iem.kug.ac.at/fileadmin/media/iem/projects/2011/ambisonics11_nachbar_zotter_sontacchi_deleflie.pdf
+YouTube Help: Use spatial audio in 360-degree and VR videos：https://support.google.com/youtube/answer/6395969]]></itunes:summary>
+      <pubDate>Mon, 23 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep79.mp3" length="4219861" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep79.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:24</itunes:duration>
+      <itunes:episode>79</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

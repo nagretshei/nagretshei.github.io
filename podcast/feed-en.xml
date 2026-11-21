@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 21 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2198,6 +2198,64 @@ Earplug: https://en.wikipedia.org/wiki/Earplug]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:05</itunes:duration>
       <itunes:episode>77</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Is Streaming Lossless Worth Turning On? Data Size, the Bluetooth Bottleneck, and Blind Tests</title>
+      <description><![CDATA[Should you turn on lossless in your streaming app? Lossy compression throws away what your ears are less likely to notice; high quality streaming is about 320 kbps. Lossless keeps every bit: CD quality is about 1411 kbps, and FLAC packs it to roughly half to seventy percent, so lossless is about 3 to 5 times the data. Apple Music has offered lossless since 2021 (up to 24-bit/48 kHz, Hi-Res up to 192 kHz), and Spotify brought lossless to Premium in September 2025 (up to 24-bit/44.1 kHz). The cost: a three-minute song grows from about 7 MB to 20-30 MB. The narrowest link is Bluetooth: your phone re-compresses to AAC or LDAC, and AirPods on iPhone use AAC, so to really hear lossless you need wired headphones or a Wi-Fi speaker. Blind tests: Meyer and Moran (2007) secretly passed high-resolution playback through a CD-quality conversion and listeners could barely tell; Reiss (2016) combined 18 experiments with over 400 listeners and found only a small effect. Your headphones, the recording and mastering, and background noise matter more, and always match loudness when comparing.
+
+References:
+Spotify Newsroom: Lossless Listening Arrives on Spotify Premium (2025-09-10): https://newsroom.spotify.com/2025-09-10/lossless-listening-arrives-on-spotify-premium-with-a-richer-more-detailed-listening-experience/
+Apple: About lossless audio in Apple Music: https://support.apple.com/en-us/118295
+Meyer & Moran (2007) Audibility of a CD-Standard A/D/A Loop Inserted into High-Resolution Audio Playback, JAES 55(9): https://www.aes.org/e-lib/browse.cfm?elib=14195
+Reiss (2016) A Meta-Analysis of High Resolution Audio Perceptual Evaluation, JAES 64(6): https://www.aes.org/e-lib/browse.cfm?elib=18296
+FLAC: https://en.wikipedia.org/wiki/FLAC]]></description>
+      <itunes:summary><![CDATA[Should you turn on lossless in your streaming app? Lossy compression throws away what your ears are less likely to notice; high quality streaming is about 320 kbps. Lossless keeps every bit: CD quality is about 1411 kbps, and FLAC packs it to roughly half to seventy percent, so lossless is about 3 to 5 times the data. Apple Music has offered lossless since 2021 (up to 24-bit/48 kHz, Hi-Res up to 192 kHz), and Spotify brought lossless to Premium in September 2025 (up to 24-bit/44.1 kHz). The cost: a three-minute song grows from about 7 MB to 20-30 MB. The narrowest link is Bluetooth: your phone re-compresses to AAC or LDAC, and AirPods on iPhone use AAC, so to really hear lossless you need wired headphones or a Wi-Fi speaker. Blind tests: Meyer and Moran (2007) secretly passed high-resolution playback through a CD-quality conversion and listeners could barely tell; Reiss (2016) combined 18 experiments with over 400 listeners and found only a small effect. Your headphones, the recording and mastering, and background noise matter more, and always match loudness when comparing.
+
+References:
+Spotify Newsroom: Lossless Listening Arrives on Spotify Premium (2025-09-10): https://newsroom.spotify.com/2025-09-10/lossless-listening-arrives-on-spotify-premium-with-a-richer-more-detailed-listening-experience/
+Apple: About lossless audio in Apple Music: https://support.apple.com/en-us/118295
+Meyer & Moran (2007) Audibility of a CD-Standard A/D/A Loop Inserted into High-Resolution Audio Playback, JAES 55(9): https://www.aes.org/e-lib/browse.cfm?elib=14195
+Reiss (2016) A Meta-Analysis of High Resolution Audio Perceptual Evaluation, JAES 64(6): https://www.aes.org/e-lib/browse.cfm?elib=18296
+FLAC: https://en.wikipedia.org/wiki/FLAC]]></itunes:summary>
+      <pubDate>Sun, 22 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep78.mp3" length="1427472" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep78.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:58</itunes:duration>
+      <itunes:episode>78</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>One Recording, Any Number of Speakers? Ambisonics: Sound Field Recording, Four Channels, and Decoding (Spatial Sound Series #7)</title>
+      <description><![CDATA[Spatial sound series, episode seven: Ambisonics. VBAP saves a signal for each speaker, so a new venue means a new mix; Ambisonics instead records the whole sound field from every direction at the listener's position, and calculates what each speaker should play at playback time. It was proposed in the 1970s by Michael Gerzon at Oxford and colleagues; Gerzon and Craven designed the Soundfield microphone, with four capsules arranged in a pyramid. First order has four signals: one omnidirectional plus three figure-eights for front-back, left-right, and up-down. Higher orders (spherical harmonics) give clearer directions, with (order + 1) squared channels: 4, 9, and 16 for first, second, and third order. Decoding works for a speaker ring, or for headphones with HRTFs, and turning your head just rotates the sound field back, which is why VR and 360 videos love it. Watch the format: ambiX (2011, used by YouTube 360) and the older FuMa differ in channel order and volume rules, and mixing them up scrambles directions. Limits: low orders sound blurry, it works best at the center sweet spot, and off-center listeners get pulled toward the nearest speaker (the precedence effect).
+
+References:
+Ambisonics: https://en.wikipedia.org/wiki/Ambisonics
+Gerzon (1973) Periphony: With-Height Sound Reproduction, JAES 21(1): https://www.aes.org/e-lib/browse.cfm?elib=2012
+Soundfield microphone: https://en.wikipedia.org/wiki/Soundfield_microphone
+Nachbar, Zotter, Deleflie & Sontacchi (2011) ambiX – A Suggested Ambisonics Format: https://iem.kug.ac.at/fileadmin/media/iem/projects/2011/ambisonics11_nachbar_zotter_sontacchi_deleflie.pdf
+YouTube Help: Use spatial audio in 360-degree and VR videos: https://support.google.com/youtube/answer/6395969]]></description>
+      <itunes:summary><![CDATA[Spatial sound series, episode seven: Ambisonics. VBAP saves a signal for each speaker, so a new venue means a new mix; Ambisonics instead records the whole sound field from every direction at the listener's position, and calculates what each speaker should play at playback time. It was proposed in the 1970s by Michael Gerzon at Oxford and colleagues; Gerzon and Craven designed the Soundfield microphone, with four capsules arranged in a pyramid. First order has four signals: one omnidirectional plus three figure-eights for front-back, left-right, and up-down. Higher orders (spherical harmonics) give clearer directions, with (order + 1) squared channels: 4, 9, and 16 for first, second, and third order. Decoding works for a speaker ring, or for headphones with HRTFs, and turning your head just rotates the sound field back, which is why VR and 360 videos love it. Watch the format: ambiX (2011, used by YouTube 360) and the older FuMa differ in channel order and volume rules, and mixing them up scrambles directions. Limits: low orders sound blurry, it works best at the center sweet spot, and off-center listeners get pulled toward the nearest speaker (the precedence effect).
+
+References:
+Ambisonics: https://en.wikipedia.org/wiki/Ambisonics
+Gerzon (1973) Periphony: With-Height Sound Reproduction, JAES 21(1): https://www.aes.org/e-lib/browse.cfm?elib=2012
+Soundfield microphone: https://en.wikipedia.org/wiki/Soundfield_microphone
+Nachbar, Zotter, Deleflie & Sontacchi (2011) ambiX – A Suggested Ambisonics Format: https://iem.kug.ac.at/fileadmin/media/iem/projects/2011/ambisonics11_nachbar_zotter_sontacchi_deleflie.pdf
+YouTube Help: Use spatial audio in 360-degree and VR videos: https://support.google.com/youtube/answer/6395969]]></itunes:summary>
+      <pubDate>Mon, 23 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep79.mp3" length="1484496" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep79.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:07</itunes:duration>
+      <itunes:episode>79</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
