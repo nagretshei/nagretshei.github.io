@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 23 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2256,6 +2256,33 @@ YouTube Help: Use spatial audio in 360-degree and VR videos：https://support.go
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:24</itunes:duration>
       <itunes:episode>79</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>HRTF 套上去，聲音怎麼變刺了？擴散場等化：拿掉耳朵的濾鏡｜空間聲音系列⑧</title>
+      <description><![CDATA[空間聲音系列第八集：擴散場等化。HRTF 裡有兩種東西：跟方向有關的（耳廓造成的小凹口），和跟方向無關的（耳道在 3 kHz 附近共振，每個方向都有）。自由場是聲音只從一個方向來、沒有反射（消音室）；擴散場是四面八方平均地來（大教堂的殘響）。擴散場等化把所有方向的 HRTF 平均起來，再讓每個方向除以這條平均，拿掉共同的音色、只留方向差別，避免戴耳機時錄音裡的耳道共振和你自己的耳道共振加兩次（MIT 1994 KEMAR 資料附有等化版）。耳機標準：早期用自由場，Theile 1986 提議錄音室耳機改用擴散場；2013 年 Harman 的 Olive 團隊以房間裡好喇叭為目標，相對擴散場多一點低音、少一點高音。低階 Ambisonics 轉耳機時高音會被抵消，解碼器也用擴散場等化補回。限制：單一方向仍有顏色（那是方向線索），平均的是別人的耳朵。
+
+參考資料：
+Head-related transfer function：https://en.wikipedia.org/wiki/Head-related_transfer_function
+Theile (1986) On the Standardization of the Frequency Response of High-Quality Studio Headphones, JAES 34(12)：https://www.aes.org/e-lib/browse.cfm?elib=5233
+MIT Media Lab KEMAR HRTF（Gardner & Martin，含擴散場等化版）：https://sound.media.mit.edu/resources/KEMAR.html
+Olive, Welti & McMullin (2013) Listener Preferences for In-Room Loudspeaker and Headphone Target Responses, AES 135th Convention：https://www.aes.org/e-lib/browse.cfm?elib=17042]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第八集：擴散場等化。HRTF 裡有兩種東西：跟方向有關的（耳廓造成的小凹口），和跟方向無關的（耳道在 3 kHz 附近共振，每個方向都有）。自由場是聲音只從一個方向來、沒有反射（消音室）；擴散場是四面八方平均地來（大教堂的殘響）。擴散場等化把所有方向的 HRTF 平均起來，再讓每個方向除以這條平均，拿掉共同的音色、只留方向差別，避免戴耳機時錄音裡的耳道共振和你自己的耳道共振加兩次（MIT 1994 KEMAR 資料附有等化版）。耳機標準：早期用自由場，Theile 1986 提議錄音室耳機改用擴散場；2013 年 Harman 的 Olive 團隊以房間裡好喇叭為目標，相對擴散場多一點低音、少一點高音。低階 Ambisonics 轉耳機時高音會被抵消，解碼器也用擴散場等化補回。限制：單一方向仍有顏色（那是方向線索），平均的是別人的耳朵。
+
+參考資料：
+Head-related transfer function：https://en.wikipedia.org/wiki/Head-related_transfer_function
+Theile (1986) On the Standardization of the Frequency Response of High-Quality Studio Headphones, JAES 34(12)：https://www.aes.org/e-lib/browse.cfm?elib=5233
+MIT Media Lab KEMAR HRTF（Gardner & Martin，含擴散場等化版）：https://sound.media.mit.edu/resources/KEMAR.html
+Olive, Welti & McMullin (2013) Listener Preferences for In-Room Loudspeaker and Headphone Target Responses, AES 135th Convention：https://www.aes.org/e-lib/browse.cfm?elib=17042]]></itunes:summary>
+      <pubDate>Tue, 24 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep80.mp3" length="4402510" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep80.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:35</itunes:duration>
+      <itunes:episode>80</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

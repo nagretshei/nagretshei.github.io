@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Mon, 23 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2256,6 +2256,33 @@ YouTube Help: Use spatial audio in 360-degree and VR videos: https://support.goo
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:07</itunes:duration>
       <itunes:episode>79</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>HRTF Makes It Sound Harsh? Diffuse-Field Equalization: Removing the Ear's Filter (Spatial Sound Series #8)</title>
+      <description><![CDATA[Spatial sound series, episode eight: diffuse-field equalization. An HRTF holds two things: direction-dependent cues (notches from the outer ear) and coloration that barely depends on direction (the ear canal resonance around 3 kHz, present for every direction). A free field means sound from one direction only, with no reflections (an anechoic chamber); a diffuse field means sound arriving evenly from all directions (cathedral reverb). Diffuse-field equalization averages the HRTFs over all directions and divides each direction by that average, removing the shared coloration while keeping the differences between directions, so the ear canal resonance isn't applied twice when you listen on headphones (MIT's 1994 KEMAR data includes a diffuse-field equalized set). Headphone targets: free field early on; Theile (1986) proposed the diffuse field for studio headphones; in 2013 Olive's team at Harman used a good in-room loudspeaker as the target, giving a bit more bass and less treble than diffuse field. Low-order Ambisonics loses highs when rendered to headphones, and decoders use diffuse-field EQ to bring them back. Limits: single directions still carry color (that's the direction cue), and the average comes from someone else's ears.
+
+References:
+Head-related transfer function: https://en.wikipedia.org/wiki/Head-related_transfer_function
+Theile (1986) On the Standardization of the Frequency Response of High-Quality Studio Headphones, JAES 34(12): https://www.aes.org/e-lib/browse.cfm?elib=5233
+MIT Media Lab KEMAR HRTF (Gardner & Martin, incl. diffuse-field equalized set): https://sound.media.mit.edu/resources/KEMAR.html
+Olive, Welti & McMullin (2013) Listener Preferences for In-Room Loudspeaker and Headphone Target Responses, AES 135th Convention: https://www.aes.org/e-lib/browse.cfm?elib=17042]]></description>
+      <itunes:summary><![CDATA[Spatial sound series, episode eight: diffuse-field equalization. An HRTF holds two things: direction-dependent cues (notches from the outer ear) and coloration that barely depends on direction (the ear canal resonance around 3 kHz, present for every direction). A free field means sound from one direction only, with no reflections (an anechoic chamber); a diffuse field means sound arriving evenly from all directions (cathedral reverb). Diffuse-field equalization averages the HRTFs over all directions and divides each direction by that average, removing the shared coloration while keeping the differences between directions, so the ear canal resonance isn't applied twice when you listen on headphones (MIT's 1994 KEMAR data includes a diffuse-field equalized set). Headphone targets: free field early on; Theile (1986) proposed the diffuse field for studio headphones; in 2013 Olive's team at Harman used a good in-room loudspeaker as the target, giving a bit more bass and less treble than diffuse field. Low-order Ambisonics loses highs when rendered to headphones, and decoders use diffuse-field EQ to bring them back. Limits: single directions still carry color (that's the direction cue), and the average comes from someone else's ears.
+
+References:
+Head-related transfer function: https://en.wikipedia.org/wiki/Head-related_transfer_function
+Theile (1986) On the Standardization of the Frequency Response of High-Quality Studio Headphones, JAES 34(12): https://www.aes.org/e-lib/browse.cfm?elib=5233
+MIT Media Lab KEMAR HRTF (Gardner & Martin, incl. diffuse-field equalized set): https://sound.media.mit.edu/resources/KEMAR.html
+Olive, Welti & McMullin (2013) Listener Preferences for In-Room Loudspeaker and Headphone Target Responses, AES 135th Convention: https://www.aes.org/e-lib/browse.cfm?elib=17042]]></itunes:summary>
+      <pubDate>Tue, 24 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep80.mp3" length="1643184" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep80.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:34</itunes:duration>
+      <itunes:episode>80</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
