@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 24 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2283,6 +2283,37 @@ Olive, Welti & McMullin (2013) Listener Preferences for In-Room Loudspeaker and 
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:34</itunes:duration>
       <itunes:episode>80</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Do Some Concert Halls Surround You with Music? Interaural Similarity and the Shoebox Hall (Spatial Sound Series #9)</title>
+      <description><![CDATA[Spatial sound series, episode nine: with only two ears, how do we hear direction, and why do some concert halls make you feel surrounded by music? Time difference: in 1948 Jeffress proposed that the brain shifts the two ears' signals against each other, and the best match gives the time difference; computers do the same with cross-correlation. Level difference and the outer ear: the head blocks high sounds and the outer ear's notches help with front/back and up/down (HRTF); computers can compare a sound with each direction, and many now use deep learning, while smart speakers and video-call cameras use several microphones to find who is talking. Reflections: the brain trusts the direct sound that arrives first (precedence effect); direct sound is nearly identical in both ears, reverb is not. Interaural similarity (IACC) runs from 1 to 0: mono into headphones is a dot inside your head, one speaker straight ahead is close to 1, an ordinary room is in the middle, and hall reverb is low, wide and enveloping. Shoebox halls such as Vienna's Musikverein (1870) and Boston's Symphony Hall (1900) are narrow and tall, so side-wall reflections make the two ears differ and the music wraps around you; in wide fan-shaped halls the side reflections head to the back and the music feels far away. Barron (1971) showed that lateral reflections matter most for this sense of envelopment.
+
+References:
+Sound localization: https://en.wikipedia.org/wiki/Sound_localization
+Precedence effect: https://en.wikipedia.org/wiki/Precedence_effect
+Musikverein: https://en.wikipedia.org/wiki/Wiener_Musikverein
+Symphony Hall, Boston: https://en.wikipedia.org/wiki/Symphony_Hall,_Boston
+Barron (1971) The subjective effects of first reflections in concert halls: The need for lateral reflections, Journal of Sound and Vibration 15(4): https://doi.org/10.1016/0022-460X(71)90406-8
+ISO 3382-1: https://www.iso.org/standard/40979.html]]></description>
+      <itunes:summary><![CDATA[Spatial sound series, episode nine: with only two ears, how do we hear direction, and why do some concert halls make you feel surrounded by music? Time difference: in 1948 Jeffress proposed that the brain shifts the two ears' signals against each other, and the best match gives the time difference; computers do the same with cross-correlation. Level difference and the outer ear: the head blocks high sounds and the outer ear's notches help with front/back and up/down (HRTF); computers can compare a sound with each direction, and many now use deep learning, while smart speakers and video-call cameras use several microphones to find who is talking. Reflections: the brain trusts the direct sound that arrives first (precedence effect); direct sound is nearly identical in both ears, reverb is not. Interaural similarity (IACC) runs from 1 to 0: mono into headphones is a dot inside your head, one speaker straight ahead is close to 1, an ordinary room is in the middle, and hall reverb is low, wide and enveloping. Shoebox halls such as Vienna's Musikverein (1870) and Boston's Symphony Hall (1900) are narrow and tall, so side-wall reflections make the two ears differ and the music wraps around you; in wide fan-shaped halls the side reflections head to the back and the music feels far away. Barron (1971) showed that lateral reflections matter most for this sense of envelopment.
+
+References:
+Sound localization: https://en.wikipedia.org/wiki/Sound_localization
+Precedence effect: https://en.wikipedia.org/wiki/Precedence_effect
+Musikverein: https://en.wikipedia.org/wiki/Wiener_Musikverein
+Symphony Hall, Boston: https://en.wikipedia.org/wiki/Symphony_Hall,_Boston
+Barron (1971) The subjective effects of first reflections in concert halls: The need for lateral reflections, Journal of Sound and Vibration 15(4): https://doi.org/10.1016/0022-460X(71)90406-8
+ISO 3382-1: https://www.iso.org/standard/40979.html]]></itunes:summary>
+      <pubDate>Wed, 25 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep81.mp3" length="1574352" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep81.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:22</itunes:duration>
+      <itunes:episode>81</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

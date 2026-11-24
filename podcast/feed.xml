@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 24 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2283,6 +2283,37 @@ Olive, Welti & McMullin (2013) Listener Preferences for In-Room Loudspeaker and 
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:35</itunes:duration>
       <itunes:episode>80</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼在音樂廳會覺得被音樂包圍？兩耳相似度與鞋盒音樂廳｜空間聲音系列⑨</title>
+      <description><![CDATA[空間聲音系列第九集：耳朵只有兩個，怎麼聽出方向？又為什麼在音樂廳會覺得被音樂包圍？時間差：Jeffress 1948 年提出大腦把兩耳訊號錯開來比，對得最齊的位置就是時間差，電腦版叫互相關。音量差與耳廓：頭擋住高音、耳廓小凹口分前後上下（HRTF），電腦可以跟每個方向比比看最像哪個，現在也常用深度學習；智慧音箱、視訊會議鏡頭用多支麥克風找出誰在說話。房間反射：大腦相信先到的直接聲（先到效應），直接聲兩耳幾乎一樣，殘響兩耳不太像。兩耳相似度（IACC）從 1 到 0：單聲道送進耳機＝頭中間一個點，正前方一顆喇叭接近 1，一般房間在中間，大廳殘響很低＝很寬、被包圍。鞋盒音樂廳：維也納金色大廳（1870）、波士頓交響廳（1900）窄而高，側牆反射讓兩耳聽到不一樣，所以覺得被音樂包圍；寬的扇形廳側邊反射往後跑掉，音樂像在遠方台上。Barron 1971 指出側向反射對包圍感特別重要。
+
+參考資料：
+Sound localization：https://en.wikipedia.org/wiki/Sound_localization
+Precedence effect：https://en.wikipedia.org/wiki/Precedence_effect
+Musikverein：https://en.wikipedia.org/wiki/Wiener_Musikverein
+Symphony Hall, Boston：https://en.wikipedia.org/wiki/Symphony_Hall,_Boston
+Barron (1971) The subjective effects of first reflections in concert halls—The need for lateral reflections, Journal of Sound and Vibration 15(4)：https://doi.org/10.1016/0022-460X(71)90406-8
+ISO 3382-1：https://www.iso.org/standard/40979.html]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第九集：耳朵只有兩個，怎麼聽出方向？又為什麼在音樂廳會覺得被音樂包圍？時間差：Jeffress 1948 年提出大腦把兩耳訊號錯開來比，對得最齊的位置就是時間差，電腦版叫互相關。音量差與耳廓：頭擋住高音、耳廓小凹口分前後上下（HRTF），電腦可以跟每個方向比比看最像哪個，現在也常用深度學習；智慧音箱、視訊會議鏡頭用多支麥克風找出誰在說話。房間反射：大腦相信先到的直接聲（先到效應），直接聲兩耳幾乎一樣，殘響兩耳不太像。兩耳相似度（IACC）從 1 到 0：單聲道送進耳機＝頭中間一個點，正前方一顆喇叭接近 1，一般房間在中間，大廳殘響很低＝很寬、被包圍。鞋盒音樂廳：維也納金色大廳（1870）、波士頓交響廳（1900）窄而高，側牆反射讓兩耳聽到不一樣，所以覺得被音樂包圍；寬的扇形廳側邊反射往後跑掉，音樂像在遠方台上。Barron 1971 指出側向反射對包圍感特別重要。
+
+參考資料：
+Sound localization：https://en.wikipedia.org/wiki/Sound_localization
+Precedence effect：https://en.wikipedia.org/wiki/Precedence_effect
+Musikverein：https://en.wikipedia.org/wiki/Wiener_Musikverein
+Symphony Hall, Boston：https://en.wikipedia.org/wiki/Symphony_Hall,_Boston
+Barron (1971) The subjective effects of first reflections in concert halls—The need for lateral reflections, Journal of Sound and Vibration 15(4)：https://doi.org/10.1016/0022-460X(71)90406-8
+ISO 3382-1：https://www.iso.org/standard/40979.html]]></itunes:summary>
+      <pubDate>Wed, 25 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep81.mp3" length="4010464" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep81.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:11</itunes:duration>
+      <itunes:episode>81</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
