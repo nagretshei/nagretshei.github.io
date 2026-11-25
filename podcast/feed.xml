@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2314,6 +2314,37 @@ ISO 3382-1：https://www.iso.org/standard/40979.html]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:11</itunes:duration>
       <itunes:episode>81</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼音樂開小聲，低音就不見了？等響曲線｜空間聲音系列⑩</title>
+      <description><![CDATA[空間聲音系列第十集：半夜把音樂開小聲，人聲還在，鼓和貝斯卻不見了，是喇叭還是耳朵的問題？分貝是儀器測到的能量，響度是耳朵覺得多大聲，同樣 50 分貝，100 赫茲比 1000 赫茲小聲很多。1933 年貝爾實驗室的弗萊徹與曼森（Fletcher & Munson）請受試者把各種高低的音轉到跟 1000 赫茲一樣大聲，畫出等響曲線；響度單位叫「方」（phon）。耳朵在 3000–4000 赫茲最敏感（耳道共鳴，煙霧警報器常用約 3000 赫茲），低音最吃虧，而且越小聲越吃虧：小聲時 100 赫茲要多給約 270 倍能量才跟 1000 赫茲一樣大聲，大聲時只要約 9 倍，所以演唱會現場低音特別飽滿。1956 年英國 Robinson & Dadson 再測成為國際標準，2003 年日本東北大學鈴木陽一帶領各國實驗室再測，發現低音比舊地圖說的更難聽到，ISO 226 跟著改版。生活中：音響的 Loudness 按鈕、分貝計的 dB(A)、LUFS 的濾波器、混音師固定中等音量並常開小聲檢查。比較兩個版本前，記得先把響度對齊。
+
+參考資料：
+Equal-loudness contour：https://en.wikipedia.org/wiki/Equal-loudness_contour
+Fletcher & Munson (1933) Loudness, its definition, measurement and calculation, JASA 5(2)：https://doi.org/10.1121/1.1915637
+Robinson & Dadson (1956)：https://doi.org/10.1088/0508-3443/7/5/302
+Suzuki & Takeshima (2004) Equal-loudness-level contours for pure tones, JASA 116(2)：https://doi.org/10.1121/1.1763601
+ISO 226：https://www.iso.org/standard/83117.html
+A-weighting：https://en.wikipedia.org/wiki/A-weighting]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第十集：半夜把音樂開小聲，人聲還在，鼓和貝斯卻不見了，是喇叭還是耳朵的問題？分貝是儀器測到的能量，響度是耳朵覺得多大聲，同樣 50 分貝，100 赫茲比 1000 赫茲小聲很多。1933 年貝爾實驗室的弗萊徹與曼森（Fletcher & Munson）請受試者把各種高低的音轉到跟 1000 赫茲一樣大聲，畫出等響曲線；響度單位叫「方」（phon）。耳朵在 3000–4000 赫茲最敏感（耳道共鳴，煙霧警報器常用約 3000 赫茲），低音最吃虧，而且越小聲越吃虧：小聲時 100 赫茲要多給約 270 倍能量才跟 1000 赫茲一樣大聲，大聲時只要約 9 倍，所以演唱會現場低音特別飽滿。1956 年英國 Robinson & Dadson 再測成為國際標準，2003 年日本東北大學鈴木陽一帶領各國實驗室再測，發現低音比舊地圖說的更難聽到，ISO 226 跟著改版。生活中：音響的 Loudness 按鈕、分貝計的 dB(A)、LUFS 的濾波器、混音師固定中等音量並常開小聲檢查。比較兩個版本前，記得先把響度對齊。
+
+參考資料：
+Equal-loudness contour：https://en.wikipedia.org/wiki/Equal-loudness_contour
+Fletcher & Munson (1933) Loudness, its definition, measurement and calculation, JASA 5(2)：https://doi.org/10.1121/1.1915637
+Robinson & Dadson (1956)：https://doi.org/10.1088/0508-3443/7/5/302
+Suzuki & Takeshima (2004) Equal-loudness-level contours for pure tones, JASA 116(2)：https://doi.org/10.1121/1.1763601
+ISO 226：https://www.iso.org/standard/83117.html
+A-weighting：https://en.wikipedia.org/wiki/A-weighting]]></itunes:summary>
+      <pubDate>Thu, 26 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep82.mp3" length="4050170" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep82.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:13</itunes:duration>
+      <itunes:episode>82</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

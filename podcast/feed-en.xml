@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2314,6 +2314,37 @@ ISO 3382-1: https://www.iso.org/standard/40979.html]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:22</itunes:duration>
       <itunes:episode>81</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Does the Bass Disappear When You Turn the Music Down? Equal-Loudness Contours (Spatial Sound Series #10)</title>
+      <description><![CDATA[Spatial sound series, episode ten: turn your music down late at night and the vocals stay clear but the drums and bass vanish. Is it the speakers or your ears? Decibels are the energy a meter measures; loudness is how loud your ears think it is, and at 50 dB a 100 Hz tone sounds much quieter than 1000 Hz. In 1933, Fletcher and Munson at Bell Labs had listeners adjust tones of different pitches until they matched a 1000 Hz reference, drawing the equal-loudness contours; the unit of loudness level is the phon. Our ears are most sensitive around 3000 to 4000 Hz (ear canal resonance; many smoke alarms beep near 3000 Hz), and low sounds lose out most, especially at low volume: quietly, 100 Hz needs about 270 times more energy than 1000 Hz to sound equally loud, but when loud only about 9 times, which is why live concerts feel so full in the bass. Robinson and Dadson remeasured the curves in 1956 and they became a standard; in 2003 Yôiti Suzuki of Tohoku University led an international remeasurement showing low sounds are even harder to hear, and ISO 226 was revised. In daily life: the Loudness button, dB(A) on sound level meters, the LUFS filter, and mixing engineers working at a moderate level and checking quietly. Before comparing two versions, match their loudness first.
+
+References:
+Equal-loudness contour: https://en.wikipedia.org/wiki/Equal-loudness_contour
+Fletcher & Munson (1933) Loudness, its definition, measurement and calculation, JASA 5(2): https://doi.org/10.1121/1.1915637
+Robinson & Dadson (1956): https://doi.org/10.1088/0508-3443/7/5/302
+Suzuki & Takeshima (2004) Equal-loudness-level contours for pure tones, JASA 116(2): https://doi.org/10.1121/1.1763601
+ISO 226: https://www.iso.org/standard/83117.html
+A-weighting: https://en.wikipedia.org/wiki/A-weighting]]></description>
+      <itunes:summary><![CDATA[Spatial sound series, episode ten: turn your music down late at night and the vocals stay clear but the drums and bass vanish. Is it the speakers or your ears? Decibels are the energy a meter measures; loudness is how loud your ears think it is, and at 50 dB a 100 Hz tone sounds much quieter than 1000 Hz. In 1933, Fletcher and Munson at Bell Labs had listeners adjust tones of different pitches until they matched a 1000 Hz reference, drawing the equal-loudness contours; the unit of loudness level is the phon. Our ears are most sensitive around 3000 to 4000 Hz (ear canal resonance; many smoke alarms beep near 3000 Hz), and low sounds lose out most, especially at low volume: quietly, 100 Hz needs about 270 times more energy than 1000 Hz to sound equally loud, but when loud only about 9 times, which is why live concerts feel so full in the bass. Robinson and Dadson remeasured the curves in 1956 and they became a standard; in 2003 Yôiti Suzuki of Tohoku University led an international remeasurement showing low sounds are even harder to hear, and ISO 226 was revised. In daily life: the Loudness button, dB(A) on sound level meters, the LUFS filter, and mixing engineers working at a moderate level and checking quietly. Before comparing two versions, match their loudness first.
+
+References:
+Equal-loudness contour: https://en.wikipedia.org/wiki/Equal-loudness_contour
+Fletcher & Munson (1933) Loudness, its definition, measurement and calculation, JASA 5(2): https://doi.org/10.1121/1.1915637
+Robinson & Dadson (1956): https://doi.org/10.1088/0508-3443/7/5/302
+Suzuki & Takeshima (2004) Equal-loudness-level contours for pure tones, JASA 116(2): https://doi.org/10.1121/1.1763601
+ISO 226: https://www.iso.org/standard/83117.html
+A-weighting: https://en.wikipedia.org/wiki/A-weighting]]></itunes:summary>
+      <pubDate>Thu, 26 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep82.mp3" length="1489248" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep82.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:08</itunes:duration>
+      <itunes:episode>82</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
