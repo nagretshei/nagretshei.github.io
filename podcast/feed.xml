@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 26 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2345,6 +2345,39 @@ A-weighting：https://en.wikipedia.org/wiki/A-weighting]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:13</itunes:duration>
       <itunes:episode>82</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼吸塵器一開，就聽不到別人叫你？遮蔽效應｜空間聲音系列⑪</title>
+      <description><![CDATA[空間聲音系列第十一集：吸塵器一開，家人叫你就聽不到，聲音明明還在，只是被蓋掉了，這就是遮蔽效應——旁邊有大聲音時，聽得到的門檻被墊高。1924 年貝爾實驗室的韋格爾與萊恩（Wegel & Lane）發現：兩個音高低越接近越容易蓋掉，而且不對稱，低音往高音那邊蓋得很遠，高音幾乎蓋不到低音；原因在耳蝸，低音的振動要從入口一路走到深處，路上搖到負責高音的地方。1940 年弗萊徹（Fletcher）把雜音範圍越拉越寬，發現寬到某個程度就沒用了：耳朵像一排濾鏡，這一格叫臨界頻帶，低音區約 100 赫茲寬、越高越寬，茨威克（Zwicker）整理成約 24 格（Bark）。時間上也會遮蔽：大聲之後約一兩百毫秒、之前幾到 20 毫秒。MP3 的心理聲學模型就是靠遮蔽少存資料，布蘭登堡（Karlheinz Brandenburg）用《Tom's Diner》反覆測試。混音師用等化器和側鏈壓縮避免大鼓和貝斯互相遮蔽。最後，說話和雜音分開方向就聽得更清楚：1948 年赫希（Hirsh）的兩耳實驗，以及雞尾酒會效應（Cherry, 1953）。
+
+參考資料：
+Auditory masking：https://en.wikipedia.org/wiki/Auditory_masking
+Wegel & Lane (1924) Physical Review 23(2)：https://doi.org/10.1103/PhysRev.23.266
+Fletcher (1940) Auditory patterns, Reviews of Modern Physics 12(1)：https://doi.org/10.1103/RevModPhys.12.47
+Zwicker (1961) Subdivision of the audible frequency range into critical bands, JASA 33(2)：https://doi.org/10.1121/1.1908630
+Hirsh (1948) JASA 20(4)：https://doi.org/10.1121/1.1906407
+Cherry (1953) JASA 25(5)：https://doi.org/10.1121/1.1907229
+Tom's Diner：https://en.wikipedia.org/wiki/Tom%27s_Diner]]></description>
+      <itunes:summary><![CDATA[空間聲音系列第十一集：吸塵器一開，家人叫你就聽不到，聲音明明還在，只是被蓋掉了，這就是遮蔽效應——旁邊有大聲音時，聽得到的門檻被墊高。1924 年貝爾實驗室的韋格爾與萊恩（Wegel & Lane）發現：兩個音高低越接近越容易蓋掉，而且不對稱，低音往高音那邊蓋得很遠，高音幾乎蓋不到低音；原因在耳蝸，低音的振動要從入口一路走到深處，路上搖到負責高音的地方。1940 年弗萊徹（Fletcher）把雜音範圍越拉越寬，發現寬到某個程度就沒用了：耳朵像一排濾鏡，這一格叫臨界頻帶，低音區約 100 赫茲寬、越高越寬，茨威克（Zwicker）整理成約 24 格（Bark）。時間上也會遮蔽：大聲之後約一兩百毫秒、之前幾到 20 毫秒。MP3 的心理聲學模型就是靠遮蔽少存資料，布蘭登堡（Karlheinz Brandenburg）用《Tom's Diner》反覆測試。混音師用等化器和側鏈壓縮避免大鼓和貝斯互相遮蔽。最後，說話和雜音分開方向就聽得更清楚：1948 年赫希（Hirsh）的兩耳實驗，以及雞尾酒會效應（Cherry, 1953）。
+
+參考資料：
+Auditory masking：https://en.wikipedia.org/wiki/Auditory_masking
+Wegel & Lane (1924) Physical Review 23(2)：https://doi.org/10.1103/PhysRev.23.266
+Fletcher (1940) Auditory patterns, Reviews of Modern Physics 12(1)：https://doi.org/10.1103/RevModPhys.12.47
+Zwicker (1961) Subdivision of the audible frequency range into critical bands, JASA 33(2)：https://doi.org/10.1121/1.1908630
+Hirsh (1948) JASA 20(4)：https://doi.org/10.1121/1.1906407
+Cherry (1953) JASA 25(5)：https://doi.org/10.1121/1.1907229
+Tom's Diner：https://en.wikipedia.org/wiki/Tom%27s_Diner]]></itunes:summary>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep83.mp3" length="4578470" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep83.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:46</itunes:duration>
+      <itunes:episode>83</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

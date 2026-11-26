@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 26 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2345,6 +2345,39 @@ A-weighting: https://en.wikipedia.org/wiki/A-weighting]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:08</itunes:duration>
       <itunes:episode>82</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Can't You Hear Anyone When the Vacuum Is On? The Masking Effect (Spatial Sound Series #11)</title>
+      <description><![CDATA[Spatial sound series, episode eleven: when the vacuum cleaner is running, you can't hear someone calling you. Their voice is still there, just covered up. That's masking: a loud sound pushes up the hearing threshold. In 1924, Wegel and Lane at Bell Labs found that tones closer in pitch mask each other more, and that masking is asymmetric: low sounds mask far up into the highs, while high sounds barely mask lows. The reason lies in the cochlea, where low-frequency vibrations travel past the high-frequency region on their way to the deep end. In 1940, Fletcher widened a band of noise around a tone and found that beyond a certain width it stopped helping: the ear works like a row of filters called critical bands, about 100 Hz wide at low frequencies and wider higher up; Zwicker later divided hearing into about 24 bands (the Bark scale). Masking also works in time: for one or two hundred milliseconds after a loud sound, and a few to about 20 milliseconds before it. MP3's psychoacoustic model relies on masking to save data, and Karlheinz Brandenburg famously tuned it with Suzanne Vega's Tom's Diner. Mixing engineers use EQ and sidechain compression to keep kick and bass from masking each other. Finally, separating a voice and noise in direction makes the voice clearer: Hirsh's 1948 binaural experiments and the cocktail party effect (Cherry, 1953).
+
+References:
+Auditory masking: https://en.wikipedia.org/wiki/Auditory_masking
+Wegel & Lane (1924) Physical Review 23(2): https://doi.org/10.1103/PhysRev.23.266
+Fletcher (1940) Auditory patterns, Reviews of Modern Physics 12(1): https://doi.org/10.1103/RevModPhys.12.47
+Zwicker (1961) Subdivision of the audible frequency range into critical bands, JASA 33(2): https://doi.org/10.1121/1.1908630
+Hirsh (1948) JASA 20(4): https://doi.org/10.1121/1.1906407
+Cherry (1953) JASA 25(5): https://doi.org/10.1121/1.1907229
+Tom's Diner: https://en.wikipedia.org/wiki/Tom%27s_Diner]]></description>
+      <itunes:summary><![CDATA[Spatial sound series, episode eleven: when the vacuum cleaner is running, you can't hear someone calling you. Their voice is still there, just covered up. That's masking: a loud sound pushes up the hearing threshold. In 1924, Wegel and Lane at Bell Labs found that tones closer in pitch mask each other more, and that masking is asymmetric: low sounds mask far up into the highs, while high sounds barely mask lows. The reason lies in the cochlea, where low-frequency vibrations travel past the high-frequency region on their way to the deep end. In 1940, Fletcher widened a band of noise around a tone and found that beyond a certain width it stopped helping: the ear works like a row of filters called critical bands, about 100 Hz wide at low frequencies and wider higher up; Zwicker later divided hearing into about 24 bands (the Bark scale). Masking also works in time: for one or two hundred milliseconds after a loud sound, and a few to about 20 milliseconds before it. MP3's psychoacoustic model relies on masking to save data, and Karlheinz Brandenburg famously tuned it with Suzanne Vega's Tom's Diner. Mixing engineers use EQ and sidechain compression to keep kick and bass from masking each other. Finally, separating a voice and noise in direction makes the voice clearer: Hirsh's 1948 binaural experiments and the cocktail party effect (Cherry, 1953).
+
+References:
+Auditory masking: https://en.wikipedia.org/wiki/Auditory_masking
+Wegel & Lane (1924) Physical Review 23(2): https://doi.org/10.1103/PhysRev.23.266
+Fletcher (1940) Auditory patterns, Reviews of Modern Physics 12(1): https://doi.org/10.1103/RevModPhys.12.47
+Zwicker (1961) Subdivision of the audible frequency range into critical bands, JASA 33(2): https://doi.org/10.1121/1.1908630
+Hirsh (1948) JASA 20(4): https://doi.org/10.1121/1.1906407
+Cherry (1953) JASA 25(5): https://doi.org/10.1121/1.1907229
+Tom's Diner: https://en.wikipedia.org/wiki/Tom%27s_Diner]]></itunes:summary>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep83.mp3" length="1740384" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep83.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:50</itunes:duration>
+      <itunes:episode>83</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
