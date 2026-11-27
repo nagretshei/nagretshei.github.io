@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 29 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2428,6 +2428,37 @@ Hughes & Harrison (2013) I Like My Voice Better: Self-Enhancement Bias in Percep
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:03:27</itunes:duration>
       <itunes:episode>85</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Only Two Ears, So How Do We Hear a Whole Crowd of Sounds? Auditory Scene Analysis (Spatial Sound Series #12)</title>
+      <description><![CDATA[Spatial sound series, episode twelve: in a cafe, voices, cups and music all arrive mixed together, and your ears receive only two signals, yet your brain can tell what is what. That's auditory scene analysis. Albert Bregman of McGill University, in his 1990 book of the same name, compared it to guessing how many boats are on a lake by watching only two handkerchiefs moving in two narrow channels. The brain organizes sound into auditory streams, using both sequence and simultaneity. Sequence: alternate a high and a low tone; slow and close, you hear one galloping rhythm, while fast and far apart, it splits into a high line and a low line (van Noorden, 1975). Bach's Cello Suites use this to make one cello sound like two melodies. Simultaneity: frequencies that are whole-number multiples, start together, or wobble together are grouped as one sound; mistune one slightly and it pops out, and vibrato helps a singer stand out. When noise covers a sound, the brain fills in the gap: in 1970, Warren replaced a sound in a sentence with a cough, and listeners still heard the full sentence. Direction helps too (the cocktail party effect), but the brain also relies heavily on pitch and rhythm, which is why hearing aid users struggle in noisy restaurants. Finally, AI source separation and how mixing engineers spread parts apart.
+
+References:
+Auditory scene analysis（維基百科，聽覺場景分析）: https://en.wikipedia.org/wiki/Auditory_scene_analysis
+Bregman (1990) Auditory Scene Analysis: The Perceptual Organization of Sound, MIT Press: https://mitpress.mit.edu/9780262521956/auditory-scene-analysis/
+van Noorden (1975) Temporal coherence in the perception of tone sequences（博士論文）: https://research.tue.nl/en/publications/temporal-coherence-in-the-perception-of-tone-sequences
+Warren (1970) Perceptual restoration of missing speech sounds, Science 167: https://doi.org/10.1126/science.167.3917.392
+Phonemic restoration effect（維基百科，音素復原效應）: https://en.wikipedia.org/wiki/Phonemic_restoration_effect
+Cello Suites (Bach)（維基百科，巴哈無伴奏大提琴組曲）: https://en.wikipedia.org/wiki/Cello_Suites_(Bach)]]></description>
+      <itunes:summary><![CDATA[Spatial sound series, episode twelve: in a cafe, voices, cups and music all arrive mixed together, and your ears receive only two signals, yet your brain can tell what is what. That's auditory scene analysis. Albert Bregman of McGill University, in his 1990 book of the same name, compared it to guessing how many boats are on a lake by watching only two handkerchiefs moving in two narrow channels. The brain organizes sound into auditory streams, using both sequence and simultaneity. Sequence: alternate a high and a low tone; slow and close, you hear one galloping rhythm, while fast and far apart, it splits into a high line and a low line (van Noorden, 1975). Bach's Cello Suites use this to make one cello sound like two melodies. Simultaneity: frequencies that are whole-number multiples, start together, or wobble together are grouped as one sound; mistune one slightly and it pops out, and vibrato helps a singer stand out. When noise covers a sound, the brain fills in the gap: in 1970, Warren replaced a sound in a sentence with a cough, and listeners still heard the full sentence. Direction helps too (the cocktail party effect), but the brain also relies heavily on pitch and rhythm, which is why hearing aid users struggle in noisy restaurants. Finally, AI source separation and how mixing engineers spread parts apart.
+
+References:
+Auditory scene analysis（維基百科，聽覺場景分析）: https://en.wikipedia.org/wiki/Auditory_scene_analysis
+Bregman (1990) Auditory Scene Analysis: The Perceptual Organization of Sound, MIT Press: https://mitpress.mit.edu/9780262521956/auditory-scene-analysis/
+van Noorden (1975) Temporal coherence in the perception of tone sequences（博士論文）: https://research.tue.nl/en/publications/temporal-coherence-in-the-perception-of-tone-sequences
+Warren (1970) Perceptual restoration of missing speech sounds, Science 167: https://doi.org/10.1126/science.167.3917.392
+Phonemic restoration effect（維基百科，音素復原效應）: https://en.wikipedia.org/wiki/Phonemic_restoration_effect
+Cello Suites (Bach)（維基百科，巴哈無伴奏大提琴組曲）: https://en.wikipedia.org/wiki/Cello_Suites_(Bach)]]></itunes:summary>
+      <pubDate>Mon, 30 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep86.mp3" length="1567872" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep86.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:04:21</itunes:duration>
+      <itunes:episode>86</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
