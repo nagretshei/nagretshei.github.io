@@ -36,7 +36,7 @@ Electroacoustic music runs deep, Little Pi makes it simple.]]></itunes:summary>
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed_en.py</generator>
     <item>
       <title>Sound Made From Typing?! A Hundred Years of Electroacoustic Music</title>
@@ -2378,6 +2378,56 @@ Tom's Diner: https://en.wikipedia.org/wiki/Tom%27s_Diner]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:50</itunes:duration>
       <itunes:episode>83</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Are Movie Sounds Acted Out? The Magic of Foley: Coconut Hooves and Celery Bones</title>
+      <description><![CDATA[Many sounds in movies aren't recorded during filming. On set, the boom microphone is aimed at the actors' mouths to capture dialogue clearly; footsteps and clothing rustle are too quiet or too messy, and foreign-language dubbing needs a music-and-effects version without dialogue, so those sounds are made afterwards. The word Foley comes from Jack Foley of Universal Studios, who, when talkies arrived in the late 1920s, performed sounds in sync while watching the picture. A Foley stage has patches of concrete, wood, gravel and sand, plus a cabinet full of shoes; Foley work falls into footsteps, cloth movement and props. Magic props: coconut shells for horse hooves, snapped celery for breaking bones, a squeezed pouch of cornstarch for snow, crumpled cellophane for fire, and an umbrella opened and closed for flapping wings. Why not just use sound libraries? Every step must match the picture and show the character's personality, and a real person's small variations sound natural. Finally, try Foley at home with your phone.
+
+References:
+Foley (filmmaking)（維基百科，擬音）: https://en.wikipedia.org/wiki/Foley_(filmmaking)
+Jack Foley (sound effects)（維基百科，傑克．佛利）: https://en.wikipedia.org/wiki/Jack_Foley_(sound_effects)
+Boom operator（維基百科，收音桿操作員）: https://en.wikipedia.org/wiki/Boom_operator_(media)]]></description>
+      <itunes:summary><![CDATA[Many sounds in movies aren't recorded during filming. On set, the boom microphone is aimed at the actors' mouths to capture dialogue clearly; footsteps and clothing rustle are too quiet or too messy, and foreign-language dubbing needs a music-and-effects version without dialogue, so those sounds are made afterwards. The word Foley comes from Jack Foley of Universal Studios, who, when talkies arrived in the late 1920s, performed sounds in sync while watching the picture. A Foley stage has patches of concrete, wood, gravel and sand, plus a cabinet full of shoes; Foley work falls into footsteps, cloth movement and props. Magic props: coconut shells for horse hooves, snapped celery for breaking bones, a squeezed pouch of cornstarch for snow, crumpled cellophane for fire, and an umbrella opened and closed for flapping wings. Why not just use sound libraries? Every step must match the picture and show the character's personality, and a real person's small variations sound natural. Finally, try Foley at home with your phone.
+
+References:
+Foley (filmmaking)（維基百科，擬音）: https://en.wikipedia.org/wiki/Foley_(filmmaking)
+Jack Foley (sound effects)（維基百科，傑克．佛利）: https://en.wikipedia.org/wiki/Jack_Foley_(sound_effects)
+Boom operator（維基百科，收音桿操作員）: https://en.wikipedia.org/wiki/Boom_operator_(media)]]></itunes:summary>
+      <pubDate>Sat, 28 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep84.mp3" length="1335312" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep84.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:43</itunes:duration>
+      <itunes:episode>84</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork-en.jpg"/>
+    </item>
+    <item>
+      <title>Why Does Your Recorded Voice Sound So Strange? Air Conduction, Bone Conduction and Familiarity</title>
+      <description><![CDATA[Does your voice sound higher, thinner and unfamiliar in recordings? When you speak, your voice reaches your ears along two paths: air conduction, which is what other people and microphones hear, and bone conduction, where vocal fold vibrations travel through your skull straight to the inner ear. The bone path carries low frequencies more easily, so the voice you hear yourself is deeper and fuller, and recordings lack that layer. A quick experiment: cover your ears and hum, and the sound gets louder and more muffled because the low end coming through bone can't escape (the occlusion effect). Psychology plays a part too: the recorded version is unfamiliar, and a 2013 study by Hughes and Harrison found that people who didn't recognize their own voice actually rated it more attractive. Equipment matters as well: tiny phone microphones, getting too close (more bass and plosive pops) and room echo. Bone conduction headphones use the same idea in reverse, leaving your ears open to your surroundings. Listen a few more times and you'll get used to it.
+
+References:
+Bone conduction（維基百科，骨傳導）: https://en.wikipedia.org/wiki/Bone_conduction
+Occlusion effect（維基百科，閉塞效應）: https://en.wikipedia.org/wiki/Occlusion_effect
+Hughes & Harrison (2013) I Like My Voice Better: Self-Enhancement Bias in Perceptions of Voice Attractiveness, Perception: https://doi.org/10.1068/p7354]]></description>
+      <itunes:summary><![CDATA[Does your voice sound higher, thinner and unfamiliar in recordings? When you speak, your voice reaches your ears along two paths: air conduction, which is what other people and microphones hear, and bone conduction, where vocal fold vibrations travel through your skull straight to the inner ear. The bone path carries low frequencies more easily, so the voice you hear yourself is deeper and fuller, and recordings lack that layer. A quick experiment: cover your ears and hum, and the sound gets louder and more muffled because the low end coming through bone can't escape (the occlusion effect). Psychology plays a part too: the recorded version is unfamiliar, and a 2013 study by Hughes and Harrison found that people who didn't recognize their own voice actually rated it more attractive. Equipment matters as well: tiny phone microphones, getting too close (more bass and plosive pops) and room echo. Bone conduction headphones use the same idea in reverse, leaving your ears open to your surroundings. Listen a few more times and you'll get used to it.
+
+References:
+Bone conduction（維基百科，骨傳導）: https://en.wikipedia.org/wiki/Bone_conduction
+Occlusion effect（維基百科，閉塞效應）: https://en.wikipedia.org/wiki/Occlusion_effect
+Hughes & Harrison (2013) I Like My Voice Better: Self-Enhancement Bias in Perceptions of Voice Attractiveness, Perception: https://doi.org/10.1068/p7354]]></itunes:summary>
+      <pubDate>Sun, 29 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/en/ep85.mp3" length="1241424" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/en/ep85.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:27</itunes:duration>
+      <itunes:episode>85</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>

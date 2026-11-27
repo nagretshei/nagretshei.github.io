@@ -36,7 +36,7 @@
     <itunes:category text="Music"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Nov 2026 12:00:00 +0800</lastBuildDate>
     <generator>generate_podcast_feed.py</generator>
     <item>
       <title>【小皮快報】聲音也能用打字做出來？！電聲音樂百年秘史大公開</title>
@@ -2378,6 +2378,56 @@ Tom's Diner：https://en.wikipedia.org/wiki/Tom%27s_Diner]]></itunes:summary>
       <link>https://zoelin.me/podcast.html</link>
       <itunes:duration>00:04:46</itunes:duration>
       <itunes:episode>83</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>電影裡的聲音是演出來的？擬音師Foley的魔法：椰子殼變馬蹄、芹菜變骨頭｜電影擬音</title>
+      <description><![CDATA[電影裡很多聲音不是拍片時錄的：拍片現場的收音桿麥克風以錄清楚對白為主，腳步、衣服摩擦太小聲或太亂，而且外語配音版需要一份沒有對白、只有音樂和音效的版本，所以要事後再做。英文 Foley 來自環球影業的傑克佛利（Jack Foley），1920 年代末有聲電影興起時，他一邊看畫面一邊用身體和道具同步演出音效。擬音棚有水泥、木頭、碎石、沙子等不同地面和一整櫃鞋子；擬音分腳步、衣服摩擦、道具三大類。魔法道具：椰子殼變馬蹄、折斷芹菜變骨頭斷掉、捏玉米粉袋變踩雪、揉玻璃紙變火燒、開合雨傘變鳥拍翅膀。為什麼不只用音效庫：要對準畫面、聽得出角色個性，真人每次都有一點不同才自然。最後教大家在家用手機玩擬音。
+
+參考資料：
+Foley (filmmaking)（維基百科，擬音）：https://en.wikipedia.org/wiki/Foley_(filmmaking)
+Jack Foley (sound effects)（維基百科，傑克．佛利）：https://en.wikipedia.org/wiki/Jack_Foley_(sound_effects)
+Boom operator（維基百科，收音桿操作員）：https://en.wikipedia.org/wiki/Boom_operator_(media)]]></description>
+      <itunes:summary><![CDATA[電影裡很多聲音不是拍片時錄的：拍片現場的收音桿麥克風以錄清楚對白為主，腳步、衣服摩擦太小聲或太亂，而且外語配音版需要一份沒有對白、只有音樂和音效的版本，所以要事後再做。英文 Foley 來自環球影業的傑克佛利（Jack Foley），1920 年代末有聲電影興起時，他一邊看畫面一邊用身體和道具同步演出音效。擬音棚有水泥、木頭、碎石、沙子等不同地面和一整櫃鞋子；擬音分腳步、衣服摩擦、道具三大類。魔法道具：椰子殼變馬蹄、折斷芹菜變骨頭斷掉、捏玉米粉袋變踩雪、揉玻璃紙變火燒、開合雨傘變鳥拍翅膀。為什麼不只用音效庫：要對準畫面、聽得出角色個性，真人每次都有一點不同才自然。最後教大家在家用手機玩擬音。
+
+參考資料：
+Foley (filmmaking)（維基百科，擬音）：https://en.wikipedia.org/wiki/Foley_(filmmaking)
+Jack Foley (sound effects)（維基百科，傑克．佛利）：https://en.wikipedia.org/wiki/Jack_Foley_(sound_effects)
+Boom operator（維基百科，收音桿操作員）：https://en.wikipedia.org/wiki/Boom_operator_(media)]]></itunes:summary>
+      <pubDate>Sat, 28 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep84.mp3" length="3568263" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep84.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:43</itunes:duration>
+      <itunes:episode>84</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://zoelin.me/podcast/artwork.jpg"/>
+    </item>
+    <item>
+      <title>為什麼錄音裡的自己聲音這麼奇怪？空氣傳導、骨傳導與熟悉感｜錄音裡的我</title>
+      <description><![CDATA[第一次聽到錄音裡的自己，總覺得比較高、比較薄、很陌生？因為說話時，自己的聲音走兩條路進耳朵：空氣傳導（別人和麥克風聽到的也是這條）與骨傳導（聲帶震動直接透過頭骨傳到內耳）。骨頭這條路比較容易傳低音，所以你平常聽到的自己比較低沉飽滿，錄音少了這層低音。小實驗：摀住耳朵哼歌，聲音變大變悶，就是骨頭傳來的低音跑不掉（閉塞效應）。心理上也有關係：錄音版本不熟悉；2013 年 Hughes 與 Harrison 的研究發現，不知道是自己的聲音時，大家反而給自己的聲音比較高分。錄音器材也有影響：手機麥克風、離太近低音變多和噗噗聲、房間回音。骨傳導耳機則反過來用骨頭把聲音送進內耳，耳朵空著聽得到周圍。多聽幾次就習慣了。
+
+參考資料：
+Bone conduction（維基百科，骨傳導）：https://en.wikipedia.org/wiki/Bone_conduction
+Occlusion effect（維基百科，閉塞效應）：https://en.wikipedia.org/wiki/Occlusion_effect
+Hughes & Harrison (2013) I Like My Voice Better: Self-Enhancement Bias in Perceptions of Voice Attractiveness, Perception：https://doi.org/10.1068/p7354]]></description>
+      <itunes:summary><![CDATA[第一次聽到錄音裡的自己，總覺得比較高、比較薄、很陌生？因為說話時，自己的聲音走兩條路進耳朵：空氣傳導（別人和麥克風聽到的也是這條）與骨傳導（聲帶震動直接透過頭骨傳到內耳）。骨頭這條路比較容易傳低音，所以你平常聽到的自己比較低沉飽滿，錄音少了這層低音。小實驗：摀住耳朵哼歌，聲音變大變悶，就是骨頭傳來的低音跑不掉（閉塞效應）。心理上也有關係：錄音版本不熟悉；2013 年 Hughes 與 Harrison 的研究發現，不知道是自己的聲音時，大家反而給自己的聲音比較高分。錄音器材也有影響：手機麥克風、離太近低音變多和噗噗聲、房間回音。骨傳導耳機則反過來用骨頭把聲音送進內耳，耳朵空著聽得到周圍。多聽幾次就習慣了。
+
+參考資料：
+Bone conduction（維基百科，骨傳導）：https://en.wikipedia.org/wiki/Bone_conduction
+Occlusion effect（維基百科，閉塞效應）：https://en.wikipedia.org/wiki/Occlusion_effect
+Hughes & Harrison (2013) I Like My Voice Better: Self-Enhancement Bias in Perceptions of Voice Attractiveness, Perception：https://doi.org/10.1068/p7354]]></itunes:summary>
+      <pubDate>Sun, 29 Nov 2026 12:00:00 +0800</pubDate>
+      <enclosure url="https://zoelin.me/podcast/audio/ep85.mp3" length="3358030" type="audio/mpeg"/>
+      <guid isPermaLink="false">https://zoelin.me/podcast/audio/ep85.mp3</guid>
+      <link>https://zoelin.me/podcast.html</link>
+      <itunes:duration>00:03:30</itunes:duration>
+      <itunes:episode>85</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
